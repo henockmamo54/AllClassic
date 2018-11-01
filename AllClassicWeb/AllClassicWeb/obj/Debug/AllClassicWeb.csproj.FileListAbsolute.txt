@@ -64,8 +64,8 @@ C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\bin\Newtonsoft.Json.xml
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\bin\Antlr3.Runtime.pdb
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csprojAssemblyReference.cache
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csproj.CoreCompileInputs.cache
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csproj.CopyComplete
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.dll
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.pdb
+C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csprojAssemblyReference.cache
