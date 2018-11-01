@@ -122,6 +122,15 @@
     <Property Name="UserID" Type="int" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
   </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
   <EntityType Name="CollegeTbl">
     <Key>
       <PropertyRef Name="CollegeID" />
@@ -570,6 +579,7 @@
     <EntitySet Name="RepairShopTbl" EntityType="Self.RepairShopTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="UserTypeTbl" EntityType="Self.UserTypeTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="VenueTbl" EntityType="Self.VenueTbl" Schema="Auxiliary" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="LookUp" store:Type="Tables" />
     <EntitySet Name="CollegeTbl" EntityType="Self.CollegeTbl" Schema="Main" store:Type="Tables" />
     <EntitySet Name="LookUpTbl" EntityType="Self.LookUpTbl" Schema="Main" store:Type="Tables" />
     <EntitySet Name="MusicianEndorserTbl" EntityType="Self.MusicianEndorserTbl" Schema="Main" store:Type="Tables" />

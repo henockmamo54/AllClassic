@@ -42,5 +42,6 @@ namespace DataAccess
         public virtual DbSet<PerformanceTbl> PerformanceTbls { get; set; }
         public virtual DbSet<UserTbl> UserTbls { get; set; }
         public virtual DbSet<UserUserType> UserUserTypes { get; set; }
+        public virtual DbSet<UserType> UserTypes { get; set; }
     }
 }

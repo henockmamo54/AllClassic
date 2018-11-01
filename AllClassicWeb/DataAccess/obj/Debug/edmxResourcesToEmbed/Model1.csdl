@@ -723,5 +723,15 @@
       <End Role="UserTbl" EntitySet="UserTbls" />
       <End Role="UserUserType" EntitySet="UserUserTypes" />
     </AssociationSet>
+    <EntitySet Name="UserTypes" EntityType="AllClassicDBModel.UserType" />
   </EntityContainer>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserType1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
 </Schema>

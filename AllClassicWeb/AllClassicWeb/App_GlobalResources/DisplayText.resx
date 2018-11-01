@@ -189,4 +189,139 @@
   <data name="Rememberme" xml:space="preserve">
     <value>Remember me</value>
   </data>
+  <data name="AcceptTerms" xml:space="preserve">
+    <value>Accept Terms</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AdmistraterOfAgent" xml:space="preserve">
+    <value>Admistrater Of Agent</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AdmistraterOfOrganizer" xml:space="preserve">
+    <value>Admistrater Of Organizer</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AdmistraterOfPerformanceGroup" xml:space="preserve">
+    <value>Admistrater Of Performance Group</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AdmistraterOfPromoter" xml:space="preserve">
+    <value>Admistrater Of Promoter</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AmatureMusician" xml:space="preserve">
+    <value>Amature Musician</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Birthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="Blogger" xml:space="preserve">
+    <value>Blogger</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ClassicMania" xml:space="preserve">
+    <value>Classic Mania</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Composer" xml:space="preserve">
+    <value>Composer</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Conductor" xml:space="preserve">
+    <value>Conductor</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="Doyouacceptprivacypolicy" xml:space="preserve">
+    <value>Do you accept privacy policy ?</value>
+    <comment>system msg</comment>
+  </data>
+  <data name="Doyouaccepttermsofuse" xml:space="preserve">
+    <value>Do you accept terms of use ?</value>
+    <comment>system msg</comment>
+  </data>
+  <data name="FacebookURL" xml:space="preserve">
+    <value>Facebook URL</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="KakaoTalkID" xml:space="preserve">
+    <value>Kakao Talk ID</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MobileNo" xml:space="preserve">
+    <value>Mobile No</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="NickName" xml:space="preserve">
+    <value>Nick Name</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="OtherSNS" xml:space="preserve">
+    <value>Other SNS</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="ProMusician" xml:space="preserve">
+    <value>Pro Musician</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Reporter" xml:space="preserve">
+    <value>Reporter</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="ShopOwner" xml:space="preserve">
+    <value>Shop Owner</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Student" xml:space="preserve">
+    <value>Student</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="TeacherProfessor" xml:space="preserve">
+    <value>Teacher Professor</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Termsofuse" xml:space="preserve">
+    <value>Terms of use</value>
+  </data>
+  <data name="TwitterURL" xml:space="preserve">
+    <value>Twitter URL</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>User Info</value>
+  </data>
+  <data name="WhatkindOfUserAreyou" xml:space="preserve">
+    <value>What kind Of User Are you?</value>
+    <comment>system msg</comment>
+  </data>
+  <data name="YourAffilation" xml:space="preserve">
+    <value>Your Affilation</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>Zip Code</value>
+    <comment>Table Schema</comment>
+  </data>
 </root>

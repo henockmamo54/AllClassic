@@ -55,7 +55,7 @@
 
             function redirect() {
                 //location.href = 'UserPage.aspx';
-                location.href = 'Views/signupPages/TermsOfUsePage.aspx';
+                location.href = 'SignUp/TermsOfUsePage.aspx';
             }
 
         </script>

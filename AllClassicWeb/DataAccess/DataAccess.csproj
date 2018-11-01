@@ -120,6 +120,9 @@
     <Compile Include="UserTbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserTypeTbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

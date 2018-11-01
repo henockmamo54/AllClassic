@@ -142,7 +142,6 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicW
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.pdb
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\BusinessLogic.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\DataAccess.exe
-C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\EntityFramework.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\BusinessLogic.pdb
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\BusinessLogic.exe.config
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\DataAccess.pdb
