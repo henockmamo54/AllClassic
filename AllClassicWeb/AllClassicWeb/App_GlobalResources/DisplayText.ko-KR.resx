@@ -194,4 +194,16 @@
   <data name="kr" xml:space="preserve">
     <value>한</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>이메일</value>
+  </data>
+  <data name="Forgotthepassword" xml:space="preserve">
+    <value>비밀번호를 잊어버렸습니까?</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>암호</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>ID, PW저장</value>
+  </data>
 </root>

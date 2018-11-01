@@ -177,4 +177,16 @@
   <data name="kr" xml:space="preserve">
     <value>KR</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Forgotthepassword" xml:space="preserve">
+    <value>Forgot the password?</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
 </root>

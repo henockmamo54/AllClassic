@@ -68,7 +68,7 @@
                 <div class="col-md-2 col-xs-2" id="mastersidemenu" style="padding-left: 0px;">
                     <ul class="list-group">
                         <a runat="server" id="signinLink" visible="false">
-                            <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/LoginPage"><%= Resources.DisplayText.SignIn %></a>
+                            <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
                             <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signuptab" href="~/Views/signupPages/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
                         </a>
 
