@@ -99,7 +99,7 @@ namespace AllClassicWeb
         {
             Session.Clear();
             Session["User"] = null;
-            Response.Redirect("~/Views/HomeView.aspx");
+            Response.Redirect("~/Default.aspx");
         }
 
     }

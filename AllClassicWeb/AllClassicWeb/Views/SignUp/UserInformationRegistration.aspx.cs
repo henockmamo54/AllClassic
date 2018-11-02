@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DataAccessP;
+using BusinessLogic;
 
 namespace AllClassicWeb.Views.SignUp
 {
@@ -13,13 +14,13 @@ namespace AllClassicWeb.Views.SignUp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
         }
 
 
         protected void btn_cancel_click(object sender, EventArgs e)
         {
-            //Response.Redirect("~/Views/HomeView.aspx");
+            //Response.Redirect("~/Default.aspx");
             cleanUserTextBoxs();
         }
 
@@ -73,69 +74,40 @@ namespace AllClassicWeb.Views.SignUp
             /////// finally insert company info
             /////// 
 
-            bool isSuccess = false;
-            using (var context = new AllClassicDBEntities())
+            //register user
+            UserTbl user = new UserTbl();
+            user.PosterEmailID = uemail.Text;
+            user.UpdateTimeStamp = DateTime.Now;
+            user.EmailID = uemail.Text;
+            user.Password = upassword.Text;
+            user.FullName = uname.Text;
+            user.NickName = unickname.Text;
+            user.MobileNo = umobile.Text;
+            user.Facebook = ufacebookurl.Text;
+            user.Twitter = utwitterurl.Text;
+            user.KakaoTalk = ukakaotalkid.Text;
+            user.OtherSNS = uothersns.Text;
+            if (DropDownList1_youraffilation.SelectedValue == "" || int.Parse(DropDownList1_youraffilation.SelectedValue) == -1)
+                user.Affliation = uaffilation.Text;
+            else user.Affliation = DropDownList1_youraffilation.SelectedItem.Text;
+            user.Birthday = DateTime.ParseExact(userBirthDate.Value, "mm/dd/yyyy", CultureInfo.InvariantCulture);
+            user.ZipCode = uzipcode.Text;
+            user.Address = uaddress.Text;
+
+
+
+            //login in the user
+            bool isSuccess = UserLogic.registerUser(usertypes, user) != null;
+            if (isSuccess)
             {
-                using (var dbContextTransaction = context.Database.BeginTransaction())
-                {
-                    try
-                    {
-                        //register user
-                        UserTbl user = new UserTbl();
-                        user.PosterEmailID = uemail.Text;
-                        user.UpdateTimeStamp = DateTime.Now;
-                        user.EmailID = uemail.Text;
-                        user.Password = upassword.Text;
-                        user.FullName = uname.Text;
-                        user.NickName = unickname.Text;
-                        user.MobileNo = umobile.Text;
-                        user.Facebook = ufacebookurl.Text;
-                        user.Twitter = utwitterurl.Text;
-                        user.KakaoTalk = ukakaotalkid.Text;
-                        user.OtherSNS = uothersns.Text;
-                        if (DropDownList1_youraffilation.SelectedValue=="" || int.Parse(DropDownList1_youraffilation.SelectedValue) == -1)
-                            user.Affliation = uaffilation.Text;
-                        else user.Affliation = DropDownList1_youraffilation.SelectedItem.Text;
-                        user.Birthday = DateTime.ParseExact(userBirthDate.Value, "mm/dd/yyyy", CultureInfo.InvariantCulture);
-                        user.ZipCode = uzipcode.Text;
-                        user.Address = uaddress.Text;
-
-                        context.UserTbls.Add(user);
-                        context.SaveChanges();
-
-                        // register  user types
-                        foreach (int i in usertypes)
-                        {
-                            DataAccessP.UserUserType type = new UserUserType();
-                            type.UserID = user.UserID;
-                            type.UserTypeID = i;
-
-                            context.UserUserTypes.Add(type);
-                            context.SaveChanges();
-                        }
-
-                        dbContextTransaction.Commit();
-                        isSuccess = true;
-                        //login in the user
-                        Session["User"] = user;
-
-                    }
-                    catch (Exception ee)
-                    {
-                        dbContextTransaction.Rollback();
-
-                    }
-
-                    if (isSuccess)
-                    {
-                        showMsg("Data inserted succssfuly");
-                        //Response.Redirect("~/Views/HomeView.aspx");
-                    }
-                    else showMsg("Please check your inputs");
-                }
+                showMsg("Data inserted succssfuly");
+                Session["User"] = user;
+                Response.Redirect("~/Default.aspx");
             }
-
+            else showMsg("Please check your inputs");
         }
+
+
 
         //===================================================================================
 

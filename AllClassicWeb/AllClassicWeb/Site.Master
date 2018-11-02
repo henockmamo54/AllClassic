@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - AllClassic Korea</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -43,7 +43,7 @@
             <div class="navbar-outer" id="masterNavigationBar">
                 <div class="row ">
                     <div class="">
-                        <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Views/HomeView">AllClassic Korea</a>
+                        <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Default">AllClassic Korea</a>
                         <a class="otheroptions" id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformancePage.aspx"><%= Resources.DisplayText.PerformanceDB %> </a>
                         <a class="otheroptions" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/ArtistPageView"><%= Resources.DisplayText.MusicianDB %>  </a>
                         <a class="otheroptions" runat="server" style="text-decoration: none;" href=""><%= Resources.DisplayText.MusicCollegeDB %></a>
@@ -69,7 +69,7 @@
                     <ul class="list-group">
                         <a runat="server" id="signinLink" visible="false">
                             <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
-                            <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signuptab" href="~/Views/signupPages/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
+                            <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
                         </a>
 
                         <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
