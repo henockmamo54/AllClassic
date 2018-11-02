@@ -1,0 +1,13 @@
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Debug\DataAccessP.exe.config
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Debug\DataAccessP.exe
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Debug\DataAccessP.pdb
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Debug\EntityFramework.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Debug\EntityFramework.SqlServer.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Debug\EntityFramework.xml
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Debug\EntityFramework.SqlServer.xml
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.Properties.Resources.resources
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.GenerateResource.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.CoreCompileInputs.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.CopyComplete
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.exe
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.pdb

@@ -78,9 +78,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{848d00af-c889-4c7a-90c8-02493a1399ec}</Project>
-      <Name>DataAccess</Name>
+    <ProjectReference Include="..\DataAccessP\DataAccessP.csproj">
+      <Project>{2ce9258a-909d-4ccb-80fb-e0adfac53b10}</Project>
+      <Name>DataAccessP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

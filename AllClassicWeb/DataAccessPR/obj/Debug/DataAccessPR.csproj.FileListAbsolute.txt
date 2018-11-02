@@ -1,0 +1,11 @@
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\bin\Debug\DataAccessPR.exe.config
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\bin\Debug\DataAccessPR.exe
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\bin\Debug\DataAccessPR.pdb
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\bin\Debug\EntityFramework.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\bin\Debug\EntityFramework.xml
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\obj\Debug\DataAccessPR.Properties.Resources.resources
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\obj\Debug\DataAccessPR.csproj.GenerateResource.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\obj\Debug\DataAccessPR.csproj.CoreCompileInputs.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\obj\Debug\DataAccessPR.csproj.CopyComplete
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\obj\Debug\DataAccessPR.exe
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessPR\obj\Debug\DataAccessPR.pdb

@@ -44,13 +44,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Scaffolding.EntityFramework.12.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Entity.Design.Extensibility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -275,9 +283,9 @@
       <Project>{d51025d4-3f74-441e-95ec-6a7dd0460036}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{848d00af-c889-4c7a-90c8-02493a1399ec}</Project>
-      <Name>DataAccess</Name>
+    <ProjectReference Include="..\DataAccessP\DataAccessP.csproj">
+      <Project>{2ce9258a-909d-4ccb-80fb-e0adfac53b10}</Project>
+      <Name>DataAccessP</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

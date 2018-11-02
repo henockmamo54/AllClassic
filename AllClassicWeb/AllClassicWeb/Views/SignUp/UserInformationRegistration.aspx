@@ -69,7 +69,7 @@
                                     
                                     <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Password %>*</div>
                                     <div class="col-md-6 col-xs-8">
-                                        <asp:TextBox ID="upassword" TextMode="Password" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="upassword" TextMode="Password" runat="server" class="form-control" MaxLength="12"></asp:TextBox>
                                     </div>
                                     <br />
 
@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="col-md-12 col-xs-12">
                                     
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.NickName %>*</div>
+                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.NickName %></div>
                                     <div class="col-md-6 col-xs-8">
                                         <asp:TextBox ID="unickname" runat="server" class="form-control"></asp:TextBox>
                                     </div>
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="col-md-12 col-xs-12">
                                     
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MobileNo %>*</div>
+                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MobileNo %></div>
                                     <div class="col-md-6 col-xs-8">
                                         <asp:TextBox ID="umobile" runat="server" class="form-control"></asp:TextBox>
                                     </div>
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="col-md-12 col-xs-12">
                                     
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.FacebookURL %>*</div>
+                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.FacebookURL %></div>
                                     <div class="col-md-6 col-xs-8">
                                         <asp:TextBox ID="ufacebookurl" runat="server" class="form-control"></asp:TextBox>
                                     </div>
@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="col-md-12 col-xs-12">
                                     
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.TwitterURL %>*</div>
+                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.TwitterURL %></div>
                                     <div class="col-md-6 col-xs-8">
                                         <asp:TextBox ID="utwitterurl" runat="server" class="form-control"></asp:TextBox>
                                     </div>
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="col-md-12 col-xs-12">
                                     
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.KakaoTalkID %>*</div>
+                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.KakaoTalkID %></div>
                                     <div class="col-md-6 col-xs-8">
                                         <asp:TextBox ID="ukakaotalkid" runat="server" class="form-control"></asp:TextBox>
                                     </div>
@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="col-md-12 col-xs-12">
                                     
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.OtherSNS %>*</div>
+                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.OtherSNS %></div>
                                     <div class="col-md-6 col-xs-8">
                                         <asp:TextBox ID="uothersns" runat="server" class="form-control"></asp:TextBox>
                                     </div>
@@ -156,7 +156,7 @@ SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
 
                                 <div class="col-md-12 col-xs-12">
                                     
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Birthday %>*</div>
+                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Birthday %></div>
                                     <div class="col-md-6 col-xs-6">
                                         <div class='input-group date' id='datetimepicker2' style="display: flex;">
                                             <input type='text' class="form-control" runat="server" id="userBirthDate" style="display: inline-block; border-right-width: 0px;" />
@@ -171,13 +171,13 @@ SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
                                     
                                     <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.ZipCode %></div>
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:TextBox ID="uzipcode" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="uzipcode" runat="server" class="form-control" MaxLength="6"></asp:TextBox>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
                                     
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Address %>*</div>
+                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Address %></div>
                                     <div class="col-md-6 col-xs-6">
                                         <asp:TextBox ID="uaddress" runat="server" class="form-control"></asp:TextBox>
                                     </div>

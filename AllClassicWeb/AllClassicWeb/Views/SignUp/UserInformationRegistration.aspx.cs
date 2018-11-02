@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DataAccess;
+using DataAccessP;
 
 namespace AllClassicWeb.Views.SignUp
 {
@@ -82,6 +82,8 @@ namespace AllClassicWeb.Views.SignUp
                     {
                         //register user
                         UserTbl user = new UserTbl();
+                        user.PosterEmailID = uemail.Text;
+                        user.UpdateTimeStamp = DateTime.Now;
                         user.EmailID = uemail.Text;
                         user.Password = upassword.Text;
                         user.FullName = uname.Text;
@@ -91,10 +93,10 @@ namespace AllClassicWeb.Views.SignUp
                         user.Twitter = utwitterurl.Text;
                         user.KakaoTalk = ukakaotalkid.Text;
                         user.OtherSNS = uothersns.Text;
-                        if (DropDownList1_youraffilation.SelectedValue==null || int.Parse(DropDownList1_youraffilation.SelectedValue) == -1)
+                        if (DropDownList1_youraffilation.SelectedValue=="" || int.Parse(DropDownList1_youraffilation.SelectedValue) == -1)
                             user.Affliation = uaffilation.Text;
                         else user.Affliation = DropDownList1_youraffilation.SelectedItem.Text;
-                        user.Birthday = DateTime.ParseExact(userBirthDate.Value, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+                        user.Birthday = DateTime.ParseExact(userBirthDate.Value, "mm/dd/yyyy", CultureInfo.InvariantCulture);
                         user.ZipCode = uzipcode.Text;
                         user.Address = uaddress.Text;
 
@@ -104,7 +106,7 @@ namespace AllClassicWeb.Views.SignUp
                         // register  user types
                         foreach (int i in usertypes)
                         {
-                            DataAccess.UserUserType type = new UserUserType();
+                            DataAccessP.UserUserType type = new UserUserType();
                             type.UserID = user.UserID;
                             type.UserTypeID = i;
 
