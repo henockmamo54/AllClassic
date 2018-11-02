@@ -21,7 +21,7 @@ namespace AllClassicWeb.Views.SignUp
             bool termsofUse = CheckBox1_terms.Checked;
             bool privacy = CheckBox1_privacy.Checked;
 
-            if (termsofUse && privacy) Response.Redirect("UserInformationRegistrationPage.aspx");
+            if (termsofUse && privacy) Response.Redirect("UserInformationRegistration.aspx");
             else showMsg("Please check the terms of use and privacy policy");
         }
 
