@@ -324,4 +324,57 @@
     <value>Zip Code</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="AddNewData" xml:space="preserve">
+    <value>Add New Data</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Major" xml:space="preserve">
+    <value>Major</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="NewDataInputScreen" xml:space="preserve">
+    <value>New Data Input Screen</value>
+  </data>
+  <data name="Photo1" xml:space="preserve">
+    <value>Photo 1</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Photo2" xml:space="preserve">
+    <value>Photo 2</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EndorsedDate" xml:space="preserve">
+    <value>Endorsed Date</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Endorser" xml:space="preserve">
+    <value>Endorser</value>
+  </data>
+  <data name="EndorserEmailID" xml:space="preserve">
+    <value>Endorser Email ID</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="EndorserName" xml:space="preserve">
+    <value>Endorser Name</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="ProfilePage" xml:space="preserve">
+    <value>Profile Page</value>
+  </data>
+  <data name="Repertory" xml:space="preserve">
+    <value>Repertory</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
 </root>

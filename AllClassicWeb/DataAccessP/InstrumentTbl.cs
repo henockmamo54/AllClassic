@@ -17,10 +17,10 @@ namespace DataAccessP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InstrumentTbl()
         {
-            this.MusicianTbls = new HashSet<MusicianTbl>();
-            this.MusicianTbls1 = new HashSet<MusicianTbl>();
             this.PerformanceMusicianInstrumentTbls = new HashSet<PerformanceMusicianInstrumentTbl>();
             this.PerformanceTbls = new HashSet<PerformanceTbl>();
+            this.MusicianTbls = new HashSet<MusicianTbl>();
+            this.MusicianTbls1 = new HashSet<MusicianTbl>();
         }
     
         public int InstrumentID { get; set; }
@@ -39,12 +39,12 @@ namespace DataAccessP
     
         public virtual UserTbl UserTbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MusicianTbl> MusicianTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MusicianTbl> MusicianTbls1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceMusicianInstrumentTbl> PerformanceMusicianInstrumentTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceTbl> PerformanceTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MusicianTbl> MusicianTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MusicianTbl> MusicianTbls1 { get; set; }
     }
 }

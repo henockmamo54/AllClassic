@@ -20,5 +20,8 @@ namespace DataAccessP
         public Nullable<System.DateTime> RequestedDate { get; set; }
         public Nullable<System.DateTime> EndorsedDate { get; set; }
         public Nullable<bool> status { get; set; }
+        public Nullable<int> MusicianID { get; set; }
+    
+        public virtual MusicianTbl MusicianTbl { get; set; }
     }
 }

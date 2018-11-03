@@ -173,36 +173,13 @@
     <EntitySetMapping Name="MusicianEndorserTbls">
       <EntityTypeMapping TypeName="AllClassicDBModel.MusicianEndorserTbl">
         <MappingFragment StoreEntitySet="MusicianEndorserTbl">
+          <ScalarProperty Name="MusicianID" ColumnName="MusicianID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="EndorserName" ColumnName="EndorserName" />
           <ScalarProperty Name="EndorserEmail" ColumnName="EndorserEmail" />
           <ScalarProperty Name="RequestedDate" ColumnName="RequestedDate" />
           <ScalarProperty Name="EndorsedDate" ColumnName="EndorsedDate" />
           <ScalarProperty Name="status" ColumnName="status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MusicianTbls">
-      <EntityTypeMapping TypeName="AllClassicDBModel.MusicianTbl">
-        <MappingFragment StoreEntitySet="MusicianTbl">
-          <ScalarProperty Name="MusicianID" ColumnName="MusicianID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
-          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
-          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
-          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
-          <ScalarProperty Name="KakaoTalk" ColumnName="KakaoTalk" />
-          <ScalarProperty Name="Affliation" ColumnName="Affliation" />
-          <ScalarProperty Name="Major1" ColumnName="Major1" />
-          <ScalarProperty Name="Major2" ColumnName="Major2" />
-          <ScalarProperty Name="Photo1" ColumnName="Photo1" />
-          <ScalarProperty Name="Photo2" ColumnName="Photo2" />
-          <ScalarProperty Name="Profile" ColumnName="Profile" />
-          <ScalarProperty Name="Repertory" ColumnName="Repertory" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -298,6 +275,31 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusicianTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.MusicianTbl">
+        <MappingFragment StoreEntitySet="MusicianTbl">
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Repertory" ColumnName="Repertory" />
+          <ScalarProperty Name="Profile" ColumnName="Profile" />
+          <ScalarProperty Name="Photo2" ColumnName="Photo2" />
+          <ScalarProperty Name="Photo1" ColumnName="Photo1" />
+          <ScalarProperty Name="Major2" ColumnName="Major2" />
+          <ScalarProperty Name="Major1" ColumnName="Major1" />
+          <ScalarProperty Name="Affliation" ColumnName="Affliation" />
+          <ScalarProperty Name="KakaoTalk" ColumnName="KakaoTalk" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MusicianID" ColumnName="MusicianID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

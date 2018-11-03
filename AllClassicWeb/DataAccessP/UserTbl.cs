@@ -20,10 +20,10 @@ namespace DataAccessP
             this.InstrumentTbls = new HashSet<InstrumentTbl>();
             this.VenueTbls = new HashSet<VenueTbl>();
             this.LookUpTbls = new HashSet<LookUpTbl>();
-            this.MusicianTbls = new HashSet<MusicianTbl>();
             this.PerformanceGroupTbls = new HashSet<PerformanceGroupTbl>();
             this.PerformanceTbls = new HashSet<PerformanceTbl>();
             this.UserUserTypes = new HashSet<UserUserType>();
+            this.MusicianTbls = new HashSet<MusicianTbl>();
         }
     
         public int UserID { get; set; }
@@ -50,12 +50,12 @@ namespace DataAccessP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LookUpTbl> LookUpTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MusicianTbl> MusicianTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceGroupTbl> PerformanceGroupTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceTbl> PerformanceTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserUserType> UserUserTypes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MusicianTbl> MusicianTbls { get; set; }
     }
 }

@@ -165,6 +165,8 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Login.aspx" />
+    <Content Include="Views\MusicianDB.aspx" />
+    <Content Include="Views\MusicianDBAddNew.aspx" />
     <Content Include="Views\SignUp\TermsOfUsePage.aspx" />
     <Content Include="Views\SignUp\UserInformationRegistration.aspx" />
     <Content Include="Web.config" />
@@ -237,6 +239,20 @@
     <Compile Include="Views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\MusicianDB.aspx.cs">
+      <DependentUpon>MusicianDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MusicianDB.aspx.designer.cs">
+      <DependentUpon>MusicianDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MusicianDBAddNew.aspx.cs">
+      <DependentUpon>MusicianDBAddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MusicianDBAddNew.aspx.designer.cs">
+      <DependentUpon>MusicianDBAddNew.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\SignUp\TermsOfUsePage.aspx.cs">
       <DependentUpon>TermsOfUsePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Doc\artist\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

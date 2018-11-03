@@ -45,7 +45,7 @@
                     <div class="">
                         <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Default">AllClassic Korea</a>
                         <a class="otheroptions" id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformancePage.aspx"><%= Resources.DisplayText.PerformanceDB %> </a>
-                        <a class="otheroptions" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/ArtistPageView"><%= Resources.DisplayText.MusicianDB %>  </a>
+                        <a class="otheroptions" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
                         <a class="otheroptions" runat="server" style="text-decoration: none;" href=""><%= Resources.DisplayText.MusicCollegeDB %></a>
                         <a class="otheroptions" id="instrumenttab" style="text-decoration: none;" runat="server" href="~/Views/InstrumentView"><%= Resources.DisplayText.ArchiveCenter %> </a>
                         <a class="otheroptions" runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>

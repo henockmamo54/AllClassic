@@ -20,6 +20,7 @@ namespace DataAccessP
             this.PerformanceTbls = new HashSet<PerformanceTbl>();
             this.PerformanceTbls1 = new HashSet<PerformanceTbl>();
             this.PerformanceMusicianInstrumentTbls = new HashSet<PerformanceMusicianInstrumentTbl>();
+            this.MusicianEndorserTbls = new HashSet<MusicianEndorserTbl>();
         }
     
         public int MusicianID { get; set; }
@@ -32,7 +33,7 @@ namespace DataAccessP
         public string Twitter { get; set; }
         public string KakaoTalk { get; set; }
         public string Affliation { get; set; }
-        public int Major1 { get; set; }
+        public Nullable<int> Major1 { get; set; }
         public Nullable<int> Major2 { get; set; }
         public string Photo1 { get; set; }
         public string Photo2 { get; set; }
@@ -40,9 +41,11 @@ namespace DataAccessP
         public string Repertory { get; set; }
         public Nullable<int> UserID { get; set; }
         public System.DateTime UpdateTimeStamp { get; set; }
+        public int Major { get; set; }
     
         public virtual InstrumentTbl InstrumentTbl { get; set; }
         public virtual InstrumentTbl InstrumentTbl1 { get; set; }
+        public virtual LookUpTbl LookUpTbl { get; set; }
         public virtual UserTbl UserTbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceTbl> PerformanceTbls { get; set; }
@@ -50,5 +53,7 @@ namespace DataAccessP
         public virtual ICollection<PerformanceTbl> PerformanceTbls1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceMusicianInstrumentTbl> PerformanceMusicianInstrumentTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MusicianEndorserTbl> MusicianEndorserTbls { get; set; }
     }
 }

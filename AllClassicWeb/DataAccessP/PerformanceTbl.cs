@@ -52,11 +52,11 @@ namespace DataAccessP
         public virtual LookUpTbl LookUpTbl { get; set; }
         public virtual LookUpTbl LookUpTbl1 { get; set; }
         public virtual LookUpTbl LookUpTbl2 { get; set; }
-        public virtual MusicianTbl MusicianTbl { get; set; }
-        public virtual MusicianTbl MusicianTbl1 { get; set; }
         public virtual PerformanceGroupTbl PerformanceGroupTbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceMusicianInstrumentTbl> PerformanceMusicianInstrumentTbls { get; set; }
         public virtual UserTbl UserTbl { get; set; }
+        public virtual MusicianTbl MusicianTbl { get; set; }
+        public virtual MusicianTbl MusicianTbl1 { get; set; }
     }
 }

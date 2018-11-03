@@ -23,6 +23,7 @@ namespace DataAccessP
             this.PerformanceTbls1 = new HashSet<PerformanceTbl>();
             this.PerformanceGroupTbls1 = new HashSet<PerformanceGroupTbl>();
             this.PerformanceTbls2 = new HashSet<PerformanceTbl>();
+            this.MusicianTbls = new HashSet<MusicianTbl>();
         }
     
         public int LookUpID { get; set; }
@@ -46,5 +47,7 @@ namespace DataAccessP
         public virtual ICollection<PerformanceGroupTbl> PerformanceGroupTbls1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceTbl> PerformanceTbls2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MusicianTbl> MusicianTbls { get; set; }
     }
 }

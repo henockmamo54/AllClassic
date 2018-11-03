@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AllClassicDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AllClassicDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ArticleTbl">
           <Key>
             <PropertyRef Name="ArticleID" />
@@ -173,6 +173,7 @@
           <Property Name="RequestedDate" Type="datetime" />
           <Property Name="EndorsedDate" Type="datetime" />
           <Property Name="status" Type="bit" />
+          <Property Name="MusicianID" Type="int" />
         </EntityType>
         <EntityType Name="MusicianTbl">
           <Key>
@@ -188,7 +189,7 @@
           <Property Name="Twitter" Type="nvarchar" MaxLength="30" />
           <Property Name="KakaoTalk" Type="nvarchar" MaxLength="30" />
           <Property Name="Affliation" Type="nvarchar" MaxLength="40" />
-          <Property Name="Major1" Type="int" Nullable="false" />
+          <Property Name="Major1" Type="int" />
           <Property Name="Major2" Type="int" />
           <Property Name="Photo1" Type="nvarchar" MaxLength="80" />
           <Property Name="Photo2" Type="nvarchar" MaxLength="80" />
@@ -196,6 +197,7 @@
           <Property Name="Repertory" Type="nvarchar" MaxLength="200" />
           <Property Name="UserID" Type="int" />
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="Major" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="PerformanceGroupTbl">
           <Key>
@@ -311,8 +313,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__MusicianE__Music__02FC7413">
+          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
+          <End Role="MusicianEndorserTbl" Type="Self.MusicianEndorserTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicianTbl">
+              <PropertyRef Name="MusicianID" />
+            </Principal>
+            <Dependent Role="MusicianEndorserTbl">
+              <PropertyRef Name="MusicianID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MusicianT__Major__02084FDA">
+          <End Role="LookUpTbl" Type="Self.LookUpTbl" Multiplicity="1" />
+          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookUpTbl">
+              <PropertyRef Name="LookUpID" />
+            </Principal>
+            <Dependent Role="MusicianTbl">
+              <PropertyRef Name="Major" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__MusicianT__Major__5812160E">
-          <End Role="InstrumentTbl" Type="Self.InstrumentTbl" Multiplicity="1" />
+          <End Role="InstrumentTbl" Type="Self.InstrumentTbl" Multiplicity="0..1" />
           <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="InstrumentTbl">
@@ -602,6 +628,14 @@
             <End Role="UserTbl" EntitySet="UserTbl" />
             <End Role="LookUpTbl" EntitySet="LookUpTbl" />
           </AssociationSet>
+          <AssociationSet Name="FK__MusicianE__Music__02FC7413" Association="Self.FK__MusicianE__Music__02FC7413">
+            <End Role="MusicianTbl" EntitySet="MusicianTbl" />
+            <End Role="MusicianEndorserTbl" EntitySet="MusicianEndorserTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MusicianT__Major__02084FDA" Association="Self.FK__MusicianT__Major__02084FDA">
+            <End Role="LookUpTbl" EntitySet="LookUpTbl" />
+            <End Role="MusicianTbl" EntitySet="MusicianTbl" />
+          </AssociationSet>
           <AssociationSet Name="FK__MusicianT__Major__5812160E" Association="Self.FK__MusicianT__Major__5812160E">
             <End Role="InstrumentTbl" EntitySet="InstrumentTbl" />
             <End Role="MusicianTbl" EntitySet="MusicianTbl" />
@@ -691,8 +725,7 @@
             <End Role="VenueTbl" EntitySet="VenueTbl" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AllClassicDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -749,10 +782,10 @@
           <Property Name="UserID" Type="Int32" />
           <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="UserTbl" Relationship="Self.FK__Instrumen__UserI__5535A963" FromRole="InstrumentTbl" ToRole="UserTbl" />
-          <NavigationProperty Name="MusicianTbls" Relationship="Self.FK__MusicianT__Major__5812160E" FromRole="InstrumentTbl" ToRole="MusicianTbl" />
-          <NavigationProperty Name="MusicianTbls1" Relationship="Self.FK__MusicianT__Major__59063A47" FromRole="InstrumentTbl" ToRole="MusicianTbl" />
           <NavigationProperty Name="PerformanceMusicianInstrumentTbls" Relationship="Self.FK__Performan__Instr__73BA3083" FromRole="InstrumentTbl" ToRole="PerformanceMusicianInstrumentTbl" />
           <NavigationProperty Name="PerformanceTbls" Relationship="Self.FK__Performan__MainI__6E01572D" FromRole="InstrumentTbl" ToRole="PerformanceTbl" />
+          <NavigationProperty Name="MusicianTbls" Relationship="AllClassicDBModel.FK__MusicianT__Major__5812160E" FromRole="InstrumentTbl" ToRole="MusicianTbl" />
+          <NavigationProperty Name="MusicianTbls1" Relationship="AllClassicDBModel.FK__MusicianT__Major__59063A47" FromRole="InstrumentTbl" ToRole="MusicianTbl" />
         </EntityType>
         <EntityType Name="MusicShopTbl">
           <Key>
@@ -869,6 +902,7 @@
           <NavigationProperty Name="PerformanceTbls1" Relationship="Self.FK__Performan__Regio__6754599E" FromRole="LookUpTbl" ToRole="PerformanceTbl" />
           <NavigationProperty Name="PerformanceGroupTbls1" Relationship="Self.FK__Performanc__City__5FB337D6" FromRole="LookUpTbl" ToRole="PerformanceGroupTbl" />
           <NavigationProperty Name="PerformanceTbls2" Relationship="Self.FK__Performanc__City__68487DD7" FromRole="LookUpTbl" ToRole="PerformanceTbl" />
+          <NavigationProperty Name="MusicianTbls" Relationship="AllClassicDBModel.FK__MusicianT__Major__02084FDA" FromRole="LookUpTbl" ToRole="MusicianTbl" />
         </EntityType>
         <EntityType Name="MusicianEndorserTbl">
           <Key>
@@ -880,35 +914,8 @@
           <Property Name="RequestedDate" Type="DateTime" Precision="3" />
           <Property Name="EndorsedDate" Type="DateTime" Precision="3" />
           <Property Name="status" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="MusicianTbl">
-          <Key>
-            <PropertyRef Name="MusicianID" />
-          </Key>
-          <Property Name="MusicianID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EmailID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="ZipCode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="Facebook" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Twitter" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="KakaoTalk" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Affliation" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Major1" Type="Int32" Nullable="false" />
-          <Property Name="Major2" Type="Int32" />
-          <Property Name="Photo1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="Photo2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="Profile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Repertory" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="UserID" Type="Int32" />
-          <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="InstrumentTbl" Relationship="Self.FK__MusicianT__Major__5812160E" FromRole="MusicianTbl" ToRole="InstrumentTbl" />
-          <NavigationProperty Name="InstrumentTbl1" Relationship="Self.FK__MusicianT__Major__59063A47" FromRole="MusicianTbl" ToRole="InstrumentTbl" />
-          <NavigationProperty Name="UserTbl" Relationship="Self.FK__MusicianT__UserI__59FA5E80" FromRole="MusicianTbl" ToRole="UserTbl" />
-          <NavigationProperty Name="PerformanceTbls" Relationship="Self.FK__Performan__Condu__6C190EBB" FromRole="MusicianTbl" ToRole="PerformanceTbl" />
-          <NavigationProperty Name="PerformanceTbls1" Relationship="Self.FK__Performan__MainT__6D0D32F4" FromRole="MusicianTbl" ToRole="PerformanceTbl" />
-          <NavigationProperty Name="PerformanceMusicianInstrumentTbls" Relationship="Self.FK__Performan__Music__72C60C4A" FromRole="MusicianTbl" ToRole="PerformanceMusicianInstrumentTbl" />
+          <Property Name="MusicianID" Type="Int32" />
+          <NavigationProperty Name="MusicianTbl" Relationship="AllClassicDBModel.FK__MusicianE__Music__02FC7413" FromRole="MusicianEndorserTbl" ToRole="MusicianTbl" />
         </EntityType>
         <EntityType Name="PerformanceGroupTbl">
           <Key>
@@ -944,8 +951,8 @@
           <Property Name="MusicianID" Type="Int32" />
           <Property Name="InstrumentID" Type="Int32" />
           <NavigationProperty Name="InstrumentTbl" Relationship="Self.FK__Performan__Instr__73BA3083" FromRole="PerformanceMusicianInstrumentTbl" ToRole="InstrumentTbl" />
-          <NavigationProperty Name="MusicianTbl" Relationship="Self.FK__Performan__Music__72C60C4A" FromRole="PerformanceMusicianInstrumentTbl" ToRole="MusicianTbl" />
           <NavigationProperty Name="PerformanceTbl" Relationship="Self.FK__Performan__Perfo__71D1E811" FromRole="PerformanceMusicianInstrumentTbl" ToRole="PerformanceTbl" />
+          <NavigationProperty Name="MusicianTbl" Relationship="AllClassicDBModel.FK__Performan__Music__72C60C4A" FromRole="PerformanceMusicianInstrumentTbl" ToRole="MusicianTbl" />
         </EntityType>
         <EntityType Name="PerformanceTbl">
           <Key>
@@ -982,11 +989,11 @@
           <NavigationProperty Name="LookUpTbl" Relationship="Self.FK__Performan__Perfo__6B24EA82" FromRole="PerformanceTbl" ToRole="LookUpTbl" />
           <NavigationProperty Name="LookUpTbl1" Relationship="Self.FK__Performan__Regio__6754599E" FromRole="PerformanceTbl" ToRole="LookUpTbl" />
           <NavigationProperty Name="LookUpTbl2" Relationship="Self.FK__Performanc__City__68487DD7" FromRole="PerformanceTbl" ToRole="LookUpTbl" />
-          <NavigationProperty Name="MusicianTbl" Relationship="Self.FK__Performan__Condu__6C190EBB" FromRole="PerformanceTbl" ToRole="MusicianTbl" />
-          <NavigationProperty Name="MusicianTbl1" Relationship="Self.FK__Performan__MainT__6D0D32F4" FromRole="PerformanceTbl" ToRole="MusicianTbl" />
           <NavigationProperty Name="PerformanceGroupTbl" Relationship="Self.FK__Performan__Perfo__6A30C649" FromRole="PerformanceTbl" ToRole="PerformanceGroupTbl" />
           <NavigationProperty Name="PerformanceMusicianInstrumentTbls" Relationship="Self.FK__Performan__Perfo__71D1E811" FromRole="PerformanceTbl" ToRole="PerformanceMusicianInstrumentTbl" />
           <NavigationProperty Name="UserTbl" Relationship="Self.FK__Performan__UserI__6EF57B66" FromRole="PerformanceTbl" ToRole="UserTbl" />
+          <NavigationProperty Name="MusicianTbl" Relationship="AllClassicDBModel.FK__Performan__Condu__6C190EBB" FromRole="PerformanceTbl" ToRole="MusicianTbl" />
+          <NavigationProperty Name="MusicianTbl1" Relationship="AllClassicDBModel.FK__Performan__MainT__6D0D32F4" FromRole="PerformanceTbl" ToRole="MusicianTbl" />
         </EntityType>
         <EntityType Name="UserTbl">
           <Key>
@@ -1011,10 +1018,10 @@
           <NavigationProperty Name="InstrumentTbls" Relationship="Self.FK__Instrumen__UserI__5535A963" FromRole="UserTbl" ToRole="InstrumentTbl" />
           <NavigationProperty Name="VenueTbls" Relationship="Self.FK__VenueTbl__UserID__6477ECF3" FromRole="UserTbl" ToRole="VenueTbl" />
           <NavigationProperty Name="LookUpTbls" Relationship="Self.FK__LookUpTbl__UserI__52593CB8" FromRole="UserTbl" ToRole="LookUpTbl" />
-          <NavigationProperty Name="MusicianTbls" Relationship="Self.FK__MusicianT__UserI__59FA5E80" FromRole="UserTbl" ToRole="MusicianTbl" />
           <NavigationProperty Name="PerformanceGroupTbls" Relationship="Self.FK__Performan__UserI__60A75C0F" FromRole="UserTbl" ToRole="PerformanceGroupTbl" />
           <NavigationProperty Name="PerformanceTbls" Relationship="Self.FK__Performan__UserI__6EF57B66" FromRole="UserTbl" ToRole="PerformanceTbl" />
           <NavigationProperty Name="UserUserTypes" Relationship="Self.FK__UserUserT__UserI__4E88ABD4" FromRole="UserTbl" ToRole="UserUserType" />
+          <NavigationProperty Name="MusicianTbls" Relationship="AllClassicDBModel.FK__MusicianT__UserI__59FA5E80" FromRole="UserTbl" ToRole="MusicianTbl" />
         </EntityType>
         <EntityType Name="UserUserType">
           <Key>
@@ -1035,30 +1042,6 @@
             </Principal>
             <Dependent Role="InstrumentTbl">
               <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__MusicianT__Major__5812160E">
-          <End Role="InstrumentTbl" Type="Self.InstrumentTbl" Multiplicity="1" />
-          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="InstrumentTbl">
-              <PropertyRef Name="InstrumentID" />
-            </Principal>
-            <Dependent Role="MusicianTbl">
-              <PropertyRef Name="Major1" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__MusicianT__Major__59063A47">
-          <End Role="InstrumentTbl" Type="Self.InstrumentTbl" Multiplicity="0..1" />
-          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="InstrumentTbl">
-              <PropertyRef Name="InstrumentID" />
-            </Principal>
-            <Dependent Role="MusicianTbl">
-              <PropertyRef Name="Major2" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1206,54 +1189,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MusicianT__UserI__59FA5E80">
-          <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
-          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserTbl">
-              <PropertyRef Name="UserID" />
-            </Principal>
-            <Dependent Role="MusicianTbl">
-              <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Performan__Condu__6C190EBB">
-          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
-          <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MusicianTbl">
-              <PropertyRef Name="MusicianID" />
-            </Principal>
-            <Dependent Role="PerformanceTbl">
-              <PropertyRef Name="Conductor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Performan__MainT__6D0D32F4">
-          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
-          <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MusicianTbl">
-              <PropertyRef Name="MusicianID" />
-            </Principal>
-            <Dependent Role="PerformanceTbl">
-              <PropertyRef Name="MainTitleComposer" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Performan__Music__72C60C4A">
-          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
-          <End Role="PerformanceMusicianInstrumentTbl" Type="Self.PerformanceMusicianInstrumentTbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MusicianTbl">
-              <PropertyRef Name="MusicianID" />
-            </Principal>
-            <Dependent Role="PerformanceMusicianInstrumentTbl">
-              <PropertyRef Name="MusicianID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Performan__Perfo__6A30C649">
           <End Role="PerformanceGroupTbl" Type="Self.PerformanceGroupTbl" Multiplicity="1" />
           <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -1327,7 +1262,6 @@
           <EntitySet Name="CollegeTbls" EntityType="Self.CollegeTbl" />
           <EntitySet Name="LookUpTbls" EntityType="Self.LookUpTbl" />
           <EntitySet Name="MusicianEndorserTbls" EntityType="Self.MusicianEndorserTbl" />
-          <EntitySet Name="MusicianTbls" EntityType="Self.MusicianTbl" />
           <EntitySet Name="PerformanceGroupTbls" EntityType="Self.PerformanceGroupTbl" />
           <EntitySet Name="PerformanceMusicianInstrumentTbls" EntityType="Self.PerformanceMusicianInstrumentTbl" />
           <EntitySet Name="PerformanceTbls" EntityType="Self.PerformanceTbl" />
@@ -1336,14 +1270,6 @@
           <AssociationSet Name="FK__Instrumen__UserI__5535A963" Association="Self.FK__Instrumen__UserI__5535A963">
             <End Role="UserTbl" EntitySet="UserTbls" />
             <End Role="InstrumentTbl" EntitySet="InstrumentTbls" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MusicianT__Major__5812160E" Association="Self.FK__MusicianT__Major__5812160E">
-            <End Role="InstrumentTbl" EntitySet="InstrumentTbls" />
-            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MusicianT__Major__59063A47" Association="Self.FK__MusicianT__Major__59063A47">
-            <End Role="InstrumentTbl" EntitySet="InstrumentTbls" />
-            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
           </AssociationSet>
           <AssociationSet Name="FK__Performan__Instr__73BA3083" Association="Self.FK__Performan__Instr__73BA3083">
             <End Role="InstrumentTbl" EntitySet="InstrumentTbls" />
@@ -1393,22 +1319,6 @@
             <End Role="LookUpTbl" EntitySet="LookUpTbls" />
             <End Role="PerformanceTbl" EntitySet="PerformanceTbls" />
           </AssociationSet>
-          <AssociationSet Name="FK__MusicianT__UserI__59FA5E80" Association="Self.FK__MusicianT__UserI__59FA5E80">
-            <End Role="UserTbl" EntitySet="UserTbls" />
-            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Performan__Condu__6C190EBB" Association="Self.FK__Performan__Condu__6C190EBB">
-            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
-            <End Role="PerformanceTbl" EntitySet="PerformanceTbls" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Performan__MainT__6D0D32F4" Association="Self.FK__Performan__MainT__6D0D32F4">
-            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
-            <End Role="PerformanceTbl" EntitySet="PerformanceTbls" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Performan__Music__72C60C4A" Association="Self.FK__Performan__Music__72C60C4A">
-            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
-            <End Role="PerformanceMusicianInstrumentTbl" EntitySet="PerformanceMusicianInstrumentTbls" />
-          </AssociationSet>
           <AssociationSet Name="FK__Performan__Perfo__6A30C649" Association="Self.FK__Performan__Perfo__6A30C649">
             <End Role="PerformanceGroupTbl" EntitySet="PerformanceGroupTbls" />
             <End Role="PerformanceTbl" EntitySet="PerformanceTbls" />
@@ -1429,7 +1339,168 @@
             <End Role="UserTbl" EntitySet="UserTbls" />
             <End Role="UserUserType" EntitySet="UserUserTypes" />
           </AssociationSet>
+          <EntitySet Name="MusicianTbls" EntityType="AllClassicDBModel.MusicianTbl" />
+          <AssociationSet Name="FK__MusicianT__Major__5812160E" Association="AllClassicDBModel.FK__MusicianT__Major__5812160E">
+            <End Role="InstrumentTbl" EntitySet="InstrumentTbls" />
+            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MusicianT__Major__59063A47" Association="AllClassicDBModel.FK__MusicianT__Major__59063A47">
+            <End Role="InstrumentTbl" EntitySet="InstrumentTbls" />
+            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MusicianT__Major__02084FDA" Association="AllClassicDBModel.FK__MusicianT__Major__02084FDA">
+            <End Role="LookUpTbl" EntitySet="LookUpTbls" />
+            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MusicianT__UserI__59FA5E80" Association="AllClassicDBModel.FK__MusicianT__UserI__59FA5E80">
+            <End Role="UserTbl" EntitySet="UserTbls" />
+            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Performan__Condu__6C190EBB" Association="AllClassicDBModel.FK__Performan__Condu__6C190EBB">
+            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
+            <End Role="PerformanceTbl" EntitySet="PerformanceTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Performan__MainT__6D0D32F4" Association="AllClassicDBModel.FK__Performan__MainT__6D0D32F4">
+            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
+            <End Role="PerformanceTbl" EntitySet="PerformanceTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Performan__Music__72C60C4A" Association="AllClassicDBModel.FK__Performan__Music__72C60C4A">
+            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
+            <End Role="PerformanceMusicianInstrumentTbl" EntitySet="PerformanceMusicianInstrumentTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MusicianE__Music__02FC7413" Association="AllClassicDBModel.FK__MusicianE__Music__02FC7413">
+            <End Role="MusicianTbl" EntitySet="MusicianTbls" />
+            <End Role="MusicianEndorserTbl" EntitySet="MusicianEndorserTbls" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="MusicianTbl">
+          <Key>
+            <PropertyRef Name="MusicianID" />
+          </Key>
+          <Property Name="MusicianID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Twitter" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="KakaoTalk" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Affliation" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Major1" Type="Int32" />
+          <Property Name="Major2" Type="Int32" />
+          <Property Name="Photo1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Photo2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Profile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Repertory" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Major" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="InstrumentTbl" Relationship="AllClassicDBModel.FK__MusicianT__Major__5812160E" FromRole="MusicianTbl" ToRole="InstrumentTbl" />
+          <NavigationProperty Name="InstrumentTbl1" Relationship="AllClassicDBModel.FK__MusicianT__Major__59063A47" FromRole="MusicianTbl" ToRole="InstrumentTbl" />
+          <NavigationProperty Name="LookUpTbl" Relationship="AllClassicDBModel.FK__MusicianT__Major__02084FDA" FromRole="MusicianTbl" ToRole="LookUpTbl" />
+          <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__MusicianT__UserI__59FA5E80" FromRole="MusicianTbl" ToRole="UserTbl" />
+          <NavigationProperty Name="PerformanceTbls" Relationship="AllClassicDBModel.FK__Performan__Condu__6C190EBB" FromRole="MusicianTbl" ToRole="PerformanceTbl" />
+          <NavigationProperty Name="PerformanceTbls1" Relationship="AllClassicDBModel.FK__Performan__MainT__6D0D32F4" FromRole="MusicianTbl" ToRole="PerformanceTbl" />
+          <NavigationProperty Name="PerformanceMusicianInstrumentTbls" Relationship="AllClassicDBModel.FK__Performan__Music__72C60C4A" FromRole="MusicianTbl" ToRole="PerformanceMusicianInstrumentTbl" />
+          <NavigationProperty Name="MusicianEndorserTbls" Relationship="AllClassicDBModel.FK__MusicianE__Music__02FC7413" FromRole="MusicianTbl" ToRole="MusicianEndorserTbl" />
+        </EntityType>
+        <Association Name="FK__MusicianT__Major__5812160E">
+          <End Type="AllClassicDBModel.InstrumentTbl" Role="InstrumentTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.MusicianTbl" Role="MusicianTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InstrumentTbl">
+              <PropertyRef Name="InstrumentID" />
+            </Principal>
+            <Dependent Role="MusicianTbl">
+              <PropertyRef Name="Major1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MusicianT__Major__59063A47">
+          <End Type="AllClassicDBModel.InstrumentTbl" Role="InstrumentTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.MusicianTbl" Role="MusicianTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InstrumentTbl">
+              <PropertyRef Name="InstrumentID" />
+            </Principal>
+            <Dependent Role="MusicianTbl">
+              <PropertyRef Name="Major2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MusicianT__Major__02084FDA">
+          <End Type="AllClassicDBModel.LookUpTbl" Role="LookUpTbl" Multiplicity="1" />
+          <End Type="AllClassicDBModel.MusicianTbl" Role="MusicianTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookUpTbl">
+              <PropertyRef Name="LookUpID" />
+            </Principal>
+            <Dependent Role="MusicianTbl">
+              <PropertyRef Name="Major" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MusicianT__UserI__59FA5E80">
+          <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.MusicianTbl" Role="MusicianTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="MusicianTbl">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Performan__Condu__6C190EBB">
+          <End Type="AllClassicDBModel.MusicianTbl" Role="MusicianTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.PerformanceTbl" Role="PerformanceTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicianTbl">
+              <PropertyRef Name="MusicianID" />
+            </Principal>
+            <Dependent Role="PerformanceTbl">
+              <PropertyRef Name="Conductor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Performan__MainT__6D0D32F4">
+          <End Type="AllClassicDBModel.MusicianTbl" Role="MusicianTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.PerformanceTbl" Role="PerformanceTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicianTbl">
+              <PropertyRef Name="MusicianID" />
+            </Principal>
+            <Dependent Role="PerformanceTbl">
+              <PropertyRef Name="MainTitleComposer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Performan__Music__72C60C4A">
+          <End Type="AllClassicDBModel.MusicianTbl" Role="MusicianTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.PerformanceMusicianInstrumentTbl" Role="PerformanceMusicianInstrumentTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicianTbl">
+              <PropertyRef Name="MusicianID" />
+            </Principal>
+            <Dependent Role="PerformanceMusicianInstrumentTbl">
+              <PropertyRef Name="MusicianID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MusicianE__Music__02FC7413">
+          <End Type="AllClassicDBModel.MusicianTbl" Role="MusicianTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.MusicianEndorserTbl" Role="MusicianEndorserTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicianTbl">
+              <PropertyRef Name="MusicianID" />
+            </Principal>
+            <Dependent Role="MusicianEndorserTbl">
+              <PropertyRef Name="MusicianID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1608,36 +1679,13 @@
           <EntitySetMapping Name="MusicianEndorserTbls">
             <EntityTypeMapping TypeName="AllClassicDBModel.MusicianEndorserTbl">
               <MappingFragment StoreEntitySet="MusicianEndorserTbl">
+                <ScalarProperty Name="MusicianID" ColumnName="MusicianID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="EndorserName" ColumnName="EndorserName" />
                 <ScalarProperty Name="EndorserEmail" ColumnName="EndorserEmail" />
                 <ScalarProperty Name="RequestedDate" ColumnName="RequestedDate" />
                 <ScalarProperty Name="EndorsedDate" ColumnName="EndorsedDate" />
                 <ScalarProperty Name="status" ColumnName="status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MusicianTbls">
-            <EntityTypeMapping TypeName="AllClassicDBModel.MusicianTbl">
-              <MappingFragment StoreEntitySet="MusicianTbl">
-                <ScalarProperty Name="MusicianID" ColumnName="MusicianID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
-                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
-                <ScalarProperty Name="Twitter" ColumnName="Twitter" />
-                <ScalarProperty Name="KakaoTalk" ColumnName="KakaoTalk" />
-                <ScalarProperty Name="Affliation" ColumnName="Affliation" />
-                <ScalarProperty Name="Major1" ColumnName="Major1" />
-                <ScalarProperty Name="Major2" ColumnName="Major2" />
-                <ScalarProperty Name="Photo1" ColumnName="Photo1" />
-                <ScalarProperty Name="Photo2" ColumnName="Photo2" />
-                <ScalarProperty Name="Profile" ColumnName="Profile" />
-                <ScalarProperty Name="Repertory" ColumnName="Repertory" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1733,6 +1781,31 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MusicianTbls">
+            <EntityTypeMapping TypeName="AllClassicDBModel.MusicianTbl">
+              <MappingFragment StoreEntitySet="MusicianTbl">
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Repertory" ColumnName="Repertory" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="Photo2" ColumnName="Photo2" />
+                <ScalarProperty Name="Photo1" ColumnName="Photo1" />
+                <ScalarProperty Name="Major2" ColumnName="Major2" />
+                <ScalarProperty Name="Major1" ColumnName="Major1" />
+                <ScalarProperty Name="Affliation" ColumnName="Affliation" />
+                <ScalarProperty Name="KakaoTalk" ColumnName="KakaoTalk" />
+                <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MusicianID" ColumnName="MusicianID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

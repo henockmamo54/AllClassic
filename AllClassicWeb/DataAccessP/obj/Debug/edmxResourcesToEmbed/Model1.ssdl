@@ -168,6 +168,7 @@
     <Property Name="RequestedDate" Type="datetime" />
     <Property Name="EndorsedDate" Type="datetime" />
     <Property Name="status" Type="bit" />
+    <Property Name="MusicianID" Type="int" />
   </EntityType>
   <EntityType Name="MusicianTbl">
     <Key>
@@ -183,7 +184,7 @@
     <Property Name="Twitter" Type="nvarchar" MaxLength="30" />
     <Property Name="KakaoTalk" Type="nvarchar" MaxLength="30" />
     <Property Name="Affliation" Type="nvarchar" MaxLength="40" />
-    <Property Name="Major1" Type="int" Nullable="false" />
+    <Property Name="Major1" Type="int" />
     <Property Name="Major2" Type="int" />
     <Property Name="Photo1" Type="nvarchar" MaxLength="80" />
     <Property Name="Photo2" Type="nvarchar" MaxLength="80" />
@@ -191,6 +192,7 @@
     <Property Name="Repertory" Type="nvarchar" MaxLength="200" />
     <Property Name="UserID" Type="int" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="Major" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PerformanceGroupTbl">
     <Key>
@@ -306,8 +308,32 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__MusicianE__Music__02FC7413">
+    <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
+    <End Role="MusicianEndorserTbl" Type="Self.MusicianEndorserTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusicianTbl">
+        <PropertyRef Name="MusicianID" />
+      </Principal>
+      <Dependent Role="MusicianEndorserTbl">
+        <PropertyRef Name="MusicianID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MusicianT__Major__02084FDA">
+    <End Role="LookUpTbl" Type="Self.LookUpTbl" Multiplicity="1" />
+    <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LookUpTbl">
+        <PropertyRef Name="LookUpID" />
+      </Principal>
+      <Dependent Role="MusicianTbl">
+        <PropertyRef Name="Major" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__MusicianT__Major__5812160E">
-    <End Role="InstrumentTbl" Type="Self.InstrumentTbl" Multiplicity="1" />
+    <End Role="InstrumentTbl" Type="Self.InstrumentTbl" Multiplicity="0..1" />
     <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="InstrumentTbl">
@@ -596,6 +622,14 @@
     <AssociationSet Name="FK__LookUpTbl__UserI__52593CB8" Association="Self.FK__LookUpTbl__UserI__52593CB8">
       <End Role="UserTbl" EntitySet="UserTbl" />
       <End Role="LookUpTbl" EntitySet="LookUpTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MusicianE__Music__02FC7413" Association="Self.FK__MusicianE__Music__02FC7413">
+      <End Role="MusicianTbl" EntitySet="MusicianTbl" />
+      <End Role="MusicianEndorserTbl" EntitySet="MusicianEndorserTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MusicianT__Major__02084FDA" Association="Self.FK__MusicianT__Major__02084FDA">
+      <End Role="LookUpTbl" EntitySet="LookUpTbl" />
+      <End Role="MusicianTbl" EntitySet="MusicianTbl" />
     </AssociationSet>
     <AssociationSet Name="FK__MusicianT__Major__5812160E" Association="Self.FK__MusicianT__Major__5812160E">
       <End Role="InstrumentTbl" EntitySet="InstrumentTbl" />

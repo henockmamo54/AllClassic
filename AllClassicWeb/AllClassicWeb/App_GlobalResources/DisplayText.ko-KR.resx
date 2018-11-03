@@ -341,4 +341,57 @@
     <value>우편 번호</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="AddNewData" xml:space="preserve">
+    <value>새 정보 입력</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Major" xml:space="preserve">
+    <value>전공</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="NewDataInputScreen" xml:space="preserve">
+    <value>New Data Input Screen</value>
+  </data>
+  <data name="Photo1" xml:space="preserve">
+    <value>프로필 사진 1</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Photo2" xml:space="preserve">
+    <value>프로필 사진 2</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>추가</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>지우다</value>
+  </data>
+  <data name="EndorsedDate" xml:space="preserve">
+    <value>인증 일자</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Endorser" xml:space="preserve">
+    <value>인증자</value>
+  </data>
+  <data name="EndorserEmailID" xml:space="preserve">
+    <value>인증자 이메일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="EndorserName" xml:space="preserve">
+    <value>인증자 이름</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="ProfilePage" xml:space="preserve">
+    <value>프로필 화면</value>
+  </data>
+  <data name="Repertory" xml:space="preserve">
+    <value>레파토리</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>저장</value>
+  </data>
 </root>
