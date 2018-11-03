@@ -48,5 +48,31 @@ namespace AllClassicWeb.Views
             }
         }
 
+        protected void selectedFilterChanged(object sender, EventArgs e)
+        {
+            var filterQuery = "";
+            if (DropDownList1_Majorfilter.SelectedIndex != 0) filterQuery += " where m.Major like N'%" + DropDownList1_Majorfilter.SelectedItem.Text + "%'";
+            if (txt_repertoryfilter.Text.ToString().Length > 0)
+            {
+                if (DropDownList1_Majorfilter.SelectedIndex != 0) filterQuery += " And ";
+                else filterQuery += " Where ";
+
+                filterQuery += " m.Repertory like N'%" + txt_repertoryfilter.Text.ToString() + "%'";
+            }
+            if (txtbox_namefilter.Text.ToString().Length > 0)
+            {
+                if (DropDownList1_Majorfilter.SelectedIndex != 0 || txt_repertoryfilter.Text.ToString().Length > 0) filterQuery += " And ";
+                else filterQuery += " Where ";
+
+                filterQuery += " m.Name like N'%" + txtbox_namefilter.Text + "%'";
+            }
+
+            SqlDataSource1_artistlist.SelectCommand = string.Format(@"SELECT top 20 m.*,u.EmailID FROM Main.[MusicianTbl] m
+                join Main.UserTbl u on m.UserID=u.UserID"+filterQuery+@"
+                order by m.UpdateTimeStamp desc");
+
+            artistListContainer.DataBind();
+        }
+
     }
 }
