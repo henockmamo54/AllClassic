@@ -76,7 +76,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <strong><%# Resources.DisplayText.Major %>: </strong>
                                             <%#Eval("Major") %>
                                         </p>
-                                        <a href="ArtistProfilePaage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default"><%= Resources.DisplayText.HomePage %></a>
+                                        <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default"><%= Resources.DisplayText.HomePage %></a>
                                     </div>
                                 </div>
                             </div>

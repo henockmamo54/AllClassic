@@ -167,6 +167,7 @@
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\MusicianDB.aspx" />
     <Content Include="Views\MusicianDBAddNew.aspx" />
+    <Content Include="Views\MusicianDetailPage.aspx" />
     <Content Include="Views\SignUp\TermsOfUsePage.aspx" />
     <Content Include="Views\SignUp\UserInformationRegistration.aspx" />
     <Content Include="Web.config" />
@@ -252,6 +253,13 @@
     </Compile>
     <Compile Include="Views\MusicianDBAddNew.aspx.designer.cs">
       <DependentUpon>MusicianDBAddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MusicianDetailPage.aspx.cs">
+      <DependentUpon>MusicianDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MusicianDetailPage.aspx.designer.cs">
+      <DependentUpon>MusicianDetailPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\SignUp\TermsOfUsePage.aspx.cs">
       <DependentUpon>TermsOfUsePage.aspx</DependentUpon>
