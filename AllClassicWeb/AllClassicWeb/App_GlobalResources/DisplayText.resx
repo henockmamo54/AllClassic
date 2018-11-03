@@ -377,4 +377,8 @@
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Home Page</value>
+    <comment>Table Schema</comment>
+  </data>
 </root>
