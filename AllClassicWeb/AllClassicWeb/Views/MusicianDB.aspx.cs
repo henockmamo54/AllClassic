@@ -16,6 +16,8 @@ namespace AllClassicWeb.Views
 
         protected void onclick_btn_addNewMusician(object sender, EventArgs e)
         {
+            Session["MusicianID"] = 18;
+            Session["updateMusician"] = true;
             Response.Redirect("MusicianDBAddNew.aspx");
         }
     }

@@ -16,11 +16,51 @@ namespace AllClassicWeb.Views
             manageFileUpload1();
             manageFileUpload2();
 
-            if (!IsPostBack) {
+            if (!IsPostBack)
+            {
                 Session["myendorsmentlist"] = null;
+                if (Session["updateMusician"] != null)
+                {
+                    if (Boolean.Parse(Session["updateMusician"].ToString()) == true)
+                    {
+                        try
+                        {
+                            loadMuscianInfo(int.Parse(Session["MusicianID"].ToString()));
+                        }
+                        catch (Exception loaingexception) { }
+                    }
+                }
             }
         }
 
+        private void loadMuscianInfo(int id)
+        {
+
+            Session["myendorsmentlist"] = null;
+            MusicianTbl artist = BusinessLogic.MusicianLogic.getMusicianByID(id);
+            if (artist != null) {
+                txt_name.Text = artist.Name;
+                txt_email.Text =artist.EmailID;
+                txt_mobilenumber.Text = artist.MobileNo;
+                txt_zipcode.Text = artist.ZipCode;
+                txt_facebook.Text = artist.Facebook;
+                txt_twitter.Text = artist.Twitter;
+                txt_kakaoID.Text = artist.KakaoTalk;
+                txt_address.Text = artist.Address;
+                txt_youraffiliation.Text = artist.Affliation;
+                txt_repertory.Text = artist.Repertory;
+                txt_profilepage.Text = artist.Profile;
+                //DropDownList1_Major.Items.FindByValue(artist.Major.ToString()).Selected = true;
+
+                var endorserlist = artist.MusicianEndorserTbls.ToList();
+                if (endorserlist != null && endorserlist.Count > 0) {
+                    Session["myendorsmentlist"] = endorserlist;
+                    myendorsmentlist.DataSource = endorserlist;
+                    myendorsmentlist.DataBind();
+                }
+
+            }
+        }
 
         public void btn_remove_endorser_tolist(object sender, CommandEventArgs e)
         {
@@ -35,7 +75,7 @@ namespace AllClassicWeb.Views
                 Session["myendorsmentlist"] = mylist;
             }
         }
-        
+
         protected void btnAddEndorser_Click(object sender, EventArgs e)
         {
             MusicianEndorserTbl endorser = new MusicianEndorserTbl();
@@ -43,7 +83,7 @@ namespace AllClassicWeb.Views
             endorser.EndorserEmail = FormControlTextarea1_email.Text;
             endorser.RequestedDate = DateTime.Now;
             endorser.status = false;
-            
+
             if (Session["myendorsmentlist"] != null)
             {
                 List<MusicianEndorserTbl> mylist = (List<MusicianEndorserTbl>)Session["myendorsmentlist"];
@@ -90,6 +130,7 @@ namespace AllClassicWeb.Views
                 artist.Repertory = txt_repertory.Text;
                 artist.UserID = 5;
                 artist.UpdateTimeStamp = DateTime.Now;
+                artist.Affliation = txt_youraffiliation.Text;
 
 
 
@@ -174,7 +215,8 @@ namespace AllClassicWeb.Views
             return true;
         }
 
-        public void manageFileUpload1() {
+        public void manageFileUpload1()
+        {
             if (this.Session["FileUpload_photo1"] == null && FileUpload_photo1.HasFile)
             {
                 this.Session["FileUpload_photo1"] = FileUpload_photo1;
@@ -188,8 +230,6 @@ namespace AllClassicWeb.Views
                 this.Session["FileUpload_photo1"] = FileUpload_photo1;
             }
         }
-
-
 
         public void manageFileUpload2()
         {
@@ -207,6 +247,55 @@ namespace AllClassicWeb.Views
             }
         }
 
+        public void btn_artistsave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int artistID = int.Parse(Session["MusicianID"].ToString());
+                MusicianTbl artist = BusinessLogic.MusicianLogic.getMusicianByID(artistID);
+                artist.Name = txt_name.Text;
+                artist.EmailID = txt_email.Text;
+                artist.MobileNo = txt_mobilenumber.Text;
+                artist.Address = txt_address.Text;
+                artist.ZipCode = txt_zipcode.Text;
+                //if (int.Parse(DropDownList1_Affilation.SelectedValue) == -1)
+                //    artist.Affiliation = uaffilation.Text;
+                //else artist.Affiliation = DropDownList1_Affilation.SelectedItem.Text;
 
+                artist.Facebook = txt_facebook.Text;
+                artist.Twitter = txt_twitter.Text;
+                artist.KakaoTalk = txt_kakaoID.Text;
+                artist.Major = int.Parse(DropDownList1_Major.SelectedValue.ToString());
+                getPhoto(artist, 2, FileUpload_photo1);
+                getPhoto(artist, 2, FileUpload_photo2);
+                artist.Profile = txt_profilepage.Text;
+                artist.Repertory = txt_repertory.Text;
+                artist.UserID = 5;
+                artist.UpdateTimeStamp = DateTime.Now;
+                artist.Affliation = txt_youraffiliation.Text;
+                               
+                var listOfPreviousEndorserlist = artist.MusicianEndorserTbls.ToList();
+                var currentlistofEndorserlist = (List<MusicianEndorserTbl>)Session["myendorsmentlist"];
+                var deleted = listOfPreviousEndorserlist.Except(currentlistofEndorserlist).ToList();
+                var added = currentlistofEndorserlist.Except(listOfPreviousEndorserlist).ToList();
+
+                artist = MusicianLogic.updateRegisteredMusician(added, deleted, artist);
+
+                if (artist != null)
+                {
+                    showMsg("Data inserted succssfuly");
+                    cleanArtistTextBoxs();
+
+                    //sending message to endorsers
+                    //sendEmailToEndorser(x.Email, artist, x);
+
+                }
+                else showMsg("Please check your inputs");
+            }
+            catch (Exception ee)
+            {
+                showMsg("Please check your inputs");
+            }
+        }
     }
 }
