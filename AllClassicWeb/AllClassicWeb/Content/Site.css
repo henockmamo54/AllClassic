@@ -183,3 +183,10 @@ a.list-group-item {
     border-bottom: 1px solid #e4e4e4;
 }
 
+.orchContainer {
+    background: white;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid #dadce4;
+}

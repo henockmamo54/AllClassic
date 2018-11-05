@@ -13,6 +13,42 @@ namespace AllClassicWeb.Views {
     public partial class PerformanceGroup {
         
         /// <summary>
+        /// SqlDataSource1_getrecent20artists control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_getrecent20artists;
+        
+        /// <summary>
+        /// artistPageRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater artistPageRepeater;
+        
+        /// <summary>
+        /// pgListContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView pgListContainer;
+        
+        /// <summary>
+        /// SqlDataSource1_pglist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_pglist;
+        
+        /// <summary>
         /// btn_addNewPerformanceGroup control.
         /// </summary>
         /// <remarks>
