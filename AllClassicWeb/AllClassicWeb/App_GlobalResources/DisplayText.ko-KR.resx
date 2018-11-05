@@ -404,4 +404,27 @@
   <data name="Update" xml:space="preserve">
     <value>최신 정보</value>
   </data>
+  <data name="Alias" xml:space="preserve">
+    <value>별칭</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>도시</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="FaxNo" xml:space="preserve">
+    <value>팩스 번호</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="GroupType" xml:space="preserve">
+    <value>공연단 타입</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="SinceYear" xml:space="preserve">
+    <value>설립 년도</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="TelNo" xml:space="preserve">
+    <value>연락 전화 번호</value>
+    <comment>Table Schema</comment>
+  </data>
 </root>

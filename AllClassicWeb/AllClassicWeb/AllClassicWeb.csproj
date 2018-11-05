@@ -168,6 +168,8 @@
     <Content Include="Views\MusicianDB.aspx" />
     <Content Include="Views\MusicianDBAddNew.aspx" />
     <Content Include="Views\MusicianDetailPage.aspx" />
+    <Content Include="Views\PerformanceGroup.aspx" />
+    <Content Include="Views\PerformanceGroupAddNew.aspx" />
     <Content Include="Views\SignUp\TermsOfUsePage.aspx" />
     <Content Include="Views\SignUp\UserInformationRegistration.aspx" />
     <Content Include="Web.config" />
@@ -260,6 +262,20 @@
     </Compile>
     <Compile Include="Views\MusicianDetailPage.aspx.designer.cs">
       <DependentUpon>MusicianDetailPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerformanceGroup.aspx.cs">
+      <DependentUpon>PerformanceGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PerformanceGroup.aspx.designer.cs">
+      <DependentUpon>PerformanceGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerformanceGroupAddNew.aspx.cs">
+      <DependentUpon>PerformanceGroupAddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PerformanceGroupAddNew.aspx.designer.cs">
+      <DependentUpon>PerformanceGroupAddNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\SignUp\TermsOfUsePage.aspx.cs">
       <DependentUpon>TermsOfUsePage.aspx</DependentUpon>
