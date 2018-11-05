@@ -15,7 +15,7 @@
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.FullName %>*</div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_name" runat="server" class="form-control"></asp:TextBox>
-                            
+
                         </div>
                         <br />
                     </div>
@@ -222,7 +222,7 @@ or maincode='Conductor'
 
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1"><%= Resources.DisplayText.EndorserName %></label>
-                                        <asp:TextBox runat="server" type="text" class="form-control" ID="FormControlInput1_Name" placeholder="Name of the Endorser" />
+                                        <asp:TextBox runat="server" type="text" TextMode="SingleLine" class="form-control" ID="FormControlInput1_Name" placeholder="Name of the Endorser" />
                                     </div>
 
                                     <div class="form-group">
@@ -244,7 +244,7 @@ or maincode='Conductor'
                 <div class="row">
 
                     <div class="row col-md-12 col-xs-12">
-                        <asp:Button Visible="true" ID="btn_artist_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>"  OnClick="btn_artistcancel_Click" Style="margin-right: 10px;" />
+                        <asp:Button Visible="true" ID="btn_artist_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_artistcancel_Click" Style="margin-right: 10px;" />
                         <asp:Button Visible="true" ID="btn_artist_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
                         <asp:Button ID="btn_artist_add" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_artistadd_Click" Style="margin-right: 10px;" />
                     </div>
@@ -252,7 +252,7 @@ or maincode='Conductor'
             </ContentTemplate>
             <Triggers>
                 <asp:PostBackTrigger ControlID="btn_artist_add" />
-                <%--<asp:PostBackTrigger ControlID="btnsaveimagechange" />--%>
+                <asp:PostBackTrigger ControlID="btn_artist_save" />
                 <%--<asp:PostBackTrigger ControlID="btn_artist_save" />--%>
             </Triggers>
         </asp:UpdatePanel>
@@ -264,6 +264,9 @@ or maincode='Conductor'
         }
     </style>
     <script>
+
+        document.getElementById("artisttab").style.backgroundColor = "white";
+        document.getElementById("artisttab").style.borderBottom = "none";
 
         function closeModal() {
             $('#endorserModalLong').modal('hide');

@@ -18,6 +18,8 @@ namespace AllClassicWeb.Views
 
             if (!IsPostBack)
             {
+                handleButtons(true);
+
                 Session["myendorsmentlist"] = null;
                 if (Session["updateMusician"] != null)
                 {
@@ -25,12 +27,18 @@ namespace AllClassicWeb.Views
                     {
                         try
                         {
+                            handleButtons(false);
                             loadMuscianInfo(int.Parse(Session["MusicianID"].ToString()));
                         }
                         catch (Exception loaingexception) { }
                     }
                 }
             }
+        }
+
+        public void handleButtons(Boolean value) {
+            btn_artist_add.Visible = value;
+            btn_artist_save.Visible = !value;
         }
 
         private void loadMuscianInfo(int id)
@@ -124,7 +132,7 @@ namespace AllClassicWeb.Views
                 artist.Twitter = txt_twitter.Text;
                 artist.KakaoTalk = txt_kakaoID.Text;
                 artist.Major = int.Parse(DropDownList1_Major.SelectedValue.ToString());
-                getPhoto(artist, 2, FileUpload_photo1);
+                getPhoto(artist, 1, FileUpload_photo1);
                 getPhoto(artist, 2, FileUpload_photo2);
                 artist.Profile = txt_profilepage.Text;
                 artist.Repertory = txt_repertory.Text;
@@ -266,7 +274,7 @@ namespace AllClassicWeb.Views
                 artist.Twitter = txt_twitter.Text;
                 artist.KakaoTalk = txt_kakaoID.Text;
                 artist.Major = int.Parse(DropDownList1_Major.SelectedValue.ToString());
-                getPhoto(artist, 2, FileUpload_photo1);
+                getPhoto(artist, 1, FileUpload_photo1);
                 getPhoto(artist, 2, FileUpload_photo2);
                 artist.Profile = txt_profilepage.Text;
                 artist.Repertory = txt_repertory.Text;
@@ -285,7 +293,7 @@ namespace AllClassicWeb.Views
                 {
                     showMsg("Data inserted succssfuly");
                     cleanArtistTextBoxs();
-
+                    Response.Redirect("MusicianDetailPage?ID=" + artist.MusicianID);
                     //sending message to endorsers
                     //sendEmailToEndorser(x.Email, artist, x);
 

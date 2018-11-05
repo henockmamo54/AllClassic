@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-md-4 col-xs-4  col-xs-4 pull-right">
                         <h5 style="display: inline-block;"><%= Resources.DisplayText.Major %>  </h5>
-                        <asp:DropDownList style="display: inline-block; width:70%;" ID="DropDownList1_Majorfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID" OnSelectedIndexChanged="selectedFilterChanged"></asp:DropDownList>
+                        <asp:DropDownList Style="display: inline-block; width: 70%;" ID="DropDownList1_Majorfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID" OnSelectedIndexChanged="selectedFilterChanged"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -31,20 +31,36 @@ or maincode='Conductor'
 
             </div>
             <br />
+
             <div class="row" style="padding-right: 15px;">
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-SELECT top 20 m.*,u.EmailID FROM Main.[MusicianTbl] m
+SELECT top 20 m.*,u.EmailID, majorsubocode FROM Main.[MusicianTbl] m
 join Main.UserTbl u on m.UserID=u.UserID
+left join (
+select LookUpID,SubCode as majorsubocode from Main.LookUpTbl
+where maincode='Instrument'
+or maincode='Composer'
+or maincode='Conductor'
+) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 100px; height: 100px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 150px; height: 150px; overflow-y: scroll;">
                     <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
+                        <HeaderTemplate>
+                            <div class="col-xs-3"><strong><%= Resources.DisplayText.FullName %></strong></div> 
+                            <div class="col-xs-3"><strong><%= Resources.DisplayText.Major %></strong></div>
+                            <div class="col-xs-3"><strong><%= Resources.DisplayText.YourAffilation %></strong></div>
+                            <div class="col-xs-3"><strong><%= Resources.DisplayText.Email %></strong></div>
+                        </HeaderTemplate>
                         <ItemTemplate>
-                            <div>
+                            <asp:LinkButton runat="server" id="headertableItem" style="text-decoration:none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'>
+                                <div class=" row col-md-12 col-xs-12">
+                                    <hr style="background-color: #5f755f; margin: 0; margin-top: 5px;" />
+                                </div>
                                 <div class="col-xs-3"><%#Eval("Name") %></div>
-                                <div class="col-xs-3"><%#Eval("Major") %></div>
+                                <div class="col-xs-3"><%#Eval("majorsubocode") %></div>
                                 <div class="col-xs-3"><%#Eval("Affliation") %></div>
                                 <div class="col-xs-3"><%#Eval("UserID") %></div>
-                            </div>
+                            </asp:LinkButton>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
@@ -64,7 +80,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                         <div class="col-sm-4 col-xs-4" style="padding-right: 0px;">
                             <div class="row col-sm-12 col-xs-12" style="box-shadow: 0px 0px 5px 2px #d4d3d3; border-radius: 3px; margin-bottom: 2rem; padding-left: 0; background-color: white; font-family: Roboto, Arial, sans-serif;">
                                 <div class="col-sm-6 col-xs-6" style="padding: 0;">
-                                    <img style="width: 100%; height: 18.25rem; padding: 3px; border-radius: 7px;" class="card-img-top img-rounded" src="../Doc/artist/<%#Eval("Photo2") %>" alt="Card image cap">
+                                    <img style="width: 100%; height: 18.25rem; padding: 3px; border-radius: 7px;" class="card-img-top img-rounded" src="../Doc/artist/<%#Eval("Photo1") %>" alt="Card image cap">
                                 </div>
                                 <div class="col-sm-6 col-xs-6" style="margin: 0px; padding: 0px; padding-left: 8px; font-size: 1.2rem;">
                                     <div class="card-body">
@@ -74,7 +90,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <%#Eval("Affliation") %>
                                             <br />
                                             <strong><%# Resources.DisplayText.Major %>: </strong>
-                                            <%#Eval("Major") %>
+                                            <%#Eval("majorsubocode") %>
                                         </p>
                                         <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default"><%= Resources.DisplayText.HomePage %></a>
                                     </div>
@@ -106,8 +122,14 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                     </GroupSeparatorTemplate>
                 </asp:ListView>
                 <asp:SqlDataSource ID="SqlDataSource1_artistlist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-SELECT top 20 m.*,u.EmailID FROM Main.[MusicianTbl] m
+SELECT  m.*,u.EmailID, majorsubocode FROM Main.[MusicianTbl] m
 join Main.UserTbl u on m.UserID=u.UserID
+left join (
+select LookUpID,SubCode as majorsubocode from Main.LookUpTbl
+where maincode='Instrument'
+or maincode='Composer'
+or maincode='Conductor'
+) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
             <div class="row">
@@ -116,4 +138,13 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
 
         </ContentTemplate>
     </asp:UpdatePanel>
+    <script type="text/javascript">
+        document.getElementById("artisttab").style.backgroundColor = "white";
+        document.getElementById("artisttab").style.borderBottom = "none";
+        function onclick_headertableItem(x) {
+            alert(x);
+        }
+    </script>
 </asp:Content>
+
+

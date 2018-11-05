@@ -91,17 +91,21 @@
                             </div>
                         </div>
                     </div>
-                    
+
+
+                    <div class=" row col-md-12 col-xs-12">
+                        <hr style="background-color: #5f755f; height: 0.2rem;" />
+                    </div>
                     <div>
                         <h4>Endorsers</h4>
                         <asp:Repeater runat="server" ID="repeater_endorser">
                             <ItemTemplate>
                                 <div class="row col-md-12 col-xs-12">
                                     <div class="col-md-4 col-xs-4">
-                                        <asp:Label runat="server"><%# Eval("Name") %> :</asp:Label>
+                                        <asp:Label runat="server"><%# Eval("EndorserName") %> :</asp:Label>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
-                                        <asp:Label runat="server"><%# Eval("Comment") %></asp:Label>
+                                        <asp:Label runat="server"><%# Eval("EndorserEmail") %></asp:Label>
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -109,7 +113,7 @@
                     </div>
 
                     <div class="col-xs-12">
-                        <asp:Button runat="server" ID="btn_editArtist" OnClick="onclick_btn_editArtist" Text="<%$Resources:DisplayText,Edit %>" />
+                        <asp:Button CssClass="btn btn-primary" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editArtist" Text="<%$Resources:DisplayText,Edit %>" />
                     </div>
                 </div>
 

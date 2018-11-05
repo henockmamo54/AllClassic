@@ -20,7 +20,7 @@ namespace AllClassicWeb.Views
 
             if (artist != null)
             {
-                profileImage.ImageUrl = "../Doc/artist/" + artist.Photo2;
+                profileImage.ImageUrl = "../Doc/artist/" + artist.Photo1;
                 artistnamecontainer.InnerText = artist.Name;
                 address.Text = artist.Address;
                 zipCode.Text = artist.ZipCode;
@@ -32,12 +32,14 @@ namespace AllClassicWeb.Views
                 profilePage.Text = artist.Profile;
                 repertory.Text = artist.Repertory;
 
-
-
-                //var endorsers = entities.User_Endorser.Where(x => x.ArtistID == artist.ID).ToList();
-                //repeater_endorser.DataSource = endorsers;
-                //repeater_endorser.DataBind();
-
+                var endorserlist = artist.MusicianEndorserTbls.ToList();
+                if (endorserlist != null && endorserlist.Count > 0)
+                {
+                    Session["myendorsmentlist"] = endorserlist;
+                    repeater_endorser.DataSource = endorserlist;
+                    repeater_endorser.DataBind();
+                }
+                
             }
         }
 
