@@ -381,4 +381,10 @@
     <value>Home Page</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
 </root>

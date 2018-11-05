@@ -244,8 +244,8 @@ or maincode='Conductor'
                 <div class="row">
 
                     <div class="row col-md-12 col-xs-12">
-                        <asp:Button Visible="true" ID="btn_artist_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="Cancel" OnClick="btn_artistcancel_Click" Style="margin-right: 10px;" />
-                        <asp:Button Visible="true" ID="btn_artist_save" CssClass="btn btn-warning pull-right" runat="server" Text="Update" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
+                        <asp:Button Visible="true" ID="btn_artist_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>"  OnClick="btn_artistcancel_Click" Style="margin-right: 10px;" />
+                        <asp:Button Visible="true" ID="btn_artist_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
                         <asp:Button ID="btn_artist_add" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_artistadd_Click" Style="margin-right: 10px;" />
                     </div>
                 </div>

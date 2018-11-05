@@ -398,4 +398,10 @@
     <value>홈페이지</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="Edit" xml:space="preserve">
+    <value>편집하다</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>최신 정보</value>
+  </data>
 </root>

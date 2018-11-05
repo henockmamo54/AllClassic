@@ -4,6 +4,7 @@
 
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
+            <br />
             <div class="row">
                 <div class="col-md-6 col-xs-6 pull-left">
                     <asp:Image runat="server" ID="profileImage" Width="100%" CssClass="shadowedPanel" />
@@ -21,7 +22,9 @@
                                 <asp:Label runat="server" ID="major"></asp:Label>
                             </div>
                         </div>
-                        <hr style="background-color: #5f755f; height: 0.2rem;" />
+                        <div class=" row col-md-12 col-xs-12">
+                            <hr style="background-color: #5f755f; height: 0.2rem;" />
+                        </div>
                         <div class=" row col-md-12 col-xs-12">
                             <div class="col-md-3"><%=Resources.DisplayText.Repertory %>: </div>
                             <div class="col-md-8 col-xs-8">
@@ -34,7 +37,9 @@
                                 <asp:Label runat="server" ID="profilePage"></asp:Label>
                             </div>
                         </div>
-                        <hr style="background-color: #5f755f; height: 0.2rem;" />
+                        <div class=" row col-md-12 col-xs-12">
+                            <hr style="background-color: #5f755f; height: 0.2rem;" />
+                        </div>
                         <%--==================================================================--%>
 
                         <div class=" row col-md-12 col-xs-12">
@@ -86,8 +91,7 @@
                             </div>
                         </div>
                     </div>
-
-
+                    
                     <div>
                         <h4>Endorsers</h4>
                         <asp:Repeater runat="server" ID="repeater_endorser">
@@ -104,6 +108,9 @@
                         </asp:Repeater>
                     </div>
 
+                    <div class="col-xs-12">
+                        <asp:Button runat="server" ID="btn_editArtist" OnClick="onclick_btn_editArtist" Text="<%$Resources:DisplayText,Edit %>" />
+                    </div>
                 </div>
 
 

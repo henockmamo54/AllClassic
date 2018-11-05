@@ -14,7 +14,7 @@ namespace AllClassicWeb.Views
         int userID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["ID"]!=null)
+            if (Request.QueryString["ID"] != null)
                 userID = int.Parse(Request.QueryString["ID"]);
             MusicianTbl artist = BusinessLogic.MusicianLogic.getMusicianByID(userID);
 
@@ -38,6 +38,17 @@ namespace AllClassicWeb.Views
                 //repeater_endorser.DataSource = endorsers;
                 //repeater_endorser.DataBind();
 
+            }
+        }
+
+        public void onclick_btn_editArtist(object sender, EventArgs e)
+        {
+            if (Request.QueryString["ID"] != null)
+            {
+                userID = int.Parse(Request.QueryString["ID"]);
+                Session["MusicianID"] = userID;
+                Session["updateMusician"] = true;
+                Response.Redirect("MusicianDBAddNew.aspx");
             }
         }
     }
