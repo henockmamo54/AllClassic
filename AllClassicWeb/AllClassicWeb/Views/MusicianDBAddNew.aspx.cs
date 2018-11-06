@@ -189,6 +189,11 @@ namespace AllClassicWeb.Views
             txt_kakaoID.Text = "";
             txt_address.Text = "";
             txt_youraffiliation.Text = "";
+
+            Session["myendorsmentlist"] = null;
+            myendorsmentlist.DataSource = null;
+            myendorsmentlist.DataBind();
+            handleButtons(true);
         }
 
 
