@@ -61,7 +61,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <%--<asp:LinkButton runat="server" ID="LinkButton1" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'>--%>
-                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;">
+                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("PerformanceGroupID")%>'>
                                 <div class=" row col-md-12 col-xs-12">
                                     <hr style="background-color: #5f755f; margin: 0; margin-top: 5px;" />
                                 </div>
@@ -103,7 +103,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                                     <span><%# Resources.DisplayText.ZipCode %>: <%#Eval("ZipCode") %></span><br />
                                     <span><%# Resources.DisplayText.TelNo %>: <%#Eval("TelNO") %></span><br />
                                     <span><%# Resources.DisplayText.FaxNo %>: <%#Eval("FaxNo") %></span><br />
-                                    <span><a href='<%#Eval("HomePage") %>' target="_blank"><%# Resources.DisplayText.HomePage %></a></span>
+                                    <span><a href='PerformanceGroupDetail.aspx?PGID=<%#Eval("PerformanceGroupID") %>' ><%# Resources.DisplayText.HomePage %></a></span>
                                 </div>
                             </div>
 

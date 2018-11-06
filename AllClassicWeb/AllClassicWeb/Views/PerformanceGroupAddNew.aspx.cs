@@ -13,16 +13,93 @@ namespace AllClassicWeb.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["updatePerformanceGroup"] != null)
+                {
+                    handleButtons(true);
+                    if (Boolean.Parse(Session["updatePerformanceGroup"].ToString()) == true)
+                    {
+                        try
+                        {
+                            handleButtons(false);
+                            loadPerformanceGroupInfo(int.Parse(Session["PerformanceGroupID"].ToString()));
+                        }
+                        catch (Exception loaingexception) { }
+                    }
+                }
+            }
+        }
 
+        private void loadPerformanceGroupInfo(int id)
+        {
+            PerformanceGroupTbl pg = BusinessLogic.PerformanceGroupLogic.getPerformanceGroupByID(id);
+            if (pg != null)
+            {
+                txt_pgname.Text = pg.Name;
+                txt_alias.Text = pg.Alias;
+                //pg.GroupType = int.Parse(DropDownList1_grouptype.SelectedValue.ToString());
+                //pg.City = int.Parse(DropDownList1_city.SelectedValue.ToString());
+                txt_coductor.Text = pg.Conductor;
+                txt_sinceyear.Text = pg.SinceYear;
+                txt_email.Text = pg.EmailID;
+                txt_address.Text = pg.Address;
+                txt_zipcode.Text = pg.ZipCode;
+                txt_telno.Text = pg.TelNo;
+                txt_faxno.Text = pg.FaxNo;
+                txt_homepage.Text = pg.HomePage;
+            }
+        }
+
+        private void handleButtons(bool value)
+        {
+            btn_pg_add.Visible = value;
+            btn_pg_save.Visible = !value;
         }
 
         public void btn_pg_cancel_Click(object sender, EventArgs e)
         {
-
+            txt_pgname.Text = "";
+            txt_alias.Text = "";
+            //pg.GroupType = int.Parse(DropDownList1_grouptype.SelectedValue.ToString());
+            //pg.City = int.Parse(DropDownList1_city.SelectedValue.ToString());
+            txt_coductor.Text = "";
+            txt_sinceyear.Text = "";
+            txt_email.Text = "";
+            txt_address.Text = "";
+            txt_zipcode.Text = "";
+            txt_telno.Text = "";
+            txt_faxno.Text = "";
+            txt_homepage.Text = "";
         }
         public void btn_pg_save_Click(object sender, EventArgs e)
         {
+            int PGID = int.Parse(Session["PerformanceGroupID"].ToString());
+            PerformanceGroupTbl pg = BusinessLogic.PerformanceGroupLogic.getPerformanceGroupByID(PGID);
 
+            pg.Name = txt_pgname.Text;
+            pg.Alias = txt_alias.Text;
+            pg.GroupType = int.Parse(DropDownList1_grouptype.SelectedValue.ToString());
+            pg.City = int.Parse(DropDownList1_city.SelectedValue.ToString());
+            pg.Conductor = txt_coductor.Text;
+            pg.SinceYear = txt_sinceyear.Text;
+            pg.EmailID = txt_email.Text;
+            pg.Address = txt_address.Text;
+            pg.ZipCode = txt_zipcode.Text;
+            pg.TelNo = txt_telno.Text;
+            pg.FaxNo = txt_faxno.Text;
+            pg.HomePage = txt_homepage.Text;
+            pg.UserID = 5;
+            pg.UpdateTimeStamp = DateTime.Now;
+
+            pg = BusinessLogic.PerformanceGroupLogic.UpdatePerformanceGroupTbl(pg);
+            if (pg != null)
+            {
+                showMsg("Data inserted succssfuly");
+                cleanPGTextBoxs();
+                Response.Redirect("PerformanceGroupDetail?PGID=" + pg.PerformanceGroupID);
+            }
+            else showMsg("Please check your inputs");
         }
 
         public void btn_pg_add_Click(object sender, EventArgs e)
@@ -45,15 +122,16 @@ namespace AllClassicWeb.Views
                 pg.UserID = 5;
                 pg.UpdateTimeStamp = DateTime.Now;
 
-                pg =BusinessLogic.PerformanceGroupLogic.addPerformanceGroup(pg);
+                pg = BusinessLogic.PerformanceGroupLogic.addPerformanceGroup(pg);
                 if (pg != null)
                 {
                     showMsg("Data inserted succssfuly");
-                    cleanPGTextBoxs();                    
+                    cleanPGTextBoxs();
                 }
                 else showMsg("Please check your inputs");
             }
-            catch (Exception ee) {
+            catch (Exception ee)
+            {
 
             }
         }

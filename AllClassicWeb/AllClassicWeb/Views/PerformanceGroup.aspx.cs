@@ -53,9 +53,14 @@ left join(select* from Main.LookUpTbl where MainCode= 'GroupType') gt on pg.Grou
                 order by pg.UpdateTimeStamp desc");
 
             pgListContainer.DataBind();
+        }
 
 
 
+        protected void onclick_headertableItem(object sender, CommandEventArgs e)
+        {
+            var PerformanceGroupID = e.CommandArgument.ToString();
+            Response.Redirect("PerformanceGroupDetail?PGID=" + PerformanceGroupID);
         }
 
 
