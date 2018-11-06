@@ -3,14 +3,50 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
+            <br />
             <div class="row">
-                Performance group info will be added 
+                <div class="row col-md-12 col-xs-12  col-xs-12">
+                    <div class="col-md-4 col-xs-4 pull-right">
+                        <h5 style="display: inline-block;"><%= Resources.DisplayText.PerformanceGroup %> </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txt_performancegroup" runat="server" CssClass="form-control" Style="width: 50%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
+                    </div>
+
+                    <div class="col-md-2 col-xs-2 pull-right">
+                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Alias %> </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txt_alias" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
+                    </div>
+                    <div class="col-md-3 col-xs-3  col-xs-3 pull-right">
+                        <h5 style="display: inline-block;"><%= Resources.DisplayText.GroupType %>  </h5>
+                        <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control" Style="width: 50%; display: inline-block;" AutoPostBack="True" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID" OnSelectedIndexChanged="selectedFilterChanged"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1_grouptypelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
+Union
+SELECT LookUpID, MainCode, SubCode 
+FROM Main.LookUpTbl
+where maincode='GroupType'
+"></asp:SqlDataSource>
+
+                    </div>
+                    <div class="col-md-3 col-xs-3 pull-right">
+                        <h5 style="display: inline-block;"><%= Resources.DisplayText.City %>  </h5>
+                        <asp:DropDownList ID="DropDownList1_city" runat="server" class="form-control" AutoPostBack="True" Style="width: 50%; display: inline-block;" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID" OnSelectedIndexChanged="selectedFilterChanged"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
+Union
+SELECT LookUpID, MainCode, SubCode 
+FROM Main.LookUpTbl
+where maincode='City'
+"></asp:SqlDataSource>
+
+                    </div>
+                </div>
+
             </div>
+            <br />
+
             <div class="row" style="padding-right: 15px;">
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 pg.*, c.SubCode as cityname, gt.SubCode as grouptpename, u.EmailID from Main.PerformanceGroupTbl pg
 left join (select * from Main.LookUpTbl where MainCode='city') c on pg.City=c.LookUpID
-left join (select * from Main.LookUpTbl where MainCode='GroupType') gt on pg.City=gt.LookUpID
+left join (select * from Main.LookUpTbl where MainCode='GroupType') gt on pg.GroupType=gt.LookUpID
 join Main.UserTbl u on pg.UserID=u.UserID
 order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                 <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 150px; height: 150px; overflow-y: scroll;">
@@ -31,9 +67,9 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                                 </div>
                                 <div class="col-xs-2"><%#Eval("Name") %></div>
                                 <div class="col-xs-2"><%#Eval("Alias") %></div>
-                                <div class="col-xs-2"><%#Eval("GroupType") %></div>
+                                <div class="col-xs-2"><%#Eval("grouptpename") %></div>
                                 <div class="col-xs-2"><%#Eval("SinceYear") %></div>
-                                <div class="col-xs-2"><%#Eval("City") %></div>
+                                <div class="col-xs-2"><%#Eval("cityname") %></div>
                                 <div class="col-xs-2"><%#Eval("EmailID") %></div>
                             </asp:LinkButton>
                         </ItemTemplate>
@@ -58,6 +94,8 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <h5 style="color: #00796B;">(<%#Eval("Alias") %>)</h5>
                                 <div style="font-size: 1.2rem; color: #4c4949; margin-left: 10px;">
 
+                                    <span><%# Resources.DisplayText.GroupType %>: <%#Eval("grouptpename") %></span>
+                                    <br />
                                     <span><%# Resources.DisplayText.SinceYear %>: <%#Eval("SinceYear") %></span>
                                     <br />
                                     <span><%# Resources.DisplayText.Conductor %>: <%#Eval("Conductor").ToString().Length>12?Eval("Conductor").ToString().Substring(0,12):Eval("Conductor").ToString() %></span><br />
@@ -96,7 +134,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                 <asp:SqlDataSource ID="SqlDataSource1_pglist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select pg.*, c.SubCode as cityname, gt.SubCode as grouptpename from Main.PerformanceGroupTbl pg
 left join (select * from Main.LookUpTbl where MainCode='city') c on pg.City=c.LookUpID
-left join (select * from Main.LookUpTbl where MainCode='GroupType') gt on pg.City=gt.LookUpID
+left join (select * from Main.LookUpTbl where MainCode='GroupType') gt on pg.GroupType=gt.LookUpID
 order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
             <div class="row">
