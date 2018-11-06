@@ -410,4 +410,80 @@
     <value>Tel No</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainInstrument" xml:space="preserve">
+    <value>Main Instrument</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainTitle" xml:space="preserve">
+    <value>Main Title</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainTitleComposer" xml:space="preserve">
+    <value>Main Title Composer</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Organizer" xml:space="preserve">
+    <value>Organizer</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="PerformanceType" xml:space="preserve">
+    <value>Performance Type</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Poster" xml:space="preserve">
+    <value>Poster</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Program" xml:space="preserve">
+    <value>Program</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Region</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Sponser" xml:space="preserve">
+    <value>Sponser</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="SubjectTheme" xml:space="preserve">
+    <value>Subject/Theme</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="SubTitle" xml:space="preserve">
+    <value>Sub Title</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="TicketBox" xml:space="preserve">
+    <value>Ticket Box</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Venue" xml:space="preserve">
+    <value>Venue</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+    <comment>Table Schema</comment>
+  </data>
 </root>

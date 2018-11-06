@@ -304,6 +304,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you accept privacy policy ?.
         /// </summary>
         internal static string Doyouacceptprivacypolicy {
@@ -345,6 +354,15 @@ namespace Resources {
         internal static string en {
             get {
                 return ResourceManager.GetString("en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End.
+        /// </summary>
+        internal static string End {
+            get {
+                return ResourceManager.GetString("End", resourceCulture);
             }
         }
         
@@ -457,6 +475,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main Instrument.
+        /// </summary>
+        internal static string MainInstrument {
+            get {
+                return ResourceManager.GetString("MainInstrument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main Title.
+        /// </summary>
+        internal static string MainTitle {
+            get {
+                return ResourceManager.GetString("MainTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main Title Composer.
+        /// </summary>
+        internal static string MainTitleComposer {
+            get {
+                return ResourceManager.GetString("MainTitleComposer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Major.
         /// </summary>
         internal static string Major {
@@ -520,6 +574,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Organizer.
+        /// </summary>
+        internal static string Organizer {
+            get {
+                return ResourceManager.GetString("Organizer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
         internal static string Other {
@@ -574,6 +637,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Performance Type.
+        /// </summary>
+        internal static string PerformanceType {
+            get {
+                return ResourceManager.GetString("PerformanceType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Photo 1.
         /// </summary>
         internal static string Photo1 {
@@ -588,6 +660,15 @@ namespace Resources {
         internal static string Photo2 {
             get {
                 return ResourceManager.GetString("Photo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poster.
+        /// </summary>
+        internal static string Poster {
+            get {
+                return ResourceManager.GetString("Poster", resourceCulture);
             }
         }
         
@@ -610,6 +691,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Program.
+        /// </summary>
+        internal static string Program {
+            get {
+                return ResourceManager.GetString("Program", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pro Musician.
         /// </summary>
         internal static string ProMusician {
@@ -624,6 +714,15 @@ namespace Resources {
         internal static string QA {
             get {
                 return ResourceManager.GetString("QA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Region.
+        /// </summary>
+        internal static string Region {
+            get {
+                return ResourceManager.GetString("Region", resourceCulture);
             }
         }
         
@@ -727,11 +826,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sponser.
+        /// </summary>
+        internal static string Sponser {
+            get {
+                return ResourceManager.GetString("Sponser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student.
         /// </summary>
         internal static string Student {
             get {
                 return ResourceManager.GetString("Student", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject/Theme.
+        /// </summary>
+        internal static string SubjectTheme {
+            get {
+                return ResourceManager.GetString("SubjectTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sub Title.
+        /// </summary>
+        internal static string SubTitle {
+            get {
+                return ResourceManager.GetString("SubTitle", resourceCulture);
             }
         }
         
@@ -763,6 +898,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ticket Box.
+        /// </summary>
+        internal static string TicketBox {
+            get {
+                return ResourceManager.GetString("TicketBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time.
+        /// </summary>
+        internal static string Time {
+            get {
+                return ResourceManager.GetString("Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Twitter URL.
         /// </summary>
         internal static string TwitterURL {
@@ -786,6 +939,24 @@ namespace Resources {
         internal static string UserInfo {
             get {
                 return ResourceManager.GetString("UserInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Venue.
+        /// </summary>
+        internal static string Venue {
+            get {
+                return ResourceManager.GetString("Venue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video.
+        /// </summary>
+        internal static string Video {
+            get {
+                return ResourceManager.GetString("Video", resourceCulture);
             }
         }
         

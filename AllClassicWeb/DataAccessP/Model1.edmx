@@ -45,12 +45,12 @@
             <PropertyRef Name="InstrumentID" />
           </Key>
           <Property Name="InstrumentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EnglishName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="KoreanName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EnglishName" Type="nvarchar" MaxLength="20" />
+          <Property Name="KoreanName" Type="nvarchar" MaxLength="20" />
           <Property Name="Alias" Type="nvarchar" MaxLength="20" />
           <Property Name="PlayerName" Type="nvarchar" MaxLength="20" />
-          <Property Name="Group" Type="nvarchar" MaxLength="20" />
-          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Group" Type="nvarchar" MaxLength="40" />
+          <Property Name="Description" Type="nvarchar" MaxLength="800" />
           <Property Name="SampleSound" Type="nvarchar" MaxLength="80" />
           <Property Name="SampeVideo" Type="nvarchar" MaxLength="80" />
           <Property Name="Photo1" Type="nvarchar" MaxLength="80" />
@@ -769,12 +769,12 @@
             <PropertyRef Name="InstrumentID" />
           </Key>
           <Property Name="InstrumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EnglishName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="KoreanName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EnglishName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="KoreanName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Alias" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="PlayerName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Group" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Group" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
           <Property Name="SampleSound" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="SampeVideo" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="Photo1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />

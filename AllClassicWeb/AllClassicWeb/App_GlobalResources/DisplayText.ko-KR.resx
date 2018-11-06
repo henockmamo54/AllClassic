@@ -427,4 +427,80 @@
     <value>연락 전화 번호</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>연주 요약</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>종료일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>표현 언어</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainInstrument" xml:space="preserve">
+    <value>주요 악기</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainTitle" xml:space="preserve">
+    <value>제목</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainTitleComposer" xml:space="preserve">
+    <value>주제곡 작곡자</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Organizer" xml:space="preserve">
+    <value>주최사</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="PerformanceType" xml:space="preserve">
+    <value>공연 종류</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Poster" xml:space="preserve">
+    <value>포스터</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Program" xml:space="preserve">
+    <value>프로그램</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>지역</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Sponser" xml:space="preserve">
+    <value>후원사</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>시작일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="SubjectTheme" xml:space="preserve">
+    <value>연주 주제</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="SubTitle" xml:space="preserve">
+    <value>부 제목</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="TicketBox" xml:space="preserve">
+    <value>예매처</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>공연 시간</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Venue" xml:space="preserve">
+    <value>공연장</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>비디오</value>
+    <comment>Table Schema</comment>
+  </data>
 </root>
