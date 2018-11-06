@@ -22,31 +22,31 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl headerlabelcontainer;
         
         /// <summary>
-        /// txt_name control.
+        /// txt_maintitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_name;
+        protected global::System.Web.UI.WebControls.TextBox txt_maintitle;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txt_subtitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txt_subtitle;
         
         /// <summary>
-        /// TextBox2 control.
+        /// txt_subjecttheme control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txt_subjecttheme;
         
         /// <summary>
         /// DropDownList1_grouptype control.
@@ -67,13 +67,13 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_performancegrouplist;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// DropDownList1_performancetype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_performancetype;
         
         /// <summary>
         /// SqlDataSource1_performancetypelist control.
@@ -85,31 +85,49 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_performancetypelist;
         
         /// <summary>
-        /// TextBox5 control.
+        /// DropDownList1_conductors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_conductors;
         
         /// <summary>
-        /// TextBox6 control.
+        /// SqlDataSource1_conductors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_conductors;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// DropDownList1_composer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_composer;
+        
+        /// <summary>
+        /// SqlDataSource1_composer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_composer;
+        
+        /// <summary>
+        /// DropDownList2_maininstrument control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2_maininstrument;
         
         /// <summary>
         /// SqlDataSource1_instrumentlist control.
@@ -121,67 +139,121 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_instrumentlist;
         
         /// <summary>
-        /// TextBox8 control.
+        /// txt_organizer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox txt_organizer;
         
         /// <summary>
-        /// TextBox9 control.
+        /// txt_sponser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox txt_sponser;
         
         /// <summary>
-        /// TextBox10 control.
+        /// txt_language control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox txt_language;
         
         /// <summary>
-        /// userBirthDate control.
+        /// DropDownList3_instrumentlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText userBirthDate;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3_instrumentlist;
         
         /// <summary>
-        /// Text1 control.
+        /// SqlDataSource1_Instrumentlist2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_Instrumentlist2;
         
         /// <summary>
-        /// TextBox13 control.
+        /// DropDownList2_artistlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2_artistlist;
         
         /// <summary>
-        /// DropDownList4 control.
+        /// SqlDataSource1_artistlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_artistlist;
+        
+        /// <summary>
+        /// btn_addArtistInstrumentcomb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_addArtistInstrumentcomb;
+        
+        /// <summary>
+        /// myPerformanceDetailArtistInstrumentlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater myPerformanceDetailArtistInstrumentlist;
+        
+        /// <summary>
+        /// startdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText startdate;
+        
+        /// <summary>
+        /// enddate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText enddate;
+        
+        /// <summary>
+        /// txt_time control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_time;
+        
+        /// <summary>
+        /// DropDownList4_region control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList4_region;
         
         /// <summary>
         /// SqlDataSource1_region control.
@@ -193,13 +265,13 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_region;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// DropDownList3_city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3_city;
         
         /// <summary>
         /// SqlDataSource1_city control.
@@ -211,13 +283,22 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_city;
         
         /// <summary>
-        /// TextBox16 control.
+        /// DropDownList1_venu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox16;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_venu;
+        
+        /// <summary>
+        /// SqlDataSource1_venu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_venu;
         
         /// <summary>
         /// FileUpload_photo1 control.
@@ -229,39 +310,66 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload_photo1;
         
         /// <summary>
-        /// TextBox18 control.
+        /// txt_video control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox18;
+        protected global::System.Web.UI.WebControls.TextBox txt_video;
         
         /// <summary>
-        /// TextBox19 control.
+        /// txt_ticketbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox19;
+        protected global::System.Web.UI.WebControls.TextBox txt_ticketbox;
         
         /// <summary>
-        /// TextBox22 control.
+        /// txt_program control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox22;
+        protected global::System.Web.UI.WebControls.TextBox txt_program;
         
         /// <summary>
-        /// TextBox20 control.
+        /// txt_description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox20;
+        protected global::System.Web.UI.WebControls.TextBox txt_description;
+        
+        /// <summary>
+        /// btn_Performance_cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Performance_cancel;
+        
+        /// <summary>
+        /// btn_Performance_save control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Performance_save;
+        
+        /// <summary>
+        /// btn_Performance_add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Performance_add;
     }
 }

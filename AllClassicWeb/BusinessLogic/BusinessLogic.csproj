@@ -54,6 +54,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MusicianLogic.cs" />
+    <Compile Include="PerformanceDBLogic.cs" />
     <Compile Include="PerformanceGroupLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

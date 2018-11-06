@@ -503,4 +503,10 @@
     <value>비디오</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="Instrument" xml:space="preserve">
+    <value>악기</value>
+  </data>
+  <data name="Playedby" xml:space="preserve">
+    <value>연주한 사람</value>
+  </data>
 </root>

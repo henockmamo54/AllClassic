@@ -457,6 +457,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Instrument.
+        /// </summary>
+        internal static string Instrument {
+            get {
+                return ResourceManager.GetString("Instrument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kakao Talk ID.
         /// </summary>
         internal static string KakaoTalkID {
@@ -660,6 +669,15 @@ namespace Resources {
         internal static string Photo2 {
             get {
                 return ResourceManager.GetString("Photo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Played by.
+        /// </summary>
+        internal static string Playedby {
+            get {
+                return ResourceManager.GetString("Playedby", resourceCulture);
             }
         }
         
