@@ -23,20 +23,22 @@ namespace BusinessLogic
                         context.PerformanceTbls.Add(performance);
                         context.SaveChanges();
 
-                        //register endorsers
-                        foreach (PerformanceMusicianInstrumentTbl x in artistinstrument)
+                        if (artistinstrument!=null && artistinstrument.Count > 0)
                         {
-                            PerformanceMusicianInstrumentTbl ue = new PerformanceMusicianInstrumentTbl();
-                            ue.PerformanceID = performance.PerformanceID;
-                            //ue.UserID = user.ID;
-                            ue.MusicianID = x.MusicianID;
-                            ue.InstrumentID = x.InstrumentID;
+                            //register endorsers
+                            foreach (PerformanceMusicianInstrumentTbl x in artistinstrument)
+                            {
+                                PerformanceMusicianInstrumentTbl ue = new PerformanceMusicianInstrumentTbl();
+                                ue.PerformanceID = performance.PerformanceID;
+                                //ue.UserID = user.ID;
+                                ue.MusicianID = x.MusicianID;
+                                ue.InstrumentID = x.InstrumentID;
 
-                            context.PerformanceMusicianInstrumentTbls.Add(ue);
-                            context.SaveChanges();
+                                context.PerformanceMusicianInstrumentTbls.Add(ue);
+                                context.SaveChanges();
 
+                            }
                         }
-
                         dbContextTransaction.Commit();
                         return performance;
 

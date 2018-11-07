@@ -18,7 +18,8 @@ namespace AllClassicWeb.Views
             manageFileUpload1();
         }
 
-        public void onclick_btn_addArtistInstrumentcomb(object sender, EventArgs e) {
+        public void onclick_btn_addArtistInstrumentcomb(object sender, EventArgs e)
+        {
             PerformanceMusicianInstrumentTbl pt = new PerformanceMusicianInstrumentTbl();
 
             pt.InstrumentID = int.Parse(DropDownList3_instrumentlist.SelectedItem.Value.ToString());
@@ -83,8 +84,8 @@ namespace AllClassicWeb.Views
                 pt.PerformanceType = int.Parse(DropDownList1_performancetype.SelectedItem.Value.ToString());
                 pt.Conductor = int.Parse(DropDownList1_conductors.SelectedItem.Value.ToString());
                 pt.MainTitleComposer = int.Parse(DropDownList1_composer.SelectedItem.Value.ToString());
-                if(DropDownList2_maininstrument.SelectedIndex!=0)
-                pt.MainInstrument = int.Parse(DropDownList2_maininstrument.SelectedItem.Value.ToString());
+                if (DropDownList2_maininstrument.SelectedIndex != 0)
+                    pt.MainInstrument = int.Parse(DropDownList2_maininstrument.SelectedItem.Value.ToString());
                 pt.Organizer = txt_organizer.Text;
                 pt.Sponser = txt_sponser.Text;
                 pt.Language = txt_language.Text;
@@ -115,7 +116,8 @@ namespace AllClassicWeb.Views
                 }
                 else showMsg("Please check your inputs");
             }
-            catch (Exception ee) {
+            catch (Exception ee)
+            {
                 showMsg("Data inserted succssfuly");
             }
 
@@ -132,12 +134,13 @@ namespace AllClassicWeb.Views
         public bool getPhoto(PerformanceTbl info, int photonumber, FileUpload fileupload)
         {
 
+            manageFileUpload1();
             if (fileupload.HasFiles)
             {
                 string ext = System.IO.Path.GetExtension(fileupload.FileName);
                 if (ext == ".jpg" || ext == ".png" || ext == ".gif" || ext == ".jpeg")
                 {
-                    string path = Server.MapPath("~//Doc//artist//");
+                    string path = Server.MapPath("~//Doc//Performance//");
                     fileupload.SaveAs(path + fileupload.FileName);
                 }
                 else
@@ -146,7 +149,6 @@ namespace AllClassicWeb.Views
                     return false;
                 }
 
-                manageFileUpload1();
             }
 
             if (!fileupload.HasFiles) return false;

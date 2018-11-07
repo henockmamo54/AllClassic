@@ -319,6 +319,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Doc\artist\" />
+    <Folder Include="Doc\Performance\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
