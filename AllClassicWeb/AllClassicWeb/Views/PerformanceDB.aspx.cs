@@ -91,6 +91,12 @@ namespace AllClassicWeb.Views
 
         }
 
+        public void performancepageclicked(object sender, CommandEventArgs e) {
+
+            var x = e.CommandArgument;
+            Response.Redirect("PerformanceDetail.aspx?PID="+x);
+        }
+
         public void regionclicked(object sender, EventArgs e)
         {
             Button pb = null;

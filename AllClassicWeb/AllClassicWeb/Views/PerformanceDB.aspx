@@ -77,7 +77,7 @@ where maincode='Region'"></asp:SqlDataSource>
                     <ItemTemplate>
                         <div class="col-md-3 col-xs-3" style="margin-bottom: 1em;">
                             <div class="thumbnail shadowedbox" style="box-shadow: 2px 2px 2px #d0d0d0;">
-                                <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;">
+                                <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="performancepageclicked" CommandArgument='<%# Eval("PerformanceID") %>'>
                                                                             <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 150px;">
 
                                             <div class="caption" style="padding-bottom:3px;">
@@ -101,7 +101,7 @@ where maincode='Region'"></asp:SqlDataSource>
                             <div id="groupPlaceholder" runat="server">
                             </div>
                             <div class="col-xs-12" style="text-align: center;">
-                                <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                     <Fields>
                                         <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                         <asp:NumericPagerField />
