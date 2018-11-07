@@ -3,7 +3,62 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
-            the content will be added soon
+            <div class="row col-md-12 col-xs-12 ">
+                <div class="col-md-3 col-xs-3">
+                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="140px" NextPrevFormat="FullMonth" Width="140px" OnSelectionChanged="dateselectorcalendar_SelectionChanged">
+                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="0px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                        <TodayDayStyle BackColor="#CCCCCC" />
+                    </asp:Calendar>
+                </div>
+                <div class="col-md-6 col-xs-6 " style="padding: 0;">
+                    <div class="shadowedPanel">
+                        <h5 style="color: #3c83f1;margin-bottom: 0px;">Performance schedule: This week</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Area/City</th>
+                                    <th scope="col">Venu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <asp:Repeater runat="server" ID="repeater_thisweekPerformanceInfo">
+                                    <ItemTemplate>
+                                        <tr>
+                                            <th scope="row"><%# DataBinder.Eval(Container.DataItem,"StartDate","{0:d/M/yyyy}")  %></th>
+                                            <td><%# (Eval("MainTitle")) .ToString().Length>15?
+                                                           (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
+                                                           (Eval("MainTitle")) .ToString()%></td>
+                                            <td><%# Eval("LookupTbl1.Subcode") %>/<%# Eval("LookUpTbl2.Subcode") %> </td>
+                                            <td><%# Eval("VenueTbl.Name") %> </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <h4>Area</h4>
+                    <asp:Repeater runat="server" ID="repeater_location" OnItemDataBound="repeater_locationOnItemDataBound">
+                        <ItemTemplate>
+                            <asp:Button runat="server" CommandArgument='<%# Eval("Location") %>' ID='location' class="locationcontainer" Text='<%# Eval("Location") %>'></asp:Button>
+                        </ItemTemplate>
+                    </asp:Repeater>
+
+                </div>
+            </div>
+
+            <br />
+            <h4 style="color: #3c83f1;">Total:
+                            <asp:Label runat="server" ID="label_countofitems"></asp:Label>
+                Events </h4>
+
             <hr style="margin-top: 0px;" />
             <div class="row">
                 <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">

@@ -13,6 +13,42 @@ namespace AllClassicWeb.Views {
     public partial class PerformanceDB {
         
         /// <summary>
+        /// dateselectorcalendar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar dateselectorcalendar;
+        
+        /// <summary>
+        /// repeater_thisweekPerformanceInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeater_thisweekPerformanceInfo;
+        
+        /// <summary>
+        /// repeater_location control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeater_location;
+        
+        /// <summary>
+        /// label_countofitems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label_countofitems;
+        
+        /// <summary>
         /// artistListContainer control.
         /// </summary>
         /// <remarks>

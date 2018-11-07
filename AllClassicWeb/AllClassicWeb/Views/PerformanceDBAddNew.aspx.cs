@@ -89,8 +89,8 @@ namespace AllClassicWeb.Views
                 pt.Organizer = txt_organizer.Text;
                 pt.Sponser = txt_sponser.Text;
                 pt.Language = txt_language.Text;
-                pt.StartDate = DateTime.ParseExact(startdate.Value, "mm/dd/yyyy", CultureInfo.InvariantCulture);
-                pt.EndDate = DateTime.ParseExact(enddate.Value, "mm/dd/yyyy", CultureInfo.InvariantCulture);
+                pt.StartDate = DateTime.ParseExact(startdate.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                pt.EndDate = DateTime.ParseExact(enddate.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 pt.Time = txt_time.Text;
                 pt.Region = int.Parse(DropDownList4_region.SelectedItem.Value.ToString());
                 pt.City = int.Parse(DropDownList3_city.SelectedItem.Value.ToString());
