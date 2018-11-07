@@ -55,14 +55,23 @@ namespace AllClassicWeb.Views
             string filter = "";
             if (pb != null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' and location = N'" + pb.Text + "' ";
             else if (pb == null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' ";
-            else if (pb != null && selectedDate == null_date) filter = @"where location = N'" + pb.Text + "' ";
+            else if (pb != null && selectedDate == null_date) filter = @"where r.subcode = N'" + pb.Text + "' ";
 
 
-            //SqlDataSource2_allPerformances.SelectCommand = @"SELECT  p.*, OfficialName  FROM Main.Performance p
-            //                                                join Core.Orchestra o on p.OrchestraID=o.ID " + filter + " order by timestamp desc";
-            //repeater_performanceList.DataSource = SqlDataSource2_allPerformances;
-            //repeater_performanceList.DataBind();
-            //label_countofitems.Text = repeater_performanceList.Items.Count + "";
+            SqlDataSource1_Performancelist.SelectCommand = @"select p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
+                                                            from Main.PerformanceTbl p
+                                                            left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
+                                                            left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='PerformanceType') pt on pt.LookUpID=p.PerformanceType
+                                                            left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Conductor') cd on cd.LookUpID=p.Conductor
+                                                            left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Composer') cm on cm.LookUpID=p.MainTitleComposer
+                                                            left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
+                                                            left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Region') r on r.LookUpID=p.Region
+                                                            left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=p.City
+                                                            left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
+                                                             " + filter + " order by p.UpdateTimeStamp desc";
+            //artistListContainer.DataSource = SqlDataSource1_Performancelist;
+            artistListContainer.DataBind();
+            label_countofitems.Text = artistListContainer.Items.Count + "";
         }
 
 
@@ -81,6 +90,34 @@ namespace AllClassicWeb.Views
             }
 
         }
+
+        public void regionclicked(object sender, EventArgs e)
+        {
+            Button pb = null;
+            Button b = (Button)sender;
+            b.BackColor = System.Drawing.Color.RosyBrown;
+
+            if (Session["previousSelectedLocation"] != null)
+            {
+                pb = (Button)Session["previousSelectedLocation"];
+                pb.BackColor = System.Drawing.Color.White;
+
+            }
+
+            if (pb != null)
+            {
+                if (b.Text == pb.Text) Session["previousSelectedLocation"] = null;
+                else Session["previousSelectedLocation"] = sender;
+            }
+            else Session["previousSelectedLocation"] = sender;
+
+            //locations = (List<locationModel>)Session["locations"];
+            //repeater_location.DataSource = locations;
+            repeater_location.DataBind();
+
+            filterPerformance();
+        }
+
 
     }
 }

@@ -40,6 +40,15 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.Repeater repeater_location;
         
         /// <summary>
+        /// SqlDataSource1_region control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_region;
+        
+        /// <summary>
         /// label_countofitems control.
         /// </summary>
         /// <remarks>
