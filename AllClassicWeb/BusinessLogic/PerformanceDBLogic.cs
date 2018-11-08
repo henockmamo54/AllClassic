@@ -54,6 +54,9 @@ namespace BusinessLogic
             }
         }
 
-
+        public static PerformanceTbl getPerfByID(int id) {
+            AllClassicDBEntities entities = new AllClassicDBEntities();
+            return entities.PerformanceTbls.Where(x => x.PerformanceID == id).FirstOrDefault();
+        }
     }
 }
