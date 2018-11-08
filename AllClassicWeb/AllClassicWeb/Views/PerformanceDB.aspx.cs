@@ -25,8 +25,8 @@ namespace AllClassicWeb.Views
 
         protected void onclick_btn_addPG(object sender, EventArgs e)
         {
-            //Session["MusicianID"] = null;
-            //Session["updateMusician"] = false;
+            Session["PID"] = null;
+            Session["updatePerformance"] = false;
             Response.Redirect("PerformanceDBAddNew.aspx");
         }
 

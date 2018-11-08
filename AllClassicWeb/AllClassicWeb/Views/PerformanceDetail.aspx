@@ -155,174 +155,179 @@
             <h4 id="txt_subtitle" runat="server"></h4>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.PerformanceGroup %></div>
                 <div class="col-md-6 col-xs-6">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_pg"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.PerformanceType %></div>
                 <div class="col-md-6 col-xs-6">
-                  <asp:Label Font-Bold="true" runat="server" ID="lbl_pt"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_pt"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Conductor %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_conductor"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_conductor"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.MainTitleComposer %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_maintitlecomposer"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_maintitlecomposer"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.MainInstrument %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_maininstrument"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_maininstrument"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Organizer %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_organizer"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_organizer"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Sponser %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_sponser"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_sponser"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Language %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_language"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_language"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Start %></div>
                 <div class="col-md-6 col-xs-6">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_start"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.End %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_end"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_end"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Time %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_time"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_time"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Region %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_region"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_region"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.City %></div>
                 <div class="col-md-6 col-xs-6">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_city"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Venue %></div>
                 <div class="col-md-6 col-xs-6">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_venu"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Poster %></div>
                 <div class="col-md-6 col-xs-6">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_poster"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Video %></div>
                 <div class="col-md-6 col-xs-6">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_video"></asp:Label>
                 </div>
-                
+
             </div>
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.TicketBox %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_ticketbox"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_ticketbox"></asp:Label>
                 </div>
-                
+
             </div>
             <hr />
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Program %></div>
                 <div class="col-md-6 col-xs-6">
-                   <asp:Label Font-Bold="true" runat="server" ID="lbl_program"></asp:Label>
+                    <asp:Label Font-Bold="true" runat="server" ID="lbl_program"></asp:Label>
                 </div>
-                
+
             </div>
 
             <div class="col-md-12 col-xs-12 userregisterinfo">
-                
+
                 <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Description %></div>
                 <div class="col-md-6 col-xs-6">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_description"></asp:Label>
                 </div>
-                
+
+            </div>
+
+            <div class="col-xs-12">
+                <br />
+                <asp:Button CssClass="btn btn-primary" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editPerformance" Text="<%$Resources:DisplayText,Edit %>" />
             </div>
 
         </div>

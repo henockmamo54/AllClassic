@@ -55,6 +55,17 @@ namespace AllClassicWeb.Views
         }
 
 
+        public void onclick_btn_editPerformance(object sender, EventArgs e)
+        {
+            if (Request.QueryString["PID"] != null)
+            {
+                iD = int.Parse(Request.QueryString["PID"]);
+                Session["PID"] = iD;
+                Session["updatePerformance"] = true;
+                Response.Redirect("PerformanceDBAddNew.aspx");
+            }
+        }
+
         protected void detailrepeater_onItemDatabound(object sender, RepeaterItemEventArgs e)
         {
             //RepeaterItem item = e.Item;

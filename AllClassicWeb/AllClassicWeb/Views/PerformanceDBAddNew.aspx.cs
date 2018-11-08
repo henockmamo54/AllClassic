@@ -16,6 +16,59 @@ namespace AllClassicWeb.Views
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Poppdadnew", "bindDateTime();", true);
             manageFileUpload1();
+            if (!IsPostBack)
+            {
+                handleButtons(true);
+                Session["PerformanceMusicianInstrumentTbl"] = null;
+                if (Session["updatePerformance"] != null)
+                {
+                    if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+                    {
+                        try
+                        {
+                            handleButtons(false);
+                            load_performanceInfo(int.Parse(Session["PID"].ToString()));
+                        }
+                        catch (Exception myexception) { }
+                    }
+                }
+            }
+        }
+
+        private void load_performanceInfo(int id)
+        {
+
+            Session["PerformanceMusicianInstrumentTbl"] = null;
+            PerformanceTbl performance = BusinessLogic.PerformanceDBLogic.getPerfByID(id);
+            if (performance != null)
+            {
+                txt_maintitle.Text = performance.MainTitle;
+                txt_subtitle.Text = performance.SubTitle;
+                txt_subjecttheme.Text = performance.Subject;
+                txt_organizer.Text = performance.Organizer;
+                txt_sponser.Text = performance.Sponser;
+                txt_language.Text = performance.Language;
+                txt_time.Text = performance.Time;
+                txt_ticketbox.Text = performance.TicketBox;
+                txt_program.Text = performance.Program;
+                txt_description.Text = performance.Description;
+
+                var artistinstrumentlist = performance.PerformanceMusicianInstrumentTbls.ToList();
+                if (artistinstrumentlist != null && artistinstrumentlist.Count > 0)
+                {
+                    Session["PerformanceMusicianInstrumentTbl"] = artistinstrumentlist;
+                    myPerformanceDetailArtistInstrumentlist.DataSource = artistinstrumentlist;
+                    myPerformanceDetailArtistInstrumentlist.DataBind();
+                }
+
+            }
+
+        }
+
+        public void handleButtons(Boolean value)
+        {
+            btn_Performance_add.Visible = value;
+            btn_Performance_save.Visible = !value;
         }
 
         public void onclick_btn_addArtistInstrumentcomb(object sender, EventArgs e)
@@ -124,6 +177,59 @@ namespace AllClassicWeb.Views
         }
         public void btn_Performancesave_Click(object sender, EventArgs e)
         {
+            bool issuccess = false;
+            PerformanceTbl pt = new PerformanceTbl();
+            try
+            {
+                int id = int.Parse(Session["PID"].ToString());
+                pt = BusinessLogic.PerformanceDBLogic.getPerfByID(id);
+                pt.MainTitle = txt_maintitle.Text;
+                pt.SubTitle = txt_subtitle.Text;
+                pt.Subject = txt_subjecttheme.Text;
+                pt.PerformanceGroup = int.Parse(DropDownList1_grouptype.SelectedItem.Value.ToString());
+                pt.PerformanceType = int.Parse(DropDownList1_performancetype.SelectedItem.Value.ToString());
+                pt.Conductor = int.Parse(DropDownList1_conductors.SelectedItem.Value.ToString());
+                pt.MainTitleComposer = int.Parse(DropDownList1_composer.SelectedItem.Value.ToString());
+                if (DropDownList2_maininstrument.SelectedIndex != 0)
+                    pt.MainInstrument = int.Parse(DropDownList2_maininstrument.SelectedItem.Value.ToString());
+                pt.Organizer = txt_organizer.Text;
+                pt.Sponser = txt_sponser.Text;
+                pt.Language = txt_language.Text;
+                pt.StartDate = DateTime.ParseExact(startdate.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                pt.EndDate = DateTime.ParseExact(enddate.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                pt.Time = txt_time.Text;
+                pt.Region = int.Parse(DropDownList4_region.SelectedItem.Value.ToString());
+                pt.City = int.Parse(DropDownList3_city.SelectedItem.Value.ToString());
+                pt.Venue = int.Parse(DropDownList1_venu.SelectedItem.Value.ToString());
+                getPhoto(pt, 1, FileUpload_photo1);
+                pt.VideoFileName = txt_video.Text;
+                pt.TicketBox = txt_ticketbox.Text;
+                pt.Program = txt_program.Text;
+                pt.Description = txt_description.Text;
+                pt.UserID = 5;
+                pt.UpdateTimeStamp = DateTime.Now;
+
+                List<PerformanceMusicianInstrumentTbl> mylist = (List<PerformanceMusicianInstrumentTbl>)Session["PerformanceMusicianInstrumentTbl"];
+                var listOfPreviouslist = pt.PerformanceMusicianInstrumentTbls.ToList();
+                var currentlistlist = Session["PerformanceMusicianInstrumentTbl"] == null ? new List<PerformanceMusicianInstrumentTbl>() : (List<PerformanceMusicianInstrumentTbl>)Session["PerformanceMusicianInstrumentTbl"];
+                var deleted = listOfPreviouslist.Except(currentlistlist).ToList();
+                var added = currentlistlist.Except(listOfPreviouslist).ToList();
+
+                pt = BusinessLogic.PerformanceDBLogic.updatePerformance(deleted, added, pt);
+                if (pt != null)
+                {
+                    showMsg("Data inserted succssfuly");
+                    issuccess = true;
+
+                }
+                else showMsg("Please check your inputs");
+            }
+            catch (Exception ee)
+            {
+                showMsg("Please check your inputs");
+            }
+            if (issuccess)
+                Response.Redirect("PerformanceDetail?PID=" + pt.PerformanceID);
 
         }
         public void btn_Performancecancel_Click(object sender, EventArgs e)
@@ -142,6 +248,7 @@ namespace AllClassicWeb.Views
                 {
                     string path = Server.MapPath("~//Doc//Performance//");
                     fileupload.SaveAs(path + fileupload.FileName);
+                    this.Session["FileUpload_photo1"] = FileUpload_photo1;
                 }
                 else
                 {
@@ -180,6 +287,8 @@ namespace AllClassicWeb.Views
             {
                 this.Session["FileUpload_photo1"] = FileUpload_photo1;
             }
+            else
+                this.Session["FileUpload_photo1"] = null;
         }
 
 

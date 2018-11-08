@@ -28,7 +28,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.SubTitle %>*</div>
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.SubTitle %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_subtitle" runat="server" class="form-control"></asp:TextBox>
 
@@ -38,7 +38,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.SubjectTheme %>*</div>
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.SubjectTheme %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_subjecttheme" runat="server" class="form-control"></asp:TextBox>
 
@@ -74,7 +74,7 @@ where maincode='PerformanceType'
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Conductor %>*</div>
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Conductor %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:DropDownList ID="DropDownList1_conductors" runat="server" class="form-control" DataSourceID="SqlDataSource1_conductors" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_conductors" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Conductor')"></asp:SqlDataSource>
@@ -84,7 +84,7 @@ where maincode='PerformanceType'
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MainTitleComposer %>*</div>
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MainTitleComposer %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:DropDownList ID="DropDownList1_composer" runat="server" class="form-control" DataSourceID="SqlDataSource1_composer" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_composer" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Composer')"></asp:SqlDataSource>
@@ -95,7 +95,7 @@ where maincode='PerformanceType'
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MainInstrument %>*</div>
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MainInstrument %></div>
                         <div class="col-md-8 col-xs-8">
                             <%--<asp:TextBox ID="TextBox7" runat="server" class="form-control"></asp:TextBox>--%>
                             <asp:DropDownList ID="DropDownList2_maininstrument" runat="server" class="form-control" DataSourceID="SqlDataSource1_instrumentlist" DataTextField="KoreanName" DataValueField="InstrumentID"></asp:DropDownList>
@@ -108,7 +108,7 @@ where maincode='PerformanceType'
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Organizer %>*</div>
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Organizer %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_organizer" runat="server" class="form-control"></asp:TextBox>
 
@@ -118,7 +118,7 @@ where maincode='PerformanceType'
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Sponser %>*</div>
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Sponser %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_sponser" runat="server" class="form-control"></asp:TextBox>
 
@@ -128,7 +128,7 @@ where maincode='PerformanceType'
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Language %>*</div>
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Language %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_language" runat="server" class="form-control"></asp:TextBox>
 
@@ -302,7 +302,7 @@ where maincode='City'
                         <div class="col-xs-6">
                             <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0px;">
                                 <br />
-                                <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Video %>*</div>
+                                <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Video %></div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
                                     <asp:TextBox ID="txt_video" runat="server" class="form-control"></asp:TextBox>
                                 </div>
