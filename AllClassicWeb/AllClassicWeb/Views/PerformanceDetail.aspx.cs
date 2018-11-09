@@ -51,6 +51,8 @@ namespace AllClassicWeb.Views
                 lbl_ticketbox.Text = performance.TicketBox;
                 lbl_program.Text = performance.Program;
                 lbl_description.Text = performance.Description;
+                myPerformanceDetailArtistInstrumentlist.DataSource = performance.PerformanceMusicianInstrumentTbls.ToList();
+                myPerformanceDetailArtistInstrumentlist.DataBind();
             }
         }
 

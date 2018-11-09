@@ -324,7 +324,26 @@
                 </div>
 
             </div>
+            <div class="row col-md-12 col-xs-12">
+                        <hr />
+                        <asp:Repeater runat="server" ID="myPerformanceDetailArtistInstrumentlist">
+                            <ItemTemplate>
+                                <tr style="margin-bottom: 3px;">
 
+                                    <td>
+                                        <asp:Label runat="server" ID="Label1" Text='<%# Eval("MusicianTbl.Name") %>' />
+                                        - 
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" ID="Label2" Text='<%# Eval("InstrumentTbl.KoreanName") %>' />
+                                    </td>
+
+                                </tr>
+                                <br />
+                                <br />
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
             <div class="col-xs-12">
                 <br />
                 <asp:Button CssClass="btn btn-primary" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editPerformance" Text="<%$Resources:DisplayText,Edit %>" />

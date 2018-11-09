@@ -61,7 +61,7 @@ namespace AllClassicWeb.Views
             string filter = "";
             if (pb != null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' and location = N'" + pb.Text + "' ";
             else if (pb == null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' ";
-            else if (pb != null && selectedDate == null_date) filter = @"where r.subcode = N'" + pb.Text + "' ";
+            else if (pb != null && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";
 
 
             SqlDataSource1_Performancelist.SelectCommand = @"select p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
