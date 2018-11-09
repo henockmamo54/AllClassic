@@ -103,7 +103,7 @@ namespace BusinessLogic
                             foreach (PerformanceMusicianInstrumentTbl x in added)
                             {
                                 PerformanceMusicianInstrumentTbl ue = new PerformanceMusicianInstrumentTbl();
-                                ue.MusicianID = p.PerformanceID;
+                                ue.PerformanceID = pt.PerformanceID;
                                 ue.MusicianID = x.MusicianID;
                                 ue.InstrumentID = x.InstrumentID;
 
