@@ -16,8 +16,8 @@
                     </asp:Calendar>
                 </div>
                 <div class="col-md-6 col-xs-6 " style="padding: 0;">
-                    <div class="shadowedPanel">
-                        <h5 style="color: #3c83f1; margin-bottom: 0px;">Performance schedule: This week</h5>
+                    <h5 style="color: #3c83f1; margin-bottom: 0px;">Performance schedule: This week</h5>
+                    <div class="shadowedPanel" style="overflow-y: scroll; max-height: 150px; height: 150px;">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -66,7 +66,7 @@ where maincode='Region'"></asp:SqlDataSource>
 
             <hr style="margin-top: 0px;" />
             <div class="row">
-                <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
+                <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
 
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
@@ -76,7 +76,7 @@ where maincode='Region'"></asp:SqlDataSource>
                     </GroupTemplate>
                     <ItemTemplate>
                         <div class="col-md-3 col-xs-3" style="margin-bottom: 1em;">
-                            <div class="thumbnail shadowedbox" style="box-shadow: 2px 2px 2px #d0d0d0;">
+                            <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="performancepageclicked" CommandArgument='<%# Eval("PerformanceID") %>'>
                                                                             <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 150px;">
 
@@ -85,9 +85,8 @@ where maincode='Region'"></asp:SqlDataSource>
                                                            (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
                                                            (Eval("MainTitle")) .ToString()%></h4>
                                                 <h6>start date: <%# DataBinder.Eval(Container.DataItem,"startdate","{0:dd/MM/yyyy}") %></h6>
-                                                <h6>venu: <%# Eval("venuname") %></h6>
-                                                <h6>Location: <%# Eval("Regionname") %> - <%# Eval("cityname") %></h6>
-                                                <h6>... see More</h6>                                              
+                                                <%--<h6>venu: <%# Eval("venuname") %></h6>--%>
+                                                <h6>Location: <%# Eval("Regionname") %>/<%# Eval("cityname") %> - <%# Eval("venuname") %></h6>
                                             </div>                                
 
                                 </asp:LinkButton>
@@ -172,9 +171,14 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
             background-color: white;
         }
 
-            .locationcontainer:hover {
-                background-color: lightblue;
-            }
+        .shadowedbox_hover:hover {
+            background-color: #bfb9b92e;
+            box-shadow: 3px 3px 3px #d0d0d0;
+        }
+
+        .locationcontainer:hover {
+            background-color: lightblue;
+        }
     </style>
     <script type="text/javascript">
         document.getElementById("performancetab").style.backgroundColor = "white";

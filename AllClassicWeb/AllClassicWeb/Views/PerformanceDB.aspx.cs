@@ -15,12 +15,18 @@ namespace AllClassicWeb.Views
         AllClassicDBEntities entity = new AllClassicDBEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) {
+            if (!IsPostBack)
+            {
 
                 repeater_thisweekPerformanceInfo.DataSource = entity.PerformanceTbls.Where(x => SqlFunctions.DatePart("ISO_WEEK", x.StartDate) == SqlFunctions.DatePart("ISO_WEEK", DateTime.Today)).ToList();
                 repeater_thisweekPerformanceInfo.DataBind();
                 label_countofitems.Text = artistListContainer.Items.Count + "";
             }
+        }
+
+        protected void artistListContainer_ondatabound(object sender, EventArgs e)
+        {
+            label_countofitems.Text = artistListContainer.Items.Count + "";
         }
 
         protected void onclick_btn_addPG(object sender, EventArgs e)
@@ -85,23 +91,23 @@ namespace AllClassicWeb.Views
                 {
                     Button pb = (Button)Session["previousSelectedLocation"];
                     var detail = (Button)item.FindControl("location");
-                    if (detail.Text == pb.Text) detail.BackColor = System.Drawing.Color.RosyBrown;
+                    if (detail.Text == pb.Text) detail.BackColor = System.Drawing.Color.LightSkyBlue;
                 }
             }
-
         }
 
-        public void performancepageclicked(object sender, CommandEventArgs e) {
+        public void performancepageclicked(object sender, CommandEventArgs e)
+        {
 
             var x = e.CommandArgument;
-            Response.Redirect("PerformanceDetail.aspx?PID="+x);
+            Response.Redirect("PerformanceDetail.aspx?PID=" + x);
         }
 
         public void regionclicked(object sender, EventArgs e)
         {
             Button pb = null;
             Button b = (Button)sender;
-            b.BackColor = System.Drawing.Color.RosyBrown;
+            b.BackColor = System.Drawing.Color.LightSkyBlue;
 
             if (Session["previousSelectedLocation"] != null)
             {
