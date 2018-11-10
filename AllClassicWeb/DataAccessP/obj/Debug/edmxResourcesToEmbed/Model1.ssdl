@@ -20,8 +20,8 @@
     <Property Name="FromDate" Type="date" Nullable="false" />
     <Property Name="ToDate" Type="date" Nullable="false" />
     <Property Name="AuditionOutline" Type="nvarchar" MaxLength="400" />
-    <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="UserID" Type="int" />
   </EntityType>
   <EntityType Name="ConcourTbl">
     <Key>
@@ -293,6 +293,18 @@
         <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="ArticleTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AuditionT__UserI__05D8E0BE">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="AuditionTbl" Type="Self.AuditionTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AuditionTbl">
         <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
@@ -643,6 +655,10 @@
     <AssociationSet Name="FK__ArticleTb__UserI__04E4BC85" Association="Self.FK__ArticleTb__UserI__04E4BC85">
       <End Role="UserTbl" EntitySet="UserTbl" />
       <End Role="ArticleTbl" EntitySet="ArticleTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AuditionT__UserI__05D8E0BE" Association="Self.FK__AuditionT__UserI__05D8E0BE">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="AuditionTbl" EntitySet="AuditionTbl" />
     </AssociationSet>
     <AssociationSet Name="FK__CollegeTb__UserI__03F0984C" Association="Self.FK__CollegeTb__UserI__03F0984C">
       <End Role="UserTbl" EntitySet="UserTbl" />

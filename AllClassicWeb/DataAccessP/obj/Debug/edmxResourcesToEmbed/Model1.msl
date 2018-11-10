@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AllClassicDBModelStoreContainer" CdmEntityContainer="AllClassicDBEntities">
-    <EntitySetMapping Name="AuditionTbls">
-      <EntityTypeMapping TypeName="AllClassicDBModel.AuditionTbl">
-        <MappingFragment StoreEntitySet="AuditionTbl">
-          <ScalarProperty Name="AuditionID" ColumnName="AuditionID" />
-          <ScalarProperty Name="Organizer" ColumnName="Organizer" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
-          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
-          <ScalarProperty Name="AuditionOutline" ColumnName="AuditionOutline" />
-          <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
-          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ConcourTbls">
       <EntityTypeMapping TypeName="AllClassicDBModel.ConcourTbl">
         <MappingFragment StoreEntitySet="ConcourTbl">
@@ -301,6 +287,20 @@
           <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
           <ScalarProperty Name="ArticleURL" ColumnName="ArticleURL" />
           <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditionTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.AuditionTbl">
+        <MappingFragment StoreEntitySet="AuditionTbl">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="AuditionOutline" ColumnName="AuditionOutline" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Organizer" ColumnName="Organizer" />
+          <ScalarProperty Name="AuditionID" ColumnName="AuditionID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

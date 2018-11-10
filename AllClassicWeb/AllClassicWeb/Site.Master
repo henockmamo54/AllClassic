@@ -74,7 +74,7 @@
 
                         <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" href="ArticleDB"><%= Resources.DisplayText.Article %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.Auditions %></a>
+                        <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" href="AuditionDB"><%= Resources.DisplayText.Auditions %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.Concours %></a>
                         <a id="performancegrouptab" class="list-group-item list-group-item-action "  style="background-color: whitesmoke;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.RepairShop %></a>

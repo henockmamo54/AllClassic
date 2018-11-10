@@ -518,7 +518,7 @@
     <comment>Table Schema</comment>
   </data>
   <data name="Inquiry" xml:space="preserve">
-    <value>조회</value>
+    <value>Inquiry</value>
     <comment>Button</comment>
   </data>
   <data name="PosterEmailID" xml:space="preserve">
@@ -527,5 +527,20 @@
   </data>
   <data name="PostingDate" xml:space="preserve">
     <value>Posting Date</value>
+  </data>
+  <data name="AuditionOutlineandApplicationInfo" xml:space="preserve">
+    <value>Audition outline and Application Info</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>From Date</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>To Date</value>
+    <comment>Table Schema</comment>
   </data>
 </root>

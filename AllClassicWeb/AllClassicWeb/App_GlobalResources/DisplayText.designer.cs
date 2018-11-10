@@ -196,6 +196,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Audition outline and Application Info.
+        /// </summary>
+        internal static string AuditionOutlineandApplicationInfo {
+            get {
+                return ResourceManager.GetString("AuditionOutlineandApplicationInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auditions.
         /// </summary>
         internal static string Auditions {
@@ -466,6 +475,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Date.
+        /// </summary>
+        internal static string FromDate {
+            get {
+                return ResourceManager.GetString("FromDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Full Name.
         /// </summary>
         internal static string FullName {
@@ -493,7 +511,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 조회.
+        ///   Looks up a localized string similar to Inquiry.
         /// </summary>
         internal static string Inquiry {
             get {
@@ -1029,6 +1047,24 @@ namespace Resources {
         internal static string Time {
             get {
                 return ResourceManager.GetString("Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Date.
+        /// </summary>
+        internal static string ToDate {
+            get {
+                return ResourceManager.GetString("ToDate", resourceCulture);
             }
         }
         

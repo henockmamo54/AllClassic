@@ -1,18 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AllClassicDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="AuditionTbl">
-    <Key>
-      <PropertyRef Name="AuditionID" />
-    </Key>
-    <Property Name="AuditionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Organizer" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Title" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="AuditionOutline" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
-    <Property Name="PosterEmailID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
   <EntityType Name="ConcourTbl">
     <Key>
       <PropertyRef Name="ConcourID" />
@@ -271,6 +258,7 @@
     <NavigationProperty Name="MusicianTbls" Relationship="AllClassicDBModel.FK__MusicianT__UserI__59FA5E80" FromRole="UserTbl" ToRole="MusicianTbl" />
     <NavigationProperty Name="CollegeTbls" Relationship="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C" FromRole="UserTbl" ToRole="CollegeTbl" />
     <NavigationProperty Name="ArticleTbls" Relationship="AllClassicDBModel.FK__ArticleTb__UserI__04E4BC85" FromRole="UserTbl" ToRole="ArticleTbl" />
+    <NavigationProperty Name="AuditionTbls" Relationship="AllClassicDBModel.FK__AuditionT__UserI__05D8E0BE" FromRole="UserTbl" ToRole="AuditionTbl" />
   </EntityType>
   <EntityType Name="UserUserType">
     <Key>
@@ -499,7 +487,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="AllClassicDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="AuditionTbls" EntityType="Self.AuditionTbl" />
     <EntitySet Name="ConcourTbls" EntityType="Self.ConcourTbl" />
     <EntitySet Name="InstrumentTbls" EntityType="Self.InstrumentTbl" />
     <EntitySet Name="MusicShopTbls" EntityType="Self.MusicShopTbl" />
@@ -628,6 +615,11 @@
     <AssociationSet Name="FK__ArticleTb__UserI__04E4BC85" Association="AllClassicDBModel.FK__ArticleTb__UserI__04E4BC85">
       <End Role="UserTbl" EntitySet="UserTbls" />
       <End Role="ArticleTbl" EntitySet="ArticleTbls" />
+    </AssociationSet>
+    <EntitySet Name="AuditionTbls" EntityType="AllClassicDBModel.AuditionTbl" />
+    <AssociationSet Name="FK__AuditionT__UserI__05D8E0BE" Association="AllClassicDBModel.FK__AuditionT__UserI__05D8E0BE">
+      <End Role="UserTbl" EntitySet="UserTbls" />
+      <End Role="AuditionTbl" EntitySet="AuditionTbls" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="MusicianTbl">
@@ -805,6 +797,32 @@
         <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="ArticleTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AuditionTbl">
+    <Key>
+      <PropertyRef Name="AuditionID" />
+    </Key>
+    <Property Name="AuditionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Organizer" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AuditionOutline" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__AuditionT__UserI__05D8E0BE" FromRole="AuditionTbl" ToRole="UserTbl" />
+  </EntityType>
+  <Association Name="FK__AuditionT__UserI__05D8E0BE">
+    <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+    <End Type="AllClassicDBModel.AuditionTbl" Role="AuditionTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AuditionTbl">
         <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>

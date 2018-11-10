@@ -168,6 +168,8 @@
     <Content Include="Views\AboutUs.aspx" />
     <Content Include="Views\ArticleDB.aspx" />
     <Content Include="Views\ArticleDBAddNew.aspx" />
+    <Content Include="Views\AuditionDB.aspx" />
+    <Content Include="Views\AuditionDBAddNew.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\MusicCollegeDB.aspx" />
     <Content Include="Views\MusicCollegeDBAddNew.aspx" />
@@ -266,6 +268,20 @@
     </Compile>
     <Compile Include="Views\ArticleDBAddNew.aspx.designer.cs">
       <DependentUpon>ArticleDBAddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AuditionDB.aspx.cs">
+      <DependentUpon>AuditionDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AuditionDB.aspx.designer.cs">
+      <DependentUpon>AuditionDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AuditionDBAddNew.aspx.cs">
+      <DependentUpon>AuditionDBAddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AuditionDBAddNew.aspx.designer.cs">
+      <DependentUpon>AuditionDBAddNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

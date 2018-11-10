@@ -20,7 +20,9 @@ namespace DataAccessP
         public System.DateTime FromDate { get; set; }
         public System.DateTime ToDate { get; set; }
         public string AuditionOutline { get; set; }
-        public string PosterEmailID { get; set; }
         public System.DateTime UpdateTimeStamp { get; set; }
+        public Nullable<int> UserID { get; set; }
+    
+        public virtual UserTbl UserTbl { get; set; }
     }
 }

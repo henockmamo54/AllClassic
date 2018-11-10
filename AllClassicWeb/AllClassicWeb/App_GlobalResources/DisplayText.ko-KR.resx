@@ -545,4 +545,19 @@
   <data name="PostingDate" xml:space="preserve">
     <value>전기 일</value>
   </data>
+  <data name="AuditionOutlineandApplicationInfo" xml:space="preserve">
+    <value>오디션 개요 과 신청 정보</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>접수 시작일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>제목</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>접수 마감일</value>
+    <comment>Table Schema</comment>
+  </data>
 </root>
