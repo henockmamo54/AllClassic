@@ -40,7 +40,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     <div class="col-xs-3"><strong><%= Resources.DisplayText.Name %></strong></div>
                     <div class="col-xs-3"><strong><%= Resources.DisplayText.ShortName %></strong></div>
                     <div class="col-xs-3"><strong><%= Resources.DisplayText.Country %></strong></div>
-                    <div class="col-xs-3"><strong><%= Resources.DisplayText.Email %></strong></div>
+                    <div class="col-xs-3"><strong><%= Resources.DisplayText.PosterEmailID %></strong></div>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("CollegeID")%>'>

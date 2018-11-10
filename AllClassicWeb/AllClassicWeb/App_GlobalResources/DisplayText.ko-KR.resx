@@ -527,4 +527,22 @@
   <data name="ShortName" xml:space="preserve">
     <value>짧은 이름</value>
   </data>
+  <data name="ArticleTitle" xml:space="preserve">
+    <value> 기사 제목</value>
+  </data>
+  <data name="ArticleURL" xml:space="preserve">
+    <value>기사 URL</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>조회</value>
+    <comment>Button</comment>
+  </data>
+  <data name="PosterEmailID" xml:space="preserve">
+    <value>등록자 이메일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>전기 일</value>
+  </data>
 </root>

@@ -17,10 +17,10 @@
             <div class="row">
                 <div class="row col-md-12 col-xs-12  col-xs-12">
                     <div class="col-md-4 col-xs-4">
-                        <div class="col-md-2 col-xs-2" style="margin-top: 10px; margin-bottom: 10px;">
-                            <span style="display: inline-block;"><%= Resources.DisplayText.Name %> </span>
+                        <div class="col-md-4 col-xs-4" style="margin-top: 10px; margin-bottom: 10px;">
+                            <span style="display: inline-block;"><%= Resources.DisplayText.PostingDate %> </span>
                         </div>
-                        <div class="col-md-8 col-xs-8">
+                        <div class="col-md-6 col-xs-6">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
                                 <input type='text' class="form-control" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
@@ -29,13 +29,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-4  col-xs-4">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Email %>  </h5>
+                    <div class="col-md-6 col-xs-6 ">
+                        <h5 style="display: inline-block;"><%= Resources.DisplayText.PosterEmailID %>  </h5>
                         <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
                     </div>
                     
-                    <div class="col-md-4 col-xs-4  col-xs-4">
-                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary" OnClick="selectedFilterChanged" Text="Inquiry" />
+                    <div class="col-md-2 col-xs-2">
+                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
                         </div>
                 </div>
 
@@ -51,17 +51,17 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                 <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 150px; height: 150px; overflow-y: scroll;">
                     <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
                         <HeaderTemplate>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.Name %></strong></div>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.ShortName %></strong></div>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.Country %></strong></div>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.Email %></strong></div>
+                            <div class="col-xs-3"><strong><%= Resources.DisplayText.PostingDate %></strong></div>
+                            <div class="col-xs-3"><strong><%= Resources.DisplayText.ArticleTitle %></strong></div>
+                            <div class="col-xs-3"><strong><%= Resources.DisplayText.ArticleURL %></strong></div>
+                            <div class="col-xs-3"><strong><%= Resources.DisplayText.PosterEmailID %></strong></div>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%#Eval("ArticleUrl")%>'>
                                 <div class=" row col-md-12 col-xs-12">
                                     <hr style="background-color: #5f755f; margin: 0; margin-top: 5px;" />
                                 </div>
-                                <div class="col-xs-3"><%#Eval("UpdateTimeStamp") %></div>
+                                <div class="col-xs-3"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></div>
                                 <div class="col-xs-3"><%#Eval("ArticleTitle") %></div>
                                 <div class="col-xs-3"><%#Eval("ArticleUrl") %></div>
                                 <div class="col-xs-3"><%#Eval("EmailID") %></div>

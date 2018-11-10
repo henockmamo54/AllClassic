@@ -178,6 +178,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article Title.
+        /// </summary>
+        internal static string ArticleTitle {
+            get {
+                return ResourceManager.GetString("ArticleTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article URL.
+        /// </summary>
+        internal static string ArticleURL {
+            get {
+                return ResourceManager.GetString("ArticleURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auditions.
         /// </summary>
         internal static string Auditions {
@@ -475,6 +493,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 조회.
+        /// </summary>
+        internal static string Inquiry {
+            get {
+                return ResourceManager.GetString("Inquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Instrument.
         /// </summary>
         internal static string Instrument {
@@ -732,6 +759,24 @@ namespace Resources {
         internal static string Poster {
             get {
                 return ResourceManager.GetString("Poster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poster Email ID.
+        /// </summary>
+        internal static string PosterEmailID {
+            get {
+                return ResourceManager.GetString("PosterEmailID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posting Date.
+        /// </summary>
+        internal static string PostingDate {
+            get {
+                return ResourceManager.GetString("PostingDate", resourceCulture);
             }
         }
         

@@ -6,7 +6,7 @@
     <div class="row">
         <div class="row col-xs-8">
             <div class="col-xs-4">
-                Article Title
+              <%= Resources.DisplayText.ArticleTitle %>
             </div>
 
             <div class="col-xs-8">
@@ -17,7 +17,7 @@
         <div class="row col-xs-8">
             <br />
             <div class="col-xs-4">
-                Article URL
+               <%= Resources.DisplayText.ArticleURL %>
             </div>
 
             <div class="col-xs-8">
@@ -28,8 +28,8 @@
     <div class="row col-xs-4" style="text-align:right;">
         <br />
 
-        <asp:Button runat="server" ID="btn_addnewArticle" UseSubmitBehavior="false" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary"></asp:Button>
-        <asp:Button runat="server" type="button" class="btn btn-danger" data-dismiss="modal" Text="Cancel"></asp:Button>
+        <asp:Button runat="server" ID="btn_addnewArticle" UseSubmitBehavior="false" OnClick="onclick_btn_addArticle" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary"></asp:Button>
+        <asp:Button runat="server" type="button" class="btn btn-danger" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
         <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
     </div>
 </asp:Content>
