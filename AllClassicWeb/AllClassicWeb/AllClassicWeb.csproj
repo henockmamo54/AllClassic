@@ -167,6 +167,7 @@
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\MusicCollegeDB.aspx" />
     <Content Include="Views\MusicCollegeDBAddNew.aspx" />
+    <Content Include="Views\MusicCollegeDBDetail.aspx" />
     <Content Include="Views\MusicianDB.aspx" />
     <Content Include="Views\MusicianDBAddNew.aspx" />
     <Content Include="Views\MusicianDetailPage.aspx" />
@@ -261,6 +262,13 @@
     </Compile>
     <Compile Include="Views\MusicCollegeDBAddNew.aspx.designer.cs">
       <DependentUpon>MusicCollegeDBAddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MusicCollegeDBDetail.aspx.cs">
+      <DependentUpon>MusicCollegeDBDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MusicCollegeDBDetail.aspx.designer.cs">
+      <DependentUpon>MusicCollegeDBDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\MusicianDB.aspx.cs">
       <DependentUpon>MusicianDB.aspx</DependentUpon>

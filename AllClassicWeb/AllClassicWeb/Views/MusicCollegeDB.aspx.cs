@@ -22,11 +22,13 @@ namespace AllClassicWeb.Views
         }
 
         public void CollegeDBClicked(object sender, CommandEventArgs e) {
-
+            var collegeID = e.CommandArgument.ToString();
+            Response.Redirect("MusicCollegeDBDetail?ID=" + collegeID);
         }
 
         public void onclick_headertableItem(object sender, CommandEventArgs e) {
-
+            var collegeID = e.CommandArgument.ToString();
+            Response.Redirect("MusicCollegeDBDetail?ID=" + collegeID);
         }
 
         public void selectedFilterChanged(object sender, EventArgs e)

@@ -11,4 +11,3 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.c
 C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.CopyComplete
 C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.pdb
-C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csprojAssemblyReference.cache
