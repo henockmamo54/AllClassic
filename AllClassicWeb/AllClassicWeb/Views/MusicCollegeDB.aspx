@@ -115,4 +115,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
         <asp:Button runat="server" ID="btn_addMusicCollege" CssClass="btn btn-success pull-right" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addMusicCollege" />
     </div>
 
+    <script type="text/javascript">
+         document.getElementById("MusicCollegetab").style.backgroundColor = "white";
+        document.getElementById("MusicCollegetab").style.borderBottom = "none";
+    </script>
 </asp:Content>

@@ -46,7 +46,7 @@
                         <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
                         <a class="otheroptions" id="performancetab" style="text-decoration: none;" runat="server"  href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
                         <a class="otheroptions" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
-                        <a class="otheroptions" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
+                        <a class="otheroptions" id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
                         <a class="otheroptions" id="instrumenttab" style="text-decoration: none;" runat="server" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ArchiveCenter %> </a>
                         <a class="otheroptions" runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
                         <a class="otheroptions" id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
@@ -73,7 +73,7 @@
                         </a>
 
                         <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
-                        <a class="list-group-item list-group-item-action  whitesmokeBG" href="ArticleDB"><%= Resources.DisplayText.Article %></a>
+                        <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" href="ArticleDB"><%= Resources.DisplayText.Article %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.Auditions %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.Concours %></a>
                         <a id="performancegrouptab" class="list-group-item list-group-item-action "  style="background-color: whitesmoke;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>

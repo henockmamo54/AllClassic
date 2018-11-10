@@ -82,5 +82,10 @@
 
     </div>
 
+    
+    <script type="text/javascript">
+         document.getElementById("MusicCollegetab").style.backgroundColor = "white";
+        document.getElementById("MusicCollegetab").style.borderBottom = "none";
+    </script>
 
 </asp:Content>

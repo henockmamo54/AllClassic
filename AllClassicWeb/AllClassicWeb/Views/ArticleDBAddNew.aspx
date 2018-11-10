@@ -32,4 +32,10 @@
         <asp:Button runat="server" type="button" class="btn btn-danger" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
         <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
     </div>
+    
+    <script type="text/javascript">
+        document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+        document.getElementById("articletab").style.borderRight = "none";
+    </script>
+
 </asp:Content>

@@ -71,9 +71,10 @@
 
     </asp:UpdatePanel>
 
+   
     <script type="text/javascript">
-        document.getElementById("artisttab").style.backgroundColor = "white";
-        document.getElementById("artisttab").style.borderBottom = "none";
+         document.getElementById("MusicCollegetab").style.backgroundColor = "white";
+        document.getElementById("MusicCollegetab").style.borderBottom = "none";
     </script>
 
 </asp:Content>
