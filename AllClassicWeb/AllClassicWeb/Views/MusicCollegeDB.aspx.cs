@@ -21,7 +21,37 @@ namespace AllClassicWeb.Views
             Response.Redirect("MusicCollegeDBAddNew.aspx");
         }
 
-        
+        public void CollegeDBClicked(object sender, CommandEventArgs e) {
 
+        }
+
+        public void onclick_headertableItem(object sender, CommandEventArgs e) {
+
+        }
+
+        public void selectedFilterChanged(object sender, EventArgs e)
+        {
+            var filterQuery = "";
+            if (DropDownList1_countryfilter.SelectedIndex != 0) filterQuery += " where country like N'%" + DropDownList1_countryfilter.SelectedItem.Value + "%'";
+            if (txtbox_namefilter.Text.ToString().Length > 0)
+            {
+                if (DropDownList1_countryfilter.SelectedIndex != 0) filterQuery += " And ";
+                else filterQuery += " Where ";
+
+                filterQuery += " Name like N'%" + txtbox_namefilter.Text.ToString() + "%'";
+            }
+            if (txtbox_shortnamefilter.Text.ToString().Length > 0)
+            {
+                if (DropDownList1_countryfilter.SelectedIndex != 0 || txtbox_namefilter.Text.ToString().Length > 0) filterQuery += " And ";
+                else filterQuery += " Where ";
+
+                filterQuery += " ShortName like N'%" + txtbox_shortnamefilter.Text + "%'";
+            }
+
+            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select * from Main.CollegeTbl" + filterQuery + @"
+                order by UpdateTimeStamp desc");
+
+            collegeListContainer.DataBind();
+        }
     }
 }
