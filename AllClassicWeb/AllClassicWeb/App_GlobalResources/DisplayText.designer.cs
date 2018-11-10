@@ -250,6 +250,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to College Photo.
+        /// </summary>
+        internal static string CollegePhoto {
+            get {
+                return ResourceManager.GetString("CollegePhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Composer.
         /// </summary>
         internal static string Composer {
@@ -291,6 +300,15 @@ namespace Resources {
         internal static string Continue {
             get {
                 return ResourceManager.GetString("Continue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        internal static string Country {
+            get {
+                return ResourceManager.GetString("Country", resourceCulture);
             }
         }
         
@@ -466,6 +484,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Introduction.
+        /// </summary>
+        internal static string Introduction {
+            get {
+                return ResourceManager.GetString("Introduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kakao Talk ID.
         /// </summary>
         internal static string KakaoTalkID {
@@ -489,6 +516,15 @@ namespace Resources {
         internal static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location Map.
+        /// </summary>
+        internal static string LocationMap {
+            get {
+                return ResourceManager.GetString("LocationMap", resourceCulture);
             }
         }
         
@@ -561,6 +597,15 @@ namespace Resources {
         internal static string MusicShop {
             get {
                 return ResourceManager.GetString("MusicShop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -804,6 +849,15 @@ namespace Resources {
         internal static string ShopOwner {
             get {
                 return ResourceManager.GetString("ShopOwner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Short Name.
+        /// </summary>
+        internal static string ShortName {
+            get {
+                return ResourceManager.GetString("ShortName", resourceCulture);
             }
         }
         

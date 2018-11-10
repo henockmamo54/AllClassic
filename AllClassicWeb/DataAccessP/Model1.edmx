@@ -148,8 +148,8 @@
           <Property Name="CollegePhoto" Type="nvarchar" MaxLength="80" />
           <Property Name="LocationMap" Type="nvarchar" MaxLength="30" />
           <Property Name="Introduction" Type="nvarchar" MaxLength="400" />
-          <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="LookUpTbl">
           <Key>
@@ -289,6 +289,18 @@
           <Property Name="UserID" Type="int" />
           <Property Name="UserTypeID" Type="int" />
         </EntityType>
+        <Association Name="FK__CollegeTb__UserI__03F0984C">
+          <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+          <End Role="CollegeTbl" Type="Self.CollegeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="CollegeTbl">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Instrumen__UserI__5535A963">
           <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
           <End Role="InstrumentTbl" Type="Self.InstrumentTbl" Multiplicity="*" />
@@ -620,6 +632,10 @@
           <EntitySet Name="PerformanceTbl" EntityType="Self.PerformanceTbl" Schema="Main" store:Type="Tables" />
           <EntitySet Name="UserTbl" EntityType="Self.UserTbl" Schema="Main" store:Type="Tables" />
           <EntitySet Name="UserUserType" EntityType="Self.UserUserType" Schema="Main" store:Type="Tables" />
+          <AssociationSet Name="FK__CollegeTb__UserI__03F0984C" Association="Self.FK__CollegeTb__UserI__03F0984C">
+            <End Role="UserTbl" EntitySet="UserTbl" />
+            <End Role="CollegeTbl" EntitySet="CollegeTbl" />
+          </AssociationSet>
           <AssociationSet Name="FK__Instrumen__UserI__5535A963" Association="Self.FK__Instrumen__UserI__5535A963">
             <End Role="UserTbl" EntitySet="UserTbl" />
             <End Role="InstrumentTbl" EntitySet="InstrumentTbl" />
@@ -869,21 +885,6 @@
           <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" />
         </EntityType>
-        <EntityType Name="CollegeTbl">
-          <Key>
-            <PropertyRef Name="CollegeID" />
-          </Key>
-          <Property Name="CollegeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ShortName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HomePage" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CollegePhoto" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="LocationMap" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Introduction" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
-          <Property Name="PosterEmailID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
         <EntityType Name="LookUpTbl">
           <Key>
             <PropertyRef Name="LookUpID" />
@@ -1022,6 +1023,7 @@
           <NavigationProperty Name="PerformanceTbls" Relationship="Self.FK__Performan__UserI__6EF57B66" FromRole="UserTbl" ToRole="PerformanceTbl" />
           <NavigationProperty Name="UserUserTypes" Relationship="Self.FK__UserUserT__UserI__4E88ABD4" FromRole="UserTbl" ToRole="UserUserType" />
           <NavigationProperty Name="MusicianTbls" Relationship="AllClassicDBModel.FK__MusicianT__UserI__59FA5E80" FromRole="UserTbl" ToRole="MusicianTbl" />
+          <NavigationProperty Name="CollegeTbls" Relationship="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C" FromRole="UserTbl" ToRole="CollegeTbl" />
         </EntityType>
         <EntityType Name="UserUserType">
           <Key>
@@ -1259,7 +1261,6 @@
           <EntitySet Name="UserTypeTbls" EntityType="Self.UserTypeTbl" />
           <EntitySet Name="VenueTbls" EntityType="Self.VenueTbl" />
           <EntitySet Name="UserTypes" EntityType="Self.UserType" />
-          <EntitySet Name="CollegeTbls" EntityType="Self.CollegeTbl" />
           <EntitySet Name="LookUpTbls" EntityType="Self.LookUpTbl" />
           <EntitySet Name="MusicianEndorserTbls" EntityType="Self.MusicianEndorserTbl" />
           <EntitySet Name="PerformanceGroupTbls" EntityType="Self.PerformanceGroupTbl" />
@@ -1371,6 +1372,11 @@
           <AssociationSet Name="FK__MusicianE__Music__02FC7413" Association="AllClassicDBModel.FK__MusicianE__Music__02FC7413">
             <End Role="MusicianTbl" EntitySet="MusicianTbls" />
             <End Role="MusicianEndorserTbl" EntitySet="MusicianEndorserTbls" />
+          </AssociationSet>
+          <EntitySet Name="CollegeTbls" EntityType="AllClassicDBModel.CollegeTbl" />
+          <AssociationSet Name="FK__CollegeTb__UserI__03F0984C" Association="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C">
+            <End Role="UserTbl" EntitySet="UserTbls" />
+            <End Role="CollegeTbl" EntitySet="CollegeTbls" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="MusicianTbl">
@@ -1498,6 +1504,34 @@
             </Principal>
             <Dependent Role="MusicianEndorserTbl">
               <PropertyRef Name="MusicianID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CollegeTbl">
+          <Key>
+            <PropertyRef Name="CollegeID" />
+          </Key>
+          <Property Name="CollegeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="HomePage" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CollegePhoto" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="LocationMap" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Introduction" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C" FromRole="CollegeTbl" ToRole="UserTbl" />
+        </EntityType>
+        <Association Name="FK__CollegeTb__UserI__03F0984C">
+          <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.CollegeTbl" Role="CollegeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="CollegeTbl">
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1647,22 +1681,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CollegeTbls">
-            <EntityTypeMapping TypeName="AllClassicDBModel.CollegeTbl">
-              <MappingFragment StoreEntitySet="CollegeTbl">
-                <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
-                <ScalarProperty Name="HomePage" ColumnName="HomePage" />
-                <ScalarProperty Name="Country" ColumnName="Country" />
-                <ScalarProperty Name="CollegePhoto" ColumnName="CollegePhoto" />
-                <ScalarProperty Name="LocationMap" ColumnName="LocationMap" />
-                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
-                <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
-                <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="LookUpTbls">
             <EntityTypeMapping TypeName="AllClassicDBModel.LookUpTbl">
               <MappingFragment StoreEntitySet="LookUpTbl">
@@ -1806,6 +1824,22 @@
                 <ScalarProperty Name="EmailID" ColumnName="EmailID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="MusicianID" ColumnName="MusicianID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CollegeTbls">
+            <EntityTypeMapping TypeName="AllClassicDBModel.CollegeTbl">
+              <MappingFragment StoreEntitySet="CollegeTbl">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="LocationMap" ColumnName="LocationMap" />
+                <ScalarProperty Name="CollegePhoto" ColumnName="CollegePhoto" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="HomePage" ColumnName="HomePage" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -24,6 +24,7 @@ namespace DataAccessP
             this.PerformanceTbls = new HashSet<PerformanceTbl>();
             this.UserUserTypes = new HashSet<UserUserType>();
             this.MusicianTbls = new HashSet<MusicianTbl>();
+            this.CollegeTbls = new HashSet<CollegeTbl>();
         }
     
         public int UserID { get; set; }
@@ -57,5 +58,7 @@ namespace DataAccessP
         public virtual ICollection<UserUserType> UserUserTypes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MusicianTbl> MusicianTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CollegeTbl> CollegeTbls { get; set; }
     }
 }

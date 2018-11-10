@@ -22,7 +22,9 @@ namespace DataAccessP
         public string CollegePhoto { get; set; }
         public string LocationMap { get; set; }
         public string Introduction { get; set; }
-        public string PosterEmailID { get; set; }
         public System.DateTime UpdateTimeStamp { get; set; }
+        public Nullable<int> UserID { get; set; }
+    
+        public virtual UserTbl UserTbl { get; set; }
     }
 }

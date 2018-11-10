@@ -492,4 +492,22 @@
   <data name="Playedby" xml:space="preserve">
     <value>Played by</value>
   </data>
+  <data name="CollegePhoto" xml:space="preserve">
+    <value>College Photo</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Introduction" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="LocationMap" xml:space="preserve">
+    <value>Location Map</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>Short Name</value>
+  </data>
 </root>

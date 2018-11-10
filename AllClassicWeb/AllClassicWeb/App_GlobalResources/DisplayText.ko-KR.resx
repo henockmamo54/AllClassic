@@ -509,4 +509,22 @@
   <data name="Playedby" xml:space="preserve">
     <value>연주한 사람</value>
   </data>
+  <data name="CollegePhoto" xml:space="preserve">
+    <value>대학 사진</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>국가</value>
+  </data>
+  <data name="Introduction" xml:space="preserve">
+    <value>소개</value>
+  </data>
+  <data name="LocationMap" xml:space="preserve">
+    <value>위치지도</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>짧은 이름</value>
+  </data>
 </root>

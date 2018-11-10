@@ -141,22 +141,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CollegeTbls">
-      <EntityTypeMapping TypeName="AllClassicDBModel.CollegeTbl">
-        <MappingFragment StoreEntitySet="CollegeTbl">
-          <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
-          <ScalarProperty Name="HomePage" ColumnName="HomePage" />
-          <ScalarProperty Name="Country" ColumnName="Country" />
-          <ScalarProperty Name="CollegePhoto" ColumnName="CollegePhoto" />
-          <ScalarProperty Name="LocationMap" ColumnName="LocationMap" />
-          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
-          <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
-          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="LookUpTbls">
       <EntityTypeMapping TypeName="AllClassicDBModel.LookUpTbl">
         <MappingFragment StoreEntitySet="LookUpTbl">
@@ -300,6 +284,22 @@
           <ScalarProperty Name="EmailID" ColumnName="EmailID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="MusicianID" ColumnName="MusicianID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CollegeTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.CollegeTbl">
+        <MappingFragment StoreEntitySet="CollegeTbl">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="LocationMap" ColumnName="LocationMap" />
+          <ScalarProperty Name="CollegePhoto" ColumnName="CollegePhoto" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="HomePage" ColumnName="HomePage" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

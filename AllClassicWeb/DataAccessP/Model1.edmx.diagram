@@ -14,7 +14,6 @@
         <EntityTypeShape EntityType="AllClassicDBModel.UserTypeTbl" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AllClassicDBModel.VenueTbl" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AllClassicDBModel.UserType" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AllClassicDBModel.CollegeTbl" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AllClassicDBModel.LookUpTbl" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AllClassicDBModel.MusicianEndorserTbl" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AllClassicDBModel.PerformanceGroupTbl" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
@@ -49,6 +48,8 @@
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__MainT__6D0D32F4" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Music__72C60C4A" />
         <AssociationConnector Association="AllClassicDBModel.FK__MusicianE__Music__02FC7413" />
+        <EntityTypeShape EntityType="AllClassicDBModel.CollegeTbl" Width="1.5" PointX="3" PointY="23.125" />
+        <AssociationConnector Association="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
