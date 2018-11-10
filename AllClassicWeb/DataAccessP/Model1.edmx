@@ -11,8 +11,9 @@
           </Key>
           <Property Name="ArticleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ArticleURL" Type="nvarchar" MaxLength="80" Nullable="false" />
-          <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="ArticleTitle" Type="nvarchar" MaxLength="400" />
+          <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="AuditionTbl">
           <Key>
@@ -289,6 +290,18 @@
           <Property Name="UserID" Type="int" />
           <Property Name="UserTypeID" Type="int" />
         </EntityType>
+        <Association Name="FK__ArticleTb__UserI__04E4BC85">
+          <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+          <End Role="ArticleTbl" Type="Self.ArticleTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ArticleTbl">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__CollegeTb__UserI__03F0984C">
           <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
           <End Role="CollegeTbl" Type="Self.CollegeTbl" Multiplicity="*" />
@@ -632,6 +645,10 @@
           <EntitySet Name="PerformanceTbl" EntityType="Self.PerformanceTbl" Schema="Main" store:Type="Tables" />
           <EntitySet Name="UserTbl" EntityType="Self.UserTbl" Schema="Main" store:Type="Tables" />
           <EntitySet Name="UserUserType" EntityType="Self.UserUserType" Schema="Main" store:Type="Tables" />
+          <AssociationSet Name="FK__ArticleTb__UserI__04E4BC85" Association="Self.FK__ArticleTb__UserI__04E4BC85">
+            <End Role="UserTbl" EntitySet="UserTbl" />
+            <End Role="ArticleTbl" EntitySet="ArticleTbl" />
+          </AssociationSet>
           <AssociationSet Name="FK__CollegeTb__UserI__03F0984C" Association="Self.FK__CollegeTb__UserI__03F0984C">
             <End Role="UserTbl" EntitySet="UserTbl" />
             <End Role="CollegeTbl" EntitySet="CollegeTbl" />
@@ -745,15 +762,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AllClassicDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ArticleTbl">
-          <Key>
-            <PropertyRef Name="ArticleID" />
-          </Key>
-          <Property Name="ArticleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ArticleURL" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PosterEmailID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
         <EntityType Name="AuditionTbl">
           <Key>
             <PropertyRef Name="AuditionID" />
@@ -1024,6 +1032,7 @@
           <NavigationProperty Name="UserUserTypes" Relationship="Self.FK__UserUserT__UserI__4E88ABD4" FromRole="UserTbl" ToRole="UserUserType" />
           <NavigationProperty Name="MusicianTbls" Relationship="AllClassicDBModel.FK__MusicianT__UserI__59FA5E80" FromRole="UserTbl" ToRole="MusicianTbl" />
           <NavigationProperty Name="CollegeTbls" Relationship="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C" FromRole="UserTbl" ToRole="CollegeTbl" />
+          <NavigationProperty Name="ArticleTbls" Relationship="AllClassicDBModel.FK__ArticleTb__UserI__04E4BC85" FromRole="UserTbl" ToRole="ArticleTbl" />
         </EntityType>
         <EntityType Name="UserUserType">
           <Key>
@@ -1252,7 +1261,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="AllClassicDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ArticleTbls" EntityType="Self.ArticleTbl" />
           <EntitySet Name="AuditionTbls" EntityType="Self.AuditionTbl" />
           <EntitySet Name="ConcourTbls" EntityType="Self.ConcourTbl" />
           <EntitySet Name="InstrumentTbls" EntityType="Self.InstrumentTbl" />
@@ -1377,6 +1385,11 @@
           <AssociationSet Name="FK__CollegeTb__UserI__03F0984C" Association="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C">
             <End Role="UserTbl" EntitySet="UserTbls" />
             <End Role="CollegeTbl" EntitySet="CollegeTbls" />
+          </AssociationSet>
+          <EntitySet Name="ArticleTbls" EntityType="AllClassicDBModel.ArticleTbl" />
+          <AssociationSet Name="FK__ArticleTb__UserI__04E4BC85" Association="AllClassicDBModel.FK__ArticleTb__UserI__04E4BC85">
+            <End Role="UserTbl" EntitySet="UserTbls" />
+            <End Role="ArticleTbl" EntitySet="ArticleTbls" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="MusicianTbl">
@@ -1535,22 +1548,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ArticleTbl">
+          <Key>
+            <PropertyRef Name="ArticleID" />
+          </Key>
+          <Property Name="ArticleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArticleURL" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ArticleTitle" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__ArticleTb__UserI__04E4BC85" FromRole="ArticleTbl" ToRole="UserTbl" />
+        </EntityType>
+        <Association Name="FK__ArticleTb__UserI__04E4BC85">
+          <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.ArticleTbl" Role="ArticleTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ArticleTbl">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AllClassicDBModelStoreContainer" CdmEntityContainer="AllClassicDBEntities">
-          <EntitySetMapping Name="ArticleTbls">
-            <EntityTypeMapping TypeName="AllClassicDBModel.ArticleTbl">
-              <MappingFragment StoreEntitySet="ArticleTbl">
-                <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
-                <ScalarProperty Name="ArticleURL" ColumnName="ArticleURL" />
-                <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
-                <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="AuditionTbls">
             <EntityTypeMapping TypeName="AllClassicDBModel.AuditionTbl">
               <MappingFragment StoreEntitySet="AuditionTbl">
@@ -1840,6 +1866,17 @@
                 <ScalarProperty Name="ShortName" ColumnName="ShortName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArticleTbls">
+            <EntityTypeMapping TypeName="AllClassicDBModel.ArticleTbl">
+              <MappingFragment StoreEntitySet="ArticleTbl">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ArticleTitle" ColumnName="ArticleTitle" />
+                <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+                <ScalarProperty Name="ArticleURL" ColumnName="ArticleURL" />
+                <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

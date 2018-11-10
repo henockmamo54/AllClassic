@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="63806996df3c499094cf0d1d165ac080" Name="Diagram1">
-        <EntityTypeShape EntityType="AllClassicDBModel.ArticleTbl" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AllClassicDBModel.AuditionTbl" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AllClassicDBModel.ConcourTbl" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AllClassicDBModel.InstrumentTbl" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
@@ -50,6 +49,8 @@
         <AssociationConnector Association="AllClassicDBModel.FK__MusicianE__Music__02FC7413" />
         <EntityTypeShape EntityType="AllClassicDBModel.CollegeTbl" Width="1.5" PointX="3" PointY="23.125" />
         <AssociationConnector Association="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C" />
+        <EntityTypeShape EntityType="AllClassicDBModel.ArticleTbl" Width="1.5" PointX="3" PointY="27.75" />
+        <AssociationConnector Association="AllClassicDBModel.FK__ArticleTb__UserI__04E4BC85" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

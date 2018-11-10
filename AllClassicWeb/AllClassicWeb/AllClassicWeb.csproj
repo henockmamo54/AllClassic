@@ -166,6 +166,8 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\AboutUs.aspx" />
+    <Content Include="Views\ArticleDB.aspx" />
+    <Content Include="Views\ArticleDBAddNew.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\MusicCollegeDB.aspx" />
     <Content Include="Views\MusicCollegeDBAddNew.aspx" />
@@ -250,6 +252,20 @@
     </Compile>
     <Compile Include="Views\AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArticleDB.aspx.cs">
+      <DependentUpon>ArticleDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ArticleDB.aspx.designer.cs">
+      <DependentUpon>ArticleDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArticleDBAddNew.aspx.cs">
+      <DependentUpon>ArticleDBAddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ArticleDBAddNew.aspx.designer.cs">
+      <DependentUpon>ArticleDBAddNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AllClassicDBModelStoreContainer" CdmEntityContainer="AllClassicDBEntities">
-    <EntitySetMapping Name="ArticleTbls">
-      <EntityTypeMapping TypeName="AllClassicDBModel.ArticleTbl">
-        <MappingFragment StoreEntitySet="ArticleTbl">
-          <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
-          <ScalarProperty Name="ArticleURL" ColumnName="ArticleURL" />
-          <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
-          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="AuditionTbls">
       <EntityTypeMapping TypeName="AllClassicDBModel.AuditionTbl">
         <MappingFragment StoreEntitySet="AuditionTbl">
@@ -300,6 +290,17 @@
           <ScalarProperty Name="ShortName" ColumnName="ShortName" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArticleTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.ArticleTbl">
+        <MappingFragment StoreEntitySet="ArticleTbl">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ArticleTitle" ColumnName="ArticleTitle" />
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="ArticleURL" ColumnName="ArticleURL" />
+          <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

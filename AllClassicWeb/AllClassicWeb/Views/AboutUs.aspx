@@ -12,10 +12,10 @@
 
     <div class="row">
         <div class="col-md-4">
-            <div class="thumbnail">
+            <div class="thumbnail" style="border:none">
                 <a>
-                     <img src="../Doc/BOD/travis-kolbjornsen-300x300.png" alt="Cinque Terre"> 
-                    <div class="caption">
+                     <img src="../Doc/BOD/travis-kolbjornsen-300x300.png" class="img-circle" alt="Cinque Terre"> 
+                    <div class="caption" style="text-align:center">
                         <p>Lorem ipsum...</p>
                     </div>
                 </a>
@@ -23,21 +23,21 @@
         </div>
         
         <div class="col-md-4">
-            <div class="thumbnail">
+            <div class="thumbnail" style="border:none">
                 <a>
-                     <img src="../Doc/BOD/travis-kolbjornsen-300x300.png" alt="Cinque Terre"> 
-                    <div class="caption">
+                     <img src="../Doc/BOD/travis-kolbjornsen-300x300.png" class="img-circle" alt="Cinque Terre"> 
+                    <div class="caption" style="text-align:center">
                         <p>Lorem ipsum...</p>
                     </div>
                 </a>
             </div>
         </div>
-        
+       
         <div class="col-md-4">
-            <div class="thumbnail">
+            <div class="thumbnail" style="border:none">
                 <a>
-                     <img src="../Doc/BOD/travis-kolbjornsen-300x300.png" alt="Cinque Terre"> 
-                    <div class="caption">
+                     <img src="../Doc/BOD/travis-kolbjornsen-300x300.png" class="img-circle" alt="Cinque Terre"> 
+                    <div class="caption" style="text-align:center">
                         <p>Lorem ipsum...</p>
                     </div>
                 </a>

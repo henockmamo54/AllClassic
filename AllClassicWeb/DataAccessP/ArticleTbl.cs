@@ -16,7 +16,10 @@ namespace DataAccessP
     {
         public int ArticleID { get; set; }
         public string ArticleURL { get; set; }
-        public string PosterEmailID { get; set; }
         public System.DateTime UpdateTimeStamp { get; set; }
+        public string ArticleTitle { get; set; }
+        public Nullable<int> UserID { get; set; }
+    
+        public virtual UserTbl UserTbl { get; set; }
     }
 }

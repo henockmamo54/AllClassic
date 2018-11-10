@@ -25,7 +25,6 @@ namespace DataAccessP
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ArticleTbl> ArticleTbls { get; set; }
         public virtual DbSet<AuditionTbl> AuditionTbls { get; set; }
         public virtual DbSet<ConcourTbl> ConcourTbls { get; set; }
         public virtual DbSet<InstrumentTbl> InstrumentTbls { get; set; }
@@ -43,5 +42,6 @@ namespace DataAccessP
         public virtual DbSet<UserUserType> UserUserTypes { get; set; }
         public virtual DbSet<MusicianTbl> MusicianTbls { get; set; }
         public virtual DbSet<CollegeTbl> CollegeTbls { get; set; }
+        public virtual DbSet<ArticleTbl> ArticleTbls { get; set; }
     }
 }
