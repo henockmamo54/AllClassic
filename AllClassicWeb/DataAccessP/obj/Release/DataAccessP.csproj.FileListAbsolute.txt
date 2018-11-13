@@ -1,0 +1,14 @@
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Release\DataAccessP.exe.config
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Release\DataAccessP.exe
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Release\DataAccessP.pdb
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Release\EntityFramework.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Release\EntityFramework.SqlServer.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Release\EntityFramework.xml
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\bin\Release\EntityFramework.SqlServer.xml
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Release\DataAccessP.csprojAssemblyReference.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Release\DataAccessP.Properties.Resources.resources
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Release\DataAccessP.csproj.GenerateResource.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Release\DataAccessP.csproj.CoreCompileInputs.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Release\DataAccessP.csproj.CopyComplete
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Release\DataAccessP.exe
+C:\workplace\C#\AllClassic_git\AllClassicWeb\DataAccessP\obj\Release\DataAccessP.pdb

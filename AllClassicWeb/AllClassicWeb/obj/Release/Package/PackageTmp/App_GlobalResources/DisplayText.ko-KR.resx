@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUS" xml:space="preserve">
+    <value>회사 소개</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="ArchiveCenter" xml:space="preserve">
+    <value>아카이브 센터</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>기사 모음</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="Auditions" xml:space="preserve">
+    <value>오디션 정보</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="ConcertVenue" xml:space="preserve">
+    <value>공연장</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="Concours" xml:space="preserve">
+    <value>콩클 정보</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="MusicCollegeDB" xml:space="preserve">
+    <value>음악 학교 DB</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="MusicianDB" xml:space="preserve">
+    <value>뮤지션 DB</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="MusicShop" xml:space="preserve">
+    <value>음악 가게</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="PeopleJob" xml:space="preserve">
+    <value>구인/구직</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="PerformanceDB" xml:space="preserve">
+    <value>공연 DB</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="PerformanceGroup" xml:space="preserve">
+    <value>공연 단체</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="QA" xml:space="preserve">
+    <value>궁금과 답변</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="RepairShop" xml:space="preserve">
+    <value>악기 수리</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>로그인</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>로그아웃</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>회원 가입</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="ClassicCoin" xml:space="preserve">
+    <value>ClassicCoin</value>
+  </data>
+  <data name="en" xml:space="preserve">
+    <value>영</value>
+  </data>
+  <data name="kr" xml:space="preserve">
+    <value>한</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>이메일</value>
+  </data>
+  <data name="Forgotthepassword" xml:space="preserve">
+    <value>비밀번호를 잊어버렸습니까?</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>암호</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>ID, PW저장</value>
+  </data>
+  <data name="AcceptTerms" xml:space="preserve">
+    <value>약관 동의</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>주소</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AdmistraterOfAgent" xml:space="preserve">
+    <value>에이전시 행정담당</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AdmistraterOfOrganizer" xml:space="preserve">
+    <value>Admistrater Of Organizer</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AdmistraterOfPerformanceGroup" xml:space="preserve">
+    <value>공연단체 행정담당</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AdmistraterOfPromoter" xml:space="preserve">
+    <value>기획사 행정담당</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AmatureMusician" xml:space="preserve">
+    <value>아마추어 뮤지션</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Birthday" xml:space="preserve">
+    <value>생일</value>
+  </data>
+  <data name="Blogger" xml:space="preserve">
+    <value>블로거</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>취소</value>
+    <comment>Button</comment>
+  </data>
+  <data name="ClassicMania" xml:space="preserve">
+    <value>클래식 애호가</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Composer" xml:space="preserve">
+    <value>작곡가</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Conductor" xml:space="preserve">
+    <value>지휘자</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>계속</value>
+  </data>
+  <data name="Doyouacceptprivacypolicy" xml:space="preserve">
+    <value>개인정보 처리 방침에 동의합니까?</value>
+    <comment>system msg</comment>
+  </data>
+  <data name="Doyouaccepttermsofuse" xml:space="preserve">
+    <value>이용약관에 동의합니까?</value>
+    <comment>system msg</comment>
+  </data>
+  <data name="FacebookURL" xml:space="preserve">
+    <value>페이스북 주소</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>성명</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="KakaoTalkID" xml:space="preserve">
+    <value>카카오톡 아이디</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MobileNo" xml:space="preserve">
+    <value>휴대폰</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="NickName" xml:space="preserve">
+    <value>별명</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="OtherSNS" xml:space="preserve">
+    <value>기타 SNS</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>개인정보처리방침</value>
+  </data>
+  <data name="ProMusician" xml:space="preserve">
+    <value>프로 뮤지션</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>등록</value>
+  </data>
+  <data name="Reporter" xml:space="preserve">
+    <value>기자</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="ShopOwner" xml:space="preserve">
+    <value>가게 주인</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Student" xml:space="preserve">
+    <value>음악 전공 학생</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="TeacherProfessor" xml:space="preserve">
+    <value>음악 교사 교수</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Termsofuse" xml:space="preserve">
+    <value>이용약관</value>
+  </data>
+  <data name="TwitterURL" xml:space="preserve">
+    <value>트위터 주소</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>이용자 정보</value>
+  </data>
+  <data name="WhatkindOfUserAreyou" xml:space="preserve">
+    <value>당신은 어떤 유형의 이용자입니까?</value>
+    <comment>system msg</comment>
+  </data>
+  <data name="YourAffilation" xml:space="preserve">
+    <value>소속 단체</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>우편 번호</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="AddNewData" xml:space="preserve">
+    <value>새 정보 입력</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Major" xml:space="preserve">
+    <value>전공</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="NewDataInputScreen" xml:space="preserve">
+    <value>New Data Input Screen</value>
+  </data>
+  <data name="Photo1" xml:space="preserve">
+    <value>프로필 사진 1</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Photo2" xml:space="preserve">
+    <value>프로필 사진 2</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>추가</value>
+    <comment>Button</comment>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>지우다</value>
+  </data>
+  <data name="EndorsedDate" xml:space="preserve">
+    <value>인증 일자</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Endorser" xml:space="preserve">
+    <value>인증자</value>
+  </data>
+  <data name="EndorserEmailID" xml:space="preserve">
+    <value>인증자 이메일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="EndorserName" xml:space="preserve">
+    <value>인증자 이름</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="ProfilePage" xml:space="preserve">
+    <value>프로필 화면</value>
+  </data>
+  <data name="Repertory" xml:space="preserve">
+    <value>레파토리</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>홈페이지</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>편집하다</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>최신 정보</value>
+  </data>
+  <data name="Alias" xml:space="preserve">
+    <value>별칭</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>도시</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="FaxNo" xml:space="preserve">
+    <value>팩스 번호</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="GroupType" xml:space="preserve">
+    <value>공연단 타입</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="SinceYear" xml:space="preserve">
+    <value>설립 년도</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="TelNo" xml:space="preserve">
+    <value>연락 전화 번호</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>연주 요약</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>종료일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>표현 언어</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainInstrument" xml:space="preserve">
+    <value>주요 악기</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainTitle" xml:space="preserve">
+    <value>제목</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="MainTitleComposer" xml:space="preserve">
+    <value>주제곡 작곡자</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Organizer" xml:space="preserve">
+    <value>주최사</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="PerformanceType" xml:space="preserve">
+    <value>공연 종류</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Poster" xml:space="preserve">
+    <value>포스터</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Program" xml:space="preserve">
+    <value>프로그램</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>지역</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Sponser" xml:space="preserve">
+    <value>후원사</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>시작일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="SubjectTheme" xml:space="preserve">
+    <value>연주 주제</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="SubTitle" xml:space="preserve">
+    <value>부 제목</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="TicketBox" xml:space="preserve">
+    <value>예매처</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>공연 시간</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Venue" xml:space="preserve">
+    <value>공연장</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>비디오</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Instrument" xml:space="preserve">
+    <value>악기</value>
+  </data>
+  <data name="Playedby" xml:space="preserve">
+    <value>연주한 사람</value>
+  </data>
+  <data name="CollegePhoto" xml:space="preserve">
+    <value>대학 사진</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>국가</value>
+  </data>
+  <data name="Introduction" xml:space="preserve">
+    <value>소개</value>
+  </data>
+  <data name="LocationMap" xml:space="preserve">
+    <value>위치지도</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>짧은 이름</value>
+  </data>
+  <data name="ArticleTitle" xml:space="preserve">
+    <value> 기사 제목</value>
+  </data>
+  <data name="ArticleURL" xml:space="preserve">
+    <value>기사 URL</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>조회</value>
+    <comment>Button</comment>
+  </data>
+  <data name="PosterEmailID" xml:space="preserve">
+    <value>등록자 이메일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="PostingDate" xml:space="preserve">
+    <value>전기 일</value>
+  </data>
+  <data name="AuditionOutlineandApplicationInfo" xml:space="preserve">
+    <value>오디션 개요 과 신청 정보</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>접수 시작일</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>제목</value>
+    <comment>Table Schema</comment>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>접수 마감일</value>
+    <comment>Table Schema</comment>
+  </data>
+</root>

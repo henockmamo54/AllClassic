@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AllClassicWeb.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - AllClassic Korea</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body style="padding-top: 2px;">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="container body-content" style="padding-left: 20px;">
+
+            <div class="navbar-outer" id="masterNavigationBar">
+                <div class="row ">
+                    <div class="">
+                        <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
+                        <a class="otheroptions" id="performancetab" style="text-decoration: none;" runat="server"  href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
+                        <a class="otheroptions" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
+                        <a class="otheroptions" id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
+                        <a class="otheroptions" id="instrumenttab" style="text-decoration: none;" runat="server" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ArchiveCenter %> </a>
+                        <a class="otheroptions" runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
+                        <a class="otheroptions" id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
+                        <span class="otheroptions">
+                            <a runat="server" onserverclick="changeLanguageToEng"  CommandArgument='en-US'  style="padding-left: 0px; padding-right: 4px; display: inline-block;"><%= Resources.DisplayText.en %></a>/
+                            <a runat="server" onserverclick="changeLanguageToKr"   CommandArgument='ko-KR'  style="padding-right: 0px; padding-left: 4px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
+                        </span>
+                        <span class="otheroptions" style="padding-top: 8px;">
+                            <asp:TextBox runat="server" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
+                            <asp:Button runat="server" Text="search" class="btn btn-primary" />
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-2 col-xs-2" id="mastersidemenu" style="padding-left: 0px;">
+                    <ul class="list-group">
+                        <a runat="server" id="signinLink" visible="false">
+                            <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
+                            <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
+                        </a>
+
+                        <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
+                        <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" href="ArticleDB"><%= Resources.DisplayText.Article %></a>
+                        <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" href="AuditionDB"><%= Resources.DisplayText.Auditions %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.Concours %></a>
+                        <a id="performancegrouptab" class="list-group-item list-group-item-action "  style="background-color: whitesmoke;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.RepairShop %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.MusicShop %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.ConcertVenue %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.PeopleJob %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.QA %></a>
+                    </ul>
+                </div>
+                <div class="col-md-10 col-xs-10" id="mastermaincontent">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <hr />
+            <footer id="masterFooter">
+                <p>&copy; <%: DateTime.Now.Year %> All Copyrights are reserved @www.allclassickorea.com 3F honsung Bldg. 220 Yeoksam-Ro Gangnam-gu, Seoul, Korea 06227</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
