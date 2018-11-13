@@ -304,6 +304,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Concour Outline.
+        /// </summary>
+        internal static string ConcourOutline {
+            get {
+                return ResourceManager.GetString("ConcourOutline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Concours.
         /// </summary>
         internal static string Concours {

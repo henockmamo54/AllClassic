@@ -560,4 +560,8 @@
     <value>접수 마감일</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="ConcourOutline" xml:space="preserve">
+    <value>콩쿠르 요강</value>
+    <comment>Table Schema</comment>
+  </data>
 </root>

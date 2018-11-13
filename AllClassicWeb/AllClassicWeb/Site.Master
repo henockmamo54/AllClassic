@@ -44,15 +44,15 @@
                 <div class="row ">
                     <div class="">
                         <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
-                        <a class="otheroptions" id="performancetab" style="text-decoration: none;" runat="server"  href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
+                        <a class="otheroptions" id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
                         <a class="otheroptions" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
                         <a class="otheroptions" id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
                         <a class="otheroptions" id="instrumenttab" style="text-decoration: none;" runat="server" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ArchiveCenter %> </a>
                         <a class="otheroptions" runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
                         <a class="otheroptions" id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
                         <span class="otheroptions">
-                            <a runat="server" onserverclick="changeLanguageToEng"  CommandArgument='en-US'  style="padding-left: 0px; padding-right: 4px; display: inline-block;"><%= Resources.DisplayText.en %></a>/
-                            <a runat="server" onserverclick="changeLanguageToKr"   CommandArgument='ko-KR'  style="padding-right: 0px; padding-left: 4px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
+                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; padding-right: 4px; display: inline-block;"><%= Resources.DisplayText.en %></a>/
+                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; padding-left: 4px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
                         </span>
                         <span class="otheroptions" style="padding-top: 8px;">
                             <asp:TextBox runat="server" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
@@ -73,10 +73,10 @@
                         </a>
 
                         <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
-                        <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" href="ArticleDB"><%= Resources.DisplayText.Article %></a>
-                        <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" href="AuditionDB"><%= Resources.DisplayText.Auditions %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.Concours %></a>
-                        <a id="performancegrouptab" class="list-group-item list-group-item-action "  style="background-color: whitesmoke;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
+                        <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
+                        <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG"  runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
+                        <a id="performancegrouptab" class="list-group-item list-group-item-action " style="background-color: whitesmoke;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.RepairShop %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.MusicShop %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.ConcertVenue %></a>

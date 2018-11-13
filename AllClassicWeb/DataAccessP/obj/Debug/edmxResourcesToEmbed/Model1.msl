@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AllClassicDBModelStoreContainer" CdmEntityContainer="AllClassicDBEntities">
-    <EntitySetMapping Name="ConcourTbls">
-      <EntityTypeMapping TypeName="AllClassicDBModel.ConcourTbl">
-        <MappingFragment StoreEntitySet="ConcourTbl">
-          <ScalarProperty Name="ConcourID" ColumnName="ConcourID" />
-          <ScalarProperty Name="Organizer" ColumnName="Organizer" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
-          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
-          <ScalarProperty Name="ConcourOutline" ColumnName="ConcourOutline" />
-          <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
-          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="InstrumentTbls">
       <EntityTypeMapping TypeName="AllClassicDBModel.InstrumentTbl">
         <MappingFragment StoreEntitySet="InstrumentTbl">
@@ -301,6 +287,20 @@
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Organizer" ColumnName="Organizer" />
           <ScalarProperty Name="AuditionID" ColumnName="AuditionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConcourTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.ConcourTbl">
+        <MappingFragment StoreEntitySet="ConcourTbl">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="ConcourOutline" ColumnName="ConcourOutline" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Organizer" ColumnName="Organizer" />
+          <ScalarProperty Name="ConcourID" ColumnName="ConcourID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
