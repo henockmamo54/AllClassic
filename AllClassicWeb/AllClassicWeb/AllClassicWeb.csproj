@@ -171,6 +171,8 @@
     <Content Include="Views\ArticleDBAddNew.aspx" />
     <Content Include="Views\AuditionDB.aspx" />
     <Content Include="Views\AuditionDBAddNew.aspx" />
+    <Content Include="Views\ConcertVenuDB.aspx" />
+    <Content Include="Views\ConcertVenuDBAddNew.aspx" />
     <Content Include="Views\ConcoursDB.aspx" />
     <Content Include="Views\ConcoursDBAddNew.aspx" />
     <Content Include="Views\Login.aspx" />
@@ -289,6 +291,20 @@
     </Compile>
     <Compile Include="Views\AuditionDBAddNew.aspx.designer.cs">
       <DependentUpon>AuditionDBAddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConcertVenuDB.aspx.cs">
+      <DependentUpon>ConcertVenuDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ConcertVenuDB.aspx.designer.cs">
+      <DependentUpon>ConcertVenuDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConcertVenuDBAddNew.aspx.cs">
+      <DependentUpon>ConcertVenuDBAddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ConcertVenuDBAddNew.aspx.designer.cs">
+      <DependentUpon>ConcertVenuDBAddNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ConcoursDB.aspx.cs">
       <DependentUpon>ConcoursDB.aspx</DependentUpon>

@@ -556,4 +556,7 @@
   <data name="OwnerName" xml:space="preserve">
     <value>Owner Name</value>
   </data>
+  <data name="VenuName" xml:space="preserve">
+    <value>Venu Name</value>
+  </data>
 </root>

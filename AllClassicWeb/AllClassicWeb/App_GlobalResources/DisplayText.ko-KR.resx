@@ -573,4 +573,7 @@
   <data name="OwnerName" xml:space="preserve">
     <value>소유자 이름</value>
   </data>
+  <data name="VenuName" xml:space="preserve">
+    <value>브누누 이름</value>
+  </data>
 </root>

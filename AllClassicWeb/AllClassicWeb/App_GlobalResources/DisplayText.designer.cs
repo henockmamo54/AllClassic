@@ -1141,6 +1141,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Venu Name.
+        /// </summary>
+        internal static string VenuName {
+            get {
+                return ResourceManager.GetString("VenuName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Video.
         /// </summary>
         internal static string Video {
