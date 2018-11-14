@@ -27,7 +27,6 @@ namespace DataAccessP
     
         public virtual DbSet<InstrumentTbl> InstrumentTbls { get; set; }
         public virtual DbSet<MusicShopTbl> MusicShopTbls { get; set; }
-        public virtual DbSet<RepairShopTbl> RepairShopTbls { get; set; }
         public virtual DbSet<UserTypeTbl> UserTypeTbls { get; set; }
         public virtual DbSet<VenueTbl> VenueTbls { get; set; }
         public virtual DbSet<UserType> UserTypes { get; set; }
@@ -43,5 +42,6 @@ namespace DataAccessP
         public virtual DbSet<ArticleTbl> ArticleTbls { get; set; }
         public virtual DbSet<AuditionTbl> AuditionTbls { get; set; }
         public virtual DbSet<ConcourTbl> ConcourTbls { get; set; }
+        public virtual DbSet<RepairShopTbl> RepairShopTbls { get; set; }
     }
 }

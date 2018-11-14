@@ -547,4 +547,13 @@
     <value>Concour Outline</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="ShopName" xml:space="preserve">
+    <value>Shop Name</value>
+  </data>
+  <data name="Expertise" xml:space="preserve">
+    <value>Expertise</value>
+  </data>
+  <data name="OwnerName" xml:space="preserve">
+    <value>Owner Name</value>
+  </data>
 </root>

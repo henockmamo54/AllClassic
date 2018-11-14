@@ -58,6 +58,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
     </div>
 
     <hr style="margin-top: 0px;" />
+
     <div class="row">
         <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="CollegeID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;">
 

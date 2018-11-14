@@ -564,4 +564,13 @@
     <value>콩쿠르 요강</value>
     <comment>Table Schema</comment>
   </data>
+  <data name="ShopName" xml:space="preserve">
+    <value>상점 이름</value>
+  </data>
+  <data name="Expertise" xml:space="preserve">
+    <value>전문적 지식</value>
+  </data>
+  <data name="OwnerName" xml:space="preserve">
+    <value>소유자 이름</value>
+  </data>
 </root>

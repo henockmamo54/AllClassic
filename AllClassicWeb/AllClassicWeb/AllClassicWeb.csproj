@@ -186,6 +186,8 @@
     <Content Include="Views\PerformanceGroup.aspx" />
     <Content Include="Views\PerformanceGroupAddNew.aspx" />
     <Content Include="Views\PerformanceGroupDetail.aspx" />
+    <Content Include="Views\RepairShopDB.aspx" />
+    <Content Include="Views\RepairShopDBAddNew.aspx" />
     <Content Include="Views\SignUp\TermsOfUsePage.aspx" />
     <Content Include="Views\SignUp\UserInformationRegistration.aspx" />
     <Content Include="Web.config" />
@@ -390,6 +392,20 @@
     </Compile>
     <Compile Include="Views\PerformanceGroupDetail.aspx.designer.cs">
       <DependentUpon>PerformanceGroupDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RepairShopDB.aspx.cs">
+      <DependentUpon>RepairShopDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RepairShopDB.aspx.designer.cs">
+      <DependentUpon>RepairShopDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RepairShopDBAddNew.aspx.cs">
+      <DependentUpon>RepairShopDBAddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RepairShopDBAddNew.aspx.designer.cs">
+      <DependentUpon>RepairShopDBAddNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\SignUp\TermsOfUsePage.aspx.cs">
       <DependentUpon>TermsOfUsePage.aspx</DependentUpon>

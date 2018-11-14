@@ -77,7 +77,7 @@
                         <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG"  runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
                         <a id="performancegrouptab" class="list-group-item list-group-item-action " style="background-color: whitesmoke;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.RepairShop %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/RepairShopDB"><%= Resources.DisplayText.RepairShop %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.MusicShop %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.ConcertVenue %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.PeopleJob %></a>
