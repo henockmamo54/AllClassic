@@ -115,4 +115,10 @@ where maincode='City'
 
     </div>
 
+       
+    <script type="text/javascript">
+         document.getElementById("RepairShoptab").style.backgroundColor = "white";
+        document.getElementById("RepairShoptab").style.borderRight = "none";
+    </script>
+
 </asp:Content>

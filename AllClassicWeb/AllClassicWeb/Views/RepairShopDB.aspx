@@ -173,4 +173,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
         </ContentTemplate>
     </asp:UpdatePanel>
 
+    
+    <script type="text/javascript">
+        document.getElementById("RepairShoptab").style.backgroundColor = "white";
+        document.getElementById("RepairShoptab").style.borderRight = "none";
+    </script>
+
 </asp:Content>
