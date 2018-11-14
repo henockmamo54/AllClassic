@@ -27,7 +27,9 @@ namespace DataAccessP
         public string TelNo { get; set; }
         public string FaxNo { get; set; }
         public string HomePage { get; set; }
-        public string PosterEmailID { get; set; }
         public System.DateTime UpdateTimeStamp { get; set; }
+        public Nullable<int> UserID { get; set; }
+    
+        public virtual UserTbl UserTbl { get; set; }
     }
 }

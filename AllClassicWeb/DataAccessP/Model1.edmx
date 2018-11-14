@@ -76,8 +76,8 @@
           <Property Name="TelNo" Type="nvarchar" MaxLength="20" />
           <Property Name="FaxNo" Type="nvarchar" MaxLength="20" />
           <Property Name="HomePage" Type="nvarchar" MaxLength="30" />
-          <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="RepairShopTbl">
           <Key>
@@ -422,6 +422,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__MusicShop__UserI__08B54D69">
+          <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+          <End Role="MusicShopTbl" Type="Self.MusicShopTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="MusicShopTbl">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Performan__Condu__6C190EBB">
           <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
           <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -725,6 +737,10 @@
             <End Role="UserTbl" EntitySet="UserTbl" />
             <End Role="MusicianTbl" EntitySet="MusicianTbl" />
           </AssociationSet>
+          <AssociationSet Name="FK__MusicShop__UserI__08B54D69" Association="Self.FK__MusicShop__UserI__08B54D69">
+            <End Role="UserTbl" EntitySet="UserTbl" />
+            <End Role="MusicShopTbl" EntitySet="MusicShopTbl" />
+          </AssociationSet>
           <AssociationSet Name="FK__Performan__Condu__6C190EBB" Association="Self.FK__Performan__Condu__6C190EBB">
             <End Role="MusicianTbl" EntitySet="MusicianTbl" />
             <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
@@ -832,26 +848,6 @@
           <NavigationProperty Name="PerformanceTbls" Relationship="Self.FK__Performan__MainI__6E01572D" FromRole="InstrumentTbl" ToRole="PerformanceTbl" />
           <NavigationProperty Name="MusicianTbls" Relationship="AllClassicDBModel.FK__MusicianT__Major__5812160E" FromRole="InstrumentTbl" ToRole="MusicianTbl" />
           <NavigationProperty Name="MusicianTbls1" Relationship="AllClassicDBModel.FK__MusicianT__Major__59063A47" FromRole="InstrumentTbl" ToRole="MusicianTbl" />
-        </EntityType>
-        <EntityType Name="MusicShopTbl">
-          <Key>
-            <PropertyRef Name="MusicShopID" />
-          </Key>
-          <Property Name="MusicShopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Alias" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Expertise" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="City" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="OwnerName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="SinceYear" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="EmailID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ZipCode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="TelNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FaxNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="HomePage" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="PosterEmailID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="UserTypeTbl">
           <Key>
@@ -1038,6 +1034,7 @@
           <NavigationProperty Name="AuditionTbls" Relationship="AllClassicDBModel.FK__AuditionT__UserI__05D8E0BE" FromRole="UserTbl" ToRole="AuditionTbl" />
           <NavigationProperty Name="ConcourTbls" Relationship="AllClassicDBModel.FK__ConcourTb__UserI__06CD04F7" FromRole="UserTbl" ToRole="ConcourTbl" />
           <NavigationProperty Name="RepairShopTbls" Relationship="AllClassicDBModel.FK__RepairSho__UserI__07C12930" FromRole="UserTbl" ToRole="RepairShopTbl" />
+          <NavigationProperty Name="MusicShopTbls" Relationship="AllClassicDBModel.FK__MusicShop__UserI__08B54D69" FromRole="UserTbl" ToRole="MusicShopTbl" />
         </EntityType>
         <EntityType Name="UserUserType">
           <Key>
@@ -1267,7 +1264,6 @@
         </Association>
         <EntityContainer Name="AllClassicDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="InstrumentTbls" EntityType="Self.InstrumentTbl" />
-          <EntitySet Name="MusicShopTbls" EntityType="Self.MusicShopTbl" />
           <EntitySet Name="UserTypeTbls" EntityType="Self.UserTypeTbl" />
           <EntitySet Name="VenueTbls" EntityType="Self.VenueTbl" />
           <EntitySet Name="UserTypes" EntityType="Self.UserType" />
@@ -1407,6 +1403,11 @@
           <AssociationSet Name="FK__RepairSho__UserI__07C12930" Association="AllClassicDBModel.FK__RepairSho__UserI__07C12930">
             <End Role="UserTbl" EntitySet="UserTbls" />
             <End Role="RepairShopTbl" EntitySet="RepairShopTbls" />
+          </AssociationSet>
+          <EntitySet Name="MusicShopTbls" EntityType="AllClassicDBModel.MusicShopTbl" />
+          <AssociationSet Name="FK__MusicShop__UserI__08B54D69" Association="AllClassicDBModel.FK__MusicShop__UserI__08B54D69">
+            <End Role="UserTbl" EntitySet="UserTbls" />
+            <End Role="MusicShopTbl" EntitySet="MusicShopTbls" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="MusicianTbl">
@@ -1673,6 +1674,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="MusicShopTbl">
+          <Key>
+            <PropertyRef Name="MusicShopID" />
+          </Key>
+          <Property Name="MusicShopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Alias" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Expertise" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OwnerName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SinceYear" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="TelNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HomePage" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__MusicShop__UserI__08B54D69" FromRole="MusicShopTbl" ToRole="UserTbl" />
+        </EntityType>
+        <Association Name="FK__MusicShop__UserI__08B54D69">
+          <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.MusicShopTbl" Role="MusicShopTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="MusicShopTbl">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1694,27 +1728,6 @@
                 <ScalarProperty Name="Photo1" ColumnName="Photo1" />
                 <ScalarProperty Name="Photo2" ColumnName="Photo2" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MusicShopTbls">
-            <EntityTypeMapping TypeName="AllClassicDBModel.MusicShopTbl">
-              <MappingFragment StoreEntitySet="MusicShopTbl">
-                <ScalarProperty Name="MusicShopID" ColumnName="MusicShopID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Alias" ColumnName="Alias" />
-                <ScalarProperty Name="Expertise" ColumnName="Expertise" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
-                <ScalarProperty Name="SinceYear" ColumnName="SinceYear" />
-                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
-                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
-                <ScalarProperty Name="HomePage" ColumnName="HomePage" />
-                <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
                 <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1979,6 +1992,27 @@
                 <ScalarProperty Name="Alias" ColumnName="Alias" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="RepairShopID" ColumnName="RepairShopID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MusicShopTbls">
+            <EntityTypeMapping TypeName="AllClassicDBModel.MusicShopTbl">
+              <MappingFragment StoreEntitySet="MusicShopTbl">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+                <ScalarProperty Name="HomePage" ColumnName="HomePage" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="SinceYear" ColumnName="SinceYear" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Expertise" ColumnName="Expertise" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MusicShopID" ColumnName="MusicShopID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

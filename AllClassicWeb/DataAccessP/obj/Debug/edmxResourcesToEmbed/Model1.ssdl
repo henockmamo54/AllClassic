@@ -71,8 +71,8 @@
     <Property Name="TelNo" Type="nvarchar" MaxLength="20" />
     <Property Name="FaxNo" Type="nvarchar" MaxLength="20" />
     <Property Name="HomePage" Type="nvarchar" MaxLength="30" />
-    <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="UserID" Type="int" />
   </EntityType>
   <EntityType Name="RepairShopTbl">
     <Key>
@@ -417,6 +417,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__MusicShop__UserI__08B54D69">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="MusicShopTbl" Type="Self.MusicShopTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MusicShopTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Performan__Condu__6C190EBB">
     <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
     <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -719,6 +731,10 @@
     <AssociationSet Name="FK__MusicianT__UserI__59FA5E80" Association="Self.FK__MusicianT__UserI__59FA5E80">
       <End Role="UserTbl" EntitySet="UserTbl" />
       <End Role="MusicianTbl" EntitySet="MusicianTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MusicShop__UserI__08B54D69" Association="Self.FK__MusicShop__UserI__08B54D69">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="MusicShopTbl" EntitySet="MusicShopTbl" />
     </AssociationSet>
     <AssociationSet Name="FK__Performan__Condu__6C190EBB" Association="Self.FK__Performan__Condu__6C190EBB">
       <End Role="MusicianTbl" EntitySet="MusicianTbl" />
