@@ -84,6 +84,7 @@
     <NavigationProperty Name="PerformanceGroupTbls1" Relationship="Self.FK__Performanc__City__5FB337D6" FromRole="LookUpTbl" ToRole="PerformanceGroupTbl" />
     <NavigationProperty Name="PerformanceTbls2" Relationship="Self.FK__Performanc__City__68487DD7" FromRole="LookUpTbl" ToRole="PerformanceTbl" />
     <NavigationProperty Name="MusicianTbls" Relationship="AllClassicDBModel.FK__MusicianT__Major__02084FDA" FromRole="LookUpTbl" ToRole="MusicianTbl" />
+    <NavigationProperty Name="PeopleAndJobTbls" Relationship="AllClassicDBModel.FK__PeopleAndJ__City__0B91BA141" FromRole="LookUpTbl" ToRole="PeopleAndJobTbl" />
   </EntityType>
   <EntityType Name="MusicianEndorserTbl">
     <Key>
@@ -209,6 +210,7 @@
     <NavigationProperty Name="ConcourTbls" Relationship="AllClassicDBModel.FK__ConcourTb__UserI__06CD04F7" FromRole="UserTbl" ToRole="ConcourTbl" />
     <NavigationProperty Name="RepairShopTbls" Relationship="AllClassicDBModel.FK__RepairSho__UserI__07C12930" FromRole="UserTbl" ToRole="RepairShopTbl" />
     <NavigationProperty Name="MusicShopTbls" Relationship="AllClassicDBModel.FK__MusicShop__UserI__08B54D69" FromRole="UserTbl" ToRole="MusicShopTbl" />
+    <NavigationProperty Name="PeopleAndJobTbls" Relationship="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D1" FromRole="UserTbl" ToRole="PeopleAndJobTbl" />
   </EntityType>
   <EntityType Name="UserUserType">
     <Key>
@@ -583,6 +585,15 @@
       <End Role="UserTbl" EntitySet="UserTbls" />
       <End Role="MusicShopTbl" EntitySet="MusicShopTbls" />
     </AssociationSet>
+    <EntitySet Name="PeopleAndJobTbls" EntityType="AllClassicDBModel.PeopleAndJobTbl" />
+    <AssociationSet Name="FK__PeopleAnd__UserI__0C85DE4D1" Association="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D1">
+      <End Role="UserTbl" EntitySet="UserTbls" />
+      <End Role="PeopleAndJobTbl" EntitySet="PeopleAndJobTbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PeopleAndJ__City__0B91BA141" Association="AllClassicDBModel.FK__PeopleAndJ__City__0B91BA141">
+      <End Role="LookUpTbl" EntitySet="LookUpTbls" />
+      <End Role="PeopleAndJobTbl" EntitySet="PeopleAndJobTbls" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="MusicianTbl">
     <Key>
@@ -878,6 +889,48 @@
       </Principal>
       <Dependent Role="MusicShopTbl">
         <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PeopleAndJobTbl">
+    <Key>
+      <PropertyRef Name="PeopleAndJobID" />
+    </Key>
+    <Property Name="PeopleAndJobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PeopleOrJob" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ValidDate" Type="DateTime" Precision="0" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="TelNo" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="UpdateTimeStamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D1" FromRole="PeopleAndJobTbl" ToRole="UserTbl" />
+    <NavigationProperty Name="LookUpTbl" Relationship="AllClassicDBModel.FK__PeopleAndJ__City__0B91BA141" FromRole="PeopleAndJobTbl" ToRole="LookUpTbl" />
+  </EntityType>
+  <Association Name="FK__PeopleAnd__UserI__0C85DE4D1">
+    <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+    <End Type="AllClassicDBModel.PeopleAndJobTbl" Role="PeopleAndJobTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="PeopleAndJobTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PeopleAndJ__City__0B91BA141">
+    <End Type="AllClassicDBModel.LookUpTbl" Role="LookUpTbl" Multiplicity="0..1" />
+    <End Type="AllClassicDBModel.PeopleAndJobTbl" Role="PeopleAndJobTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LookUpTbl">
+        <PropertyRef Name="LookUpID" />
+      </Principal>
+      <Dependent Role="PeopleAndJobTbl">
+        <PropertyRef Name="City" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

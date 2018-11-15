@@ -43,5 +43,6 @@ namespace DataAccessP
         public virtual DbSet<ConcourTbl> ConcourTbls { get; set; }
         public virtual DbSet<RepairShopTbl> RepairShopTbls { get; set; }
         public virtual DbSet<MusicShopTbl> MusicShopTbls { get; set; }
+        public virtual DbSet<PeopleAndJobTbl> PeopleAndJobTbls { get; set; }
     }
 }

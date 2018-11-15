@@ -304,5 +304,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PeopleAndJobTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.PeopleAndJobTbl">
+        <MappingFragment StoreEntitySet="PeopleAndJobTbl">
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ValidDate" ColumnName="ValidDate" />
+          <ScalarProperty Name="PeopleOrJob" ColumnName="PeopleOrJob" />
+          <ScalarProperty Name="PeopleAndJobID" ColumnName="PeopleAndJobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

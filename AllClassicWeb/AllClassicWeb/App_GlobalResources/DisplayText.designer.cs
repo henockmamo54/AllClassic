@@ -331,6 +331,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact Name.
+        /// </summary>
+        internal static string ContactName {
+            get {
+                return ResourceManager.GetString("ContactName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Continue.
         /// </summary>
         internal static string Continue {
@@ -556,6 +565,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Job.
+        /// </summary>
+        internal static string Job {
+            get {
+                return ResourceManager.GetString("Job", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kakao Talk ID.
         /// </summary>
         internal static string KakaoTalkID {
@@ -736,11 +754,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to People.
+        /// </summary>
+        internal static string People {
+            get {
+                return ResourceManager.GetString("People", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to People &amp; Job.
         /// </summary>
         internal static string PeopleJob {
             get {
                 return ResourceManager.GetString("PeopleJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People or Job.
+        /// </summary>
+        internal static string PeopleOrJob {
+            get {
+                return ResourceManager.GetString("PeopleOrJob", resourceCulture);
             }
         }
         
@@ -1128,6 +1164,15 @@ namespace Resources {
         internal static string UserInfo {
             get {
                 return ResourceManager.GetString("UserInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valid Date.
+        /// </summary>
+        internal static string ValidDate {
+            get {
+                return ResourceManager.GetString("ValidDate", resourceCulture);
             }
         }
         

@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="MusicianLogic.cs" />
     <Compile Include="MusicShopLogic.cs" />
+    <Compile Include="PeopleAndJobLogic.cs" />
     <Compile Include="PerformanceDBLogic.cs" />
     <Compile Include="PerformanceGroupLogic.cs" />
     <Compile Include="Program.cs" />

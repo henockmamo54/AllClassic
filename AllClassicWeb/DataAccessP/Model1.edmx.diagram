@@ -55,6 +55,9 @@
         <AssociationConnector Association="AllClassicDBModel.FK__RepairSho__UserI__07C12930" />
         <EntityTypeShape EntityType="AllClassicDBModel.MusicShopTbl" Width="1.5" PointX="3" PointY="40.125" />
         <AssociationConnector Association="AllClassicDBModel.FK__MusicShop__UserI__08B54D69" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PeopleAndJobTbl" Width="1.5" PointX="8.25" PointY="8.5" />
+        <AssociationConnector Association="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D1" />
+        <AssociationConnector Association="AllClassicDBModel.FK__PeopleAndJ__City__0B91BA141" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -74,6 +74,22 @@
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
     <Property Name="UserID" Type="int" />
   </EntityType>
+  <EntityType Name="PeopleAndJobTbl">
+    <Key>
+      <PropertyRef Name="PeopleAndJobID" />
+    </Key>
+    <Property Name="PeopleAndJobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PeopleOrJob" Type="nvarchar" MaxLength="20" />
+    <Property Name="ValidDate" Type="date" />
+    <Property Name="City" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="80" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="80" />
+    <Property Name="TelNo" Type="nvarchar" MaxLength="40" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="400" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="UpdateTimeStamp" Type="datetime" />
+  </EntityType>
   <EntityType Name="RepairShopTbl">
     <Key>
       <PropertyRef Name="RepairShopID" />
@@ -429,6 +445,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__PeopleAnd__UserI__0C85DE4D">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="PeopleAndJobTbl" Type="Self.PeopleAndJobTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="PeopleAndJobTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PeopleAndJ__City__0B91BA14">
+    <End Role="LookUpTbl" Type="Self.LookUpTbl" Multiplicity="0..1" />
+    <End Role="PeopleAndJobTbl" Type="Self.PeopleAndJobTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LookUpTbl">
+        <PropertyRef Name="LookUpID" />
+      </Principal>
+      <Dependent Role="PeopleAndJobTbl">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Performan__Condu__6C190EBB">
     <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
     <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -675,6 +715,7 @@
     <EntitySet Name="ConcourTbl" EntityType="Self.ConcourTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="InstrumentTbl" EntityType="Self.InstrumentTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="MusicShopTbl" EntityType="Self.MusicShopTbl" Schema="Auxiliary" store:Type="Tables" />
+    <EntitySet Name="PeopleAndJobTbl" EntityType="Self.PeopleAndJobTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="RepairShopTbl" EntityType="Self.RepairShopTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="UserTypeTbl" EntityType="Self.UserTypeTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="VenueTbl" EntityType="Self.VenueTbl" Schema="Auxiliary" store:Type="Tables" />
@@ -735,6 +776,14 @@
     <AssociationSet Name="FK__MusicShop__UserI__08B54D69" Association="Self.FK__MusicShop__UserI__08B54D69">
       <End Role="UserTbl" EntitySet="UserTbl" />
       <End Role="MusicShopTbl" EntitySet="MusicShopTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PeopleAnd__UserI__0C85DE4D" Association="Self.FK__PeopleAnd__UserI__0C85DE4D">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="PeopleAndJobTbl" EntitySet="PeopleAndJobTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PeopleAndJ__City__0B91BA14" Association="Self.FK__PeopleAndJ__City__0B91BA14">
+      <End Role="LookUpTbl" EntitySet="LookUpTbl" />
+      <End Role="PeopleAndJobTbl" EntitySet="PeopleAndJobTbl" />
     </AssociationSet>
     <AssociationSet Name="FK__Performan__Condu__6C190EBB" Association="Self.FK__Performan__Condu__6C190EBB">
       <End Role="MusicianTbl" EntitySet="MusicianTbl" />

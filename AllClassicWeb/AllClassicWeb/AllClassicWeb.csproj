@@ -184,6 +184,8 @@
     <Content Include="Views\MusicianDetailPage.aspx" />
     <Content Include="Views\MusicShopDB.aspx" />
     <Content Include="Views\MusicShopDBAddNew.aspx" />
+    <Content Include="Views\PeopleAndJobDB.aspx" />
+    <Content Include="Views\PeopleAndJobDBAddNew.aspx" />
     <Content Include="Views\PerformanceDB.aspx" />
     <Content Include="Views\PerformanceDBAddNew.aspx" />
     <Content Include="Views\PerformanceDetail.aspx" />
@@ -382,6 +384,20 @@
     </Compile>
     <Compile Include="Views\MusicShopDBAddNew.aspx.designer.cs">
       <DependentUpon>MusicShopDBAddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PeopleAndJobDB.aspx.cs">
+      <DependentUpon>PeopleAndJobDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PeopleAndJobDB.aspx.designer.cs">
+      <DependentUpon>PeopleAndJobDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PeopleAndJobDBAddNew.aspx.cs">
+      <DependentUpon>PeopleAndJobDBAddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PeopleAndJobDBAddNew.aspx.designer.cs">
+      <DependentUpon>PeopleAndJobDBAddNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\PerformanceDB.aspx.cs">
       <DependentUpon>PerformanceDB.aspx</DependentUpon>

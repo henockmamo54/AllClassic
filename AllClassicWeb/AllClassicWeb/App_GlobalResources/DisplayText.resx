@@ -559,4 +559,19 @@
   <data name="VenuName" xml:space="preserve">
     <value>Venu Name</value>
   </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Contact Name</value>
+  </data>
+  <data name="PeopleOrJob" xml:space="preserve">
+    <value>People or Job</value>
+  </data>
+  <data name="ValidDate" xml:space="preserve">
+    <value>Valid Date</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>People</value>
+  </data>
 </root>

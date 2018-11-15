@@ -576,4 +576,20 @@
   <data name="VenuName" xml:space="preserve">
     <value>브누누 이름</value>
   </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>담당자 이름</value>
+  </data>
+  <data name="PeopleOrJob" xml:space="preserve">
+    <value>구인/구직</value>
+    <comment>menu bar</comment>
+  </data>
+  <data name="ValidDate" xml:space="preserve">
+    <value>유효한 날짜</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>사람들</value>
+  </data>
 </root>
