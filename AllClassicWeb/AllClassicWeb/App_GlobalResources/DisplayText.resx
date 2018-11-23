@@ -604,4 +604,19 @@
   <data name="Total" xml:space="preserve">
     <value>Total</value>
   </data>
+  <data name="PleaseEnterEndDate" xml:space="preserve">
+    <value>Please enter End date</value>
+  </data>
+  <data name="PleaseEnterMainTitle" xml:space="preserve">
+    <value>Please enter Main Title</value>
+  </data>
+  <data name="PleaseEnterStartDate" xml:space="preserve">
+    <value>Please enter Start date</value>
+  </data>
+  <data name="PleaseEnterTicketBoxinfo" xml:space="preserve">
+    <value>Please Enter TicketBox info</value>
+  </data>
+  <data name="PleaseEnterTime" xml:space="preserve">
+    <value>Please Enter Time</value>
+  </data>
 </root>

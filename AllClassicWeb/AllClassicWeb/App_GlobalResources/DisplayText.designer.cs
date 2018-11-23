@@ -871,6 +871,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter End date.
+        /// </summary>
+        internal static string PleaseEnterEndDate {
+            get {
+                return ResourceManager.GetString("PleaseEnterEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter Main Title.
+        /// </summary>
+        internal static string PleaseEnterMainTitle {
+            get {
+                return ResourceManager.GetString("PleaseEnterMainTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter Start date.
+        /// </summary>
+        internal static string PleaseEnterStartDate {
+            get {
+                return ResourceManager.GetString("PleaseEnterStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter TicketBox info.
+        /// </summary>
+        internal static string PleaseEnterTicketBoxinfo {
+            get {
+                return ResourceManager.GetString("PleaseEnterTicketBoxinfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter Time.
+        /// </summary>
+        internal static string PleaseEnterTime {
+            get {
+                return ResourceManager.GetString("PleaseEnterTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter your Email!.
         /// </summary>
         internal static string PleaseenteryourEmail {

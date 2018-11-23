@@ -622,4 +622,19 @@
   <data name="Total" xml:space="preserve">
     <value>합계</value>
   </data>
+  <data name="PleaseEnterEndDate" xml:space="preserve">
+    <value>종료일을 입력하십시오.</value>
+  </data>
+  <data name="PleaseEnterMainTitle" xml:space="preserve">
+    <value>기본 제목을 입력하십시오.</value>
+  </data>
+  <data name="PleaseEnterStartDate" xml:space="preserve">
+    <value>시작 날짜를 입력하십시오.</value>
+  </data>
+  <data name="PleaseEnterTicketBoxinfo" xml:space="preserve">
+    <value>티켓 상자를 입력하십시오.</value>
+  </data>
+  <data name="PleaseEnterTime" xml:space="preserve">
+    <value>시간을 입력하십시오.</value>
+  </data>
 </root>

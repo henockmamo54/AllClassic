@@ -35,15 +35,16 @@
             switch (page) {
                 case "ASP.views_performancedb_aspx":
                     {
-                        //document.getElementById("performancetab").style.backgroundColor = "white";
-                        //$("#performancetab").css("cssText", "background-color: white !important;");
-                        //$("#performancetab").css("cssText", "border-bottom: none !important;");
-                        //document.getElementById("performancetab").style.borderBottom = "none";
                         document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
                         document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
                         break;
                     }
                 case "ASP.views_performancedbaddnew_aspx": {
+                    document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_performancedetail_aspx": {                    
                     document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
                     break;

@@ -11,7 +11,7 @@ namespace BusinessLogic
     public class PerformanceDBLogic
     {
 
-        public static PerformanceTbl registerPerformance(List<PerformanceMusicianInstrumentTbl> artistinstrument, PerformanceTbl performance)
+        public static Result registerPerformance(List<PerformanceMusicianInstrumentTbl> artistinstrument, PerformanceTbl performance)
         {
             bool isSuccess = false;
             using (var context = new AllClassicDBEntities())
@@ -40,13 +40,13 @@ namespace BusinessLogic
                             }
                         }
                         dbContextTransaction.Commit();
-                        return performance;
+                        return new Result( performance,null);
 
                     }
                     catch (Exception ee)
                     {
                         dbContextTransaction.Rollback();
-                        return null;
+                        return new Result( null,ee);
                     }
 
 
@@ -136,6 +136,16 @@ namespace BusinessLogic
                     }
 
                 }
+            }
+        }
+
+        public struct Result {
+            public PerformanceTbl performance;
+            public Exception exception;
+
+            public Result(PerformanceTbl performance, Exception exception) {
+                this.exception = exception;
+                this.performance = performance;
             }
         }
     }

@@ -20,7 +20,8 @@
                         <br />
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MainTitle %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_maintitle" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_maintitle" ValidationGroup="a" runat="server" class="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_maintitle" ErrorMessage="<%$Resources:DisplayText,PleaseEnterMainTitle %>" />
 
                         </div>
                         <br />
@@ -198,11 +199,13 @@ where maincode='PerformanceType'
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
                                     <%--<asp:TextBox ID="TextBox11" runat="server" class="form-control"></asp:TextBox>--%>
                                     <div class='input-group date' id='datetimepicker2_start' style="display: flex;">
-                                        <input type='text' class="form-control" runat="server" id="startdate" style="display: inline-block; border-right-width: 0px;" />
+                                        <input type='text' class="form-control" runat="server"  ValidationGroup="a"  id="startdate" style="display: inline-block; border-right-width: 0px;" />
                                         <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
                                     </div>
+                                    <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="startdate" ErrorMessage="<%$Resources:DisplayText,PleaseEnterStartDate %>" />
+                                        
                                 </div>
                                 <br />
                             </div>
@@ -214,11 +217,14 @@ where maincode='PerformanceType'
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
                                     <%--<asp:TextBox ID="TextBox12" runat="server" class="form-control"></asp:TextBox>--%>
                                     <div class='input-group date' id='datetimepicker3_end' style="display: flex;">
-                                        <input type='text' class="form-control" runat="server" id="enddate" style="display: inline-block; border-right-width: 0px;" />
+                                        <input type='text' class="form-control"  ValidationGroup="a"  runat="server" id="enddate" style="display: inline-block; border-right-width: 0px;" />
                                         <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
                                     </div>
+                                    
+                                    <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator3" ControlToValidate="enddate" ErrorMessage="<%$Resources:DisplayText,PleaseEnterEndDate %>" />
+                                        
                                 </div>
                                 <br />
                             </div>
@@ -231,7 +237,9 @@ where maincode='PerformanceType'
                                 <br />
                                 <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Time %>*</div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
-                                    <asp:TextBox ID="txt_time" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txt_time"  ValidationGroup="a"  runat="server" class="form-control"></asp:TextBox>
+                                     <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_time" ErrorMessage="<%$Resources:DisplayText,PleaseEnterTime %>" />
+
                                 </div>
                                 <br />
                             </div>
@@ -321,7 +329,9 @@ where maincode='City'
                                 <br />
                                 <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.TicketBox %>*</div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
-                                    <asp:TextBox ID="txt_ticketbox" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txt_ticketbox"  ValidationGroup="a"  runat="server" class="form-control"></asp:TextBox>
+                                     <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_ticketbox" ErrorMessage="<%$Resources:DisplayText,PleaseEnterTicketBoxinfo %>" />
+
                                 </div>
                                 <br />
                             </div>
@@ -350,8 +360,8 @@ where maincode='City'
 
                 <div class="row col-md-12 col-xs-12">
                     <asp:Button Visible="true" ID="btn_Performance_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_Performancecancel_Click" Style="margin-right: 10px;" />
-                    <asp:Button Visible="true" ID="btn_Performance_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_Performancesave_Click" Style="margin-right: 10px;" />
-                    <asp:Button ID="btn_Performance_add" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_Performanceadd_Click" Style="margin-right: 10px;" />
+                    <asp:Button Visible="true" ValidationGroup="a" ID="btn_Performance_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_Performancesave_Click" Style="margin-right: 10px;" />
+                    <asp:Button ID="btn_Performance_add" ValidationGroup="a" Visible="false" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_Performanceadd_Click" Style="margin-right: 10px;" />
                 </div>
             </div>
         </ContentTemplate>

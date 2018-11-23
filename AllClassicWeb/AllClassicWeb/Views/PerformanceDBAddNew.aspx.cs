@@ -156,22 +156,25 @@ namespace AllClassicWeb.Views
                 pt.UserID = 5;
                 pt.UpdateTimeStamp = DateTime.Now;
 
+                if (pt.PosterFileName == null) {
+                    showMsg("Please input poster file!");
+                    return;
+                }
+
                 List<PerformanceMusicianInstrumentTbl> mylist = (List<PerformanceMusicianInstrumentTbl>)Session["PerformanceMusicianInstrumentTbl"];
-                pt = BusinessLogic.PerformanceDBLogic.registerPerformance(mylist, pt);
+                PerformanceDBLogic.Result result = PerformanceDBLogic.registerPerformance(mylist, pt);
+                pt = result.performance;
                 if (pt != null)
                 {
                     showMsg("Data inserted succssfuly");
-                    //cleanArtistTextBoxs();
 
-                    //sending message to endorsers
-                    //sendEmailToEndorser(x.Email, artist, x);
-
+                    Response.Redirect("~/Views/PerformanceDB");
                 }
-                else showMsg("Please check your inputs");
+                else showMsg(result.exception.Message);
             }
             catch (Exception ee)
             {
-                showMsg("Data inserted succssfuly");
+                showMsg(ee.Message);
             }
 
         }
@@ -234,6 +237,24 @@ namespace AllClassicWeb.Views
         }
         public void btn_Performancecancel_Click(object sender, EventArgs e)
         {
+            txt_maintitle.Text = "";
+            txt_subtitle.Text = "";
+            txt_subjecttheme.Text = "";
+            txt_organizer.Text = "";
+            txt_sponser.Text = "";
+            txt_language.Text = "";
+            txt_time.Text = "";
+            txt_video.Text = "";
+            txt_ticketbox.Text = "";
+            txt_program.Text = "";
+            txt_description.Text = "";
+
+            myPerformanceDetailArtistInstrumentlist.DataSource = null;
+            myPerformanceDetailArtistInstrumentlist.DataBind();
+            Session["myPerformanceDetailArtistInstrumentlist"] = null;
+
+            //reset to new data entry mode
+            handleButtons(true);
 
         }
 
