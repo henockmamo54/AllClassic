@@ -4,11 +4,11 @@
 
 
     <div class="row">
-        <h2 runat="server" id="performanceTitle" style="margin-top: 0px; padding-top: 0px;"></h2>
+        <h2 runat="server" id="performanceTitle" style="margin-top: 0px; padding-top: 0px; color: #28878a; font-weight: 700;"></h2>
     </div>
 
     <div class="row" id="forAudience" runat="server">
-        <h3 id="txt_maintitle" runat="server"></h3>
+        <h3 id="txt_maintitle" runat="server" style="color: #28878a; font-weight: 700;"></h3>
         <div class="col-md-8 col-xs-8">
 
             <asp:Image CssClass="shadowedPanel" Style="width: 100%;" runat="server" ID="performancePosterImage" />
@@ -151,199 +151,209 @@
             --%>
         </div>
 
-        <div class="col-md-4 col-xs-4">
-            <h4 id="txt_subtitle" runat="server"></h4>
+        <div class="col-md-4 col-xs-4" style="padding: 0;">
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <h4 id="txt_subtitle" runat="server" style="color: #28878a; font-weight: 700;"></h4>
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0;    border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.PerformanceGroup %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.PerformanceGroup %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_pg"></asp:Label>
                 </div>
-
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.PerformanceType %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.PerformanceType %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_pt"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Conductor %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Conductor %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_conductor"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.MainTitleComposer %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.MainTitleComposer %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_maintitlecomposer"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.MainInstrument %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.MainInstrument %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_maininstrument"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Organizer %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Organizer %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_organizer"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Sponser %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Sponser %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_sponser"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Language %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Language %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_language"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Start %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Start %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_start"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.End %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.End %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_end"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Time %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Time %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_time"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Region %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Region %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_region"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.City %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.City %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_city"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Venue %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Venue %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_venu"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Poster %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Poster %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_poster"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Video %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Video %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_video"></asp:Label>
                 </div>
 
             </div>
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d340;    margin-bottom: 2px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.TicketBox %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.TicketBox %></div>
+                <div class="col-md-6 col-xs-6" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_ticketbox"></asp:Label>
                 </div>
 
             </div>
             <hr />
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Program %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class=" col-xs-12" style="padding: 0;"><%= Resources.DisplayText.Program %></div>
+                <div class=" col-xs-12" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_program"></asp:Label>
                 </div>
 
             </div>
 
-            <div class="col-md-12 col-xs-12 userregisterinfo">
+            <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
 
-                <div class="col-md-6 col-xs-6"><%= Resources.DisplayText.Description %></div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-xs-12" style="padding: 0;"><%= Resources.DisplayText.Description %></div>
+                <div class="col-xs-12" style="padding: 0;">
                     <asp:Label Font-Bold="true" runat="server" ID="lbl_description"></asp:Label>
                 </div>
 
             </div>
             <div class="row col-md-12 col-xs-12">
-                        <hr />
+                <hr />
+                <h5 style="color: #28878a; font-weight: 700;"><%= Resources.DisplayText.Instrument %></h5>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"><%=Resources.DisplayText.Instrument %></th>
+                            <th scope="col"><%=Resources.DisplayText.Playedby %></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
                         <asp:Repeater runat="server" ID="myPerformanceDetailArtistInstrumentlist">
+
                             <ItemTemplate>
                                 <tr style="margin-bottom: 3px;">
 
                                     <td>
-                                        <asp:Label runat="server" ID="Label1" Text='<%# Eval("MusicianTbl.Name") %>' />
-                                        - 
-                                    </td>
-                                    <td>
                                         <asp:Label runat="server" ID="Label2" Text='<%# Eval("InstrumentTbl.KoreanName") %>' />
                                     </td>
 
+                                    <td>
+                                        <asp:Label runat="server" ID="Label1" Text='<%# Eval("MusicianTbl.Name") %>' />
+                                    </td>
+
                                 </tr>
-                                <br />
-                                <br />
                             </ItemTemplate>
                         </asp:Repeater>
-                    </div>
+                    </tbody>
+                </table>
+            </div>
             <div class="col-xs-12">
                 <br />
                 <asp:Button CssClass="btn btn-primary" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editPerformance" Text="<%$Resources:DisplayText,Edit %>" />
