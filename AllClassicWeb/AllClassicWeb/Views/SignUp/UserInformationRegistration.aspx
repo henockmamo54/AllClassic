@@ -20,10 +20,9 @@
                     </ul>
                 </div>
                 <div class="col-md-10 col-xs-10">
-
                     <div class="col-md-12 col-xs-12 shadowedPanel" style="background-color: white;">
                         <div class="rwo" style="padding-bottom: 10px;">
-                            <label><%= Resources.DisplayText.WhatkindOfUserAreyou %> Please click as many as you think you are!</label>
+                            <label><%= Resources.DisplayText.WhatkindOfUserAreyou %> <%= Resources.DisplayText.Pleaseclickasmanyasyouthinkyouare %> </label>
                             <hr style="margin-top: 5px;" />
 
                             <div class="row">
@@ -55,87 +54,97 @@
 
                             </div>
 
-                            <div class="row col-md-8 col-xs-8 userregisterinfo">
+                            <div class="row col-md-10 col-xs-10 userregisterinfo">
                                 <div class="col-md-12 col-xs-12">
                                     <br />
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Email %>*</div>
-                                    <div class="col-md-6 col-xs-8">
-                                        <asp:TextBox ID="uemail" TextMode="Email" runat="server" class="form-control"></asp:TextBox>
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.Email %>*</div>
+                                    <div class="col-md-4 col-xs-4">
+                                        <asp:TextBox ID="uemail" ValidationGroup="a"  TextMode="Email" runat="server" class="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-4 col-xs-4">
+                                        <asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ID="reqName" ValidationGroup="a"  Font-Bold="true" ControlToValidate="uemail" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourEmail %>" />
                                     </div>
                                     <br />
 
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Password %>*</div>
-                                    <div class="col-md-6 col-xs-8">
-                                        <asp:TextBox ID="upassword" TextMode="Password" runat="server" class="form-control" MaxLength="12"></asp:TextBox>
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.Password %>*</div>
+                                    <div class="col-md-4 col-xs-4">
+                                        <asp:TextBox ID="upassword" ValidationGroup="a"  TextMode="Password" runat="server" class="form-control" MaxLength="12"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-4 col-xs-4">
+                                        <asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="upassword" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourPassword %>" />
                                     </div>
                                     <br />
 
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.FullName %>*</div>
-                                    <div class="col-md-6 col-xs-8">
-                                        <asp:TextBox ID="uname" runat="server" class="form-control"></asp:TextBox>
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.FullName %>*</div>
+                                    <div class="datetimepicker2_start col-md-4 col-xs-4">
+                                        <asp:TextBox ID="uname" ValidationGroup="a"  runat="server" class="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-4 col-xs-4">
+                                        <asp:RequiredFieldValidator  runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="uname" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourFullName %>"  />
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.NickName %></div>
-                                    <div class="col-md-6 col-xs-8">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.NickName %></div>
+                                    <div class="datetimepicker2_start col-md-4 col-xs-4">
                                         <asp:TextBox ID="unickname" runat="server" class="form-control"></asp:TextBox>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MobileNo %></div>
-                                    <div class="col-md-6 col-xs-8">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.MobileNo %></div>
+                                    <div class="datetimepicker2_start col-md-4 col-xs-4">
                                         <asp:TextBox ID="umobile" runat="server" class="form-control"></asp:TextBox>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.FacebookURL %></div>
-                                    <div class="col-md-6 col-xs-8">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.FacebookURL %></div>
+                                    <div class="datetimepicker2_start col-md-4 col-xs-4">
                                         <asp:TextBox ID="ufacebookurl" runat="server" class="form-control"></asp:TextBox>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.TwitterURL %></div>
-                                    <div class="col-md-6 col-xs-8">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.TwitterURL %></div>
+                                    <div class="datetimepicker2_start col-md-4 col-xs-4">
                                         <asp:TextBox ID="utwitterurl" runat="server" class="form-control"></asp:TextBox>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.KakaoTalkID %></div>
-                                    <div class="col-md-6 col-xs-8">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.KakaoTalkID %></div>
+                                    <div class="datetimepicker2_start col-md-4 col-xs-4">
                                         <asp:TextBox ID="ukakaotalkid" runat="server" class="form-control"></asp:TextBox>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.OtherSNS %></div>
-                                    <div class="col-md-6 col-xs-8">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.OtherSNS %></div>
+                                    <div class="datetimepicker2_start col-md-4 col-xs-4">
                                         <asp:TextBox ID="uothersns" runat="server" class="form-control"></asp:TextBox>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.YourAffilation %>*</div>
-                                    <div class="col-md-6 col-xs-6">
 
-                                        <asp:DropDownList ID="DropDownList1_youraffilation" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.YourAffilation %></div>
+                                    <div class="col-md-4 col-xs-4">
+
+                                        <asp:TextBox ID="uaffilation" runat="server" placeholder="Your Affilation" class="form-control"></asp:TextBox>
+                                        <%--<asp:DropDownList ID="DropDownList1_youraffilation" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>--%>
                                         <%--<asp:DropDownList ID="DropDownList1_Affilation" runat="server" class="form-control" DataSourceID="SqlDataSource1_allOrchestra" DataTextField="OfficialName" DataValueField="ID" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_Affilation_SelectedIndexChanged"></asp:DropDownList>
                                         <asp:SqlDataSource ID="SqlDataSource1_allOrchestra" runat="server" ConnectionString="<%$ ConnectionStrings:OrchestraDBConnectionString %>" SelectCommand="SELECT [OfficialName]='Other', [ID]=-1 FROM  core.[Orchestra]
 union
@@ -144,20 +153,20 @@ SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
                                     <br />
                                 </div>
 
-                                <div class="col-md-12 col-xs-12">
-                                    
+                                <%--<div class="col-md-12 col-xs-12">
+
                                     <div class="col-md-4 col-xs-4"></div>
                                     <div class="col-md-6 col-xs-6">
 
                                         <asp:TextBox ID="uaffilation" runat="server" placeholder="Your Affilation" class="form-control"></asp:TextBox>
                                     </div>
                                     <br />
-                                </div>
+                                </div>--%>
 
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Birthday %></div>
-                                    <div class="col-md-6 col-xs-6">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.Birthday %></div>
+                                    <div class="col-md-4 col-xs-4">
                                         <div class='input-group date' id='datetimepicker2' style="display: flex;">
                                             <input type='text' class="form-control" runat="server" id="userBirthDate" style="display: inline-block; border-right-width: 0px;" />
                                             <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
@@ -168,17 +177,17 @@ SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.ZipCode %></div>
-                                    <div class="col-md-6 col-xs-6">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.ZipCode %></div>
+                                    <div class="col-md-4 col-xs-4">
                                         <asp:TextBox ID="uzipcode" runat="server" class="form-control" MaxLength="6"></asp:TextBox>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-md-12 col-xs-12">
-                                    
-                                    <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Address %></div>
-                                    <div class="col-md-6 col-xs-6">
+
+                                    <div class="col-md-2 col-xs-2"><%= Resources.DisplayText.Address %></div>
+                                    <div class="col-md-4 col-xs-4">
                                         <asp:TextBox ID="uaddress" runat="server" class="form-control"></asp:TextBox>
                                     </div>
                                     <br />
@@ -191,8 +200,8 @@ SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
                             <%-- --%>
                             <div class="col-md-12 col-xs-12 pull-right" style="text-align: center;">
                                 <br />
-                                <asp:Button ID="Button1" CssClass="btn btn-danger " runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_cancel_click"/>
-                                <asp:Button ID="Button2" CssClass="btn btn-success " runat="server" Text="<%$Resources:DisplayText,Register %>" OnClick="btn_reguserInfo_click"/>
+                                <asp:Button ID="Button1" CssClass="btn btn-danger " runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_cancel_click" />
+                                <asp:Button ID="Button2" CssClass="btn btn-success " ValidationGroup="a"  runat="server" Text="<%$Resources:DisplayText,Register %>" OnClick="btn_reguserInfo_click" />
                             </div>
 
 
@@ -200,7 +209,6 @@ SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
 
                     </div>
                     <br />
-
                 </div>
 
             </div>
@@ -255,7 +263,7 @@ SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
 
         .userregisterinfo div {
             padding: 0px;
-            margin:2px;
+            margin: 2px;
         }
 
         .userregisterinfo {

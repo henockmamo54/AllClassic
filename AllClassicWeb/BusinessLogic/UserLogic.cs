@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BusinessLogic.Helper;
 using DataAccessP;
 
 namespace BusinessLogic
@@ -11,7 +10,7 @@ namespace BusinessLogic
     {
         static AllClassicDBEntities entity = new AllClassicDBEntities();
 
-        public static UserTbl registerUser(List<int> usertypes, UserTbl user)
+        public static Result registerUser(List<int> usertypes, UserTbl user)
         {
 
             bool isSuccess = false;
@@ -36,12 +35,13 @@ namespace BusinessLogic
                         }
 
                         dbContextTransaction.Commit();
-                        return user;
+                        EmailSender.sendEmailToNewUser(user);
+                        return new Result(user,null);
                     }
                     catch (Exception ee)
                     {
                         dbContextTransaction.Rollback();
-                        return null;
+                        return new Result(null,ee);
                     }
 
                 }
@@ -52,5 +52,16 @@ namespace BusinessLogic
         {
             return entity.UserTbls.Where(x => x.EmailID == email && x.Password == password).ToList(); ;
         }
+
+        public struct Result
+        {
+            public Result(UserTbl user, Exception ee) {
+                this.user = user;
+                this.exception = ee;
+            }
+            public UserTbl user;
+            public Exception exception;
+        }
+
     }
 }

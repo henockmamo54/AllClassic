@@ -218,7 +218,7 @@
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfOrganizer" xml:space="preserve">
-    <value>Admistrater Of Organizer</value>
+    <value>관리자 의 조직자</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfPerformanceGroup" xml:space="preserve">
@@ -591,5 +591,17 @@
   </data>
   <data name="People" xml:space="preserve">
     <value>사람들</value>
+  </data>
+  <data name="PleaseenteryourEmail" xml:space="preserve">
+    <value>귀하의 이메일을 입력하십시오!</value>
+  </data>
+  <data name="PleaseenteryourFullName" xml:space="preserve">
+    <value>당신의 성명을 입력 해주세요!</value>
+  </data>
+  <data name="PleaseenteryourPassword" xml:space="preserve">
+    <value>비밀번호를 입력하십시오!</value>
+  </data>
+  <data name="Pleaseclickasmanyasyouthinkyouare" xml:space="preserve">
+    <value>당신이 생각하는만큼 클릭하십시오!</value>
   </data>
 </root>

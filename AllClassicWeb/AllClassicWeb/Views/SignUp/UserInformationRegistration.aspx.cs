@@ -14,6 +14,7 @@ namespace AllClassicWeb.Views.SignUp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            upassword.Attributes["value"] = upassword.Text;
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
         }
 
@@ -69,6 +70,11 @@ namespace AllClassicWeb.Views.SignUp
             if (chk_blogger.Checked) usertypes.Add(9);
             if (chk_other.Checked) usertypes.Add(15);
 
+            if (usertypes.Count == 0) {
+                showMsg("Please Select User Type!!");
+                return;
+            }
+
             /////// first insert user email and password into user common table
             /////// insert user types into userusertable
             /////// finally insert company info
@@ -87,24 +93,37 @@ namespace AllClassicWeb.Views.SignUp
             user.Twitter = utwitterurl.Text;
             user.KakaoTalk = ukakaotalkid.Text;
             user.OtherSNS = uothersns.Text;
-            if (DropDownList1_youraffilation.SelectedValue == "" || int.Parse(DropDownList1_youraffilation.SelectedValue) == -1)
-                user.Affliation = uaffilation.Text;
-            else user.Affliation = DropDownList1_youraffilation.SelectedItem.Text;
-            user.Birthday = DateTime.ParseExact(userBirthDate.Value, "mm/dd/yyyy", CultureInfo.InvariantCulture);
+            user.Affliation = uaffilation.Text;
+            //if (DropDownList1_youraffilation.SelectedValue == "" || int.Parse(DropDownList1_youraffilation.SelectedValue) == -1)
+            //    user.Affliation = uaffilation.Text;
+            //else user.Affliation = DropDownList1_youraffilation.SelectedItem.Text;
+            try
+            {
+                user.Birthday = DateTime.ParseExact(userBirthDate.Value, "mm/dd/yyyy", CultureInfo.InvariantCulture);
+            }
+            catch (Exception eeee) { }
             user.ZipCode = uzipcode.Text;
             user.Address = uaddress.Text;
 
 
 
             //login in the user
-            bool isSuccess = UserLogic.registerUser(usertypes, user) != null;
+            UserLogic.Result result = UserLogic.registerUser(usertypes, user);
+            bool isSuccess = result .user!= null;
             if (isSuccess)
             {
                 showMsg("Data inserted succssfuly");
                 Session["User"] = user;
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect("~/Views/PerformanceDB.aspx");
             }
-            else showMsg("Please check your inputs");
+            else
+            {
+                var msg = result.exception.InnerException.InnerException.Message;
+                if (msg.Equals(@"Violation of UNIQUE KEY constraint 'UQ__UserTbl__7ED91AEECD9778B5'. Cannot insert duplicate key in object 'Main.UserTbl'. The duplicate key value is (sdfasdf@dfasdfas).
+The statement has been terminated."))
+                    showMsg("This email address is already registered in the system");
+                else showMsg(msg.Substring(0,30));
+            }
         }
 
 

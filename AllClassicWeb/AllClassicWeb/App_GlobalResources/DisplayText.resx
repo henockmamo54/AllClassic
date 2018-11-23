@@ -197,19 +197,19 @@
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfAgent" xml:space="preserve">
-    <value>Admistrater Of Agent</value>
+    <value>Administrator Of Agent</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfOrganizer" xml:space="preserve">
-    <value>Admistrater Of Organizer</value>
+    <value>Administrator Of Organizer</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfPerformanceGroup" xml:space="preserve">
-    <value>Admistrater Of Performance Group</value>
+    <value>Administrator Of Performance Group</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfPromoter" xml:space="preserve">
-    <value>Admistrater Of Promoter</value>
+    <value>Administrator Of Promoter</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AmatureMusician" xml:space="preserve">
@@ -573,5 +573,17 @@
   </data>
   <data name="People" xml:space="preserve">
     <value>People</value>
+  </data>
+  <data name="PleaseenteryourEmail" xml:space="preserve">
+    <value>Please enter your Email!</value>
+  </data>
+  <data name="PleaseenteryourFullName" xml:space="preserve">
+    <value>Please enter your FullName!</value>
+  </data>
+  <data name="PleaseenteryourPassword" xml:space="preserve">
+    <value>Please enter your Password!</value>
+  </data>
+  <data name="Pleaseclickasmanyasyouthinkyouare" xml:space="preserve">
+    <value>Please click as many as you think you are!</value>
   </data>
 </root>

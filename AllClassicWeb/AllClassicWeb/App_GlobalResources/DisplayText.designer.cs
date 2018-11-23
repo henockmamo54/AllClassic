@@ -106,7 +106,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admistrater Of Agent.
+        ///   Looks up a localized string similar to Administrator Of Agent.
         /// </summary>
         internal static string AdmistraterOfAgent {
             get {
@@ -115,7 +115,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admistrater Of Organizer.
+        ///   Looks up a localized string similar to Administrator Of Organizer.
         /// </summary>
         internal static string AdmistraterOfOrganizer {
             get {
@@ -124,7 +124,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admistrater Of Performance Group.
+        ///   Looks up a localized string similar to Administrator Of Performance Group.
         /// </summary>
         internal static string AdmistraterOfPerformanceGroup {
             get {
@@ -133,7 +133,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admistrater Of Promoter.
+        ///   Looks up a localized string similar to Administrator Of Promoter.
         /// </summary>
         internal static string AdmistraterOfPromoter {
             get {
@@ -831,6 +831,42 @@ namespace Resources {
         internal static string Playedby {
             get {
                 return ResourceManager.GetString("Playedby", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please click as many as you think you are!.
+        /// </summary>
+        internal static string Pleaseclickasmanyasyouthinkyouare {
+            get {
+                return ResourceManager.GetString("Pleaseclickasmanyasyouthinkyouare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter your Email!.
+        /// </summary>
+        internal static string PleaseenteryourEmail {
+            get {
+                return ResourceManager.GetString("PleaseenteryourEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter your FullName!.
+        /// </summary>
+        internal static string PleaseenteryourFullName {
+            get {
+                return ResourceManager.GetString("PleaseenteryourFullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter your Password!.
+        /// </summary>
+        internal static string PleaseenteryourPassword {
+            get {
+                return ResourceManager.GetString("PleaseenteryourPassword", resourceCulture);
             }
         }
         

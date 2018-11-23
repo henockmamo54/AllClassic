@@ -166,6 +166,15 @@ namespace AllClassicWeb.Views.SignUp {
         protected global::System.Web.UI.WebControls.TextBox uemail;
         
         /// <summary>
+        /// reqName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqName;
+        
+        /// <summary>
         /// upassword control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,15 @@ namespace AllClassicWeb.Views.SignUp {
         protected global::System.Web.UI.WebControls.TextBox upassword;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// uname control.
         /// </summary>
         /// <remarks>
@@ -182,6 +200,15 @@ namespace AllClassicWeb.Views.SignUp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox uname;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// unickname control.
@@ -236,15 +263,6 @@ namespace AllClassicWeb.Views.SignUp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox uothersns;
-        
-        /// <summary>
-        /// DropDownList1_youraffilation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_youraffilation;
         
         /// <summary>
         /// uaffilation control.

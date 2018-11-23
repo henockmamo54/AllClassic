@@ -76,7 +76,7 @@
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
                         <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG"  runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
-                        <a id="performancegrouptab" class="list-group-item list-group-item-action " style="background-color: whitesmoke;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
+                        <a id="performancegrouptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
                         <a id="RepairShoptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/RepairShopDB"><%= Resources.DisplayText.RepairShop %></a>
                         <a id="MusicShopDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/MusicShopDB"><%= Resources.DisplayText.MusicShop %></a>
                         <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
