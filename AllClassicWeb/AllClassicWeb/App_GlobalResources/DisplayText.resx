@@ -598,4 +598,10 @@
   <data name="ThisWeek" xml:space="preserve">
     <value>ThisWeek</value>
   </data>
+  <data name="Events" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
 </root>

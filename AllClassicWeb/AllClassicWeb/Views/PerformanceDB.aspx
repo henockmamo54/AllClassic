@@ -62,9 +62,9 @@ where maincode='Region'"></asp:SqlDataSource>
             </div>
             <div class="row col-xs-12" style="margin-top: 15px;">
 
-                <h4 style="color: #28878a;">Total:
+                <h4 style="color: #28878a;"><%= Resources.DisplayText.Total %>:
                             <asp:Label runat="server" ID="label_countofitems"></asp:Label>
-                    Events </h4>
+                    <%= Resources.DisplayText.Events %> </h4>
 
                 <hr style="margin-top: 0px;" />
             </div>

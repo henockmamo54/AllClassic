@@ -20,7 +20,7 @@
             switch (color) {
                 case "1":
                     $(".whitesmokeBG").css('background-color', 'rgba(234, 234, 234, 0.66)'); break;
-                    //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
+                //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
                 case "2":
                     $(".whitesmokeBG").css('background-color', '#FFCC80');
                     break;
@@ -35,14 +35,19 @@
             switch (page) {
                 case "ASP.views_performancedb_aspx":
                     {
-                        document.getElementById("performancetab").style.backgroundColor = "white";
-                        $("#performancetab").css("cssText", "background-color: white !important;");
-                        $("#performancetab").css("cssText", "border-bottom: none !important;");
-                        document.getElementById("performancetab").style.borderBottom = "none";
+                        //document.getElementById("performancetab").style.backgroundColor = "white";
+                        //$("#performancetab").css("cssText", "background-color: white !important;");
+                        //$("#performancetab").css("cssText", "border-bottom: none !important;");
+                        //document.getElementById("performancetab").style.borderBottom = "none";
                         document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
                         document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
                         break;
                     }
+                case "ASP.views_performancedbaddnew_aspx": {
+                    document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
             }
 
         }
@@ -120,7 +125,7 @@
                         <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="4" Text="4"></asp:Button>
                     </ul>
                 </div>
-                <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding:0;">
+                <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding-right: 0;">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>

@@ -616,4 +616,10 @@
   <data name="ThisWeek" xml:space="preserve">
     <value>이번 주</value>
   </data>
+  <data name="Events" xml:space="preserve">
+    <value>이벤트</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>합계</value>
+  </data>
 </root>
