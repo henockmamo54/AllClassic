@@ -122,7 +122,18 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Doc\artist\KakaoTalk_20180910_225729576.jpg" />
     <Content Include="Doc\BOD\travis-kolbjornsen-300x300.png" />
+    <Content Include="Doc\College\05149.jpg" />
+    <Content Include="Doc\College\Dankook Campus Main.jpg" />
+    <Content Include="Doc\College\imgpreview.jpg" />
+    <Content Include="Doc\College\small_Hankuk-University-of-Foreign-Studies-Yongin-Campus-Main-Building-3.jpg" />
+    <Content Include="Doc\Performance\1.jpg" />
+    <Content Include="Doc\Performance\2.jpg" />
+    <Content Include="Doc\Performance\sample poster1.jpg" />
+    <Content Include="Doc\Performance\sample poster2.jpg" />
+    <Content Include="Doc\Performance\sample poster3.png" />
+    <Content Include="Doc\Performance\sample poster4.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -472,9 +483,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Doc\artist\" />
-    <Folder Include="Doc\College\" />
-    <Folder Include="Doc\Performance\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

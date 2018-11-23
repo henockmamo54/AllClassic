@@ -13,6 +13,12 @@ namespace AllClassicWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string pageName = this.MainContent.Page.GetType().FullName;
+            if(Session["Theme"]!=null)
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "modifyCss('"+ Session["Theme"]+"','" + pageName + "');", true);
+            else
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "modifyCss('1','"+pageName+"');", true);
+
             var user = Session["User"];
             if (user == null) { signinLink.Visible = true; signoutLink.Visible = false; }
             if (user != null)
@@ -21,6 +27,10 @@ namespace AllClassicWeb
                 //mypageLink.Visible = true;
             }
 
+        }
+
+        protected void changecolor(object sender, CommandEventArgs e) {
+            Session["Theme"] = e.CommandArgument;
         }
 
         protected void changeLanguageToKr(object sender, EventArgs e)

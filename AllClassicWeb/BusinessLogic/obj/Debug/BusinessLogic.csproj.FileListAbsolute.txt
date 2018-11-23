@@ -1,13 +1,13 @@
-C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
-C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.Properties.Resources.resources
-C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csproj.GenerateResource.cache
-C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Debug\BusinessLogic.exe.config
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Debug\BusinessLogic.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Debug\BusinessLogic.pdb
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Debug\DataAccessP.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Debug\DataAccessP.pdb
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Debug\DataAccessP.exe.config
+C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.Properties.Resources.resources
+C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csproj.GenerateResource.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.pdb

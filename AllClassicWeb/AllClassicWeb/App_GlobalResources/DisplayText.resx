@@ -586,4 +586,16 @@
   <data name="Pleaseclickasmanyasyouthinkyouare" xml:space="preserve">
     <value>Please click as many as you think you are!</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Performanceschedule" xml:space="preserve">
+    <value>Performance Schedule</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="ThisWeek" xml:space="preserve">
+    <value>ThisWeek</value>
+  </data>
 </root>

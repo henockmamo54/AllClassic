@@ -1,12 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PerformanceDB.aspx.cs" Inherits="AllClassicWeb.Views.PerformanceDB" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
             <br />
-            <div class="row col-md-12 col-xs-12 ">
+            <div class="row " style="padding-right: 0px; margin-right: 0px;">
                 <div class="col-md-3 col-xs-3">
-                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="140px" NextPrevFormat="FullMonth" Width="140px" OnSelectionChanged="dateselectorcalendar_SelectionChanged">
+                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="180px" NextPrevFormat="FullMonth" Width="220px" OnSelectionChanged="dateselectorcalendar_SelectionChanged">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
@@ -16,15 +17,15 @@
                     </asp:Calendar>
                 </div>
                 <div class="col-md-6 col-xs-6 " style="padding: 0;">
-                    <h5 style="color: #3c83f1; margin-bottom: 0px;">Performance schedule: This week</h5>
+                    <h5 style="color: #28878a; font-weight: 700;"><%= Resources.DisplayText.Performanceschedule %>: <%= Resources.DisplayText.ThisWeek %></h5>
                     <div class="shadowedPanel" style="overflow-y: scroll; max-height: 150px; height: 150px;">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Start Date</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Area/City</th>
-                                    <th scope="col">Venu</th>
+                                    <th scope="col"><%= Resources.DisplayText.StartDate %></th>
+                                    <th scope="col"><%= Resources.DisplayText.Title %></th>
+                                    <th scope="col"><%=Resources.DisplayText.Region %>/<%=Resources.DisplayText.City %></th>
+                                    <th scope="col"><%=Resources.DisplayText.Venue %></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,8 +45,8 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-md-3 ">
-                    <h4>Area</h4>
+                <div class="col-md-3 " style="padding-right: 0px;">
+                    <h5 style="color: #28878a; font-weight: 700;"><%=Resources.DisplayText.Region %></h5>
                     <asp:Repeater runat="server" ID="repeater_location" OnItemDataBound="repeater_locationOnItemDataBound" DataSourceID="SqlDataSource1_region">
                         <ItemTemplate>
                             <asp:Button runat="server" OnClick="regionclicked" CommandArgument='<%# Eval("subcode") %>' ID='location' class="locationcontainer" Text='<%# Eval("subcode") %>'></asp:Button>
@@ -59,15 +60,19 @@ where maincode='Region'"></asp:SqlDataSource>
 
                 </div>
             </div>
-            <br />
-            <h4 style="color: #3c83f1;">Total:
-                            <asp:Label runat="server" ID="label_countofitems"></asp:Label>
-                Events </h4>
+            <div class="row col-xs-12" style="margin-top: 15px;">
 
-            <hr style="margin-top: 0px;" />
+                <h4 style="color: #28878a;">Total:
+                            <asp:Label runat="server" ID="label_countofitems"></asp:Label>
+                    Events </h4>
+
+                <hr style="margin-top: 0px;" />
+            </div>
             <div class="row">
                 <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
-
+                    <EmptyItemTemplate>
+                        there is no data for this query
+                    </EmptyItemTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
                             <div id="itemPlaceholder" runat="server">
@@ -75,18 +80,18 @@ where maincode='Region'"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-md-3 col-xs-3" style="margin-bottom: 1em;">
+                        <div class="col-md-3 col-xs-3" style="margin-bottom: 1em; padding-right: 0px;">
                             <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="performancepageclicked" CommandArgument='<%# Eval("PerformanceID") %>'>
-                                                                            <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 150px;">
+                                                                            <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 190px;">
 
                                             <div class="caption" style="padding-bottom:3px;">
                                                 <h4><%# (Eval("MainTitle")) .ToString().Length>15?
                                                            (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
                                                            (Eval("MainTitle")) .ToString()%></h4>
-                                                <h6>start date: <%# DataBinder.Eval(Container.DataItem,"startdate","{0:dd/MM/yyyy}") %></h6>
+                                                <h6><%= Resources.DisplayText.StartDate %>: <%# DataBinder.Eval(Container.DataItem,"startdate","{0:dd/MM/yyyy}") %></h6>
                                                 <%--<h6>venu: <%# Eval("venuname") %></h6>--%>
-                                                <h6>Location: <%# Eval("Regionname") %>/<%# Eval("cityname") %> - <%# Eval("venuname") %></h6>
+                                                <h6><%= Resources.DisplayText.Location %>: <%# Eval("Regionname") %>/<%# Eval("cityname") %> - <%# Eval("venuname") %></h6>
                                             </div>                                
 
                                 </asp:LinkButton>
@@ -172,19 +177,13 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
         }
 
         .shadowedbox_hover:hover {
-            background-color: #bfb9b92e;
-            box-shadow: 3px 3px 3px #d0d0d0;
+            background-color: #8a897a2e;
+            box-shadow: 3px 3px 3px #d0d0d0 !important;
         }
 
         .locationcontainer:hover {
             background-color: lightblue;
         }
     </style>
-    <script type="text/javascript">
-        document.getElementById("performancetab").style.backgroundColor = "white";
-        document.getElementById("performancetab").style.borderBottom = "none";
-
-    </script>
-
 
 </asp:Content>

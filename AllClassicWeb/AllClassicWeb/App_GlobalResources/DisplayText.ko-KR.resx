@@ -604,4 +604,16 @@
   <data name="Pleaseclickasmanyasyouthinkyouare" xml:space="preserve">
     <value>당신이 생각하는만큼 클릭하십시오!</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>공연 장소(위치)</value>
+  </data>
+  <data name="Performanceschedule" xml:space="preserve">
+    <value>공연 일정</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>시작일</value>
+  </data>
+  <data name="ThisWeek" xml:space="preserve">
+    <value>이번 주</value>
+  </data>
 </root>

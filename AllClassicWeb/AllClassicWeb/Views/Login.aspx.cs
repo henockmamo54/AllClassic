@@ -34,7 +34,7 @@ namespace AllClassicWeb.Views
             if (users.Count > 0)
             {
                 Session["User"] = users[0];
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect("~/Views/PerformanceDB.aspx");
             }
             else Label1_warnningmessage.Visible = true;
         }

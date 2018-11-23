@@ -15,6 +15,38 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+    <script type="text/javascript">
+        function modifyCss(color, page) {
+            switch (color) {
+                case "1":
+                    $(".whitesmokeBG").css('background-color', 'rgba(234, 234, 234, 0.66)'); break;
+                    //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
+                case "2":
+                    $(".whitesmokeBG").css('background-color', '#FFCC80');
+                    break;
+                case "3":
+                    $(".whitesmokeBG").css('background-color', '#80FFF2');
+                    break;
+                case "4":
+                    $(".whitesmokeBG").css('background-color', '#80C6FF');
+                    break;
+            }
+
+            switch (page) {
+                case "ASP.views_performancedb_aspx":
+                    {
+                        document.getElementById("performancetab").style.backgroundColor = "white";
+                        $("#performancetab").css("cssText", "background-color: white !important;");
+                        $("#performancetab").css("cssText", "border-bottom: none !important;");
+                        document.getElementById("performancetab").style.borderBottom = "none";
+                        document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
+                        document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
+                        break;
+                    }
+            }
+
+        }
+    </script>
 </head>
 <body style="padding-top: 2px;">
     <form runat="server">
@@ -41,20 +73,20 @@
         <div class="container body-content" style="padding-left: 20px;">
 
             <div class="navbar-outer" id="masterNavigationBar">
-                <div class="row ">
-                    <div class="">
+                <div class="row whitesmokeBG">
+                    <div class="whitesmokeBG">
                         <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
-                        <a class="otheroptions" id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
-                        <a class="otheroptions" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
-                        <a class="otheroptions" id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
-                        <a class="otheroptions" id="instrumenttab" style="text-decoration: none;" runat="server" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ArchiveCenter %> </a>
-                        <a class="otheroptions" runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
-                        <a class="otheroptions" id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
-                        <span class="otheroptions">
+                        <a class="otheroptions whitesmokeBG" id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
+                        <a class="otheroptions whitesmokeBG" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
+                        <a class="otheroptions whitesmokeBG" id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
+                        <a class="otheroptions whitesmokeBG" id="instrumenttab" style="text-decoration: none;" runat="server" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ArchiveCenter %> </a>
+                        <a class="otheroptions whitesmokeBG" runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
+                        <a class="otheroptions whitesmokeBG" id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
+                        <span class="otheroptions whitesmokeBG">
                             <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; padding-right: 4px; display: inline-block;"><%= Resources.DisplayText.en %></a>/
                             <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; padding-left: 4px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
                         </span>
-                        <span class="otheroptions" style="padding-top: 8px;">
+                        <span class="otheroptions whitesmokeBG pull-right" style="padding-top: 8px;">
                             <asp:TextBox runat="server" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
                             <asp:Button runat="server" Text="search" class="btn btn-primary" />
 
@@ -75,16 +107,20 @@
                         <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
                         <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG"  runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
                         <a id="performancegrouptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
                         <a id="RepairShoptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/RepairShopDB"><%= Resources.DisplayText.RepairShop %></a>
                         <a id="MusicShopDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/MusicShopDB"><%= Resources.DisplayText.MusicShop %></a>
                         <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
                         <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.QA %></a>
+                        <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
+                        <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>
+                        <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="3" Text="3"></asp:Button>
+                        <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="4" Text="4"></asp:Button>
                     </ul>
                 </div>
-                <div class="col-md-10 col-xs-10" id="mastermaincontent">
+                <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding:0;">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
@@ -98,3 +134,4 @@
     </form>
 </body>
 </html>
+

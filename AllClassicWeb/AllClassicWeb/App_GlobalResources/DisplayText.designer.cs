@@ -601,6 +601,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        internal static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location Map.
         /// </summary>
         internal static string LocationMap {
@@ -795,6 +804,15 @@ namespace Resources {
         internal static string PerformanceGroup {
             get {
                 return ResourceManager.GetString("PerformanceGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Performance Schedule.
+        /// </summary>
+        internal static string Performanceschedule {
+            get {
+                return ResourceManager.GetString("Performanceschedule", resourceCulture);
             }
         }
         
@@ -1087,6 +1105,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start Date.
+        /// </summary>
+        internal static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student.
         /// </summary>
         internal static string Student {
@@ -1137,6 +1164,15 @@ namespace Resources {
         internal static string Termsofuse {
             get {
                 return ResourceManager.GetString("Termsofuse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ThisWeek.
+        /// </summary>
+        internal static string ThisWeek {
+            get {
+                return ResourceManager.GetString("ThisWeek", resourceCulture);
             }
         }
         

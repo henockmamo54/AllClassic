@@ -15,6 +15,9 @@ namespace AllClassicWeb.Views
         AllClassicDBEntities entity = new AllClassicDBEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "handletab();", true);
+
             if (!IsPostBack)
             {
                 try
@@ -64,7 +67,7 @@ namespace AllClassicWeb.Views
             var null_date = DateTime.Parse("1/1/0001 12:00:00 AM", System.Globalization.CultureInfo.InvariantCulture);
 
             string filter = "";
-            if (pb != null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' and location = N'" + pb.Text + "' ";
+            if (pb != null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' and r.subcode = N'" + pb.Text + "' ";
             else if (pb == null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' ";
             else if (pb != null && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";
 
