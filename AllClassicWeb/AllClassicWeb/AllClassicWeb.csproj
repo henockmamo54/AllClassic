@@ -128,6 +128,10 @@
     <Content Include="Doc\College\Dankook Campus Main.jpg" />
     <Content Include="Doc\College\imgpreview.jpg" />
     <Content Include="Doc\College\small_Hankuk-University-of-Foreign-Studies-Yongin-Campus-Main-Building-3.jpg" />
+    <Content Include="Doc\Icons\dl-c.png" />
+    <Content Include="Doc\Icons\dl.png" />
+    <Content Include="Doc\Icons\l-c.png" />
+    <Content Include="Doc\Icons\l.png" />
     <Content Include="Doc\Performance\1.jpg" />
     <Content Include="Doc\Performance\2.jpg" />
     <Content Include="Doc\Performance\sample poster1.jpg" />

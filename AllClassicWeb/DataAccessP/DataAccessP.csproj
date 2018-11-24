@@ -106,6 +106,9 @@
     <Compile Include="PeopleAndJobTbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="PerformanceCommentTbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="PerformanceGroupTbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

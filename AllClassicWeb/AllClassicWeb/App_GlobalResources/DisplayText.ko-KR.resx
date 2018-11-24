@@ -637,4 +637,10 @@
   <data name="PleaseEnterTime" xml:space="preserve">
     <value>시간을 입력하십시오.</value>
   </data>
+  <data name="Comment" xml:space="preserve">
+    <value>논평</value>
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value>댓글</value>
+  </data>
 </root>

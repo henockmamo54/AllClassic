@@ -58,6 +58,10 @@
         <EntityTypeShape EntityType="AllClassicDBModel.PeopleAndJobTbl" Width="1.5" PointX="8.25" PointY="8.5" />
         <AssociationConnector Association="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D1" />
         <AssociationConnector Association="AllClassicDBModel.FK__PeopleAndJ__City__0B91BA141" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceCommentTbl" Width="1.5" PointX="12.75" PointY="16.125" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__Paren__1332DBDC" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__10566F31" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__114A936A" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

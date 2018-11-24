@@ -18,6 +18,7 @@ namespace DataAccessP
         public PerformanceTbl()
         {
             this.PerformanceMusicianInstrumentTbls = new HashSet<PerformanceMusicianInstrumentTbl>();
+            this.PerformanceCommentTbls = new HashSet<PerformanceCommentTbl>();
         }
     
         public int PerformanceID { get; set; }
@@ -58,5 +59,7 @@ namespace DataAccessP
         public virtual UserTbl UserTbl { get; set; }
         public virtual MusicianTbl MusicianTbl { get; set; }
         public virtual MusicianTbl MusicianTbl1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PerformanceCommentTbl> PerformanceCommentTbls { get; set; }
     }
 }

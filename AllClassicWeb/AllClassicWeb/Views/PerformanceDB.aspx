@@ -177,7 +177,7 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
         }
 
         .shadowedbox_hover:hover {
-            background-color: #8a897a2e;
+            background-color: #d3d3d35c;
             box-shadow: 3px 3px 3px #d0d0d0 !important;
         }
 

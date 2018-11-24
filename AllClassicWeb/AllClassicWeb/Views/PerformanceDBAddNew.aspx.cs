@@ -363,6 +363,7 @@ namespace AllClassicWeb.Views
             {
                 int id = int.Parse(Session["PID"].ToString());
                 PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                if(performance.MainInstrument!=null)
                 DropDownList2_maininstrument.Items.FindByValue(performance.MainInstrument.ToString()).Selected = true;
             }
 

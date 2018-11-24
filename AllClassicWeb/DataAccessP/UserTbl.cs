@@ -31,6 +31,7 @@ namespace DataAccessP
             this.RepairShopTbls = new HashSet<RepairShopTbl>();
             this.MusicShopTbls = new HashSet<MusicShopTbl>();
             this.PeopleAndJobTbls = new HashSet<PeopleAndJobTbl>();
+            this.PerformanceCommentTbls = new HashSet<PerformanceCommentTbl>();
         }
     
         public int UserID { get; set; }
@@ -78,5 +79,7 @@ namespace DataAccessP
         public virtual ICollection<MusicShopTbl> MusicShopTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PeopleAndJobTbl> PeopleAndJobTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PerformanceCommentTbl> PerformanceCommentTbls { get; set; }
     }
 }

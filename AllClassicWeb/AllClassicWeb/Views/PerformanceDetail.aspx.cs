@@ -13,9 +13,11 @@ namespace AllClassicWeb.Views
     {
         PerformanceTbl performance;
         int iD;
+        static UserTbl user;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             if (Request.QueryString["PID"] != null)
                  iD = int.Parse(Request.QueryString["PID"]);
 
@@ -53,6 +55,9 @@ namespace AllClassicWeb.Views
                 lbl_description.Text = performance.Description;
                 myPerformanceDetailArtistInstrumentlist.DataSource = performance.PerformanceMusicianInstrumentTbls.ToList();
                 myPerformanceDetailArtistInstrumentlist.DataBind();
+
+                ParentRepeater.DataSource = CommentLogic.getCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
+                ParentRepeater.DataBind();
             }
         }
 
@@ -68,73 +73,64 @@ namespace AllClassicWeb.Views
             }
         }
 
-        protected void detailrepeater_onItemDatabound(object sender, RepeaterItemEventArgs e)
+        protected void FirstChildRepeater_onItemDatabound(object sender, RepeaterItemEventArgs e)
         {
-            //RepeaterItem item = e.Item;
-            //if ((item.ItemType == ListItemType.Item) ||
-            //    (item.ItemType == ListItemType.AlternatingItem))
-            //{
-            //    var detail = (Repeater)item.FindControl("detailRepeater3");
+            RepeaterItem item = e.Item;
+            if ((item.ItemType == ListItemType.Item) ||
+                (item.ItemType == ListItemType.AlternatingItem))
+            {
+                var detail = (Repeater)item.FindControl("SecondChildRepeater");
+                int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID == null ? -1 : int.Parse(((PerformanceCommentTbl)e.Item.DataItem).CommentID.ToString());
+                //var source = entity.PerformanceParentCommentTables.Where(x => x.ParentCommentID == ((PerformanceParentCommentTable)e.Item.DataItem).ID).OrderByDescending(x => x.CommentDate).ToList();
+                detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID); 
+                detail.DataBind();
 
-            //    //pc.getAllParentComments().Take(2).ToList()
-            //    //var x = cl.getChildCommentByParentID(((ParentCommentTable)e.Item.DataItem).ID);
-            //    var source = entity.PerformanceParentCommentTables.Where(x => x.ParentCommentID == ((PerformanceParentCommentTable)e.Item.DataItem).ID).OrderByDescending(x => x.CommentDate).ToList();
-            //    detail.DataSource = source;
-            //    detail.DataBind();
-
-            //}
+            }
         }
 
 
-        protected void Repeater2_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void ParentRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            //RepeaterItem item = e.Item;
-            //if ((item.ItemType == ListItemType.Item) ||
-            //    (item.ItemType == ListItemType.AlternatingItem))
-            //{
-            //    var detail = (Repeater)item.FindControl("detailRepeater");
+            RepeaterItem item = e.Item;
+            if ((item.ItemType == ListItemType.Item) ||
+                (item.ItemType == ListItemType.AlternatingItem))
+            {
+                var detail = (Repeater)item.FindControl("FirstChildRepeater");
+                int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID==null?-1: int.Parse(((PerformanceCommentTbl)e.Item.DataItem).CommentID.ToString());
+                //var source = entity.PerformanceParentCommentTables.Where(x => x.ParentCommentID == ((PerformanceParentCommentTable)e.Item.DataItem).ID).OrderByDescending(x => x.CommentDate).ToList();
+                detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID);
+                detail.DataBind();
 
-            //    //pc.getAllParentComments().Take(2).ToList()
-            //    //var x = cl.getChildCommentByParentID(((ParentCommentTable)e.Item.DataItem).ID);
-            //    var source = entity.PerformanceParentCommentTables.Where(x => x.ParentCommentID == ((PerformanceParentCommentTable)e.Item.DataItem).ID).OrderByDescending(x => x.CommentDate).ToList();
-            //    detail.DataSource = source;
-            //    detail.DataBind();
-
-            //}
+            }
         }
 
 
         protected void btnAddDetailComment_Click(object sender, CommandEventArgs e)
         {
-            //OrchestraDBEntities entity = new OrchestraDBEntities();
-            //RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
-            //string message = (item.FindControl("txtCommentReplyParent") as TextBox).Text;
+            RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
+            string message = (item.FindControl("txtCommentReplyParent") as TextBox).Text;
 
 
-            //PerformanceParentCommentTable pt = new PerformanceParentCommentTable();
-            //if (user != null)
-            //{
-            //    if (isUserCompany) pt.UserName = user.UserCompanies.FirstOrDefault().CompanyName.ToString();
-            //    else pt.UserName = user.UserPersonalInfoes.FirstOrDefault().Name.ToString();
-            //}
-            //else pt.UserName = "anonymous";
-            //pt.CommentMessage = message;
-            //pt.PerformanceID = PDID;
-            //pt.CommentDate = DateTime.Now;
-            //pt.ParentCommentID = int.Parse(e.CommandArgument.ToString());
-            //pt.UserID = user.ID;
+            PerformanceCommentTbl comment = new PerformanceCommentTbl();
 
 
-            //entity.PerformanceParentCommentTables.Add(pt);
-            //entity.SaveChanges();
+            comment.CommentMessage = message;
+            comment.PerformanceID = int.Parse(Request.QueryString["PID"]);
+            comment.CommentDate = DateTime.Now;
+            comment.ParentCommentID = int.Parse(e.CommandArgument.ToString());
+            comment.UserID = user.UserID;
 
+            CommentLogic.addComment(comment);
+
+            ParentRepeater.DataSource = CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
+            ParentRepeater.DataBind();
 
             ////var parcomm = pc.getChildCommentByParentID(3);
-            ////Repeater2.DataSource = parcomm;
-            //Repeater2.DataSource = entity.PerformanceParentCommentTables.ToList().Where(x => x.PerformanceID == PDID && x.ParentCommentID == null)
+            ////ParentRepeater.DataSource = parcomm;
+            //ParentRepeater.DataSource = entity.PerformanceParentCommentTables.ToList().Where(x => x.PerformanceID == PDID && x.ParentCommentID == null)
             //    .OrderByDescending(x => x.CommentDate)
             //    .ToList();
-            //Repeater2.DataBind();
+            //ParentRepeater.DataBind();
 
         }
 
@@ -199,47 +195,56 @@ namespace AllClassicWeb.Views
 
         protected void btnComment_Click(object sender, CommandEventArgs e)
         {
-            //if (user == null)
-            //{
-            //    showMsg("Please sign in to write comments!!!");
-            //    return;
-            //}
-            //if (txtComment.Text.Length > 0)
-            //{
-            //    btnComment.Enabled = false;
-            //    OrchestraDBEntities entity = new OrchestraDBEntities();
+            var user = (UserTbl)Session["User"];
+            if (user == null)
+            {
+                showMsg("Please sign in to write comments!!!");
+                return;
+            }
 
-            //    PerformanceParentCommentTable pt = new PerformanceParentCommentTable();
-            //    if (user != null)
-            //    {
-            //        if (isUserCompany) pt.UserName = user.UserCompanies.FirstOrDefault().CompanyName.ToString();
-            //        else pt.UserName = user.UserPersonalInfoes.FirstOrDefault().Name.ToString();
-            //    }
-            //    else pt.UserName = "anonymous";
-            //    pt.CommentMessage = txtComment.Text;
-            //    pt.PerformanceID = PDID;
-            //    pt.CommentDate = DateTime.Now;
-            //    pt.UserID = user.ID;
+            if (txtComment.Text.Length > 0)
+            {
+                btnComment.Enabled = false;
 
-            //    entity.PerformanceParentCommentTables.Add(pt);
-            //    entity.SaveChanges();
+                PerformanceCommentTbl comment = new PerformanceCommentTbl();
+                //if (user != null)
+                //{
+                //    if (isUserCompany) pt.UserName = user.UserCompanies.FirstOrDefault().CompanyName.ToString();
+                //    else pt.UserName = user.UserPersonalInfoes.FirstOrDefault().Name.ToString();
+                //}
+                //else pt.UserName = "anonymous";
+
+                comment.CommentMessage = txtComment.Text;
+                comment.PerformanceID = int.Parse(Request.QueryString["PID"]);
+                comment.CommentDate = DateTime.Now;
+                comment.UserID = user.UserID;
+
+                CommentLogic.addComment(comment);
+                var value = e.CommandArgument;
 
 
-            //    var value = e.CommandArgument;
+                //var parcomm = pc.getChildCommentByParentID(3);
+                //ParentRepeater.DataSource = parcomm;
+                ParentRepeater.DataSource =CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
+                ParentRepeater.DataBind();
 
-            //    System.Console.WriteLine("on btn click");
+                btnComment.Enabled = true;
+                txtComment.Text = "";
+            }
+        }
 
-            //    //var parcomm = pc.getChildCommentByParentID(3);
-            //    //Repeater2.DataSource = parcomm;
-            //    Repeater2.DataSource = entity.PerformanceParentCommentTables.ToList().Where(x => x.PerformanceID == PDID && x.ParentCommentID == null)
-            //        .OrderByDescending(x => x.CommentDate)
-            //        .ToList();
 
-            //    Repeater2.DataBind();
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool checkLoginStatus(int n)
+        {
 
-            //    btnComment.Enabled = true;
-            //    txtComment.Text = "";
-            //}
+            return user != null;
+        }
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
 
     }
