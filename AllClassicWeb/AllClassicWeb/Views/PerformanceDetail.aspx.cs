@@ -19,15 +19,16 @@ namespace AllClassicWeb.Views
         {
             user = (UserTbl)Session["User"];
             if (Request.QueryString["PID"] != null)
-                 iD = int.Parse(Request.QueryString["PID"]);
+                iD = int.Parse(Request.QueryString["PID"]);
 
             performance = PerformanceDBLogic.getPerfByID(iD);
 
-            if (performance != null) {
-                performancePosterImage.ImageUrl= "~/Doc/Performance/" + performance.PosterFileName.ToString();
+            if (performance != null)
+            {
+                performancePosterImage.ImageUrl = "~/Doc/Performance/" + performance.PosterFileName.ToString();
                 txt_subtitle.InnerText = performance.SubTitle + "/" + performance.Subject;
                 txt_maintitle.InnerText = performance.MainTitle;
-                if(performance.PerformanceGroupTbl!=null)
+                if (performance.PerformanceGroupTbl != null)
                     lbl_pg.Text = performance.PerformanceGroupTbl.Name;
                 if (performance.LookUpTbl != null)
                     lbl_pt.Text = performance.LookUpTbl.SubCode;
@@ -84,9 +85,8 @@ namespace AllClassicWeb.Views
                 (item.ItemType == ListItemType.AlternatingItem))
             {
                 var detail = (Repeater)item.FindControl("SecondChildRepeater");
-                int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID == null ? -1 : int.Parse(((PerformanceCommentTbl)e.Item.DataItem).CommentID.ToString());
-                //var source = entity.PerformanceParentCommentTables.Where(x => x.ParentCommentID == ((PerformanceParentCommentTable)e.Item.DataItem).ID).OrderByDescending(x => x.CommentDate).ToList();
-                detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID); 
+                int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID;
+                detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID);
                 detail.DataBind();
 
             }
@@ -100,8 +100,7 @@ namespace AllClassicWeb.Views
                 (item.ItemType == ListItemType.AlternatingItem))
             {
                 var detail = (Repeater)item.FindControl("FirstChildRepeater");
-                int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID==null?-1: int.Parse(((PerformanceCommentTbl)e.Item.DataItem).CommentID.ToString());
-                //var source = entity.PerformanceParentCommentTables.Where(x => x.ParentCommentID == ((PerformanceParentCommentTable)e.Item.DataItem).ID).OrderByDescending(x => x.CommentDate).ToList();
+                int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID;
                 detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID);
                 detail.DataBind();
 
@@ -114,9 +113,7 @@ namespace AllClassicWeb.Views
             RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
             string message = (item.FindControl("txtCommentReplyParent") as TextBox).Text;
 
-
             PerformanceCommentTbl comment = new PerformanceCommentTbl();
-
 
             comment.CommentMessage = message;
             comment.PerformanceID = int.Parse(Request.QueryString["PID"]);
@@ -128,13 +125,6 @@ namespace AllClassicWeb.Views
 
             ParentRepeater.DataSource = CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
             ParentRepeater.DataBind();
-
-            ////var parcomm = pc.getChildCommentByParentID(3);
-            ////ParentRepeater.DataSource = parcomm;
-            //ParentRepeater.DataSource = entity.PerformanceParentCommentTables.ToList().Where(x => x.PerformanceID == PDID && x.ParentCommentID == null)
-            //    .OrderByDescending(x => x.CommentDate)
-            //    .ToList();
-            //ParentRepeater.DataBind();
 
         }
 
@@ -154,7 +144,7 @@ namespace AllClassicWeb.Views
             else if (user != null)
             {
                 // islike 1= liked, 0= nither liked nor disliked, -1 disliked 
-               
+
                 var myval = PerformanceLikeUnlikeLogic.getPerformanceLikeDislikeByPerformanceIDAndUserID(int.Parse(Request.QueryString["PID"]), user.UserID);
                 if (myval.Count > 0)
                 {
@@ -183,12 +173,7 @@ namespace AllClassicWeb.Views
                 }
 
                 getLikeUnlikeStatusForUser();
-                
 
-
-                //BulletinLogic bl = new BulletinLogic();
-                //Repeater1.DataSource = bl.getAllMsg(myuser.ID);
-                //Repeater1.DataBind();
             }
 
         }
@@ -206,9 +191,6 @@ namespace AllClassicWeb.Views
                 var detail = PerformanceLikeUnlikeLogic.getPerformanceLikeDislikeByPerformanceIDAndUserID(int.Parse(Request.QueryString["PID"]), user.UserID).FirstOrDefault();
                 if (detail != null)
                 {
-                    //isliked = detail.islike == 1;
-                    //isdisliked = detail.islike == -1;
-
                     likebutton.Visible = detail.islike != 1;
                     likebuttonliked.Visible = detail.islike == 1;
 
@@ -232,12 +214,6 @@ namespace AllClassicWeb.Views
                 btnComment.Enabled = false;
 
                 PerformanceCommentTbl comment = new PerformanceCommentTbl();
-                //if (user != null)
-                //{
-                //    if (isUserCompany) pt.UserName = user.UserCompanies.FirstOrDefault().CompanyName.ToString();
-                //    else pt.UserName = user.UserPersonalInfoes.FirstOrDefault().Name.ToString();
-                //}
-                //else pt.UserName = "anonymous";
 
                 comment.CommentMessage = txtComment.Text;
                 comment.PerformanceID = int.Parse(Request.QueryString["PID"]);
@@ -247,10 +223,7 @@ namespace AllClassicWeb.Views
                 CommentLogic.addComment(comment);
                 var value = e.CommandArgument;
 
-
-                //var parcomm = pc.getChildCommentByParentID(3);
-                //ParentRepeater.DataSource = parcomm;
-                ParentRepeater.DataSource =CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
+                ParentRepeater.DataSource = CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
                 ParentRepeater.DataBind();
 
                 btnComment.Enabled = true;
