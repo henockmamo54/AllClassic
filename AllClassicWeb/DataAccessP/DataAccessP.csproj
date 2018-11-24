@@ -112,6 +112,9 @@
     <Compile Include="PerformanceGroupTbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="PerformanceLikeUnlikeTbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="PerformanceMusicianInstrumentTbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

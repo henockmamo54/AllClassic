@@ -106,6 +106,16 @@
           <Property Name="CommentDate" Type="datetime" Nullable="false" />
           <Property Name="ParentCommentID" Type="int" />
         </EntityType>
+        <EntityType Name="PerformanceLikeUnlikeTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="PerformanceID" Type="int" />
+          <Property Name="timestamp" Type="datetime" />
+          <Property Name="islike" Type="int" />
+        </EntityType>
         <EntityType Name="RepairShopTbl">
           <Key>
             <PropertyRef Name="RepairShopID" />
@@ -581,6 +591,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Performan__Perfo__17036CC0">
+          <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1" />
+          <End Role="PerformanceLikeUnlikeTbl" Type="Self.PerformanceLikeUnlikeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerformanceTbl">
+              <PropertyRef Name="PerformanceID" />
+            </Principal>
+            <Dependent Role="PerformanceLikeUnlikeTbl">
+              <PropertyRef Name="PerformanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Performan__Perfo__6A30C649">
           <End Role="PerformanceGroupTbl" Type="Self.PerformanceGroupTbl" Multiplicity="1" />
           <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -637,6 +659,18 @@
               <PropertyRef Name="UserID" />
             </Principal>
             <Dependent Role="PerformanceCommentTbl">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Performan__UserI__160F4887">
+          <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+          <End Role="PerformanceLikeUnlikeTbl" Type="Self.PerformanceLikeUnlikeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="PerformanceLikeUnlikeTbl">
               <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
@@ -769,6 +803,7 @@
           <EntitySet Name="MusicShopTbl" EntityType="Self.MusicShopTbl" Schema="Auxiliary" store:Type="Tables" />
           <EntitySet Name="PeopleAndJobTbl" EntityType="Self.PeopleAndJobTbl" Schema="Auxiliary" store:Type="Tables" />
           <EntitySet Name="PerformanceCommentTbl" EntityType="Self.PerformanceCommentTbl" Schema="Auxiliary" store:Type="Tables" />
+          <EntitySet Name="PerformanceLikeUnlikeTbl" EntityType="Self.PerformanceLikeUnlikeTbl" Schema="Auxiliary" store:Type="Tables" />
           <EntitySet Name="RepairShopTbl" EntityType="Self.RepairShopTbl" Schema="Auxiliary" store:Type="Tables" />
           <EntitySet Name="UserTypeTbl" EntityType="Self.UserTypeTbl" Schema="Auxiliary" store:Type="Tables" />
           <EntitySet Name="VenueTbl" EntityType="Self.VenueTbl" Schema="Auxiliary" store:Type="Tables" />
@@ -870,6 +905,10 @@
             <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
             <End Role="PerformanceCommentTbl" EntitySet="PerformanceCommentTbl" />
           </AssociationSet>
+          <AssociationSet Name="FK__Performan__Perfo__17036CC0" Association="Self.FK__Performan__Perfo__17036CC0">
+            <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
+            <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbl" />
+          </AssociationSet>
           <AssociationSet Name="FK__Performan__Perfo__6A30C649" Association="Self.FK__Performan__Perfo__6A30C649">
             <End Role="PerformanceGroupTbl" EntitySet="PerformanceGroupTbl" />
             <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
@@ -889,6 +928,10 @@
           <AssociationSet Name="FK__Performan__UserI__114A936A" Association="Self.FK__Performan__UserI__114A936A">
             <End Role="UserTbl" EntitySet="UserTbl" />
             <End Role="PerformanceCommentTbl" EntitySet="PerformanceCommentTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Performan__UserI__160F4887" Association="Self.FK__Performan__UserI__160F4887">
+            <End Role="UserTbl" EntitySet="UserTbl" />
+            <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbl" />
           </AssociationSet>
           <AssociationSet Name="FK__Performan__UserI__60A75C0F" Association="Self.FK__Performan__UserI__60A75C0F">
             <End Role="UserTbl" EntitySet="UserTbl" />
@@ -1112,6 +1155,7 @@
           <NavigationProperty Name="MusicianTbl" Relationship="AllClassicDBModel.FK__Performan__Condu__6C190EBB" FromRole="PerformanceTbl" ToRole="MusicianTbl" />
           <NavigationProperty Name="MusicianTbl1" Relationship="AllClassicDBModel.FK__Performan__MainT__6D0D32F4" FromRole="PerformanceTbl" ToRole="MusicianTbl" />
           <NavigationProperty Name="PerformanceCommentTbls" Relationship="AllClassicDBModel.FK__Performan__Perfo__10566F31" FromRole="PerformanceTbl" ToRole="PerformanceCommentTbl" />
+          <NavigationProperty Name="PerformanceLikeUnlikeTbls" Relationship="AllClassicDBModel.FK__Performan__Perfo__17036CC0" FromRole="PerformanceTbl" ToRole="PerformanceLikeUnlikeTbl" />
         </EntityType>
         <EntityType Name="UserTbl">
           <Key>
@@ -1148,6 +1192,7 @@
           <NavigationProperty Name="MusicShopTbls" Relationship="AllClassicDBModel.FK__MusicShop__UserI__08B54D69" FromRole="UserTbl" ToRole="MusicShopTbl" />
           <NavigationProperty Name="PeopleAndJobTbls" Relationship="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D1" FromRole="UserTbl" ToRole="PeopleAndJobTbl" />
           <NavigationProperty Name="PerformanceCommentTbls" Relationship="AllClassicDBModel.FK__Performan__UserI__114A936A" FromRole="UserTbl" ToRole="PerformanceCommentTbl" />
+          <NavigationProperty Name="PerformanceLikeUnlikeTbls" Relationship="AllClassicDBModel.FK__Performan__UserI__160F4887" FromRole="UserTbl" ToRole="PerformanceLikeUnlikeTbl" />
         </EntityType>
         <EntityType Name="UserUserType">
           <Key>
@@ -1544,6 +1589,15 @@
             <End Role="UserTbl" EntitySet="UserTbls" />
             <End Role="PerformanceCommentTbl" EntitySet="PerformanceCommentTbls" />
           </AssociationSet>
+          <EntitySet Name="PerformanceLikeUnlikeTbls" EntityType="AllClassicDBModel.PerformanceLikeUnlikeTbl" />
+          <AssociationSet Name="FK__Performan__Perfo__17036CC0" Association="AllClassicDBModel.FK__Performan__Perfo__17036CC0">
+            <End Role="PerformanceTbl" EntitySet="PerformanceTbls" />
+            <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Performan__UserI__160F4887" Association="AllClassicDBModel.FK__Performan__UserI__160F4887">
+            <End Role="UserTbl" EntitySet="UserTbls" />
+            <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbls" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="MusicianTbl">
           <Key>
@@ -1935,6 +1989,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="PerformanceLikeUnlikeTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="PerformanceID" Type="Int32" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="islike" Type="Int32" />
+          <NavigationProperty Name="PerformanceTbl" Relationship="AllClassicDBModel.FK__Performan__Perfo__17036CC0" FromRole="PerformanceLikeUnlikeTbl" ToRole="PerformanceTbl" />
+          <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__Performan__UserI__160F4887" FromRole="PerformanceLikeUnlikeTbl" ToRole="UserTbl" />
+        </EntityType>
+        <Association Name="FK__Performan__Perfo__17036CC0">
+          <End Type="AllClassicDBModel.PerformanceTbl" Role="PerformanceTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.PerformanceLikeUnlikeTbl" Role="PerformanceLikeUnlikeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerformanceTbl">
+              <PropertyRef Name="PerformanceID" />
+            </Principal>
+            <Dependent Role="PerformanceLikeUnlikeTbl">
+              <PropertyRef Name="PerformanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Performan__UserI__160F4887">
+          <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+          <End Type="AllClassicDBModel.PerformanceLikeUnlikeTbl" Role="PerformanceLikeUnlikeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTbl">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="PerformanceLikeUnlikeTbl">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2270,6 +2360,17 @@
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="PerformanceID" ColumnName="PerformanceID" />
                 <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PerformanceLikeUnlikeTbls">
+            <EntityTypeMapping TypeName="AllClassicDBModel.PerformanceLikeUnlikeTbl">
+              <MappingFragment StoreEntitySet="PerformanceLikeUnlikeTbl">
+                <ScalarProperty Name="islike" ColumnName="islike" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="PerformanceID" ColumnName="PerformanceID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

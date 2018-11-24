@@ -56,8 +56,12 @@ namespace AllClassicWeb.Views
                 myPerformanceDetailArtistInstrumentlist.DataSource = performance.PerformanceMusicianInstrumentTbls.ToList();
                 myPerformanceDetailArtistInstrumentlist.DataBind();
 
+                //comments
                 ParentRepeater.DataSource = CommentLogic.getCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
                 ParentRepeater.DataBind();
+
+                //like unlike
+                getLikeUnlikeStatusForUser();
             }
         }
 
@@ -137,61 +141,82 @@ namespace AllClassicWeb.Views
 
         public void LikeClicked(object sender, CommandEventArgs e)
         {
-            //var value = e.CommandArgument.ToString().Split(',');
-            //int id = int.Parse(value[0]);
-            //int isLike = int.Parse(value[1]);
+            var value = e.CommandArgument.ToString().Split(',');
+            int id = int.Parse(value[0]);
+            int isLike = int.Parse(value[1]);
 
-            //if (user == null)
-            //{
-            //    showMsg("Please sign in to Like Posts!!!");
-            //    return;
-            //}
+            if (user == null)
+            {
+                showMsg("Please sign in to Like Posts!!!");
+                return;
+            }
 
-            //else if (user != null)
-            //{
-            //    // islike 1= liked, 0= nither liked nor disliked, -1 disliked 
-            //    OrchestraDBEntities entities = new OrchestraDBEntities();
-            //    var myval = entities.PerformanceLikeUnlikes.Where(x => x.PerformanceID == PDID & x.UserID == user.ID).ToList();
-            //    if (myval.Count > 0)
-            //    {
+            else if (user != null)
+            {
+                // islike 1= liked, 0= nither liked nor disliked, -1 disliked 
+               
+                var myval = PerformanceLikeUnlikeLogic.getPerformanceLikeDislikeByPerformanceIDAndUserID(int.Parse(Request.QueryString["PID"]), user.UserID);
+                if (myval.Count > 0)
+                {
+                    if (isLike == 1)
+                    {
+                        if (myval.FirstOrDefault().islike == 1)
+                            myval.FirstOrDefault().islike = 0;
+                        else myval.FirstOrDefault().islike = 1;
+                    }
+                    else
+                    {
+                        if (myval.FirstOrDefault().islike == -1)
+                            myval.FirstOrDefault().islike = 0;
+                        else myval.FirstOrDefault().islike = -1;
+                    }
+                    PerformanceLikeUnlikeLogic.updatePerformanceLikeUnlike(myval.FirstOrDefault());
+                }
+                else
+                {
+                    PerformanceLikeUnlikeTbl b = new PerformanceLikeUnlikeTbl();
+                    b.PerformanceID = int.Parse(Request.QueryString["PID"]);
+                    b.UserID = user.UserID;
+                    b.islike = isLike;
+                    b.timestamp = DateTime.Now;
+                    PerformanceLikeUnlikeLogic.addLikeUnlike(b);
+                }
 
-            //        if (isLike == 1)
-            //        {
-            //            if (myval.FirstOrDefault().islike == 1)
-            //                myval.FirstOrDefault().islike = 0;
-            //            else myval.FirstOrDefault().islike = 1;
-            //        }
-            //        else
-            //        {
-            //            if (myval.FirstOrDefault().islike == -1)
-            //                myval.FirstOrDefault().islike = 0;
-            //            else myval.FirstOrDefault().islike = -1;
-            //        }
-            //        entities.SaveChanges();
-            //    }
-            //    else
-            //    {
-            //        PerformanceLikeUnlike b = new PerformanceLikeUnlike();
-            //        b.PerformanceID = PDID;
-            //        b.UserID = user.ID;
-            //        b.islike = isLike;
-            //        b.timestamp = DateTime.Now;
-            //        entities.PerformanceLikeUnlikes.Add(b);
-            //        entities.SaveChanges();
-            //    }
-
-            //    getLikeUnlikeStatusForUser();
-            //    likecountspan.InnerText = likecount.ToString();
-            //    dislikecountspan.InnerText = dislikecount.ToString();
+                getLikeUnlikeStatusForUser();
+                
 
 
-            //    //BulletinLogic bl = new BulletinLogic();
-            //    //Repeater1.DataSource = bl.getAllMsg(myuser.ID);
-            //    //Repeater1.DataBind();
-            //}
+                //BulletinLogic bl = new BulletinLogic();
+                //Repeater1.DataSource = bl.getAllMsg(myuser.ID);
+                //Repeater1.DataBind();
+            }
 
         }
 
+
+        public void getLikeUnlikeStatusForUser()
+        {
+            List<PerformanceLikeUnlikeTbl> performancelikeunlike = PerformanceLikeUnlikeLogic.getPerformanceLikeDislikeByPerformanceID(int.Parse(Request.QueryString["PID"]));
+            int likecount = performancelikeunlike.Where(x => x.islike == 1).Count();
+            int dislikecount = performancelikeunlike.Where(x => x.islike == -1).Count();
+            likecountspan.InnerText = likecount.ToString();
+            dislikecountspan.InnerText = dislikecount.ToString();
+            if (user != null)
+            {
+                var detail = PerformanceLikeUnlikeLogic.getPerformanceLikeDislikeByPerformanceIDAndUserID(int.Parse(Request.QueryString["PID"]), user.UserID).FirstOrDefault();
+                if (detail != null)
+                {
+                    //isliked = detail.islike == 1;
+                    //isdisliked = detail.islike == -1;
+
+                    likebutton.Visible = detail.islike != 1;
+                    likebuttonliked.Visible = detail.islike == 1;
+
+                    dislikebutton.Visible = detail.islike != -1;
+                    dislikebuttondisliked.Visible = detail.islike == -1;
+                }
+            }
+        }
 
         protected void btnComment_Click(object sender, CommandEventArgs e)
         {

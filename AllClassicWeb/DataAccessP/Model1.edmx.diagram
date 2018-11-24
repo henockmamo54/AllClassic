@@ -62,6 +62,9 @@
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Paren__1332DBDC" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__10566F31" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__114A936A" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceLikeUnlikeTbl" Width="1.5" PointX="15.75" PointY="13.5" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__17036CC0" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__160F4887" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

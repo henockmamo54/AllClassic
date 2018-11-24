@@ -64,6 +64,7 @@
     <Compile Include="PeopleAndJobLogic.cs" />
     <Compile Include="PerformanceDBLogic.cs" />
     <Compile Include="PerformanceGroupLogic.cs" />
+    <Compile Include="PerformanceLikeUnlikeLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepairShopLogic.cs" />
