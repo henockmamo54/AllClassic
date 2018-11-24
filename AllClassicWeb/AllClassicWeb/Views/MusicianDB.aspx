@@ -35,7 +35,7 @@ or maincode='Conductor'
             </div>
             <br />
 
-            <div class="row" style="padding-right: 15px;">
+            <div class="row" >
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 SELECT top 20 m.*,u.EmailID, majorsubocode FROM Main.[MusicianTbl] m
 join Main.UserTbl u on m.UserID=u.UserID
@@ -77,8 +77,8 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                 </div>
             </div>
 
-            <hr style="margin-top: 0px;" />
             <div class="row">
+                <hr  />
                 <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" Style="width: 100%;">
 
                     <GroupTemplate>
@@ -97,7 +97,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                     <div class="card-body">
                                         <h5 class="card-title" style="margin: 0; margin-top: 5px; margin-bottom: 5px;"><strong><%#Eval("Name") %> </strong></h5>
                                         <p class="card-text" style="color: #555555;">
-                                            <strong><%# Resources.DisplayText.YourAffilation %>: </strong>
+                                            <strong><%# Resources.DisplayText.Affiliation %>: </strong>
                                             <%#Eval("Affliation") %>
                                             <br />
                                             <strong><%# Resources.DisplayText.Major %>: </strong>

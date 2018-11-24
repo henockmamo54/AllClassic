@@ -142,6 +142,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Affiliation.
+        /// </summary>
+        internal static string Affiliation {
+            get {
+                return ResourceManager.GetString("Affiliation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alias.
         /// </summary>
         internal static string Alias {

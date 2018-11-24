@@ -310,5 +310,17 @@ namespace AllClassicWeb.Views
                 showMsg("Please check your inputs");
             }
         }
+
+        protected void DropDownList1_Major_DataBound(object sender, EventArgs e)
+        {
+
+            if (Boolean.Parse(Session["updateMusician"].ToString()) == true)
+            {
+                int id = int.Parse(Session["MusicianID"].ToString());
+                MusicianTbl performance = MusicianLogic.getMusicianByID(id);
+                if(performance.Major!=0)
+                    DropDownList1_Major.Items.FindByValue(performance.Major.ToString()).Selected = true;
+            }
+        }
     }
 }

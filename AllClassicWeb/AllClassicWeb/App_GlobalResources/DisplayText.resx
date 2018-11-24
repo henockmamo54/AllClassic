@@ -625,4 +625,7 @@
   <data name="Reply" xml:space="preserve">
     <value>Reply</value>
   </data>
+  <data name="Affiliation" xml:space="preserve">
+    <value>Affiliation</value>
+  </data>
 </root>

@@ -31,6 +31,7 @@ namespace AllClassicWeb.Views
                 yourAffilation.Text = artist.Affliation;
                 profilePage.Text = artist.Profile;
                 repertory.Text = artist.Repertory;
+                major.Text = artist.LookUpTbl !=null? artist.LookUpTbl.SubCode:"";
 
                 var endorserlist = artist.MusicianEndorserTbls.ToList();
                 if (endorserlist != null && endorserlist.Count > 0)

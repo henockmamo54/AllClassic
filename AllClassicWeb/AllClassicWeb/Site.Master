@@ -53,6 +53,16 @@
                     document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
                     break;
+                }                    
+                case "ASP.views_musiciandbaddnew_aspx": {
+                    document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }                    
+                case "ASP.views_musiciandetailpage_aspx": {
+                    document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
                 }
             }
 

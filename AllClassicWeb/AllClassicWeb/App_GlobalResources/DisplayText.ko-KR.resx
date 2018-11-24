@@ -643,4 +643,7 @@
   <data name="Reply" xml:space="preserve">
     <value>댓글</value>
   </data>
+  <data name="Affiliation" xml:space="preserve">
+    <value>입회</value>
+  </data>
 </root>
