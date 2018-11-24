@@ -13,6 +13,15 @@ namespace AllClassicWeb.Views {
     public partial class MusicianDB {
         
         /// <summary>
+        /// inquiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inquiry;
+        
+        /// <summary>
         /// txt_repertoryfilter control.
         /// </summary>
         /// <remarks>
