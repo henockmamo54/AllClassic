@@ -108,9 +108,9 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button"  ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn "  ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -139,8 +139,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
         </ContentTemplate>
     </asp:UpdatePanel>
     <script type="text/javascript">
-        document.getElementById("artisttab").style.backgroundColor = "white";
-        document.getElementById("artisttab").style.borderBottom = "none";
+        
         function onclick_headertableItem(x) {
             alert(x);
         }

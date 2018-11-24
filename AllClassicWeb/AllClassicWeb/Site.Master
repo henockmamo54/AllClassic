@@ -49,6 +49,11 @@
                     document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
                     break;
                 }
+                case "ASP.views_musiciandb_aspx": {
+                    document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
             }
 
         }

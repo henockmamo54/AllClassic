@@ -70,9 +70,7 @@ where maincode='Region'"></asp:SqlDataSource>
             </div>
             <div class="row">
                 <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
-                    <EmptyItemTemplate>
-                        there is no data for this query
-                    </EmptyItemTemplate>
+                    
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
                             <div id="itemPlaceholder" runat="server">
@@ -107,9 +105,9 @@ where maincode='Region'"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn "  ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
