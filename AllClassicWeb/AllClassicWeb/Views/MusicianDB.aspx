@@ -37,7 +37,7 @@ or maincode='Conductor'
 
             <div class="row" >
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-SELECT top 20 m.*,u.EmailID, majorsubocode FROM Main.[MusicianTbl] m
+SELECT top 20 m.*,u.EmailID useremailID, majorsubocode FROM Main.[MusicianTbl] m
 join Main.UserTbl u on m.UserID=u.UserID
 left join (
 select LookUpID,SubCode as majorsubocode from Main.LookUpTbl
@@ -53,7 +53,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                             <tr>
                                 <th scope="col"><%= Resources.DisplayText.FullName %></th>
                                 <th scope="col"><%= Resources.DisplayText.Major %></th>
-                                <th scope="col"><%= Resources.DisplayText.YourAffilation %></th>
+                                <th scope="col"><%= Resources.DisplayText.Affiliation %></th>
                                 <th scope="col"><%= Resources.DisplayText.Email %></th>
                             </tr>
                         </thead>
@@ -66,7 +66,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
                                         <td class="col-xs-3"><%#Eval("majorsubocode") %></td>
                                         <td class="col-xs-3"><%#Eval("Affliation") %></td>
-                                        <td class="col-xs-3"><%#Eval("UserID") %></td>
+                                        <td class="col-xs-3"><%#Eval("useremailID") %></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>

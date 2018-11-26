@@ -646,4 +646,16 @@
   <data name="Affiliation" xml:space="preserve">
     <value>입회</value>
   </data>
+  <data name="Pleasefillthecountryfield" xml:space="preserve">
+    <value>국가 입력란을 작성하십시오.</value>
+  </data>
+  <data name="PleasefilltheHomepagefield" xml:space="preserve">
+    <value>홈페이지 입력란을 작성하십시오.</value>
+  </data>
+  <data name="Pleasefillthenamefield" xml:space="preserve">
+    <value>이름 입력란을 작성하십시오.</value>
+  </data>
+  <data name="Pleasefilltheshortnamefield" xml:space="preserve">
+    <value>짧은 이름 입력란을 작성하십시오.</value>
+  </data>
 </root>

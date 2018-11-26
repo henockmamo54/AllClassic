@@ -961,6 +961,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fill the country field.
+        /// </summary>
+        internal static string Pleasefillthecountryfield {
+            get {
+                return ResourceManager.GetString("Pleasefillthecountryfield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill the Home page field.
+        /// </summary>
+        internal static string PleasefilltheHomepagefield {
+            get {
+                return ResourceManager.GetString("PleasefilltheHomepagefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill the name field.
+        /// </summary>
+        internal static string Pleasefillthenamefield {
+            get {
+                return ResourceManager.GetString("Pleasefillthenamefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill the short name field.
+        /// </summary>
+        internal static string Pleasefilltheshortnamefield {
+            get {
+                return ResourceManager.GetString("Pleasefilltheshortnamefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Poster.
         /// </summary>
         internal static string Poster {

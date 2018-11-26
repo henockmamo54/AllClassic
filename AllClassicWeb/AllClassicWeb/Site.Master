@@ -63,6 +63,21 @@
                     document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
                     break;
+                }                                         
+                case "ASP.views_musiccollegedb_aspx": {
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_musiccollegedbaddnew_aspx": {                    
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_musiccollegedbdetail_aspx": {                    
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
                 }
             }
 

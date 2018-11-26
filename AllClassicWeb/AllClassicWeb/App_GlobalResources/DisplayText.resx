@@ -628,4 +628,16 @@
   <data name="Affiliation" xml:space="preserve">
     <value>Affiliation</value>
   </data>
+  <data name="Pleasefillthecountryfield" xml:space="preserve">
+    <value>Please fill the country field</value>
+  </data>
+  <data name="PleasefilltheHomepagefield" xml:space="preserve">
+    <value>Please fill the Home page field</value>
+  </data>
+  <data name="Pleasefillthenamefield" xml:space="preserve">
+    <value>Please fill the name field</value>
+  </data>
+  <data name="Pleasefilltheshortnamefield" xml:space="preserve">
+    <value>Please fill the short name field</value>
+  </data>
 </root>
