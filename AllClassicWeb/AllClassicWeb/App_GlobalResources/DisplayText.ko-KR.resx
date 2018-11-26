@@ -676,4 +676,22 @@
   <data name="PleasefillConcouroutlinefield" xml:space="preserve">
     <value>콩쿠르 개요 입력란을 작성하십시오.</value>
   </data>
+  <data name="PleasefillAddressfield" xml:space="preserve">
+    <value>주소 입력란을 작성하십시오.</value>
+  </data>
+  <data name="PleasefillEmailfield" xml:space="preserve">
+    <value>이메일 입력란을 작성하십시오.</value>
+  </data>
+  <data name="PleasefillPerformanceGroupfield" xml:space="preserve">
+    <value>실적 그룹 입력란을 작성하십시오.</value>
+  </data>
+  <data name="PleasefillSinceYearfield" xml:space="preserve">
+    <value>설정 년도 필드를 기입하십시오.</value>
+  </data>
+  <data name="PleasefillTelNofield" xml:space="preserve">
+    <value>전화 번호 입력란을 작성하십시오.</value>
+  </data>
+  <data name="PleasefillZipCodefield" xml:space="preserve">
+    <value>우편 번호 입력란을 작성하십시오.</value>
+  </data>
 </root>

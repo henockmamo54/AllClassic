@@ -13,22 +13,22 @@ namespace AllClassicWeb.Views {
     public partial class PerformanceGroup {
         
         /// <summary>
-        /// txt_performancegroup control.
+        /// DropDownList1_city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_performancegroup;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_city;
         
         /// <summary>
-        /// txt_alias control.
+        /// SqlDataSource1_city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_alias;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_city;
         
         /// <summary>
         /// DropDownList1_grouptype control.
@@ -49,22 +49,31 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_grouptypelist;
         
         /// <summary>
-        /// DropDownList1_city control.
+        /// txt_alias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_city;
+        protected global::System.Web.UI.WebControls.TextBox txt_alias;
         
         /// <summary>
-        /// SqlDataSource1_city control.
+        /// txt_performancegroup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_city;
+        protected global::System.Web.UI.WebControls.TextBox txt_performancegroup;
+        
+        /// <summary>
+        /// inquiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inquiry;
         
         /// <summary>
         /// SqlDataSource1_getrecent20artists control.

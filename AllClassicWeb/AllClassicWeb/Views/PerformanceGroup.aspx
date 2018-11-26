@@ -5,30 +5,11 @@
         <ContentTemplate>
             <br />
             <div class="row">
-                <div class="row col-md-12 col-xs-12  col-xs-12">
-                    <div class="col-md-4 col-xs-4 pull-right">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.PerformanceGroup %> </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txt_performancegroup" runat="server" CssClass="form-control" Style="width: 50%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
-                    </div>
+                <div class="row col-xs-12" style="padding-right: 0px;">
 
-                    <div class="col-md-2 col-xs-2 pull-right">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Alias %> </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txt_alias" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
-                    </div>
-                    <div class="col-md-3 col-xs-3  col-xs-3 pull-right">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.GroupType %>  </h5>
-                        <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control" Style="width: 50%; display: inline-block;" AutoPostBack="True" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID" OnSelectedIndexChanged="selectedFilterChanged"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1_grouptypelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
-Union
-SELECT LookUpID, MainCode, SubCode 
-FROM Main.LookUpTbl
-where maincode='GroupType'
-"></asp:SqlDataSource>
-
-                    </div>
-                    <div class="col-md-3 col-xs-3 pull-right">
+                    <div class="col-xs-2 " style="padding-right: 0px; padding-left: 0px;">
                         <h5 style="display: inline-block;"><%= Resources.DisplayText.City %>  </h5>
-                        <asp:DropDownList ID="DropDownList1_city" runat="server" class="form-control" AutoPostBack="True" Style="width: 50%; display: inline-block;" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID" OnSelectedIndexChanged="selectedFilterChanged"></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownList1_city" runat="server" class="form-control" AutoPostBack="True" Style="width: 80%; display: inline-block;" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -37,8 +18,35 @@ where maincode='City'
 "></asp:SqlDataSource>
 
                     </div>
+
+                    <div class="col-xs-3">
+                        <h5 style="display: inline-block;"><%= Resources.DisplayText.GroupType %>  </h5>
+                        <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control" Style="width: 63%; display: inline-block;" AutoPostBack="True" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1_grouptypelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
+Union
+SELECT LookUpID, MainCode, SubCode 
+FROM Main.LookUpTbl
+where maincode='GroupType'
+"></asp:SqlDataSource>
+
+                    </div>
+
+                    <div class="col-xs-3 " style="padding-right: 0px;">
+                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Alias %> </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txt_alias" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                    </div>
+
+                    <div class="col-xs-4" style="padding-right: 0px;">
+                        <h5 style="display: inline-block;"><%= Resources.DisplayText.PerformanceGroup %> </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txt_performancegroup" runat="server" CssClass="form-control" Style="width: 58%; display: inline-block;"></asp:TextBox>
+                    </div>
+
                 </div>
 
+                <div class="col-md-12 col-xs-12">
+                    <br />
+                    <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
+                </div>
             </div>
             <br />
 
@@ -49,31 +57,39 @@ left join (select * from Main.LookUpTbl where MainCode='city') c on pg.City=c.Lo
 left join (select * from Main.LookUpTbl where MainCode='GroupType') gt on pg.GroupType=gt.LookUpID
 join Main.UserTbl u on pg.UserID=u.UserID
 order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 150px; height: 150px; overflow-y: scroll;">
-                    <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
-                        <HeaderTemplate>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.PerformanceGroup %></strong></div>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.Alias %></strong></div>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.GroupType %></strong></div>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.SinceYear %></strong></div>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.City %></strong></div>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.Email %></strong></div>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <%--<asp:LinkButton runat="server" ID="LinkButton1" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'>--%>
-                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("PerformanceGroupID")%>'>
-                                <div class=" row col-md-12 col-xs-12">
-                                    <hr style="background-color: #5f755f; margin: 0; margin-top: 5px;" />
-                                </div>
-                                <div class="col-xs-2"><%#Eval("Name") %></div>
-                                <div class="col-xs-2"><%#Eval("Alias") %></div>
-                                <div class="col-xs-2"><%#Eval("grouptpename") %></div>
-                                <div class="col-xs-2"><%#Eval("SinceYear") %></div>
-                                <div class="col-xs-2"><%#Eval("cityname") %></div>
-                                <div class="col-xs-2"><%#Eval("EmailID") %></div>
-                            </asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th><strong><%= Resources.DisplayText.PerformanceGroup %></strong></th>
+                                <th><strong><%= Resources.DisplayText.Alias %></strong></th>
+                                <th><strong><%= Resources.DisplayText.GroupType %></strong></th>
+                                <th><strong><%= Resources.DisplayText.SinceYear %></strong></th>
+                                <th><strong><%= Resources.DisplayText.City %></strong></th>
+                                <th><strong><%= Resources.DisplayText.Email %></strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
+
+                                <ItemTemplate>
+
+                                    <tr>
+                                        <td class="col-xs-2">
+                                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("PerformanceGroupID")%>'><%#Eval("Name") %></asp:LinkButton></td>
+                                        <td class="col-xs-2"><%#Eval("Alias") %></td>
+                                        <td class="col-xs-2"><%#Eval("grouptpename") %></td>
+                                        <td class="col-xs-2"><%#Eval("SinceYear") %></td>
+                                        <td class="col-xs-2"><%#Eval("cityname") %></td>
+                                        <td class="col-xs-2"><%#Eval("EmailID") %></td>
+                                    </tr>
+
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -92,6 +108,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="orchContainer" style="background-color: white;">
                                 <h4 style="color: #00796B; font-weight: 800;"><%#Eval("Name").ToString().Length>10?Eval("Name").ToString().Substring(0,10):Eval("Name").ToString() %></h4>
                                 <h5 style="color: #00796B;">(<%#Eval("Alias") %>)</h5>
+                                <hr />
                                 <div style="font-size: 1.2rem; color: #4c4949; margin-left: 10px;">
 
                                     <span><%# Resources.DisplayText.GroupType %>: <%#Eval("grouptpename") %></span>
@@ -103,7 +120,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                                     <span><%# Resources.DisplayText.ZipCode %>: <%#Eval("ZipCode") %></span><br />
                                     <span><%# Resources.DisplayText.TelNo %>: <%#Eval("TelNO") %></span><br />
                                     <span><%# Resources.DisplayText.FaxNo %>: <%#Eval("FaxNo") %></span><br />
-                                    <span><a href='PerformanceGroupDetail.aspx?PGID=<%#Eval("PerformanceGroupID") %>' ><%# Resources.DisplayText.HomePage %></a></span>
+                                    <span><a href='PerformanceGroupDetail.aspx?PGID=<%#Eval("PerformanceGroupID") %>'><%# Resources.DisplayText.HomePage %></a></span>
                                 </div>
                             </div>
 
@@ -118,9 +135,9 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -143,10 +160,6 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <script type="text/javascript">
-        document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
-        document.getElementById("performancegrouptab").style.borderRight = "none";
-    </script>
     <style type="text/css">
         .orchContainer {
             background: white;

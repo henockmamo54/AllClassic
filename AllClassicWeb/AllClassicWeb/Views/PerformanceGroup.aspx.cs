@@ -16,6 +16,7 @@ namespace AllClassicWeb.Views
 
         public void onclick_btn_addNewPerformanceGroup(object sender, EventArgs e)
         {
+            Session["updatePerformanceGroup"] = false;
             Response.Redirect("PerformanceGroupAddNew.aspx");
         }
 

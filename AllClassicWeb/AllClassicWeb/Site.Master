@@ -114,6 +114,21 @@
                     document.getElementById("concoursdbtab").style.borderRight = "none";
                     break;
                 }
+                case "ASP.views_performancegroupaddnew_aspx": {
+                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_performancegroup_aspx": {
+                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_performancegroupdetail_aspx": {
+                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.borderRight = "none";
+                    break;
+                }
             }
 
         }
