@@ -961,6 +961,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fill Audition outline field.
+        /// </summary>
+        internal static string PleasefillAuditionoutlinefield {
+            get {
+                return ResourceManager.GetString("PleasefillAuditionoutlinefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill Concour outline field.
+        /// </summary>
+        internal static string PleasefillConcouroutlinefield {
+            get {
+                return ResourceManager.GetString("PleasefillConcouroutlinefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill organizer field.
+        /// </summary>
+        internal static string Pleasefillorganizerfield {
+            get {
+                return ResourceManager.GetString("Pleasefillorganizerfield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill the article title.
+        /// </summary>
+        internal static string Pleasefillthearticletitle {
+            get {
+                return ResourceManager.GetString("Pleasefillthearticletitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill the article URL.
+        /// </summary>
+        internal static string PleasefillthearticleURL {
+            get {
+                return ResourceManager.GetString("PleasefillthearticleURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill the country field.
         /// </summary>
         internal static string Pleasefillthecountryfield {
@@ -993,6 +1038,15 @@ namespace Resources {
         internal static string Pleasefilltheshortnamefield {
             get {
                 return ResourceManager.GetString("Pleasefilltheshortnamefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill title field.
+        /// </summary>
+        internal static string Pleasefilltitlefield {
+            get {
+                return ResourceManager.GetString("Pleasefilltitlefield", resourceCulture);
             }
         }
         

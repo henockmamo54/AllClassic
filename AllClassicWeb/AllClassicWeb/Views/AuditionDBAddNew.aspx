@@ -14,42 +14,56 @@
     <div class="row">
 
         <div class="col-xs-6" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.Organizer %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.Organizer %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_organizer" CssClass="form-control" />
+                <asp:TextBox runat="server" ValidationGroup="a" ID="txt_organizer" CssClass="form-control" />
+
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_organizer" ErrorMessage="<%$Resources:DisplayText,Pleasefillorganizerfield %>" />
+
             </div>
         </div>
         <div class="col-xs-6" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.Title %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.Title %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_title" CssClass="form-control" />
+                <asp:TextBox ValidationGroup="a" runat="server" ID="txt_title" CssClass="form-control" />
+
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_title" ErrorMessage="<%$Resources:DisplayText,Pleasefilltitlefield %>" />
+
             </div>
         </div>
     </div>
     <div class="row">
         <br />
         <div class="col-xs-6" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.FromDate %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.FromDate %>*</div>
             <div class="col-xs-6" style="padding: 0;">
 
                 <div class='input-group date' id='datetimepicker2' style="display: flex;">
-                    <input type='text' class="form-control" runat="server" id="datetimepicker2" style="display: inline-block; border-right-width: 0px;" />
+                    <input type='text' class="form-control" runat="server" validationgroup="a" id="datetimepicker2" style="display: inline-block; border-right-width: 0px;" />
                     <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
+
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="datetimepicker2" ErrorMessage="<%$Resources:DisplayText,PleaseEnterStartDate %>" />
+
             </div>
         </div>
         <div class="col-xs-6" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.ToDate %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.ToDate %>*</div>
             <div class="col-xs-6" style="padding: 0;">
 
                 <div class='input-group date' id='datetimepicker3' style="display: flex;">
-                    <input type='text' class="form-control" runat="server" id="datetimepicker3" style="display: inline-block; border-right-width: 0px;" />
+                    <input type='text' class="form-control" runat="server" validationgroup="a" id="datetimepicker3" style="display: inline-block; border-right-width: 0px;" />
                     <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
+
+
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator3" ControlToValidate="datetimepicker3" ErrorMessage="<%$Resources:DisplayText,PleaseEnterEndDate %>" />
+
+
             </div>
         </div>
 
@@ -57,17 +71,19 @@
 
     <div class="row">
         <br />
-        <div class="col-xs-12"><%= Resources.DisplayText.AuditionOutlineandApplicationInfo %></div>
+        <div class="col-xs-12"><%= Resources.DisplayText.AuditionOutlineandApplicationInfo %>*</div>
         <div class="col-xs-12">
-            <asp:TextBox runat="server" ID="txt_auditionoutline" CssClass="form-control" TextMode="MultiLine" Style="width: 500px !important;" Rows="10" />
+            <asp:TextBox runat="server" ID="txt_auditionoutline" CssClass="form-control" TextMode="MultiLine" Style="max-width: 500px; width: 500px !important;" Rows="10" />
+            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_auditionoutline" ErrorMessage="<%$Resources:DisplayText,PleasefillAuditionoutlinefield %>" />
+
         </div>
     </div>
 
-    
-    <div class="row col-xs-4" style="text-align:right;">
+
+    <div class="row col-xs-4" style="text-align: right;">
         <br />
 
-        <asp:Button runat="server" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary"></asp:Button>
+        <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary"></asp:Button>
         <asp:Button runat="server" type="button" class="btn btn-danger" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
         <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
     </div>

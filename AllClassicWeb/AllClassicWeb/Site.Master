@@ -44,7 +44,7 @@
                     document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
                     break;
                 }
-                case "ASP.views_performancedetail_aspx": {                    
+                case "ASP.views_performancedetail_aspx": {
                     document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
                     break;
@@ -53,30 +53,65 @@
                     document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
                     break;
-                }                    
+                }
                 case "ASP.views_musiciandbaddnew_aspx": {
                     document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
                     break;
-                }                    
+                }
                 case "ASP.views_musiciandetailpage_aspx": {
                     document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
                     break;
-                }                                         
+                }
                 case "ASP.views_musiccollegedb_aspx": {
                     document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
                     break;
                 }
-                case "ASP.views_musiccollegedbaddnew_aspx": {                    
+                case "ASP.views_musiccollegedbaddnew_aspx": {
                     document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
                     break;
                 }
-                case "ASP.views_musiccollegedbdetail_aspx": {                    
+                case "ASP.views_musiccollegedbdetail_aspx": {
                     document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
                     document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_articledb_aspx": {
+                    document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("articletab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_articledbaddnew_aspx": {
+                    document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("articletab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_auditiondb_aspx": {
+                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_auditiondb_aspx": {
+                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_auditiondbaddnew_aspx": {
+                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_concoursdb_aspx": {                    
+                    document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("concoursdbtab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_concoursdbaddnew_aspx": {                                       
+                    document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("concoursdbtab").style.borderRight = "none";
                     break;
                 }
             }
@@ -143,7 +178,7 @@
                         <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
                         <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
+                        <a id="concoursdbtab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
                         <a id="performancegrouptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
                         <a id="RepairShoptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/RepairShopDB"><%= Resources.DisplayText.RepairShop %></a>
                         <a id="MusicShopDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/MusicShopDB"><%= Resources.DisplayText.MusicShop %></a>

@@ -658,4 +658,22 @@
   <data name="Pleasefilltheshortnamefield" xml:space="preserve">
     <value>짧은 이름 입력란을 작성하십시오.</value>
   </data>
+  <data name="Pleasefillthearticletitle" xml:space="preserve">
+    <value>기사 제목을 기입하십시오.</value>
+  </data>
+  <data name="PleasefillthearticleURL" xml:space="preserve">
+    <value>기사 URL을 작성하십시오.</value>
+  </data>
+  <data name="PleasefillAuditionoutlinefield" xml:space="preserve">
+    <value>오디션 개요 필드를 입력하십시오.</value>
+  </data>
+  <data name="Pleasefillorganizerfield" xml:space="preserve">
+    <value>주최자를 작성하십시오.</value>
+  </data>
+  <data name="Pleasefilltitlefield" xml:space="preserve">
+    <value>제목 입력란을 작성하십시오.</value>
+  </data>
+  <data name="PleasefillConcouroutlinefield" xml:space="preserve">
+    <value>콩쿠르 개요 입력란을 작성하십시오.</value>
+  </data>
 </root>

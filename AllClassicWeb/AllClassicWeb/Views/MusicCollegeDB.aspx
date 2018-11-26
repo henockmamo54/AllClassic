@@ -40,7 +40,7 @@ SELECT Distinct country from main.CollegeTbl
 select top 20 c.*,u.EmailID from Main.CollegeTbl c
 join Main.usertbl u on c.Userid=u.userid
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 150px; height: 150px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
 
                     <table class="table table-striped">
                         <thead>

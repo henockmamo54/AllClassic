@@ -640,4 +640,22 @@
   <data name="Pleasefilltheshortnamefield" xml:space="preserve">
     <value>Please fill the short name field</value>
   </data>
+  <data name="Pleasefillthearticletitle" xml:space="preserve">
+    <value>Please fill the article title</value>
+  </data>
+  <data name="PleasefillthearticleURL" xml:space="preserve">
+    <value>Please fill the article URL</value>
+  </data>
+  <data name="PleasefillAuditionoutlinefield" xml:space="preserve">
+    <value>Please fill Audition outline field</value>
+  </data>
+  <data name="Pleasefillorganizerfield" xml:space="preserve">
+    <value>Please fill organizer field</value>
+  </data>
+  <data name="Pleasefilltitlefield" xml:space="preserve">
+    <value>Please fill title field</value>
+  </data>
+  <data name="PleasefillConcouroutlinefield" xml:space="preserve">
+    <value>Please fill Concour outline field</value>
+  </data>
 </root>

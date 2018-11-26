@@ -10,7 +10,9 @@
             </div>
 
             <div class="col-xs-8">
-                <asp:TextBox ID="txt_title" runat="server" class="form-control"></asp:TextBox>
+                <asp:TextBox ID="txt_title"   ValidationGroup="a"  runat="server" class="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_title" ErrorMessage="<%$Resources:DisplayText,Pleasefillthearticletitle %>" />
+                    
             </div>
             <br />
         </div>
@@ -21,14 +23,16 @@
             </div>
 
             <div class="col-xs-8">
-                <asp:TextBox ID="txt_url" runat="server" class="form-control"></asp:TextBox>
+                <asp:TextBox ID="txt_url"  ValidationGroup="a" runat="server" class="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_url" ErrorMessage="<%$Resources:DisplayText,PleasefillthearticleURL %>" />
+                    
             </div>
         </div>
     </div>
     <div class="row col-xs-4" style="text-align:right;">
         <br />
 
-        <asp:Button runat="server" ID="btn_addnewArticle" UseSubmitBehavior="false" OnClick="onclick_btn_addArticle" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary"></asp:Button>
+        <asp:Button runat="server"  ValidationGroup="a" ID="btn_addnewArticle" UseSubmitBehavior="false" OnClick="onclick_btn_addArticle" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary"></asp:Button>
         <asp:Button runat="server" type="button" class="btn btn-danger" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
         <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
     </div>
