@@ -988,6 +988,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fill Contact Name field.
+        /// </summary>
+        internal static string PleasefillContactNamefield {
+            get {
+                return ResourceManager.GetString("PleasefillContactNamefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill Description field.
+        /// </summary>
+        internal static string PleasefillDescriptionfield {
+            get {
+                return ResourceManager.GetString("PleasefillDescriptionfield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill Email field.
         /// </summary>
         internal static string PleasefillEmailfield {
@@ -1092,6 +1110,24 @@ namespace Resources {
         internal static string Pleasefilltitlefield {
             get {
                 return ResourceManager.GetString("Pleasefilltitlefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill Valid Date field.
+        /// </summary>
+        internal static string PleasefillValidDatefield {
+            get {
+                return ResourceManager.GetString("PleasefillValidDatefield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill Venu Name field.
+        /// </summary>
+        internal static string PleasefillVenuNamefield {
+            get {
+                return ResourceManager.GetString("PleasefillVenuNamefield", resourceCulture);
             }
         }
         

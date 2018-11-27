@@ -8,9 +8,11 @@
     <div class="row">
 
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.VenuName %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.VenuName %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_shopname" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_shopname"  ValidationGroup="a" CssClass="form-control" />
+                 <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_shopname" ErrorMessage="<%$Resources:DisplayText,PleasefillVenuNamefield %>" />
+
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
@@ -32,7 +34,7 @@
     <div class="row">
 
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.City %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.City %>*</div>
             <div class="col-xs-6" style="padding: 0;">
                 <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID, MainCode, SubCode 
@@ -61,9 +63,11 @@ where maincode='City'
     <div class="row">
 
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.Email %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.Email %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_email" TextMode="Email" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_email"  ValidationGroup="a" TextMode="Email" CssClass="form-control" />
+                 <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleasefillEmailfield %>" />
+
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
@@ -110,7 +114,7 @@ where maincode='City'
     <div class="row col-md-4 col-xs-4">
         <asp:Button Visible="true" ID="btn_concertvenu_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_concertvenu_cancel_Click" Style="margin-right: 10px;" />
         <%--<asp:Button Visible="true" ID="btn_concours_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />--%>
-        <asp:Button ID="btn_concertvenu_add" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_concertvenu_add_Click" Style="margin-right: 10px;" />
+        <asp:Button ID="btn_concertvenu_add" CssClass="btn btn-primary pull-right"  ValidationGroup="a"  runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_concertvenu_add_Click" Style="margin-right: 10px;" />
     </div>
 
 

@@ -104,12 +104,12 @@
                     document.getElementById("auditiontab").style.borderRight = "none";
                     break;
                 }
-                case "ASP.views_concoursdb_aspx": {                    
+                case "ASP.views_concoursdb_aspx": {
                     document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("concoursdbtab").style.borderRight = "none";
                     break;
                 }
-                case "ASP.views_concoursdbaddnew_aspx": {                                       
+                case "ASP.views_concoursdbaddnew_aspx": {
                     document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("concoursdbtab").style.borderRight = "none";
                     break;
@@ -129,6 +129,46 @@
                     document.getElementById("performancegrouptab").style.borderRight = "none";
                     break;
                 }
+                case "ASP.views_repairshopdb_aspx": {
+                    document.getElementById("RepairShoptab").style.backgroundColor = "white";
+                    document.getElementById("RepairShoptab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_repairshopdbaddnew_aspx": {
+                    document.getElementById("RepairShoptab").style.backgroundColor = "white";
+                    document.getElementById("RepairShoptab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_musicshopdb_aspx": {
+                    document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
+                    document.getElementById("MusicShopDBtab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_musicshopdbaddnew_aspx": {
+                    document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
+                    document.getElementById("MusicShopDBtab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_concertvenudb_aspx": {
+                    document.getElementById("ConcertVenutab").style.backgroundColor = "white";
+                    document.getElementById("ConcertVenutab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_concertvenudbaddnew_aspx": {
+                    document.getElementById("ConcertVenutab").style.backgroundColor = "white";
+                    document.getElementById("ConcertVenutab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_peopleandjobdb_aspx": {
+                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
+                    break;
+                }
+                case "ASP.views_peopleandjobdbaddnew_aspx": {
+                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
+                    break;
+                }ASP.views_peopleandjobdbaddnew_aspx
             }
 
         }

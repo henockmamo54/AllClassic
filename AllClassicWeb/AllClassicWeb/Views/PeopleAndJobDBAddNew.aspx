@@ -14,7 +14,7 @@
     <div class="row">
 
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.PeopleOrJob %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.PeopleOrJob %>*</div>
             <div class="col-xs-6" style="padding: 0;">
                 <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control">
                                                             <asp:ListItem Value="-1" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
@@ -24,20 +24,24 @@
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.ValidDate %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.ValidDate %>*</div>
             <div class="col-xs-6" style="padding: 0;">
                 <div class='input-group date' id='datetimepicker2' style="display: flex;">
-                    <input type='text' class="form-control" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
+                    <input type='text' class="form-control" runat="server"  ValidationGroup="a"  onchange="selectedFilterChanged"   id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
                     <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="datetimefilter" ErrorMessage="<%$Resources:DisplayText,PleasefillValidDatefield %>" />
+
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.Title %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.Title %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_title" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_title" CssClass="form-control"  ValidationGroup="a" />
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_title" ErrorMessage="<%$Resources:DisplayText,Pleasefilltitlefield %>" />
+
             </div>
         </div>
 
@@ -47,7 +51,7 @@
     <div class="row">
 
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.City %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.City %>*</div>
             <div class="col-xs-6" style="padding: 0;">
                 <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID, MainCode, SubCode 
@@ -57,15 +61,19 @@ where maincode='City'
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.ContactName %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.ContactName %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_contactname" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_contactname"  ValidationGroup="a" CssClass="form-control" />
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator3" ControlToValidate="txt_contactname" ErrorMessage="<%$Resources:DisplayText,PleasefillContactNamefield %>" />
+
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.TelNo %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.TelNo %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_telno" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_telno" CssClass="form-control"  ValidationGroup="a" />
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_telno" ErrorMessage="<%$Resources:DisplayText,PleasefillTelNofield %>" />
+
             </div>
         </div>
 
@@ -77,9 +85,11 @@ where maincode='City'
     <div class="row">
 
         <div class="col-xs-4" style="padding: 0;">
-            <div class="col-xs-4"><%=Resources.DisplayText.Email %></div>
+            <div class="col-xs-4"><%=Resources.DisplayText.Email %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_email" TextMode="Email" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_email" TextMode="Email" CssClass="form-control"  ValidationGroup="a" />
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourEmail %>" />
+
             </div>
         </div>
 
@@ -90,8 +100,10 @@ where maincode='City'
 
         <div class="col-xs-12" style="padding: 0;">
             <div class="col-xs-12 form-group">
-                <div><%=Resources.DisplayText.Description %></div>
-                <asp:TextBox runat="server" ID="txt_description" CssClass="form-control" TextMode="MultiLine" Rows="10" />
+                <div><%=Resources.DisplayText.Description %>*</div>
+                <asp:TextBox runat="server" ID="txt_description"  ValidationGroup="a" CssClass="form-control" TextMode="MultiLine" Rows="10" style="max-width:500px;" />
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator6" ControlToValidate="txt_description" ErrorMessage="<%$Resources:DisplayText,PleasefillDescriptionfield %>" />
+
             </div>
         </div>
 
@@ -102,16 +114,11 @@ where maincode='City'
     <div class="row col-md-4 col-xs-4">
         <asp:Button Visible="true" ID="btn_PeopleAndJob_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_PeopleAndJob_cancel_Click" Style="margin-right: 10px;" />
         <%--<asp:Button Visible="true" ID="btn_PeopleAndJob_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />--%>
-        <asp:Button ID="btn_PeopleAndJob_add" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_PeopleAndJob_add_Click" Style="margin-right: 10px;" />
+        <asp:Button ID="btn_PeopleAndJob_add" CssClass="btn btn-primary pull-right" ValidationGroup="a"  runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_PeopleAndJob_add_Click" Style="margin-right: 10px;" />
 
     </div>
 
 
-    <script type="text/javascript">
-        document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
-        document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
-    </script>
-    
     <script type="text/javascript">
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({

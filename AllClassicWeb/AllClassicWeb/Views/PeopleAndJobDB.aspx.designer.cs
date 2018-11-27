@@ -13,13 +13,13 @@ namespace AllClassicWeb.Views {
     public partial class PeopleAndJobDB {
         
         /// <summary>
-        /// txt_organizer control.
+        /// DropDownList1_type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_organizer;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_type;
         
         /// <summary>
         /// txt_title control.
@@ -38,6 +38,24 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepicker3;
+        
+        /// <summary>
+        /// DropDownList3_city control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3_city;
+        
+        /// <summary>
+        /// SqlDataSource1_city control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_city;
         
         /// <summary>
         /// inquiry control.

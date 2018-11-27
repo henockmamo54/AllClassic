@@ -676,4 +676,16 @@
   <data name="PleasefillZipCodefield" xml:space="preserve">
     <value>Please fill Zip Code field</value>
   </data>
+  <data name="PleasefillVenuNamefield" xml:space="preserve">
+    <value>Please fill Venu Name field</value>
+  </data>
+  <data name="PleasefillContactNamefield" xml:space="preserve">
+    <value>Please fill Contact Name field</value>
+  </data>
+  <data name="PleasefillDescriptionfield" xml:space="preserve">
+    <value>Please fill Description field</value>
+  </data>
+  <data name="PleasefillValidDatefield" xml:space="preserve">
+    <value>Please fill Valid Date field</value>
+  </data>
 </root>

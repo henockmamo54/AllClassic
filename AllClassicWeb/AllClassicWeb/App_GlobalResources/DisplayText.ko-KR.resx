@@ -694,4 +694,16 @@
   <data name="PleasefillZipCodefield" xml:space="preserve">
     <value>우편 번호 입력란을 작성하십시오.</value>
   </data>
+  <data name="PleasefillVenuNamefield" xml:space="preserve">
+    <value>브누누 이름 필드를 입력하십시오.</value>
+  </data>
+  <data name="PleasefillContactNamefield" xml:space="preserve">
+    <value>담당자 이름 입력란을 작성하십시오.</value>
+  </data>
+  <data name="PleasefillDescriptionfield" xml:space="preserve">
+    <value>설명 입력란을 작성하십시오.</value>
+  </data>
+  <data name="PleasefillValidDatefield" xml:space="preserve">
+    <value>유효한 날짜 필드를 입력하십시오.</value>
+  </data>
 </root>

@@ -20,9 +20,9 @@
                         <h5 style="display: inline-block;"><%= Resources.DisplayText.Expertise %>  </h5>
                         <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
                     </div>
-                    <div class="col-md-3 col-xs-3 ">
+                    <div class="col-md-3 col-xs-3 " style="padding-right: 0;">
                         <h5 style="display: inline-block;"><%= Resources.DisplayText.City %>  </h5>
-                        <asp:DropDownList Style="display: inline-block; width: 70%;" ID="DropDownList1_cityfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                        <asp:DropDownList Style="display: inline-block; width: 86%;" ID="DropDownList1_cityfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT   LookUpID=-1, MainCode='ALL', SubCode='ALL'
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -49,28 +49,37 @@ join Main.usertbl u on c.Userid=u.userid
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 150px; height: 150px; overflow-y: scroll;">
-                    <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
-                        <HeaderTemplate>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.Name %></strong></div>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.Alias %></strong></div>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.Expertise %></strong></div>
-                            <div class="col-xs-2"><strong><%= Resources.DisplayText.City %></strong></div>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.PosterEmailID %></strong></div>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <div runat="server" id="headertableItem" style="text-decoration: none;">
-                                <div class=" row col-md-12 col-xs-12">
-                                    <hr style="background-color: #5f755f; margin: 0; margin-top: 5px;" />
-                                </div>
-                                <div class="col-xs-3"><%#Eval("Name") %></div>
-                                <div class="col-xs-2"><%#Eval("Alias") %></div>
-                                <div class="col-xs-2"><%#Eval("Expertise") %></div>
-                                <div class="col-xs-2"><%#Eval("cityname") %></div>
-                                <div class="col-xs-3"><%#Eval("posteremailiD") %></div>
-                            </div>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th><strong><%= Resources.DisplayText.Name %></strong></th>
+                                <th><strong><%= Resources.DisplayText.Alias %></strong></th>
+                                <th><strong><%= Resources.DisplayText.Expertise %></strong></th>
+                                <th><strong><%= Resources.DisplayText.City %></strong></th>
+                                <th><strong><%= Resources.DisplayText.PosterEmailID %></strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
+
+                                <ItemTemplate>
+                                    <tr>
+                                        <td><%#Eval("Name") %></td>
+                                        <td><%#Eval("Alias") %> </td>
+                                        <td><%#Eval("Expertise") %> </td>
+                                        <td><%#Eval("cityname") %> </td>
+                                        <td><%#Eval("posteremailiD") %> </td>
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -86,7 +95,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-md-4 col-xs-4" style="margin-bottom: 1em;">
+                        <div class="col-md-4 col-xs-4" style="margin-bottom: 1em; padding-left:0px;">
                             <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">
                                 <div runat="server" id="tumbinallink" style="text-decoration: none;">
 
@@ -146,9 +155,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button"  ButtonCssClass="btn" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -171,10 +180,5 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
         </ContentTemplate>
     </asp:UpdatePanel>
-
-    <script type="text/javascript">
-        document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
-        document.getElementById("MusicShopDBtab").style.borderRight = "none";
-    </script>
 
 </asp:Content>
