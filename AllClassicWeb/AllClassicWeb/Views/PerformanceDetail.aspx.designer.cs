@@ -274,15 +274,6 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.Label lbl_venu;
         
         /// <summary>
-        /// lbl_poster control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_poster;
-        
-        /// <summary>
         /// lbl_video control.
         /// </summary>
         /// <remarks>

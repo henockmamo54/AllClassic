@@ -33,8 +33,8 @@
     <Property Name="FromDate" Type="date" Nullable="false" />
     <Property Name="ToDate" Type="date" Nullable="false" />
     <Property Name="ConcourOutline" Type="nvarchar" MaxLength="400" />
-    <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="UserID" Type="int" />
   </EntityType>
   <EntityType Name="InstrumentTbl">
     <Key>
@@ -71,8 +71,45 @@
     <Property Name="TelNo" Type="nvarchar" MaxLength="20" />
     <Property Name="FaxNo" Type="nvarchar" MaxLength="20" />
     <Property Name="HomePage" Type="nvarchar" MaxLength="30" />
-    <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="PeopleAndJobTbl">
+    <Key>
+      <PropertyRef Name="PeopleAndJobID" />
+    </Key>
+    <Property Name="PeopleAndJobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PeopleOrJob" Type="nvarchar" MaxLength="20" />
+    <Property Name="ValidDate" Type="date" />
+    <Property Name="City" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="80" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="80" />
+    <Property Name="TelNo" Type="nvarchar" MaxLength="40" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="400" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="UpdateTimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PerformanceCommentTbl">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PerformanceID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CommentMessage" Type="nvarchar" MaxLength="300" />
+    <Property Name="CommentDate" Type="datetime" Nullable="false" />
+    <Property Name="ParentCommentID" Type="int" />
+  </EntityType>
+  <EntityType Name="PerformanceLikeUnlikeTbl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="PerformanceID" Type="int" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="islike" Type="int" />
   </EntityType>
   <EntityType Name="RepairShopTbl">
     <Key>
@@ -91,8 +128,8 @@
     <Property Name="TelNo" Type="nvarchar" MaxLength="20" />
     <Property Name="FaxNo" Type="nvarchar" MaxLength="20" />
     <Property Name="HomePage" Type="nvarchar" MaxLength="30" />
-    <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="UserID" Type="int" />
   </EntityType>
   <EntityType Name="UserTypeTbl">
     <Key>
@@ -321,6 +358,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__ConcourTb__UserI__06CD04F7">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="ConcourTbl" Type="Self.ConcourTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ConcourTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Instrumen__UserI__5535A963">
     <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
     <End Role="InstrumentTbl" Type="Self.InstrumentTbl" Multiplicity="*" />
@@ -405,6 +454,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__MusicShop__UserI__08B54D69">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="MusicShopTbl" Type="Self.MusicShopTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MusicShopTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PeopleAnd__UserI__0C85DE4D">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="PeopleAndJobTbl" Type="Self.PeopleAndJobTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="PeopleAndJobTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PeopleAndJ__City__0B91BA14">
+    <End Role="LookUpTbl" Type="Self.LookUpTbl" Multiplicity="0..1" />
+    <End Role="PeopleAndJobTbl" Type="Self.PeopleAndJobTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LookUpTbl">
+        <PropertyRef Name="LookUpID" />
+      </Principal>
+      <Dependent Role="PeopleAndJobTbl">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Performan__Condu__6C190EBB">
     <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
     <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -477,6 +562,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Performan__Paren__1332DBDC">
+    <End Role="PerformanceCommentTbl" Type="Self.PerformanceCommentTbl" Multiplicity="0..1" />
+    <End Role="PerformanceCommentTbl1" Type="Self.PerformanceCommentTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PerformanceCommentTbl">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="PerformanceCommentTbl1">
+        <PropertyRef Name="ParentCommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Performan__Perfo__10566F31">
+    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1" />
+    <End Role="PerformanceCommentTbl" Type="Self.PerformanceCommentTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PerformanceTbl">
+        <PropertyRef Name="PerformanceID" />
+      </Principal>
+      <Dependent Role="PerformanceCommentTbl">
+        <PropertyRef Name="PerformanceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Performan__Perfo__17036CC0">
+    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1" />
+    <End Role="PerformanceLikeUnlikeTbl" Type="Self.PerformanceLikeUnlikeTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PerformanceTbl">
+        <PropertyRef Name="PerformanceID" />
+      </Principal>
+      <Dependent Role="PerformanceLikeUnlikeTbl">
+        <PropertyRef Name="PerformanceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Performan__Perfo__6A30C649">
     <End Role="PerformanceGroupTbl" Type="Self.PerformanceGroupTbl" Multiplicity="1" />
     <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -522,6 +643,30 @@
       </Principal>
       <Dependent Role="PerformanceTbl">
         <PropertyRef Name="Region" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Performan__UserI__114A936A">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="PerformanceCommentTbl" Type="Self.PerformanceCommentTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="PerformanceCommentTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Performan__UserI__160F4887">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="PerformanceLikeUnlikeTbl" Type="Self.PerformanceLikeUnlikeTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="PerformanceLikeUnlikeTbl">
+        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -585,6 +730,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__RepairSho__UserI__07C12930">
+    <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
+    <End Role="RepairShopTbl" Type="Self.RepairShopTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="RepairShopTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__UserUserT__UserI__4E88ABD4">
     <End Role="UserTbl" Type="Self.UserTbl" Multiplicity="0..1" />
     <End Role="UserUserType" Type="Self.UserUserType" Multiplicity="*" />
@@ -639,6 +796,9 @@
     <EntitySet Name="ConcourTbl" EntityType="Self.ConcourTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="InstrumentTbl" EntityType="Self.InstrumentTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="MusicShopTbl" EntityType="Self.MusicShopTbl" Schema="Auxiliary" store:Type="Tables" />
+    <EntitySet Name="PeopleAndJobTbl" EntityType="Self.PeopleAndJobTbl" Schema="Auxiliary" store:Type="Tables" />
+    <EntitySet Name="PerformanceCommentTbl" EntityType="Self.PerformanceCommentTbl" Schema="Auxiliary" store:Type="Tables" />
+    <EntitySet Name="PerformanceLikeUnlikeTbl" EntityType="Self.PerformanceLikeUnlikeTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="RepairShopTbl" EntityType="Self.RepairShopTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="UserTypeTbl" EntityType="Self.UserTypeTbl" Schema="Auxiliary" store:Type="Tables" />
     <EntitySet Name="VenueTbl" EntityType="Self.VenueTbl" Schema="Auxiliary" store:Type="Tables" />
@@ -663,6 +823,10 @@
     <AssociationSet Name="FK__CollegeTb__UserI__03F0984C" Association="Self.FK__CollegeTb__UserI__03F0984C">
       <End Role="UserTbl" EntitySet="UserTbl" />
       <End Role="CollegeTbl" EntitySet="CollegeTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ConcourTb__UserI__06CD04F7" Association="Self.FK__ConcourTb__UserI__06CD04F7">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="ConcourTbl" EntitySet="ConcourTbl" />
     </AssociationSet>
     <AssociationSet Name="FK__Instrumen__UserI__5535A963" Association="Self.FK__Instrumen__UserI__5535A963">
       <End Role="UserTbl" EntitySet="UserTbl" />
@@ -692,6 +856,18 @@
       <End Role="UserTbl" EntitySet="UserTbl" />
       <End Role="MusicianTbl" EntitySet="MusicianTbl" />
     </AssociationSet>
+    <AssociationSet Name="FK__MusicShop__UserI__08B54D69" Association="Self.FK__MusicShop__UserI__08B54D69">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="MusicShopTbl" EntitySet="MusicShopTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PeopleAnd__UserI__0C85DE4D" Association="Self.FK__PeopleAnd__UserI__0C85DE4D">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="PeopleAndJobTbl" EntitySet="PeopleAndJobTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PeopleAndJ__City__0B91BA14" Association="Self.FK__PeopleAndJ__City__0B91BA14">
+      <End Role="LookUpTbl" EntitySet="LookUpTbl" />
+      <End Role="PeopleAndJobTbl" EntitySet="PeopleAndJobTbl" />
+    </AssociationSet>
     <AssociationSet Name="FK__Performan__Condu__6C190EBB" Association="Self.FK__Performan__Condu__6C190EBB">
       <End Role="MusicianTbl" EntitySet="MusicianTbl" />
       <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
@@ -716,6 +892,18 @@
       <End Role="MusicianTbl" EntitySet="MusicianTbl" />
       <End Role="PerformanceMusicianInstrumentTbl" EntitySet="PerformanceMusicianInstrumentTbl" />
     </AssociationSet>
+    <AssociationSet Name="FK__Performan__Paren__1332DBDC" Association="Self.FK__Performan__Paren__1332DBDC">
+      <End Role="PerformanceCommentTbl" EntitySet="PerformanceCommentTbl" />
+      <End Role="PerformanceCommentTbl1" EntitySet="PerformanceCommentTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Performan__Perfo__10566F31" Association="Self.FK__Performan__Perfo__10566F31">
+      <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
+      <End Role="PerformanceCommentTbl" EntitySet="PerformanceCommentTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Performan__Perfo__17036CC0" Association="Self.FK__Performan__Perfo__17036CC0">
+      <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
+      <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbl" />
+    </AssociationSet>
     <AssociationSet Name="FK__Performan__Perfo__6A30C649" Association="Self.FK__Performan__Perfo__6A30C649">
       <End Role="PerformanceGroupTbl" EntitySet="PerformanceGroupTbl" />
       <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
@@ -731,6 +919,14 @@
     <AssociationSet Name="FK__Performan__Regio__6754599E" Association="Self.FK__Performan__Regio__6754599E">
       <End Role="LookUpTbl" EntitySet="LookUpTbl" />
       <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Performan__UserI__114A936A" Association="Self.FK__Performan__UserI__114A936A">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="PerformanceCommentTbl" EntitySet="PerformanceCommentTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Performan__UserI__160F4887" Association="Self.FK__Performan__UserI__160F4887">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbl" />
     </AssociationSet>
     <AssociationSet Name="FK__Performan__UserI__60A75C0F" Association="Self.FK__Performan__UserI__60A75C0F">
       <End Role="UserTbl" EntitySet="UserTbl" />
@@ -751,6 +947,10 @@
     <AssociationSet Name="FK__Performanc__City__68487DD7" Association="Self.FK__Performanc__City__68487DD7">
       <End Role="LookUpTbl" EntitySet="LookUpTbl" />
       <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RepairSho__UserI__07C12930" Association="Self.FK__RepairSho__UserI__07C12930">
+      <End Role="UserTbl" EntitySet="UserTbl" />
+      <End Role="RepairShopTbl" EntitySet="RepairShopTbl" />
     </AssociationSet>
     <AssociationSet Name="FK__UserUserT__UserI__4E88ABD4" Association="Self.FK__UserUserT__UserI__4E88ABD4">
       <End Role="UserTbl" EntitySet="UserTbl" />

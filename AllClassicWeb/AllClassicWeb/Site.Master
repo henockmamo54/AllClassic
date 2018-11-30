@@ -19,16 +19,23 @@
         function modifyCss(color, page) {
             switch (color) {
                 case "1":
+                    $(".whitesmokeBG").css('background-color', 'rgba(234, 234, 234, 0.66)');
+                    //$(".whitesmokeBG").css('color', '#28878a');
+                    //$(".whitesmokeBG").css('font-weight', '700');
+                    //break;
                     $(".whitesmokeBG").css('background-color', 'rgba(234, 234, 234, 0.66)'); break;
                 //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
                 case "2":
-                    $(".whitesmokeBG").css('background-color', '#FFCC80');
+                    $(".whitesmokeBG").css('background-color', '#28878a');
+                    $(".whitesmokeBG").css('color', '#ffffff');
                     break;
                 case "3":
-                    $(".whitesmokeBG").css('background-color', '#80FFF2');
+                    $(".whitesmokeBG").css('background-color', '#004d40');
+                    $(".whitesmokeBG").css('color', '#ffffff');
                     break;
                 case "4":
-                    $(".whitesmokeBG").css('background-color', '#80C6FF');
+                    $(".whitesmokeBG").css('background-color', '#3f51b5');
+                    $(".whitesmokeBG").css('color', '#ffffff');
                     break;
             }
 
@@ -37,6 +44,7 @@
                     {
                         document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
                         document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
+                        document.getElementById("performancetab").setAttribute('style', 'color: #000000');
                         break;
                     }
                 case "ASP.views_performancedbaddnew_aspx": {
@@ -82,93 +90,111 @@
                 case "ASP.views_articledb_aspx": {
                     document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("articletab").style.borderRight = "none";
+                    document.getElementById("articletab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_articledbaddnew_aspx": {
                     document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("articletab").style.borderRight = "none";
+                    document.getElementById("articletab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_auditiondb_aspx": {
                     document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("auditiontab").style.borderRight = "none";
+                    document.getElementById("auditiontab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_auditiondb_aspx": {
                     document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("auditiontab").style.borderRight = "none";
+                    document.getElementById("auditiontab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_auditiondbaddnew_aspx": {
                     document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("auditiontab").style.borderRight = "none";
+                    document.getElementById("auditiontab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_concoursdb_aspx": {
                     document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("concoursdbtab").style.borderRight = "none";
+                    document.getElementById("concoursdbtab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_concoursdbaddnew_aspx": {
                     document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("concoursdbtab").style.borderRight = "none";
+                    document.getElementById("concoursdbtab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_performancegroupaddnew_aspx": {
                     document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("performancegrouptab").style.borderRight = "none";
+                    document.getElementById("performancegrouptab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_performancegroup_aspx": {
                     document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("performancegrouptab").style.borderRight = "none";
+                    document.getElementById("performancegrouptab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_performancegroupdetail_aspx": {
                     document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("performancegrouptab").style.borderRight = "none";
+                    document.getElementById("performancegrouptab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_repairshopdb_aspx": {
                     document.getElementById("RepairShoptab").style.backgroundColor = "white";
                     document.getElementById("RepairShoptab").style.borderRight = "none";
+                    document.getElementById("RepairShoptab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_repairshopdbaddnew_aspx": {
                     document.getElementById("RepairShoptab").style.backgroundColor = "white";
                     document.getElementById("RepairShoptab").style.borderRight = "none";
+                    document.getElementById("RepairShoptab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_musicshopdb_aspx": {
                     document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
                     document.getElementById("MusicShopDBtab").style.borderRight = "none";
+                    document.getElementById("MusicShopDBtab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_musicshopdbaddnew_aspx": {
                     document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
                     document.getElementById("MusicShopDBtab").style.borderRight = "none";
+                    document.getElementById("MusicShopDBtab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_concertvenudb_aspx": {
                     document.getElementById("ConcertVenutab").style.backgroundColor = "white";
                     document.getElementById("ConcertVenutab").style.borderRight = "none";
+                    document.getElementById("ConcertVenutab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_concertvenudbaddnew_aspx": {
                     document.getElementById("ConcertVenutab").style.backgroundColor = "white";
                     document.getElementById("ConcertVenutab").style.borderRight = "none";
+                    document.getElementById("ConcertVenutab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_peopleandjobdb_aspx": {
                     document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
+                    document.getElementById("PeopleAndJobDBtab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_peopleandjobdbaddnew_aspx": {
                     document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
+                    document.getElementById("PeopleAndJobDBtab").style.color = "#000000";
                     break;
-                }ASP.views_peopleandjobdbaddnew_aspx
+                } ASP.views_peopleandjobdbaddnew_aspx
             }
 
         }

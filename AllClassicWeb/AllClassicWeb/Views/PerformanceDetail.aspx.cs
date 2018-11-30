@@ -45,11 +45,11 @@ namespace AllClassicWeb.Views
                 lbl_end.Text = performance.EndDate.ToShortDateString();
                 lbl_time.Text = performance.Time;
                 if (performance.LookUpTbl1 != null)
-                    lbl_region.Text = performance.LookUpTbl.SubCode;
+                    lbl_region.Text = performance.LookUpTbl1.SubCode;
                 if (performance.LookUpTbl2 != null)
                     lbl_city.Text = performance.LookUpTbl2.SubCode;
                 if (performance.VenueTbl != null)
-                    lbl_city.Text = performance.VenueTbl.Name;
+                    lbl_venu.Text = performance.VenueTbl.Name;
                 lbl_video.Text = performance.VideoFileName;
                 lbl_ticketbox.Text = performance.TicketBox;
                 lbl_program.Text = performance.Program;

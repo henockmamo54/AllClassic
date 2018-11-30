@@ -13,7 +13,59 @@ namespace AllClassicWeb.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+                handleButtons(true);
+                //Session["ArticleID"] = e.CommandArgument.ToString();
+                //Session["updateArticle"] = true;
+                if (Session["updateArticle"] != null)
+                {
+                    if (Boolean.Parse(Session["updateArticle"].ToString()) == true)
+                    {
+                        handleButtons(false);
+                        var article=ArticleLogic.get_articleByID(int.Parse(Session["ArticleID"].ToString()));
+                        Session["selectedArticle"] = article;
+                        txt_title.Text = article.ArticleTitle;
+                        txt_url.Text = article.ArticleURL;
+                    }
+                }
+
+
+            }
+        }
+
+
+        public void handleButtons(Boolean value)
+        {
+            btn_addnewArticle.Visible = value;
+            btn_updatearticle.Visible = !value;
+        }
+
+        public void onclick_btn_updatearticle(object sender, EventArgs e)
+        {
+            ArticleTbl article = (ArticleTbl)Session["selectedArticle"];
+            article.ArticleTitle = this.txt_title.Text;
+            article.ArticleURL = this.txt_url.Text;
+            article.UpdateTimeStamp = DateTime.Now;
+            article.UserID = 5;
+            article = BusinessLogic.ArticleLogic.updateArticle(article);
+            if (article != null)
+            {
+                showMsg("Data inserted succssfuly");
+            }
+            else
+            {
+                showMsg("Please check your inputs");
+            }
+
+        }
+
+        public void onClick_btn_cancel(object sender, EventArgs args) {
+            txt_url.Text = "";
+            txt_title.Text = "";
+            Session["updateArticle"] = null;
+            handleButtons(true);
         }
 
         public void onclick_btn_addArticle(object sender, EventArgs e)

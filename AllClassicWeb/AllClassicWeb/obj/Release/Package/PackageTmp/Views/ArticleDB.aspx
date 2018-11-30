@@ -16,11 +16,11 @@
 
             <div class="row">
                 <div class="row col-md-12 col-xs-12  col-xs-12">
-                    <div class="col-md-4 col-xs-4">
-                        <div class="col-md-4 col-xs-4" style="margin-top: 10px; margin-bottom: 10px;">
+                    <div class="col-xs-4">
+                        <div class="col-xs-6" style="vertical-align: sub; padding: 0;">
                             <span style="display: inline-block;"><%= Resources.DisplayText.PostingDate %> </span>
                         </div>
-                        <div class="col-md-6 col-xs-6">
+                        <div class="col-xs-6" style="padding: 0;">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
                                 <input type='text' class="form-control" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
@@ -29,14 +29,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xs-6 ">
+                    <div class="col-xs-6">
                         <h5 style="display: inline-block;"><%= Resources.DisplayText.PosterEmailID %>  </h5>
                         <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
                     </div>
-                    
+
                     <div class="col-md-2 col-xs-2">
                         <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
-                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -48,32 +48,38 @@
 select top 20 a.*, u.FullName userName, u.emailid from Auxiliary.ArticleTbl a
 join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 150px; height: 150px; overflow-y: scroll;">
-                    <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
-                        <HeaderTemplate>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.PostingDate %></strong></div>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.ArticleTitle %></strong></div>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.ArticleURL %></strong></div>
-                            <div class="col-xs-3"><strong><%= Resources.DisplayText.PosterEmailID %></strong></div>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%#Eval("ArticleUrl")%>'>
-                                <div class=" row col-md-12 col-xs-12">
-                                    <hr style="background-color: #5f755f; margin: 0; margin-top: 5px;" />
-                                </div>
-                                <div class="col-xs-3"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></div>
-                                <div class="col-xs-3"><%#Eval("ArticleTitle") %></div>
-                                <div class="col-xs-3"><%#Eval("ArticleUrl") %></div>
-                                <div class="col-xs-3"><%#Eval("EmailID") %></div>
-                            </asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 220px; height: 220px; overflow-y: scroll;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-3"><strong><%= Resources.DisplayText.PostingDate %></strong></th>
+                                <th class="col-xs-3"><strong><%= Resources.DisplayText.ArticleTitle %></strong></th>
+                                <th class="col-xs-3"><strong><%= Resources.DisplayText.ArticleURL %></strong></th>
+                                <th class="col-xs-3"><strong><%= Resources.DisplayText.PosterEmailID %></strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
+                                <ItemTemplate>
+                                    <tr>
+                                        <td class="col-xs-3"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></td>
+                                        <td class="col-xs-3">
+                                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%#Eval("ArticleUrl")%>'><%#Eval("ArticleTitle") %></asp:LinkButton></td>
+                                        <td class="col-xs-3"><%#Eval("ArticleUrl") %></td>
+                                        <td class="col-xs-3"><%#Eval("EmailID") %></td>
+
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
 
 
-            <hr />
-            <div class="row">
+            <div class="row" style="margin-top:40px;">
 
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ArticleID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;">
 
@@ -89,10 +95,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'>
 
                                     <div class="caption" style="padding-bottom: 3px;">
-                                        <h4 style="padding: 0px; margin: 0px;"><%# Eval("ArticleTitle")%></h4>
+                                        <h4 style="padding: 0px; margin: 0px;    color: dimgray;"><%# Eval("ArticleTitle")%></h4>
                                         <asp:LinkButton runat="server" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
                                         <br />
-                                        <span runat="server"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
+                                        <span runat="server" style="color:#a7a7a7;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
                                         <hr style="margin-top: 5px; margin-bottom: 5px;" />
                                     </div>
 
@@ -109,9 +115,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>

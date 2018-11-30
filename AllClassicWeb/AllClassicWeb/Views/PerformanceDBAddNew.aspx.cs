@@ -42,6 +42,7 @@ namespace AllClassicWeb.Views
             PerformanceTbl performance = BusinessLogic.PerformanceDBLogic.getPerfByID(id);
             if (performance != null)
             {
+                Session["theSelectedPerformance"] = performance;
                 txt_maintitle.Text = performance.MainTitle;
                 txt_subtitle.Text = performance.SubTitle;
                 txt_subjecttheme.Text = performance.Subject;
@@ -189,7 +190,8 @@ namespace AllClassicWeb.Views
             try
             {
                 int id = int.Parse(Session["PID"].ToString());
-                pt = BusinessLogic.PerformanceDBLogic.getPerfByID(id);
+                //pt = BusinessLogic.PerformanceDBLogic.getPerfByID(id);
+                pt = (PerformanceTbl)Session["theSelectedPerformance"];
                 pt.MainTitle = txt_maintitle.Text;
                 pt.SubTitle = txt_subtitle.Text;
                 pt.Subject = txt_subjecttheme.Text;
@@ -321,7 +323,8 @@ namespace AllClassicWeb.Views
             if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
                 int id = int.Parse(Session["PID"].ToString());
-                PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
                 DropDownList1_grouptype.Items.FindByValue(performance.PerformanceGroup.ToString()).Selected = true;
             }
         }
@@ -331,7 +334,8 @@ namespace AllClassicWeb.Views
             if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
                 int id = int.Parse(Session["PID"].ToString());
-                PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
                 DropDownList1_performancetype.Items.FindByValue(performance.PerformanceType.ToString()).Selected = true;
             }
         }
@@ -340,9 +344,14 @@ namespace AllClassicWeb.Views
         {
             if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
-                int id = int.Parse(Session["PID"].ToString());
-                PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                DropDownList1_conductors.Items.FindByValue(performance.Conductor.ToString()).Selected = true;
+                try
+                {
+                    int id = int.Parse(Session["PID"].ToString());
+                    //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                    PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                    DropDownList1_conductors.Items.FindByValue(performance.Conductor.ToString()).Selected = true;
+                }
+                catch (Exception ee) { }
             }
 
         }
@@ -352,7 +361,8 @@ namespace AllClassicWeb.Views
             if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
                 int id = int.Parse(Session["PID"].ToString());
-                PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
                 DropDownList1_composer.Items.FindByValue(performance.MainTitleComposer.ToString()).Selected = true;
             }
         }
@@ -362,8 +372,9 @@ namespace AllClassicWeb.Views
             if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
                 int id = int.Parse(Session["PID"].ToString());
-                PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                if(performance.MainInstrument!=null)
+                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                if (performance.MainInstrument!=null)
                 DropDownList2_maininstrument.Items.FindByValue(performance.MainInstrument.ToString()).Selected = true;
             }
 
@@ -374,7 +385,8 @@ namespace AllClassicWeb.Views
             if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
                 int id = int.Parse(Session["PID"].ToString());
-                PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
                 DropDownList4_region.Items.FindByValue(performance.Region.ToString()).Selected = true;
             }
         }
@@ -384,7 +396,8 @@ namespace AllClassicWeb.Views
             if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
                 int id = int.Parse(Session["PID"].ToString());
-                PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
                 DropDownList3_city.Items.FindByValue(performance.City.ToString()).Selected = true;
             }
 
@@ -395,7 +408,8 @@ namespace AllClassicWeb.Views
             if (Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
                 int id = int.Parse(Session["PID"].ToString());
-                PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
                 DropDownList1_venu.Items.FindByValue(performance.Venue.ToString()).Selected = true;
             }
 

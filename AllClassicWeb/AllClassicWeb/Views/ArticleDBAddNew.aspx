@@ -32,8 +32,9 @@
     <div class="row col-xs-4" style="text-align:right;">
         <br />
 
+        <asp:Button runat="server"  ValidationGroup="a" ID="btn_updatearticle" Visible="false" UseSubmitBehavior="false" OnClick="onclick_btn_updatearticle" type="button" Text="<%$Resources:DisplayText,Update %>" class="btn btn-warning"></asp:Button>
         <asp:Button runat="server"  ValidationGroup="a" ID="btn_addnewArticle" UseSubmitBehavior="false" OnClick="onclick_btn_addArticle" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary"></asp:Button>
-        <asp:Button runat="server" type="button" class="btn btn-danger" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
+        <asp:Button runat="server" type="button" class="btn btn-danger" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>" OnClick="onClick_btn_cancel"></asp:Button>
         <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
     </div>
     

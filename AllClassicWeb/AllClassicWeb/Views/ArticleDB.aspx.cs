@@ -21,6 +21,9 @@ namespace AllClassicWeb.Views
 
             Response.Redirect("ArticleDBAddNew.aspx");
 
+            Session["ArticleID"] = null;
+            Session["updateArticle"] = false;
+
         }
 
         public void ArticleClicked(object sender, CommandEventArgs e) {
@@ -29,6 +32,11 @@ namespace AllClassicWeb.Views
             Response.Redirect(b.ToString());
         }
 
+        public void editArticleClicked(object sender, CommandEventArgs e) {           
+                Session["ArticleID"] = e.CommandArgument.ToString();
+                Session["updateArticle"] = true;
+                Response.Redirect("ArticleDBAddNew.aspx");
+        }
 
         public void selectedFilterChanged(object sender, EventArgs e)
         {

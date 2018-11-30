@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AllClassicDBModelStoreContainer" CdmEntityContainer="AllClassicDBEntities">
-    <EntitySetMapping Name="ConcourTbls">
-      <EntityTypeMapping TypeName="AllClassicDBModel.ConcourTbl">
-        <MappingFragment StoreEntitySet="ConcourTbl">
-          <ScalarProperty Name="ConcourID" ColumnName="ConcourID" />
-          <ScalarProperty Name="Organizer" ColumnName="Organizer" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
-          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
-          <ScalarProperty Name="ConcourOutline" ColumnName="ConcourOutline" />
-          <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
-          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="InstrumentTbls">
       <EntityTypeMapping TypeName="AllClassicDBModel.InstrumentTbl">
         <MappingFragment StoreEntitySet="InstrumentTbl">
@@ -30,48 +16,6 @@
           <ScalarProperty Name="Photo1" ColumnName="Photo1" />
           <ScalarProperty Name="Photo2" ColumnName="Photo2" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MusicShopTbls">
-      <EntityTypeMapping TypeName="AllClassicDBModel.MusicShopTbl">
-        <MappingFragment StoreEntitySet="MusicShopTbl">
-          <ScalarProperty Name="MusicShopID" ColumnName="MusicShopID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Alias" ColumnName="Alias" />
-          <ScalarProperty Name="Expertise" ColumnName="Expertise" />
-          <ScalarProperty Name="City" ColumnName="City" />
-          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
-          <ScalarProperty Name="SinceYear" ColumnName="SinceYear" />
-          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
-          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="TelNo" ColumnName="TelNo" />
-          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
-          <ScalarProperty Name="HomePage" ColumnName="HomePage" />
-          <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
-          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="RepairShopTbls">
-      <EntityTypeMapping TypeName="AllClassicDBModel.RepairShopTbl">
-        <MappingFragment StoreEntitySet="RepairShopTbl">
-          <ScalarProperty Name="RepairShopID" ColumnName="RepairShopID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Alias" ColumnName="Alias" />
-          <ScalarProperty Name="Expertise" ColumnName="Expertise" />
-          <ScalarProperty Name="City" ColumnName="City" />
-          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
-          <ScalarProperty Name="SinceYear" ColumnName="SinceYear" />
-          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
-          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="TelNo" ColumnName="TelNo" />
-          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
-          <ScalarProperty Name="HomePage" ColumnName="HomePage" />
-          <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />
           <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -301,6 +245,102 @@
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Organizer" ColumnName="Organizer" />
           <ScalarProperty Name="AuditionID" ColumnName="AuditionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConcourTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.ConcourTbl">
+        <MappingFragment StoreEntitySet="ConcourTbl">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="ConcourOutline" ColumnName="ConcourOutline" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Organizer" ColumnName="Organizer" />
+          <ScalarProperty Name="ConcourID" ColumnName="ConcourID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RepairShopTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.RepairShopTbl">
+        <MappingFragment StoreEntitySet="RepairShopTbl">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="HomePage" ColumnName="HomePage" />
+          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+          <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="SinceYear" ColumnName="SinceYear" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Expertise" ColumnName="Expertise" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RepairShopID" ColumnName="RepairShopID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusicShopTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.MusicShopTbl">
+        <MappingFragment StoreEntitySet="MusicShopTbl">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="HomePage" ColumnName="HomePage" />
+          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+          <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="SinceYear" ColumnName="SinceYear" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Expertise" ColumnName="Expertise" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MusicShopID" ColumnName="MusicShopID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PeopleAndJobTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.PeopleAndJobTbl">
+        <MappingFragment StoreEntitySet="PeopleAndJobTbl">
+          <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ValidDate" ColumnName="ValidDate" />
+          <ScalarProperty Name="PeopleOrJob" ColumnName="PeopleOrJob" />
+          <ScalarProperty Name="PeopleAndJobID" ColumnName="PeopleAndJobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PerformanceCommentTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.PerformanceCommentTbl">
+        <MappingFragment StoreEntitySet="PerformanceCommentTbl">
+          <ScalarProperty Name="ParentCommentID" ColumnName="ParentCommentID" />
+          <ScalarProperty Name="CommentDate" ColumnName="CommentDate" />
+          <ScalarProperty Name="CommentMessage" ColumnName="CommentMessage" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PerformanceID" ColumnName="PerformanceID" />
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PerformanceLikeUnlikeTbls">
+      <EntityTypeMapping TypeName="AllClassicDBModel.PerformanceLikeUnlikeTbl">
+        <MappingFragment StoreEntitySet="PerformanceLikeUnlikeTbl">
+          <ScalarProperty Name="islike" ColumnName="islike" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="PerformanceID" ColumnName="PerformanceID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

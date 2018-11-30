@@ -9,7 +9,8 @@ namespace BusinessLogic
 {
     public class ArticleLogic
     {
-        public static ArticleTbl registerArticle(ArticleTbl a) {
+        public static ArticleTbl registerArticle(ArticleTbl a)
+        {
             try
             {
                 AllClassicDBEntities entities = new AllClassicDBEntities();
@@ -17,10 +18,35 @@ namespace BusinessLogic
                 entities.SaveChanges();
                 return a;
             }
-            catch (Exception eee) {
+            catch (Exception eee)
+            {
                 return null;
             }
+        }
 
+        public static ArticleTbl updateArticle(ArticleTbl a)
+        {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                ArticleTbl article = entities.ArticleTbls.Where(x => x.ArticleID == a.ArticleID).FirstOrDefault();
+                article.ArticleTitle = a.ArticleTitle;
+                article.ArticleURL = a.ArticleURL;
+                article.UserID = a.UserID;
+                article.UpdateTimeStamp = DateTime.Now;
+                entities.SaveChanges();
+                return article;
+            }
+            catch (Exception eee)
+            {
+                return null;
+            }
+        }
+
+        public static ArticleTbl get_articleByID(int id)
+        {
+            AllClassicDBEntities entities = new AllClassicDBEntities();
+            return entities.ArticleTbls.Where(x => x.ArticleID == id).FirstOrDefault();
         }
     }
 }

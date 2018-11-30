@@ -15,6 +15,7 @@
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.FullName %>*</div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_name" runat="server" class="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_name" ErrorMessage="<%$Resources:DisplayText,PleaseEnterMainTitle %>" />
 
                         </div>
                         <br />
@@ -25,6 +26,8 @@
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Email %>*</div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_email" runat="server" class="form-control" TextMode="Email"></asp:TextBox>
+                            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleaseEnterMainTitle %>" />
+
                         </div>
                         <br />
                     </div>
@@ -93,7 +96,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Major %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:DropDownList ID="DropDownList1_Major" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_Major" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID" OnDataBound="DropDownList1_Major_DataBound"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='Instrument'
@@ -245,8 +248,8 @@ or maincode='Conductor'
 
                     <div class="row col-md-12 col-xs-12">
                         <asp:Button Visible="true" ID="btn_artist_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_artistcancel_Click" Style="margin-right: 10px;" />
-                        <asp:Button Visible="true" ID="btn_artist_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
-                        <asp:Button ID="btn_artist_add" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_artistadd_Click" Style="margin-right: 10px;" />
+                        <asp:Button Visible="true"  ValidationGroup="a"  ID="btn_artist_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
+                        <asp:Button ID="btn_artist_add"  ValidationGroup="a"  CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_artistadd_Click" Style="margin-right: 10px;" />
                     </div>
                 </div>
             </ContentTemplate>

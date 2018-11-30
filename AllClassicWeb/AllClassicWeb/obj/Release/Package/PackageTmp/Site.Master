@@ -15,6 +15,190 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+    <script type="text/javascript">
+        function modifyCss(color, page) {
+            switch (color) {
+                case "1":
+                    $(".whitesmokeBG").css('background-color', 'rgba(234, 234, 234, 0.66)');
+                    //$(".whitesmokeBG").css('color', '#28878a');
+                    //$(".whitesmokeBG").css('font-weight', '700');
+                    //break;
+                    $(".whitesmokeBG").css('background-color', 'rgba(234, 234, 234, 0.66)'); break;
+                //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
+                case "2":
+                    $(".whitesmokeBG").css('background-color', '#28878a');
+                    $(".whitesmokeBG").css('color', '#ffffff');
+                    break;
+                case "3":
+                    $(".whitesmokeBG").css('background-color', '#004d40');
+                    $(".whitesmokeBG").css('color', '#ffffff');
+                    break;
+                case "4":
+                    $(".whitesmokeBG").css('background-color', '#3f51b5');
+                    $(".whitesmokeBG").css('color', '#ffffff');
+                    break;
+            }
+
+            switch (page) {
+                case "ASP.views_performancedb_aspx":
+                    {
+                        document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
+                        document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
+                        document.getElementById("performancetab").setAttribute('style', 'color: #000000');
+                        break;
+                    }
+                case "ASP.views_performancedbaddnew_aspx": {
+                    document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_performancedetail_aspx": {
+                    document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_musiciandb_aspx": {
+                    document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_musiciandbaddnew_aspx": {
+                    document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_musiciandetailpage_aspx": {
+                    document.getElementById("artisttab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("artisttab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_musiccollegedb_aspx": {
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_musiccollegedbaddnew_aspx": {
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_musiccollegedbdetail_aspx": {
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'background-color: white !important;');
+                    document.getElementById("MusicCollegetab").setAttribute('style', 'border-bottom: none !important;');
+                    break;
+                }
+                case "ASP.views_articledb_aspx": {
+                    document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("articletab").style.borderRight = "none";
+                    document.getElementById("articletab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_articledbaddnew_aspx": {
+                    document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("articletab").style.borderRight = "none";
+                    document.getElementById("articletab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_auditiondb_aspx": {
+                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.borderRight = "none";
+                    document.getElementById("auditiontab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_auditiondb_aspx": {
+                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.borderRight = "none";
+                    document.getElementById("auditiontab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_auditiondbaddnew_aspx": {
+                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.borderRight = "none";
+                    document.getElementById("auditiontab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_concoursdb_aspx": {
+                    document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("concoursdbtab").style.borderRight = "none";
+                    document.getElementById("concoursdbtab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_concoursdbaddnew_aspx": {
+                    document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("concoursdbtab").style.borderRight = "none";
+                    document.getElementById("concoursdbtab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_performancegroupaddnew_aspx": {
+                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.borderRight = "none";
+                    document.getElementById("performancegrouptab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_performancegroup_aspx": {
+                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.borderRight = "none";
+                    document.getElementById("performancegrouptab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_performancegroupdetail_aspx": {
+                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.borderRight = "none";
+                    document.getElementById("performancegrouptab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_repairshopdb_aspx": {
+                    document.getElementById("RepairShoptab").style.backgroundColor = "white";
+                    document.getElementById("RepairShoptab").style.borderRight = "none";
+                    document.getElementById("RepairShoptab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_repairshopdbaddnew_aspx": {
+                    document.getElementById("RepairShoptab").style.backgroundColor = "white";
+                    document.getElementById("RepairShoptab").style.borderRight = "none";
+                    document.getElementById("RepairShoptab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_musicshopdb_aspx": {
+                    document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
+                    document.getElementById("MusicShopDBtab").style.borderRight = "none";
+                    document.getElementById("MusicShopDBtab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_musicshopdbaddnew_aspx": {
+                    document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
+                    document.getElementById("MusicShopDBtab").style.borderRight = "none";
+                    document.getElementById("MusicShopDBtab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_concertvenudb_aspx": {
+                    document.getElementById("ConcertVenutab").style.backgroundColor = "white";
+                    document.getElementById("ConcertVenutab").style.borderRight = "none";
+                    document.getElementById("ConcertVenutab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_concertvenudbaddnew_aspx": {
+                    document.getElementById("ConcertVenutab").style.backgroundColor = "white";
+                    document.getElementById("ConcertVenutab").style.borderRight = "none";
+                    document.getElementById("ConcertVenutab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_peopleandjobdb_aspx": {
+                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
+                    document.getElementById("PeopleAndJobDBtab").style.color = "#000000";
+                    break;
+                }
+                case "ASP.views_peopleandjobdbaddnew_aspx": {
+                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
+                    document.getElementById("PeopleAndJobDBtab").style.color = "#000000";
+                    break;
+                } ASP.views_peopleandjobdbaddnew_aspx
+            }
+
+        }
+    </script>
 </head>
 <body style="padding-top: 2px;">
     <form runat="server">
@@ -41,20 +225,20 @@
         <div class="container body-content" style="padding-left: 20px;">
 
             <div class="navbar-outer" id="masterNavigationBar">
-                <div class="row ">
-                    <div class="">
+                <div class="row whitesmokeBG">
+                    <div class="whitesmokeBG">
                         <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
-                        <a class="otheroptions" id="performancetab" style="text-decoration: none;" runat="server"  href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
-                        <a class="otheroptions" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
-                        <a class="otheroptions" id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
-                        <a class="otheroptions" id="instrumenttab" style="text-decoration: none;" runat="server" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ArchiveCenter %> </a>
-                        <a class="otheroptions" runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
-                        <a class="otheroptions" id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
-                        <span class="otheroptions">
-                            <a runat="server" onserverclick="changeLanguageToEng"  CommandArgument='en-US'  style="padding-left: 0px; padding-right: 4px; display: inline-block;"><%= Resources.DisplayText.en %></a>/
-                            <a runat="server" onserverclick="changeLanguageToKr"   CommandArgument='ko-KR'  style="padding-right: 0px; padding-left: 4px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
+                        <a class="otheroptions whitesmokeBG" id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
+                        <a class="otheroptions whitesmokeBG" id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
+                        <a class="otheroptions whitesmokeBG" id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
+                        <a class="otheroptions whitesmokeBG" id="instrumenttab" style="text-decoration: none;" runat="server" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ArchiveCenter %> </a>
+                        <a class="otheroptions whitesmokeBG" runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
+                        <a class="otheroptions whitesmokeBG" id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
+                        <span class="otheroptions whitesmokeBG">
+                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; padding-right: 4px; display: inline-block;"><%= Resources.DisplayText.en %></a>/
+                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; padding-left: 4px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
                         </span>
-                        <span class="otheroptions" style="padding-top: 8px;">
+                        <span class="otheroptions whitesmokeBG pull-right" style="padding-top: 8px;">
                             <asp:TextBox runat="server" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
                             <asp:Button runat="server" Text="search" class="btn btn-primary" />
 
@@ -73,18 +257,22 @@
                         </a>
 
                         <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
-                        <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" href="ArticleDB"><%= Resources.DisplayText.Article %></a>
-                        <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" href="AuditionDB"><%= Resources.DisplayText.Auditions %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.Concours %></a>
-                        <a id="performancegrouptab" class="list-group-item list-group-item-action "  style="background-color: whitesmoke;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.RepairShop %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.MusicShop %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.ConcertVenue %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.PeopleJob %></a>
+                        <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
+                        <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
+                        <a id="concoursdbtab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
+                        <a id="performancegrouptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
+                        <a id="RepairShoptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/RepairShopDB"><%= Resources.DisplayText.RepairShop %></a>
+                        <a id="MusicShopDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/MusicShopDB"><%= Resources.DisplayText.MusicShop %></a>
+                        <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
+                        <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.QA %></a>
+                        <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
+                        <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>
+                        <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="3" Text="3"></asp:Button>
+                        <asp:Button class="list-group-item list-group-item-action  " runat="server" OnCommand="changecolor" CommandArgument="4" Text="4"></asp:Button>
                     </ul>
                 </div>
-                <div class="col-md-10 col-xs-10" id="mastermaincontent">
+                <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding-right: 0;">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
@@ -98,3 +286,4 @@
     </form>
 </body>
 </html>
+

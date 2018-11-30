@@ -2,7 +2,6 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Release\BusinessL
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Release\BusinessLogic.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Release\BusinessLogic.pdb
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.exe
-C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Release\EntityFramework.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.pdb
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.exe.config
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\bin\Release\EntityFramework.xml

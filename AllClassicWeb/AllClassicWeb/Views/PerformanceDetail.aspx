@@ -297,14 +297,12 @@
 
                     </div>
 
-                    <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
-
+                    <%--<div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
                         <div class="col-md-6 col-xs-6" style="padding: 0;"><%= Resources.DisplayText.Poster %></div>
                         <div class="col-md-6 col-xs-6" style="padding: 0;">
                             <asp:Label Font-Bold="true" runat="server" ID="lbl_poster"></asp:Label>
                         </div>
-
-                    </div>
+                    </div>--%>
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
