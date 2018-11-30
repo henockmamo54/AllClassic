@@ -133,6 +133,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <span><strong><%= Resources.DisplayText.HomePage %>:</strong>
                                                 <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></span>
                                         </div>
+
+                                         <asp:LinkButton runat="server" ID="edit" OnCommand="editvenuClicked" CommandArgument='<%# Eval("VenueID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>    
+
                                     </div>
 
 

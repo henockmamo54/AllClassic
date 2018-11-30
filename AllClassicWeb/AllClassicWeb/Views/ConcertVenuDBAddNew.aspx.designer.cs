@@ -157,6 +157,15 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.Button btn_concertvenu_cancel;
         
         /// <summary>
+        /// btn_concertvenu_save control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_concertvenu_save;
+        
+        /// <summary>
         /// btn_concertvenu_add control.
         /// </summary>
         /// <remarks>

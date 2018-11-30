@@ -34,7 +34,7 @@
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4"><%=Resources.DisplayText.City %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID" OnDataBound="DropDownList3_city_DataBound"></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='City'
@@ -109,9 +109,9 @@ where maincode='City'
     <br />
 
     <div class="row col-md-4 col-xs-4">
-        <asp:Button Visible="true" ID="btn_repairshop_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_repairshop_cancel_Click" Style="margin-right: 10px;" />
-        <%--<asp:Button Visible="true" ID="btn_concours_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />--%>
-        <asp:Button ID="btn_repairshop_add" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_repairshop_add_Click" Style="margin-right: 10px;" />
+        <asp:Button Visible="true" ID="btn_musicshop_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_musicshop_cancel_Click" Style="margin-right: 10px;" />
+        <asp:Button Visible="true" ID="btn_musicshop_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_musicshop_save_Click" Style="margin-right: 10px;" />
+        <asp:Button ID="btn_musicshop_add" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_musicshop_add_Click" Style="margin-right: 10px;" />
 
     </div>
 

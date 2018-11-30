@@ -103,6 +103,15 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
+        /// btn_saveAudition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_saveAudition;
+        
+        /// <summary>
         /// btn_addnewAudition control.
         /// </summary>
         /// <remarks>

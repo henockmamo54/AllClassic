@@ -16,6 +16,8 @@ namespace AllClassicWeb.Views
         }
 
         public void onclick_btn_addAudition(object sender, EventArgs e) {
+            Session["AuditionID"] = null;
+            Session["updateAudition"] = false;
             Response.Redirect("AuditionDBAddNew.aspx");
         }
 
@@ -56,6 +58,12 @@ namespace AllClassicWeb.Views
                 order by UpdateTimeStamp desc");
 
             collegeListContainer.DataBind();
+        }
+
+        public void editAuditionClicked(object sender, CommandEventArgs e) {
+            Session["AuditionID"] = e.CommandArgument.ToString();
+            Session["updateAudition"] = true;
+            Response.Redirect("AuditionDBAddNew.aspx");
         }
     }
 }

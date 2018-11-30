@@ -20,6 +20,13 @@ namespace AllClassicWeb.Views
             Response.Redirect("RepairShopDBAddNew.aspx");
         }
 
+        public void editRepairShopClicked(object sender, CommandEventArgs e)
+        {
+            Session["RepairShopID"] = e.CommandArgument.ToString();
+            Session["updateRepairShop"] = true;
+            Response.Redirect("RepairShopDBAddNew.aspx");
+        }
+
         public void selectedFilterChanged(object sender, EventArgs ee) {
 
             var filterQuery = "";
@@ -46,11 +53,13 @@ namespace AllClassicWeb.Views
                 filterQuery += " Expertise like N'%" + txt_experties.Text + "%'";
             }
 
-            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select r.*, r.EmailID from Auxiliary.RepairShopTbl r
-            join Main.usertbl u on r.Userid=u.userid" + filterQuery + @"
+            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select r.*, r.EmailID,c.SubCode cityname from Auxiliary.RepairShopTbl r
+            join Main.usertbl u on r.Userid=u.userid
+                    left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=r.City" + filterQuery + @"
                 order by UpdateTimeStamp desc");
 
             collegeListContainer.DataBind();
         }
+
     }
 }

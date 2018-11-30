@@ -111,7 +111,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <span><strong><%= Resources.DisplayText.Expertise %>:</strong><%# Eval("Expertise") %></span>
                                         </div>
                                         <div>
-                                            <span><strong><%= Resources.DisplayText.City %>:</strong><%# Eval("city") %></span>
+                                            <span><strong><%= Resources.DisplayText.City %>:</strong><%# Eval("cityname") %></span>
                                         </div>
                                         <div>
                                             <span><strong><%= Resources.DisplayText.OwnerName %>:</strong><%# Eval("OwnerName") %></span>
@@ -138,6 +138,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <span><strong><%= Resources.DisplayText.HomePage %>:</strong>
                                                 <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></span>
                                         </div>
+                                          <asp:LinkButton runat="server" ID="edit" OnCommand="editMusicShopClicked" CommandArgument='<%# Eval("MusicShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>    
                                     </div>
 
 
@@ -169,8 +170,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     </GroupSeparatorTemplate>
                 </asp:ListView>
                 <asp:SqlDataSource ID="SqlDataSource1_Collegelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-select r.*, r.EmailID from Auxiliary.MusicShopTbl r
+select r.*, r.EmailID,c.SubCode cityname  from Auxiliary.MusicShopTbl r
             join Main.usertbl u on r.Userid=u.userid
+                    left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=r.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 

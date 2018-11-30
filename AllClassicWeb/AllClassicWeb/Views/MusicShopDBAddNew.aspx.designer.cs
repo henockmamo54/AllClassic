@@ -130,21 +130,30 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.TextBox txt_homepage;
         
         /// <summary>
-        /// btn_repairshop_cancel control.
+        /// btn_musicshop_cancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_repairshop_cancel;
+        protected global::System.Web.UI.WebControls.Button btn_musicshop_cancel;
         
         /// <summary>
-        /// btn_repairshop_add control.
+        /// btn_musicshop_save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_repairshop_add;
+        protected global::System.Web.UI.WebControls.Button btn_musicshop_save;
+        
+        /// <summary>
+        /// btn_musicshop_add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_musicshop_add;
     }
 }

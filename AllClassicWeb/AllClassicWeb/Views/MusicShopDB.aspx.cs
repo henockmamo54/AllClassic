@@ -49,11 +49,19 @@ namespace AllClassicWeb.Views
                 filterQuery += " Expertise like N'%" + txt_experties.Text + "%'";
             }
 
-            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select r.*, r.EmailID from Auxiliary.MusicShopTbl r
-            join Main.usertbl u on r.Userid=u.userid" + filterQuery + @"
+            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select r.*, r.EmailID,c.SubCode cityname  from Auxiliary.MusicShopTbl r
+            join Main.usertbl u on r.Userid=u.userid 
+            left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=r.City" + filterQuery + @"
                 order by UpdateTimeStamp desc");
 
             collegeListContainer.DataBind();
+        }
+
+        public void editMusicShopClicked(object sender, CommandEventArgs e) {
+
+            Session["MusicShopID"] = e.CommandArgument.ToString();
+            Session["updateMusicShop"] = true;
+            Response.Redirect("MusicShopDBAddNew.aspx");
         }
 
 

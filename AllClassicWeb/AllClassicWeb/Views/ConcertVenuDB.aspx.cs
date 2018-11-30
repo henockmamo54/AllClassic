@@ -21,7 +21,14 @@ namespace AllClassicWeb.Views
             Session["updateConcertVenu"] = false;
             Response.Redirect("ConcertVenuDBAddNew.aspx");
         }
+        public void editvenuClicked(object sender, CommandEventArgs e)
+        {
 
+            Session["ConcertVenuID"] = e.CommandArgument.ToString();
+            Session["updateConcertVenu"] = true;
+            Response.Redirect("ConcertVenuDBAddNew.aspx");
+        }
+        
 
         public void selectedFilterChanged(object sender, EventArgs ee)
         {

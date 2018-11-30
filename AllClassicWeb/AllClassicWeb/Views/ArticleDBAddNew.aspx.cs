@@ -17,8 +17,6 @@ namespace AllClassicWeb.Views
             {
 
                 handleButtons(true);
-                //Session["ArticleID"] = e.CommandArgument.ToString();
-                //Session["updateArticle"] = true;
                 if (Session["updateArticle"] != null)
                 {
                     if (Boolean.Parse(Session["updateArticle"].ToString()) == true)

@@ -99,7 +99,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <asp:LinkButton runat="server" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
                                         <br />
                                         <span runat="server" style="color:#a7a7a7;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
-                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'>Edit</asp:LinkButton>
+                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <hr style="margin-top: 5px; margin-bottom: 5px;" />
                                     </div>
 

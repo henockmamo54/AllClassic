@@ -95,7 +95,7 @@
         <br />
         <div class="row col-md-4 col-xs-4">
             <asp:Button Visible="true" ID="btn_concours_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_concours_cancel_Click" Style="margin-right: 10px;" />
-            <%--<asp:Button Visible="true" ID="btn_concours_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />--%>
+            <asp:Button Visible="true" ID="btn_concours_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />
             <asp:Button ID="btn_concours_add"  ValidationGroup="a" CssClass="btn btn-primary pull-right" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_concours_add_Click" Style="margin-right: 10px;" />
 
         </div>

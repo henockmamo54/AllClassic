@@ -137,6 +137,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                     - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>
                                 <br />
                                 <span runat="server" ><%# Eval("AuditionOutline") %> </span>
+                                <asp:LinkButton runat="server" ID="edit" OnCommand="editAuditionClicked" CommandArgument='<%# Eval("AuditionID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                       
                                 <hr style="margin-top: 5px; margin-bottom: 5px;" />
                             </div>
 

@@ -62,5 +62,10 @@ namespace AllClassicWeb.Views
             collegeListContainer.DataBind();
         }
 
+        public void editConcourClicked(object sender, CommandEventArgs e) {
+            Session["ConcoursID"] = e.CommandArgument.ToString();
+            Session["updateConcours"] = true;
+            Response.Redirect("ConcoursDBAddNew.aspx");
+        }
     }
 }
