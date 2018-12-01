@@ -130,16 +130,23 @@ where maincode='Region'"></asp:SqlDataSource>
                     </GroupSeparatorTemplate>
                 </asp:ListView>
                 <asp:SqlDataSource ID="SqlDataSource1_Performancelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-select p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
-from Main.PerformanceTbl p
-left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='PerformanceType') pt on pt.LookUpID=p.PerformanceType
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Conductor') cd on cd.LookUpID=p.Conductor
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Composer') cm on cm.LookUpID=p.MainTitleComposer
-left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Region') r on r.LookUpID=p.Region
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=p.City
-left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
+DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
+
+                                                            INSERT INTO @fooTable 
+                                                                select lookupid, Maincode, subcode from main.lookuptbl where maincode 
+                                                            in ('PerformanceType','Conductor','Composer','Region','City') 
+
+
+                                                            SELECT  p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
+                                                            from Main.PerformanceTbl p
+                                                            left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
+                                                            left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
+                                                            left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
+                                                            left join @fooTable pt on pt.LookUpID=p.PerformanceType
+                                                            left join @fooTable cd on cd.LookUpID=p.Conductor
+                                                            left join @fooTable cm on cm.LookUpID=p.MainTitleComposer
+                                                            left join @fooTable r on r.LookUpID=p.Region
+                                                            left join @fooTable c on c.LookUpID=p.City
 order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
             <div class="row">
@@ -190,7 +197,7 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
             /*box-shadow: 3px 3px 3px #d0d0d0 !important;*/
             box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
             color: white !important;
-        } 
+        }
 
         .locationcontainer:hover {
             background-color: #28878a;
