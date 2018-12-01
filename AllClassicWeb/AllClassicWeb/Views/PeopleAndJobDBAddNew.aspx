@@ -16,7 +16,7 @@
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4"><%=Resources.DisplayText.PeopleOrJob %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control">
+                <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control" OnDataBound="DropDownList1_type_DataBound">
                                                             <asp:ListItem Value="-1" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
                                                             <asp:ListItem Value="-2" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
                                                         </asp:DropDownList>
@@ -53,7 +53,7 @@
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4"><%=Resources.DisplayText.City %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID" OnDataBound="DropDownList3_city_DataBound"></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='City'
@@ -113,8 +113,8 @@ where maincode='City'
 
     <div class="row col-md-4 col-xs-4">
         <asp:Button Visible="true" ID="btn_PeopleAndJob_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_PeopleAndJob_cancel_Click" Style="margin-right: 10px;" />
-        <%--<asp:Button Visible="true" ID="btn_PeopleAndJob_save" CssClass="btn btn-warning pull-right" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />--%>
-        <asp:Button ID="btn_PeopleAndJob_add" CssClass="btn btn-primary pull-right" ValidationGroup="a"  runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_PeopleAndJob_add_Click" Style="margin-right: 10px;" />
+        <asp:Button Visible="false" ID="btn_PeopleAndJob_save" CssClass="btn btn-warning pull-right" runat="server" ValidationGroup="a"   Text="<%$Resources:DisplayText,Update %>" OnClick="btn_PeopleAndJob_save_Click" Style="margin-right: 10px;" />
+        <asp:Button ID="btn_PeopleAndJob_add" Visible="false" CssClass="btn btn-primary pull-right" ValidationGroup="a"  runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_PeopleAndJob_add_Click" Style="margin-right: 10px;" />
 
     </div>
 

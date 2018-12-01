@@ -147,6 +147,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                     <div><strong><%=Resources.DisplayText.TelNo %>:</strong> <%# (Eval("TelNo"))%></div>
                                     <div><strong><%=Resources.DisplayText.Email %>:</strong> <%# (Eval("EmailID"))%></div>
                                     <div><strong><%=Resources.DisplayText.Description %>:</strong> <%# (Eval("Description"))%></div>
+                                    
+                                         <asp:LinkButton runat="server" ID="edit" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>    
+
                                 </div>
 
                             </div>

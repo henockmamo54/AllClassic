@@ -15,10 +15,20 @@ namespace AllClassicWeb.Views
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
         }
 
-        public void onclick_btn_addNew(object sender, EventArgs e) {
-
+        public void onclick_btn_addNew(object sender, EventArgs e)
+        {
+            Session["PeopleAndJobID"] = null;
+            Session["updatePeopleAndJob"] = false;
             Response.Redirect("PeopleAndJobDBAddNew.aspx");
         }
+        public void editClicked(object sender, CommandEventArgs e)
+        {
+            Session["PeopleAndJobID"] = e.CommandArgument.ToString();
+            Session["updatePeopleAndJob"] = true;
+            Response.Redirect("PeopleAndJobDBAddNew.aspx");
+        }
+
+        
 
         public void selectedFilterChanged(object sender, EventArgs e) {
 

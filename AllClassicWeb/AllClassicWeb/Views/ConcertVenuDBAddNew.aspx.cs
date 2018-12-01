@@ -149,7 +149,7 @@ namespace AllClassicWeb.Views
 
         protected void DropDownList3_city_DataBound(object sender, EventArgs e)
         {
-            if (Boolean.Parse(Session["updateConcertVenu"].ToString()) == true)
+            if (Session["updateConcertVenu"] != null && Boolean.Parse(Session["updateConcertVenu"].ToString()) == true)
             {
                 try
                 {
