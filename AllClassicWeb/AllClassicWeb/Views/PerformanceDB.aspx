@@ -7,7 +7,7 @@
             <br />
             <div class="row " style="padding-right: 0px; margin-right: 0px;">
                 <div class="col-md-3 col-xs-3">
-                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="180px" NextPrevFormat="FullMonth" Width="220px" OnSelectionChanged="dateselectorcalendar_SelectionChanged" >
+                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="180px" NextPrevFormat="FullMonth" Width="220px" OnSelectionChanged="dateselectorcalendar_SelectionChanged">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
@@ -19,7 +19,7 @@
                 <div class="col-md-6 col-xs-6 " style="padding: 0;">
                     <h5 style="color: #28878a; font-weight: 700;"><%= Resources.DisplayText.Performanceschedule %>: <%= Resources.DisplayText.ThisWeek %></h5>
                     <div class="shadowedPanel" style="overflow-y: scroll; max-height: 150px; height: 150px;">
-                        <table class="table">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col"><%= Resources.DisplayText.StartDate %></th>
@@ -70,7 +70,18 @@ where maincode='Region'"></asp:SqlDataSource>
             </div>
             <div class="row">
                 <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
-                    
+
+                    <EmptyDataTemplate>
+                        <div class=" col-xs-12">
+                            <h3>No records available.</h3>
+                        </div>
+                        <table class="emptyTable" cellpadding="5" cellspacing="5">
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </EmptyDataTemplate>
+
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
                             <div id="itemPlaceholder" runat="server">
@@ -107,7 +118,7 @@ where maincode='Region'"></asp:SqlDataSource>
                                     <Fields>
                                         <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn "  ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -175,12 +186,15 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
         }
 
         .shadowedbox_hover:hover {
-            background-color: #d3d3d35c;
-            box-shadow: 3px 3px 3px #d0d0d0 !important;
-        }
+            background-color: #d3d3d36b;
+            /*box-shadow: 3px 3px 3px #d0d0d0 !important;*/
+            box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
+            color: white !important;
+        } 
 
         .locationcontainer:hover {
-            background-color: lightblue;
+            background-color: #28878a;
+            color: white !important;
         }
     </style>
 

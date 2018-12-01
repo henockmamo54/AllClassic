@@ -150,7 +150,7 @@ a.list-group-item {
 
 .whitesmokeBG {
     background-color: whitesmoke;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .container {
@@ -165,8 +165,8 @@ a.list-group-item {
 }
 
 .allclasic_home {
-    color: white;
-    background: red;
+    /*color: white;*/
+    /*background: red;*/
     width: 181px !important;
 }
 
@@ -175,14 +175,14 @@ a.list-group-item {
     padding-top: 15px;
     font-size: 15px;
     line-height: 20px;
-    background-color: white;
+    /*background-color: white;*/
     color: black;
     padding-left: 10px;
     height: 50px;
     padding-right: 5px;
-    text-decoration:none;
+    text-decoration: none;
     /*border-right: 1px solid #e4e4e4;
-    border-bottom: 1px solid #e4e4e4;*/    
+    border-bottom: 1px solid #e4e4e4;*/
 }
 
 .orchContainer {
@@ -191,4 +191,9 @@ a.list-group-item {
     border-radius: 5px;
     padding: 5px;
     border: 2px solid #dadce4;
+}
+
+.list-group-item {
+    border-left: none !important;
+    border-right: none !important;
 }

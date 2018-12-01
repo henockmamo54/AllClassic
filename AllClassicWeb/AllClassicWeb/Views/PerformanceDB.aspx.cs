@@ -106,7 +106,11 @@ namespace AllClassicWeb.Views
                 {
                     Button pb = (Button)Session["previousSelectedLocation"];
                     var detail = (Button)item.FindControl("location");
-                    if (detail.Text == pb.Text) detail.BackColor = System.Drawing.Color.LightSkyBlue;
+                    if (detail.Text == pb.Text)
+                    {
+                        detail.BackColor = System.Drawing.ColorTranslator.FromHtml("#28878a");// System.Drawing.Color.LightSkyBlue;
+                        detail.ForeColor = System.Drawing.Color.White;
+                    }
                 }
             }
         }
@@ -122,7 +126,7 @@ namespace AllClassicWeb.Views
         {
             Button pb = null;
             Button b = (Button)sender;
-            b.BackColor = System.Drawing.Color.LightSkyBlue;
+            b.BackColor = System.Drawing.ColorTranslator.FromHtml("#28878a");
 
             if (Session["previousSelectedLocation"] != null)
             {
