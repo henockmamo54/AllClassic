@@ -78,7 +78,7 @@ where maincode='PerformanceType'
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Conductor %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:DropDownList ID="DropDownList1_conductors" runat="server" class="form-control" DataSourceID="SqlDataSource1_conductors" DataTextField="Name" DataValueField="MusicianID" OnDataBound="DropDownList1_conductors_DataBound"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1_conductors" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Conductor')"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1_conductors" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT MusicianID= -1, Name='None' UNION SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Conductor')"></asp:SqlDataSource>
                         </div>
                         <br />
                     </div>
@@ -88,7 +88,7 @@ where maincode='PerformanceType'
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MainTitleComposer %></div>
                         <div class="col-md-8 col-xs-8">
                             <asp:DropDownList ID="DropDownList1_composer" runat="server" class="form-control" DataSourceID="SqlDataSource1_composer" DataTextField="Name" DataValueField="MusicianID" OnDataBound="DropDownList1_composer_DataBound"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1_composer" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Composer')"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1_composer" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT MusicianID= -1, Name='None' UNION SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Composer')"></asp:SqlDataSource>
 
                         </div>
                         <br />
