@@ -691,4 +691,10 @@
   <data name="None" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
 </root>

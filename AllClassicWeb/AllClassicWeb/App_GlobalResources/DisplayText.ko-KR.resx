@@ -568,7 +568,7 @@
     <value>상점 이름</value>
   </data>
   <data name="Expertise" xml:space="preserve">
-    <value>전문적 지식</value>
+    <value>전문 영역</value>
   </data>
   <data name="OwnerName" xml:space="preserve">
     <value>소유자 이름</value>
@@ -708,5 +708,11 @@
   </data>
   <data name="None" xml:space="preserve">
     <value>없음</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>처음</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>마지막</value>
   </data>
 </root>
