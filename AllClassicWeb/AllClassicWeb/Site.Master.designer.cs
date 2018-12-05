@@ -40,13 +40,13 @@ namespace AllClassicWeb {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor MusicCollegetab;
         
         /// <summary>
-        /// instrumenttab control.
+        /// performanceArchivetab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor instrumenttab;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor performanceArchivetab;
         
         /// <summary>
         /// introductiontab control.

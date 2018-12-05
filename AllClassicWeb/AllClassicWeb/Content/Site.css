@@ -228,3 +228,13 @@ a.list-group-item {
     background-color: #28878a;
     color: white !important;
 }
+
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    /*background-color: #D9EDF7;  #e7f7d973     rgb(90, 234, 239)       rgb(224, 244, 245)  */
+    background-color: rgb(224, 244, 245);
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    
+     border-top: none; 
+}

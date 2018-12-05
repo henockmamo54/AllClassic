@@ -16,11 +16,11 @@
 
             <div class="row">
                 <div class="row col-md-12 col-xs-12  col-xs-12">
-                    <div class="col-xs-4">
-                        <div class="col-xs-6" style="vertical-align: sub; padding: 0;">
-                            <span style="display: inline-block;"><%= Resources.DisplayText.PostingDate %> </span>
+                    <div class="col-xs-4"> 
+                        <div class="col-xs-4">                            
+                            <h5 style="display: inline-block;display: inline-block;"><%= Resources.DisplayText.PostingDate %> </h5>
                         </div>
-                        <div class="col-xs-6" style="padding: 0;">
+                        <div class="col-xs-8" style="padding: 0;">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
                                 <input type='text' class="form-control" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">

@@ -18,23 +18,27 @@
     <script type="text/javascript">
         function modifyCss(color, page) {
             switch (color) {
-                case "1":
-                    $(".whitesmokeBG").css('background-color', 'rgba(234, 234, 234, 0.26)');
+                case "2":
+                    $(".whitesmokeBG").css('background-color', '#D9EDF7');
                     //$(".whitesmokeBG").css('color', '#ffffff ');
                     //document.getElementById("whitesmokeBG").setAttribute('style', 'color: #ffffff');
                     break;
                 //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
-                case "2":
+                case "1":
                     $(".whitesmokeBG").css('background-color', '#28878a');
                     $(".whitesmokeBG").css('color', '#ffffff');
+                    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
+                    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
                     break;
                 case "3":
                     $(".whitesmokeBG").css('background-color', '#004d40');
                     $(".whitesmokeBG").css('color', '#ffffff');
+                    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
                     break;
                 case "4":
                     $(".whitesmokeBG").css('background-color', '#3f51b5');
                     $(".whitesmokeBG").css('color', '#ffffff');
+                    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
                     break;
             }
 
@@ -53,41 +57,49 @@
                 case "ASP.views_performancedbaddnew_aspx": {
                     document.getElementById("performancetab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("performancetab").style.borderBottom = "none";
+                    document.getElementById("performancetab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_performancedetail_aspx": {
                     document.getElementById("performancetab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("performancetab").style.borderBottom = "none";
+                    document.getElementById("performancetab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_musiciandb_aspx": {
                     document.getElementById("artisttab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("artisttab").style.borderBottom = "none";
+                    document.getElementById("artisttab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_musiciandbaddnew_aspx": {
                     document.getElementById("artisttab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("artisttab").style.borderBottom = "none";
+                    document.getElementById("artisttab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_musiciandetailpage_aspx": {
                     document.getElementById("artisttab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("artisttab").style.borderBottom = "none";
+                    document.getElementById("artisttab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_musiccollegedb_aspx": {
                     document.getElementById("MusicCollegetab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("MusicCollegetab").style.borderBottom = "none";
+                    document.getElementById("MusicCollegetab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_musiccollegedbaddnew_aspx": {
                     document.getElementById("MusicCollegetab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("MusicCollegetab").style.borderBottom = "none";
+                    document.getElementById("MusicCollegetab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_musiccollegedbdetail_aspx": {
                     document.getElementById("MusicCollegetab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("MusicCollegetab").style.borderBottom = "none";
+                    document.getElementById("MusicCollegetab").style.color = "#000000";
                     break;
                 }
                 case "ASP.views_articledb_aspx": {
@@ -198,6 +210,12 @@
                     document.getElementById("PeopleAndJobDBtab").style.color = "#000000";
                     break;
                 }
+                case "ASP.views_performancearchivedb_aspx": {
+                    document.getElementById("performanceArchivetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performanceArchivetab").style.borderRight = "none";
+                    document.getElementById("performanceArchivetab").style.color = "#000000";
+                    break;
+                } 
             }
         }
     </script>
@@ -233,7 +251,7 @@
                         <a class="otheroptions " id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
                         <a class="otheroptions " id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
                         <a class="otheroptions " id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
-                        <a class="otheroptions " id="instrumenttab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
+                        <a class="otheroptions " id="performanceArchivetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
                         <a class="otheroptions " runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
                         <a class="otheroptions " id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
                         <span class="otheroptions ">
@@ -268,10 +286,13 @@
                         <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
                         <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.QA %></a>
-                        <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
-                        <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>
-                        <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" OnCommand="changecolor" CommandArgument="3" Text="3"></asp:Button>
-                        <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" OnCommand="changecolor" CommandArgument="4" Text="4"></asp:Button>
+                        <div>
+                            <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
+                            <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>
+                            <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="3" Text="3"></asp:Button>
+                            <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="4" Text="4"></asp:Button>
+                        </div>
+
                     </ul>
                 </div>
                 <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding-right: 0;">
