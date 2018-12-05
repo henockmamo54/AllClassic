@@ -6,19 +6,24 @@
         <ContentTemplate>
             <br />
             <div class="row " style="padding-right: 0px; margin-right: 0px;">
-                <div class="col-md-3 col-xs-3">
-                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="180px" NextPrevFormat="FullMonth" Width="220px" OnSelectionChanged="dateselectorcalendar_SelectionChanged">
+                <div class="col-md-3 col-xs-3" runat="server" onclick="test">
+                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="200px" NextPrevFormat="FullMonth" Width="220px" OnSelectionChanged="dateselectorcalendar_SelectionChanged">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
                         <SelectedDayStyle BackColor="#333399" ForeColor="White" />
                         <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="0px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                        <TodayDayStyle BackColor="#CCCCCC" />
+                        <TodayDayStyle BackColor="#ffffff" />
                     </asp:Calendar>
+                    
+                    <div style="text-align: center">
+                        <asp:Button runat="server" ID="btnResetSelection" Text="clear" CssClass=" " OnClick="btnClearSelection" />
+                    </div>
+
                 </div>
                 <div class="col-md-6 col-xs-6 " style="padding: 0;">
                     <h5 style="color: #28878a; font-weight: 700;"><%= Resources.DisplayText.Performanceschedule %>: <%= Resources.DisplayText.ThisWeek %></h5>
-                    <div class="shadowedPanel" style="overflow-y: scroll; max-height: 150px; height: 150px;">
+                    <div class="shadowedPanel" style="overflow-y: scroll; max-height: 200px; height: 200px;">
                         <table class="table table-striped">
                             <thead>
                                 <tr>

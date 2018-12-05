@@ -49,17 +49,23 @@ namespace AllClassicWeb.Views
 
         protected void dateselectorcalendar_SelectionChanged(object sender, EventArgs e)
         {
-            if (Session["PreviousSelectedDate"] != null)
-            {
-                DateTime previousdate = (DateTime)Session["PreviousSelectedDate"];
-                if (previousdate == dateselectorcalendar.SelectedDate) dateselectorcalendar.SelectedDates.Clear();
+            //if (Session["PreviousSelectedDate"] != null)
+            //{
+            //    DateTime previousdate = (DateTime)Session["PreviousSelectedDate"];
+            //    //Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
+            //    if (previousdate == dateselectorcalendar.SelectedDate) dateselectorcalendar.SelectedDates.Clear();
 
-            }
-            else Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
+            //}
+            //else Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
 
             filterPerformance();
+            
         }
 
+        public void btnClearSelection(object sender, EventArgs e) {
+            dateselectorcalendar.SelectedDates.Clear();
+            filterPerformance();
+        }
 
         public void filterPerformance()
         {
@@ -69,9 +75,13 @@ namespace AllClassicWeb.Views
             var null_date = DateTime.Parse("1/1/0001 12:00:00 AM", System.Globalization.CultureInfo.InvariantCulture);
 
             string filter = "";
-            if (pb != null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' and r.subcode = N'" + pb.Text + "' ";
-            else if (pb == null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' ";
-            else if (pb != null && pb.Text!= "전체" && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";
+            if (pb != null && selectedDate != null_date)
+            {
+                filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year; 
+                if(pb.Text != "전체") filter+= "' and r.subcode = N'" + pb.Text + "' ";
+            }
+            else if (pb == null && selectedDate != null_date) filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
+            else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";
 
 
             SqlDataSource1_Performancelist.SelectCommand = @"DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
