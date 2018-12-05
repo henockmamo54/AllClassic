@@ -15,9 +15,10 @@
                         <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="0px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
                         <TodayDayStyle BackColor="#ffffff" />
                     </asp:Calendar>
-                    
+
                     <div style="text-align: center">
-                        <asp:Button runat="server" ID="btnResetSelection" Text="clear" CssClass=" " OnClick="btnClearSelection" />
+                        <asp:Button runat="server" ID="btnResetSelection" Text="clear" Style="background-color: #28878A; color: white; border: 1px solid lightgray; border-radius: 1px; padding: 3px; margin: 1px; border-radius: 3px;"
+                            OnClick="btnClearSelection" />
                     </div>
 
                 </div>

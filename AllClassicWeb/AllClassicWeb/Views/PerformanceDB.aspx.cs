@@ -78,7 +78,7 @@ namespace AllClassicWeb.Views
             if (pb != null && selectedDate != null_date)
             {
                 filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year; 
-                if(pb.Text != "전체") filter+= "' and r.subcode = N'" + pb.Text + "' ";
+                if(pb.Text != "전체") filter+= " and r.subcode = N'" + pb.Text + "' ";
             }
             else if (pb == null && selectedDate != null_date) filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
             else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";
