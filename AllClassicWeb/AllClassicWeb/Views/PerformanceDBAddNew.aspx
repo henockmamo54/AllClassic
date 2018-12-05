@@ -287,9 +287,11 @@ where maincode='City'
                                 <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Venue %>*</div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
                                     <%--<asp:TextBox ID="txt_venu" runat="server" class="form-control"></asp:TextBox>--%>
-                                    <asp:DropDownList ID="DropDownList1_venu" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_venu" DataTextField="Name" DataValueField="VenueID" OnDataBound="DropDownList1_venu_DataBound"></asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource1_venu" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="select VenueID,Name from auxiliary.VenueTbl
-"></asp:SqlDataSource>
+                                    <asp:DropDownList ID="DropDownList1_venu"   Style="width: 75%; display: inline-block;"  runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_venu" DataTextField="Name" DataValueField="VenueID" OnDataBound="DropDownList1_venu_DataBound"></asp:DropDownList>
+                                    <asp:SqlDataSource ID="SqlDataSource1_venu" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="select VenueID,Name from auxiliary.VenueTbl"></asp:SqlDataSource>
+                                    <asp:LinkButton runat="server" CssClass="btn btn-success" Style="padding: 5px; padding-left: 10px; padding-right: 10px;"
+                                Text="+" PostBackUrl="~/Views/ConcertVenuDBAddNew.aspx"></asp:LinkButton>
+
                                 </div>
                                 <br />
                             </div>
