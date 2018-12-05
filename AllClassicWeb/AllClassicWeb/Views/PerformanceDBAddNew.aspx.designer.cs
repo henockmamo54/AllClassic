@@ -58,24 +58,6 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.TextBox txt_subjecttheme;
         
         /// <summary>
-        /// DropDownList1_grouptype control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_grouptype;
-        
-        /// <summary>
-        /// SqlDataSource1_performancegrouplist control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_performancegrouplist;
-        
-        /// <summary>
         /// DropDownList1_performancetype control.
         /// </summary>
         /// <remarks>
@@ -92,6 +74,24 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_performancetypelist;
+        
+        /// <summary>
+        /// DropDownList1_grouptype control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1_grouptype;
+        
+        /// <summary>
+        /// SqlDataSource1_performancegrouplist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_performancegrouplist;
         
         /// <summary>
         /// DropDownList1_conductors control.

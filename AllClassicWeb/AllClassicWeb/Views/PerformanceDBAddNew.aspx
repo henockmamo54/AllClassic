@@ -49,18 +49,6 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.PerformanceGroup %>*</div>
-                        <div class="col-md-8 col-xs-8">
-                            <%--<asp:TextBox ID="TextBox3" runat="server" class="form-control"></asp:TextBox>--%>
-                            <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control" DataSourceID="SqlDataSource1_performancegrouplist" DataTextField="Name" DataValueField="PerformanceGroupID" OnDataBound="DropDownList1_grouptype_DataBound"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1_performancegrouplist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT Name, PerformanceGroupID FROM Main.PerformanceGroupTbl"></asp:SqlDataSource>
-
-                        </div>
-                        <br />
-                    </div>
-
-                    <div class="col-md-12 col-xs-12 userregisterinfo">
-                        <br />
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.PerformanceType %>*</div>
                         <div class="col-md-8 col-xs-8">
                             <%-- <asp:TextBox ID="TextBox4" runat="server" class="form-control"></asp:TextBox>--%>
@@ -72,13 +60,29 @@ where maincode='PerformanceType'
                         </div>
                         <br />
                     </div>
+                    
+                    <div class="col-md-12 col-xs-12 userregisterinfo">
+                        <br />
+                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.PerformanceGroup %>*</div>
+                        <div class="col-md-8 col-xs-8">
+                            <%--<asp:TextBox ID="TextBox3" runat="server" class="form-control"></asp:TextBox>--%>
+                            <asp:DropDownList ID="DropDownList1_grouptype" runat="server" Style="width: 87%; display: inline-block;" class="form-control" DataSourceID="SqlDataSource1_performancegrouplist" DataTextField="Name" DataValueField="PerformanceGroupID" OnDataBound="DropDownList1_grouptype_DataBound"></asp:DropDownList>
+                            <asp:SqlDataSource ID="SqlDataSource1_performancegrouplist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT Name, PerformanceGroupID FROM Main.PerformanceGroupTbl"></asp:SqlDataSource>
+                            <asp:LinkButton runat="server" CssClass="btn btn-success" Style="padding: 5px; padding-left: 10px; padding-right: 10px;"
+                                Text="+" PostBackUrl="~/Views/PerformanceGroupAddNew.aspx"></asp:LinkButton>
+                        </div>
+                        <br />
+                    </div>
 
                     <div class="col-md-12 col-xs-12 userregisterinfo">
                         <br />
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Conductor %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:DropDownList ID="DropDownList1_conductors" runat="server" class="form-control" DataSourceID="SqlDataSource1_conductors" DataTextField="Name" DataValueField="MusicianID" OnDataBound="DropDownList1_conductors_DataBound"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_conductors"  Style="width: 87%; display: inline-block;" runat="server" class="form-control" DataSourceID="SqlDataSource1_conductors" DataTextField="Name" DataValueField="MusicianID" OnDataBound="DropDownList1_conductors_DataBound"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_conductors" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT MusicianID= -1, Name='None' UNION SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Conductor')"></asp:SqlDataSource>
+                            
+                            <asp:LinkButton runat="server" CssClass="btn btn-success" Style="padding: 5px; padding-left: 10px; padding-right: 10px;"
+                                Text="+" PostBackUrl="~/Views/MusicianDBAddNew.aspx"></asp:LinkButton>
                         </div>
                         <br />
                     </div>
@@ -87,9 +91,11 @@ where maincode='PerformanceType'
                         <br />
                         <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.MainTitleComposer %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:DropDownList ID="DropDownList1_composer" runat="server" class="form-control" DataSourceID="SqlDataSource1_composer" DataTextField="Name" DataValueField="MusicianID" OnDataBound="DropDownList1_composer_DataBound"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_composer" runat="server"   Style="width: 87%; display: inline-block;" class="form-control" DataSourceID="SqlDataSource1_composer" DataTextField="Name" DataValueField="MusicianID" OnDataBound="DropDownList1_composer_DataBound"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_composer" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT MusicianID= -1, Name='None' UNION SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Composer')"></asp:SqlDataSource>
-
+                            
+                            <asp:LinkButton runat="server" CssClass="btn btn-success" Style="padding: 5px; padding-left: 10px; padding-right: 10px;"
+                                Text="+" PostBackUrl="~/Views/MusicianDBAddNew.aspx"></asp:LinkButton>
                         </div>
                         <br />
                     </div>
@@ -199,13 +205,13 @@ where maincode='PerformanceType'
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
                                     <%--<asp:TextBox ID="TextBox11" runat="server" class="form-control"></asp:TextBox>--%>
                                     <div class='input-group date' id='datetimepicker2_start' style="display: flex;">
-                                        <input type='text' class="form-control" runat="server"  ValidationGroup="a"  id="startdate" style="display: inline-block; border-right-width: 0px;" />
+                                        <input type='text' class="form-control" runat="server" validationgroup="a" id="startdate" style="display: inline-block; border-right-width: 0px;" />
                                         <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
                                     </div>
                                     <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="startdate" ErrorMessage="<%$Resources:DisplayText,PleaseEnterStartDate %>" />
-                                        
+
                                 </div>
                                 <br />
                             </div>
@@ -217,14 +223,14 @@ where maincode='PerformanceType'
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
                                     <%--<asp:TextBox ID="TextBox12" runat="server" class="form-control"></asp:TextBox>--%>
                                     <div class='input-group date' id='datetimepicker3_end' style="display: flex;">
-                                        <input type='text' class="form-control"  ValidationGroup="a"  runat="server" id="enddate" style="display: inline-block; border-right-width: 0px;" />
+                                        <input type='text' class="form-control" validationgroup="a" runat="server" id="enddate" style="display: inline-block; border-right-width: 0px;" />
                                         <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
                                     </div>
-                                    
+
                                     <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator3" ControlToValidate="enddate" ErrorMessage="<%$Resources:DisplayText,PleaseEnterEndDate %>" />
-                                        
+
                                 </div>
                                 <br />
                             </div>
@@ -237,8 +243,8 @@ where maincode='PerformanceType'
                                 <br />
                                 <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Time %>*</div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
-                                    <asp:TextBox ID="txt_time"  ValidationGroup="a"  runat="server" class="form-control"></asp:TextBox>
-                                     <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_time" ErrorMessage="<%$Resources:DisplayText,PleaseEnterTime %>" />
+                                    <asp:TextBox ID="txt_time" ValidationGroup="a" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_time" ErrorMessage="<%$Resources:DisplayText,PleaseEnterTime %>" />
 
                                 </div>
                                 <br />
@@ -329,8 +335,8 @@ where maincode='City'
                                 <br />
                                 <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.TicketBox %>*</div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
-                                    <asp:TextBox ID="txt_ticketbox"  ValidationGroup="a"  runat="server" class="form-control"></asp:TextBox>
-                                     <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_ticketbox" ErrorMessage="<%$Resources:DisplayText,PleaseEnterTicketBoxinfo %>" />
+                                    <asp:TextBox ID="txt_ticketbox" ValidationGroup="a" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_ticketbox" ErrorMessage="<%$Resources:DisplayText,PleaseEnterTicketBoxinfo %>" />
 
                                 </div>
                                 <br />

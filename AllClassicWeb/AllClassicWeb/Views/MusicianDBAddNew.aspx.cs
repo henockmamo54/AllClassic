@@ -314,7 +314,7 @@ namespace AllClassicWeb.Views
         protected void DropDownList1_Major_DataBound(object sender, EventArgs e)
         {
 
-            if (Boolean.Parse(Session["updateMusician"].ToString()) == true)
+            if ( Session["updateMusician"]!=null && Boolean.Parse(Session["updateMusician"].ToString()) == true)
             {
                 int id = int.Parse(Session["MusicianID"].ToString());
                 MusicianTbl performance = MusicianLogic.getMusicianByID(id);
