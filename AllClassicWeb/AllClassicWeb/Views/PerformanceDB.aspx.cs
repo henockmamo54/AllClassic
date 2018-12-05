@@ -20,6 +20,8 @@ namespace AllClassicWeb.Views
 
             if (!IsPostBack)
             {
+                Session["previousSelectedLocation"] = null;
+
                 try
                 {
                     repeater_thisweekPerformanceInfo.DataSource = entity.PerformanceTbls.Where(x => SqlFunctions.DatePart("ISO_WEEK", x.StartDate) == SqlFunctions.DatePart("ISO_WEEK", DateTime.Today)).ToList();
@@ -69,7 +71,7 @@ namespace AllClassicWeb.Views
             string filter = "";
             if (pb != null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' and r.subcode = N'" + pb.Text + "' ";
             else if (pb == null && selectedDate != null_date) filter = @"where startdate='" + selectedDate.ToShortDateString() + "' ";
-            else if (pb != null && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";
+            else if (pb != null && pb.Text!= "전체" && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";
 
 
             SqlDataSource1_Performancelist.SelectCommand = @"DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
@@ -102,6 +104,7 @@ namespace AllClassicWeb.Views
             if ((item.ItemType == ListItemType.Item) ||
                 (item.ItemType == ListItemType.AlternatingItem))
             {
+
                 if (Session["previousSelectedLocation"] != null)
                 {
                     Button pb = (Button)Session["previousSelectedLocation"];
@@ -110,6 +113,19 @@ namespace AllClassicWeb.Views
                     {
                         detail.BackColor = System.Drawing.ColorTranslator.FromHtml("#28878a");// System.Drawing.Color.LightSkyBlue;
                         detail.ForeColor = System.Drawing.Color.White;
+                    }
+                }
+                else
+                {
+                    // to select the first element on first load
+                    var x = (Button)item.FindControl("location");
+                    if (x.Text == "전체")
+                    {
+                        // select it
+                        Session["previousSelectedLocation"] = x;
+                        x.BackColor = System.Drawing.ColorTranslator.FromHtml("#28878a");// System.Drawing.Color.LightSkyBlue;
+                        x.ForeColor = System.Drawing.Color.White;
+
                     }
                 }
             }

@@ -54,9 +54,15 @@
                     </asp:Repeater>
 
                     <asp:SqlDataSource ID="SqlDataSource1_region" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-select lookupid, subcode
+select* from(
+select lookupid, subcode, Row=0 from main.lookuptbl where subcode like N'%전체%'
+Union
+select lookupid, subcode,
+ ROW_NUMBER() over(order by subcode asc) As Row 
 from main.lookuptbl
-where maincode='Region'"></asp:SqlDataSource>
+where maincode='Region'
+and subcode not like N'%전체%'
+)x  order by row"></asp:SqlDataSource>
 
                 </div>
             </div>
