@@ -49,7 +49,7 @@ join Main.usertbl u on c.Userid=u.userid
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
 
                     <table class="table table-striped">
                         <thead>

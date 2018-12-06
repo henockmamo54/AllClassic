@@ -142,6 +142,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                     - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>
                                 <br />
                                 <span runat="server"><%# Eval("ConcourOutline") %> </span>
+                                 <asp:LinkButton runat="server" ID="edit" OnCommand="editConcourClicked" CommandArgument='<%# Eval("ConcourID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>                               
                                 <hr style="margin-top: 5px; margin-bottom: 5px;" />
                             </div>
 
@@ -158,9 +159,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>

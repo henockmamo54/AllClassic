@@ -18,11 +18,11 @@
                     </div>
                     <div class="col-md-3 col-xs-3 ">
                         <h5 style="display: inline-block;"><%= Resources.DisplayText.Expertise %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                        <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" CssClass="form-control" Style="width: 69%; display: inline-block;"></asp:TextBox>
                     </div>
                     <div class="col-md-3 col-xs-3 " style="padding-right: 0;">
                         <h5 style="display: inline-block;"><%= Resources.DisplayText.City %>  </h5>
-                        <asp:DropDownList Style="display: inline-block; width: 86%;" ID="DropDownList1_cityfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                        <asp:DropDownList Style="display: inline-block; width: 85%;" ID="DropDownList1_cityfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT   LookUpID=-1, MainCode='ALL', SubCode='ALL'
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -111,7 +111,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <span><strong><%= Resources.DisplayText.Expertise %>:</strong><%# Eval("Expertise") %></span>
                                         </div>
                                         <div>
-                                            <span><strong><%= Resources.DisplayText.City %>:</strong><%# Eval("city") %></span>
+                                            <span><strong><%= Resources.DisplayText.City %>:</strong><%# Eval("cityname") %></span>
                                         </div>
                                         <div>
                                             <span><strong><%= Resources.DisplayText.OwnerName %>:</strong><%# Eval("OwnerName") %></span>
@@ -138,6 +138,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <span><strong><%= Resources.DisplayText.HomePage %>:</strong>
                                                 <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></span>
                                         </div>
+                                          <asp:LinkButton runat="server" ID="edit" OnCommand="editMusicShopClicked" CommandArgument='<%# Eval("MusicShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>    
                                     </div>
 
 
@@ -155,9 +156,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button"  ButtonCssClass="btn" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -169,8 +170,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     </GroupSeparatorTemplate>
                 </asp:ListView>
                 <asp:SqlDataSource ID="SqlDataSource1_Collegelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-select r.*, r.EmailID from Auxiliary.MusicShopTbl r
+select r.*, r.EmailID,c.SubCode cityname  from Auxiliary.MusicShopTbl r
             join Main.usertbl u on r.Userid=u.userid
+                    left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=r.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 

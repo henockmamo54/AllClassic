@@ -57,7 +57,7 @@ left join (select * from Main.LookUpTbl where MainCode='city') c on pg.City=c.Lo
 left join (select * from Main.LookUpTbl where MainCode='GroupType') gt on pg.GroupType=gt.LookUpID
 join Main.UserTbl u on pg.UserID=u.UserID
 order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -105,13 +105,45 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                     </GroupTemplate>
                     <ItemTemplate>
                         <div class="col-md-3 col-xs-3" style="padding-right: 5px; padding-left: 5px;">
-                            <div class="orchContainer" style="background-color: white;">
+                            <div class="orchContainer" style="background-color: #f7f7f7b0;">
                                 <h4 style="color: #00796B; font-weight: 800;"><%#Eval("Name").ToString().Length>10?Eval("Name").ToString().Substring(0,10):Eval("Name").ToString() %></h4>
                                 <h5 style="color: #00796B;">(<%#Eval("Alias") %>)</h5>
-                                <hr />
-                                <div style="font-size: 1.2rem; color: #4c4949; margin-left: 10px;">
+                                
+                                <div style="font-size: 1.2rem; color: black; margin-left: 10px;">
+                                    <table class="table table-default">
+                                        <tbody class="rowwithbottomborder">
+                                            <tr>
+                                                <td><%# Resources.DisplayText.GroupType %>:</td>
+                                                <td><%#Eval("grouptpename") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td><%# Resources.DisplayText.SinceYear %>:</td>
+                                                <td><%#Eval("SinceYear") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td><%# Resources.DisplayText.Conductor %>:</td>
+                                                <td><%#Eval("Conductor").ToString().Length>12?Eval("Conductor").ToString().Substring(0,12):Eval("Conductor").ToString() %></td>
+                                            </tr>
+                                            <tr>
+                                                <td><%# Resources.DisplayText.Address %>:</td>
+                                                <td><%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></td>
+                                            </tr>
+                                            <tr>
+                                                <td><%# Resources.DisplayText.ZipCode %>:</td>
+                                                <td><%#Eval("ZipCode") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td><%# Resources.DisplayText.TelNo %>:</td>
+                                                <td><%#Eval("TelNO") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td><%# Resources.DisplayText.FaxNo %>:</td>
+                                                <td><%#Eval("FaxNo") %></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
-                                    <span><%# Resources.DisplayText.GroupType %>: <%#Eval("grouptpename") %></span>
+                                    <%--<span><%# Resources.DisplayText.GroupType %>: <%#Eval("grouptpename") %></span>
                                     <br />
                                     <span><%# Resources.DisplayText.SinceYear %>: <%#Eval("SinceYear") %></span>
                                     <br />
@@ -119,7 +151,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                                     <span><%# Resources.DisplayText.Address %>: <%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></span><br />
                                     <span><%# Resources.DisplayText.ZipCode %>: <%#Eval("ZipCode") %></span><br />
                                     <span><%# Resources.DisplayText.TelNo %>: <%#Eval("TelNO") %></span><br />
-                                    <span><%# Resources.DisplayText.FaxNo %>: <%#Eval("FaxNo") %></span><br />
+                                    <span><%# Resources.DisplayText.FaxNo %>: <%#Eval("FaxNo") %></span><br />--%>
                                     <span><a href='PerformanceGroupDetail.aspx?PGID=<%#Eval("PerformanceGroupID") %>'><%# Resources.DisplayText.HomePage %></a></span>
                                 </div>
                             </div>
@@ -167,6 +199,10 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
             border-radius: 5px;
             padding: 5px;
             border: 2px solid #dadce4;
+        }
+
+        .rowwithbottomborder > tr {
+            border-bottom: 1px solid #eaeaea;
         }
     </style>
 </asp:Content>

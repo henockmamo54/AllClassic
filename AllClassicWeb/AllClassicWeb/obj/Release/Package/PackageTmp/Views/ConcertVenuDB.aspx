@@ -133,6 +133,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <span><strong><%= Resources.DisplayText.HomePage %>:</strong>
                                                 <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></span>
                                         </div>
+
+                                         <asp:LinkButton runat="server" ID="edit" OnCommand="editvenuClicked" CommandArgument='<%# Eval("VenueID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>    
+
                                     </div>
 
 
@@ -150,9 +153,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>

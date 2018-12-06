@@ -16,11 +16,11 @@
 
             <div class="row">
                 <div class="row col-md-12 col-xs-12  col-xs-12">
-                    <div class="col-xs-4">
-                        <div class="col-xs-6" style="vertical-align: sub; padding: 0;">
-                            <span style="display: inline-block;"><%= Resources.DisplayText.PostingDate %> </span>
+                    <div class="col-xs-4"> 
+                        <div class="col-xs-4">                            
+                            <h5 style="display: inline-block;display: inline-block;"><%= Resources.DisplayText.PostingDate %> </h5>
                         </div>
-                        <div class="col-xs-6" style="padding: 0;">
+                        <div class="col-xs-8" style="padding: 0;">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
                                 <input type='text' class="form-control" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
@@ -48,7 +48,7 @@
 select top 20 a.*, u.FullName userName, u.emailid from Auxiliary.ArticleTbl a
 join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 220px; height: 220px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; margin-bottom:3px;">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -95,10 +95,11 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'>
 
                                     <div class="caption" style="padding-bottom: 3px;">
-                                        <h4 style="padding: 0px; margin: 0px;    color: dimgray;"><%# Eval("ArticleTitle")%></h4>
-                                        <asp:LinkButton runat="server" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
+                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800;   color: dimgray;"><%# Eval("ArticleTitle")%></h4>
+                                        <asp:LinkButton runat="server" style="font-size: 14px;" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
                                         <br />
-                                        <span runat="server" style="color:#a7a7a7;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
+                                        <span runat="server" style="color:rgba(17, 17, 17, 0.6);font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
+                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <hr style="margin-top: 5px; margin-bottom: 5px;" />
                                     </div>
 
@@ -115,9 +116,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -150,15 +151,24 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
         document.getElementById("articletab").style.borderRight = "none";
     </script>
     <script type="text/javascript">
+
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
                 format: 'MM/DD/YYYY'
             });
         }
+
         $(function () {
             $('#datetimepicker2').datetimepicker({
                 format: 'MM/DD/YYYY'
             });
         });
+
+        
+        function openInNewTab(url) { 
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+
     </script>
 </asp:Content>

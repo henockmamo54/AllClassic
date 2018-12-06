@@ -46,7 +46,7 @@ or maincode='Composer'
 or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 230px; height: 230px; overflow-y: scroll;">
 
                     <table class="table table-striped">
                         <thead>
@@ -78,7 +78,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
             <div class="row">
-                <hr  />
+                <br  />
                 <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" Style="width: 100%;">
 
                     <GroupTemplate>
@@ -119,9 +119,9 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>

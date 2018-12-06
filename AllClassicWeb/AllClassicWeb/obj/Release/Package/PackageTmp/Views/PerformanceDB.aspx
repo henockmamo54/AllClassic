@@ -6,20 +6,26 @@
         <ContentTemplate>
             <br />
             <div class="row " style="padding-right: 0px; margin-right: 0px;">
-                <div class="col-md-3 col-xs-3">
-                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="180px" NextPrevFormat="FullMonth" Width="220px" OnSelectionChanged="dateselectorcalendar_SelectionChanged" >
+                <div class="col-md-3 col-xs-3" runat="server" onclick="test">
+                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="200px" NextPrevFormat="FullMonth" Width="220px" OnSelectionChanged="dateselectorcalendar_SelectionChanged">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
                         <SelectedDayStyle BackColor="#333399" ForeColor="White" />
                         <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="0px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                        <TodayDayStyle BackColor="#CCCCCC" />
+                        <TodayDayStyle BackColor="#ffffff" />
                     </asp:Calendar>
+
+                    <div style="text-align: center">
+                        <asp:Button runat="server" ID="btnResetSelection" Text="clear" Style="background-color: #28878A; color: white; border: 1px solid lightgray; border-radius: 1px; padding: 3px; margin: 1px; border-radius: 3px;"
+                            OnClick="btnClearSelection" />
+                    </div>
+
                 </div>
                 <div class="col-md-6 col-xs-6 " style="padding: 0;">
                     <h5 style="color: #28878a; font-weight: 700;"><%= Resources.DisplayText.Performanceschedule %>: <%= Resources.DisplayText.ThisWeek %></h5>
-                    <div class="shadowedPanel" style="overflow-y: scroll; max-height: 150px; height: 150px;">
-                        <table class="table">
+                    <div class="shadowedPanel" style="overflow-y: scroll; max-height: 200px; height: 200px;">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col"><%= Resources.DisplayText.StartDate %></th>
@@ -54,9 +60,15 @@
                     </asp:Repeater>
 
                     <asp:SqlDataSource ID="SqlDataSource1_region" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-select lookupid, subcode
+select* from(
+select lookupid, subcode, Row=0 from main.lookuptbl where subcode like N'%전체%'
+Union
+select lookupid, subcode,
+ ROW_NUMBER() over(order by subcode asc) As Row 
 from main.lookuptbl
-where maincode='Region'"></asp:SqlDataSource>
+where maincode='Region'
+and subcode not like N'%전체%'
+)x  order by row"></asp:SqlDataSource>
 
                 </div>
             </div>
@@ -70,7 +82,18 @@ where maincode='Region'"></asp:SqlDataSource>
             </div>
             <div class="row">
                 <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
-                    
+
+                    <EmptyDataTemplate>
+                        <div class=" col-xs-12">
+                            <h3>No records available.</h3>
+                        </div>
+                        <table class="emptyTable" cellpadding="5" cellspacing="5">
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </EmptyDataTemplate>
+
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
                             <div id="itemPlaceholder" runat="server">
@@ -105,9 +128,9 @@ where maincode='Region'"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn "  ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -119,16 +142,23 @@ where maincode='Region'"></asp:SqlDataSource>
                     </GroupSeparatorTemplate>
                 </asp:ListView>
                 <asp:SqlDataSource ID="SqlDataSource1_Performancelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-select p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
-from Main.PerformanceTbl p
-left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='PerformanceType') pt on pt.LookUpID=p.PerformanceType
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Conductor') cd on cd.LookUpID=p.Conductor
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Composer') cm on cm.LookUpID=p.MainTitleComposer
-left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='Region') r on r.LookUpID=p.Region
-left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=p.City
-left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
+DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
+
+                                                            INSERT INTO @fooTable 
+                                                                select lookupid, Maincode, subcode from main.lookuptbl where maincode 
+                                                            in ('PerformanceType','Conductor','Composer','Region','City') 
+
+
+                                                            SELECT  p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
+                                                            from Main.PerformanceTbl p
+                                                            left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
+                                                            left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
+                                                            left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
+                                                            left join @fooTable pt on pt.LookUpID=p.PerformanceType
+                                                            left join @fooTable cd on cd.LookUpID=p.Conductor
+                                                            left join @fooTable cm on cm.LookUpID=p.MainTitleComposer
+                                                            left join @fooTable r on r.LookUpID=p.Region
+                                                            left join @fooTable c on c.LookUpID=p.City
 order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
             <div class="row">
@@ -175,12 +205,15 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
         }
 
         .shadowedbox_hover:hover {
-            background-color: #d3d3d35c;
-            box-shadow: 3px 3px 3px #d0d0d0 !important;
+            background-color: #d3d3d36b;
+            /*box-shadow: 3px 3px 3px #d0d0d0 !important;*/
+            box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
+            color: white !important;
         }
 
         .locationcontainer:hover {
-            background-color: lightblue;
+            background-color: #28878a;
+            color: white !important;
         }
     </style>
 

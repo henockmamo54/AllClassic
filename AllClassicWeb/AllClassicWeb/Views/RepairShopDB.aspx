@@ -47,7 +47,7 @@ join Main.usertbl u on c.Userid=u.userid
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
 
                     <table class="table table-striped">
                         <thead>
@@ -90,9 +90,68 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-md-4 col-xs-4" style="margin-bottom: 1em;  padding-left:0px;">
-                            <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">
-                                <div runat="server" id="tumbinallink" style="text-decoration: none;">
+                        <div class="col-md-4 col-xs-4" style="margin-bottom: 1em; padding-left: 0px;">
+                            <%--<div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">--%>
+                            <div>
+                                <div class="panel panel-success shadowedbox_hover">
+                                    <div class="panel-heading">
+                                        <h4><%# (Eval("Name")) .ToString().Length>15?
+                                        (Eval("Name")) .ToString().Substring(0,15)+ " ....":
+                                        (Eval("Name")) .ToString()%></h4>
+                                        <span>(<%# Eval("Alias") %>)</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table>
+                                            <tbody class="rowwithbottomborder">
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.Expertise %>:</td>
+                                                    <td><%#Eval("Expertise") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.City %>:</td>
+                                                    <td><%#Eval("cityname") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.OwnerName %>:</td>
+                                                    <td><%#Eval("OwnerName") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.SinceYear %>:</td>
+                                                    <td><%#Eval("SinceYear") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.Email %>:</td>
+                                                    <td><%#Eval("EmailID") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.Address %>:</td>
+                                                    <td><%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.ZipCode %>:</td>
+                                                    <td><%#Eval("ZipCode") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.TelNo %>:</td>
+                                                    <td><%#Eval("TelNO") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.FaxNo %>:</td>
+                                                    <td><%#Eval("FaxNo") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><%# Resources.DisplayText.HomePage %>:</td>
+                                                    <td>
+                                                        <asp:LinkButton runat="server" target="_blank" OnCommand="homePageClicked" CommandArgument='<%# Eval("HomePage") %>' Text='<%# Eval("HomePage") %>' ></asp:LinkButton></td> 
+                                                    <%--href='http://<%# Eval("HomePage") %>'--%>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'> <%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                    </div>
+                                </div>
+
+                                <%--                                <div runat="server" id="tumbinallink" style="text-decoration: none;">
 
                                     <div class="caption" style="padding-bottom: 3px;">
                                         <h4><%# (Eval("Name")) .ToString().Length>15?
@@ -133,12 +192,12 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <span><strong><%= Resources.DisplayText.HomePage %>:</strong>
                                                 <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></span>
                                         </div>
-                                         <asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>                               
+                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                     </div>
 
 
 
-                                </div>
+                                </div>--%>
                             </div>
                         </div>
 
@@ -179,5 +238,30 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
         </ContentTemplate>
     </asp:UpdatePanel>
+
+    <style>
+        .rowwithbottomborder > tr > td {
+            /*border-bottom: 1px solid #eaeaea;*/
+            padding-bottom: 10px;
+            padding-right: 5px;
+            color: black !important;
+        }
+
+        .shadowedbox_hover {
+            background-color: #d3d3d31f;
+            /* box-shadow: 3px 3px 3px #d0d0d0 !important; */
+            box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
+        }
+
+
+    </style>
+    <script type="text/javascript">
+
+        function openInNewTab(url) { 
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+
+    </script>
 
 </asp:Content>

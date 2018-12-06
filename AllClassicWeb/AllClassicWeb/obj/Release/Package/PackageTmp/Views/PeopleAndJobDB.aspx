@@ -16,33 +16,28 @@
             <div class="row">
                 <div class="row  col-xs-12" style="padding-right: 0px;">
 
+                    <div class="col-xs-3" style="padding-left: 0;">
+                        <h5 style="display: inline-block;"><%=Resources.DisplayText.PeopleOrJob %></h5>
+                        <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control" Style="display: inline-block; width: 60%;">
+                            <asp:ListItem Value="-1" Text="ALL"></asp:ListItem>
+                            <asp:ListItem Value="-2" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
+                            <asp:ListItem Value="-3" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
+                        </asp:DropDownList>
 
-                    <div class="col-xs-3" style="padding: 0;">
-                        <div class="col-xs-4" style="margin-bottom: 10px;"><%=Resources.DisplayText.PeopleOrJob %></div>
-                        <div class="col-xs-6" style="padding: 0;">
-                            <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control">
-                                <asp:ListItem Value="-1" Text="ALL"></asp:ListItem>
-                                <asp:ListItem Value="-2" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
-                                <asp:ListItem Value="-3" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
-                            </asp:DropDownList>
-
-                        </div>
                     </div>
 
 
-                    <div class="col-xs-3" style="padding: 0;">
-                        <div class="col-xs-4" style="margin-top: 10px; margin-bottom: 10px;"><%=Resources.DisplayText.Title %></div>
-                        <div class="col-xs-6" style="padding: 0;">
-                            <asp:TextBox runat="server" ID="txt_title" CssClass="form-control" />
+                    <div class="col-xs-3" >
+                        <h5 style="display: inline-block;"><%=Resources.DisplayText.Title %></h5>
+                        <asp:TextBox runat="server" ID="txt_title" CssClass="form-control" Style="display: inline-block; width: 60%;" />
 
-                        </div>
                     </div>
 
-                    <div class="col-xs-3">
-                        <div class=" col-xs-4" style="margin-top: 10px; margin-bottom: 10px; padding: 0;">
+                    <div class="col-xs-3" style="padding: 0;">
+                        <div class=" col-xs-6" style="margin-top: 10px; margin-bottom: 10px; padding: 0;">
                             <span style="display: inline-block;"><%= Resources.DisplayText.ValidDate %> </span>
                         </div>
-                        <div class=" col-xs-8" style="padding: 0;">
+                        <div class=" col-xs-6" style="padding: 0;">
                             <div class='input-group date' id='datetimepicker3' style="display: flex;">
                                 <input type='text' class="form-control" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker3" style="display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
@@ -54,7 +49,7 @@
 
                     <div class="col-xs-3" style="padding: 0;">
                         <div class="col-xs-4" style="margin-top: 10px; margin-bottom: 10px;"><%=Resources.DisplayText.City %></div>
-                        <div class="col-xs-8" style="padding: 0; ">
+                        <div class="col-xs-8" style="padding: 0;">
                             <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
                                 SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
@@ -147,6 +142,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                     <div><strong><%=Resources.DisplayText.TelNo %>:</strong> <%# (Eval("TelNo"))%></div>
                                     <div><strong><%=Resources.DisplayText.Email %>:</strong> <%# (Eval("EmailID"))%></div>
                                     <div><strong><%=Resources.DisplayText.Description %>:</strong> <%# (Eval("Description"))%></div>
+
+                                    <asp:LinkButton runat="server" ID="edit" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+
                                 </div>
 
                             </div>
@@ -161,9 +159,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>

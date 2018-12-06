@@ -27,6 +27,18 @@ namespace AllClassicWeb.Views
             Response.Redirect("RepairShopDBAddNew.aspx");
         }
 
+
+        public void homePageClicked(object sender, CommandEventArgs e)
+        {
+            string strURL = e.CommandArgument.ToString();
+            var b = new UriBuilder(strURL);
+            //Response.Redirect(b.ToString());
+
+            var s = "openInNewTab('" + b.ToString() + "');";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Popereaaa", s, true);
+        }
+
+
         public void selectedFilterChanged(object sender, EventArgs ee) {
 
             var filterQuery = "";

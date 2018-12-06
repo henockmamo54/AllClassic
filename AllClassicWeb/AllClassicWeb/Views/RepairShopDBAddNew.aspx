@@ -100,7 +100,7 @@ where maincode='City'
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4"><%=Resources.DisplayText.HomePage %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_homepage" MaxLength="4" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_homepage"   CssClass="form-control" />
             </div>
         </div>
 

@@ -568,7 +568,7 @@
     <value>상점 이름</value>
   </data>
   <data name="Expertise" xml:space="preserve">
-    <value>전문적 지식</value>
+    <value>전문 영역</value>
   </data>
   <data name="OwnerName" xml:space="preserve">
     <value>소유자 이름</value>
@@ -705,5 +705,17 @@
   </data>
   <data name="PleasefillValidDatefield" xml:space="preserve">
     <value>유효한 날짜 필드를 입력하십시오.</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>처음</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>마지막</value>
+  </data>
+  <data name="Endorse" xml:space="preserve">
+    <value>승인하다</value>
   </data>
 </root>

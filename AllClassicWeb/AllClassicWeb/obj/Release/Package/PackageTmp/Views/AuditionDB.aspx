@@ -112,7 +112,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                 </div>
             </div>
-            
+
             <br />
             <br />
 
@@ -131,14 +131,21 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div>
                                 <asp:Label runat="server" ID="tumbinallink" Style="text-decoration: none;">
 
-                            <div class="caption" style="padding-bottom: 3px;">
-                                <h4 style="padding: 0px; margin: 0px;  color: dimgray;">[<%# Eval("Organizer")%>] <%# Eval("Title")%></h4> <span  style="color:#a7a7a7;"> (<%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %>)</span>
-                                <span runat="server" ><%=Resources.DisplayText.FromDate %>:  <%# DataBinder.Eval(Container.DataItem,"FromDate","{0:d/M/yyyy}") %>
+                                    <div class="caption" style="padding-bottom: 3px;">
+                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: dimgray;"><%# Eval("Title")%></h4>
+
+                                        <span runat="server" style="color: #0684f1; font-size: 14px;"><%=Resources.DisplayText.FromDate %>:  <%# DataBinder.Eval(Container.DataItem,"FromDate","{0:d/M/yyyy}") %>
                                     - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>
-                                <br />
-                                <span runat="server" ><%# Eval("AuditionOutline") %> </span>
-                                <hr style="margin-top: 5px; margin-bottom: 5px;" />
-                            </div>
+                                        <br />
+                                        <span style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
+                                        <br />
+                                        <span runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("AuditionOutline") %> </span>
+                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editAuditionClicked" CommandArgument='<%# Eval("AuditionID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                        <br />
+                                        <span style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
+
+                                        <hr style="margin-top: 5px; margin-bottom: 5px;" />
+                                    </div>
 
                                 </asp:Label>
                             </div>
@@ -153,9 +160,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>

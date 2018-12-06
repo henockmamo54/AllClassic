@@ -688,4 +688,16 @@
   <data name="PleasefillValidDatefield" xml:space="preserve">
     <value>Please fill Valid Date field</value>
   </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="Endorse" xml:space="preserve">
+    <value>Endorse</value>
+  </data>
 </root>

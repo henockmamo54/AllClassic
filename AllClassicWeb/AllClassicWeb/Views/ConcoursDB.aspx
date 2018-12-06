@@ -85,7 +85,7 @@
 select top 20 a.*, u.FullName userName, U.EmailID  from Auxiliary.ConcourTbl a
                     join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
 
                     <table class="table table-striped">
                         <thead>
@@ -118,8 +118,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                 </div>
             </div>
 
-           <br />
-           <br />
+            <br />
+            <br />
 
             <div class="row">
 
@@ -136,15 +136,31 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div>
                                 <asp:Label runat="server" ID="tumbinallink" Style="text-decoration: none;">
 
-                            <div class="caption" style="padding-bottom: 3px;">
-                                <h4 style="padding: 0px; margin: 0px; color: dimgray;">[<%# Eval("Organizer")%>] <%# Eval("Title")%></h4> <span  style="color:#a7a7a7;"> (<%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %>)</span>
+                                    <div class="caption" style="padding-bottom: 3px;">
+                                        <%--<h4 style="padding: 0px; margin: 0px; color: dimgray;">[<%# Eval("Organizer")%>] <%# Eval("Title")%></h4> <span  style="color:#a7a7a7;"> (<%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %>)</span>
                                 <span runat="server"><%=Resources.DisplayText.FromDate %>:  <%# DataBinder.Eval(Container.DataItem,"FromDate","{0:d/M/yyyy}") %>
                                     - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>
                                 <br />
                                 <span runat="server"><%# Eval("ConcourOutline") %> </span>
                                  <asp:LinkButton runat="server" ID="edit" OnCommand="editConcourClicked" CommandArgument='<%# Eval("ConcourID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>                               
-                                <hr style="margin-top: 5px; margin-bottom: 5px;" />
-                            </div>
+                                <hr style="margin-top: 5px; margin-bottom: 5px;" />--%>
+
+                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: dimgray;"><%# Eval("Title")%></h4>
+
+                                        <span runat="server" style="color: #0684f1; font-size: 14px;"><%=Resources.DisplayText.FromDate %>:  <%# DataBinder.Eval(Container.DataItem,"FromDate","{0:d/M/yyyy}") %>
+                                    - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>
+                                        <br />
+                                        <span style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
+                                        <br />
+                                        <span runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("ConcourOutline") %> </span>
+                                        <asp:LinkButton runat="server" ID="LinkButton1" OnCommand="editConcourClicked" CommandArgument='<%# Eval("ConcourID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                        <br />
+                                        <span style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
+
+                                        <hr style="margin-top: 5px; margin-bottom: 5px;" />
+
+
+                                    </div>
 
                                 </asp:Label>
                             </div>
