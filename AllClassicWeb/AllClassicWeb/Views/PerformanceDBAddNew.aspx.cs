@@ -241,8 +241,8 @@ namespace AllClassicWeb.Views
             {
                 showMsg("Please check your inputs");
             }
-            if (issuccess)
-                Response.Redirect("PerformanceDetail?PID=" + pt.PerformanceID);
+            //if (issuccess)
+            //    Response.Redirect("PerformanceDetail?PID=" + pt.PerformanceID);
 
         }
         public void btn_Performancecancel_Click(object sender, EventArgs e)

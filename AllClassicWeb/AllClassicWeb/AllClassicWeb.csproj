@@ -190,6 +190,7 @@
     <Content Include="Views\ConcertVenuDBAddNew.aspx" />
     <Content Include="Views\ConcoursDB.aspx" />
     <Content Include="Views\ConcoursDBAddNew.aspx" />
+    <Content Include="Views\EndorsementPage.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\MusicCollegeDB.aspx" />
     <Content Include="Views\MusicCollegeDBAddNew.aspx" />
@@ -337,6 +338,13 @@
     </Compile>
     <Compile Include="Views\ConcoursDBAddNew.aspx.designer.cs">
       <DependentUpon>ConcoursDBAddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EndorsementPage.aspx.cs">
+      <DependentUpon>EndorsementPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EndorsementPage.aspx.designer.cs">
+      <DependentUpon>EndorsementPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -697,4 +697,7 @@
   <data name="Last" xml:space="preserve">
     <value>Last</value>
   </data>
+  <data name="Endorse" xml:space="preserve">
+    <value>Endorse</value>
+  </data>
 </root>

@@ -23,6 +23,7 @@ namespace BusinessLogic
                         context.MusicianTbls.Add(musician);
                         context.SaveChanges();
 
+                        var registeredEndorsersList = new List<MusicianEndorserTbl>();
                         //register endorsers
                         foreach (MusicianEndorserTbl x in endorsers)
                         {
@@ -34,10 +35,11 @@ namespace BusinessLogic
 
                             context.MusicianEndorserTbls.Add(ue);
                             context.SaveChanges();
-
+                            registeredEndorsersList.Add(ue);
                         }
 
                         dbContextTransaction.Commit();
+                        BusinessLogic.Helper.EmailSender.sendEmailToEndorser(musician, registeredEndorsersList);
                         return musician;
                     }
                     catch (Exception ee)
@@ -85,6 +87,7 @@ namespace BusinessLogic
                         artist.Major = musician.Major;
                         context.SaveChanges();
 
+                        var registeredEndorsersList = new List<MusicianEndorserTbl>();
                         //register endorsers
                         if (added.Count > 0)
                         {
@@ -98,7 +101,7 @@ namespace BusinessLogic
 
                                 context.MusicianEndorserTbls.Add(ue);
                                 context.SaveChanges();
-
+                                registeredEndorsersList.Add(ue);
                             }
                         }
 
@@ -110,7 +113,7 @@ namespace BusinessLogic
                                 context.SaveChanges();
                             }
                         }
-
+                        BusinessLogic.Helper.EmailSender.sendEmailToEndorser(musician, registeredEndorsersList);
                         dbContextTransaction.Commit();
                         return musician;
                     }

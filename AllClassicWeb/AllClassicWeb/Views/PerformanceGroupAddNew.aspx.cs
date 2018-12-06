@@ -97,9 +97,9 @@ namespace AllClassicWeb.Views
             pg = BusinessLogic.PerformanceGroupLogic.UpdatePerformanceGroupTbl(pg);
             if (pg != null)
             {
-                showMsg("Data inserted succssfuly");
-                cleanPGTextBoxs();
-                Response.Redirect("PerformanceGroupDetail?PGID=" + pg.PerformanceGroupID);
+                showMsg("Data Saved succssfuly");
+                //cleanPGTextBoxs();
+                //Response.Redirect("PerformanceGroupDetail?PGID=" + pg.PerformanceGroupID);
             }
             else showMsg("Please check your inputs");
         }

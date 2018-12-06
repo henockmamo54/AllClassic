@@ -297,8 +297,8 @@ namespace AllClassicWeb.Views
                 if (artist != null)
                 {
                     showMsg("Data inserted succssfuly");
-                    cleanArtistTextBoxs();
-                    Response.Redirect("MusicianDetailPage?ID=" + artist.MusicianID);
+                    //cleanArtistTextBoxs();
+                    //Response.Redirect("MusicianDetailPage?ID=" + artist.MusicianID);
                     //sending message to endorsers
                     //sendEmailToEndorser(x.Email, artist, x);
 

@@ -715,4 +715,7 @@
   <data name="Last" xml:space="preserve">
     <value>마지막</value>
   </data>
+  <data name="Endorse" xml:space="preserve">
+    <value>승인하다</value>
+  </data>
 </root>

@@ -448,6 +448,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Endorse.
+        /// </summary>
+        internal static string Endorse {
+            get {
+                return ResourceManager.GetString("Endorse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Endorsed Date.
         /// </summary>
         internal static string EndorsedDate {

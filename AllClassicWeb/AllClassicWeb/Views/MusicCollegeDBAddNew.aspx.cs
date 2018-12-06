@@ -86,7 +86,7 @@ namespace AllClassicWeb.Views
                 if (c != null)
                 {
                     showMsg("Data inserted succssfuly");
-                    Response.Redirect("MusicCollegeDBDetail?ID=" + c.CollegeID);
+                    //Response.Redirect("MusicCollegeDBDetail?ID=" + c.CollegeID);
                 }
                 else
                 {
