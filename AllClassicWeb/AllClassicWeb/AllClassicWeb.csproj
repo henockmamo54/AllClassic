@@ -182,6 +182,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\AboutUs.aspx" />
+    <Content Include="Views\AccountVerification.aspx" />
     <Content Include="Views\ArticleDB.aspx" />
     <Content Include="Views\ArticleDBAddNew.aspx" />
     <Content Include="Views\AuditionDB.aspx" />
@@ -282,6 +283,13 @@
     </Compile>
     <Compile Include="Views\AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountVerification.aspx.cs">
+      <DependentUpon>AccountVerification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AccountVerification.aspx.designer.cs">
+      <DependentUpon>AccountVerification.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ArticleDB.aspx.cs">
       <DependentUpon>ArticleDB.aspx</DependentUpon>

@@ -21,7 +21,7 @@ namespace BusinessLogic.Helper
                 var toAddress = user.EmailID;
                 string subject = "New account confirmation";
                 string body = string.Format(@"<p><strong> Dear Mr. {0}, \n An account has been created for you at All Classic Korea. Click this link to activate your account and log in.
-                            <a href='http://13.125.250.101/web/Views/FullEndorsementPage'> http://13.125.250.101/web/Views/FullEndorsementPage
+                            <a href='http://13.125.250.101/web/Views/AccountVerification?ID={1}'> http://13.125.250.101/web/Views/AccountVerification?ID={1}
                             </a> and fill the form <br /></strong></p> ", user.FullName,  user.UserID);
 
                 System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
