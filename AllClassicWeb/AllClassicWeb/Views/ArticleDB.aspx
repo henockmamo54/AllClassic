@@ -48,7 +48,7 @@
 select top 20 a.*, u.FullName userName, u.emailid from Auxiliary.ArticleTbl a
 join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 220px; height: 220px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; margin-bottom:3px;">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -116,9 +116,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ButtonCssClass="btn" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -151,15 +151,24 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
         document.getElementById("articletab").style.borderRight = "none";
     </script>
     <script type="text/javascript">
+
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
                 format: 'MM/DD/YYYY'
             });
         }
+
         $(function () {
             $('#datetimepicker2').datetimepicker({
                 format: 'MM/DD/YYYY'
             });
         });
+
+        
+        function openInNewTab(url) { 
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+
     </script>
 </asp:Content>

@@ -29,6 +29,9 @@ namespace AllClassicWeb.Views
                 txt_introduction.Text = college.Introduction;
                 txt_locationmap.Text = college.LocationMap;
                 txt_locationmap.CommandArgument = college.LocationMap;
+                 
+                //var b = new UriBuilder(college.HomePage);
+                //txt_homepage.PostBackUrl = b.ToString();
             }
         }
 
@@ -49,7 +52,10 @@ namespace AllClassicWeb.Views
 
             string strURL = e.CommandArgument.ToString();
             var b = new UriBuilder(strURL);
-            Response.Redirect(b.ToString());
+            var s = "openInNewTab('" + b.ToString() + "');";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", s, true);
+
+            //Response.Redirect(b.ToString());
         }
 
 

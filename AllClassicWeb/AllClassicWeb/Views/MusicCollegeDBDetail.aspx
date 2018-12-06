@@ -15,7 +15,7 @@
                     <%--<h3 runat="server" id="collagenamecontainer" style="font-weight: 800;"></h3>--%>
 
                     <br />
-                    <div >
+                    <div>
                         <div class=" row col-md-12 col-xs-12">
                             <div class="col-xs-4"><%=Resources.DisplayText.Name %>: </div>
                             <div class="col-xs-8">
@@ -72,10 +72,16 @@
 
     </asp:UpdatePanel>
 
-   
+
     <script type="text/javascript">
-         document.getElementById("MusicCollegetab").style.backgroundColor = "white";
+        document.getElementById("MusicCollegetab").style.backgroundColor = "white";
         document.getElementById("MusicCollegetab").style.borderBottom = "none";
+
+        function openInNewTab(url) { 
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+
     </script>
 
 </asp:Content>

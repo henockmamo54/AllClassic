@@ -14,6 +14,7 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 
     <script type="text/javascript">
         function modifyCss(color, page) {
@@ -24,25 +25,40 @@
                     //document.getElementById("whitesmokeBG").setAttribute('style', 'color: #ffffff');
                     break;
                 //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
-                case "1":
+                case "3":
                     $(".whitesmokeBG").css('background-color', '#28878a');
                     $(".whitesmokeBG").css('color', '#ffffff');
                     $(".whitesmokeBG > div > a ").css('color', '#ffffff');
                     $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
+                    $("#mainSearchBox").css('background-color', '#5bc0de');
                     break;
-                case "3":
+                case "1":
                     $(".whitesmokeBG").css('background-color', '#004d40');
                     $(".whitesmokeBG").css('color', '#ffffff');
                     $(".whitesmokeBG > div > a ").css('color', '#ffffff');
+                    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
+                    $("#mainSearchBox").css('background-color', '#5bc0de');
+
                     break;
                 case "4":
                     $(".whitesmokeBG").css('background-color', '#3f51b5');
                     $(".whitesmokeBG").css('color', '#ffffff');
                     $(".whitesmokeBG > div > a ").css('color', '#ffffff');
+                    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
+                    $("#mainSearchBox").css('background-color', '#5bc0de');
                     break;
             }
 
             switch (page) {
+                case "ASP.views_aboutus_aspx":
+                    {
+                        document.getElementById("introductiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                        document.getElementById("introductiontab").style.borderBottom = "none";
+                        document.getElementById("introductiontab").style.color = "#000000";
+
+                        break;
+                    }
+
                 case "ASP.views_performancedb_aspx":
                     {
                         //document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
@@ -215,7 +231,7 @@
                     document.getElementById("performanceArchivetab").style.borderRight = "none";
                     document.getElementById("performanceArchivetab").style.color = "#000000";
                     break;
-                } 
+                }
             }
         }
     </script>
@@ -242,7 +258,8 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="container body-content" style="padding-left: 20px;">
+        <div class="container body-content" style="padding-left: 20px; font-family: 'Open Sans', sans-serif;">
+
 
             <div id="masterNavigationBar">
                 <div class="row whitesmokeBG">
@@ -260,7 +277,7 @@
                         </span>
                         <span class="otheroptions pull-right" style="padding-top: 8px;">
                             <asp:TextBox runat="server" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
-                            <asp:Button runat="server" Text="search" class="btn btn-primary" />
+                            <asp:Button runat="server" ID="mainSearchBox" Text="search" class="btn btn-primary" />
 
                         </span>
                     </div>
@@ -268,7 +285,9 @@
             </div>
 
 
+
             <div class="row">
+
                 <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 50px;">
                     <ul class="list-group ">
                         <a runat="server" id="signinLink" visible="false">
@@ -295,6 +314,8 @@
 
                     </ul>
                 </div>
+
+
                 <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding-right: 0;">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
                     </asp:ContentPlaceHolder>
