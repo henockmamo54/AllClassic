@@ -86,12 +86,7 @@ and subcode not like N'%전체%'
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
                             <h3>No records available.</h3>
-                        </div>
-                        <table class="emptyTable" cellpadding="5" cellspacing="5">
-                            <tr>
-                                <td></td>
-                            </tr>
-                        </table>
+                        </div> 
                     </EmptyDataTemplate>
 
                     <GroupTemplate>

@@ -109,7 +109,7 @@ namespace AllClassicWeb
         {
             Session.Clear();
             Session["User"] = null;
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/Views/PerformanceDB.aspx");
         }
 
     }

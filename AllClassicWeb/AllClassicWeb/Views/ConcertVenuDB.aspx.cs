@@ -50,8 +50,11 @@ namespace AllClassicWeb.Views
                 filterQuery += " Alias like N'%" + txtbox_aliasfilter.Text + "%'";
             }
 
-            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select r.*, r.EmailID from Auxiliary.VenueTbl r
-            left join Main.usertbl u on r.Userid=u.userid" + filterQuery + @"
+            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select r.*, r.EmailID, ci.SubCode as cityname from Auxiliary.VenueTbl r
+            left join Main.usertbl u on r.Userid=u.userid
+               left join(SELECT LookUpID, MainCode, SubCode 
+            FROM Main.LookUpTbl
+            where maincode='City' ) ci on ci.LookUpID=r.City" + filterQuery + @"
                 order by UpdateTimeStamp desc");
 
             collegeListContainer.DataBind();

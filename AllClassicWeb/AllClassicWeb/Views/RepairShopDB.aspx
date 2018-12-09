@@ -8,20 +8,20 @@
             <div class="row">
                 <div class="row col-md-12 col-xs-12  col-xs-12">
                     <div class="col-md-3 col-xs-3 ">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Name %> </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Name %> </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
                     </div>
                     <div class="col-md-3 col-xs-3  ">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Alias %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Alias %>  </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
                     </div>
                     <div class="col-md-3 col-xs-3 ">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Expertise %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" CssClass="form-control" Style="width: 69%; display: inline-block;"></asp:TextBox>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Expertise %>  </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" CssClass="form-control filedDisplay" Style="width: 69%; display: inline-block;"></asp:TextBox>
                     </div>
                     <div class="col-md-3 col-xs-3 " style="padding-right: 0;">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.City %>  </h5>
-                        <asp:DropDownList Style="display: inline-block; width: 85%;" ID="DropDownList1_cityfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.City %>  </h5>
+                        <asp:DropDownList Style="display: inline-block; width: 85%;" ID="DropDownList1_cityfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT   LookUpID=-1, MainCode='ALL', SubCode='ALL'
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -33,7 +33,7 @@ where maincode='City'
             </div>
             <br />
             <div class="col-md-12 col-xs-12">
-                <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
+                <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
             </div>
             <br />
 
@@ -52,22 +52,22 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th><strong><%= Resources.DisplayText.Name %></strong></th>
-                                <th><strong><%= Resources.DisplayText.Alias %></strong></th>
-                                <th><strong><%= Resources.DisplayText.Expertise %></strong></th>
-                                <th><strong><%= Resources.DisplayText.City %></strong></th>
-                                <th><strong><%= Resources.DisplayText.PosterEmailID %></strong></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.Name %></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.Alias %></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.Expertise %></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.City %></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.PosterEmailID %></th>
                             </tr>
                         </thead>
                         <tbody>
                             <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
                                 <ItemTemplate>
                                     <tr>
-                                        <td><%#Eval("Name") %></td>
-                                        <td><%#Eval("Alias") %></td>
-                                        <td><%#Eval("Expertise") %></td>
-                                        <td><%#Eval("cityname") %></td>
-                                        <td><%#Eval("posteremailiD") %></td>
+                                        <td class="Contentdisplay"><%#Eval("Name") %></td>
+                                        <td class="Contentdisplay"><%#Eval("Alias") %></td>
+                                        <td class="Contentdisplay"><%#Eval("Expertise") %></td>
+                                        <td class="Contentdisplay"><%#Eval("cityname") %></td>
+                                        <td class="Contentdisplay"><%#Eval("posteremailiD") %></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -82,7 +82,12 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
             <div class="row">
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="RepairShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;">
-
+                    
+                    <EmptyDataTemplate>
+                        <div class=" col-xs-12 contentHeader">
+                            <h3>No records available.</h3>
+                        </div> 
+                    </EmptyDataTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
                             <div id="itemPlaceholder" runat="server">
@@ -94,7 +99,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <%--<div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">--%>
                             <div>
                                 <div class="panel panel-success shadowedbox_hover">
-                                    <div class="panel-heading">
+                                    <div class="panel-heading contentHeader" style="background-color:#eaf2f7;">
                                         <h4><%# (Eval("Name")) .ToString().Length>15?
                                         (Eval("Name")) .ToString().Substring(0,15)+ " ....":
                                         (Eval("Name")) .ToString()%></h4>
@@ -102,47 +107,47 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                     </div>
                                     <div class="panel-body">
                                         <table>
-                                            <tbody class="rowwithbottomborder">
+                                            <tbody class="rowwithbottomborder ">
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.Expertise %>:</td>
-                                                    <td><%#Eval("Expertise") %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.Expertise %>:</td>
+                                                    <td class="filedDisplay"><%#Eval("Expertise") %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.City %>:</td>
-                                                    <td><%#Eval("cityname") %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.City %>:</td>
+                                                    <td class="filedDisplay"><%#Eval("cityname") %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.OwnerName %>:</td>
-                                                    <td><%#Eval("OwnerName") %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.OwnerName %>:</td>
+                                                    <td class="filedDisplay"><%#Eval("OwnerName") %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.SinceYear %>:</td>
-                                                    <td><%#Eval("SinceYear") %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.SinceYear %>:</td>
+                                                    <td class="filedDisplay"><%#Eval("SinceYear") %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.Email %>:</td>
-                                                    <td><%#Eval("EmailID") %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.Email %>:</td>
+                                                    <td  class="filedDisplay"><%#Eval("EmailID") %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.Address %>:</td>
-                                                    <td><%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.Address %>:</td>
+                                                    <td class="filedDisplay"><%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.ZipCode %>:</td>
-                                                    <td><%#Eval("ZipCode") %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.ZipCode %>:</td>
+                                                    <td class="filedDisplay"><%#Eval("ZipCode") %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.TelNo %>:</td>
-                                                    <td><%#Eval("TelNO") %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.TelNo %>:</td>
+                                                    <td class="filedDisplay"><%#Eval("TelNO") %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.FaxNo %>:</td>
-                                                    <td><%#Eval("FaxNo") %></td>
+                                                    <td class="filedName"><%# Resources.DisplayText.FaxNo %>:</td>
+                                                    <td class="filedDisplay"><%#Eval("FaxNo") %></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><%# Resources.DisplayText.HomePage %>:</td>
-                                                    <td>
-                                                        <asp:LinkButton runat="server" target="_blank" OnCommand="homePageClicked" CommandArgument='<%# Eval("HomePage") %>' Text='<%# Eval("HomePage") %>' ></asp:LinkButton></td> 
+                                                    <td class="filedName"><%# Resources.DisplayText.HomePage %>:</td>
+                                                    <td  class="filedDisplay">
+                                                        <asp:LinkButton runat="server" target="_blank" OnCommand="homePageClicked" CommandArgument='<%# Eval("HomePage") %>' Text='<%# Eval("HomePage") %>'></asp:LinkButton></td>
                                                     <%--href='http://<%# Eval("HomePage") %>'--%>
                                                 </tr>
                                             </tbody>
@@ -210,9 +215,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -233,7 +238,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
             <div class="row">
-                <asp:Button runat="server" ID="btn_addReparShop" CssClass="btn btn-success pull-right" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addReparShop" />
+                <asp:Button runat="server" ID="btn_addReparShop" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addReparShop" />
             </div>
 
         </ContentTemplate>
@@ -252,12 +257,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             /* box-shadow: 3px 3px 3px #d0d0d0 !important; */
             box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
         }
-
-
     </style>
     <script type="text/javascript">
 
-        function openInNewTab(url) { 
+        function openInNewTab(url) {
             var win = window.open(url, '_blank');
             win.focus();
         }
