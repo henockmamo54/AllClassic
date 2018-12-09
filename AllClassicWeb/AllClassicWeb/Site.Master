@@ -23,6 +23,11 @@
                     $(".whitesmokeBG").css('background-color', '#D9EDF7');
                     //$(".whitesmokeBG").css('color', '#ffffff ');
                     //document.getElementById("whitesmokeBG").setAttribute('style', 'color: #ffffff');
+                    
+                    $(".whitesmokeBG").css('font-weight', '800');
+                    $(".whitesmokeBG > div > a ").css('font-weight', '800');
+                    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
+
                     break;
                 //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
                 case "3":
@@ -31,6 +36,12 @@
                     $(".whitesmokeBG > div > a ").css('color', '#ffffff');
                     $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
                     $("#mainSearchBox").css('background-color', '#5bc0de');
+
+                    
+                    $(".whitesmokeBG").css('font-weight', '800');
+                    $(".whitesmokeBG > div > a ").css('font-weight', '800');
+                    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
+
                     break;
                 case "1":
                     $(".whitesmokeBG").css('background-color', '#004d40');
@@ -39,6 +50,11 @@
                     $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
                     $("#mainSearchBox").css('background-color', '#5bc0de');
 
+                    
+                    $(".whitesmokeBG").css('font-weight', '800');
+                    $(".whitesmokeBG > div > a ").css('font-weight', '800');
+                    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
+
                     break;
                 case "4":
                     $(".whitesmokeBG").css('background-color', '#3f51b5');
@@ -46,6 +62,12 @@
                     $(".whitesmokeBG > div > a ").css('color', '#ffffff');
                     $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
                     $("#mainSearchBox").css('background-color', '#5bc0de');
+
+                    
+                    $(".whitesmokeBG").css('font-weight', '800');
+                    $(".whitesmokeBG > div > a ").css('font-weight', '800');
+                    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
+
                     break;
             }
 
@@ -264,7 +286,7 @@
             <div id="masterNavigationBar">
                 <div class="row whitesmokeBG">
                     <div>
-                        <a class="navbar-brand allclasic_home" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
+                        <a class="navbar-brand allclasic_home" style="text-decoration: none; background-color:darkorange;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
                         <a class="otheroptions " id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
                         <a class="otheroptions " id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
                         <a class="otheroptions " id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
@@ -288,7 +310,7 @@
 
             <div class="row">
 
-                <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 50px;">
+                <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 0px;">
                     <ul class="list-group ">
                         <a runat="server" id="signinLink" visible="false">
                             <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>

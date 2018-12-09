@@ -83,7 +83,7 @@
 select top 20 a.*, u.FullName userName, u.EmailID from Auxiliary.AuditionTbl a
                     join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 200px; height: 200px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
 
                     <table class="table table-striped">
                         <thead>
