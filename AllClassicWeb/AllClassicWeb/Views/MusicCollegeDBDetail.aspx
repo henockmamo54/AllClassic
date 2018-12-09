@@ -17,42 +17,42 @@
                     <br />
                     <div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-xs-4"><%=Resources.DisplayText.Name %>: </div>
+                            <div class="col-xs-4 filedName"><%=Resources.DisplayText.Name %>: </div>
                             <div class="col-xs-8">
-                                <asp:Label runat="server" ID="txt_name"></asp:Label>
+                                <asp:Label runat="server" CssClass="filedDisplay" ID="txt_name"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-xs-4"><%=Resources.DisplayText.ShortName %>: </div>
+                            <div class="col-xs-4 filedName"><%=Resources.DisplayText.ShortName %>: </div>
                             <div class="col-xs-8">
-                                <asp:Label runat="server" ID="txt_shortname"></asp:Label>
+                                <asp:Label runat="server"  CssClass="filedDisplay" ID="txt_shortname"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
                             <hr style="background-color: #5f755f; height: 0.2rem;" />
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-xs-4"><%=Resources.DisplayText.HomePage %>: </div>
+                            <div class="col-xs-4 filedName"><%=Resources.DisplayText.HomePage %>: </div>
                             <div class="col-xs-8">
-                                <asp:LinkButton target="_blank" OnCommand="LinkButton_Click" CommandArgument="google.com" runat="server" ID="txt_homepage"></asp:LinkButton>
+                                <asp:LinkButton target="_blank"  CssClass="filedDisplay" OnCommand="LinkButton_Click" CommandArgument="google.com" runat="server" ID="txt_homepage"></asp:LinkButton>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-xs-4"><%=Resources.DisplayText.Country %>: </div>
+                            <div class="col-xs-4 filedName"><%=Resources.DisplayText.Country %>: </div>
                             <div class="col-xs-8">
-                                <asp:Label runat="server" ID="txt_country"></asp:Label>
+                                <asp:Label runat="server" CssClass="filedDisplay"  ID="txt_country"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-xs-4"><%=Resources.DisplayText.Introduction %>: </div>
+                            <div class="col-xs-4 filedName"><%=Resources.DisplayText.Introduction %>: </div>
                             <div class="col-xs-8">
-                                <asp:Label runat="server" ID="txt_introduction"></asp:Label>
+                                <asp:Label runat="server"  CssClass="filedDisplay" ID="txt_introduction"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-xs-4"><%=Resources.DisplayText.LocationMap %>: </div>
+                            <div class="col-xs-4 filedName"><%=Resources.DisplayText.LocationMap %>: </div>
                             <div class="col-xs-8">
-                                <asp:LinkButton target="_blank" OnCommand="LinkButton_Click" CommandArgument="google.com" runat="server" ID="txt_locationmap"></asp:LinkButton>
+                                <asp:LinkButton target="_blank"  CssClass="filedDisplay"  OnCommand="LinkButton_Click" CommandArgument="google.com" runat="server" ID="txt_locationmap"></asp:LinkButton>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
@@ -61,7 +61,7 @@
                         <%--==================================================================--%>
                     </div>
                     <div class="col-xs-12">
-                        <asp:Button CssClass="btn btn-primary" runat="server" ID="btn_editcollege" OnClick="onclick_btn_editcollege" Text="<%$Resources:DisplayText,Edit %>" />
+                        <asp:Button CssClass="btn btn-primary contentButton" runat="server" ID="btn_editcollege" OnClick="onclick_btn_editcollege" Text="<%$Resources:DisplayText,Edit %>" />
                     </div>
                 </div>
 

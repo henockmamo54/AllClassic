@@ -12,7 +12,7 @@
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
                         <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="0px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="0px" Font-Bold="True" CssClass="contentTitle" Font-Size="12pt" ForeColor="#333399" />
                         <TodayDayStyle BackColor="#ffffff" />
                     </asp:Calendar>
 
@@ -23,11 +23,11 @@
 
                 </div>
                 <div class="col-md-6 col-xs-6 " style="padding: 0;">
-                    <h5 style="color: #28878a; font-weight: 700;"><%= Resources.DisplayText.Performanceschedule %>: <%= Resources.DisplayText.ThisWeek %></h5>
+                    <h5 style="color: #28878a; font-weight: 700;" class="contentTitle"><%= Resources.DisplayText.Performanceschedule %>: <%= Resources.DisplayText.ThisWeek %></h5>
                     <div class="shadowedPanel" style="overflow-y: scroll; max-height: 200px; height: 200px;">
-                        <table class="table table-striped">
+                        <table class="table table-striped ">
                             <thead>
-                                <tr>
+                                <tr class="filedName">
                                     <th scope="col"><%= Resources.DisplayText.StartDate %></th>
                                     <th scope="col"><%= Resources.DisplayText.Title %></th>
                                     <th scope="col"><%=Resources.DisplayText.Region %>/<%=Resources.DisplayText.City %></th>
@@ -37,8 +37,8 @@
                             <tbody>
                                 <asp:Repeater runat="server" ID="repeater_thisweekPerformanceInfo">
                                     <ItemTemplate>
-                                        <tr>
-                                            <th scope="row"><%# DataBinder.Eval(Container.DataItem,"StartDate","{0:d/M/yyyy}")  %></th>
+                                        <tr class="filedDisplayandContentdisplay">
+                                            <td scope="row"><%# DataBinder.Eval(Container.DataItem,"StartDate","{0:d/M/yyyy}")  %></td>
                                             <td><%# (Eval("MainTitle")) .ToString().Length>15?
                                                            (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
                                                            (Eval("MainTitle")) .ToString()%></td>
@@ -52,10 +52,10 @@
                     </div>
                 </div>
                 <div class="col-md-3 " style="padding-right: 0px;">
-                    <h5 style="color: #28878a; font-weight: 700;"><%=Resources.DisplayText.Region %></h5>
+                    <h5 style="color: #28878a; font-weight: 700;"  class="contentTitle"><%=Resources.DisplayText.Region %></h5>
                     <asp:Repeater runat="server" ID="repeater_location" OnItemDataBound="repeater_locationOnItemDataBound" DataSourceID="SqlDataSource1_region">
                         <ItemTemplate>
-                            <asp:Button runat="server" OnClick="regionclicked" CommandArgument='<%# Eval("subcode") %>' ID='location' class="locationcontainer" Text='<%# Eval("subcode") %>'></asp:Button>
+                            <asp:Button runat="server" OnClick="regionclicked" CommandArgument='<%# Eval("subcode") %>' ID='location' class="locationcontainer filedDisplayandContentdisplay" Text='<%# Eval("subcode") %>'></asp:Button>
                         </ItemTemplate>
                     </asp:Repeater>
 
@@ -74,7 +74,7 @@ and subcode not like N'%전체%'
             </div>
             <div class="row col-xs-12" style="margin-top: 15px;">
 
-                <h4 style="color: #28878a;"><%= Resources.DisplayText.Total %>:
+                <h4 style="color: #28878a;" class="contentTitle "><%= Resources.DisplayText.Total %>:
                             <asp:Label runat="server" ID="label_countofitems"></asp:Label>
                     <%= Resources.DisplayText.Events %> </h4>
 
@@ -84,7 +84,7 @@ and subcode not like N'%전체%'
                 <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
 
                     <EmptyDataTemplate>
-                        <div class=" col-xs-12">
+                        <div class=" col-xs-12 contentHeader">
                             <h3>No records available.</h3>
                         </div>
                         <table class="emptyTable" cellpadding="5" cellspacing="5">
@@ -107,12 +107,12 @@ and subcode not like N'%전체%'
                                                                             <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 190px;">
 
                                             <div class="caption" style="padding-bottom:3px;">
-                                                <h4><%# (Eval("MainTitle")) .ToString().Length>15?
+                                                <h4 class="contentHeader"><%# (Eval("MainTitle")) .ToString().Length>15?
                                                            (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
                                                            (Eval("MainTitle")) .ToString()%></h4>
-                                                <h6><%= Resources.DisplayText.StartDate %>: <%# DataBinder.Eval(Container.DataItem,"startdate","{0:dd/MM/yyyy}") %></h6>
+                                                <h6 class="Contentdisplay"><%= Resources.DisplayText.StartDate %>: <%# DataBinder.Eval(Container.DataItem,"startdate","{0:dd/MM/yyyy}") %></h6>
                                                 <%--<h6>venu: <%# Eval("venuname") %></h6>--%>
-                                                <h6><%= Resources.DisplayText.Location %>: <%# Eval("Regionname") %>/<%# Eval("cityname") %> - <%# Eval("venuname") %></h6>
+                                                <h6 class="Contentdisplay"><%= Resources.DisplayText.Location %>: <%# Eval("Regionname") %>/<%# Eval("cityname") %> - <%# Eval("venuname") %></h6>
                                             </div>                                
 
                                 </asp:LinkButton>
@@ -128,9 +128,9 @@ and subcode not like N'%전체%'
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -163,7 +163,7 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
             <div class="row">
                 <hr />
-                <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addPG" />
+                <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addPG" />
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

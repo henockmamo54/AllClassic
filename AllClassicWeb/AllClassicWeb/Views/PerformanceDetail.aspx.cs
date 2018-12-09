@@ -26,8 +26,13 @@ namespace AllClassicWeb.Views
             if (performance != null)
             {
                 performancePosterImage.ImageUrl = "~/Doc/Performance/" + performance.PosterFileName.ToString();
-                txt_subtitle.InnerText = performance.SubTitle + "/" + performance.Subject;
-                txt_maintitle.InnerText = performance.MainTitle;
+
+                //txt_subtitle.InnerText = performance.SubTitle + "/" + performance.Subject;
+                //txt_maintitle.InnerText = performance.MainTitle;
+
+                lbl_Maintitle.Text = performance.MainTitle;
+                lbl_subtitle.Text = performance.SubTitle;
+                lbl_subjectTheme.Text = performance.Subject;
                 if (performance.PerformanceGroupTbl != null)
                     lbl_pg.Text = performance.PerformanceGroupTbl.Name;
                 if (performance.LookUpTbl != null)

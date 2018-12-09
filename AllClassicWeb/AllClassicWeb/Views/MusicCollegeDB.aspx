@@ -8,17 +8,17 @@
             <div class="row">
                 <div class="row col-xs-12">
                     <div class="col-xs-3" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Name %> </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Name %> </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
 
                     </div>
                     <div class="col-xs-3" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.ShortName %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_shortnamefilter" runat="server" CssClass="form-control" Style="width: 62%; display: inline-block;"></asp:TextBox>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.ShortName %>  </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_shortnamefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 62%; display: inline-block;"></asp:TextBox>
                     </div>
                     <div class="col-xs-3" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Country %>  </h5>
-                        <asp:DropDownList Style="display: inline-block; width: 70%;" ID="DropDownList1_countryfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Country %>  </h5>
+                        <asp:DropDownList Style="display: inline-block; width: 70%;" ID="DropDownList1_countryfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT  Name='ALL'
 Union
 SELECT Distinct country from main.CollegeTbl
@@ -27,7 +27,7 @@ SELECT Distinct country from main.CollegeTbl
 
                     </div>
                     <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary" OnClick="selectedFilterChanged" />
+                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary contentButton" OnClick="selectedFilterChanged" />
                     </div>
                 </div>
 
@@ -45,10 +45,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th><%= Resources.DisplayText.Name %></th>
-                                <th><%= Resources.DisplayText.ShortName %></th>
-                                <th><%= Resources.DisplayText.Country %></th>
-                                <th><%= Resources.DisplayText.PosterEmailID %></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.Name %></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.ShortName %></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.Country %></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.PosterEmailID %></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,10 +58,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <ItemTemplate>
                                     <tr>
                                         <td>
-                                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("CollegeID")%>'><%#Eval("Name") %></asp:LinkButton></td>
-                                        <td><%#Eval("ShortName") %></td>
-                                        <td><%#Eval("Country") %></td>
-                                        <td><%#Eval("EmailID") %></td>
+                                            <asp:LinkButton runat="server" class="Contentdisplay" ID="headertableItem" Style="text-decoration: none; color:inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("CollegeID")%>'><%#Eval("Name") %></asp:LinkButton></td>
+                                        <td class="Contentdisplay"><%#Eval("ShortName") %></td>
+                                        <td class="Contentdisplay"><%#Eval("Country") %></td>
+                                        <td class="Contentdisplay"><%#Eval("EmailID") %></td>
 
                                     </tr>
                                 </ItemTemplate>
@@ -91,7 +91,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                                             <img src="../Doc/College/<%#Eval("CollegePhoto") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 200px;">
 
                                             <div class="caption" style="padding-bottom:3px;">
-                                                <h4><%# (Eval("Name")) .ToString().Length>15?
+                                                <h4 class="contentHeader"><%# (Eval("Name")) .ToString().Length>15?
                                                            (Eval("Name")) .ToString().Substring(0,15)+ " ....":
                                                            (Eval("Name")) .ToString()%></h4>
                                                 
@@ -110,9 +110,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -129,7 +129,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
             <div class="row">
-                <asp:Button runat="server" ID="btn_addMusicCollege" CssClass="btn btn-success pull-right" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addMusicCollege" />
+                <asp:Button runat="server" ID="btn_addMusicCollege" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addMusicCollege" />
             </div>
 
         </ContentTemplate>

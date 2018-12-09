@@ -13,15 +13,6 @@ namespace AllClassicWeb.Views {
     public partial class PerformanceDetail {
         
         /// <summary>
-        /// performanceTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl performanceTitle;
-        
-        /// <summary>
         /// forAudience control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl forAudience;
-        
-        /// <summary>
-        /// txt_maintitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txt_maintitle;
         
         /// <summary>
         /// performancePosterImage control.
@@ -139,13 +121,31 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.Repeater ParentRepeater;
         
         /// <summary>
-        /// txt_subtitle control.
+        /// lbl_Maintitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txt_subtitle;
+        protected global::System.Web.UI.WebControls.Label lbl_Maintitle;
+        
+        /// <summary>
+        /// lbl_subtitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_subtitle;
+        
+        /// <summary>
+        /// lbl_subjectTheme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_subjectTheme;
         
         /// <summary>
         /// lbl_pg control.

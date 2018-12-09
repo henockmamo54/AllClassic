@@ -18,18 +18,18 @@
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.MainTitle %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.MainTitle %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_maintitle" ValidationGroup="a" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_maintitle" ValidationGroup="a" runat="server"  class="form-control filedDisplay"></asp:TextBox>
                         </div>
                         <br />
                     </div>
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.SubTitle %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.SubTitle %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_subtitle" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_subtitle" runat="server"  class="form-control filedDisplay"></asp:TextBox>
 
                         </div>
                         <br />
@@ -37,9 +37,9 @@
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.SubjectTheme %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.SubjectTheme %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_subjecttheme" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_subjecttheme" runat="server"  class="form-control filedDisplay"></asp:TextBox>
 
                         </div>
                         <br />
@@ -52,9 +52,9 @@
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.PerformanceGroup %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.PerformanceGroup %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control" DataSourceID="SqlDataSource1_performancegrouplist" DataTextField="Name" DataValueField="PerformanceGroupID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_grouptype" runat="server"  class="form-control filedDisplay" DataSourceID="SqlDataSource1_performancegrouplist" DataTextField="Name" DataValueField="PerformanceGroupID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_performancegrouplist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT Name='None', PerformanceGroupID=-1  union SELECT Name, PerformanceGroupID FROM Main.PerformanceGroupTbl"></asp:SqlDataSource>
 
                         </div>
@@ -63,9 +63,9 @@
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.PerformanceType %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.PerformanceType %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:DropDownList ID="DropDownList1_performancetype" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_performancetypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_performancetype" runat="server"  class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_performancetypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_performancetypelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='None', SubCode='None'  union SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='PerformanceType'
@@ -76,9 +76,9 @@ where maincode='PerformanceType'
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Conductor %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Conductor %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:DropDownList ID="DropDownList1_conductors" runat="server" class="form-control" DataSourceID="SqlDataSource1_conductors" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_conductors" runat="server"  class="form-control filedDisplay" DataSourceID="SqlDataSource1_conductors" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_conductors" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT MusicianID= -1, Name='None' UNION SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Conductor')"></asp:SqlDataSource>
                         </div>
                         <br />
@@ -91,9 +91,9 @@ where maincode='PerformanceType'
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.MainTitleComposer %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.MainTitleComposer %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:DropDownList ID="DropDownList1_composer" runat="server" class="form-control" DataSourceID="SqlDataSource1_composer" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_composer" runat="server"  class="form-control filedDisplay" DataSourceID="SqlDataSource1_composer" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_composer" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT MusicianID= -1, Name='None' UNION SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Composer')"></asp:SqlDataSource>
 
                         </div>
@@ -102,9 +102,9 @@ where maincode='PerformanceType'
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.MainInstrument %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.MainInstrument %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:DropDownList ID="DropDownList2_maininstrument" runat="server" class="form-control" DataSourceID="SqlDataSource1_instrumentlist" DataTextField="KoreanName" DataValueField="InstrumentID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList2_maininstrument" runat="server"  class="form-control filedDisplay" DataSourceID="SqlDataSource1_instrumentlist" DataTextField="KoreanName" DataValueField="InstrumentID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_instrumentlist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
                                 SELECT InstrumentID=-1, EnglishName='None', KoreanName='None' union
                                 SELECT InstrumentID, EnglishName, KoreanName FROM Auxiliary.InstrumentTbl"></asp:SqlDataSource>
@@ -114,9 +114,9 @@ where maincode='PerformanceType'
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Organizer %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Organizer %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_organizer" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_organizer" runat="server"  class="form-control filedDisplay"></asp:TextBox>
 
                         </div>
                         <br />
@@ -129,9 +129,9 @@ where maincode='PerformanceType'
 
                     <div class="col-xs-4 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Sponser %></div>
+                        <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Sponser %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_sponser" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_sponser" runat="server"  class="form-control filedDisplay"></asp:TextBox>
 
                         </div>
                         <br />
@@ -139,10 +139,10 @@ where maincode='PerformanceType'
                     <div class="col-xs-4">
                         <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0px;">
                             <br />
-                            <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Start %></div>
+                            <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Start %></div>
                             <div class="col-md-8 col-xs-8">
                                 <div class='input-group date' id='datetimepicker2_start' style="display: flex;">
-                                    <input type='text' class="form-control" runat="server" validationgroup="a" id="startdate" style="display: inline-block; border-right-width: 0px;" />
+                                    <input type='text'  class="form-control filedDisplay" runat="server" validationgroup="a" id="startdate" style="display: inline-block; border-right-width: 0px;" />
                                     <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -155,10 +155,10 @@ where maincode='PerformanceType'
                     <div class="col-xs-4">
                         <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0px;">
                             <br />
-                            <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.End %></div>
+                            <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.End %></div>
                             <div class="col-md-8 col-xs-8">
                                 <div class='input-group date' id='datetimepicker3_end' style="display: flex;">
-                                    <input type='text' class="form-control" validationgroup="a" runat="server" id="enddate" style="display: inline-block; border-right-width: 0px;" />
+                                    <input type='text'  class="form-control filedDisplay" validationgroup="a" runat="server" id="enddate" style="display: inline-block; border-right-width: 0px;" />
                                     <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -177,9 +177,9 @@ where maincode='PerformanceType'
                     <div class="col-xs-4">
                         <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0px;">
                             <br />
-                            <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Region %></div>
+                            <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Region %></div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:DropDownList ID="DropDownList4_region" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_region" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList4_region" runat="server"  class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_region" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1_region" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='All', SubCode='All'  union  SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='Region'
@@ -191,9 +191,9 @@ where maincode='Region'
                     <div class="col-xs-4">
                         <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0px;">
                             <br />
-                            <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.City %></div>
+                            <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.City %></div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList3_city" runat="server"  class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='All', SubCode='All'  union  SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='City'
@@ -205,9 +205,9 @@ where maincode='City'
                     <div class="col-xs-4">
                         <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0px;">
                             <br />
-                            <div class="col-md-4 col-xs-4" style="padding-left: 0px;"><%= Resources.DisplayText.Venue %></div>
+                            <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Venue %></div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:DropDownList ID="DropDownList1_venu" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_venu" DataTextField="Name" DataValueField="VenueID"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList1_venu" runat="server"  class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_venu" DataTextField="Name" DataValueField="VenueID"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1_venu" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="select VenueID=-1,Name='All' union select VenueID,Name from auxiliary.VenueTbl
 "></asp:SqlDataSource>
                             </div>
@@ -220,7 +220,7 @@ where maincode='City'
                 <div class="row">                    
                     <div class="col-xs-3 pull-right" style="padding-right: 0px;">
                         <br />
-                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary pull-right" OnClick="filterPerformance" />
+                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary pull-right contentButton" OnClick="filterPerformance" />
                     </div>
                 </div>                
             </div>
@@ -253,12 +253,12 @@ where maincode='City'
                                                                             <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 190px;">
 
                                             <div class="caption" style="padding-bottom:3px;">
-                                                <h4><%# (Eval("MainTitle")) .ToString().Length>15?
+                                                <h4 class="contentHeader"><%# (Eval("MainTitle")) .ToString().Length>15?
                                                            (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
                                                            (Eval("MainTitle")) .ToString()%></h4>
-                                                <h6><%= Resources.DisplayText.StartDate %>: <%# DataBinder.Eval(Container.DataItem,"startdate","{0:dd/MM/yyyy}") %></h6>
+                                                <h6 class="Contentdisplay"><%= Resources.DisplayText.StartDate %>: <%# DataBinder.Eval(Container.DataItem,"startdate","{0:dd/MM/yyyy}") %></h6>
                                                 <%--<h6>venu: <%# Eval("venuname") %></h6>--%>
-                                                <h6><%= Resources.DisplayText.Location %>: <%# Eval("Regionname") %>/<%# Eval("cityname") %> - <%# Eval("venuname") %></h6>
+                                                <h6 class="Contentdisplay"><%= Resources.DisplayText.Location %>: <%# Eval("Regionname") %>/<%# Eval("cityname") %> - <%# Eval("venuname") %></h6>
                                             </div>                                
 
                                 </asp:LinkButton>
@@ -274,9 +274,9 @@ where maincode='City'
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>

@@ -7,15 +7,15 @@
             <div class="row">
                 <div class="row  col-xs-12" style="padding-right: 0px;">
                     <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary" OnClick="selectedFilterChanged" />
+                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary contentButton" OnClick="selectedFilterChanged" />
                     </div>
                     <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Repertory %> </h5>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Repertory %> </h5>
                         <asp:TextBox AutoPostBack="true" ID="txt_repertoryfilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
 
                     </div>
                     <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.Major %>  </h5>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Major %>  </h5>
                         <asp:DropDownList Style="display: inline-block; width: 83%;" ID="DropDownList1_Majorfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
@@ -27,7 +27,7 @@ or maincode='Conductor'
 "></asp:SqlDataSource>
                     </div>
                     <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.FullName %>  </h5>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.FullName %>  </h5>
                         <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
                     </div>
                 </div>
@@ -51,10 +51,10 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col"><%= Resources.DisplayText.FullName %></th>
-                                <th scope="col"><%= Resources.DisplayText.Major %></th>
-                                <th scope="col"><%= Resources.DisplayText.Affiliation %></th>
-                                <th scope="col"><%= Resources.DisplayText.Email %></th>
+                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.FullName %></th>
+                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.Major %></th>
+                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.Affiliation %></th>
+                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.Email %></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,10 +63,10 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <ItemTemplate>
                                     <tr>
                                         <td class="col-xs-3">
-                                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
-                                        <td class="col-xs-3"><%#Eval("majorsubocode") %></td>
-                                        <td class="col-xs-3"><%#Eval("Affliation") %></td>
-                                        <td class="col-xs-3"><%#Eval("useremailID") %></td>
+                                            <asp:LinkButton runat="server" ID="headertableItem" CssClass="filedDisplay" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
+                                        <td class="col-xs-3 Contentdisplay"><%#Eval("majorsubocode") %></td>
+                                        <td class="col-xs-3 Contentdisplay"><%#Eval("Affliation") %></td>
+                                        <td class="col-xs-3 Contentdisplay"><%#Eval("useremailID") %></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -96,15 +96,15 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <div class="col-sm-6 col-xs-6" style="margin: 0px; padding: 0px; padding-left: 8px; font-size: 1.2rem;">
                                     <div class="card-body ">
                                         <br />
-                                        <h4 class="card-title" style="margin: 0; margin-top: 5px; margin-bottom: 5px;"><strong><%#Eval("Name") %> </strong></h4>
+                                        <h4 class="card-title contentHeader" style="margin: 0; margin-top: 5px; margin-bottom: 5px;"><strong><%#Eval("Name") %> </strong></h4>
                                         <p class="card-text" style="color: dimgray; font-size:13px;">
-                                            <strong><%# Resources.DisplayText.Affiliation %>: </strong>
-                                            <%#Eval("Affliation") %>
+                                            <span class="filedName"><%# Resources.DisplayText.Affiliation %>: </span>
+                                            <span class="filedDisplay"><%#Eval("Affliation") %> </span>
                                             <br />
-                                            <strong><%# Resources.DisplayText.Major %>: </strong>
-                                            <%#Eval("majorsubocode") %>
+                                            <span class="filedName"><%# Resources.DisplayText.Major %>: </span>
+                                            <span class="filedDisplay"><%#Eval("majorsubocode") %> </span>
                                         </p>
-                                        <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default"><%= Resources.DisplayText.HomePage %></a>
+                                        <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default contentButton"><%= Resources.DisplayText.HomePage %></a>
                                     </div>
                                 </div>
                             </div>
@@ -120,9 +120,9 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -145,7 +145,7 @@ or maincode='Conductor'
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
             <div class="row">
-                <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNewMusician" />
+                <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNewMusician" />
             </div>
 
         </ContentTemplate>

@@ -19,30 +19,30 @@
     <script type="text/javascript">
         function modifyCss(color, page) {
             switch (color) {
-                case "2":
-                    $(".whitesmokeBG").css('background-color', '#D9EDF7');
-                    //$(".whitesmokeBG").css('color', '#ffffff ');
-                    //document.getElementById("whitesmokeBG").setAttribute('style', 'color: #ffffff');
+                //case "2":
+                //    $(".whitesmokeBG").css('background-color', '#D9EDF7');
+                //    //$(".whitesmokeBG").css('color', '#ffffff ');
+                //    //document.getElementById("whitesmokeBG").setAttribute('style', 'color: #ffffff');
                     
-                    $(".whitesmokeBG").css('font-weight', '800');
-                    $(".whitesmokeBG > div > a ").css('font-weight', '800');
-                    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
+                //    $(".whitesmokeBG").css('font-weight', '800');
+                //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
+                //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
 
-                    break;
-                //$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
-                case "3":
-                    $(".whitesmokeBG").css('background-color', '#28878a');
-                    $(".whitesmokeBG").css('color', '#ffffff');
-                    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
-                    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
-                    $("#mainSearchBox").css('background-color', '#5bc0de');
+                //    break;
+                ////$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
+                //case "3":
+                //    $(".whitesmokeBG").css('background-color', '#28878a');
+                //    $(".whitesmokeBG").css('color', '#ffffff');
+                //    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
+                //    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
+                //    $("#mainSearchBox").css('background-color', '#5bc0de');
 
                     
-                    $(".whitesmokeBG").css('font-weight', '800');
-                    $(".whitesmokeBG > div > a ").css('font-weight', '800');
-                    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
+                //    $(".whitesmokeBG").css('font-weight', '800');
+                //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
+                //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
 
-                    break;
+                //    break;
                 case "1":
                     $(".whitesmokeBG").css('background-color', '#004d40');
                     $(".whitesmokeBG").css('color', '#ffffff');
@@ -51,24 +51,24 @@
                     $("#mainSearchBox").css('background-color', '#5bc0de');
 
                     
-                    $(".whitesmokeBG").css('font-weight', '800');
-                    $(".whitesmokeBG > div > a ").css('font-weight', '800');
-                    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
+                    $(".whitesmokeBG").css('font-weight', 'bold');
+                    $(".whitesmokeBG > div > a ").css('font-weight', 'bold');
+                    $(".whitesmokeBG > div > span >a ").css('font-weight', 'bold');
 
                     break;
-                case "4":
-                    $(".whitesmokeBG").css('background-color', '#3f51b5');
-                    $(".whitesmokeBG").css('color', '#ffffff');
-                    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
-                    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
-                    $("#mainSearchBox").css('background-color', '#5bc0de');
+                //case "4":
+                //    $(".whitesmokeBG").css('background-color', '#3f51b5');
+                //    $(".whitesmokeBG").css('color', '#ffffff');
+                //    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
+                //    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
+                //    $("#mainSearchBox").css('background-color', '#5bc0de');
 
                     
-                    $(".whitesmokeBG").css('font-weight', '800');
-                    $(".whitesmokeBG > div > a ").css('font-weight', '800');
-                    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
+                //    $(".whitesmokeBG").css('font-weight', '800');
+                //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
+                //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
 
-                    break;
+                //    break;
             }
 
             switch (page) {
@@ -254,6 +254,12 @@
                     document.getElementById("performanceArchivetab").style.color = "#000000";
                     break;
                 }
+                case "ASP.views_signup_termsofusepage_aspx": {
+                    document.getElementById("signuptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("signuptab").style.borderRight = "none";
+                    document.getElementById("signuptab").style.color = "#000000";
+                    break;
+                } 
             }
         }
     </script>
@@ -294,8 +300,8 @@
                         <a class="otheroptions " runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
                         <a class="otheroptions " id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
                         <span class="otheroptions ">
-                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; padding-right: 4px; display: inline-block;"><%= Resources.DisplayText.en %></a>/
-                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; padding-left: 4px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
+                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px;  display: inline-block;"><%= Resources.DisplayText.en %>/</a>
+                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px;  display: inline-block;"><%= Resources.DisplayText.kr %></a>
                         </span>
                         <span class="otheroptions pull-right" style="padding-top: 8px;">
                             <asp:TextBox runat="server" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
@@ -327,12 +333,12 @@
                         <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
                         <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
                         <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.QA %></a>
-                        <div>
+                        <%--<div>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="3" Text="3"></asp:Button>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="4" Text="4"></asp:Button>
-                        </div>
+                        </div>--%>
 
                     </ul>
                 </div>
