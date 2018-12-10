@@ -4,7 +4,7 @@
 
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
-            <br />
+            <br /><br />
             <div class="row">
                 <div class="col-md-6 col-xs-6 pull-left">
                     <asp:Image runat="server" ID="profileImage" Width="100%" CssClass="shadowedPanel" />
@@ -12,14 +12,14 @@
 
                 <div class="col-md-6 col-xs-6 pull-center">
 
-                    <h3 runat="server" id="artistnamecontainer" style="font-weight: 800;"></h3>
+                    <h3 runat="server" id="artistnamecontainer" style="font-weight: 800;" class="contentHeader"></h3>
 
                     <div>
                         <%--<asp:Image runat="server" ID="profileImage" />--%>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.Major %>: </div>
-                            <div class="col-md-8 col-xs-8" style="font-weight: 600;">
-                                <asp:Label runat="server" ID="major"></asp:Label>
+                            <div class="col-md-3 filedName "><%=Resources.DisplayText.Major %>: </div>
+                            <div class="col-md-8 col-xs-8" >
+                                <asp:Label runat="server" ID="major"  CssClass="filedDisplay" ></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
@@ -27,15 +27,15 @@
                         </div>
 
                         <div class=" row col-md-12 col-xs-12" style="padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
-                            <div class="col-xs-12"><%=Resources.DisplayText.Repertory %> </div>
+                            <div class="col-xs-12 filedName"><%=Resources.DisplayText.Repertory %> </div>
                             <div class="col-xs-12">
-                                <asp:Label runat="server" ID="repertory"></asp:Label>
+                                <asp:Label runat="server" ID="repertory"  CssClass="filedDisplay" ></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-xs-12" style="padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
-                            <div class="col-md-12"><%=Resources.DisplayText.ProfilePage %> </div>
+                            <div class="col-md-12 filedName"><%=Resources.DisplayText.ProfilePage %> </div>
                             <div class="  col-xs-12">
-                                <asp:Label runat="server" ID="profilePage"></asp:Label>
+                                <asp:Label runat="server" ID="profilePage"  CssClass="filedDisplay" ></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
@@ -44,51 +44,51 @@
                         <%--==================================================================--%>
 
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.Affiliation %>: </div>
+                            <div class="col-md-3 filedName"><%=Resources.DisplayText.Affiliation %>: </div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:Label runat="server" ID="yourAffilation"></asp:Label>
+                                <asp:Label runat="server" CssClass="filedDisplay"  ID="yourAffilation"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.MobileNo %>: </div>
+                            <div class="col-md-3 filedName"><%=Resources.DisplayText.MobileNo %>: </div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:Label runat="server" ID="mobileNo"></asp:Label>
+                                <asp:Label runat="server"  CssClass="filedDisplay" ID="mobileNo"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.Email %>: </div>
+                            <div class="col-md-3 filedName"><%=Resources.DisplayText.Email %>: </div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:Label runat="server" ID="email"></asp:Label>
+                                <asp:Label runat="server" CssClass="filedDisplay"  ID="email"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.Address %>: </div>
+                            <div class="col-md-3 filedName"><%=Resources.DisplayText.Address %>: </div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:Label runat="server" ID="address"></asp:Label>
+                                <asp:Label runat="server"  CssClass="filedDisplay" ID="address"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.ZipCode %>: </div>
+                            <div class="col-md-3 filedName"><%=Resources.DisplayText.ZipCode %>: </div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:Label runat="server" ID="zipCode"></asp:Label>
+                                <asp:Label runat="server" CssClass="filedDisplay"  ID="zipCode"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.KakaoTalkID %>: </div>
+                            <div class="col-md-3 filedName"><%=Resources.DisplayText.KakaoTalkID %>: </div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:Label runat="server" ID="kakaoTalkID"></asp:Label>
+                                <asp:Label runat="server" CssClass="filedDisplay"  ID="kakaoTalkID"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.FacebookURL %>: </div>
+                            <div class="col-md-3 filedName"><%=Resources.DisplayText.FacebookURL %>: </div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:Label runat="server" ID="facebook"></asp:Label>
+                                <asp:Label runat="server" CssClass="filedDisplay"  ID="facebook"></asp:Label>
                             </div>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
-                            <div class="col-md-3"><%=Resources.DisplayText.TwitterURL %>: </div>
+                            <div class="col-md-3 filedName"><%=Resources.DisplayText.TwitterURL %>: </div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:Label runat="server" ID="twitter"></asp:Label>
+                                <asp:Label runat="server" CssClass="filedDisplay" ID="twitter"></asp:Label>
                             </div>
                         </div>
                     </div>
@@ -99,14 +99,14 @@
                     </div>
                     <div>
                         <div class="row col-xs-12">
-                            <h4><%=Resources.DisplayText.Endorser %></h4>
+                            <h4 class="contentHeader"><%=Resources.DisplayText.Endorser %></h4>
                         </div>
 
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th><%=Resources.DisplayText.EndorserName %></th>
-                                    <th><%=Resources.DisplayText.EndorserEmailID %></th>
+                                    <th class="contentHeader"><%=Resources.DisplayText.EndorserName %></th>
+                                    <th class="contentHeader"><%=Resources.DisplayText.EndorserEmailID %></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -117,10 +117,10 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td>
-                                                <asp:Label runat="server"><%# Eval("EndorserName") %> </asp:Label>
+                                                <asp:Label CssClass="filedDisplay" runat="server"><%# Eval("EndorserName") %> </asp:Label>
                                             </td>
                                             <td>
-                                                <asp:Label runat="server"><%# Eval("EndorserEmail") %></asp:Label>
+                                                <asp:Label  CssClass="filedDisplay" runat="server"><%# Eval("EndorserEmail") %></asp:Label>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -132,7 +132,7 @@
                     </div>
 
                     <div class="col-xs-12">
-                        <asp:Button CssClass="btn btn-primary" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editArtist" Text="<%$Resources:DisplayText,Edit %>" />
+                        <asp:Button CssClass="btn btn-primary contentButton" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editArtist"  Text="<%$Resources:DisplayText,Edit %>" />
                     </div>
                 </div>
 

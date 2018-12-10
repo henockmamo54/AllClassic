@@ -149,9 +149,20 @@ a.list-group-item {
 }
 
 .whitesmokeBG {
-    background-color: whitesmoke;
+    background-color: #004d40;
     text-decoration: none;
+    color: white;
 }
+
+    .whitesmokeBG > div > a {
+        color: white;
+        font-weight: bold;
+    }
+
+    .whitesmokeBG > div > span > a {
+        color: white;
+        font-weight: bold;
+    }
 
 .container {
     max-width: none !important;
@@ -235,10 +246,47 @@ a.list-group-item {
     /*background-color: rgb(224, 244, 245);*/
     /*background-color: #f5f5f5;*/
     /*color: white;*/
-    background-color:#94bbd3;
-    color:white;
+    background-color: #94bbd3;
+    color: white;
 }
+
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-    
-     border-top: none; 
+    border-top: none;
+}
+
+
+.mainTitle {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    text-decoration: none;
+    color: white;
+}
+
+.contentTitle {
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
+
+.contentHeader{
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
+.contentButton{
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
+
+.filedName {
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+.filedDisplayandContentdisplay {
+    font-size: 12px !important;
+}
+.Contentdisplay {
+    font-size: 12px !important;
+}
+.filedDisplay {
+    font-size: 12px !important;
 }

@@ -18,11 +18,11 @@
                 <div class="row col-md-12 col-xs-12  col-xs-12">
                     <div class="col-xs-4"> 
                         <div class="col-xs-4">                            
-                            <h5 style="display: inline-block;display: inline-block;"><%= Resources.DisplayText.PostingDate %> </h5>
+                            <h5 style="display: inline-block;display: inline-block;" class="filedName"><%= Resources.DisplayText.PostingDate %> </h5>
                         </div>
                         <div class="col-xs-8" style="padding: 0;">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
-                                <input type='text' class="form-control" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
+                                <input type='text' class="form-control filedDisplay" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -30,12 +30,12 @@
                         </div>
                     </div>
                     <div class="col-xs-6">
-                        <h5 style="display: inline-block;"><%= Resources.DisplayText.PosterEmailID %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
+                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.PosterEmailID %>  </h5>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
                     </div>
 
                     <div class="col-md-2 col-xs-2">
-                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
+                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary contentButton " OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
                     </div>
                 </div>
 
@@ -52,21 +52,21 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th class="col-xs-3"><strong><%= Resources.DisplayText.PostingDate %></strong></th>
-                                <th class="col-xs-3"><strong><%= Resources.DisplayText.ArticleTitle %></strong></th>
-                                <th class="col-xs-3"><strong><%= Resources.DisplayText.ArticleURL %></strong></th>
-                                <th class="col-xs-3"><strong><%= Resources.DisplayText.PosterEmailID %></strong></th>
+                                <th class="col-xs-3 contentHeader"><strong><%= Resources.DisplayText.PostingDate %></strong></th>
+                                <th class="col-xs-3 contentHeader"><strong><%= Resources.DisplayText.ArticleTitle %></strong></th>
+                                <th class="col-xs-3 contentHeader"><strong><%= Resources.DisplayText.ArticleURL %></strong></th>
+                                <th class="col-xs-3 contentHeader"><strong><%= Resources.DisplayText.PosterEmailID %></strong></th>
                             </tr>
                         </thead>
                         <tbody>
                             <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
                                 <ItemTemplate>
                                     <tr>
-                                        <td class="col-xs-3"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></td>
-                                        <td class="col-xs-3">
-                                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%#Eval("ArticleUrl")%>'><%#Eval("ArticleTitle") %></asp:LinkButton></td>
-                                        <td class="col-xs-3"><%#Eval("ArticleUrl") %></td>
-                                        <td class="col-xs-3"><%#Eval("EmailID") %></td>
+                                        <td class="col-xs-3 Contentdisplay"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></td>
+                                        <td class="col-xs-3 Contentdisplay">
+                                            <asp:LinkButton runat="server" ID="headertableItem" CssClass="Contentdisplay" Style="text-decoration: none; color:inherit;" OnCommand="ArticleClicked" CommandArgument='<%#Eval("ArticleUrl")%>'><%#Eval("ArticleTitle") %></asp:LinkButton></td>
+                                        <td class="col-xs-3 Contentdisplay"><%#Eval("ArticleUrl") %></td>
+                                        <td class="col-xs-3 Contentdisplay"><%#Eval("EmailID") %></td>
 
                                     </tr>
                                 </ItemTemplate>
@@ -82,7 +82,12 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             <div class="row" style="margin-top:40px;">
 
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ArticleID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;">
-
+                    
+                    <EmptyDataTemplate>
+                        <div class=" col-xs-12 contentHeader">
+                            <h3>No records available.</h3>
+                        </div> 
+                    </EmptyDataTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
                             <div id="itemPlaceholder" runat="server">
@@ -95,11 +100,11 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'>
 
                                     <div class="caption" style="padding-bottom: 3px;">
-                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800;   color: dimgray;"><%# Eval("ArticleTitle")%></h4>
-                                        <asp:LinkButton runat="server" style="font-size: 14px;" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
+                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800;   color: dimgray;" class="contentHeader"><%# Eval("ArticleTitle")%></h4>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" style="font-size: 14px;" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
                                         <br />
-                                        <span runat="server" style="color:rgba(17, 17, 17, 0.6);font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
-                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                        <span runat="server" class="Contentdisplay" style="color:rgba(17, 17, 17, 0.6);font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <hr style="margin-top: 5px; margin-bottom: 5px;" />
                                     </div>
 
@@ -116,9 +121,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -137,7 +142,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
             <div class="row">
-                <asp:Button runat="server" ID="btn_addArticle" CssClass="btn btn-success pull-right" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addArticle" />
+                <asp:Button runat="server" ID="btn_addArticle" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addArticle" />
             </div>
 
         </ContentTemplate>

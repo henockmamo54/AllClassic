@@ -121,7 +121,12 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
             <div class="row">
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="PeopleAndJobID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;">
-
+                    
+                    <EmptyDataTemplate>
+                        <div class=" col-xs-12 contentHeader">
+                            <h3>No records available.</h3>
+                        </div> 
+                    </EmptyDataTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
                             <div id="itemPlaceholder" runat="server">

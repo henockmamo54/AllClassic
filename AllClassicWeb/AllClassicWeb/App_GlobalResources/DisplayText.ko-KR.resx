@@ -126,7 +126,7 @@
     <comment>menu bar</comment>
   </data>
   <data name="Article" xml:space="preserve">
-    <value>기사 모음</value>
+    <value>기사</value>
     <comment>menu bar</comment>
   </data>
   <data name="Auditions" xml:space="preserve">
@@ -166,7 +166,7 @@
     <comment>menu bar</comment>
   </data>
   <data name="QA" xml:space="preserve">
-    <value>궁금과 답변</value>
+    <value>Q &amp; A</value>
     <comment>menu bar</comment>
   </data>
   <data name="RepairShop" xml:space="preserve">
@@ -186,7 +186,7 @@
     <comment>menu bar</comment>
   </data>
   <data name="ClassicCoin" xml:space="preserve">
-    <value>ClassicCoin</value>
+    <value>클래식 코인</value>
   </data>
   <data name="en" xml:space="preserve">
     <value>영</value>
@@ -214,19 +214,19 @@
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfAgent" xml:space="preserve">
-    <value>에이전시 행정담당</value>
+    <value>에이전시 관리자</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfOrganizer" xml:space="preserve">
-    <value>관리자 의 조직자</value>
+    <value>주최사 관리자</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfPerformanceGroup" xml:space="preserve">
-    <value>공연단체 행정담당</value>
+    <value>공연단체 관리자</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AdmistraterOfPromoter" xml:space="preserve">
-    <value>기획사 행정담당</value>
+    <value>기획사 관리자</value>
     <comment>Table Schema</comment>
   </data>
   <data name="AmatureMusician" xml:space="preserve">
@@ -331,7 +331,7 @@
     <value>이용자 정보</value>
   </data>
   <data name="WhatkindOfUserAreyou" xml:space="preserve">
-    <value>당신은 어떤 유형의 이용자입니까?</value>
+    <value>관련 분야를 선택해 주세요!</value>
     <comment>system msg</comment>
   </data>
   <data name="YourAffilation" xml:space="preserve">
@@ -342,7 +342,7 @@
     <comment>Table Schema</comment>
   </data>
   <data name="AddNewData" xml:space="preserve">
-    <value>새 정보 입력</value>
+    <value>추가</value>
     <comment>Button</comment>
   </data>
   <data name="Major" xml:space="preserve">
@@ -368,7 +368,7 @@
     <value>닫기</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>지우다</value>
+    <value>삭제</value>
   </data>
   <data name="EndorsedDate" xml:space="preserve">
     <value>인증 일자</value>
@@ -399,10 +399,10 @@
     <comment>Table Schema</comment>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>편집하다</value>
+    <value>편집</value>
   </data>
   <data name="Update" xml:space="preserve">
-    <value>최신 정보</value>
+    <value>수정</value>
   </data>
   <data name="Alias" xml:space="preserve">
     <value>별칭</value>
@@ -424,7 +424,7 @@
     <comment>Table Schema</comment>
   </data>
   <data name="TelNo" xml:space="preserve">
-    <value>연락 전화 번호</value>
+    <value>전화 번호</value>
     <comment>Table Schema</comment>
   </data>
   <data name="Description" xml:space="preserve">
@@ -476,7 +476,7 @@
     <comment>Table Schema</comment>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>시작일</value>
+    <value>시작</value>
     <comment>Table Schema</comment>
   </data>
   <data name="SubjectTheme" xml:space="preserve">
@@ -507,7 +507,7 @@
     <value>악기</value>
   </data>
   <data name="Playedby" xml:space="preserve">
-    <value>연주한 사람</value>
+    <value>연주자</value>
   </data>
   <data name="CollegePhoto" xml:space="preserve">
     <value>대학 사진</value>
@@ -528,7 +528,7 @@
     <value>짧은 이름</value>
   </data>
   <data name="ArticleTitle" xml:space="preserve">
-    <value> 기사 제목</value>
+    <value>기사 제목</value>
   </data>
   <data name="ArticleURL" xml:space="preserve">
     <value>기사 URL</value>
@@ -543,7 +543,7 @@
     <comment>Table Schema</comment>
   </data>
   <data name="PostingDate" xml:space="preserve">
-    <value>전기 일</value>
+    <value>등록일</value>
   </data>
   <data name="AuditionOutlineandApplicationInfo" xml:space="preserve">
     <value>오디션 개요 과 신청 정보</value>
@@ -557,24 +557,24 @@
     <comment>Table Schema</comment>
   </data>
   <data name="ToDate" xml:space="preserve">
-    <value>접수 마감일</value>
+    <value>마감일</value>
     <comment>Table Schema</comment>
   </data>
   <data name="ConcourOutline" xml:space="preserve">
-    <value>콩쿠르 요강</value>
+    <value>콩쿠르 개요</value>
     <comment>Table Schema</comment>
   </data>
   <data name="ShopName" xml:space="preserve">
     <value>상점 이름</value>
   </data>
   <data name="Expertise" xml:space="preserve">
-    <value>전문 영역</value>
+    <value>전문 분야</value>
   </data>
   <data name="OwnerName" xml:space="preserve">
     <value>소유자 이름</value>
   </data>
   <data name="VenuName" xml:space="preserve">
-    <value>브누누 이름</value>
+    <value>공연장 이름</value>
   </data>
   <data name="ContactName" xml:space="preserve">
     <value>담당자 이름</value>
@@ -584,28 +584,28 @@
     <comment>menu bar</comment>
   </data>
   <data name="ValidDate" xml:space="preserve">
-    <value>유효한 날짜</value>
+    <value>마감일</value>
   </data>
   <data name="Job" xml:space="preserve">
-    <value>일</value>
+    <value>구직</value>
   </data>
   <data name="People" xml:space="preserve">
-    <value>사람들</value>
+    <value>구인</value>
   </data>
   <data name="PleaseenteryourEmail" xml:space="preserve">
-    <value>귀하의 이메일을 입력하십시오!</value>
+    <value>이메일을 입력하세요!</value>
   </data>
   <data name="PleaseenteryourFullName" xml:space="preserve">
-    <value>당신의 성명을 입력 해주세요!</value>
+    <value>이름을 입력하세요!</value>
   </data>
   <data name="PleaseenteryourPassword" xml:space="preserve">
     <value>비밀번호를 입력하십시오!</value>
   </data>
   <data name="Pleaseclickasmanyasyouthinkyouare" xml:space="preserve">
-    <value>당신이 생각하는만큼 클릭하십시오!</value>
+    <value>해당 사항을 있는대로 선택하세요!</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>공연 장소(위치)</value>
+    <value>위치</value>
   </data>
   <data name="Performanceschedule" xml:space="preserve">
     <value>공연 일정</value>
@@ -623,88 +623,88 @@
     <value>합계</value>
   </data>
   <data name="PleaseEnterEndDate" xml:space="preserve">
-    <value>종료일을 입력하십시오.</value>
+    <value>종료일을 입력하세요!</value>
   </data>
   <data name="PleaseEnterMainTitle" xml:space="preserve">
-    <value>기본 제목을 입력하십시오.</value>
+    <value>기본 제목을 입력하세요!</value>
   </data>
   <data name="PleaseEnterStartDate" xml:space="preserve">
-    <value>시작 날짜를 입력하십시오.</value>
+    <value>시작 날짜를 입력하세요!</value>
   </data>
   <data name="PleaseEnterTicketBoxinfo" xml:space="preserve">
-    <value>티켓 상자를 입력하십시오.</value>
+    <value>판매처를 입력하세요!</value>
   </data>
   <data name="PleaseEnterTime" xml:space="preserve">
-    <value>시간을 입력하십시오.</value>
+    <value>시간을 입력하세요!</value>
   </data>
   <data name="Comment" xml:space="preserve">
-    <value>논평</value>
-  </data>
-  <data name="Reply" xml:space="preserve">
     <value>댓글</value>
   </data>
+  <data name="Reply" xml:space="preserve">
+    <value>답글</value>
+  </data>
   <data name="Affiliation" xml:space="preserve">
-    <value>입회</value>
+    <value>소속 단체</value>
   </data>
   <data name="Pleasefillthecountryfield" xml:space="preserve">
-    <value>국가 입력란을 작성하십시오.</value>
+    <value>국가를 입력하세요!</value>
   </data>
   <data name="PleasefilltheHomepagefield" xml:space="preserve">
-    <value>홈페이지 입력란을 작성하십시오.</value>
+    <value>홈페이지를 입력하세요!</value>
   </data>
   <data name="Pleasefillthenamefield" xml:space="preserve">
-    <value>이름 입력란을 작성하십시오.</value>
+    <value>이름을 입력하세요!</value>
   </data>
   <data name="Pleasefilltheshortnamefield" xml:space="preserve">
-    <value>짧은 이름 입력란을 작성하십시오.</value>
+    <value>짧은 이름을 입력하세요!</value>
   </data>
   <data name="Pleasefillthearticletitle" xml:space="preserve">
-    <value>기사 제목을 기입하십시오.</value>
+    <value>기사 제목을 입력하세요!</value>
   </data>
   <data name="PleasefillthearticleURL" xml:space="preserve">
-    <value>기사 URL을 작성하십시오.</value>
+    <value>기사 URL을 입력하세요!</value>
   </data>
   <data name="PleasefillAuditionoutlinefield" xml:space="preserve">
-    <value>오디션 개요 필드를 입력하십시오.</value>
+    <value>오디션 개요 필드를 입력하세요!</value>
   </data>
   <data name="Pleasefillorganizerfield" xml:space="preserve">
-    <value>주최자를 작성하십시오.</value>
+    <value>주최자 정보를 입력하세요!</value>
   </data>
   <data name="Pleasefilltitlefield" xml:space="preserve">
-    <value>제목 입력란을 작성하십시오.</value>
+    <value>제목을 입력하세요!</value>
   </data>
   <data name="PleasefillConcouroutlinefield" xml:space="preserve">
-    <value>콩쿠르 개요 입력란을 작성하십시오.</value>
+    <value>콩쿠르 개요를 입력하세요!</value>
   </data>
   <data name="PleasefillAddressfield" xml:space="preserve">
-    <value>주소 입력란을 작성하십시오.</value>
+    <value>주소를 입력하세요!</value>
   </data>
   <data name="PleasefillEmailfield" xml:space="preserve">
-    <value>이메일 입력란을 작성하십시오.</value>
+    <value>이메일을 입력하세요!</value>
   </data>
   <data name="PleasefillPerformanceGroupfield" xml:space="preserve">
-    <value>실적 그룹 입력란을 작성하십시오.</value>
+    <value>공연단 정보를 입력하세요!</value>
   </data>
   <data name="PleasefillSinceYearfield" xml:space="preserve">
-    <value>설정 년도 필드를 기입하십시오.</value>
+    <value>설립 년도 필드를 입력하세요!</value>
   </data>
   <data name="PleasefillTelNofield" xml:space="preserve">
-    <value>전화 번호 입력란을 작성하십시오.</value>
+    <value>전화 번호를 입력하세요!</value>
   </data>
   <data name="PleasefillZipCodefield" xml:space="preserve">
-    <value>우편 번호 입력란을 작성하십시오.</value>
+    <value>우편 번호를 입력하세요!</value>
   </data>
   <data name="PleasefillVenuNamefield" xml:space="preserve">
-    <value>브누누 이름 필드를 입력하십시오.</value>
+    <value>공연장 이름을 입력하세요!</value>
   </data>
   <data name="PleasefillContactNamefield" xml:space="preserve">
-    <value>담당자 이름 입력란을 작성하십시오.</value>
+    <value>담당자 이름을 입력하세요!</value>
   </data>
   <data name="PleasefillDescriptionfield" xml:space="preserve">
-    <value>설명 입력란을 작성하십시오.</value>
+    <value>설명을 입력하세요!</value>
   </data>
   <data name="PleasefillValidDatefield" xml:space="preserve">
-    <value>유효한 날짜 필드를 입력하십시오.</value>
+    <value>마감일을 입력하세요!</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>없음</value>
@@ -716,6 +716,6 @@
     <value>마지막</value>
   </data>
   <data name="Endorse" xml:space="preserve">
-    <value>승인하다</value>
+    <value>인증</value>
   </data>
 </root>

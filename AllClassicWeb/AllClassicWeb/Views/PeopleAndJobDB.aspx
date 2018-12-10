@@ -17,8 +17,8 @@
                 <div class="row  col-xs-12" style="padding-right: 0px;">
 
                     <div class="col-xs-3" style="padding-left: 0;">
-                        <h5 style="display: inline-block;"><%=Resources.DisplayText.PeopleOrJob %></h5>
-                        <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control" Style="display: inline-block; width: 60%;">
+                        <h5 style="display: inline-block;" class="filedName"><%=Resources.DisplayText.PeopleOrJob %></h5>
+                        <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control filedDisplay" Style="display: inline-block; width: 60%;">
                             <asp:ListItem Value="-1" Text="ALL"></asp:ListItem>
                             <asp:ListItem Value="-2" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
                             <asp:ListItem Value="-3" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
@@ -27,19 +27,19 @@
                     </div>
 
 
-                    <div class="col-xs-3" >
-                        <h5 style="display: inline-block;"><%=Resources.DisplayText.Title %></h5>
-                        <asp:TextBox runat="server" ID="txt_title" CssClass="form-control" Style="display: inline-block; width: 60%;" />
+                    <div class="col-xs-3">
+                        <h5 style="display: inline-block;" class="filedName"><%=Resources.DisplayText.Title %></h5>
+                        <asp:TextBox runat="server" ID="txt_title" CssClass="form-control filedDisplay" Style="display: inline-block; width: 60%;" />
 
                     </div>
 
                     <div class="col-xs-3" style="padding: 0;">
                         <div class=" col-xs-6" style="margin-top: 10px; margin-bottom: 10px; padding: 0;">
-                            <span style="display: inline-block;"><%= Resources.DisplayText.ValidDate %> </span>
+                            <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.ValidDate %> </span>
                         </div>
                         <div class=" col-xs-6" style="padding: 0;">
                             <div class='input-group date' id='datetimepicker3' style="display: flex;">
-                                <input type='text' class="form-control" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker3" style="display: inline-block; border-right-width: 0px;" />
+                                <input type='text' class="form-control filedDisplay" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker3" style="display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -48,9 +48,9 @@
                     </div>
 
                     <div class="col-xs-3" style="padding: 0;">
-                        <div class="col-xs-4" style="margin-top: 10px; margin-bottom: 10px;"><%=Resources.DisplayText.City %></div>
+                        <div class="col-xs-4 filedName" style="margin-top: 10px; margin-bottom: 10px;"><%=Resources.DisplayText.City %></div>
                         <div class="col-xs-8" style="padding: 0;">
-                            <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
                                 SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
                                 union
@@ -64,7 +64,7 @@ where maincode='City'
 
                     <div class="col-md-12 col-xs-12" style="padding-right: 0px;">
 
-                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
+                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
                     </div>
                 </div>
 
@@ -87,11 +87,11 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th><strong><%= Resources.DisplayText.PeopleOrJob %></strong></th>
-                                <th><strong><%= Resources.DisplayText.Title %></strong></th>
-                                <th><strong><%= Resources.DisplayText.ValidDate %></strong></th>
-                                <th><strong><%= Resources.DisplayText.City %></strong></th>
-                                <th><strong><%= Resources.DisplayText.PosterEmailID %></strong></th>
+                                <th class="contentHeader"><%= Resources.DisplayText.PeopleOrJob %> </th>
+                                <th class="contentHeader"><%= Resources.DisplayText.Title %> </th>
+                                <th class="contentHeader"><%= Resources.DisplayText.ValidDate %> </th>
+                                <th class="contentHeader"><%= Resources.DisplayText.City %> </th>
+                                <th class="contentHeader"><%= Resources.DisplayText.PosterEmailID %> </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,7 +101,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
 
                                 <ItemTemplate>
-                                    <tr>
+                                    <tr class="Contentdisplay">
                                         <td><%# Eval("PeopleOrJob") %></td>
                                         <td><%# Eval("Title") %></td>
                                         <td><%# DataBinder.Eval(Container.DataItem,"ValidDate","{0:d/M/yyyy}") %></td>
@@ -121,11 +121,11 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
             <div class="row">
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="PeopleAndJobID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;">
-                    
+
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
                             <h3>No records available.</h3>
-                        </div> 
+                        </div>
                     </EmptyDataTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
@@ -135,24 +135,52 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     </GroupTemplate>
                     <ItemTemplate>
                         <div class="col-md-4 col-xs-4" style="margin-bottom: 1em;">
-                            <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">
 
-                                <div class="caption" style="padding-bottom: 3px;">
-                                    <h4><%# (Eval("PeopleOrJob"))%></h4>
-                                    <hr />
-                                    <div><strong><%=Resources.DisplayText.Title %>:</strong> <%# (Eval("Title"))%></div>
-                                    <div><strong><%=Resources.DisplayText.ValidDate %>:</strong> <%# DataBinder.Eval(Container.DataItem,"ValidDate","{0:d/M/yyyy}") %></div>
-                                    <div><strong><%=Resources.DisplayText.City %>:</strong> <%# (Eval("cityname"))%></div>
-                                    <div><strong><%=Resources.DisplayText.ContactName %>:</strong> <%# (Eval("ContactName"))%></div>
-                                    <div><strong><%=Resources.DisplayText.TelNo %>:</strong> <%# (Eval("TelNo"))%></div>
-                                    <div><strong><%=Resources.DisplayText.Email %>:</strong> <%# (Eval("EmailID"))%></div>
-                                    <div><strong><%=Resources.DisplayText.Description %>:</strong> <%# (Eval("Description"))%></div>
-
-                                    <asp:LinkButton runat="server" ID="edit" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
-
+                            <div class="panel panel-success shadowedbox_hover">
+                                <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
+                                    <h4><%# (Eval("Title")) .ToString().Length>15?
+                                        (Eval("Title")) .ToString().Substring(0,15)+ " ....":
+                                        (Eval("Title")) .ToString()%></h4>
                                 </div>
+                                <div class="panel-body">
+                                    <table>
+                                        <tbody class="rowwithbottomborder ">
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.PeopleOrJob %>:</td>
+                                                <td class="filedDisplay"><%#Eval("PeopleOrJob") %></td>
 
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.ValidDate %>:</td>
+                                                <td class="filedDisplay"><%# DataBinder.Eval(Container.DataItem,"ValidDate","{0:d/M/yyyy}") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.City %>:</td>
+                                                <td class="filedDisplay"><%#Eval("cityname") %></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.ContactName %>:</td>
+                                                <td class="filedDisplay"><%#Eval("ContactName") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.TelNo %>:</td>
+                                                <td class="filedDisplay"><%#Eval("TelNO") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.Email %>:</td>
+                                                <td class="filedDisplay"><%#Eval("EmailID") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.Description %>:</td>
+                                                <td class="filedDisplay"><%#Eval("Description") %></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <asp:LinkButton runat="server" ID="LinkButton1" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                </div>
                             </div>
+
                         </div>
 
                     </ItemTemplate>
@@ -164,9 +192,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div class="col-xs-12" style="text-align: center;">
                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                     <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                         <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
                                     </Fields>
                                 </asp:DataPager>
                             </div>
@@ -188,7 +216,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
             <div class="row">
-                <asp:Button runat="server" ID="btn_addNew" CssClass="btn btn-success pull-right" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNew" />
+                <asp:Button runat="server" ID="btn_addNew" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNew" />
             </div>
 
         </ContentTemplate>
@@ -206,4 +234,20 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             });
         });
     </script>
+
+    <style>
+        .rowwithbottomborder > tr > td {
+            /*border-bottom: 1px solid #eaeaea;*/
+            padding-bottom: 10px;
+            padding-right: 5px;
+            color: black !important;
+        }
+
+        .shadowedbox_hover {
+            background-color: #d3d3d31f;
+            /* box-shadow: 3px 3px 3px #d0d0d0 !important; */
+            box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
+        }
+    </style>
+
 </asp:Content>

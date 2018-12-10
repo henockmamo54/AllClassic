@@ -5,6 +5,7 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link rel="stylesheet" type="text/css" href="../Content/Site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 </head>
 <body style="padding-top: 2px;">
 
@@ -17,7 +18,7 @@
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
             <ContentTemplate>
 
-                <div class="container" style="padding-top: 90px;">
+                <div class="container" style="padding-top: 90px;  font-family: 'Open Sans', sans-serif;"">
                     <div class="card card-container" style="background: white; border-top: 1px solid lightgray;">
                         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
                         <p id="profile-name" class="profile-name-card"></p>
