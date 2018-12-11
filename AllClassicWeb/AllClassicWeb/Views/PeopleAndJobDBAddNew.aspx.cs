@@ -27,7 +27,7 @@ namespace AllClassicWeb.Views
                         txt_email.Text = p.EmailID;
                         txt_telno.Text = p.TelNo;
                         txt_description.Text = p.Description;
-                        DropDownList1_type.Items.FindByText(p.PeopleOrJob.ToString()).Selected = true;
+                        DropDownList1_type.Items.FindByValue(p.PeopleOrJob.ToString()).Selected = true;
                     }
                 }
             }
@@ -50,7 +50,7 @@ namespace AllClassicWeb.Views
             try
             {
                 PeopleAndJobTbl r = (PeopleAndJobTbl)Session["selectedPeopleAndJobTbl"];
-                r.PeopleOrJob = DropDownList1_type.SelectedItem.Text;
+                r.PeopleOrJob = DropDownList1_type.SelectedItem.Value;
                 r.ValidDate = DateTime.ParseExact(datetimefilter.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 r.City = int.Parse(DropDownList3_city.SelectedItem.Value);
                 r.Title = txt_title.Text;
@@ -83,7 +83,7 @@ namespace AllClassicWeb.Views
             try
             {
                 PeopleAndJobTbl r = new PeopleAndJobTbl();
-                r.PeopleOrJob = DropDownList1_type.SelectedItem.Text;
+                r.PeopleOrJob = DropDownList1_type.SelectedItem.Value;
                 r.ValidDate = DateTime.ParseExact(datetimefilter.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);                
                 r.City = int.Parse(DropDownList3_city.SelectedItem.Value);
                 r.Title = txt_title.Text;
@@ -145,7 +145,7 @@ namespace AllClassicWeb.Views
                 try
                 {
                     PeopleAndJobTbl p = (PeopleAndJobTbl)Session["selectedPeopleAndJobTbl"];
-                    DropDownList1_type.Items.FindByText(p.PeopleOrJob.ToString()).Selected = true;
+                    DropDownList1_type.Items.FindByValue(p.PeopleOrJob.ToString()).Selected = true;
                 }
                 catch (Exception ee) { }
             }

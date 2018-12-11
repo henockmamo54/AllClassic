@@ -18,8 +18,8 @@
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.PeopleOrJob %>*</div>
             <div class="col-xs-6" style="padding: 0;">
                 <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control filedDisplay" OnDataBound="DropDownList1_type_DataBound">
-                    <asp:ListItem Value="-1" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
-                    <asp:ListItem Value="-2" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
+                    <asp:ListItem Value="1" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
+                    <asp:ListItem Value="2" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
                 </asp:DropDownList>
 
             </div>

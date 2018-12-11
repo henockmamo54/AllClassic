@@ -19,9 +19,9 @@
                     <div class="col-xs-3" style="padding-left: 0;">
                         <h5 style="display: inline-block;" class="filedName"><%=Resources.DisplayText.PeopleOrJob %></h5>
                         <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control filedDisplay" Style="display: inline-block; width: 60%;">
-                            <asp:ListItem Value="-1" Text="ALL"></asp:ListItem>
-                            <asp:ListItem Value="-2" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
-                            <asp:ListItem Value="-3" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
+                            <asp:ListItem Value="0" Text="ALL"></asp:ListItem>
+                            <asp:ListItem Value="1" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
+                            <asp:ListItem Value="2" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
                         </asp:DropDownList>
 
                     </div>
@@ -102,7 +102,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                 <ItemTemplate>
                                     <tr class="Contentdisplay">
-                                        <td><%# Eval("PeopleOrJob") %></td>
+                                        <td><%# (Eval("PeopleOrJob")).ToString()=="1"? Resources.DisplayText.Job :Resources.DisplayText.People %></td>
                                         <td><%# Eval("Title") %></td>
                                         <td><%# DataBinder.Eval(Container.DataItem,"ValidDate","{0:d/M/yyyy}") %></td>
                                         <td><%# Eval("cityname") %></td>
@@ -147,7 +147,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <tbody class="rowwithbottomborder ">
                                             <tr>
                                                 <td class="filedName"><%# Resources.DisplayText.PeopleOrJob %>:</td>
-                                                <td class="filedDisplay"><%#Eval("PeopleOrJob") %></td>
+                                                <td class="filedDisplay"><%# (Eval("PeopleOrJob")).ToString()=="1"? Resources.DisplayText.Job :Resources.DisplayText.People %></td>
 
                                             </tr>
                                             <tr>
