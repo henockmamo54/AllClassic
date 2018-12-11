@@ -718,4 +718,16 @@
   <data name="Endorse" xml:space="preserve">
     <value>인증</value>
   </data>
+  <data name="Answer" xml:space="preserve">
+    <value>대답</value>
+  </data>
+  <data name="NewQuestion" xml:space="preserve">
+    <value>새로운 질문</value>
+  </data>
+  <data name="PleaseFilltheQuestionFiled" xml:space="preserve">
+    <value>질문을 작성하십시오.</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>질문</value>
+  </data>
 </root>

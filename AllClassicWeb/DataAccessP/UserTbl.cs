@@ -33,6 +33,8 @@ namespace DataAccessP
             this.PeopleAndJobTbls = new HashSet<PeopleAndJobTbl>();
             this.PerformanceCommentTbls = new HashSet<PerformanceCommentTbl>();
             this.PerformanceLikeUnlikeTbls = new HashSet<PerformanceLikeUnlikeTbl>();
+            this.AnswersTbls = new HashSet<AnswersTbl>();
+            this.QuestionsTbls = new HashSet<QuestionsTbl>();
         }
     
         public int UserID { get; set; }
@@ -84,5 +86,9 @@ namespace DataAccessP
         public virtual ICollection<PerformanceCommentTbl> PerformanceCommentTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceLikeUnlikeTbl> PerformanceLikeUnlikeTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AnswersTbl> AnswersTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<QuestionsTbl> QuestionsTbls { get; set; }
     }
 }

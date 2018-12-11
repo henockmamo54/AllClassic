@@ -46,5 +46,7 @@ namespace DataAccessP
         public virtual DbSet<PeopleAndJobTbl> PeopleAndJobTbls { get; set; }
         public virtual DbSet<PerformanceCommentTbl> PerformanceCommentTbls { get; set; }
         public virtual DbSet<PerformanceLikeUnlikeTbl> PerformanceLikeUnlikeTbls { get; set; }
+        public virtual DbSet<AnswersTbl> AnswersTbls { get; set; }
+        public virtual DbSet<QuestionsTbl> QuestionsTbls { get; set; }
     }
 }

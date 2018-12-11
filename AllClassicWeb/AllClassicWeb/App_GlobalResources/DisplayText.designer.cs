@@ -169,6 +169,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Answer.
+        /// </summary>
+        internal static string Answer {
+            get {
+                return ResourceManager.GetString("Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Archive Center.
         /// </summary>
         internal static string ArchiveCenter {
@@ -763,6 +772,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Question.
+        /// </summary>
+        internal static string NewQuestion {
+            get {
+                return ResourceManager.GetString("NewQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nick Name.
         /// </summary>
         internal static string NickName {
@@ -1132,6 +1150,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Fill the Question filed.
+        /// </summary>
+        internal static string PleaseFilltheQuestionFiled {
+            get {
+                return ResourceManager.GetString("PleaseFilltheQuestionFiled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill the short name field.
         /// </summary>
         internal static string Pleasefilltheshortnamefield {
@@ -1245,6 +1272,15 @@ namespace Resources {
         internal static string QA {
             get {
                 return ResourceManager.GetString("QA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        internal static string Question {
+            get {
+                return ResourceManager.GetString("Question", resourceCulture);
             }
         }
         

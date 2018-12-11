@@ -700,4 +700,16 @@
   <data name="Endorse" xml:space="preserve">
     <value>Endorse</value>
   </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="NewQuestion" xml:space="preserve">
+    <value>New Question</value>
+  </data>
+  <data name="PleaseFilltheQuestionFiled" xml:space="preserve">
+    <value>Please Fill the Question filed</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
 </root>

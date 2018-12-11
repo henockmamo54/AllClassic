@@ -151,6 +151,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Views\QADbNew.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -210,6 +211,7 @@
     <Content Include="Views\PerformanceGroup.aspx" />
     <Content Include="Views\PerformanceGroupAddNew.aspx" />
     <Content Include="Views\PerformanceGroupDetail.aspx" />
+    <Content Include="Views\QADbAddNew.aspx" />
     <Content Include="Views\RepairShopDB.aspx" />
     <Content Include="Views\RepairShopDBAddNew.aspx" />
     <Content Include="Views\SignUp\TermsOfUsePage.aspx" />
@@ -256,6 +258,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\QADbNew.aspx.cs">
+      <DependentUpon>QADbNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QADbNew.aspx.designer.cs">
+      <DependentUpon>QADbNew.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -479,6 +488,13 @@
     </Compile>
     <Compile Include="Views\PerformanceGroupDetail.aspx.designer.cs">
       <DependentUpon>PerformanceGroupDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QADbAddNew.aspx.cs">
+      <DependentUpon>QADbAddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QADbAddNew.aspx.designer.cs">
+      <DependentUpon>QADbAddNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RepairShopDB.aspx.cs">
       <DependentUpon>RepairShopDB.aspx</DependentUpon>

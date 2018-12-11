@@ -65,6 +65,11 @@
         <EntityTypeShape EntityType="AllClassicDBModel.PerformanceLikeUnlikeTbl" Width="1.5" PointX="15.75" PointY="13.5" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__17036CC0" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__160F4887" />
+        <EntityTypeShape EntityType="AllClassicDBModel.AnswersTbl" Width="1.5" PointX="5.25" PointY="27.625" />
+        <EntityTypeShape EntityType="AllClassicDBModel.QuestionsTbl" Width="1.5" PointX="3" PointY="45.625" />
+        <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__Quest__22751F6C" />
+        <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__UserI__236943A5" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Questions__UserI__1EA48E88" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
