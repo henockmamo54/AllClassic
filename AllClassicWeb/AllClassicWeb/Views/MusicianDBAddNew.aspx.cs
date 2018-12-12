@@ -11,8 +11,10 @@ namespace AllClassicWeb.Views
 {
     public partial class MusicianDBAddNew : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             manageFileUpload1();
             manageFileUpload2();
 
@@ -136,7 +138,7 @@ namespace AllClassicWeb.Views
                 getPhoto(artist, 2, FileUpload_photo2);
                 artist.Profile = txt_profilepage.Text;
                 artist.Repertory = txt_repertory.Text;
-                artist.UserID = 5;
+                artist.UserID = user.UserID;
                 artist.UpdateTimeStamp = DateTime.Now;
                 artist.Affliation = txt_youraffiliation.Text;
 
@@ -283,7 +285,7 @@ namespace AllClassicWeb.Views
                 getPhoto(artist, 2, FileUpload_photo2);
                 artist.Profile = txt_profilepage.Text;
                 artist.Repertory = txt_repertory.Text;
-                artist.UserID = 5;
+                artist.UserID = user.UserID;
                 artist.UpdateTimeStamp = DateTime.Now;
                 artist.Affliation = txt_youraffiliation.Text;
                                

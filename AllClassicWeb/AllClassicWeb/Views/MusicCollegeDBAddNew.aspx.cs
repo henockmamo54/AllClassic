@@ -11,13 +11,16 @@ namespace AllClassicWeb.Views
 {
     public partial class MusicCollegeDBAddNew : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             manageFileUpload1();
+
             if (!IsPostBack)
             {
                 handleButtons(true);
-                manageFileUpload1();
+                //manageFileUpload1();
 
 
                 if (Session["updateMusicCollege"] != null)
@@ -79,7 +82,7 @@ namespace AllClassicWeb.Views
                 getPhoto(c, 1, FileUpload_photo1);
                 c.LocationMap = txt_locationmap.Text;
                 c.Introduction = txt_introduction.Text;
-                c.UserID = 5;
+                c.UserID = user.UserID;
                 c.UpdateTimeStamp = DateTime.Now;
 
                 c = BusinessLogic.CollegeLogic.updateCollege(c);
@@ -112,7 +115,7 @@ namespace AllClassicWeb.Views
                 getPhoto(c, 1, FileUpload_photo1);
                 c.LocationMap = txt_locationmap.Text;
                 c.Introduction = txt_introduction.Text;
-                c.UserID = 5;
+                c.UserID = user.UserID;
                 c.UpdateTimeStamp = DateTime.Now;
 
                 c = BusinessLogic.CollegeLogic.regesterCollege(c);
@@ -136,7 +139,7 @@ namespace AllClassicWeb.Views
 
         public bool getPhoto(CollegeTbl info, int photonumber, FileUpload fileupload)
         {
-            fileupload= manageFileUpload1();
+            fileupload = manageFileUpload1();
             if (fileupload.HasFiles)
             {
                 string ext = System.IO.Path.GetExtension(fileupload.FileName);

@@ -11,8 +11,10 @@ namespace AllClassicWeb.Views
 {
     public partial class PerformanceGroupAddNew : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             if (!IsPostBack)
             {
                 if (Session["updatePerformanceGroup"] != null)
@@ -91,7 +93,7 @@ namespace AllClassicWeb.Views
             pg.TelNo = txt_telno.Text;
             pg.FaxNo = txt_faxno.Text;
             pg.HomePage = txt_homepage.Text;
-            pg.UserID = 5;
+            pg.UserID = user.UserID;
             pg.UpdateTimeStamp = DateTime.Now;
 
             pg = BusinessLogic.PerformanceGroupLogic.UpdatePerformanceGroupTbl(pg);
@@ -121,7 +123,7 @@ namespace AllClassicWeb.Views
                 pg.TelNo = txt_telno.Text;
                 pg.FaxNo = txt_faxno.Text;
                 pg.HomePage = txt_homepage.Text;
-                pg.UserID = 5;
+                pg.UserID = user.UserID;
                 pg.UpdateTimeStamp = DateTime.Now;
 
                 pg = BusinessLogic.PerformanceGroupLogic.addPerformanceGroup(pg);

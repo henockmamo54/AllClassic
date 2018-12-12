@@ -25,17 +25,20 @@ namespace BusinessLogic
 
                         var registeredEndorsersList = new List<MusicianEndorserTbl>();
                         //register endorsers
-                        foreach (MusicianEndorserTbl x in endorsers)
+                        if (endorsers != null)
                         {
-                            MusicianEndorserTbl ue = new MusicianEndorserTbl();
-                            ue.MusicianID = musician.MusicianID;
-                            //ue.UserID = user.ID;
-                            ue.EndorserEmail = x.EndorserEmail;
-                            ue.EndorserName = x.EndorserName;
+                            foreach (MusicianEndorserTbl x in endorsers)
+                            {
+                                MusicianEndorserTbl ue = new MusicianEndorserTbl();
+                                ue.MusicianID = musician.MusicianID;
+                                //ue.UserID = user.ID;
+                                ue.EndorserEmail = x.EndorserEmail;
+                                ue.EndorserName = x.EndorserName;
 
-                            context.MusicianEndorserTbls.Add(ue);
-                            context.SaveChanges();
-                            registeredEndorsersList.Add(ue);
+                                context.MusicianEndorserTbls.Add(ue);
+                                context.SaveChanges();
+                                registeredEndorsersList.Add(ue);
+                            }
                         }
 
                         dbContextTransaction.Commit();

@@ -8,8 +8,10 @@ namespace AllClassicWeb.Views
 {
     public partial class PeopleAndJobDBAddNew : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
             if (!IsPostBack)
             {
@@ -59,7 +61,7 @@ namespace AllClassicWeb.Views
                 r.TelNo = txt_telno.Text;
                 r.Description = txt_description.Text;
                 r.UpdateTimeStamp = DateTime.Now;
-                r.UserID = 5;
+                r.UserID = user.UserID;
 
                 r = BusinessLogic.PeopleAndJobLogic.updatePeopleAndLogic(r);
                 if (r != null)
@@ -92,7 +94,7 @@ namespace AllClassicWeb.Views
                 r.TelNo = txt_telno.Text;
                 r.Description = txt_description.Text;                
                 r.UpdateTimeStamp = DateTime.Now;
-                r.UserID = 5;
+                r.UserID = user.UserID;
 
                 r = BusinessLogic.PeopleAndJobLogic.registerPeopleAndLogic(r);
                 if (r != null)

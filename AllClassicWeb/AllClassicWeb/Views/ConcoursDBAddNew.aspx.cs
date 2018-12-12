@@ -12,8 +12,10 @@ namespace AllClassicWeb.Views
 {
     public partial class ConcoursDBAddNew : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
 
             if (!IsPostBack)
@@ -61,7 +63,7 @@ namespace AllClassicWeb.Views
                 c.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 c.ConcourOutline = txt_outline.Text;
                 c.UpdateTimeStamp = DateTime.Now;
-                c.UserID = 5;
+                c.UserID = user.UserID;
 
                 c = BusinessLogic.ConcoursLogic.updateConcours(c);
                 if (c != null)
@@ -90,7 +92,7 @@ namespace AllClassicWeb.Views
                 c.ToDate= DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 c.ConcourOutline = txt_outline.Text;
                 c.UpdateTimeStamp = DateTime.Now;
-                c.UserID = 5;
+                c.UserID = user.UserID;
 
                 c = BusinessLogic.ConcoursLogic.registerConcours(c);
                 if (c != null)

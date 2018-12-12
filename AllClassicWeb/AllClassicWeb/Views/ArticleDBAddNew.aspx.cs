@@ -11,8 +11,12 @@ namespace AllClassicWeb.Views
 {
     public partial class ArticleDBAddNew : System.Web.UI.Page
     {
+
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
+
             if (!IsPostBack)
             {
 
@@ -46,7 +50,7 @@ namespace AllClassicWeb.Views
             article.ArticleTitle = this.txt_title.Text;
             article.ArticleURL = this.txt_url.Text;
             article.UpdateTimeStamp = DateTime.Now;
-            article.UserID = 5;
+            article.UserID = user.UserID;
             article = BusinessLogic.ArticleLogic.updateArticle(article);
             if (article != null)
             {
@@ -76,7 +80,7 @@ namespace AllClassicWeb.Views
                 article.ArticleTitle = this.txt_title.Text;
                 article.ArticleURL = this.txt_url.Text;
                 article.UpdateTimeStamp = DateTime.Now;
-                article.UserID = 5;
+                article.UserID = user.UserID;
                 article = BusinessLogic.ArticleLogic.registerArticle(article);
                 if (article != null)
                 {

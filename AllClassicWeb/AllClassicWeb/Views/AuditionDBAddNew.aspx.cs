@@ -12,8 +12,10 @@ namespace AllClassicWeb.Views
 {
     public partial class AuditionDBAddNew : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
 
             if (!IsPostBack)
@@ -48,7 +50,7 @@ namespace AllClassicWeb.Views
                 audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 audition.UpdateTimeStamp = DateTime.Now;
                 audition.AuditionOutline = txt_auditionoutline.Text;
-                audition.UserID = 5;
+                audition.UserID = user.UserID;
                 audition = BusinessLogic.AuditionLogic.regesterAudtionTbl(audition);
                 if (audition != null)
                 {
@@ -90,7 +92,7 @@ namespace AllClassicWeb.Views
                 audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 audition.UpdateTimeStamp = DateTime.Now;
                 audition.AuditionOutline = txt_auditionoutline.Text;
-                audition.UserID = 5;
+                audition.UserID = user.UserID;
                 audition = BusinessLogic.AuditionLogic.updateAudtionTbl(audition);
                 if (audition != null)
                 {

@@ -11,8 +11,10 @@ namespace AllClassicWeb.Views
 {
     public partial class MusicShopDBAddNew : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             if (!IsPostBack)
             {
                 handleButtons(true);
@@ -75,7 +77,7 @@ namespace AllClassicWeb.Views
                 r.FaxNo = txt_faxno.Text;
                 r.HomePage = txt_homepage.Text;
                 r.UpdateTimeStamp = DateTime.Now;
-                r.UserID = 5;
+                r.UserID = user.UserID;
 
                 r = BusinessLogic.MusicShopLogic.updateMusicShop(r);
                 if (r != null)
@@ -118,7 +120,7 @@ namespace AllClassicWeb.Views
                 r.FaxNo = txt_faxno.Text;
                 r.HomePage = txt_homepage.Text;
                 r.UpdateTimeStamp = DateTime.Now;
-                r.UserID = 5;
+                r.UserID = user.UserID;
 
                 r = BusinessLogic.MusicShopLogic.registerMusicShop(r);
                 if (r != null)

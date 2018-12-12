@@ -12,8 +12,10 @@ namespace AllClassicWeb.Views
 {
     public partial class PerformanceDBAddNew : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Poppdadnew", "bindDateTime();", true);
             manageFileUpload1();
             if (!IsPostBack)
@@ -159,7 +161,7 @@ namespace AllClassicWeb.Views
                 pt.TicketBox = txt_ticketbox.Text;
                 pt.Program = txt_program.Text;
                 pt.Description = txt_description.Text;
-                pt.UserID = 5;
+                pt.UserID = user.UserID;
                 pt.UpdateTimeStamp = DateTime.Now;
 
                 if (pt.PosterFileName == null)
@@ -219,7 +221,7 @@ namespace AllClassicWeb.Views
                 pt.TicketBox = txt_ticketbox.Text;
                 pt.Program = txt_program.Text;
                 pt.Description = txt_description.Text;
-                pt.UserID = 5;
+                pt.UserID = user.UserID;
                 pt.UpdateTimeStamp = DateTime.Now;
 
                 List<PerformanceMusicianInstrumentTbl> mylist = (List<PerformanceMusicianInstrumentTbl>)Session["PerformanceMusicianInstrumentTbl"];
