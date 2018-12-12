@@ -68,6 +68,13 @@ namespace AllClassicWeb.Views
 
                 //like unlike
                 getLikeUnlikeStatusForUser();
+
+                if (user != null)
+                {
+                    if (user.UserID == performance.UserID) btn_editArtist.Visible = true;
+                }
+                else btn_editArtist.Visible = false;
+
             }
         }
 

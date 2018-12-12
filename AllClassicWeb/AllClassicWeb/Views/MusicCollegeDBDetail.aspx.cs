@@ -12,8 +12,10 @@ namespace AllClassicWeb.Views
     public partial class MusicCollegeDBDetail : Page
     {
         int collegeID;
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             if (Request.QueryString["ID"] != null)
                 collegeID = int.Parse(Request.QueryString["ID"]);
             CollegeTbl college = BusinessLogic.CollegeLogic.getCollegeByID(collegeID);
@@ -29,7 +31,14 @@ namespace AllClassicWeb.Views
                 txt_introduction.Text = college.Introduction;
                 txt_locationmap.Text = college.LocationMap;
                 txt_locationmap.CommandArgument = college.LocationMap;
-                 
+
+
+                if (user != null)
+                {
+                    if (user.UserID == college.UserID) btn_editcollege.Visible = true;
+                }
+                else btn_editcollege.Visible = false;
+
                 //var b = new UriBuilder(college.HomePage);
                 //txt_homepage.PostBackUrl = b.ToString();
             }

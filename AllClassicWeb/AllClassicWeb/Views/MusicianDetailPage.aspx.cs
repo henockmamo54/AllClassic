@@ -11,12 +11,14 @@ namespace AllClassicWeb.Views
 {
     public partial class MusicianDetailPage : System.Web.UI.Page
     {
-        int userID;
+        int MusicianID;
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             if (Request.QueryString["ID"] != null)
-                userID = int.Parse(Request.QueryString["ID"]);
-            MusicianTbl artist = BusinessLogic.MusicianLogic.getMusicianByID(userID);
+                MusicianID = int.Parse(Request.QueryString["ID"]);
+            MusicianTbl artist = BusinessLogic.MusicianLogic.getMusicianByID(MusicianID);
 
             if (artist != null)
             {
@@ -40,7 +42,12 @@ namespace AllClassicWeb.Views
                     repeater_endorser.DataSource = endorserlist;
                     repeater_endorser.DataBind();
                 }
-                
+
+                if (user != null)
+                {
+                    if (user.UserID == artist.UserID) btn_editArtist.Visible = true;
+                }
+                else btn_editArtist.Visible = false;
             }
         }
 
@@ -48,8 +55,8 @@ namespace AllClassicWeb.Views
         {
             if (Request.QueryString["ID"] != null)
             {
-                userID = int.Parse(Request.QueryString["ID"]);
-                Session["MusicianID"] = userID;
+                MusicianID = int.Parse(Request.QueryString["ID"]);
+                Session["MusicianID"] = MusicianID;
                 Session["updateMusician"] = true;
                 Response.Redirect("MusicianDBAddNew.aspx");
             }
