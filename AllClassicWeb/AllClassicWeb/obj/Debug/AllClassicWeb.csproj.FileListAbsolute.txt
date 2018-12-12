@@ -69,8 +69,6 @@ C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.c
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.dll
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.pdb
 C:\workplace\C#\AllClassic\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csprojAssemblyReference.cache
-C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csprojAssemblyReference.cache
-C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csproj.CoreCompileInputs.cache
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\AllClassicWeb.dll.config
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\AllClassicWeb.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\AllClassicWeb.pdb
@@ -186,6 +184,8 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\ko\Microsoft.Data
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\ru\Microsoft.Data.Entity.Design.Extensibility.resources.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\zh-Hans\Microsoft.Data.Entity.Design.Extensibility.resources.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\zh-Hant\Microsoft.Data.Entity.Design.Extensibility.resources.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csprojAssemblyReference.cache
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csproj.CoreCompileInputs.cache
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csproj.CopyComplete
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.pdb

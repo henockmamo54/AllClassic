@@ -730,4 +730,7 @@
   <data name="Question" xml:space="preserve">
     <value>질문</value>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>날짜</value>
+  </data>
 </root>

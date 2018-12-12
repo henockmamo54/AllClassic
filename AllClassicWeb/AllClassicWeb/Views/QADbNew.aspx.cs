@@ -1,6 +1,7 @@
 ﻿using DataAccessP;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,7 +16,7 @@ namespace AllClassicWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (UserTbl)Session["User"];
-
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
         }
 
         public void onclick_btn_addNew(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace AllClassicWeb
             ListViewItem item = e.Item;
 
             int questionID = int.Parse(DataBinder.Eval(e.Item.DataItem, "QuestionID").ToString());
-             
+
             var detail = (Repeater)item.FindControl("ParentRepeater");
 
             AllClassicDBEntities entities = new AllClassicDBEntities();
@@ -87,7 +88,7 @@ namespace AllClassicWeb
 
             //}
         }
-                
+
         public void btnAddDetailDetailComment_Click(object sender, CommandEventArgs e)
         {
 
@@ -154,7 +155,7 @@ namespace AllClassicWeb
 
             var detail = (Repeater)item.FindControl("ParentRepeater");
             var mylist = entities.AnswersTbls.Where(x => x.QuestionID == answer.QuestionID).ToList();
-            detail.DataSource = entities.AnswersTbls.Where(x=>x.QuestionID==answer.QuestionID).ToList();
+            detail.DataSource = entities.AnswersTbls.Where(x => x.QuestionID == answer.QuestionID).ToList();
             detail.DataBind();
 
 
@@ -166,6 +167,35 @@ namespace AllClassicWeb
         {
 
             return user != null;
+        }
+
+        public void selectedFilterChanged(object sender, EventArgs e)
+        {
+            var filterQuery = "";
+            if (datetimefilter.Value.Length != 0)
+            {
+                var date = DateTime.ParseExact(datetimefilter.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                filterQuery += " where datepart(dd,p.timestamp) =" + date.Day + " and datepart(mm,p.timestamp) =" + date.Month + " and datepart(yy,p.timestamp) =" + date.Year;
+            }
+            if (txtbox_emailfilter.Text.ToString().Length > 0)
+            {
+                if (datetimefilter.Value.Length != 0) filterQuery += " And ";
+                else filterQuery += " Where ";
+
+                filterQuery += " u.emailID like N'%" + txtbox_emailfilter.Text.ToString() + "%'";
+            }
+            if (txt_question.Text.Length > 0)
+            {
+                if (filterQuery.Length == 0) filterQuery += " Where ";
+                else filterQuery += " And ";
+                filterQuery += " p.Question like N'%" + txt_question.Text.ToString() + "%'";
+            }
+
+
+            SqlDataSource1_Collegelist.SelectCommand = string.Format(@" select p.*, u.EmailID as posterEmailID from Auxiliary.QuestionsTbl p
+left join main.usertbl u on p.userID= u.userid" + filterQuery + @" order by timestamp desc");
+
+            collegeListContainer.DataBind();
         }
 
         public void showMsg(string msg)

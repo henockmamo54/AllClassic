@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-xs-6">
                         <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.PosterEmailID %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;" ></asp:TextBox>
                     </div>
 
                     <div class="col-md-2 col-xs-2">
