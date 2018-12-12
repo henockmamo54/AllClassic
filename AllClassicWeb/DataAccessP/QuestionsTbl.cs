@@ -25,8 +25,8 @@ namespace DataAccessP
         public Nullable<int> UserID { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
     
+        public virtual UserTbl UserTbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AnswersTbl> AnswersTbls { get; set; }
-        public virtual UserTbl UserTbl { get; set; }
     }
 }

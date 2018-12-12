@@ -14,12 +14,22 @@ namespace DataAccessP
     
     public partial class AnswersTbl
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AnswersTbl()
+        {
+            this.AnswersTbl1 = new HashSet<AnswersTbl>();
+        }
+    
         public int AnswerID { get; set; }
         public string Answer { get; set; }
         public Nullable<int> QuestionID { get; set; }
-        public Nullable<int> UserID { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
+        public Nullable<int> ParentAnswer { get; set; }
+        public Nullable<int> UserID { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AnswersTbl> AnswersTbl1 { get; set; }
+        public virtual AnswersTbl AnswersTbl2 { get; set; }
         public virtual QuestionsTbl QuestionsTbl { get; set; }
         public virtual UserTbl UserTbl { get; set; }
     }
