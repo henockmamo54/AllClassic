@@ -13,8 +13,10 @@ namespace AllClassicWeb.Views
     public partial class PerformanceDB : System.Web.UI.Page
     {
         AllClassicDBEntities entity = new AllClassicDBEntities();
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
 
             //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "handletab();", true);
 
@@ -28,7 +30,8 @@ namespace AllClassicWeb.Views
                     repeater_thisweekPerformanceInfo.DataBind();
                     label_countofitems.Text = artistListContainer.Items.Count + "";
                 }
-                catch (Exception ee) {
+                catch (Exception ee)
+                {
 
                 }
             }
@@ -41,11 +44,20 @@ namespace AllClassicWeb.Views
 
         protected void onclick_btn_addPG(object sender, EventArgs e)
         {
-            Session["PID"] = null;
-            Session["updatePerformance"] = false;
-            Response.Redirect("PerformanceDBAddNew.aspx");
+            if (user != null)
+            {
+                Session["PID"] = null;
+                Session["updatePerformance"] = false;
+                Response.Redirect("PerformanceDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
         }
 
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
+        }
 
         protected void dateselectorcalendar_SelectionChanged(object sender, EventArgs e)
         {
@@ -59,10 +71,11 @@ namespace AllClassicWeb.Views
             //else Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
 
             filterPerformance();
-            
+
         }
 
-        public void btnClearSelection(object sender, EventArgs e) {
+        public void btnClearSelection(object sender, EventArgs e)
+        {
             dateselectorcalendar.SelectedDates.Clear();
             filterPerformance();
         }
@@ -77,8 +90,8 @@ namespace AllClassicWeb.Views
             string filter = "";
             if (pb != null && selectedDate != null_date)
             {
-                filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year; 
-                if(pb.Text != "전체") filter+= " and r.subcode = N'" + pb.Text + "' ";
+                filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
+                if (pb.Text != "전체") filter += " and r.subcode = N'" + pb.Text + "' ";
             }
             else if (pb == null && selectedDate != null_date) filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
             else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";

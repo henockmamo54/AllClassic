@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,17 +10,29 @@ namespace AllClassicWeb.Views
 {
     public partial class ConcertVenuDB : System.Web.UI.Page
     {
+
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
 
         }
 
         public void onclick_btn_addNewConcertVenu(object sender, EventArgs e)
         {
+            if (user != null)
+            {
+                Session["ConcertVenuID"] = null;
+                Session["updateConcertVenu"] = false;
+                Response.Redirect("ConcertVenuDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
+        }
 
-            Session["ConcertVenuID"] = null;
-            Session["updateConcertVenu"] = false;
-            Response.Redirect("ConcertVenuDBAddNew.aspx");
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
         public void editvenuClicked(object sender, CommandEventArgs e)
         {
@@ -28,7 +41,7 @@ namespace AllClassicWeb.Views
             Session["updateConcertVenu"] = true;
             Response.Redirect("ConcertVenuDBAddNew.aspx");
         }
-        
+
 
         public void selectedFilterChanged(object sender, EventArgs ee)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,15 +10,27 @@ namespace AllClassicWeb.Views
 {
     public partial class PerformanceGroup : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
 
         }
 
         public void onclick_btn_addNewPerformanceGroup(object sender, EventArgs e)
         {
-            Session["updatePerformanceGroup"] = false;
-            Response.Redirect("PerformanceGroupAddNew.aspx");
+            if (user != null)
+            {
+                Session["updatePerformanceGroup"] = false;
+                Response.Redirect("PerformanceGroupAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
+        }
+
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
 
 

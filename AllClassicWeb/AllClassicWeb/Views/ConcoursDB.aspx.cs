@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessP;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,16 +11,28 @@ namespace AllClassicWeb.Views
 {
     public partial class ConcoursDB : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
         }
 
         public void onclick_btn_addConcours(object sender, EventArgs e)
         {
-            Session["ConcoursID"] = null;
-            Session["updateConcours"] = false;
-            Response.Redirect("ConcoursDBAddNew.aspx");
+            if (user != null)
+            {
+                Session["ConcoursID"] = null;
+                Session["updateConcours"] = false;
+                Response.Redirect("ConcoursDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
+        }
+
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
 
 
@@ -62,7 +75,8 @@ namespace AllClassicWeb.Views
             collegeListContainer.DataBind();
         }
 
-        public void editConcourClicked(object sender, CommandEventArgs e) {
+        public void editConcourClicked(object sender, CommandEventArgs e)
+        {
             Session["ConcoursID"] = e.CommandArgument.ToString();
             Session["updateConcours"] = true;
             Response.Redirect("ConcoursDBAddNew.aspx");

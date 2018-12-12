@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,18 +10,29 @@ namespace AllClassicWeb.Views
 {
     public partial class MusicShopDB : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
 
         }
 
-        public void onclick_btn_addNewMusicShop(object sender, EventArgs e) {
-
-            Session["MusicShopID"] = null;
-            Session["updateMusicShop"] = false;
-            Response.Redirect("MusicShopDBAddNew.aspx");
+        public void onclick_btn_addNewMusicShop(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                Session["MusicShopID"] = null;
+                Session["updateMusicShop"] = false;
+                Response.Redirect("MusicShopDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
         }
 
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
+        }
 
         public void selectedFilterChanged(object sender, EventArgs ee)
         {
@@ -57,7 +69,8 @@ namespace AllClassicWeb.Views
             collegeListContainer.DataBind();
         }
 
-        public void editMusicShopClicked(object sender, CommandEventArgs e) {
+        public void editMusicShopClicked(object sender, CommandEventArgs e)
+        {
 
             Session["MusicShopID"] = e.CommandArgument.ToString();
             Session["updateMusicShop"] = true;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessP;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,15 +11,27 @@ namespace AllClassicWeb.Views
 {
     public partial class AuditionDB : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
         }
 
-        public void onclick_btn_addAudition(object sender, EventArgs e) {
-            Session["AuditionID"] = null;
-            Session["updateAudition"] = false;
-            Response.Redirect("AuditionDBAddNew.aspx");
+        public void onclick_btn_addAudition(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                Session["AuditionID"] = null;
+                Session["updateAudition"] = false;
+                Response.Redirect("AuditionDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
+        }
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
 
         public void selectedFilterChanged(object sender, EventArgs e)
@@ -60,7 +73,8 @@ namespace AllClassicWeb.Views
             collegeListContainer.DataBind();
         }
 
-        public void editAuditionClicked(object sender, CommandEventArgs e) {
+        public void editAuditionClicked(object sender, CommandEventArgs e)
+        {
             Session["AuditionID"] = e.CommandArgument.ToString();
             Session["updateAudition"] = true;
             Response.Redirect("AuditionDBAddNew.aspx");

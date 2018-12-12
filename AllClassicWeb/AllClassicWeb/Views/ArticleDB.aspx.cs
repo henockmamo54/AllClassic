@@ -12,17 +12,28 @@ namespace AllClassicWeb.Views
 {
     public partial class ArticleDB : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
         }
 
         public void onclick_btn_addArticle(object sender, EventArgs e) {
-            Session["ArticleID"] = null;
-            Session["updateArticle"] = false;
-            Response.Redirect("ArticleDBAddNew.aspx");
+            if (user != null)
+            {
+                Session["ArticleID"] = null;
+                Session["updateArticle"] = false;
+                Response.Redirect("ArticleDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
         }
 
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
+        }
         public void ArticleClicked(object sender, CommandEventArgs e) {
             string strURL = e.CommandArgument.ToString();
             var b = new UriBuilder(strURL);

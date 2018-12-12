@@ -260,6 +260,12 @@
                     document.getElementById("signuptab").style.color = "#000000";
                     break;
                 } 
+                case "ASP.views_qadbnew_aspx": {
+                    document.getElementById("qatab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("qatab").style.borderRight = "none";
+                    document.getElementById("qatab").style.color = "#000000";
+                    break;
+                }  
             }
         }
     </script>

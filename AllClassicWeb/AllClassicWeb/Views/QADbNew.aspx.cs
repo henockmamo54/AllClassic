@@ -21,9 +21,12 @@ namespace AllClassicWeb
 
         public void onclick_btn_addNew(object sender, EventArgs e)
         {
-            Response.Redirect("QADbAddNew.aspx");
+            if (user != null)
+            {
+                Response.Redirect("QADbAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
         }
-
 
 
         protected void ParentRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -33,22 +36,6 @@ namespace AllClassicWeb
             int parentID = ((AnswersTbl)e.Item.DataItem).AnswerID;
             detail.DataSource = entities.AnswersTbls.Where(x => x.ParentAnswer == parentID).ToList();
             detail.DataBind();
-
-
-            //var FirstChildRepeater = (Repeater)item.FindControl("FirstChildRepeater");
-            //FirstChildRepeater.DataSource = entities.AnswersTbls.Where(x => x.AnswerID == answer.AnswerID).ToList();
-            //FirstChildRepeater.DataBind();
-
-            //RepeaterItem item = e.Item;
-            //if ((item.ItemType == ListItemType.Item) ||
-            //    (item.ItemType == ListItemType.AlternatingItem))
-            //{
-            //    var detail = (Repeater)item.FindControl("FirstChildRepeater");
-            //    int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID;
-            //    detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID);
-            //    detail.DataBind();
-
-            //}
         }
 
         protected void collegeListContainer_ItemDataBound(object sender, ListViewItemEventArgs e)
@@ -77,16 +64,6 @@ namespace AllClassicWeb
             SecondChildRepeater.DataSource = entities.AnswersTbls.Where(x => x.ParentAnswer == answerID).ToList();
             SecondChildRepeater.DataBind();
 
-            //RepeaterItem item = e.Item;
-            //if ((item.ItemType == ListItemType.Item) ||
-            //    (item.ItemType == ListItemType.AlternatingItem))
-            //{
-            //    var detail = (Repeater)item.FindControl("SecondChildRepeater");
-            //    int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID;
-            //    detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID);
-            //    detail.DataBind();
-
-            //}
         }
 
         public void btnAddDetailDetailComment_Click(object sender, CommandEventArgs e)

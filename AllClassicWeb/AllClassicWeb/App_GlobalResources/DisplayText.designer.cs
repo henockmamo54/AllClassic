@@ -1213,6 +1213,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please sign in to continue..
+        /// </summary>
+        internal static string Pleasesignintocontinue {
+            get {
+                return ResourceManager.GetString("Pleasesignintocontinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Poster.
         /// </summary>
         internal static string Poster {

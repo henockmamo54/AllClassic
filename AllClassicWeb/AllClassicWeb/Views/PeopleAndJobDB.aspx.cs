@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessP;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,16 +11,28 @@ namespace AllClassicWeb.Views
 {
     public partial class PeopleAndJobDB : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
         }
 
         public void onclick_btn_addNew(object sender, EventArgs e)
         {
-            Session["PeopleAndJobID"] = null;
-            Session["updatePeopleAndJob"] = false;
-            Response.Redirect("PeopleAndJobDBAddNew.aspx");
+            if (user != null)
+            {
+                Session["PeopleAndJobID"] = null;
+                Session["updatePeopleAndJob"] = false;
+                Response.Redirect("PeopleAndJobDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
+        }
+
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
         public void editClicked(object sender, CommandEventArgs e)
         {
@@ -28,9 +41,10 @@ namespace AllClassicWeb.Views
             Response.Redirect("PeopleAndJobDBAddNew.aspx");
         }
 
-        
 
-        public void selectedFilterChanged(object sender, EventArgs e) {
+
+        public void selectedFilterChanged(object sender, EventArgs e)
+        {
 
             var filterQuery = "";
             if (DropDownList1_type.SelectedIndex != 0) filterQuery += " where p.PeopleOrJob like N'%" + DropDownList1_type.SelectedItem.Text + "%'";

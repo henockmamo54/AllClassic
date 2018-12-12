@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,15 +10,28 @@ namespace AllClassicWeb.Views
 {
     public partial class RepairShopDB : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
 
         }
 
-        public void onclick_btn_addReparShop(object sender, EventArgs e) {
-            Session["RepairShopID"] = null;
-            Session["updateRepairShop"] = false;
-            Response.Redirect("RepairShopDBAddNew.aspx");
+        public void onclick_btn_addReparShop(object sender, EventArgs e)
+        {
+            if (user != null)
+            {
+                Session["RepairShopID"] = null;
+                Session["updateRepairShop"] = false;
+                Response.Redirect("RepairShopDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
+        }
+
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
 
         public void editRepairShopClicked(object sender, CommandEventArgs e)
@@ -39,7 +53,8 @@ namespace AllClassicWeb.Views
         }
 
 
-        public void selectedFilterChanged(object sender, EventArgs ee) {
+        public void selectedFilterChanged(object sender, EventArgs ee)
+        {
 
             var filterQuery = "";
             if (DropDownList1_cityfilter.SelectedIndex != 0) filterQuery += " where city like N'%" + DropDownList1_cityfilter.SelectedItem.Value + "%'";

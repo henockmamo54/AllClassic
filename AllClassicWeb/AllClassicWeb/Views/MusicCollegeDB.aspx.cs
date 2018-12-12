@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,24 +10,38 @@ namespace AllClassicWeb.Views
 {
     public partial class MusicCollegeDB : System.Web.UI.Page
     {
+        static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
 
         }
 
         protected void onclick_btn_addMusicCollege(object sender, EventArgs e)
         {
-            Session["MusicCollegeID"] = null;
-            Session["updateMusicCollege"] = false;
-            Response.Redirect("MusicCollegeDBAddNew.aspx");
+            if (user != null)
+            {
+                Session["MusicCollegeID"] = null;
+                Session["updateMusicCollege"] = false;
+                Response.Redirect("MusicCollegeDBAddNew.aspx");
+            }
+            else showMsg(Resources.DisplayText.Pleasesignintocontinue);
         }
 
-        public void CollegeDBClicked(object sender, CommandEventArgs e) {
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
+        }
+
+        public void CollegeDBClicked(object sender, CommandEventArgs e)
+        {
             var collegeID = e.CommandArgument.ToString();
             Response.Redirect("MusicCollegeDBDetail?ID=" + collegeID);
         }
 
-        public void onclick_headertableItem(object sender, CommandEventArgs e) {
+        public void onclick_headertableItem(object sender, CommandEventArgs e)
+        {
             var collegeID = e.CommandArgument.ToString();
             Response.Redirect("MusicCollegeDBDetail?ID=" + collegeID);
         }

@@ -715,4 +715,7 @@
   <data name="Date" xml:space="preserve">
     <value>Date</value>
   </data>
+  <data name="Pleasesignintocontinue" xml:space="preserve">
+    <value>Please sign in to continue.</value>
+  </data>
 </root>
