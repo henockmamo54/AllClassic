@@ -131,6 +131,19 @@ namespace BusinessLogic
             }
         }
 
+        public static bool DeleteMusician(int id) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities(); 
+                entities.MusicianTbls.Remove(entities.MusicianTbls.Where(x => x.MusicianID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception ee) {
+                return false;
+            }
+
+        }
     }
 
 }

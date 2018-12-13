@@ -11,7 +11,7 @@ namespace AllClassicWeb.Views
 {
     public partial class MusicianDetailPage : System.Web.UI.Page
     {
-        int MusicianID;
+        static int MusicianID;
         static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace AllClassicWeb.Views
                 yourAffilation.Text = artist.Affliation;
                 profilePage.Text = artist.Profile;
                 repertory.Text = artist.Repertory;
-                major.Text = artist.LookUpTbl !=null? artist.LookUpTbl.SubCode:"";
+                major.Text = artist.LookUpTbl != null ? artist.LookUpTbl.SubCode : "";
 
                 var endorserlist = artist.MusicianEndorserTbls.ToList();
                 if (endorserlist != null && endorserlist.Count > 0)
@@ -45,9 +45,12 @@ namespace AllClassicWeb.Views
 
                 if (user != null)
                 {
-                    if (user.UserID == artist.UserID) btn_editArtist.Visible = true;
+                    if (user.UserID == artist.UserID) { btn_editArtist.Visible = true; btn_deleteArtist.Visible = true; }
                 }
-                else btn_editArtist.Visible = false;
+                else
+                {
+                    btn_editArtist.Visible = false; btn_deleteArtist.Visible = false ;
+                }
             }
         }
 
@@ -61,5 +64,15 @@ namespace AllClassicWeb.Views
                 Response.Redirect("MusicianDBAddNew.aspx");
             }
         }
+
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteMusician(int n)
+        {
+            return MusicianLogic.DeleteMusician(MusicianID);
+        }
+
+
+
     }
 }
