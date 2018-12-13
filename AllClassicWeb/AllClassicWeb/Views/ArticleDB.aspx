@@ -105,7 +105,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <br />
                                         <span runat="server" class="Contentdisplay" style="color: rgba(17, 17, 17, 0.6); font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
-                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
                                         <%--<asp:LinkButton   runat="server" CssClass="Contentdisplay"ID="btn_deleteArticle" OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>" />--%>
                                         <%--OnClientClick='passAccessory(\"<%# Eval("variable") %>\");'--%>
                                         <%--OnClientClick="deletebtnclicked('<%# Eval("ArticleID") %>');"--%>
