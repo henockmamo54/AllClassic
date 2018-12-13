@@ -684,7 +684,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Performan__Perfo__71D1E811">
-          <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1" />
+          <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PerformanceMusicianInstrumentTbl" Type="Self.PerformanceMusicianInstrumentTbl" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PerformanceTbl">

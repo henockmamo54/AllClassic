@@ -12,7 +12,7 @@ namespace AllClassicWeb.Views
     public partial class PerformanceDetail : System.Web.UI.Page
     {
         PerformanceTbl performance;
-        int iD;
+        static int iD;
         static UserTbl user;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -71,13 +71,17 @@ namespace AllClassicWeb.Views
 
                 if (user != null)
                 {
-                    if (user.UserID == performance.UserID) btn_editArtist.Visible = true;
+                    if (user.UserID == performance.UserID) { btn_editArtist.Visible = true; btn_deleteArtist.Visible = true; }
                 }
-                else btn_editArtist.Visible = false;
+                else { btn_editArtist.Visible = false; btn_deleteArtist.Visible = false; }
 
             }
         }
 
+        public void onclick_btn_deleteArtist(object sender, EventArgs e)
+        {
+
+        }
 
         public void onclick_btn_editPerformance(object sender, EventArgs e)
         {
@@ -251,6 +255,16 @@ namespace AllClassicWeb.Views
 
             return user != null;
         }
+
+
+
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeletePerformance(int n)
+        {
+            return PerformanceDBLogic.deletePerformance(iD);
+        }
+
 
         public void showMsg(string msg)
         {

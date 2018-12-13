@@ -148,5 +148,17 @@ namespace BusinessLogic
                 this.performance = performance;
             }
         }
+
+        public static bool deletePerformance(int id) {
+            try {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.PerformanceTbls.Remove(entities.PerformanceTbls.Where(x => x.PerformanceID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception e) {
+                return false;
+            }
+        }
     }
 }
