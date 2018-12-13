@@ -11,7 +11,7 @@ namespace AllClassicWeb.Views
 {
     public partial class MusicCollegeDBDetail : Page
     {
-        int collegeID;
+        static int collegeID;
         static UserTbl user;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,9 +35,12 @@ namespace AllClassicWeb.Views
 
                 if (user != null)
                 {
-                    if (user.UserID == college.UserID) btn_editcollege.Visible = true;
+                    if (user.UserID == college.UserID) { btn_editcollege.Visible = true; btn_deletecollege.Visible = true; }
                 }
-                else btn_editcollege.Visible = false;
+                else
+                {
+                    btn_editcollege.Visible = false; btn_deletecollege.Visible = true;
+                }
 
                 //var b = new UriBuilder(college.HomePage);
                 //txt_homepage.PostBackUrl = b.ToString();
@@ -67,6 +70,13 @@ namespace AllClassicWeb.Views
             //Response.Redirect(b.ToString());
         }
 
+
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteMusicCollege(int n)
+        {
+            return CollegeLogic.DeleteMusician(collegeID);
+        }
 
 
     }

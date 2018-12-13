@@ -55,5 +55,21 @@ namespace BusinessLogic
             }
         }
 
+        public static bool DeleteMusician(int id)
+        {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.CollegeTbls.Remove(entities.CollegeTbls.Where(x => x.CollegeID == id).FirstOrDefault());
+                entities.SaveChanges();
+
+                return true;
+            }
+            catch (Exception e) {
+                return false;
+            }
+
+        }
+
     }
 }

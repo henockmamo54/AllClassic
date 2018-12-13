@@ -62,6 +62,7 @@
                     </div>
                     <div class="col-xs-12">
                         <asp:Button CssClass="btn btn-primary contentButton" runat="server" ID="btn_editcollege" OnClick="onclick_btn_editcollege" Text="<%$Resources:DisplayText,Edit %>" />
+                        <asp:Button CssClass="btn btn-danger contentButton" runat="server" ID="btn_deletecollege" OnClientClick = "deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
                     </div>
                 </div>
 
@@ -81,6 +82,46 @@
             var win = window.open(url, '_blank');
             win.focus();
         }
+
+        
+        
+        function deletebtnclicked(msg) {
+            var txt;
+            if (confirm(msg)) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "MusicCollegeDBDetail.aspx/DeleteMusicCollege", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: 1 }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                         history.go(-1);
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
+
 
     </script>
 
