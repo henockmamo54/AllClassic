@@ -13,8 +13,12 @@ namespace AllClassicWeb.Views
     {
         int PerformanceGroupID;
         string homepageurl;
+        static UserTbl user;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = (UserTbl)Session["User"];
+
             if (Request.QueryString["PGID"] != null)
                 PerformanceGroupID = int.Parse(Request.QueryString["PGID"]);
             PerformanceGroupTbl pg = BusinessLogic.PerformanceGroupLogic.getPerformanceGroupByID(PerformanceGroupID);
@@ -34,9 +38,37 @@ namespace AllClassicWeb.Views
                 txt_fax.Text = pg.FaxNo;
                 //txt_homepageurl.Text = pg.HomePage;
                 homepageurl = pg.HomePage;
+
+                if (user != null)
+                {
+                    if (user.UserID == pg.UserID) btn_editpg.Visible = true;
+                }
+                else btn_editpg.Visible = false;
+
             }
         }
 
+
+        protected void LinkButton_Click(Object sender, CommandEventArgs e)
+        {
+
+            string strURL = homepageurl;
+            if (strURL.Length != 0)
+            {
+                var b = new UriBuilder(strURL);
+                var s = "openInNewTab('" + b.ToString() + "');";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", s, true);
+            }
+            else showMsg("Homepage is not available!!");
+
+            //Response.Redirect(b.ToString());
+        }
+
+
+        public void showMsg(string msg)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
+        }
 
         public void onclick_btn_editpg(object sender, EventArgs e)
         {
