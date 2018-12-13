@@ -123,7 +123,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
             <div class="row">
 
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ConcourID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;">
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ConcourID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;"  OnItemDataBound="collegeListContainer_OnItemDataBound">
                     
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
@@ -158,7 +158,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <span  class="Contentdisplay" style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
                                         <br />
                                         <span  class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("ConcourOutline") %> </span>
-                                        <asp:LinkButton  class="Contentdisplay" runat="server" ID="LinkButton1" OnCommand="editConcourClicked" CommandArgument='<%# Eval("ConcourID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                        <asp:LinkButton  class="Contentdisplay" runat="server" ID="edit" OnCommand="editConcourClicked" CommandArgument='<%# Eval("ConcourID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <br />
                                         <span  class="Contentdisplay" style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
 

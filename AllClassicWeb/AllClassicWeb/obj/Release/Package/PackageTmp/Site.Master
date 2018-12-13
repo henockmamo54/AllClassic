@@ -260,6 +260,12 @@
                     document.getElementById("signuptab").style.color = "#000000";
                     break;
                 } 
+                case "ASP.views_qadbnew_aspx": {
+                    document.getElementById("qatab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("qatab").style.borderRight = "none";
+                    document.getElementById("qatab").style.color = "#000000";
+                    break;
+                }  
             }
         }
     </script>
@@ -332,7 +338,7 @@
                         <a id="MusicShopDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/MusicShopDB"><%= Resources.DisplayText.MusicShop %></a>
                         <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
                         <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
-                        <a class="list-group-item list-group-item-action whitesmokeBG" href="#"><%= Resources.DisplayText.QA %></a>
+                        <a id="qatab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/QADbNew"><%= Resources.DisplayText.QA %></a>
                         <%--<div>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>

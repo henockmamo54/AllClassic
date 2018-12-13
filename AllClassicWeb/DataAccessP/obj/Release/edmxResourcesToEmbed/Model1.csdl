@@ -215,6 +215,8 @@
     <NavigationProperty Name="PeopleAndJobTbls" Relationship="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D1" FromRole="UserTbl" ToRole="PeopleAndJobTbl" />
     <NavigationProperty Name="PerformanceCommentTbls" Relationship="AllClassicDBModel.FK__Performan__UserI__114A936A" FromRole="UserTbl" ToRole="PerformanceCommentTbl" />
     <NavigationProperty Name="PerformanceLikeUnlikeTbls" Relationship="AllClassicDBModel.FK__Performan__UserI__160F4887" FromRole="UserTbl" ToRole="PerformanceLikeUnlikeTbl" />
+    <NavigationProperty Name="QuestionsTbls" Relationship="AllClassicDBModel.FK__Questions__UserI__1EA48E88" FromRole="UserTbl" ToRole="QuestionsTbl" />
+    <NavigationProperty Name="AnswersTbls" Relationship="AllClassicDBModel.FK__AnswersTb__UserI__2DE6D218" FromRole="UserTbl" ToRole="AnswersTbl" />
   </EntityType>
   <EntityType Name="UserUserType">
     <Key>
@@ -619,6 +621,24 @@
     <AssociationSet Name="FK__Performan__UserI__160F4887" Association="AllClassicDBModel.FK__Performan__UserI__160F4887">
       <End Role="UserTbl" EntitySet="UserTbls" />
       <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbls" />
+    </AssociationSet>
+    <EntitySet Name="QuestionsTbls" EntityType="AllClassicDBModel.QuestionsTbl" />
+    <AssociationSet Name="FK__Questions__UserI__1EA48E88" Association="AllClassicDBModel.FK__Questions__UserI__1EA48E88">
+      <End Role="UserTbl" EntitySet="UserTbls" />
+      <End Role="QuestionsTbl" EntitySet="QuestionsTbls" />
+    </AssociationSet>
+    <EntitySet Name="AnswersTbls" EntityType="AllClassicDBModel.AnswersTbl" />
+    <AssociationSet Name="FK__AnswersTb__Paren__2CF2ADDF" Association="AllClassicDBModel.FK__AnswersTb__Paren__2CF2ADDF">
+      <End Role="AnswersTbl" EntitySet="AnswersTbls" />
+      <End Role="AnswersTbl1" EntitySet="AnswersTbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AnswersTb__Quest__2B0A656D" Association="AllClassicDBModel.FK__AnswersTb__Quest__2B0A656D">
+      <End Role="QuestionsTbl" EntitySet="QuestionsTbls" />
+      <End Role="AnswersTbl" EntitySet="AnswersTbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AnswersTb__UserI__2DE6D218" Association="AllClassicDBModel.FK__AnswersTb__UserI__2DE6D218">
+      <End Role="UserTbl" EntitySet="UserTbls" />
+      <End Role="AnswersTbl" EntitySet="AnswersTbls" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="MusicianTbl">
@@ -1043,6 +1063,80 @@
         <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="PerformanceLikeUnlikeTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="QuestionsTbl">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__Questions__UserI__1EA48E88" FromRole="QuestionsTbl" ToRole="UserTbl" />
+    <NavigationProperty Name="AnswersTbls" Relationship="AllClassicDBModel.FK__AnswersTb__Quest__2B0A656D" FromRole="QuestionsTbl" ToRole="AnswersTbl" />
+  </EntityType>
+  <Association Name="FK__Questions__UserI__1EA48E88">
+    <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+    <End Type="AllClassicDBModel.QuestionsTbl" Role="QuestionsTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="QuestionsTbl">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AnswersTbl">
+    <Key>
+      <PropertyRef Name="AnswerID" />
+    </Key>
+    <Property Name="AnswerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Answer" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="QuestionID" Type="Int32" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="ParentAnswer" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="AnswersTbl1" Relationship="AllClassicDBModel.FK__AnswersTb__Paren__2CF2ADDF" FromRole="AnswersTbl" ToRole="AnswersTbl1" />
+    <NavigationProperty Name="AnswersTbl2" Relationship="AllClassicDBModel.FK__AnswersTb__Paren__2CF2ADDF" FromRole="AnswersTbl1" ToRole="AnswersTbl" />
+    <NavigationProperty Name="QuestionsTbl" Relationship="AllClassicDBModel.FK__AnswersTb__Quest__2B0A656D" FromRole="AnswersTbl" ToRole="QuestionsTbl" />
+    <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__AnswersTb__UserI__2DE6D218" FromRole="AnswersTbl" ToRole="UserTbl" />
+  </EntityType>
+  <Association Name="FK__AnswersTb__Paren__2CF2ADDF">
+    <End Type="AllClassicDBModel.AnswersTbl" Role="AnswersTbl" Multiplicity="0..1" />
+    <End Type="AllClassicDBModel.AnswersTbl" Role="AnswersTbl1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnswersTbl">
+        <PropertyRef Name="AnswerID" />
+      </Principal>
+      <Dependent Role="AnswersTbl1">
+        <PropertyRef Name="ParentAnswer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AnswersTb__Quest__2B0A656D">
+    <End Type="AllClassicDBModel.QuestionsTbl" Role="QuestionsTbl" Multiplicity="0..1" />
+    <End Type="AllClassicDBModel.AnswersTbl" Role="AnswersTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionsTbl">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="AnswersTbl">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AnswersTb__UserI__2DE6D218">
+    <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />
+    <End Type="AllClassicDBModel.AnswersTbl" Role="AnswersTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTbl">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AnswersTbl">
         <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>

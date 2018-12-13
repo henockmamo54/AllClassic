@@ -46,7 +46,7 @@ or maincode='Composer'
 or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 230px; height: 230px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
 
                     <table class="table table-striped">
                         <thead>
@@ -54,7 +54,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <th scope="col" class="contentHeader"><%= Resources.DisplayText.FullName %></th>
                                 <th scope="col" class="contentHeader"><%= Resources.DisplayText.Major %></th>
                                 <th scope="col" class="contentHeader"><%= Resources.DisplayText.Affiliation %></th>
-                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.Email %></th>
+                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.PosterEmailID %></th>
                             </tr>
                         </thead>
                         <tbody>

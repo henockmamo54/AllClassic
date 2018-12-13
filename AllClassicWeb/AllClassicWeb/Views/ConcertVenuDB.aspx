@@ -82,7 +82,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
             <div class="row">
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="VenueID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;">
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="VenueID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;"    OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
@@ -152,9 +152,13 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                     <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></td>
                                                 <%--href='http://<%# Eval("HomePage") %>'--%>
                                             </tr>
+                                            <tr>
+                                                <td>...</td>
+                                                <td><asp:LinkButton runat="server" ID="edit" OnCommand="editvenuClicked" CommandArgument='<%# Eval("VenueID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton></td>
+                                            </tr>
                                         </tbody>
                                     </table>
-                                    <asp:LinkButton runat="server" ID="LinkButton1" OnCommand="editvenuClicked" CommandArgument='<%# Eval("VenueID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                    
                                 </div>
                             </div>
 
@@ -185,7 +189,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     </GroupSeparatorTemplate>
                 </asp:ListView>
                 <asp:SqlDataSource ID="SqlDataSource1_Collegelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-select r.*, r.EmailID, ci.SubCode as cityname from Auxiliary.VenueTbl r
+select r.*, r.EmailID, ci.SubCode as cityname,u.UserID from Auxiliary.VenueTbl r
            left join Main.usertbl u on r.Userid=u.userid
                     left join(SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl

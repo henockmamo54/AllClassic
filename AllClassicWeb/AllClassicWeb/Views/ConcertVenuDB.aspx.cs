@@ -30,6 +30,21 @@ namespace AllClassicWeb.Views
         }
 
 
+
+        public void collegeListContainer_OnItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            var editbutton = (LinkButton)e.Item.FindControl("edit");
+            var stringvalueOFUserid = DataBinder.Eval(e.Item.DataItem, "UserID").ToString();
+            if (user != null & stringvalueOFUserid.Length!=0)
+            {
+                int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString().Trim());
+                if (user.UserID == userID) { editbutton.Visible = true; }
+                else editbutton.Visible = false;
+            }
+            else editbutton.Visible = false;
+
+        }
+
         public void showMsg(string msg)
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
@@ -63,7 +78,7 @@ namespace AllClassicWeb.Views
                 filterQuery += " Alias like N'%" + txtbox_aliasfilter.Text + "%'";
             }
 
-            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select r.*, r.EmailID, ci.SubCode as cityname from Auxiliary.VenueTbl r
+            SqlDataSource1_Collegelist.SelectCommand = string.Format(@"select r.*, r.EmailID, ci.SubCode as cityname,u.UserID from Auxiliary.VenueTbl r
             left join Main.usertbl u on r.Userid=u.userid
                left join(SELECT LookUpID, MainCode, SubCode 
             FROM Main.LookUpTbl

@@ -120,7 +120,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             <hr style="margin-top: 0px;" />
 
             <div class="row">
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="PeopleAndJobID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;">
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="PeopleAndJobID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;"    OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
@@ -175,9 +175,13 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 <td class="filedName"><%# Resources.DisplayText.Description %>:</td>
                                                 <td class="filedDisplay"><%#Eval("Description") %></td>
                                             </tr>
+                                            <tr>
+                                                <td>..</td>
+                                                <td><asp:LinkButton runat="server" ID="edit" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton></td>
+                                            </tr>
                                         </tbody>
                                     </table>
-                                    <asp:LinkButton runat="server" ID="LinkButton1" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                    
                                 </div>
                             </div>
 

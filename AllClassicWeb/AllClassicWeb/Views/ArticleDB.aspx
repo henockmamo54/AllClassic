@@ -59,7 +59,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             </tr>
                         </thead>
                         <tbody>
-                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
+                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists" >
                                 <ItemTemplate>
                                     <tr>
                                         <td class="col-xs-3 Contentdisplay"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></td>
@@ -81,7 +81,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
             <div class="row" style="margin-top:40px;">
 
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ArticleID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;">
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ArticleID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound" >
                     
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">

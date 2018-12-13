@@ -118,7 +118,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
             <div class="row">
 
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="AuditionID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;">
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="AuditionID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
                     
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">

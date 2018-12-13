@@ -30,6 +30,20 @@ namespace AllClassicWeb.Views
         }
 
 
+        public void collegeListContainer_OnItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+
+            var editbutton = (LinkButton)e.Item.FindControl("edit");
+            int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString());
+            if (user != null)
+            {
+                if (user.UserID == userID) { editbutton.Visible = true; }
+                else editbutton.Visible = false;
+            }
+            else editbutton.Visible = false;
+
+        }
+
         public void showMsg(string msg)
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);

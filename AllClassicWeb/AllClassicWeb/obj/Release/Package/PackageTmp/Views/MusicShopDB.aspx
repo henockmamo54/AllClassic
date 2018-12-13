@@ -84,7 +84,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             <hr style="margin-top: 0px;" />
 
             <div class="row">
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="MusicShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;">
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="MusicShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;"   OnItemDataBound="collegeListContainer_OnItemDataBound">
                     
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
@@ -157,9 +157,13 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                          <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></td>
                                                     <%--href='http://<%# Eval("HomePage") %>'--%>
                                                 </tr>
+                                                <tr>
+                                                    <td>...</td>
+                                                    <td><asp:LinkButton runat="server" ID="edit" OnCommand="editMusicShopClicked" CommandArgument='<%# Eval("MusicShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton> </td>
+                                                </tr>
                                             </tbody>
                                         </table>
-                                        <asp:LinkButton runat="server" ID="LinkButton1" OnCommand="editMusicShopClicked" CommandArgument='<%# Eval("MusicShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton> 
+                                        
                                     </div>
                                 </div>
 

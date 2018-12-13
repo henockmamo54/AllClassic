@@ -93,6 +93,11 @@
 
 
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btn_musiccollege_save" />
+           <asp:PostBackTrigger ControlID="btn_musiccollege_add" />
+
+        </Triggers>
     </asp:UpdatePanel>
 
     <%--<script type="text/javascript">
