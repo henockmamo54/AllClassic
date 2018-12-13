@@ -29,13 +29,23 @@ namespace AllClassicWeb.Views
             else showMsg(Resources.DisplayText.Pleasesignintocontinue);
         }
 
+
+
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteArticle(int n)
+        {
+            return ArticleLogic.deleteArticle(n);
+        }
+
+
         public void collegeListContainer_OnItemDataBound(object sender, ListViewItemEventArgs e) {
 
             var editbutton=(LinkButton)e.Item.FindControl("edit");
             int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString());
             if (user != null)
             {
-                if (user.UserID == userID) { editbutton.Visible = true; }
+                if (user.UserID == userID) { editbutton.Visible = true;  }
                 else editbutton.Visible = false;
             }
             else editbutton.Visible = false;

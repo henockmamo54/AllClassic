@@ -48,5 +48,20 @@ namespace BusinessLogic
             AllClassicDBEntities entities = new AllClassicDBEntities();
             return entities.ArticleTbls.Where(x => x.ArticleID == id).FirstOrDefault();
         }
+
+        public static bool deleteArticle(int id) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.ArticleTbls.Remove(entities.ArticleTbls.Where(x => x.ArticleID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch(Exception ee)
+            {
+                return false;
+            }
+        }
+
     }
 }
