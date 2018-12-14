@@ -54,5 +54,18 @@ namespace BusinessLogic
             AllClassicDBEntities entities = new AllClassicDBEntities();
             return entities.RepairShopTbls.Where(x => x.RepairShopID == id).FirstOrDefault();
         }
+
+        public static bool deleteRepairShop(int id) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.RepairShopTbls.Remove(entities.RepairShopTbls.Where(x => x.RepairShopID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception ee) {
+                return false;
+            }
+        }
     }
 }

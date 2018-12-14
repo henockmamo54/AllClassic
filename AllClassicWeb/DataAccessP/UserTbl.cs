@@ -17,24 +17,24 @@ namespace DataAccessP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserTbl()
         {
-            this.InstrumentTbls = new HashSet<InstrumentTbl>();
-            this.VenueTbls = new HashSet<VenueTbl>();
-            this.LookUpTbls = new HashSet<LookUpTbl>();
-            this.PerformanceGroupTbls = new HashSet<PerformanceGroupTbl>();
-            this.PerformanceTbls = new HashSet<PerformanceTbl>();
-            this.UserUserTypes = new HashSet<UserUserType>();
-            this.MusicianTbls = new HashSet<MusicianTbl>();
-            this.CollegeTbls = new HashSet<CollegeTbl>();
+            this.AnswersTbls = new HashSet<AnswersTbl>();
             this.ArticleTbls = new HashSet<ArticleTbl>();
             this.AuditionTbls = new HashSet<AuditionTbl>();
             this.ConcourTbls = new HashSet<ConcourTbl>();
-            this.RepairShopTbls = new HashSet<RepairShopTbl>();
+            this.InstrumentTbls = new HashSet<InstrumentTbl>();
             this.MusicShopTbls = new HashSet<MusicShopTbl>();
             this.PeopleAndJobTbls = new HashSet<PeopleAndJobTbl>();
             this.PerformanceCommentTbls = new HashSet<PerformanceCommentTbl>();
             this.PerformanceLikeUnlikeTbls = new HashSet<PerformanceLikeUnlikeTbl>();
             this.QuestionsTbls = new HashSet<QuestionsTbl>();
-            this.AnswersTbls = new HashSet<AnswersTbl>();
+            this.RepairShopTbls = new HashSet<RepairShopTbl>();
+            this.VenueTbls = new HashSet<VenueTbl>();
+            this.CollegeTbls = new HashSet<CollegeTbl>();
+            this.LookUpTbls = new HashSet<LookUpTbl>();
+            this.MusicianTbls = new HashSet<MusicianTbl>();
+            this.PerformanceGroupTbls = new HashSet<PerformanceGroupTbl>();
+            this.PerformanceTbls = new HashSet<PerformanceTbl>();
+            this.UserUserTypes = new HashSet<UserUserType>();
         }
     
         public int UserID { get; set; }
@@ -55,21 +55,7 @@ namespace DataAccessP
         public System.DateTime UpdateTimeStamp { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InstrumentTbl> InstrumentTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VenueTbl> VenueTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LookUpTbl> LookUpTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PerformanceGroupTbl> PerformanceGroupTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PerformanceTbl> PerformanceTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserUserType> UserUserTypes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MusicianTbl> MusicianTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CollegeTbl> CollegeTbls { get; set; }
+        public virtual ICollection<AnswersTbl> AnswersTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArticleTbl> ArticleTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -77,7 +63,7 @@ namespace DataAccessP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConcourTbl> ConcourTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RepairShopTbl> RepairShopTbls { get; set; }
+        public virtual ICollection<InstrumentTbl> InstrumentTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MusicShopTbl> MusicShopTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -89,6 +75,20 @@ namespace DataAccessP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QuestionsTbl> QuestionsTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AnswersTbl> AnswersTbls { get; set; }
+        public virtual ICollection<RepairShopTbl> RepairShopTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VenueTbl> VenueTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CollegeTbl> CollegeTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LookUpTbl> LookUpTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MusicianTbl> MusicianTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PerformanceGroupTbl> PerformanceGroupTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PerformanceTbl> PerformanceTbls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserUserType> UserUserTypes { get; set; }
     }
 }

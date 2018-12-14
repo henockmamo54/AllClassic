@@ -34,14 +34,15 @@ namespace AllClassicWeb.Views
         public void collegeListContainer_OnItemDataBound(object sender, ListViewItemEventArgs e)
         {
             var editbutton = (LinkButton)e.Item.FindControl("edit");
+            var deletebutton = (LinkButton)e.Item.FindControl("delete");
             var stringvalueOFUserid = DataBinder.Eval(e.Item.DataItem, "UserID").ToString();
             if (user != null & stringvalueOFUserid.Length!=0)
             {
                 int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString().Trim());
-                if (user.UserID == userID) { editbutton.Visible = true; }
-                else editbutton.Visible = false;
+                if (user.UserID == userID) { editbutton.Visible = true; deletebutton.Visible = true; }
+                else { editbutton.Visible = false; deletebutton.Visible = false; }
             }
-            else editbutton.Visible = false;
+            else { editbutton.Visible = false; deletebutton.Visible = false; }
 
         }
 
@@ -56,7 +57,13 @@ namespace AllClassicWeb.Views
             Session["updateConcertVenu"] = true;
             Response.Redirect("ConcertVenuDBAddNew.aspx");
         }
-
+         
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteVenu(int n)
+        {
+            return BusinessLogic.VenuLogic.deleteVenu(n);
+        }
 
         public void selectedFilterChanged(object sender, EventArgs ee)
         {

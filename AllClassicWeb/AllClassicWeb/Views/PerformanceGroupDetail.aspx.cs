@@ -11,7 +11,7 @@ namespace AllClassicWeb.Views
 {
     public partial class PerformanceGroupDetail : System.Web.UI.Page
     {
-        int PerformanceGroupID;
+        static int PerformanceGroupID;
         string homepageurl;
         static UserTbl user;
 
@@ -41,9 +41,10 @@ namespace AllClassicWeb.Views
 
                 if (user != null)
                 {
-                    if (user.UserID == pg.UserID) btn_editpg.Visible = true;
+                    if (user.UserID == pg.UserID) { btn_editpg.Visible = true; btn_delete.Visible = true; }
+                    else { btn_editpg.Visible = false; btn_delete.Visible = false; }
                 }
-                else btn_editpg.Visible = false;
+                else { btn_editpg.Visible = false; btn_delete.Visible = false; }
 
             }
         }
@@ -80,6 +81,15 @@ namespace AllClassicWeb.Views
                 Response.Redirect("PerformanceGroupAddNew.aspx");
             }
         }
+        
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeletePerfromanceGroup(int n)
+        {
+            return PerformanceGroupLogic.deletePerformanceGroup(PerformanceGroupID);
+        }
+
+
 
     }
 }

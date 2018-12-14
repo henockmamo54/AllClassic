@@ -418,7 +418,8 @@ namespace AllClassicWeb.Views
                 int id = int.Parse(Session["PID"].ToString());
                 //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
                 PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
-                DropDownList1_venu.Items.FindByValue(performance.Venue.ToString()).Selected = true;
+                if (performance.Venue != null)
+                    DropDownList1_venu.Items.FindByValue(performance.Venue.ToString()).Selected = true;
             }
 
         }

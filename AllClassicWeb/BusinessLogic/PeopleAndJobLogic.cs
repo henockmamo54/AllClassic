@@ -54,5 +54,18 @@ namespace BusinessLogic
             AllClassicDBEntities entities = new AllClassicDBEntities();
             return entities.PeopleAndJobTbls.Where(x => x.PeopleAndJobID == id).FirstOrDefault();
         }
+
+        public static bool deleteEntry(int id) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.PeopleAndJobTbls.Remove(entities.PeopleAndJobTbls.Where(x => x.PeopleAndJobID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception ee) {
+                return false;
+            }
+        }
     }
 }

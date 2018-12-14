@@ -48,5 +48,18 @@ namespace BusinessLogic
             AllClassicDBEntities entities = new AllClassicDBEntities();
             return entities.ConcourTbls.Where(x => x.ConcourID == id).FirstOrDefault();
         }
+
+        public static bool deleteConcours(int id) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.ConcourTbls.Remove(entities.ConcourTbls.Where(x => x.ConcourID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception ee) {
+                return false;
+            }
+        }
     }
 }

@@ -53,5 +53,18 @@ namespace BusinessLogic
                 return null;
             }
         }
+
+        public static bool deletePerformanceGroup(int id) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.PerformanceGroupTbls.Remove(entities.PerformanceGroupTbls.Where(x => x.PerformanceGroupID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception ee) {
+                return false;
+            }
+        }
     }
 }

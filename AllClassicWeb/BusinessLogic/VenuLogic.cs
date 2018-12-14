@@ -59,5 +59,18 @@ namespace BusinessLogic
             return entities.VenueTbls.Where(x => x.VenueID == id).FirstOrDefault();
         }
 
+        public static bool deleteVenu(int id) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.VenueTbls.Remove(entities.VenueTbls.Where(x => x.VenueID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception ee) {
+                return false;
+            }
+        }
+
     }
 }

@@ -159,6 +159,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <br />
                                         <span  class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("ConcourOutline") %> </span>
                                         <asp:LinkButton  class="Contentdisplay" runat="server" ID="edit" OnCommand="editConcourClicked" CommandArgument='<%# Eval("ConcourID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("ConcourID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                        
                                         <br />
                                         <span  class="Contentdisplay" style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
 
@@ -207,6 +209,44 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
     <script type="text/javascript">
+
+        function deletebtnclicked(id) {
+            var txt;
+            if (confirm('Are you sure you want to delete?')) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "ConcoursDB.aspx/DeleteConcours", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: id }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                        location.reload();
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
+
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
                 format: 'MM/DD/YYYY'

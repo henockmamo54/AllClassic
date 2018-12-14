@@ -60,5 +60,18 @@ namespace BusinessLogic
             return entities.MusicShopTbls.Where(x => x.MusicShopID == id).FirstOrDefault();
         }
 
+        public static bool deleteMusicShop(int id) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.MusicShopTbls.Remove(entities.MusicShopTbls.Where(x => x.MusicShopID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception ee) {
+                return false;
+            }
+        }
+
     }
 }

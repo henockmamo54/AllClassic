@@ -20,7 +20,7 @@ namespace DataAccessP
         public Nullable<int> InstrumentID { get; set; }
     
         public virtual InstrumentTbl InstrumentTbl { get; set; }
-        public virtual PerformanceTbl PerformanceTbl { get; set; }
         public virtual MusicianTbl MusicianTbl { get; set; }
+        public virtual PerformanceTbl PerformanceTbl { get; set; }
     }
 }

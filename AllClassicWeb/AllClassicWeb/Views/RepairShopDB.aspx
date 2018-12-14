@@ -152,7 +152,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 </tr>
                                                 <tr>
                                                     <td>...</td>
-                                                    <td><asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'> <%= Resources.DisplayText.Edit %></asp:LinkButton></td>
+                                                    <td><asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'> <%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("RepairShopID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                       
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -263,6 +266,45 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
         }
     </style>
     <script type="text/javascript">
+
+        
+        function deletebtnclicked(id) {
+            var txt;
+            if (confirm('Are you sure you want to delete?')) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "RepairShopDB.aspx/DeleteRepairshop", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: id }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                        location.reload();
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
+
 
         function openInNewTab(url) {
             var win = window.open(url, '_blank');

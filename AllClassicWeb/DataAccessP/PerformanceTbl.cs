@@ -17,9 +17,9 @@ namespace DataAccessP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PerformanceTbl()
         {
-            this.PerformanceMusicianInstrumentTbls = new HashSet<PerformanceMusicianInstrumentTbl>();
             this.PerformanceCommentTbls = new HashSet<PerformanceCommentTbl>();
             this.PerformanceLikeUnlikeTbls = new HashSet<PerformanceLikeUnlikeTbl>();
+            this.PerformanceMusicianInstrumentTbls = new HashSet<PerformanceMusicianInstrumentTbl>();
         }
     
         public int PerformanceID { get; set; }
@@ -31,7 +31,7 @@ namespace DataAccessP
         public string Time { get; set; }
         public int Region { get; set; }
         public int City { get; set; }
-        public int Venue { get; set; }
+        public Nullable<int> Venue { get; set; }
         public string PosterFileName { get; set; }
         public string VideoFileName { get; set; }
         public string TicketBox { get; set; }
@@ -50,19 +50,19 @@ namespace DataAccessP
         public Nullable<System.DateTime> ArchivingTimeStamp { get; set; }
     
         public virtual InstrumentTbl InstrumentTbl { get; set; }
-        public virtual VenueTbl VenueTbl { get; set; }
-        public virtual LookUpTbl LookUpTbl { get; set; }
-        public virtual LookUpTbl LookUpTbl1 { get; set; }
-        public virtual LookUpTbl LookUpTbl2 { get; set; }
-        public virtual PerformanceGroupTbl PerformanceGroupTbl { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PerformanceMusicianInstrumentTbl> PerformanceMusicianInstrumentTbls { get; set; }
-        public virtual UserTbl UserTbl { get; set; }
-        public virtual MusicianTbl MusicianTbl { get; set; }
-        public virtual MusicianTbl MusicianTbl1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceCommentTbl> PerformanceCommentTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceLikeUnlikeTbl> PerformanceLikeUnlikeTbls { get; set; }
+        public virtual VenueTbl VenueTbl { get; set; }
+        public virtual LookUpTbl LookUpTbl { get; set; }
+        public virtual LookUpTbl LookUpTbl1 { get; set; }
+        public virtual LookUpTbl LookUpTbl2 { get; set; }
+        public virtual MusicianTbl MusicianTbl { get; set; }
+        public virtual MusicianTbl MusicianTbl1 { get; set; }
+        public virtual PerformanceGroupTbl PerformanceGroupTbl { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PerformanceMusicianInstrumentTbl> PerformanceMusicianInstrumentTbls { get; set; }
+        public virtual UserTbl UserTbl { get; set; }
     }
 }

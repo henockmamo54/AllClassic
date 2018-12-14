@@ -84,12 +84,12 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             <hr style="margin-top: 0px;" />
 
             <div class="row">
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="MusicShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;"   OnItemDataBound="collegeListContainer_OnItemDataBound">
-                    
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="MusicShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
+
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
                             <h3>No records available.</h3>
-                        </div> 
+                        </div>
                     </EmptyDataTemplate>
 
                     <GroupTemplate>
@@ -99,73 +99,77 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-md-4 col-xs-4" style="margin-bottom: 1em; padding-left:0px;">
-                           
-                              <div class="panel panel-success shadowedbox_hover">
-                                    <div class="panel-heading contentHeader" style="background-color:#eaf2f7;">
-                                        <h4><%# (Eval("Name")) .ToString().Length>15?
+                        <div class="col-md-4 col-xs-4" style="margin-bottom: 1em; padding-left: 0px;">
+
+                            <div class="panel panel-success shadowedbox_hover">
+                                <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
+                                    <h4><%# (Eval("Name")) .ToString().Length>15?
                                         (Eval("Name")) .ToString().Substring(0,15)+ " ....":
                                         (Eval("Name")) .ToString()%></h4>
-                                    </div>
-                                    <div class="panel-body">
-                                        <table>
-                                            <tbody class="rowwithbottomborder ">
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.Alias %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("Alias") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.Expertise %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("Expertise") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.City %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("cityname") %></td>
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.OwnerName %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("OwnerName") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.SinceYear %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("SinceYear") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.Email %>:</td>
-                                                    <td  class="filedDisplay"><%#Eval("EmailID") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.Address %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.ZipCode %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("ZipCode") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.TelNo %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("TelNO") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.FaxNo %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("FaxNo") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.HomePage %>:</td>
-                                                    <td  class="filedDisplay">
-                                                         <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></td>
-                                                    <%--href='http://<%# Eval("HomePage") %>'--%>
-                                                </tr>
-                                                <tr>
-                                                    <td>...</td>
-                                                    <td><asp:LinkButton runat="server" ID="edit" OnCommand="editMusicShopClicked" CommandArgument='<%# Eval("MusicShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton> </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        
-                                    </div>
                                 </div>
+                                <div class="panel-body">
+                                    <table>
+                                        <tbody class="rowwithbottomborder ">
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.Alias %>:</td>
+                                                <td class="filedDisplay"><%#Eval("Alias") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.Expertise %>:</td>
+                                                <td class="filedDisplay"><%#Eval("Expertise") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.City %>:</td>
+                                                <td class="filedDisplay"><%#Eval("cityname") %></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.OwnerName %>:</td>
+                                                <td class="filedDisplay"><%#Eval("OwnerName") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.SinceYear %>:</td>
+                                                <td class="filedDisplay"><%#Eval("SinceYear") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.Email %>:</td>
+                                                <td class="filedDisplay"><%#Eval("EmailID") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.Address %>:</td>
+                                                <td class="filedDisplay"><%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.ZipCode %>:</td>
+                                                <td class="filedDisplay"><%#Eval("ZipCode") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.TelNo %>:</td>
+                                                <td class="filedDisplay"><%#Eval("TelNO") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.FaxNo %>:</td>
+                                                <td class="filedDisplay"><%#Eval("FaxNo") %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="filedName"><%# Resources.DisplayText.HomePage %>:</td>
+                                                <td class="filedDisplay">
+                                                    <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></td>
+                                                <%--href='http://<%# Eval("HomePage") %>'--%>
+                                            </tr>
+                                            <tr>
+                                                <td>...</td>
+                                                <td>
+                                                    <asp:LinkButton runat="server" ID="edit" OnCommand="editMusicShopClicked" CommandArgument='<%# Eval("MusicShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+
+                                                    <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("MusicShopID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
 
                         </div>
 
@@ -218,4 +222,46 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
         }
     </style>
+
+    <script type="text/javascript">
+             
+        function deletebtnclicked(id) {
+            var txt;
+            if (confirm('Are you sure you want to delete?')) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "MusicShopDB.aspx/DeleteMusicShop", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: id }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                        location.reload();
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
+
+    </script>
+
 </asp:Content>

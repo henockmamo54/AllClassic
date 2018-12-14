@@ -33,13 +33,14 @@ namespace AllClassicWeb.Views
         {
 
             var editbutton = (LinkButton)e.Item.FindControl("edit");
+            var deletebutton = (LinkButton)e.Item.FindControl("delete");
             int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString());
             if (user != null)
             {
-                if (user.UserID == userID) { editbutton.Visible = true; }
-                else editbutton.Visible = false;
+                if (user.UserID == userID) { editbutton.Visible = true; deletebutton.Visible = true; }
+                else { editbutton.Visible = false; deletebutton.Visible = false; }
             }
-            else editbutton.Visible = false;
+            else { editbutton.Visible = false; deletebutton.Visible = false; }
 
         }
 
@@ -90,7 +91,13 @@ namespace AllClassicWeb.Views
             Session["updateMusicShop"] = true;
             Response.Redirect("MusicShopDBAddNew.aspx");
         }
-
+        
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteMusicShop(int n)
+        {
+            return BusinessLogic.MusicShopLogic.deleteMusicShop(n);
+        }
 
     }
 }

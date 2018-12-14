@@ -17,10 +17,10 @@ namespace DataAccessP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MusicianTbl()
         {
+            this.MusicianEndorserTbls = new HashSet<MusicianEndorserTbl>();
             this.PerformanceTbls = new HashSet<PerformanceTbl>();
             this.PerformanceTbls1 = new HashSet<PerformanceTbl>();
             this.PerformanceMusicianInstrumentTbls = new HashSet<PerformanceMusicianInstrumentTbl>();
-            this.MusicianEndorserTbls = new HashSet<MusicianEndorserTbl>();
         }
     
         public int MusicianID { get; set; }
@@ -46,6 +46,8 @@ namespace DataAccessP
         public virtual InstrumentTbl InstrumentTbl { get; set; }
         public virtual InstrumentTbl InstrumentTbl1 { get; set; }
         public virtual LookUpTbl LookUpTbl { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MusicianEndorserTbl> MusicianEndorserTbls { get; set; }
         public virtual UserTbl UserTbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceTbl> PerformanceTbls { get; set; }
@@ -53,7 +55,5 @@ namespace DataAccessP
         public virtual ICollection<PerformanceTbl> PerformanceTbls1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceMusicianInstrumentTbl> PerformanceMusicianInstrumentTbls { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MusicianEndorserTbl> MusicianEndorserTbls { get; set; }
     }
 }

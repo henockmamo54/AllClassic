@@ -66,14 +66,18 @@
                         </div>
                         <br />
                         <div>
-                            <span class="filedName"><asp:LinkButton runat="server" OnCommand="LinkButton_Click" CommandArgument='<%#Eval("homepageurl") %>' target="_blank">
-                                <asp:Label runat="server" ID="txt_homepageurl" Text="Read More" /></asp:LinkButton></span>
+                            <span class="filedName">
+                                <asp:LinkButton runat="server" OnCommand="LinkButton_Click" CommandArgument='<%#Eval("homepageurl") %>' target="_blank">
+                                    <asp:Label runat="server" ID="txt_homepageurl" Text="Read More" />
+                                </asp:LinkButton>
+                            </span>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="col-xs-6">
+                    <asp:Button CssClass="btn btn-danger  pull-right  contentButton" style="margin-left:5px;" runat="server" ID="btn_delete" OnClientClick="deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
                     <asp:Button CssClass="btn btn-primary pull-right contentButton" runat="server" ID="btn_editpg" OnClick="onclick_btn_editpg" Text="<%$Resources:DisplayText,Edit %>" />
                 </div>
                 <div class="col-xs-12">
@@ -86,10 +90,49 @@
         document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
         document.getElementById("performancegrouptab").style.borderRight = "none";
 
-        
-        function openInNewTab(url) { 
+
+        function openInNewTab(url) {
             var win = window.open(url, '_blank');
             win.focus();
+        }
+
+
+
+        function deletebtnclicked(msg) {
+            var txt;
+            if (confirm(msg)) {
+                txt = "You pressed OK!";
+
+                $.ajax({
+                    type: "POST",
+                    url: "PerformanceGroupDetail.aspx/DeletePerfromanceGroup", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ n: 1 }), //{ },//data
+                    success: function (data) {
+
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            history.go(-1);
+                        }
+
+                        else {
+                            alert('Entry not  deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
+                    }
+                });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            }
         }
 
 
