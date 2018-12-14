@@ -72,6 +72,7 @@ namespace AllClassicWeb.Views
                 if (user != null)
                 {
                     if (user.UserID == performance.UserID) { btn_editArtist.Visible = true; btn_deleteArtist.Visible = true; }
+                    else { btn_editArtist.Visible = false; btn_deleteArtist.Visible = false; }
                 }
                 else { btn_editArtist.Visible = false; btn_deleteArtist.Visible = false; }
 
