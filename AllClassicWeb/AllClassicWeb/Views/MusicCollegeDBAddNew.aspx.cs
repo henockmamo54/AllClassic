@@ -141,13 +141,17 @@ namespace AllClassicWeb.Views
         {
             fileupload = manageFileUpload1();
             if (fileupload.HasFiles)
-            {
+            { 
+                string uniqueid = DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.Hour + "" + DateTime.Now.Minute + "" + DateTime.Now.Second + "" + DateTime.Now.Millisecond;
                 string ext = System.IO.Path.GetExtension(fileupload.FileName);
                 if (ext == ".jpg" || ext == ".png" || ext == ".gif" || ext == ".jpeg")
                 {
                     string path = Server.MapPath("~//Doc//College//");
-                    fileupload.SaveAs(path + fileupload.FileName);
+                    fileupload.SaveAs(path + uniqueid + fileupload.FileName);
                     this.Session["College_photo1"] = fileupload;
+
+                    if (photonumber == 1)
+                        info.CollegePhoto = uniqueid + fileupload.FileName;
                 }
                 else
                 {
@@ -159,8 +163,6 @@ namespace AllClassicWeb.Views
 
             if (!fileupload.HasFiles) return false;
 
-            if (photonumber == 1)
-                info.CollegePhoto = fileupload.FileName;
             //else
             //    info.Photo2 = fileupload.FileName;
 

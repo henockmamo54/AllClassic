@@ -204,11 +204,19 @@ namespace AllClassicWeb.Views
 
             if (fileupload.HasFiles)
             {
+                string uniqueid = DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.Hour + "" + DateTime.Now.Minute + "" + DateTime.Now.Second + "" + DateTime.Now.Millisecond;
                 string ext = System.IO.Path.GetExtension(fileupload.FileName);
                 if (ext == ".jpg" || ext == ".png" || ext == ".gif" || ext == ".jpeg")
                 {
                     string path = Server.MapPath("~//Doc//artist//");
-                    fileupload.SaveAs(path + fileupload.FileName);
+                    fileupload.SaveAs(path + uniqueid +  fileupload.FileName);
+
+
+                    if (photonumber == 1)
+                        info.Photo1 = uniqueid + fileupload.FileName;
+                    else
+                        info.Photo2 = uniqueid + fileupload.FileName;
+
                 }
                 else
                 {
@@ -222,10 +230,6 @@ namespace AllClassicWeb.Views
 
             if (!fileupload.HasFiles) return false;
 
-            if (photonumber == 1)
-                info.Photo1 = fileupload.FileName;
-            else
-                info.Photo2 = fileupload.FileName;
 
             return true;
         }

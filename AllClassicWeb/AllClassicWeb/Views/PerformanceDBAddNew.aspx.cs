@@ -272,16 +272,20 @@ namespace AllClassicWeb.Views
 
         public bool getPhoto(PerformanceTbl info, int photonumber, FileUpload fileupload)
         {
-
             manageFileUpload1();
             if (fileupload.HasFiles)
             {
                 string ext = System.IO.Path.GetExtension(fileupload.FileName);
+                
                 if (ext == ".jpg" || ext == ".png" || ext == ".gif" || ext == ".jpeg")
                 {
-                    string path = Server.MapPath("~//Doc//Performance//");
-                    fileupload.SaveAs(path + fileupload.FileName);
+                    string uniqueid = DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.Hour + "" + DateTime.Now.Minute + "" + DateTime.Now.Second + "" + DateTime.Now.Millisecond;
+                    string path = Server.MapPath("~//Doc//Performance//"); 
+                    fileupload.SaveAs(path + uniqueid+ fileupload.FileName);
                     this.Session["FileUpload_photo1"] = FileUpload_photo1;
+
+                    if (photonumber == 1)
+                        info.PosterFileName = uniqueid+ fileupload.FileName;
                 }
                 else
                 {
@@ -293,8 +297,6 @@ namespace AllClassicWeb.Views
 
             if (!fileupload.HasFiles) return false;
 
-            if (photonumber == 1)
-                info.PosterFileName = fileupload.FileName;
             //else
             //    info.Photo2 = fileupload.FileName;
 
