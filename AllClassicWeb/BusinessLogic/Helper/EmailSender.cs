@@ -62,7 +62,7 @@ namespace BusinessLogic.Helper
                     string subject = "Endorsement Request";
                     string body = string.Format(@"<p><strong> Dear Mr. {0} we would like to request your endorsement in the behalf of Mr. {1}. please follow 
                             <a href='http://13.125.250.101/web/Views/EndorsementPage?ID={3}'>http://13.125.250.101/web/Views/EndorsementPage?ID={3}
-                            </a> and fill the form <br /></strong></p> ", endorser.EndorserName, m.Name, m.MusicianID, endorser.ID);
+                            </a> and fill the form <br /></strong></p> ", endorser.EndorserName, m.Name, endorser.ID);
 
                     //string body = string.Format(@"<p><strong> Dear Mr. {0}, \n An account has been created for you at All Classic Korea. Click this link to activate your account and log in.
                     //        <a href='http://13.125.250.101/web/Views/FullEndorsementPage'> http://13.125.250.101/web/Views/FullEndorsementPage

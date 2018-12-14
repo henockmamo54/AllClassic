@@ -40,7 +40,7 @@ namespace AllClassicWeb.Views
                 }
                 else
                 {
-                    btn_editcollege.Visible = false; btn_deletecollege.Visible = true;
+                    btn_editcollege.Visible = false; btn_deletecollege.Visible = false;
                 }
 
                 //var b = new UriBuilder(college.HomePage);

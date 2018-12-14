@@ -35,7 +35,7 @@ namespace AllClassicWeb.Views
                 repertory.Text = artist.Repertory;
                 major.Text = artist.LookUpTbl != null ? artist.LookUpTbl.SubCode : "";
 
-                var endorserlist = artist.MusicianEndorserTbls.ToList();
+                var endorserlist = artist.MusicianEndorserTbls.Where(x=>x.status==true).ToList();
                 if (endorserlist != null && endorserlist.Count > 0)
                 {
                     Session["myendorsmentlist"] = endorserlist;

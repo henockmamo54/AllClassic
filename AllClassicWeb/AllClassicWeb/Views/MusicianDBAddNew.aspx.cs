@@ -164,8 +164,6 @@ namespace AllClassicWeb.Views
             }
         }
 
-
-
         public void showMsg(string msg)
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
