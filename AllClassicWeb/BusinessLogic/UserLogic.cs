@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using BusinessLogic.Helper;
 using DataAccessP;
 
@@ -35,7 +36,12 @@ namespace BusinessLogic
                         }
 
                         dbContextTransaction.Commit();
-                        EmailSender.sendEmailToNewUser(user);
+
+                        new Thread(() =>
+                        {
+                             EmailSender.sendEmailToNewUser(user); ;
+                        }).Start();
+
                         return new Result(user,null);
                     }
                     catch (Exception ee)

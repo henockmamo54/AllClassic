@@ -211,7 +211,6 @@ namespace AllClassicWeb.Views
                     string path = Server.MapPath("~//Doc//artist//");
                     fileupload.SaveAs(path + uniqueid +  fileupload.FileName);
 
-
                     if (photonumber == 1)
                         info.Photo1 = uniqueid + fileupload.FileName;
                     else

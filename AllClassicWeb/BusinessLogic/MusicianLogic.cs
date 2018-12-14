@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DataAccessP;
 
@@ -42,7 +43,13 @@ namespace BusinessLogic
                         }
 
                         dbContextTransaction.Commit();
-                        BusinessLogic.Helper.EmailSender.sendEmailToEndorser(musician, registeredEndorsersList);
+
+                        new Thread(() =>
+                        {
+                            Helper.EmailSender.sendEmailToEndorser(musician, registeredEndorsersList);
+
+                        }).Start();
+
                         return musician;
                     }
                     catch (Exception ee)
@@ -116,8 +123,13 @@ namespace BusinessLogic
                                 context.SaveChanges();
                             }
                         }
-                        BusinessLogic.Helper.EmailSender.sendEmailToEndorser(musician, registeredEndorsersList);
+
                         dbContextTransaction.Commit();
+                        new Thread(() =>
+                        {
+                            Helper.EmailSender.sendEmailToEndorser(musician, registeredEndorsersList);
+
+                        }).Start();
                         return musician;
                     }
                     catch (Exception ee)
