@@ -55,5 +55,20 @@ namespace BusinessLogic
             return entities.AuditionTbls.Where(x => x.AuditionID == id).FirstOrDefault();
         }
 
+        public static bool deleteAudition(int id)
+        {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                entities.AuditionTbls.Remove(entities.AuditionTbls.Where(x => x.AuditionID == id).FirstOrDefault());
+                entities.SaveChanges();
+                return true;
+            }
+            catch(Exception e){
+                return false;
+            }
+
+        }
+
     }
 }

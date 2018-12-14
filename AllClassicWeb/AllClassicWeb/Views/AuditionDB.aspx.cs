@@ -35,17 +35,27 @@ namespace AllClassicWeb.Views
         }
 
 
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteAudition(int n)
+        {
+            return BusinessLogic.AuditionLogic.deleteAudition(n);
+        }
+
+
+
         public void collegeListContainer_OnItemDataBound(object sender, ListViewItemEventArgs e)
         {
 
-            var editbutton = (LinkButton)e.Item.FindControl("edit");
+            var editbutton = (LinkButton)e.Item.FindControl("edit"); 
+            var deletebutton = (LinkButton)e.Item.FindControl("delete");  
             int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString());
             if (user != null)
             {
-                if (user.UserID == userID) { editbutton.Visible = true; }
-                else editbutton.Visible = false;
+                if (user.UserID == userID) { editbutton.Visible = true; deletebutton.Visible = true; }
+                else { editbutton.Visible = false; deletebutton.Visible = false; }
             }
-            else editbutton.Visible = false;
+            else { editbutton.Visible = false; deletebutton.Visible = false; }
 
         }
 
