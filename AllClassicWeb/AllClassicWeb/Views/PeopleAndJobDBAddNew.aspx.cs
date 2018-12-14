@@ -24,7 +24,7 @@ namespace AllClassicWeb.Views
                         PeopleAndJobTbl p = PeopleAndJobLogic.GetPeopleAndJobByID(int.Parse(Session["PeopleAndJobID"].ToString()));
                         Session["selectedPeopleAndJobTbl"] = p;
 
-                        datetimefilter.Value = ((DateTime)p.ValidDate).ToShortDateString();
+                        datetimefilter.Value = ((DateTime)p.ValidDate).ToString("MM/dd/yyyy");
                         txt_title.Text = p.Title;
                         txt_email.Text = p.EmailID;
                         txt_telno.Text = p.TelNo;

@@ -55,8 +55,8 @@ namespace AllClassicWeb.Views
                 txt_ticketbox.Text = performance.TicketBox;
                 txt_program.Text = performance.Program;
                 txt_description.Text = performance.Description;
-                startdate.Value = performance.StartDate.ToShortDateString();
-                enddate.Value = performance.EndDate.ToShortDateString();
+                startdate.Value = performance.StartDate.ToString("MM/dd/yyyy");
+                enddate.Value = performance.EndDate.ToString("MM/dd/yyyy");
 
 
                 var artistinstrumentlist = performance.PerformanceMusicianInstrumentTbls.ToList();

@@ -31,8 +31,8 @@ namespace AllClassicWeb.Views
                         txt_title.Text = Concour.Title;
                         txt_organizer.Text = Concour.Organizer;
                         //txt_auditionoutline.Text = Concour.AuditionOutline;
-                        datetimepicker2.Value = Concour.FromDate.ToShortDateString();
-                        datetimepicker3.Value = Concour.ToDate.ToShortDateString();
+                        datetimepicker2.Value = Concour.FromDate.ToString("MM/dd/yyyy");
+                        datetimepicker3.Value = Concour.ToDate.ToString("MM/dd/yyyy");
                         txt_outline.Text = Concour.ConcourOutline;
                     }
                 }

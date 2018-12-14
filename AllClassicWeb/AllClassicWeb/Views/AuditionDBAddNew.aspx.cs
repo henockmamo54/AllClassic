@@ -31,8 +31,8 @@ namespace AllClassicWeb.Views
                         txt_title.Text = audition.Title;
                         txt_organizer.Text = audition.Organizer;
                         txt_auditionoutline.Text = audition.AuditionOutline;
-                        datetimepicker2.Value = audition.FromDate.ToShortDateString();
-                        datetimepicker3.Value = audition.ToDate.ToShortDateString();
+                        datetimepicker2.Value = audition.FromDate.ToString("MM/dd/yyyy");
+                        datetimepicker3.Value = audition.ToDate.ToString("MM/dd/yyyy");
                     }
                 }
             }
