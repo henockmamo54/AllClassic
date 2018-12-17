@@ -66,7 +66,7 @@ namespace AllClassicWeb.Views
                 r = BusinessLogic.PeopleAndJobLogic.updatePeopleAndLogic(r);
                 if (r != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                 }
                 else
                 {
@@ -99,7 +99,7 @@ namespace AllClassicWeb.Views
                 r = BusinessLogic.PeopleAndJobLogic.registerPeopleAndLogic(r);
                 if (r != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                 }
                 else
                 {
@@ -121,6 +121,12 @@ namespace AllClassicWeb.Views
             btn_PeopleAndJob_save.Visible = !value;
         }
 
+
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
+        }
 
         public void showMsg(string msg)
         {

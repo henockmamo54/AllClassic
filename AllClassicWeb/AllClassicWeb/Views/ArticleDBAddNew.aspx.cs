@@ -54,7 +54,7 @@ namespace AllClassicWeb.Views
             article = BusinessLogic.ArticleLogic.updateArticle(article);
             if (article != null)
             {
-                showMsg("Data inserted succssfuly");
+                showMsg_withredirect("Data inserted succssfuly");
             }
             else
             {

@@ -68,7 +68,7 @@ namespace AllClassicWeb.Views
                 c = BusinessLogic.ConcoursLogic.updateConcours(c);
                 if (c != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                     //issuccess = true;
                 }
                 else
@@ -97,7 +97,7 @@ namespace AllClassicWeb.Views
                 c = BusinessLogic.ConcoursLogic.registerConcours(c);
                 if (c != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                     //issuccess = true;
                 }
                 else
@@ -110,6 +110,12 @@ namespace AllClassicWeb.Views
                 showMsg("Please check your inputs");
             }
 
+        }
+
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
         }
 
 

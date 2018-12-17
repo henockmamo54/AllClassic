@@ -84,7 +84,7 @@ namespace AllClassicWeb.Views
                 r = BusinessLogic.VenuLogic.updateConcertVenu(r);
                 if (r != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                 }
                 else
                 {
@@ -129,7 +129,7 @@ namespace AllClassicWeb.Views
                 r = BusinessLogic.VenuLogic.registerConcertVenu(r);
                 if (r != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                 }
                 else
                 {
@@ -141,6 +141,13 @@ namespace AllClassicWeb.Views
                 showMsg("Please check your inputs");
             }
 
+        }
+
+
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
         }
 
 

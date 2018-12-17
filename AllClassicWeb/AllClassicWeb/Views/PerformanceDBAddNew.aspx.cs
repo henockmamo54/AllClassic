@@ -175,9 +175,8 @@ namespace AllClassicWeb.Views
                 pt = result.performance;
                 if (pt != null)
                 {
-                    showMsg("Data inserted succssfuly");
-
-                    Response.Redirect("~/Views/PerformanceDB");
+                    showMsg_withredirect("Data inserted succssfuly");
+                    //Response.Redirect("~/Views/PerformanceDB");
                 }
                 else showMsg(result.exception.Message);
             }
@@ -233,7 +232,7 @@ namespace AllClassicWeb.Views
                 pt = BusinessLogic.PerformanceDBLogic.updatePerformance(deleted, added, pt);
                 if (pt != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                     issuccess = true;
 
                 }
@@ -243,8 +242,9 @@ namespace AllClassicWeb.Views
             {
                 showMsg("Please check your inputs");
             }
-            //if (issuccess)
-            //    Response.Redirect("PerformanceDetail?PID=" + pt.PerformanceID);
+            if (issuccess)
+                showMsg_withredirect("Data inserted succssfuly");
+            //Response.Redirect("PerformanceDetail?PID=" + pt.PerformanceID);
 
         }
         public void btn_Performancecancel_Click(object sender, EventArgs e)
@@ -307,6 +307,13 @@ namespace AllClassicWeb.Views
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
+
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
+        }
+
 
         public void manageFileUpload1()
         {

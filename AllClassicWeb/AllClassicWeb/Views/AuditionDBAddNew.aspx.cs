@@ -102,7 +102,7 @@ namespace AllClassicWeb.Views
                 audition = BusinessLogic.AuditionLogic.updateAudtionTbl(audition);
                 if (audition != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
 
                 }
                 else

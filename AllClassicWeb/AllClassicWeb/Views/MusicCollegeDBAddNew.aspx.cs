@@ -88,7 +88,7 @@ namespace AllClassicWeb.Views
                 c = BusinessLogic.CollegeLogic.updateCollege(c);
                 if (c != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                     //Response.Redirect("MusicCollegeDBDetail?ID=" + c.CollegeID);
                 }
                 else
@@ -121,7 +121,7 @@ namespace AllClassicWeb.Views
                 c = BusinessLogic.CollegeLogic.regesterCollege(c);
                 if (c != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                     //issuccess = true;
                 }
                 else
@@ -172,6 +172,12 @@ namespace AllClassicWeb.Views
         public void showMsg(string msg)
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
+        }
+
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
         }
 
 

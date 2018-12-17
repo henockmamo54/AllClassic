@@ -38,7 +38,8 @@ namespace AllClassicWeb.Views
             }
         }
 
-        public void handleButtons(Boolean value) {
+        public void handleButtons(Boolean value)
+        {
             btn_artist_add.Visible = value;
             btn_artist_save.Visible = !value;
         }
@@ -48,9 +49,10 @@ namespace AllClassicWeb.Views
 
             Session["myendorsmentlist"] = null;
             MusicianTbl artist = BusinessLogic.MusicianLogic.getMusicianByID(id);
-            if (artist != null) {
+            if (artist != null)
+            {
                 txt_name.Text = artist.Name;
-                txt_email.Text =artist.EmailID;
+                txt_email.Text = artist.EmailID;
                 txt_mobilenumber.Text = artist.MobileNo;
                 txt_zipcode.Text = artist.ZipCode;
                 txt_facebook.Text = artist.Facebook;
@@ -63,7 +65,8 @@ namespace AllClassicWeb.Views
                 //DropDownList1_Major.Items.FindByValue(artist.Major.ToString()).Selected = true;
 
                 var endorserlist = artist.MusicianEndorserTbls.ToList();
-                if (endorserlist != null && endorserlist.Count > 0) {
+                if (endorserlist != null && endorserlist.Count > 0)
+                {
                     Session["myendorsmentlist"] = endorserlist;
                     myendorsmentlist.DataSource = endorserlist;
                     myendorsmentlist.DataBind();
@@ -149,7 +152,7 @@ namespace AllClassicWeb.Views
 
                 if (artist != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                     cleanArtistTextBoxs();
 
                     //sending message to endorsers
@@ -207,7 +210,7 @@ namespace AllClassicWeb.Views
                 if (ext == ".jpg" || ext == ".png" || ext == ".gif" || ext == ".jpeg")
                 {
                     string path = Server.MapPath("~//Doc//artist//");
-                    fileupload.SaveAs(path + uniqueid +  fileupload.FileName);
+                    fileupload.SaveAs(path + uniqueid + fileupload.FileName);
 
                     if (photonumber == 1)
                         info.Photo1 = uniqueid + fileupload.FileName;
@@ -289,17 +292,23 @@ namespace AllClassicWeb.Views
                 artist.UserID = user.UserID;
                 artist.UpdateTimeStamp = DateTime.Now;
                 artist.Affliation = txt_youraffiliation.Text;
-                               
-                var listOfPreviousEndorserlist = artist.MusicianEndorserTbls.ToList();
-                var currentlistofEndorserlist = (List<MusicianEndorserTbl>)Session["myendorsmentlist"];
-                var deleted = listOfPreviousEndorserlist.Except(currentlistofEndorserlist).ToList();
-                var added = currentlistofEndorserlist.Except(listOfPreviousEndorserlist).ToList();
+
+                List<MusicianEndorserTbl> added = new List<MusicianEndorserTbl>();
+                List<MusicianEndorserTbl> deleted = new List<MusicianEndorserTbl>();
+
+                if (artist.MusicianEndorserTbls != null && Session["myendorsmentlist"]!=null)
+                {
+                    var listOfPreviousEndorserlist = artist.MusicianEndorserTbls.ToList();
+                    var currentlistofEndorserlist = (List<MusicianEndorserTbl>)Session["myendorsmentlist"];
+                    deleted = listOfPreviousEndorserlist.Except(currentlistofEndorserlist).ToList();
+                    added = currentlistofEndorserlist.Except(listOfPreviousEndorserlist).ToList();
+                }
 
                 artist = MusicianLogic.updateRegisteredMusician(added, deleted, artist);
 
                 if (artist != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                     //cleanArtistTextBoxs();
                     //Response.Redirect("MusicianDetailPage?ID=" + artist.MusicianID);
                     //sending message to endorsers
@@ -314,14 +323,22 @@ namespace AllClassicWeb.Views
             }
         }
 
+
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
+        }
+
+
         protected void DropDownList1_Major_DataBound(object sender, EventArgs e)
         {
 
-            if ( Session["updateMusician"]!=null && Boolean.Parse(Session["updateMusician"].ToString()) == true)
+            if (Session["updateMusician"] != null && Boolean.Parse(Session["updateMusician"].ToString()) == true)
             {
                 int id = int.Parse(Session["MusicianID"].ToString());
                 MusicianTbl performance = MusicianLogic.getMusicianByID(id);
-                if(performance.Major!=0)
+                if (performance.Major != 0)
                     DropDownList1_Major.Items.FindByValue(performance.Major.ToString()).Selected = true;
             }
         }

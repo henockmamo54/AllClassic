@@ -132,5 +132,13 @@ where maincode='City'
             });
         });
     </script>
+    <script type="text/javascript">
+        
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'PeopleAndJobDB.aspx';
+        }
+
+    </script>
 
 </asp:Content>

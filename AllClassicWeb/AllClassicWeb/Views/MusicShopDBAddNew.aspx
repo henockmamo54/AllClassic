@@ -120,5 +120,12 @@ where maincode='City'
         document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
         document.getElementById("MusicShopDBtab").style.borderRight = "none";
     </script>
+    <script type="text/javascript">
+        
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'MusicShopDB.aspx';
+        }
 
+    </script>
 </asp:Content>

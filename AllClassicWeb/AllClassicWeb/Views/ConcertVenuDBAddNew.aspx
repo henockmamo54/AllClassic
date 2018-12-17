@@ -130,6 +130,13 @@ where maincode='City'
         document.getElementById("ConcertVenutab").style.backgroundColor = "white";
         document.getElementById("ConcertVenutab").style.borderRight = "none";
     </script>
+    <script type="text/javascript">
+        
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'ConcertVenuDB.aspx';
+        }
 
+    </script>
 
 </asp:Content>

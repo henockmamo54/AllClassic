@@ -99,7 +99,7 @@ namespace AllClassicWeb.Views
             pg = BusinessLogic.PerformanceGroupLogic.UpdatePerformanceGroupTbl(pg);
             if (pg != null)
             {
-                showMsg("Data Saved succssfuly");
+                showMsg_withredirect("Data Saved succssfuly");
                 //cleanPGTextBoxs();
                 //Response.Redirect("PerformanceGroupDetail?PGID=" + pg.PerformanceGroupID);
             }
@@ -129,7 +129,7 @@ namespace AllClassicWeb.Views
                 pg = BusinessLogic.PerformanceGroupLogic.addPerformanceGroup(pg);
                 if (pg != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                     cleanPGTextBoxs();
                 }
                 else showMsg("Please check your inputs");
@@ -160,5 +160,10 @@ namespace AllClassicWeb.Views
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
 
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
+        }
     }
 }

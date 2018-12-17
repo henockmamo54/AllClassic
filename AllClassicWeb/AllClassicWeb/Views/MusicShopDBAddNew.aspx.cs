@@ -82,7 +82,7 @@ namespace AllClassicWeb.Views
                 r = BusinessLogic.MusicShopLogic.updateMusicShop(r);
                 if (r != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                 }
                 else
                 {
@@ -125,7 +125,7 @@ namespace AllClassicWeb.Views
                 r = BusinessLogic.MusicShopLogic.registerMusicShop(r);
                 if (r != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                 }
                 else
                 {
@@ -139,6 +139,11 @@ namespace AllClassicWeb.Views
 
         }
 
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
+        }
 
         public void showMsg(string msg)
         {

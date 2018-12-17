@@ -100,6 +100,16 @@
         </Triggers>
     </asp:UpdatePanel>
 
+    <script type="text/javascript">
+        
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'MusicCollegeDB.aspx';
+        }
+
+    </script>
+
+
     <%--<script type="text/javascript">
         document.getElementById("MusicCollegetab").style.backgroundColor = "white";
         document.getElementById("MusicCollegetab").style.borderBottom = "none";
