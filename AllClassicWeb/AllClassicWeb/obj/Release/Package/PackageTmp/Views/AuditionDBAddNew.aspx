@@ -83,6 +83,8 @@
                 </div>
             </div>
 
+            <textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href=&quot;https://ckeditor.com/&quot;&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
+
             <div class="row col-xs-4" style="text-align: right;">
                 <br />
 
@@ -99,7 +101,13 @@
         document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
         document.getElementById("auditiontab").style.borderRight = "none";
     </script>
-
+    <script>
+        // We need to turn off the automatic editor creation first.
+        CKEDITOR.disableAutoInline = true;
+        alert("test")
+        CKEDITOR.replace('editor1');
+    </script>
+    <script src="https://cdn.ckeditor.com/4.11.1/standard-all/ckeditor.js"></script>
     <script type="text/javascript">
 
         function ShowMessage() {

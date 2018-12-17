@@ -18,6 +18,8 @@ namespace AllClassicWeb.Views
             user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
 
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "getValueFromHtmlEditor", "getValueFromHtmlEditor();", true);
+
             if (!IsPostBack)
             {
                 handleButtons(true);
@@ -30,7 +32,7 @@ namespace AllClassicWeb.Views
                         Session["selectedAudition"] = audition;
                         txt_title.Text = audition.Title;
                         txt_organizer.Text = audition.Organizer;
-                        txt_auditionoutline.Text = audition.AuditionOutline;
+                        txt_auditionoutline.InnerText = Server.HtmlDecode( audition.AuditionOutline);
                         datetimepicker2.Value = audition.FromDate.ToString("MM/dd/yyyy");
                         datetimepicker3.Value = audition.ToDate.ToString("MM/dd/yyyy");
                     }
@@ -43,13 +45,17 @@ namespace AllClassicWeb.Views
         {
             try
             {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "getValueFromHtmlEditor", "getValueFromHtmlEditor();", true);
+
                 AuditionTbl audition = new AuditionTbl();
                 audition.Organizer = txt_organizer.Text;
                 audition.Title = txt_title.Text;
                 audition.FromDate = DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 audition.UpdateTimeStamp = DateTime.Now;
-                audition.AuditionOutline = txt_auditionoutline.Text;
+
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                audition.AuditionOutline = txt_auditionoutline.InnerText;
                 audition.UserID = user.UserID;
                 audition = BusinessLogic.AuditionLogic.regesterAudtionTbl(audition);
                 if (audition != null)
@@ -90,6 +96,8 @@ namespace AllClassicWeb.Views
 
             try
             {
+
+
                 AuditionTbl audition = new AuditionTbl();
                 audition.AuditionID = int.Parse(Session["AuditionID"].ToString());
                 audition.Organizer = txt_organizer.Text;
@@ -97,7 +105,10 @@ namespace AllClassicWeb.Views
                 audition.FromDate = DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 audition.UpdateTimeStamp = DateTime.Now;
-                audition.AuditionOutline = txt_auditionoutline.Text;
+
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                //audition.AuditionOutline = txt_auditionoutline.InnerHtml;
+                audition.AuditionOutline = msg;
                 audition.UserID = user.UserID;
                 audition = BusinessLogic.AuditionLogic.updateAudtionTbl(audition);
                 if (audition != null)
@@ -123,7 +134,7 @@ namespace AllClassicWeb.Views
             txt_title.Text = "";
             datetimepicker2.Value = null;
             datetimepicker3.Value = null;
-            txt_auditionoutline.Text = "";
+            txt_auditionoutline.InnerText = "";
             Session["updateAudition"] = null;
             handleButtons(true);
         }

@@ -167,5 +167,13 @@ where maincode='City'
             padding: 0px;
         }
     </style>
+    <script type="text/javascript">
+        
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'PerformanceGroup.aspx';
+        }
+
+    </script>
 
 </asp:Content>

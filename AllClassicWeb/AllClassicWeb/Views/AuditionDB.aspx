@@ -144,7 +144,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <br />
                                         <span class="Contentdisplay" style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
                                         <br />
-                                        <span class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("AuditionOutline") %> </span>
+                                        <span class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"> <%#Server.HtmlDecode(Eval("AuditionOutline").ToString()) %></span>
                                         <a  class="Contentdisplay" data-toggle="modal" data-target="#myModal<%#Eval("AuditionID")%>"> <%# Resources.DisplayText.Seemore %> </a> 
                                         <asp:LinkButton class="Contentdisplay" runat="server"  Style="margin-left: 5px;" ID="edit" OnCommand="editAuditionClicked" CommandArgument='<%# Eval("AuditionID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("AuditionID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
@@ -167,7 +167,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                         <h4 class="modal-title"><%# Eval("Title")%> - <%# Resources.DisplayText.AuditionOutlineandApplicationInfo %></h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p><%# Eval("AuditionOutline") %></p>
+                                                        <p> <%#Server.HtmlDecode(Eval("AuditionOutline").ToString()) %></p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

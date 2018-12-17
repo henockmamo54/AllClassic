@@ -122,4 +122,12 @@ where maincode='City'
         document.getElementById("RepairShoptab").style.borderRight = "none";
     </script>
     
+    <script type="text/javascript">
+        
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'RepairShopDB.aspx';
+        }
+
+    </script>
 </asp:Content>

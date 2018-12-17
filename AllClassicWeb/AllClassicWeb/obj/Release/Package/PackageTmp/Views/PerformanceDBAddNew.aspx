@@ -382,6 +382,12 @@ where maincode='City'
 
 
     <script>
+        
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'PerformanceDB.aspx';
+        }
+
         function bindDateTime() {
             $('#datetimepicker2_start').datetimepicker({
                 format: 'MM/DD/YYYY'

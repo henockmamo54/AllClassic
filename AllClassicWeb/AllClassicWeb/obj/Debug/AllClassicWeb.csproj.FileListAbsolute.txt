@@ -122,6 +122,7 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\Antlr3.Runtime.dl
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\AspNet.ScriptManager.bootstrap.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\AspNet.ScriptManager.jQuery.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\BusinessLogic.exe
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\CKEditor.NET.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\DataAccessP.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\EntityFramework.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\EntityFramework.SqlServer.dll

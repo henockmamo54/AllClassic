@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AuditionDBAddNew.aspx.cs" Inherits="AllClassicWeb.Views.AuditionDBAddNew" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AuditionDBAddNew.aspx.cs" ValidateRequest="false" Inherits="AllClassicWeb.Views.AuditionDBAddNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -77,17 +77,23 @@
                 <br />
                 <div class="col-xs-12 filedName"><%= Resources.DisplayText.AuditionOutlineandApplicationInfo %>*</div>
                 <div class="col-xs-12">
-                    <asp:TextBox runat="server" ID="txt_auditionoutline" CssClass="form-control filedDisplay" TextMode="MultiLine" Style="max-width: 500px; width: 500px !important;" Rows="10" />
-                    <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_auditionoutline" ErrorMessage="<%$Resources:DisplayText,PleasefillAuditionoutlinefield %>" />
 
+                    <textarea cols="80" id="txt_auditionoutline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
+                    <asp:HiddenField ID="HiddenField2" runat="server" Value="" />
+
+
+
+                    <%--<asp:TextBox runat="server" ID="txt_auditionoutline" CssClass="form-control filedDisplay" TextMode="MultiLine" Style="max-width: 500px; width: 500px !important;" Rows="10" />--%>
+                    <%--<asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_auditionoutline" ErrorMessage="<%$Resources:DisplayText,PleasefillAuditionoutlinefield %>" />--%>
                 </div>
             </div>
+
 
             <div class="row col-xs-4" style="text-align: right;">
                 <br />
 
-                <asp:Button runat="server" ValidationGroup="a" ID="btn_saveAudition" UseSubmitBehavior="false" OnClick="onclick_btn_UpdatenewAudition" type="button" Text="<%$Resources:DisplayText,Update %>" class="btn btn-warning contentButton"></asp:Button>
-                <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary contentButton"></asp:Button>
+                <asp:Button runat="server" ValidationGroup="a" ID="btn_saveAudition" UseSubmitBehavior="false" OnClick="onclick_btn_UpdatenewAudition " OnClientClick="getValueFromHtmlEditor();" type="button" Text="<%$Resources:DisplayText,Update %>" class="btn btn-warning contentButton"></asp:Button>
+                <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false"  OnClick="onclick_btn_addnewAudition" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary contentButton"></asp:Button>
                 <asp:Button runat="server" type="button" class="btn btn-danger contentButton" OnClick="btn_cancelclicked" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
                 <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
             </div>
@@ -99,8 +105,45 @@
         document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
         document.getElementById("auditiontab").style.borderRight = "none";
     </script>
+    <script>
+        // We need to turn off the automatic editor creation first.
+        //CKEDITOR.disableAutoInline = true;
+        CKEDITOR.replace('MainContent_txt_auditionoutline');
+        CKEDITOR.instances['MainContent_txt_auditionoutline'].on('blur', function (e) {
+            var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
+            $('#MainContent_HiddenField2').val(value);
+        });
 
+        CKEDITOR.instances['MainContent_txt_auditionoutline'].on('focus', function (e) {
+            var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
+            $('#MainContent_HiddenField2').val(value);
+        });
+
+        CKEDITOR.instances['MainContent_txt_auditionoutline'].on('mode', function () {
+            if (this.mode == 'source') {
+
+                var editable = editor.editable();
+                editable.attachListener(editable, 'input', function () {
+                    var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
+                    $('#MainContent_HiddenField2').val(value);
+                });
+
+            }
+        });
+
+    </script>
+    <script src="https://cdn.ckeditor.com/4.11.1/standard-all/ckeditor.js"></script>
     <script type="text/javascript">
+
+        function getValueFromHtmlEditor() {
+            var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
+            var x = $("#MainContent_txt_auditionoutline")[0].innerHTML;
+            //$('#MainContent_txt_auditionoutline')[0].innerHTML = value;
+
+            $('#MainContent_HiddenField2').val(value);
+            //document.getElementById('MainContent_HiddenField2').value = value
+            //alert(value);
+        }
 
         function ShowMessage() {
             alert('Data inserted succssfuly');
