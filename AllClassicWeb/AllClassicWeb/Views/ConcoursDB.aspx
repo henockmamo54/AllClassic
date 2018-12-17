@@ -157,7 +157,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <br />
                                         <span  class="Contentdisplay" style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
                                         <br />
-                                        <span  class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("ConcourOutline") %> </span>
+                                        <span  class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"><%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %> </span>
                                         <asp:LinkButton  class="Contentdisplay" runat="server" ID="edit" OnCommand="editConcourClicked" CommandArgument='<%# Eval("ConcourID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("ConcourID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
                                         

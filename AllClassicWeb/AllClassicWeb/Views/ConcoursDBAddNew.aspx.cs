@@ -17,6 +17,7 @@ namespace AllClassicWeb.Views
         {
             user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCkEditor", "loadCkEditor();", true);
 
             if (!IsPostBack)
             {
@@ -30,10 +31,9 @@ namespace AllClassicWeb.Views
                         Session["selectedConcour"] = Concour;
                         txt_title.Text = Concour.Title;
                         txt_organizer.Text = Concour.Organizer;
-                        //txt_auditionoutline.Text = Concour.AuditionOutline;
                         datetimepicker2.Value = Concour.FromDate.ToString("MM/dd/yyyy");
                         datetimepicker3.Value = Concour.ToDate.ToString("MM/dd/yyyy");
-                        txt_outline.Text = Concour.ConcourOutline;
+                        txt_outline.InnerText = Server.HtmlDecode(Concour.ConcourOutline);
                     }
                 }
             }
@@ -45,7 +45,7 @@ namespace AllClassicWeb.Views
             Session["updateConcours"] = null;
             txt_title.Text = "";
             txt_organizer.Text = "";
-            txt_outline.Text = "";
+            txt_outline.InnerHtml = "";
 
             datetimepicker2.Value = null;
             datetimepicker3.Value = null;
@@ -61,7 +61,16 @@ namespace AllClassicWeb.Views
                 c.Title = txt_title.Text;
                 c.FromDate = DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 c.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                c.ConcourOutline = txt_outline.Text;
+                //c.ConcourOutline = txt_outline.Text;
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_outline"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The ouline content is more than the specified limit. please  minimize the content of the the outline.");
+                    return;
+                }
+                c.ConcourOutline = msg;
+
                 c.UpdateTimeStamp = DateTime.Now;
                 c.UserID = user.UserID;
 
@@ -79,6 +88,10 @@ namespace AllClassicWeb.Views
             catch (Exception ee)
             {
                 showMsg("Please check your inputs");
+                if (Session["txt_outline"] != null)
+                {
+                    txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                }
             }
         }
 
@@ -90,7 +103,16 @@ namespace AllClassicWeb.Views
                 c.Title = txt_title.Text;
                 c.FromDate= DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 c.ToDate= DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                c.ConcourOutline = txt_outline.Text;
+                //c.ConcourOutline = txt_outline.Text;
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_outline"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The ouline content is more than the specified limit. please  minimize the content of the the outline.");
+                    return;
+                }
+                c.ConcourOutline = msg;
+
                 c.UpdateTimeStamp = DateTime.Now;
                 c.UserID = user.UserID;
 
@@ -108,6 +130,10 @@ namespace AllClassicWeb.Views
             catch (Exception ee)
             {
                 showMsg("Please check your inputs");
+                if (Session["txt_outline"] != null)
+                {
+                    txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                }
             }
 
         }

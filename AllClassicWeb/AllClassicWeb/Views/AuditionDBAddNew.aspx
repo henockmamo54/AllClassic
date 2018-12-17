@@ -91,7 +91,7 @@
                 <br />
 
                 <asp:Button runat="server" ValidationGroup="a" ID="btn_saveAudition" UseSubmitBehavior="false" OnClick="onclick_btn_UpdatenewAudition " OnClientClick="getValueFromHtmlEditor();" type="button" Text="<%$Resources:DisplayText,Update %>" class="btn btn-warning contentButton"></asp:Button>
-                <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary contentButton"></asp:Button>
+                <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition"  OnClientClick="getValueFromHtmlEditor();"  type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary contentButton"></asp:Button>
                 <asp:Button runat="server" type="button" class="btn btn-danger contentButton" OnClick="btn_cancelclicked" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
                 <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
             </div>
