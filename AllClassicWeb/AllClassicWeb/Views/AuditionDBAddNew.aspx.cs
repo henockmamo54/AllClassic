@@ -67,6 +67,10 @@ namespace AllClassicWeb.Views
                 if (msg.Length > 999)
                 {
                     showMsg("The ouline content is more than the specified limit. please  minimize the content of the the outline.");
+                    if (Session["txt_auditionoutline"] != null)
+                    {
+                        txt_auditionoutline.InnerText = Server.HtmlDecode(Session["txt_auditionoutline"].ToString());
+                    }
                     return;
                 }
                 audition.AuditionOutline = msg;
@@ -130,6 +134,10 @@ namespace AllClassicWeb.Views
                 //audition.AuditionOutline = txt_auditionoutline.InnerHtml;
                 if (msg.Length > 999) {
                     showMsg("The ouline content is more than the specified limit. please  minimize the content of the the outline.");
+                    if (Session["txt_auditionoutline"] != null)
+                    {
+                        txt_auditionoutline.InnerText = Server.HtmlDecode(Session["txt_auditionoutline"].ToString());
+                    }
                     return;
                 }
                 audition.AuditionOutline = msg;

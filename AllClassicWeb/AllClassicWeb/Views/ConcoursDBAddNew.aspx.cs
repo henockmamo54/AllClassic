@@ -67,6 +67,10 @@ namespace AllClassicWeb.Views
                 if (msg.Length > 399)
                 {
                     showMsg("The ouline content is more than the specified limit. please  minimize the content of the the outline.");
+                    if (Session["txt_outline"] != null)
+                    {
+                        txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    }
                     return;
                 }
                 c.ConcourOutline = msg;
@@ -109,6 +113,10 @@ namespace AllClassicWeb.Views
                 if (msg.Length > 399)
                 {
                     showMsg("The ouline content is more than the specified limit. please  minimize the content of the the outline.");
+                    if (Session["txt_outline"] != null)
+                    {
+                        txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    }
                     return;
                 }
                 c.ConcourOutline = msg;

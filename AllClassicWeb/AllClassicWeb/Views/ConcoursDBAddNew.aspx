@@ -82,11 +82,11 @@
                     </div>
                 </div>
                 <div class="row ">
-                    <div class="col-md-8 col-xs-8 userregisterinfo">
+                    <div class="col-xs-12 userregisterinfo">
                         <br />
-                        <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.ConcourOutline %>*</div>
+                        <div class=" col-xs-12 filedName"><%= Resources.DisplayText.ConcourOutline %>*</div>
 
-                        <div class="col-md-8 col-xs-8">
+                        <div class="col-xs-12">
                             <%--<asp:TextBox ID="txt_outline" runat="server"  class="form-control filedDisplay" style="max-width:500px;"  ValidationGroup="a" TextMode="MultiLine" Rows="15"></asp:TextBox>--%>
 
                             <textarea cols="80" id="txt_outline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>

@@ -137,14 +137,14 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <asp:Label runat="server" ID="tumbinallink" Style="text-decoration: none;">
 
                                     <div class="caption" style="padding-bottom: 3px;">
-                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: dimgray;" class="contentHeader"><%# Eval("Title")%></h4>
+                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: black;" class="contentHeader"><%# Eval("Title")%></h4>
 
                                         <span runat="server" style="color: #0684f1; font-size: 14px;" class="Contentdisplay"><%=Resources.DisplayText.FromDate %>:  <%# DataBinder.Eval(Container.DataItem,"FromDate","{0:d/M/yyyy}") %>
                                     - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>
                                         <br />
                                         <span class="Contentdisplay" style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
                                         <br />
-                                        <span class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"> <%#Server.HtmlDecode(Eval("AuditionOutline").ToString()) %></span>
+                                        <div class="Contentdisplay" runat="server" style=" font-size: 14px; color: #0a0a0a; background-color: #f7f7f7; padding: 5px; border-radius: 5px;"> <%#Server.HtmlDecode(Eval("AuditionOutline").ToString()) %></div>
                                         <a  class="Contentdisplay" data-toggle="modal" data-target="#myModal<%#Eval("AuditionID")%>"> <%# Resources.DisplayText.Seemore %> </a> 
                                         <asp:LinkButton class="Contentdisplay" runat="server"  Style="margin-left: 5px;" ID="edit" OnCommand="editAuditionClicked" CommandArgument='<%# Eval("AuditionID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("AuditionID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
