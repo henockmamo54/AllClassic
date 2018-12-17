@@ -17,8 +17,12 @@ namespace AllClassicWeb.Views
         {
             user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCkEditor", "loadCkEditor();", true);
 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "getValueFromHtmlEditor", "getValueFromHtmlEditor();", true);
+            //if (Session["txt_auditionoutline"] != null)
+            //{
+            //    txt_auditionoutline.InnerText = Session["txt_auditionoutline"].ToString();
+            //}
 
             if (!IsPostBack)
             {
@@ -32,7 +36,10 @@ namespace AllClassicWeb.Views
                         Session["selectedAudition"] = audition;
                         txt_title.Text = audition.Title;
                         txt_organizer.Text = audition.Organizer;
-                        txt_auditionoutline.InnerText = Server.HtmlDecode( audition.AuditionOutline);
+
+                        txt_auditionoutline.InnerText = Server.HtmlDecode(audition.AuditionOutline);
+                        Session["txt_auditionoutline"] = Server.HtmlDecode(audition.AuditionOutline);
+
                         datetimepicker2.Value = audition.FromDate.ToString("MM/dd/yyyy");
                         datetimepicker3.Value = audition.ToDate.ToString("MM/dd/yyyy");
                     }
@@ -55,6 +62,8 @@ namespace AllClassicWeb.Views
                 audition.UpdateTimeStamp = DateTime.Now;
 
                 var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_auditionoutline"] = msg;
+
                 audition.AuditionOutline = txt_auditionoutline.InnerText;
                 audition.UserID = user.UserID;
                 audition = BusinessLogic.AuditionLogic.regesterAudtionTbl(audition);
@@ -72,6 +81,10 @@ namespace AllClassicWeb.Views
             catch (Exception ee)
             {
                 showMsg("Please check your inputs");
+                if (Session["txt_auditionoutline"] != null)
+                {
+                    txt_auditionoutline.InnerText = Server.HtmlDecode(Session["txt_auditionoutline"].ToString());
+                }
             }
         }
 
@@ -107,6 +120,7 @@ namespace AllClassicWeb.Views
                 audition.UpdateTimeStamp = DateTime.Now;
 
                 var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_auditionoutline"] = msg;
                 //audition.AuditionOutline = txt_auditionoutline.InnerHtml;
                 audition.AuditionOutline = msg;
                 audition.UserID = user.UserID;
@@ -119,6 +133,10 @@ namespace AllClassicWeb.Views
                 else
                 {
                     showMsg("Please check your inputs");
+                    if (Session["txt_auditionoutline"] != null)
+                    {
+                        txt_auditionoutline.InnerText = Server.HtmlDecode(Session["txt_auditionoutline"].ToString());
+                    }
                 }
             }
             catch (Exception ee)

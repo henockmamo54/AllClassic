@@ -108,28 +108,31 @@
     <script>
         // We need to turn off the automatic editor creation first.
         //CKEDITOR.disableAutoInline = true;
-        CKEDITOR.replace('MainContent_txt_auditionoutline');
-        CKEDITOR.instances['MainContent_txt_auditionoutline'].on('blur', function (e) {
-            var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
-            $('#MainContent_HiddenField2').val(value);
-        });
+        //CKEDITOR.replace('MainContent_txt_auditionoutline');
+        //CKEDITOR.instances['MainContent_txt_auditionoutline'].on('blur', function (e) {
+        //    var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
+        //    $('#MainContent_HiddenField2').val(value);
+        //});
 
-        CKEDITOR.instances['MainContent_txt_auditionoutline'].on('focus', function (e) {
-            var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
-            $('#MainContent_HiddenField2').val(value);
-        });
+        function loadCkEditor() {
+            CKEDITOR.replace('MainContent_txt_auditionoutline');
+        }
+        //CKEDITOR.instances['MainContent_txt_auditionoutline'].on('focus', function (e) {
+        //    var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
+        //    $('#MainContent_HiddenField2').val(value);
+        //});
 
-        CKEDITOR.instances['MainContent_txt_auditionoutline'].on('mode', function () {
-            if (this.mode == 'source') {
+        //CKEDITOR.instances['MainContent_txt_auditionoutline'].on('mode', function () {
+        //    if (this.mode == 'source') {
 
-                var editable = editor.editable();
-                editable.attachListener(editable, 'input', function () {
-                    var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
-                    $('#MainContent_HiddenField2').val(value);
-                });
+        //        var editable = editor.editable();
+        //        editable.attachListener(editable, 'input', function () {
+        //            var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
+        //            $('#MainContent_HiddenField2').val(value);
+        //        });
 
-            }
-        });
+        //    }
+        //});
 
     </script>
     <script src="https://cdn.ckeditor.com/4.11.1/standard-all/ckeditor.js"></script>
