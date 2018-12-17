@@ -17,6 +17,9 @@ namespace AllClassicWeb.Views
         {
             user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Poppdadnew", "bindDateTime();", true);
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCkEditor", "loadCkEditor();", true);
+
             manageFileUpload1();
             if (!IsPostBack)
             {
@@ -53,7 +56,8 @@ namespace AllClassicWeb.Views
                 txt_language.Text = performance.Language;
                 txt_time.Text = performance.Time;
                 txt_ticketbox.Text = performance.TicketBox;
-                txt_program.Text = performance.Program;
+                //txt_program.Text = performance.Program;
+                txt_outline.InnerText = Server.HtmlDecode(performance.Program);
                 txt_description.Text = performance.Description;
                 startdate.Value = performance.StartDate.ToString("MM/dd/yyyy");
                 enddate.Value = performance.EndDate.ToString("MM/dd/yyyy");
@@ -159,7 +163,20 @@ namespace AllClassicWeb.Views
                 getPhoto(pt, 1, FileUpload_photo1);
                 pt.VideoFileName = txt_video.Text;
                 pt.TicketBox = txt_ticketbox.Text;
-                pt.Program = txt_program.Text;
+                //pt.Program = txt_program.Text;
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_outline"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Program content is more than the specified limit. please  minimize the content of the the Program.");
+                    if (Session["txt_outline"] != null)
+                    {
+                        txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    }
+                    return;
+                }
+                pt.Program = msg;
+
                 pt.Description = txt_description.Text;
                 pt.UserID = user.UserID;
                 pt.UpdateTimeStamp = DateTime.Now;
@@ -183,6 +200,11 @@ namespace AllClassicWeb.Views
             catch (Exception ee)
             {
                 showMsg(ee.Message);
+
+                if (Session["txt_outline"] != null)
+                {
+                    txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                }
             }
 
         }
@@ -218,7 +240,20 @@ namespace AllClassicWeb.Views
                 getPhoto(pt, 1, FileUpload_photo1);
                 pt.VideoFileName = txt_video.Text;
                 pt.TicketBox = txt_ticketbox.Text;
-                pt.Program = txt_program.Text;
+                //pt.Program = txt_program.Text;
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_outline"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Program content is more than the specified limit. please  minimize the content of the the Program.");
+                    if (Session["txt_outline"] != null)
+                    {
+                        txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    }
+                    return;
+                }
+                pt.Program = msg;
+
                 pt.Description = txt_description.Text;
                 pt.UserID = user.UserID;
                 pt.UpdateTimeStamp = DateTime.Now;
@@ -241,6 +276,11 @@ namespace AllClassicWeb.Views
             catch (Exception ee)
             {
                 showMsg("Please check your inputs");
+
+                if (Session["txt_outline"] != null)
+                {
+                    txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                }
             }
             if (issuccess)
                 showMsg_withredirect("Data inserted succssfuly");
@@ -258,7 +298,7 @@ namespace AllClassicWeb.Views
             txt_time.Text = "";
             txt_video.Text = "";
             txt_ticketbox.Text = "";
-            txt_program.Text = "";
+            txt_outline.InnerHtml = "";
             txt_description.Text = "";
 
             myPerformanceDetailArtistInstrumentlist.DataSource = null;
