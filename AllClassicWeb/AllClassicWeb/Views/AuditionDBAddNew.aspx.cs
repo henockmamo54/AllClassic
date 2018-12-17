@@ -63,9 +63,15 @@ namespace AllClassicWeb.Views
 
                 var msg = Server.HtmlEncode(HiddenField2.Value);
                 Session["txt_auditionoutline"] = msg;
-
-                audition.AuditionOutline = txt_auditionoutline.InnerText;
+                //audition.AuditionOutline = txt_auditionoutline.InnerHtml;
+                if (msg.Length > 999)
+                {
+                    showMsg("The ouline content is more than the specified limit. please  minimize the content of the the outline.");
+                    return;
+                }
+                audition.AuditionOutline = msg;
                 audition.UserID = user.UserID;
+
                 audition = BusinessLogic.AuditionLogic.regesterAudtionTbl(audition);
                 if (audition != null)
                 {
@@ -122,6 +128,10 @@ namespace AllClassicWeb.Views
                 var msg = Server.HtmlEncode(HiddenField2.Value);
                 Session["txt_auditionoutline"] = msg;
                 //audition.AuditionOutline = txt_auditionoutline.InnerHtml;
+                if (msg.Length > 999) {
+                    showMsg("The ouline content is more than the specified limit. please  minimize the content of the the outline.");
+                    return;
+                }
                 audition.AuditionOutline = msg;
                 audition.UserID = user.UserID;
                 audition = BusinessLogic.AuditionLogic.updateAudtionTbl(audition);

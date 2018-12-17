@@ -79,9 +79,7 @@
                 <div class="col-xs-12">
 
                     <textarea cols="80" id="txt_auditionoutline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
-                    <asp:HiddenField ID="HiddenField2" runat="server" Value="" />
-
-
+                    <asp:HiddenField ID="HiddenField2" runat="server" Value="" /> 
 
                     <%--<asp:TextBox runat="server" ID="txt_auditionoutline" CssClass="form-control filedDisplay" TextMode="MultiLine" Style="max-width: 500px; width: 500px !important;" Rows="10" />--%>
                     <%--<asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_auditionoutline" ErrorMessage="<%$Resources:DisplayText,PleasefillAuditionoutlinefield %>" />--%>
@@ -106,19 +104,10 @@
         document.getElementById("auditiontab").style.borderRight = "none";
     </script>
     <script>
-        // We need to turn off the automatic editor creation first.
-        //CKEDITOR.disableAutoInline = true;
-        //CKEDITOR.replace('MainContent_txt_auditionoutline');
-        //CKEDITOR.instances['MainContent_txt_auditionoutline'].on('blur', function (e) {
-        //    var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
-        //    $('#MainContent_HiddenField2').val(value);
-        //});
 
         function loadCkEditor() {
 
-
             //CKEDITOR.replace('MainContent_txt_auditionoutline');
-
             CKEDITOR.replace('MainContent_txt_auditionoutline', {
                 // Define the toolbar groups as it is a more accessible solution.
                 toolbarGroups: [
@@ -144,22 +133,6 @@
 
 
         }
-        //CKEDITOR.instances['MainContent_txt_auditionoutline'].on('focus', function (e) {
-        //    var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
-        //    $('#MainContent_HiddenField2').val(value);
-        //});
-
-        //CKEDITOR.instances['MainContent_txt_auditionoutline'].on('mode', function () {
-        //    if (this.mode == 'source') {
-
-        //        var editable = editor.editable();
-        //        editable.attachListener(editable, 'input', function () {
-        //            var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
-        //            $('#MainContent_HiddenField2').val(value);
-        //        });
-
-        //    }
-        //});
 
     </script>
     <script src="https://cdn.ckeditor.com/4.11.1/standard-all/ckeditor.js"></script>

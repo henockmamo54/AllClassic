@@ -35,7 +35,7 @@
           <Property Name="Title" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="FromDate" Type="date" Nullable="false" />
           <Property Name="ToDate" Type="date" Nullable="false" />
-          <Property Name="AuditionOutline" Type="nvarchar" MaxLength="400" />
+          <Property Name="AuditionOutline" Type="nvarchar" MaxLength="1000" />
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
           <Property Name="UserID" Type="int" />
         </EntityType>
@@ -1302,7 +1302,7 @@
           <Property Name="Title" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="AuditionOutline" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="AuditionOutline" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UserID" Type="Int32" />
           <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__AuditionT__UserI__05D8E0BE" FromRole="AuditionTbl" ToRole="UserTbl" />
