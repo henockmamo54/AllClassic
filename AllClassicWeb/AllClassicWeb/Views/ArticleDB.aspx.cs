@@ -59,11 +59,17 @@ namespace AllClassicWeb.Views
         }
         public void ArticleClicked(object sender, CommandEventArgs e) {
             string strURL = e.CommandArgument.ToString();
-            var b = new UriBuilder(strURL);
-            //Response.Redirect(b.ToString());
+            try
+            {
+                var b = new UriBuilder(strURL);
+                //Response.Redirect(b.ToString());
 
-            var s = "openInNewTab('" + b.ToString() + "');";
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Popaaa", s, true);
+                var s = "openInNewTab('" + b.ToString() + "');";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Popaaa", s, true);
+            }
+            catch (Exception ee) {
+                showMsg("Invalid Url");
+            }
         }
 
         public void editArticleClicked(object sender, CommandEventArgs e) {           

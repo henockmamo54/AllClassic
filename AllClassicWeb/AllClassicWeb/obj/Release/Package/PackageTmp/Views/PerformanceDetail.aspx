@@ -399,6 +399,9 @@
                     <div class="col-xs-12">
                         <br />
                         <asp:Button CssClass="btn btn-primary contentButton" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editPerformance" Text="<%$Resources:DisplayText,Edit %>" />
+                        <asp:Button CssClass="btn btn-danger contentButton" runat="server" ID="btn_deleteArtist" OnClientClick = "deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
+                        <%--<asp:Button ID="Button2" runat="server" Text="Button" OnClientClick = "deletebtnclicked('Are you sure you want to delete?');"/>--%>
+                        <%--<asp:Button ID="Button1" runat="server" Text="Button" OnClientClick = "return confirm('Are you sure you want to delete?');"/>--%>
                     </div>
 
                 </div>
@@ -409,6 +412,43 @@
     </asp:UpdatePanel>
 
     <script type="text/javascript">
+
+        function deletebtnclicked(msg) {
+            var txt;
+            if (confirm(msg)) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "PerformanceDetail.aspx/DeletePerformance", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: 1 }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                         history.go(-1);
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
 
         function closeReply(n) {
             $("#divReply" + n).hide();

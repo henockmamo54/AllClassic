@@ -54,7 +54,9 @@ namespace AllClassicWeb.Views
                 audition = BusinessLogic.AuditionLogic.regesterAudtionTbl(audition);
                 if (audition != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
+
+                    //Response.Redirect("~/Views/AuditionDB");
                 }
                 else
                 {
@@ -78,6 +80,10 @@ namespace AllClassicWeb.Views
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
+        }
 
         public void onclick_btn_UpdatenewAudition(object sender, EventArgs e)
         {
@@ -97,6 +103,7 @@ namespace AllClassicWeb.Views
                 if (audition != null)
                 {
                     showMsg("Data inserted succssfuly");
+
                 }
                 else
                 {

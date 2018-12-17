@@ -16,9 +16,9 @@
 
             <div class="row">
                 <div class="row col-md-12 col-xs-12  col-xs-12">
-                    <div class="col-xs-4"> 
-                        <div class="col-xs-4">                            
-                            <h5 style="display: inline-block;display: inline-block;" class="filedName"><%= Resources.DisplayText.PostingDate %> </h5>
+                    <div class="col-xs-4">
+                        <div class="col-xs-4">
+                            <h5 style="display: inline-block; display: inline-block;" class="filedName"><%= Resources.DisplayText.PostingDate %> </h5>
                         </div>
                         <div class="col-xs-8" style="padding: 0;">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-xs-6">
                         <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.PosterEmailID %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;" ></asp:TextBox>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
                     </div>
 
                     <div class="col-md-2 col-xs-2">
@@ -48,7 +48,7 @@
 select top 20 a.*, u.FullName userName, u.emailid from Auxiliary.ArticleTbl a
 join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; margin-bottom:3px;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; margin-bottom: 3px;">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -59,12 +59,12 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             </tr>
                         </thead>
                         <tbody>
-                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists" >
+                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
                                 <ItemTemplate>
                                     <tr>
                                         <td class="col-xs-3 Contentdisplay"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></td>
                                         <td class="col-xs-3 Contentdisplay">
-                                            <asp:LinkButton runat="server" ID="headertableItem" CssClass="Contentdisplay" Style="text-decoration: none; color:inherit;" OnCommand="ArticleClicked" CommandArgument='<%#Eval("ArticleUrl")%>'><%#Eval("ArticleTitle") %></asp:LinkButton></td>
+                                            <asp:LinkButton runat="server" ID="headertableItem" CssClass="Contentdisplay" Style="text-decoration: none; color: inherit;" OnCommand="ArticleClicked" CommandArgument='<%#Eval("ArticleUrl")%>'><%#Eval("ArticleTitle") %></asp:LinkButton></td>
                                         <td class="col-xs-3 Contentdisplay"><%#Eval("ArticleUrl") %></td>
                                         <td class="col-xs-3 Contentdisplay"><%#Eval("EmailID") %></td>
 
@@ -79,14 +79,14 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
 
-            <div class="row" style="margin-top:40px;">
+            <div class="row" style="margin-top: 40px;">
 
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ArticleID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound" >
-                    
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ArticleID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
+
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
                             <h3>No records available.</h3>
-                        </div> 
+                        </div>
                     </EmptyDataTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
@@ -100,11 +100,15 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'>
 
                                     <div class="caption" style="padding-bottom: 3px;">
-                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800;   color: dimgray;" class="contentHeader"><%# Eval("ArticleTitle")%></h4>
-                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" style="font-size: 14px;" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
+                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: dimgray;" class="contentHeader"><%# Eval("ArticleTitle")%></h4>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="font-size: 14px;" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
                                         <br />
-                                        <span runat="server" class="Contentdisplay" style="color:rgba(17, 17, 17, 0.6);font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
+                                        <span runat="server" class="Contentdisplay" style="color: rgba(17, 17, 17, 0.6); font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                        <%--<asp:LinkButton   runat="server" CssClass="Contentdisplay"ID="btn_deleteArticle" OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>" />--%>
+                                        <%--OnClientClick='passAccessory(\"<%# Eval("variable") %>\");'--%>
+                                        <%--OnClientClick="deletebtnclicked('<%# Eval("ArticleID") %>');"--%>
                                         <hr style="margin-top: 5px; margin-bottom: 5px;" />
                                     </div>
 
@@ -155,7 +159,45 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
         document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
         document.getElementById("articletab").style.borderRight = "none";
     </script>
-    <script type="text/javascript">
+    <script type="text/javascript"> 
+        
+        function deletebtnclicked(id) {
+            var txt;
+            if (confirm('Are you sure you want to delete?')) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "ArticleDB.aspx/DeleteArticle", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: id }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                        location.reload();
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
+
 
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
@@ -169,8 +211,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             });
         });
 
-        
-        function openInNewTab(url) { 
+
+        function openInNewTab(url) {
             var win = window.open(url, '_blank');
             win.focus();
         }

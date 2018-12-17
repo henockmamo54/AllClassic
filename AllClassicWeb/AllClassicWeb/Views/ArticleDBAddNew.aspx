@@ -23,7 +23,7 @@
             </div>
 
             <div class="col-xs-8">
-                <asp:TextBox ID="txt_url"  ValidationGroup="a" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                <asp:TextBox ID="txt_url"  ValidationGroup="a" runat="server" class="form-control filedDisplay" TextMode="Url"></asp:TextBox>
                 <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_url" ErrorMessage="<%$Resources:DisplayText,PleasefillthearticleURL %>" />
                     
             </div>

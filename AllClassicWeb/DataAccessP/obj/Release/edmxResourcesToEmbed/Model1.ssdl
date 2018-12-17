@@ -295,7 +295,7 @@
     <Property Name="Time" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Region" Type="int" Nullable="false" />
     <Property Name="City" Type="int" Nullable="false" />
-    <Property Name="Venue" Type="int" Nullable="false" />
+    <Property Name="Venue" Type="int" />
     <Property Name="PosterFileName" Type="nvarchar" MaxLength="80" Nullable="false" />
     <Property Name="VideoFileName" Type="nvarchar" MaxLength="80" />
     <Property Name="TicketBox" Type="nvarchar" MaxLength="80" />
@@ -451,7 +451,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__MusicianE__Music__02FC7413">
-    <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
+    <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="MusicianEndorserTbl" Type="Self.MusicianEndorserTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MusicianTbl">
@@ -607,7 +609,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Performan__Music__72C60C4A">
-    <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
+    <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="PerformanceMusicianInstrumentTbl" Type="Self.PerformanceMusicianInstrumentTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MusicianTbl">
@@ -679,7 +683,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Performan__Perfo__71D1E811">
-    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1" />
+    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="PerformanceMusicianInstrumentTbl" Type="Self.PerformanceMusicianInstrumentTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PerformanceTbl">
@@ -751,7 +757,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Performan__Venue__693CA210">
-    <End Role="VenueTbl" Type="Self.VenueTbl" Multiplicity="1" />
+    <End Role="VenueTbl" Type="Self.VenueTbl" Multiplicity="0..1" />
     <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="VenueTbl">

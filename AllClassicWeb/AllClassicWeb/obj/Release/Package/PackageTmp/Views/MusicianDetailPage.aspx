@@ -133,6 +133,7 @@
 
                     <div class="col-xs-12">
                         <asp:Button CssClass="btn btn-primary contentButton" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editArtist"  Text="<%$Resources:DisplayText,Edit %>" />
+                        <asp:Button CssClass="btn btn-danger contentButton" runat="server" ID="btn_deleteArtist" OnClientClick = "deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
                     </div>
                 </div>
 
@@ -146,6 +147,46 @@
     <script type="text/javascript">
         document.getElementById("artisttab").style.backgroundColor = "white";
         document.getElementById("artisttab").style.borderBottom = "none";
+
+        
+        function deletebtnclicked(msg) {
+            var txt;
+            if (confirm(msg)) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "MusicianDetailPage.aspx/DeleteMusician", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: 1 }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                         history.go(-1);
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
+
+
     </script>
 
     <style>

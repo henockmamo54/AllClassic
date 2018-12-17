@@ -146,6 +146,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <br />
                                         <span  class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("AuditionOutline") %> </span>
                                         <asp:LinkButton  class="Contentdisplay" runat="server" ID="edit" OnCommand="editAuditionClicked" CommandArgument='<%# Eval("AuditionID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("AuditionID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
                                         <br />
                                         <span  class="Contentdisplay" style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
 
@@ -195,6 +196,46 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
     <script type="text/javascript">
         document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
         document.getElementById("auditiontab").style.borderRight = "none";
+
+             
+        function deletebtnclicked(id) {
+            var txt;
+            if (confirm('Are you sure you want to delete?')) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "AuditionDB.aspx/DeleteAudition", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: id }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                        location.reload();
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
+
+
     </script>
 
 

@@ -65,6 +65,8 @@ where maincode='City'
                     <div class="col-md-12 col-xs-12" style="padding-right: 0px;">
 
                         <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
+                         <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("VenueID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+
                     </div>
                 </div>
 
@@ -120,7 +122,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             <hr style="margin-top: 0px;" />
 
             <div class="row">
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="PeopleAndJobID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;">
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="PeopleAndJobID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;"    OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
@@ -175,9 +177,16 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 <td class="filedName"><%# Resources.DisplayText.Description %>:</td>
                                                 <td class="filedDisplay"><%#Eval("Description") %></td>
                                             </tr>
+                                            <tr>
+                                                <td>..</td>
+                                                <td><asp:LinkButton runat="server" ID="edit" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                                     <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("PeopleAndJobID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
-                                    <asp:LinkButton runat="server" ID="LinkButton1" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                    
                                 </div>
                             </div>
 
@@ -233,6 +242,46 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                 format: 'MM/DD/YYYY'
             });
         });
+
+                 
+        function deletebtnclicked(id) {
+            var txt;
+            if (confirm('Are you sure you want to delete?')) {
+                txt = "You pressed OK!";
+
+                 $.ajax({
+                type: "POST",
+                url: "PeopleAndJobDB.aspx/DeleteEntry", //Pagename/Functionname
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ n: id }), //{ },//data
+                success: function (data) {
+                     
+                    if (data.d) {
+
+                        alert('Entry deleted!!!');
+                        location.reload();
+                    }
+
+                    else {
+                        alert('Entry not  deleted!!!');
+                    }
+
+                },
+                error: function (result) {
+                    console.log(result)
+                    //alert("error")
+
+                }
+            });
+
+
+            } else {
+                txt = "You pressed Cancel!";
+            } 
+        }
+
+
     </script>
 
     <style>
