@@ -136,25 +136,19 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <div>
                                 <asp:Label runat="server" ID="tumbinallink" Style="text-decoration: none;">
 
-                                    <div class="caption" style="padding-bottom: 3px;">
+                                    <div class="caption" style="padding-bottom: 3px;"> 
                                         <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: black;" class="contentHeader"><%# Eval("Title")%></h4>
-
-                                        <span runat="server" style="color: #0684f1; font-size: 14px;" class="Contentdisplay"><%=Resources.DisplayText.FromDate %>:  <%# DataBinder.Eval(Container.DataItem,"FromDate","{0:d/M/yyyy}") %>
-                                    - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>
-                                        <br />
                                         <span class="Contentdisplay" style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
-                                        <br />
-                                        <div class="Contentdisplay" runat="server" style=" font-size: 14px; color: #0a0a0a; background-color: #f7f7f7; padding: 5px; border-radius: 5px;"> <%#Server.HtmlDecode(Eval("AuditionOutline").ToString()) %></div>
+                                        [<span runat="server" style="color: #0684f1; font-size: 14px;" class="Contentdisplay"><%=Resources.DisplayText.FromDate %>:  <%# DataBinder.Eval(Container.DataItem,"FromDate","{0:d/M/yyyy}") %>
+                                    - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>]
+                                         <br />
+                                        <div class="Contentdisplay" runat="server" style=" font-size: 14px; color: dimgray; background-color: #f7f7f7; padding: 5px; padding-top:0px; border-radius: 5px; margin:5px; margin-left:0px;"> <%#Server.HtmlDecode(Eval("AuditionOutline").ToString()) %></div>
                                         <a  class="Contentdisplay" data-toggle="modal" data-target="#myModal<%#Eval("AuditionID")%>"> <%# Resources.DisplayText.Seemore %> </a> 
                                         <asp:LinkButton class="Contentdisplay" runat="server"  Style="margin-left: 5px;" ID="edit" OnCommand="editAuditionClicked" CommandArgument='<%# Eval("AuditionID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("AuditionID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                        <span class="Contentdisplay" style="color: #a7a7a7; font-size: 10px; float:right;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
                                         <br />
-                                        <span class="Contentdisplay" style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
-
-                                        <hr style="margin-top: 5px; margin-bottom: 5px;" />
-
-
-                                        
+                                         <hr style="margin-top: 5px; margin-bottom: 10px; border-color: lightgray;" />
 
                                         <!-- Modal -->
                                         <div id="myModal<%#Eval("AuditionID")%>" class="modal fade" role="dialog">
