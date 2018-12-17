@@ -157,22 +157,40 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload_photo2;
         
         /// <summary>
-        /// txt_profilepage control.
+        /// txt_outline control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_profilepage;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_outline;
         
         /// <summary>
-        /// txt_repertory control.
+        /// HiddenField2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_repertory;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField2;
+        
+        /// <summary>
+        /// txt_outline_organizer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_outline_organizer;
+        
+        /// <summary>
+        /// HiddenField_organizer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField_organizer;
         
         /// <summary>
         /// myendorsmentlist control.

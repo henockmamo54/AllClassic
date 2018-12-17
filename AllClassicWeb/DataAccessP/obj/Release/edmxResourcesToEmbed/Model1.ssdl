@@ -30,7 +30,7 @@
     <Property Name="Title" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="FromDate" Type="date" Nullable="false" />
     <Property Name="ToDate" Type="date" Nullable="false" />
-    <Property Name="AuditionOutline" Type="nvarchar" MaxLength="400" />
+    <Property Name="AuditionOutline" Type="nvarchar" MaxLength="1000" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
     <Property Name="UserID" Type="int" />
   </EntityType>

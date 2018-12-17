@@ -17,6 +17,7 @@ namespace AllClassicWeb.Views
             user = (UserTbl)Session["User"];
             manageFileUpload1();
             manageFileUpload2();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCkEditor", "loadCkEditor();", true);
 
             if (!IsPostBack)
             {
@@ -60,8 +61,11 @@ namespace AllClassicWeb.Views
                 txt_kakaoID.Text = artist.KakaoTalk;
                 txt_address.Text = artist.Address;
                 txt_youraffiliation.Text = artist.Affliation;
-                txt_repertory.Text = artist.Repertory;
-                txt_profilepage.Text = artist.Profile;
+                //txt_repertory.Text = artist.Repertory;
+                //txt_profilepage.Text = artist.Profile;
+                txt_outline.InnerText = Server.HtmlDecode(artist.Profile);
+                txt_outline_organizer.InnerText = Server.HtmlDecode(artist.Repertory);
+
                 //DropDownList1_Major.Items.FindByValue(artist.Major.ToString()).Selected = true;
 
                 var endorserlist = artist.MusicianEndorserTbls.ToList();
@@ -139,8 +143,36 @@ namespace AllClassicWeb.Views
                 artist.Major = int.Parse(DropDownList1_Major.SelectedValue.ToString());
                 getPhoto(artist, 1, FileUpload_photo1);
                 getPhoto(artist, 2, FileUpload_photo2);
-                artist.Profile = txt_profilepage.Text;
-                artist.Repertory = txt_repertory.Text;
+                //artist.Profile = txt_profilepage.Text;
+                //artist.Repertory = txt_repertory.Text;
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_outline"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Profile content is more than the specified limit. please  minimize the content of the the Profile.");
+                    if (Session["txt_outline"] != null)
+                    {
+                        txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    }
+                    return;
+                }
+                artist.Profile = msg;
+
+                var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+                Session["txt_outlineDescription"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Repertory content is more than the specified limit. please  minimize the content of the the Repertory.");
+                    if (Session["txt_outlineDescription"] != null)
+                    {
+                        txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
+                    }
+                    return;
+                }
+                artist.Repertory = msg_organizer;
+
+
+
                 artist.UserID = user.UserID;
                 artist.UpdateTimeStamp = DateTime.Now;
                 artist.Affliation = txt_youraffiliation.Text;
@@ -164,6 +196,12 @@ namespace AllClassicWeb.Views
             catch (Exception ee)
             {
                 showMsg("Please check your inputs");
+
+                if (Session["txt_outline"] != null)
+                {
+                    txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
+                }
             }
         }
 
@@ -287,8 +325,36 @@ namespace AllClassicWeb.Views
                 artist.Major = int.Parse(DropDownList1_Major.SelectedValue.ToString());
                 getPhoto(artist, 1, FileUpload_photo1);
                 getPhoto(artist, 2, FileUpload_photo2);
-                artist.Profile = txt_profilepage.Text;
-                artist.Repertory = txt_repertory.Text;
+                //artist.Profile = txt_profilepage.Text;
+                //artist.Repertory = txt_repertory.Text;
+
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_outline"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Profile content is more than the specified limit. please  minimize the content of the the Profile.");
+                    if (Session["txt_outline"] != null)
+                    {
+                        txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    }
+                    return;
+                }
+                artist.Profile = msg;
+                 
+                var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+                Session["txt_outlineDescription"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Repertory content is more than the specified limit. please  minimize the content of the the Repertory.");
+                    if (Session["txt_outlineDescription"] != null)
+                    {
+                        txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
+                    }
+                    return;
+                }
+                artist.Repertory = msg_organizer;
+
+
                 artist.UserID = user.UserID;
                 artist.UpdateTimeStamp = DateTime.Now;
                 artist.Affliation = txt_youraffiliation.Text;
@@ -320,6 +386,12 @@ namespace AllClassicWeb.Views
             catch (Exception ee)
             {
                 showMsg("Please check your inputs");
+
+                if (Session["txt_outline"] != null)
+                {
+                    txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
+                }
             }
         }
 

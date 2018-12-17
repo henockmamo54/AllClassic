@@ -118,3 +118,4 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Release\AllClassi
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.csproj.CopyComplete
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.pdb
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\CKEditor.NET.dll

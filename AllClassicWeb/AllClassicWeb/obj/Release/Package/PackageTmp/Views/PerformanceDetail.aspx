@@ -348,19 +348,19 @@
                     </div>
                     <hr />
 
-                    <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
-
-                        <div class=" col-xs-12 filedName" style="padding: 0;"><%= Resources.DisplayText.Program %></div>
-                        <div class=" col-xs-12 filedDisplay" style="padding: 0;">
+                    <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0;" >
+                        <br />
+                        <div class=" col-xs-12 filedName" style="padding: 0;">  <%= Resources.DisplayText.Program %></div>
+                        <div class=" col-xs-12 filedDisplay" style="padding: 0; padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
                             <asp:Label runat="server" ID="lbl_program"></asp:Label>
                         </div>
 
                     </div>
 
-                    <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
-
+                    <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0;">
+                        <br />
                         <div class="col-xs-12 filedName" style="padding: 0;"><%= Resources.DisplayText.Description %></div>
-                        <div class="col-xs-12 filedDisplay" style="padding: 0;">
+                        <div class="col-xs-12 filedDisplay" style="padding: 0; padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
                             <asp:Label runat="server" ID="lbl_description"></asp:Label>
                         </div>
 

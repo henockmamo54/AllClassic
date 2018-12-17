@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PerformanceDBAddNew.aspx.cs" Inherits="AllClassicWeb.Views.PerformanceDBAddNew" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PerformanceDBAddNew.aspx.cs"  ValidateRequest="false"  Inherits="AllClassicWeb.Views.PerformanceDBAddNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -348,13 +348,24 @@ where maincode='City'
 
                     <div class="col-xs-12" style="padding: 0px;">
                         <br />
-                        <div class="col-xs-6">
+                        <div class="col-xs-12"  style="padding: 0px;">
                          <span class="filedName"> <%= Resources.DisplayText.Program %></span>  <br />
-                            <asp:TextBox ID="txt_program" runat="server" class="form-control" TextMode="MultiLine" Rows="10"></asp:TextBox>
+                            <%--<asp:TextBox ID="txt_program" runat="server" class="form-control" TextMode="MultiLine" Rows="10"></asp:TextBox>--%>
+
+                            
+                            <textarea cols="80" id="txt_outline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
+                            <asp:HiddenField ID="HiddenField2" runat="server" Value="" />
+
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-xs-12"   style="padding: 0px;">
+                        <br />
                           <span class="filedName"> <%= Resources.DisplayText.Description %> </span>  <br />
-                            <asp:TextBox ID="txt_description" runat="server" class="form-control" TextMode="MultiLine" Rows="10"></asp:TextBox>
+                            <%--<asp:TextBox ID="txt_description" runat="server" class="form-control" TextMode="MultiLine" Rows="10"></asp:TextBox>--%>
+                            
+                            <textarea cols="80" id="txt_outline_organizer" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
+                            <asp:HiddenField ID="HiddenField_organizer" runat="server" Value="" />
+
+
                         </div>
                     </div>
 
@@ -368,9 +379,10 @@ where maincode='City'
             <div class="row ">
 
                 <div class="row col-md-12 col-xs-12">
+                    <br />
                     <asp:Button Visible="true" ID="btn_Performance_cancel" CssClass="btn btn-danger pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_Performancecancel_Click" Style="margin-right: 10px;" />
-                    <asp:Button Visible="true" ValidationGroup="a" ID="btn_Performance_save" CssClass="btn btn-warning pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_Performancesave_Click" Style="margin-right: 10px;" />
-                    <asp:Button ID="btn_Performance_add" ValidationGroup="a" Visible="false" CssClass="btn btn-primary pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_Performanceadd_Click" Style="margin-right: 10px;" />
+                    <asp:Button Visible="true" ValidationGroup="a" ID="btn_Performance_save" CssClass="btn btn-warning pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Update %>"  OnClientClick="getValueFromHtmlEditor();"  OnClick="btn_Performancesave_Click" Style="margin-right: 10px;" />
+                    <asp:Button ID="btn_Performance_add" ValidationGroup="a" Visible="false" CssClass="btn btn-primary pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Add %>"  OnClientClick="getValueFromHtmlEditor();"  OnClick="btn_Performanceadd_Click" Style="margin-right: 10px;" />
                 </div>
             </div>
         </ContentTemplate>
@@ -382,7 +394,71 @@ where maincode='City'
 
 
     <script>
+
         
+        function loadCkEditor() {
+            
+            //CKEDITOR.replace('MainContent_txt_auditionoutline');
+            CKEDITOR.replace('MainContent_txt_outline', {
+                // Define the toolbar groups as it is a more accessible solution.
+                toolbarGroups: [
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                    { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+                    { name: 'forms', groups: ['forms'] },
+
+                    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                    { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+                    { name: 'links', groups: ['links'] },
+                    { name: 'insert', groups: ['insert'] },
+
+                    { name: 'styles', groups: ['styles'] },
+                    { name: 'colors', groups: ['colors'] },
+                    { name: 'tools', groups: ['tools'] },
+                    { name: 'others', groups: ['others'] },
+                    { name: 'about', groups: ['about'] }
+                ],
+                // Remove the redundant buttons from toolbar groups defined above.
+                removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
+            });
+
+            //CKEDITOR.replace('MainContent_txt_auditionoutline');
+            CKEDITOR.replace('MainContent_txt_outline_organizer', {
+                // Define the toolbar groups as it is a more accessible solution.
+                toolbarGroups: [
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                    { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+                    { name: 'forms', groups: ['forms'] },
+
+                    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                    { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+                    { name: 'links', groups: ['links'] },
+                    { name: 'insert', groups: ['insert'] },
+
+                    { name: 'styles', groups: ['styles'] },
+                    { name: 'colors', groups: ['colors'] },
+                    { name: 'tools', groups: ['tools'] },
+                    { name: 'others', groups: ['others'] },
+                    { name: 'about', groups: ['about'] }
+                ],
+                // Remove the redundant buttons from toolbar groups defined above.
+                removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
+            });
+
+
+        }
+
+
+        function getValueFromHtmlEditor() {
+            var value = CKEDITOR.instances['MainContent_txt_outline'].getData();
+            $('#MainContent_HiddenField2').val(value);
+
+            var value = CKEDITOR.instances['MainContent_txt_outline_organizer'].getData();
+            $('#MainContent_HiddenField_organizer').val(value);
+        }
+
+
         function ShowMessage() {
             alert('Data inserted succssfuly');
             window.location.href = 'PerformanceDB.aspx';

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AuditionDBAddNew.aspx.cs" Inherits="AllClassicWeb.Views.AuditionDBAddNew" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AuditionDBAddNew.aspx.cs" ValidateRequest="false" Inherits="AllClassicWeb.Views.AuditionDBAddNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -77,19 +77,21 @@
                 <br />
                 <div class="col-xs-12 filedName"><%= Resources.DisplayText.AuditionOutlineandApplicationInfo %>*</div>
                 <div class="col-xs-12">
-                    <asp:TextBox runat="server" ID="txt_auditionoutline" CssClass="form-control filedDisplay" TextMode="MultiLine" Style="max-width: 500px; width: 500px !important;" Rows="10" />
-                    <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_auditionoutline" ErrorMessage="<%$Resources:DisplayText,PleasefillAuditionoutlinefield %>" />
 
+                    <textarea cols="80" id="txt_auditionoutline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
+                    <asp:HiddenField ID="HiddenField2" runat="server" Value="" /> 
+
+                    <%--<asp:TextBox runat="server" ID="txt_auditionoutline" CssClass="form-control filedDisplay" TextMode="MultiLine" Style="max-width: 500px; width: 500px !important;" Rows="10" />--%>
+                    <%--<asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_auditionoutline" ErrorMessage="<%$Resources:DisplayText,PleasefillAuditionoutlinefield %>" />--%>
                 </div>
             </div>
 
-            <textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href=&quot;https://ckeditor.com/&quot;&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
 
             <div class="row col-xs-4" style="text-align: right;">
                 <br />
 
-                <asp:Button runat="server" ValidationGroup="a" ID="btn_saveAudition" UseSubmitBehavior="false" OnClick="onclick_btn_UpdatenewAudition" type="button" Text="<%$Resources:DisplayText,Update %>" class="btn btn-warning contentButton"></asp:Button>
-                <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary contentButton"></asp:Button>
+                <asp:Button runat="server" ValidationGroup="a" ID="btn_saveAudition" UseSubmitBehavior="false" OnClick="onclick_btn_UpdatenewAudition " OnClientClick="getValueFromHtmlEditor();" type="button" Text="<%$Resources:DisplayText,Update %>" class="btn btn-warning contentButton"></asp:Button>
+                <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition"  OnClientClick="getValueFromHtmlEditor();"  type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary contentButton"></asp:Button>
                 <asp:Button runat="server" type="button" class="btn btn-danger contentButton" OnClick="btn_cancelclicked" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
                 <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
             </div>
@@ -102,13 +104,49 @@
         document.getElementById("auditiontab").style.borderRight = "none";
     </script>
     <script>
-        // We need to turn off the automatic editor creation first.
-        CKEDITOR.disableAutoInline = true;
-        alert("test")
-        CKEDITOR.replace('editor1');
+
+        function loadCkEditor() {
+
+            //CKEDITOR.replace('MainContent_txt_auditionoutline');
+            CKEDITOR.replace('MainContent_txt_auditionoutline', {
+                // Define the toolbar groups as it is a more accessible solution.
+                toolbarGroups: [
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                    { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+                    { name: 'forms', groups: ['forms'] },
+
+                    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                    { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+                    { name: 'links', groups: ['links'] },
+                    { name: 'insert', groups: ['insert'] },
+
+                    { name: 'styles', groups: ['styles'] },
+                    { name: 'colors', groups: ['colors'] },
+                    { name: 'tools', groups: ['tools'] },
+                    { name: 'others', groups: ['others'] },
+                    { name: 'about', groups: ['about'] }
+                ],
+                // Remove the redundant buttons from toolbar groups defined above.
+                removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
+            });
+
+
+        }
+
     </script>
     <script src="https://cdn.ckeditor.com/4.11.1/standard-all/ckeditor.js"></script>
     <script type="text/javascript">
+
+        function getValueFromHtmlEditor() {
+            var value = CKEDITOR.instances['MainContent_txt_auditionoutline'].getData();
+            var x = $("#MainContent_txt_auditionoutline")[0].innerHTML;
+            //$('#MainContent_txt_auditionoutline')[0].innerHTML = value;
+
+            $('#MainContent_HiddenField2').val(value);
+            //document.getElementById('MainContent_HiddenField2').value = value
+            //alert(value);
+        }
 
         function ShowMessage() {
             alert('Data inserted succssfuly');
