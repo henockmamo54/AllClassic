@@ -33,7 +33,7 @@ namespace BusinessLogic
                 article.ArticleTitle = a.ArticleTitle;
                 article.ArticleURL = a.ArticleURL;
                 article.UserID = a.UserID;
-                article.UpdateTimeStamp = DateTime.Now;
+                article.UpdateTimeStamp = a.UpdateTimeStamp;
                 entities.SaveChanges();
                 return article;
             }

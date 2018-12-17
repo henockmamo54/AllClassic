@@ -736,4 +736,7 @@
   <data name="Pleasesignintocontinue" xml:space="preserve">
     <value>Please sign in to continue.</value>
   </data>
+  <data name="Seemore" xml:space="preserve">
+    <value>더보기</value>
+  </data>
 </root>
