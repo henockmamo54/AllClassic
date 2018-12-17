@@ -101,6 +101,12 @@
     </script>
 
     <script type="text/javascript">
+
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'AuditionDB.aspx';
+        }
+
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
                 format: 'MM/DD/YYYY'

@@ -57,7 +57,7 @@
 
                     <div class="col-md-6 col-xs-6">
                         <div class="col-md-4 col-xs-4" style="margin-top: 10px; margin-bottom: 10px; padding: 0;">
-                            <span style="display: inline-block;"  class="filedName"><%= Resources.DisplayText.ToDate %> </span>
+                            <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.ToDate %> </span>
                         </div>
                         <div class="col-md-6 col-xs-6">
                             <div class='input-group date' id='datetimepicker3' style="display: flex;">
@@ -119,11 +119,11 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             <div class="row">
 
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="AuditionID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
-                    
+
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
                             <h3>No records available.</h3>
-                        </div> 
+                        </div>
                     </EmptyDataTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
@@ -142,15 +142,42 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <span runat="server" style="color: #0684f1; font-size: 14px;" class="Contentdisplay"><%=Resources.DisplayText.FromDate %>:  <%# DataBinder.Eval(Container.DataItem,"FromDate","{0:d/M/yyyy}") %>
                                     - <%=Resources.DisplayText.ToDate %>: <%# DataBinder.Eval(Container.DataItem,"ToDate","{0:d/M/yyyy}") %></span>
                                         <br />
-                                        <span  class="Contentdisplay" style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
+                                        <span class="Contentdisplay" style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
                                         <br />
-                                        <span  class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("AuditionOutline") %> </span>
-                                        <asp:LinkButton  class="Contentdisplay" runat="server" ID="edit" OnCommand="editAuditionClicked" CommandArgument='<%# Eval("AuditionID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
-                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("AuditionID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                        <span class="Contentdisplay" runat="server" style="color: dimgray; font-size: 14px;"><%# Eval("AuditionOutline") %> </span>
+                                        <a  class="Contentdisplay" data-toggle="modal" data-target="#myModal<%#Eval("AuditionID")%>"> <%# Resources.DisplayText.Seemore %> </a> 
+                                        <asp:LinkButton class="Contentdisplay" runat="server"  Style="margin-left: 5px;" ID="edit" OnCommand="editAuditionClicked" CommandArgument='<%# Eval("AuditionID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("AuditionID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
                                         <br />
-                                        <span  class="Contentdisplay" style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
+                                        <span class="Contentdisplay" style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
 
                                         <hr style="margin-top: 5px; margin-bottom: 5px;" />
+
+
+                                        
+
+                                        <!-- Modal -->
+                                        <div id="myModal<%#Eval("AuditionID")%>" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title"><%# Eval("Title")%> - <%# Resources.DisplayText.AuditionOutlineandApplicationInfo %></h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p><%# Eval("AuditionOutline") %></p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
                                     </div>
 
                                 </asp:Label>
@@ -189,6 +216,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                 <asp:Button runat="server" ID="btn_addArticle" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addAudition" />
             </div>
 
+
+
         </ContentTemplate>
     </asp:UpdatePanel>
 
@@ -197,42 +226,42 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
         document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
         document.getElementById("auditiontab").style.borderRight = "none";
 
-             
+
         function deletebtnclicked(id) {
             var txt;
             if (confirm('Are you sure you want to delete?')) {
                 txt = "You pressed OK!";
 
-                 $.ajax({
-                type: "POST",
-                url: "AuditionDB.aspx/DeleteAudition", //Pagename/Functionname
-                contentType: "application/json;charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({ n: id }), //{ },//data
-                success: function (data) {
-                     
-                    if (data.d) {
+                $.ajax({
+                    type: "POST",
+                    url: "AuditionDB.aspx/DeleteAudition", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ n: id }), //{ },//data
+                    success: function (data) {
 
-                        alert('Entry deleted!!!');
-                        location.reload();
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            location.reload();
+                        }
+
+                        else {
+                            alert('Entry not  deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
                     }
-
-                    else {
-                        alert('Entry not  deleted!!!');
-                    }
-
-                },
-                error: function (result) {
-                    console.log(result)
-                    //alert("error")
-
-                }
-            });
+                });
 
 
             } else {
                 txt = "You pressed Cancel!";
-            } 
+            }
         }
 
 

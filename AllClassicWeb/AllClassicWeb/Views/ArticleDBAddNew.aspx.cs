@@ -84,7 +84,7 @@ namespace AllClassicWeb.Views
                 article = BusinessLogic.ArticleLogic.registerArticle(article);
                 if (article != null)
                 {
-                    showMsg("Data inserted succssfuly");
+                    showMsg_withredirect("Data inserted succssfuly");
                 }
                 else
                 {
@@ -101,6 +101,11 @@ namespace AllClassicWeb.Views
         public void showMsg(string msg)
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
+        }
+
+        public void showMsg_withredirect(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
         }
 
     }

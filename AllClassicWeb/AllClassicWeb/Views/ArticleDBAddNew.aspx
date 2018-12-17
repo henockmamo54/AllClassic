@@ -41,6 +41,13 @@
     <script type="text/javascript">
         document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
         document.getElementById("articletab").style.borderRight = "none";
+
+        
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'ArticleDB.aspx';
+        }
+
     </script>
 
 </asp:Content>

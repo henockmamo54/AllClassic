@@ -1375,6 +1375,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to See more.
+        /// </summary>
+        internal static string Seemore {
+            get {
+                return ResourceManager.GetString("Seemore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shop Name.
         /// </summary>
         internal static string ShopName {
