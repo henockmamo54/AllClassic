@@ -58,7 +58,8 @@ namespace AllClassicWeb.Views
                 txt_ticketbox.Text = performance.TicketBox;
                 //txt_program.Text = performance.Program;
                 txt_outline.InnerText = Server.HtmlDecode(performance.Program);
-                txt_description.Text = performance.Description;
+                //txt_description.Text = performance.Description;
+                txt_outline_organizer.InnerText = Server.HtmlDecode(performance.Description);
                 startdate.Value = performance.StartDate.ToString("MM/dd/yyyy");
                 enddate.Value = performance.EndDate.ToString("MM/dd/yyyy");
 
@@ -177,7 +178,21 @@ namespace AllClassicWeb.Views
                 }
                 pt.Program = msg;
 
-                pt.Description = txt_description.Text;
+                //pt.Description = txt_description.Text;
+                var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+                Session["txt_outlineDescription"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Description content is more than the specified limit. please  minimize the content of the the Description.");
+                    if (Session["txt_outlineDescription"] != null)
+                    {
+                        txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
+                    }
+                    return;
+                }
+                pt.Description = msg_organizer;
+
+
                 pt.UserID = user.UserID;
                 pt.UpdateTimeStamp = DateTime.Now;
 
@@ -204,6 +219,7 @@ namespace AllClassicWeb.Views
                 if (Session["txt_outline"] != null)
                 {
                     txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
                 }
             }
 
@@ -254,7 +270,20 @@ namespace AllClassicWeb.Views
                 }
                 pt.Program = msg;
 
-                pt.Description = txt_description.Text;
+                //pt.Description = txt_description.Text;
+                var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+                Session["txt_outlineDescription"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Description content is more than the specified limit. please  minimize the content of the the Description.");
+                    if (Session["txt_outlineDescription"] != null)
+                    {
+                        txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
+                    }
+                    return;
+                }
+                pt.Description = msg_organizer;
+
                 pt.UserID = user.UserID;
                 pt.UpdateTimeStamp = DateTime.Now;
 
@@ -280,6 +309,7 @@ namespace AllClassicWeb.Views
                 if (Session["txt_outline"] != null)
                 {
                     txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+                    txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
                 }
             }
             if (issuccess)
@@ -299,7 +329,7 @@ namespace AllClassicWeb.Views
             txt_video.Text = "";
             txt_ticketbox.Text = "";
             txt_outline.InnerHtml = "";
-            txt_description.Text = "";
+            txt_outline_organizer.InnerText = "";
 
             myPerformanceDetailArtistInstrumentlist.DataSource = null;
             myPerformanceDetailArtistInstrumentlist.DataBind();

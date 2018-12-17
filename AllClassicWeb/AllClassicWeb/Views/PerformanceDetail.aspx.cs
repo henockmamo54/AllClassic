@@ -58,7 +58,7 @@ namespace AllClassicWeb.Views
                 lbl_video.Text = performance.VideoFileName;
                 lbl_ticketbox.Text = performance.TicketBox;
                 lbl_program.Text = Server.HtmlDecode( performance.Program);
-                lbl_description.Text = performance.Description;
+                lbl_description.Text = Server.HtmlDecode(performance.Description);
                 myPerformanceDetailArtistInstrumentlist.DataSource = performance.PerformanceMusicianInstrumentTbls.ToList();
                 myPerformanceDetailArtistInstrumentlist.DataBind();
 
