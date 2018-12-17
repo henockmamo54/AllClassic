@@ -36,8 +36,11 @@ namespace AllClassicWeb.Views
                 facebook.Text = artist.Facebook;
                 twitter.Text = artist.Twitter;
                 yourAffilation.Text = artist.Affliation;
-                profilePage.Text = artist.Profile;
-                repertory.Text = artist.Repertory;
+                //profilePage.Text = artist.Profile;
+                //repertory.Text = artist.Repertory;
+                profilePage.Text = Server.HtmlDecode(artist.Profile);
+                repertory.Text = Server.HtmlDecode(artist.Repertory);
+
                 major.Text = artist.LookUpTbl != null ? artist.LookUpTbl.SubCode : "";
 
             }

@@ -366,8 +366,12 @@ namespace AllClassicWeb.Views
                 {
                     var listOfPreviousEndorserlist = artist.MusicianEndorserTbls.ToList();
                     var currentlistofEndorserlist = (List<MusicianEndorserTbl>)Session["myendorsmentlist"];
-                    deleted = listOfPreviousEndorserlist.Except(currentlistofEndorserlist).ToList();
-                    added = currentlistofEndorserlist.Except(listOfPreviousEndorserlist).ToList();
+                    //deleted = listOfPreviousEndorserlist.Except(currentlistofEndorserlist).ToList();
+                    //added = currentlistofEndorserlist.Except(listOfPreviousEndorserlist).ToList();
+
+                    deleted = listOfPreviousEndorserlist.Except(currentlistofEndorserlist, new endorserComparer()).ToList();
+                    added = currentlistofEndorserlist.Except(listOfPreviousEndorserlist, new endorserComparer()).ToList();
+
                 }
 
                 artist = MusicianLogic.updateRegisteredMusician(added, deleted, artist);
@@ -395,7 +399,22 @@ namespace AllClassicWeb.Views
             }
         }
 
+        internal class endorserComparer : IEqualityComparer<MusicianEndorserTbl>
+        {
+            public bool Equals(MusicianEndorserTbl x, MusicianEndorserTbl y)
+            {
+                if ( x.ID==y.ID)
+                {
+                    return true;
+                }
+                return false;
+            }
 
+            public int GetHashCode(MusicianEndorserTbl obj)
+            {
+                return obj.ID;
+            }
+        }
 
         public void showMsg_withredirect(string msg)
         {
