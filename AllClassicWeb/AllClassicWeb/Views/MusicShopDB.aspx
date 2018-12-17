@@ -158,7 +158,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 <%--href='http://<%# Eval("HomePage") %>'--%>
                                             </tr>
                                             <tr>
-                                                <td>...</td>
+                                                <td><br /></td>
                                                 <td>
                                                     <asp:LinkButton runat="server" ID="edit" OnCommand="editMusicShopClicked" CommandArgument='<%# Eval("MusicShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MusicianDBAddNew.aspx.cs" Inherits="AllClassicWeb.Views.MusicianDBAddNew" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MusicianDBAddNew.aspx.cs"   ValidateRequest="false"  Inherits="AllClassicWeb.Views.MusicianDBAddNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
@@ -159,7 +159,11 @@ or maincode='Conductor'
                         <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.ProfilePage %></div>
                         <br />
                         <div class="col-md-12 col-xs-12">
-                            <asp:TextBox ID="txt_profilepage" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>
+                            <%--<asp:TextBox ID="txt_profilepage" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>--%>
+                            
+                            <textarea cols="80" id="txt_outline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
+                            <asp:HiddenField ID="HiddenField2" runat="server" Value="" />
+
                         </div>
                         <br />
                     </div>
@@ -169,7 +173,11 @@ or maincode='Conductor'
                         <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.Repertory %></div>
                         <br />
                         <div class="col-md-12 col-xs-12">
-                            <asp:TextBox ID="txt_repertory" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>
+                            <%--<asp:TextBox ID="txt_repertory" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>--%>
+
+                            <textarea cols="80" id="txt_outline_organizer" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
+                            <asp:HiddenField ID="HiddenField_organizer" runat="server" Value="" />
+
                         </div>
                         <br />
                     </div>
@@ -251,8 +259,8 @@ or maincode='Conductor'
 
                     <div class="row col-md-12 col-xs-12">
                         <asp:Button Visible="true" ID="btn_artist_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_artistcancel_Click" Style="margin-right: 10px;" />
-                        <asp:Button Visible="true"  ValidationGroup="a"  ID="btn_artist_save" CssClass="btn btn-warning pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
-                        <asp:Button ID="btn_artist_add"  ValidationGroup="a"  CssClass="btn btn-primary pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_artistadd_Click" Style="margin-right: 10px;" />
+                        <asp:Button Visible="true"  ValidationGroup="a"  ID="btn_artist_save" CssClass="btn btn-warning pull-right contentButton"  OnClientClick="getValueFromHtmlEditor();"  runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
+                        <asp:Button ID="btn_artist_add"  ValidationGroup="a"  CssClass="btn btn-primary pull-right contentButton" runat="server"  OnClientClick="getValueFromHtmlEditor();"  Text="<%$Resources:DisplayText,Add %>" OnClick="btn_artistadd_Click" Style="margin-right: 10px;" />
                     </div>
                 </div>
             </ContentTemplate>
@@ -270,6 +278,71 @@ or maincode='Conductor'
         }
     </style>
     <script>
+
+        
+        function loadCkEditor() {
+            
+            //CKEDITOR.replace('MainContent_txt_auditionoutline');
+            CKEDITOR.replace('MainContent_txt_outline', {
+                // Define the toolbar groups as it is a more accessible solution.
+                toolbarGroups: [
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                    { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+                    { name: 'forms', groups: ['forms'] },
+
+                    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                    { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+                    { name: 'links', groups: ['links'] },
+                    { name: 'insert', groups: ['insert'] },
+
+                    { name: 'styles', groups: ['styles'] },
+                    { name: 'colors', groups: ['colors'] },
+                    { name: 'tools', groups: ['tools'] },
+                    { name: 'others', groups: ['others'] },
+                    { name: 'about', groups: ['about'] }
+                ],
+                // Remove the redundant buttons from toolbar groups defined above.
+                removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
+            });
+
+            //CKEDITOR.replace('MainContent_txt_auditionoutline');
+            CKEDITOR.replace('MainContent_txt_outline_organizer', {
+                // Define the toolbar groups as it is a more accessible solution.
+                toolbarGroups: [
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                    { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+                    { name: 'forms', groups: ['forms'] },
+
+                    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                    { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+                    { name: 'links', groups: ['links'] },
+                    { name: 'insert', groups: ['insert'] },
+
+                    { name: 'styles', groups: ['styles'] },
+                    { name: 'colors', groups: ['colors'] },
+                    { name: 'tools', groups: ['tools'] },
+                    { name: 'others', groups: ['others'] },
+                    { name: 'about', groups: ['about'] }
+                ],
+                // Remove the redundant buttons from toolbar groups defined above.
+                removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
+            });
+
+
+        }
+
+
+        function getValueFromHtmlEditor() {
+            var value = CKEDITOR.instances['MainContent_txt_outline'].getData();
+            $('#MainContent_HiddenField2').val(value);
+
+            var value = CKEDITOR.instances['MainContent_txt_outline_organizer'].getData();
+            $('#MainContent_HiddenField_organizer').val(value);
+        }
+
+
 
         document.getElementById("artisttab").style.backgroundColor = "white";
         document.getElementById("artisttab").style.borderBottom = "none";
