@@ -157,9 +157,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <br />
                                         <span class="Contentdisplay" style="color: black; font-size: 14px;"><%= Resources.DisplayText.Organizer %>: <%# Eval("Organizer")%></span>
                                         <br />
-                                        <div class="Contentdisplay" runat="server" style="color: black; font-size: 14px; color: #0a0a0a; background-color: #f7f7f7; padding: 5px; border-radius: 5px;">
+                                        <div class="Contentdisplay" runat="server" style=" font-size: 14px; color: #0a0a0a; background-color: #f7f7f7; padding: 5px; border-radius: 5px;">
                                             <%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %>
                                         </div>
+                                        <a  class="Contentdisplay" data-toggle="modal" data-target="#myModal<%#Eval("ConcourID")%>"> <%# Resources.DisplayText.Seemore %> </a> 
                                         <asp:LinkButton class="Contentdisplay" runat="server" ID="edit" OnCommand="editConcourClicked" CommandArgument='<%# Eval("ConcourID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("ConcourID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
 
@@ -167,6 +168,31 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <span class="Contentdisplay" style="color: #a7a7a7; font-size: 10px;"><%# DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:d/M/yyyy}") %></span>
 
                                         <hr style="margin-top: 5px; margin-bottom: 5px;" />
+
+                                         
+
+                                        <!-- Modal -->
+                                        <div id="myModal<%#Eval("ConcourID")%>" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title"><%# Eval("Title")%> - <%# Resources.DisplayText.AuditionOutlineandApplicationInfo %></h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p> <%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %></p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
 
 
                                     </div>
