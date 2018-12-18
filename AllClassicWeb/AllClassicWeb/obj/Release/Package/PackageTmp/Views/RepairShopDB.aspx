@@ -151,7 +151,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                     <%--href='http://<%# Eval("HomePage") %>'--%>
                                                 </tr>
                                                 <tr>
-                                                    <td>...</td>
+                                                    <td><br /></td>
                                                     <td><asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'> <%= Resources.DisplayText.Edit %></asp:LinkButton>
                                                          <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("RepairShopID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
                                        

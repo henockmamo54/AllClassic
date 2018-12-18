@@ -178,7 +178,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 <td class="filedDisplay"><%#Eval("Description") %></td>
                                             </tr>
                                             <tr>
-                                                <td>..</td>
+                                                <td><br /></td>
                                                 <td><asp:LinkButton runat="server" ID="edit" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                                      <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("PeopleAndJobID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
 
