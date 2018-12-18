@@ -348,6 +348,8 @@
                         </div>--%>
 
                     </ul>
+                    <asp:ImageButton ImageUrl="~/Doc/ads/1d63a0_c98934b833c94affa65a41837b01c878_mv2_d_1388_1654_s_2.jpg" style="width:100%;"   runat="server" />
+                    <asp:ImageButton ImageUrl="~/Doc/ads/P20181203000.jpg" runat="server"  style="width:100%;"  />
                 </div>
 
 
@@ -358,7 +360,7 @@
             </div>
             <hr />
             <footer id="masterFooter">
-                <p>&copy; <%: DateTime.Now.Year %> All Copyrights are reserved @www.allclassickorea.com 3F honsung Bldg. 220 Yeoksam-Ro Gangnam-gu, Seoul, Korea 06227</p>
+                <p>&copy; <%: DateTime.Now.Year %> All Copyrights are reserved www.allclassickorea.co.kr 3F honsung Bldg. 220 Yeoksam-Ro Gangnam-gu, Seoul, Korea 06227</p>
             </footer>
         </div>
 

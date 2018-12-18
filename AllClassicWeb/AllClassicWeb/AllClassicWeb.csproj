@@ -125,6 +125,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Doc\ads\1d63a0_c98934b833c94affa65a41837b01c878_mv2_d_1388_1654_s_2.jpg" />
+    <Content Include="Doc\ads\P20181203000.jpg" />
     <Content Include="Doc\artist\KakaoTalk_20180910_225729576.jpg" />
     <Content Include="Doc\BOD\travis-kolbjornsen-300x300.png" />
     <Content Include="Doc\College\05149.jpg" />
