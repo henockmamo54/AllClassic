@@ -274,7 +274,7 @@
           <Property Name="Facebook" Type="nvarchar" MaxLength="30" />
           <Property Name="TelNo" Type="nvarchar" MaxLength="20" />
           <Property Name="FaxNo" Type="nvarchar" MaxLength="20" />
-          <Property Name="HomePage" Type="nvarchar" MaxLength="30" />
+          <Property Name="HomePage" Type="nvarchar" MaxLength="60" />
           <Property Name="UserID" Type="int" />
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
         </EntityType>
@@ -663,18 +663,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Performan__Perfo__6A30C649">
-          <End Role="PerformanceGroupTbl" Type="Self.PerformanceGroupTbl" Multiplicity="1" />
-          <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PerformanceGroupTbl">
-              <PropertyRef Name="PerformanceGroupID" />
-            </Principal>
-            <Dependent Role="PerformanceTbl">
-              <PropertyRef Name="PerformanceGroup" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Performan__Perfo__6B24EA82">
           <End Role="LookUpTbl" Type="Self.LookUpTbl" Multiplicity="1" />
           <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -996,10 +984,6 @@
           <AssociationSet Name="FK__Performan__Perfo__17036CC0" Association="Self.FK__Performan__Perfo__17036CC0">
             <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
             <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbl" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Performan__Perfo__6A30C649" Association="Self.FK__Performan__Perfo__6A30C649">
-            <End Role="PerformanceGroupTbl" EntitySet="PerformanceGroupTbl" />
-            <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
           </AssociationSet>
           <AssociationSet Name="FK__Performan__Perfo__6B24EA82" Association="Self.FK__Performan__Perfo__6B24EA82">
             <End Role="LookUpTbl" EntitySet="LookUpTbl" />
@@ -1583,7 +1567,7 @@
           <Property Name="Facebook" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="TelNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="FaxNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="HomePage" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HomePage" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="UserID" Type="Int32" />
           <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="LookUpTbl" Relationship="AllClassicDBModel.FK__Performan__Group__5EBF139D" FromRole="PerformanceGroupTbl" ToRole="LookUpTbl" />

@@ -513,7 +513,7 @@
     <Property Name="Facebook" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="TelNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="FaxNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="HomePage" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="HomePage" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
     <Property Name="UserID" Type="Int32" />
     <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="LookUpTbl" Relationship="AllClassicDBModel.FK__Performan__Group__5EBF139D" FromRole="PerformanceGroupTbl" ToRole="LookUpTbl" />

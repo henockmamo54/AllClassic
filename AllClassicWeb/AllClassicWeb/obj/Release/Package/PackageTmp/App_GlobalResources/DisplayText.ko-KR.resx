@@ -719,7 +719,7 @@
     <value>인증</value>
   </data>
   <data name="Answer" xml:space="preserve">
-    <value>대답</value>
+    <value>답글</value>
   </data>
   <data name="NewQuestion" xml:space="preserve">
     <value>새로운 질문</value>

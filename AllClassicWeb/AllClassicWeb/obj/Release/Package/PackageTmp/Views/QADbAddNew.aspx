@@ -16,7 +16,14 @@
                     ErrorMessage="<%$Resources:DisplayText,PleaseFilltheQuestionFiled %>" />
 
             </div>
+            <script type="text/javascript">
 
+        function ShowMessage() {
+            alert('Data inserted succssfuly');
+            window.location.href = 'QADbNew.aspx';
+        }
+
+            </script>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

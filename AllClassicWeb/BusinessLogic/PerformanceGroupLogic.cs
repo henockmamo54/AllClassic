@@ -46,6 +46,7 @@ namespace BusinessLogic
                 pg.TelNo = performancegroup.TelNo;
                 pg.FaxNo = performancegroup.FaxNo;
                 pg.HomePage = performancegroup.HomePage;
+                pg.UpdateTimeStamp = performancegroup.UpdateTimeStamp;
                 entities.SaveChanges();
                 return pg;
             }
