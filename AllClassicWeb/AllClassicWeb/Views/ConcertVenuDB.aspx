@@ -100,7 +100,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
 
-                            <div class="panel panel-success shadowedbox_hover">
+                            <div class="panel panel-default  shadowedPanel shadowedbox_hover">
                                 <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
                                     <h4><%# (Eval("Name")) .ToString().Length>15?
                                         (Eval("Name")) .ToString().Substring(0,15)+ " ....":
@@ -257,10 +257,5 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             color: black !important;
         }
 
-        .shadowedbox_hover {
-            background-color: #d3d3d31f;
-            /* box-shadow: 3px 3px 3px #d0d0d0 !important; */
-            box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
-        }
     </style>
 </asp:Content>

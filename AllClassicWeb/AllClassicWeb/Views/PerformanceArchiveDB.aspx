@@ -248,7 +248,7 @@ where maincode='City'
                     </GroupTemplate>
                     <ItemTemplate>
                         <div class="col-md-3 col-xs-3" style="margin-bottom: 1em; padding-right: 0px;">
-                            <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">
+                            <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);">
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="performancepageclicked" CommandArgument='<%# Eval("PerformanceID") %>'>
                                                                             <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 190px;">
 
@@ -350,11 +350,14 @@ DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarcha
             background-color: white;
         }
 
+        
         .shadowedbox_hover:hover {
-            background-color: #d3d3d36b;
+            background-color: white;
             /*box-shadow: 3px 3px 3px #d0d0d0 !important;*/
-            box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
+            /*box-shadow: 5px 5px 5px 3px #d0d0d0 !important;*/
             color: white !important;
+            transform: scale(1.04);
+            transition: all .3s ease-in-out;
         }
 
         .locationcontainer:hover {

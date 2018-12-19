@@ -20,30 +20,7 @@
     <script type="text/javascript">
         function modifyCss(color, page) {
             switch (color) {
-                //case "2":
-                //    $(".whitesmokeBG").css('background-color', '#D9EDF7');
-                //    //$(".whitesmokeBG").css('color', '#ffffff ');
-                //    //document.getElementById("whitesmokeBG").setAttribute('style', 'color: #ffffff');
-
-                //    $(".whitesmokeBG").css('font-weight', '800');
-                //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
-                //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
-
-                //    break;
-                ////$(".whitesmokeBG").css('background-color', '#F2FF80'); break;rgb(234, 234, 234)rgb(234, 234, 234)
-                //case "3":
-                //    $(".whitesmokeBG").css('background-color', '#28878a');
-                //    $(".whitesmokeBG").css('color', '#ffffff');
-                //    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
-                //    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
-                //    $("#mainSearchBox").css('background-color', '#5bc0de');
-
-
-                //    $(".whitesmokeBG").css('font-weight', '800');
-                //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
-                //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
-
-                //    break;
+                
                 case "1":
                     $(".whitesmokeBG").css('background-color', '#004d40');
                     $(".whitesmokeBG").css('color', '#ffffff');
@@ -57,19 +34,6 @@
                     $(".whitesmokeBG > div > span >a ").css('font-weight', 'bold');
 
                     break;
-                //case "4":
-                //    $(".whitesmokeBG").css('background-color', '#3f51b5');
-                //    $(".whitesmokeBG").css('color', '#ffffff');
-                //    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
-                //    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
-                //    $("#mainSearchBox").css('background-color', '#5bc0de');
-
-
-                //    $(".whitesmokeBG").css('font-weight', '800');
-                //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
-                //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
-
-                //    break;
             }
 
             switch (page) {
@@ -84,9 +48,6 @@
 
                 case "ASP.views_performancedb_aspx":
                     {
-                        //document.getElementById("performancetab").setAttribute('style', 'background-color: white !important;');
-                        //document.getElementById("performancetab").setAttribute('style', 'border-bottom: none !important;');
-                        //document.getElementById("performancetab").setAttribute('style', 'color: #000000');
                         document.getElementById("performancetab").style.backgroundColor = "rgb(255, 255, 255) ";
                         document.getElementById("performancetab").style.borderBottom = "none";
                         document.getElementById("performancetab").style.color = "#000000";

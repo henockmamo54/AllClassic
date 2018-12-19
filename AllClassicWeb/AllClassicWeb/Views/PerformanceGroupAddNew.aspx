@@ -34,7 +34,7 @@
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.GroupType %>*</div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID" OnDataBound="DropDownList1_grouptype_DataBound"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1_grouptypelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='GroupType'
@@ -48,7 +48,7 @@ where maincode='GroupType'
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.City %>*</div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:DropDownList ID="DropDownList1_city" runat="server" class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList1_city" runat="server" class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID" OnDataBound="DropDownList1_city_DataBound"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='City'
