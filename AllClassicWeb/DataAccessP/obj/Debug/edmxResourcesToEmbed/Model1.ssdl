@@ -299,7 +299,6 @@
     <Property Name="PosterFileName" Type="nvarchar" MaxLength="80" Nullable="false" />
     <Property Name="VideoFileName" Type="nvarchar" MaxLength="80" />
     <Property Name="TicketBox" Type="nvarchar" MaxLength="80" />
-    <Property Name="PerformanceGroup" Type="int" Nullable="false" />
     <Property Name="PerformanceType" Type="int" Nullable="false" />
     <Property Name="Conductor" Type="int" />
     <Property Name="MainTitleComposer" Type="int" />
@@ -312,6 +311,7 @@
     <Property Name="UserID" Type="int" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
     <Property Name="ArchivingTimeStamp" Type="datetime" />
+    <Property Name="PerformanceGroup" Type="int" />
   </EntityType>
   <EntityType Name="UserTbl">
     <Key>
@@ -658,6 +658,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Performan__Perfo__42E1EEFE">
+    <End Role="PerformanceGroupTbl" Type="Self.PerformanceGroupTbl" Multiplicity="0..1" />
+    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PerformanceGroupTbl">
+        <PropertyRef Name="PerformanceGroupID" />
+      </Principal>
+      <Dependent Role="PerformanceTbl">
+        <PropertyRef Name="PerformanceGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Performan__Perfo__6B24EA82">
     <End Role="LookUpTbl" Type="Self.LookUpTbl" Multiplicity="1" />
     <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
@@ -979,6 +991,10 @@
     <AssociationSet Name="FK__Performan__Perfo__17036CC0" Association="Self.FK__Performan__Perfo__17036CC0">
       <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
       <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Performan__Perfo__42E1EEFE" Association="Self.FK__Performan__Perfo__42E1EEFE">
+      <End Role="PerformanceGroupTbl" EntitySet="PerformanceGroupTbl" />
+      <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
     </AssociationSet>
     <AssociationSet Name="FK__Performan__Perfo__6B24EA82" Association="Self.FK__Performan__Perfo__6B24EA82">
       <End Role="LookUpTbl" EntitySet="LookUpTbl" />

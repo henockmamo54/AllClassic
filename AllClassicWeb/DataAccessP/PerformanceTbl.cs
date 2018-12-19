@@ -35,7 +35,6 @@ namespace DataAccessP
         public string PosterFileName { get; set; }
         public string VideoFileName { get; set; }
         public string TicketBox { get; set; }
-        public int PerformanceGroup { get; set; }
         public int PerformanceType { get; set; }
         public Nullable<int> Conductor { get; set; }
         public Nullable<int> MainTitleComposer { get; set; }
@@ -48,6 +47,7 @@ namespace DataAccessP
         public Nullable<int> UserID { get; set; }
         public System.DateTime UpdateTimeStamp { get; set; }
         public Nullable<System.DateTime> ArchivingTimeStamp { get; set; }
+        public Nullable<int> PerformanceGroup { get; set; }
     
         public virtual InstrumentTbl InstrumentTbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

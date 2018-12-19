@@ -5,29 +5,29 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="63806996df3c499094cf0d1d165ac080" Name="Diagram1" ZoomLevel="10">
-        <EntityTypeShape EntityType="AllClassicDBModel.AnswersTbl" Width="1.5" PointX="35.75" PointY="51.375" />
-        <EntityTypeShape EntityType="AllClassicDBModel.ArticleTbl" Width="1.5" PointX="33.5" PointY="70.125" />
-        <EntityTypeShape EntityType="AllClassicDBModel.AuditionTbl" Width="1.5" PointX="33.5" PointY="26.125" />
-        <EntityTypeShape EntityType="AllClassicDBModel.ConcourTbl" Width="1.5" PointX="33.5" PointY="59.875" />
-        <EntityTypeShape EntityType="AllClassicDBModel.InstrumentTbl" Width="1.5" PointX="33.5" PointY="73.125" />
-        <EntityTypeShape EntityType="AllClassicDBModel.MusicShopTbl" Width="1.5" PointX="33.5" PointY="29.625" />
-        <EntityTypeShape EntityType="AllClassicDBModel.PeopleAndJobTbl" Width="1.5" PointX="35.75" PointY="36.875" />
-        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceCommentTbl" Width="1.5" PointX="46.25" PointY="50" />
-        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceLikeUnlikeTbl" Width="1.5" PointX="43.25" PointY="50.25" />
-        <EntityTypeShape EntityType="AllClassicDBModel.QuestionsTbl" Width="1.5" PointX="33.5" PointY="63.375" />
-        <EntityTypeShape EntityType="AllClassicDBModel.RepairShopTbl" Width="1.5" PointX="33.5" PointY="51.375" />
-        <EntityTypeShape EntityType="AllClassicDBModel.UserTypeTbl" Width="1.5" PointX="31.25" PointY="48.875" />
-        <EntityTypeShape EntityType="AllClassicDBModel.VenueTbl" Width="1.5" PointX="35.75" PointY="41.5" />
-        <EntityTypeShape EntityType="AllClassicDBModel.UserType" Width="1.5" PointX="39.375" PointY="30.375" />
-        <EntityTypeShape EntityType="AllClassicDBModel.CollegeTbl" Width="1.5" PointX="33.5" PointY="66.25" />
-        <EntityTypeShape EntityType="AllClassicDBModel.LookUpTbl" Width="1.5" PointX="33.5" PointY="39.5" />
-        <EntityTypeShape EntityType="AllClassicDBModel.MusicianEndorserTbl" Width="1.5" PointX="38" PointY="66.25" />
-        <EntityTypeShape EntityType="AllClassicDBModel.MusicianTbl" Width="1.5" PointX="35.75" PointY="55.375" />
-        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceGroupTbl" Width="1.5" PointX="38.75" PointY="41.125" />
-        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceMusicianInstrumentTbl" Width="1.5" PointX="43.25" PointY="64.75" />
-        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceTbl" Width="1.5" PointX="41" PointY="54.375" />
-        <EntityTypeShape EntityType="AllClassicDBModel.UserTbl" Width="1.5" PointX="31.25" PointY="40.125" />
-        <EntityTypeShape EntityType="AllClassicDBModel.UserUserType" Width="1.5" PointX="33.5" PointY="45" />
+        <EntityTypeShape EntityType="AllClassicDBModel.AnswersTbl" Width="1.5" PointX="5.25" PointY="42.375" />
+        <EntityTypeShape EntityType="AllClassicDBModel.ArticleTbl" Width="1.5" PointX="3" PointY="52.375" />
+        <EntityTypeShape EntityType="AllClassicDBModel.AuditionTbl" Width="1.5" PointX="3" PointY="48.875" />
+        <EntityTypeShape EntityType="AllClassicDBModel.ConcourTbl" Width="1.5" PointX="3" PointY="45.375" />
+        <EntityTypeShape EntityType="AllClassicDBModel.InstrumentTbl" Width="1.5" PointX="3" PointY="58.25" />
+        <EntityTypeShape EntityType="AllClassicDBModel.MusicShopTbl" Width="1.5" PointX="3" PointY="63.5" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PeopleAndJobTbl" Width="1.5" PointX="8.25" PointY="25.125" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceCommentTbl" Width="1.5" PointX="15.75" PointY="35.375" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceLikeUnlikeTbl" Width="1.5" PointX="12.75" PointY="35.75" />
+        <EntityTypeShape EntityType="AllClassicDBModel.QuestionsTbl" Width="1.5" PointX="3" PointY="55.25" />
+        <EntityTypeShape EntityType="AllClassicDBModel.RepairShopTbl" Width="1.5" PointX="3" PointY="36.875" />
+        <EntityTypeShape EntityType="AllClassicDBModel.UserTypeTbl" Width="1.5" PointX="3.75" PointY="12.875" />
+        <EntityTypeShape EntityType="AllClassicDBModel.VenueTbl" Width="1.5" PointX="8.25" PointY="19.75" />
+        <EntityTypeShape EntityType="AllClassicDBModel.UserType" Width="1.5" PointX="15.875" PointY="24.375" />
+        <EntityTypeShape EntityType="AllClassicDBModel.CollegeTbl" Width="1.5" PointX="3" PointY="30.25" />
+        <EntityTypeShape EntityType="AllClassicDBModel.LookUpTbl" Width="1.5" PointX="3" PointY="16.125" />
+        <EntityTypeShape EntityType="AllClassicDBModel.MusicianEndorserTbl" Width="1.5" PointX="10.5" PointY="46.25" />
+        <EntityTypeShape EntityType="AllClassicDBModel.MusicianTbl" Width="1.5" PointX="8.25" PointY="35.25" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceGroupTbl" Width="1.5" PointX="5.25" PointY="24.5" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceMusicianInstrumentTbl" Width="1.5" PointX="12.75" PointY="47.75" />
+        <EntityTypeShape EntityType="AllClassicDBModel.PerformanceTbl" Width="1.5" PointX="10.5" PointY="35.25" />
+        <EntityTypeShape EntityType="AllClassicDBModel.UserTbl" Width="1.5" PointX="0.75" PointY="30.125" />
+        <EntityTypeShape EntityType="AllClassicDBModel.UserUserType" Width="1.5" PointX="6" PointY="33" />
         <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__Paren__2CF2ADDF" />
         <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__Quest__2B0A656D" />
         <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__UserI__2DE6D218" />
@@ -66,7 +66,7 @@
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Condu__6C190EBB" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__MainT__6D0D32F4" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Music__72C60C4A" />
-        <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__6A30C649" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__42E1EEFE" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__60A75C0F" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__71D1E811" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__6EF57B66" />
