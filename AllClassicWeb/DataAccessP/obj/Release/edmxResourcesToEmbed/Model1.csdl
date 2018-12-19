@@ -176,7 +176,7 @@
       <End Role="MusicianTbl" EntitySet="MusicianTbls" />
       <End Role="PerformanceMusicianInstrumentTbl" EntitySet="PerformanceMusicianInstrumentTbls" />
     </AssociationSet>
-    <AssociationSet Name="FK__Performan__Perfo__6A30C649" Association="AllClassicDBModel.FK__Performan__Perfo__6A30C649">
+    <AssociationSet Name="FK__Performan__Perfo__42E1EEFE" Association="AllClassicDBModel.FK__Performan__Perfo__42E1EEFE">
       <End Role="PerformanceGroupTbl" EntitySet="PerformanceGroupTbls" />
       <End Role="PerformanceTbl" EntitySet="PerformanceTbls" />
     </AssociationSet>
@@ -513,12 +513,12 @@
     <Property Name="Facebook" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="TelNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="FaxNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="HomePage" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="HomePage" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
     <Property Name="UserID" Type="Int32" />
     <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="LookUpTbl" Relationship="AllClassicDBModel.FK__Performan__Group__5EBF139D" FromRole="PerformanceGroupTbl" ToRole="LookUpTbl" />
     <NavigationProperty Name="LookUpTbl1" Relationship="AllClassicDBModel.FK__Performanc__City__5FB337D6" FromRole="PerformanceGroupTbl" ToRole="LookUpTbl" />
-    <NavigationProperty Name="PerformanceTbls" Relationship="AllClassicDBModel.FK__Performan__Perfo__6A30C649" FromRole="PerformanceGroupTbl" ToRole="PerformanceTbl" />
+    <NavigationProperty Name="PerformanceTbls" Relationship="AllClassicDBModel.FK__Performan__Perfo__42E1EEFE" FromRole="PerformanceGroupTbl" ToRole="PerformanceTbl" />
     <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__Performan__UserI__60A75C0F" FromRole="PerformanceGroupTbl" ToRole="UserTbl" />
   </EntityType>
   <EntityType Name="PerformanceMusicianInstrumentTbl">
@@ -550,7 +550,6 @@
     <Property Name="PosterFileName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
     <Property Name="VideoFileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
     <Property Name="TicketBox" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-    <Property Name="PerformanceGroup" Type="Int32" Nullable="false" />
     <Property Name="PerformanceType" Type="Int32" Nullable="false" />
     <Property Name="Conductor" Type="Int32" />
     <Property Name="MainTitleComposer" Type="Int32" />
@@ -563,6 +562,7 @@
     <Property Name="UserID" Type="Int32" />
     <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ArchivingTimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="PerformanceGroup" Type="Int32" />
     <NavigationProperty Name="InstrumentTbl" Relationship="AllClassicDBModel.FK__Performan__MainI__6E01572D" FromRole="PerformanceTbl" ToRole="InstrumentTbl" />
     <NavigationProperty Name="PerformanceCommentTbls" Relationship="AllClassicDBModel.FK__Performan__Perfo__10566F31" FromRole="PerformanceTbl" ToRole="PerformanceCommentTbl" />
     <NavigationProperty Name="PerformanceLikeUnlikeTbls" Relationship="AllClassicDBModel.FK__Performan__Perfo__17036CC0" FromRole="PerformanceTbl" ToRole="PerformanceLikeUnlikeTbl" />
@@ -572,7 +572,7 @@
     <NavigationProperty Name="LookUpTbl2" Relationship="AllClassicDBModel.FK__Performanc__City__68487DD7" FromRole="PerformanceTbl" ToRole="LookUpTbl" />
     <NavigationProperty Name="MusicianTbl" Relationship="AllClassicDBModel.FK__Performan__Condu__6C190EBB" FromRole="PerformanceTbl" ToRole="MusicianTbl" />
     <NavigationProperty Name="MusicianTbl1" Relationship="AllClassicDBModel.FK__Performan__MainT__6D0D32F4" FromRole="PerformanceTbl" ToRole="MusicianTbl" />
-    <NavigationProperty Name="PerformanceGroupTbl" Relationship="AllClassicDBModel.FK__Performan__Perfo__6A30C649" FromRole="PerformanceTbl" ToRole="PerformanceGroupTbl" />
+    <NavigationProperty Name="PerformanceGroupTbl" Relationship="AllClassicDBModel.FK__Performan__Perfo__42E1EEFE" FromRole="PerformanceTbl" ToRole="PerformanceGroupTbl" />
     <NavigationProperty Name="PerformanceMusicianInstrumentTbls" Relationship="AllClassicDBModel.FK__Performan__Perfo__71D1E811" FromRole="PerformanceTbl" ToRole="PerformanceMusicianInstrumentTbl" />
     <NavigationProperty Name="UserTbl" Relationship="AllClassicDBModel.FK__Performan__UserI__6EF57B66" FromRole="PerformanceTbl" ToRole="UserTbl" />
   </EntityType>
@@ -1085,8 +1085,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Performan__Perfo__6A30C649">
-    <End Type="AllClassicDBModel.PerformanceGroupTbl" Role="PerformanceGroupTbl" Multiplicity="1" />
+  <Association Name="FK__Performan__Perfo__42E1EEFE">
+    <End Type="AllClassicDBModel.PerformanceGroupTbl" Role="PerformanceGroupTbl" Multiplicity="0..1" />
     <End Type="AllClassicDBModel.PerformanceTbl" Role="PerformanceTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PerformanceGroupTbl">

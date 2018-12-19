@@ -41,14 +41,14 @@
 
             </div>
 
-            <br />
 
             <div class="row" style="padding-right: 15px;">
+            <br />
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 a.*, u.FullName userName, u.emailid from Auxiliary.ArticleTbl a
 join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; margin-bottom: 3px;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; margin-bottom: 3px;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -79,8 +79,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
 
-            <div class="row" style="margin-top: 40px;">
-
+            <div class="row">
+                <br />
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="ArticleID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                     <EmptyDataTemplate>
@@ -100,10 +100,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'>
 
                                     <div class="caption" style="padding-bottom: 3px;">
-                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: dimgray;" class="contentHeader"><%# Eval("ArticleTitle")%></h4>
+                                        <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: indigo;" class="contentHeader"><%# Eval("ArticleTitle")%></h4>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="font-size: 14px;" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
                                         <br />
-                                        <span runat="server" class="Contentdisplay" style="color: rgba(17, 17, 17, 0.6); font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
+                                        <span runat="server" class="Contentdisplay" style="color: black; font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
                                         <%--<asp:LinkButton   runat="server" CssClass="Contentdisplay"ID="btn_deleteArticle" OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>" />--%>

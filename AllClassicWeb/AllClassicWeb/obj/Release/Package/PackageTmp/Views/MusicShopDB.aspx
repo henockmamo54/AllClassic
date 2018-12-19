@@ -47,7 +47,7 @@ join Main.usertbl u on c.Userid=u.userid
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
 
                     <table class="table table-striped">
                         <thead>
@@ -81,9 +81,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                 </div>
             </div>
 
-            <hr style="margin-top: 0px;" />
 
             <div class="row">
+                <hr />
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="MusicShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                     <EmptyDataTemplate>
@@ -101,7 +101,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     <ItemTemplate>
                         <div class="col-md-4 col-xs-4" style="margin-bottom: 1em; padding-left: 0px;">
 
-                            <div class="panel panel-success shadowedbox_hover">
+                            <div class="panel panel-default shadowedPanel shadowedbox_hover">
                                 <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
                                     <h4><%# (Eval("Name")) .ToString().Length>15?
                                         (Eval("Name")) .ToString().Substring(0,15)+ " ....":
@@ -216,11 +216,6 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             color: black !important;
         }
 
-        .shadowedbox_hover {
-            background-color: #d3d3d31f;
-            /* box-shadow: 3px 3px 3px #d0d0d0 !important; */
-            box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
-        }
     </style>
 
     <script type="text/javascript">

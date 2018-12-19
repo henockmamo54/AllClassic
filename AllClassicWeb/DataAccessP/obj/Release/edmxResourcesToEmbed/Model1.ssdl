@@ -269,7 +269,7 @@
     <Property Name="Facebook" Type="nvarchar" MaxLength="30" />
     <Property Name="TelNo" Type="nvarchar" MaxLength="20" />
     <Property Name="FaxNo" Type="nvarchar" MaxLength="20" />
-    <Property Name="HomePage" Type="nvarchar" MaxLength="30" />
+    <Property Name="HomePage" Type="nvarchar" MaxLength="60" />
     <Property Name="UserID" Type="int" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
   </EntityType>
@@ -299,7 +299,6 @@
     <Property Name="PosterFileName" Type="nvarchar" MaxLength="80" Nullable="false" />
     <Property Name="VideoFileName" Type="nvarchar" MaxLength="80" />
     <Property Name="TicketBox" Type="nvarchar" MaxLength="80" />
-    <Property Name="PerformanceGroup" Type="int" Nullable="false" />
     <Property Name="PerformanceType" Type="int" Nullable="false" />
     <Property Name="Conductor" Type="int" />
     <Property Name="MainTitleComposer" Type="int" />
@@ -312,6 +311,7 @@
     <Property Name="UserID" Type="int" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
     <Property Name="ArchivingTimeStamp" Type="datetime" />
+    <Property Name="PerformanceGroup" Type="int" />
   </EntityType>
   <EntityType Name="UserTbl">
     <Key>
@@ -658,8 +658,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Performan__Perfo__6A30C649">
-    <End Role="PerformanceGroupTbl" Type="Self.PerformanceGroupTbl" Multiplicity="1" />
+  <Association Name="FK__Performan__Perfo__42E1EEFE">
+    <End Role="PerformanceGroupTbl" Type="Self.PerformanceGroupTbl" Multiplicity="0..1" />
     <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PerformanceGroupTbl">
@@ -992,7 +992,7 @@
       <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
       <End Role="PerformanceLikeUnlikeTbl" EntitySet="PerformanceLikeUnlikeTbl" />
     </AssociationSet>
-    <AssociationSet Name="FK__Performan__Perfo__6A30C649" Association="Self.FK__Performan__Perfo__6A30C649">
+    <AssociationSet Name="FK__Performan__Perfo__42E1EEFE" Association="Self.FK__Performan__Perfo__42E1EEFE">
       <End Role="PerformanceGroupTbl" EntitySet="PerformanceGroupTbl" />
       <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
     </AssociationSet>

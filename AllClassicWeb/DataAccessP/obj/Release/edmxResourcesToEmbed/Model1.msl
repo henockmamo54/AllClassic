@@ -306,6 +306,7 @@
     <EntitySetMapping Name="PerformanceTbls">
       <EntityTypeMapping TypeName="AllClassicDBModel.PerformanceTbl">
         <MappingFragment StoreEntitySet="PerformanceTbl">
+          <ScalarProperty Name="PerformanceGroup" ColumnName="PerformanceGroup" />
           <ScalarProperty Name="ArchivingTimeStamp" ColumnName="ArchivingTimeStamp" />
           <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -318,7 +319,6 @@
           <ScalarProperty Name="MainTitleComposer" ColumnName="MainTitleComposer" />
           <ScalarProperty Name="Conductor" ColumnName="Conductor" />
           <ScalarProperty Name="PerformanceType" ColumnName="PerformanceType" />
-          <ScalarProperty Name="PerformanceGroup" ColumnName="PerformanceGroup" />
           <ScalarProperty Name="TicketBox" ColumnName="TicketBox" />
           <ScalarProperty Name="VideoFileName" ColumnName="VideoFileName" />
           <ScalarProperty Name="PosterFileName" ColumnName="PosterFileName" />

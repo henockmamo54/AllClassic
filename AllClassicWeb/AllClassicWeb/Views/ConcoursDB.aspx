@@ -134,7 +134,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-md-8 col-xs-8" style="margin-bottom: 0;">
+                        <div class="col-xs-10" style="margin-bottom: 0;">
                             <div>
                                 <asp:Label runat="server" ID="tumbinallink" Style="text-decoration: none;">
 
@@ -147,7 +147,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         
                                         
                                         <br />
-                                        <div class="Contentdisplay" runat="server" style=" font-size: 14px; color: #0a0a0a; background-color: #f7f7f7; padding: 5px; padding-top:0px; border-radius: 5px; margin:5px; margin-left:0px;">
+                                        <div class="Contentdisplay" runat="server" style=" font-size: 14px; color: black; background-color: #e0e0e0cf; padding: 5px; padding-top:0px; border-radius: 5px; margin:5px; margin-left:0px;">
                                             <%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %>
                                         </div>
                                         <a  class="Contentdisplay" data-toggle="modal" data-target="#myModal<%#Eval("ConcourID")%>"> <%# Resources.DisplayText.Seemore %> </a> 

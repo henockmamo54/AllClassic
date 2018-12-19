@@ -47,7 +47,7 @@ join Main.usertbl u on c.Userid=u.userid
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
 
                     <table class="table table-striped">
                         <thead>
@@ -78,9 +78,11 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
 
-            <hr style="margin-top: 0px;" />
 
             <div class="row">
+                
+            <hr />
+
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="RepairShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;"   OnItemDataBound="collegeListContainer_OnItemDataBound">
                     
                     <EmptyDataTemplate>
@@ -98,7 +100,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                         <div class="col-md-4 col-xs-4" style="margin-bottom: 1em; padding-left: 0px;">
                             <%--<div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">--%>
                             <div>
-                                <div class="panel panel-success shadowedbox_hover">
+                                <div class="panel panel-default shadowedPanel shadowedbox_hover">
                                     <div class="panel-heading contentHeader" style="background-color:#eaf2f7;">
                                         <h4><%# (Eval("Name")) .ToString().Length>15?
                                         (Eval("Name")) .ToString().Substring(0,15)+ " ....":
@@ -163,53 +165,6 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                     </div>
                                 </div>
 
-                                <%--                                <div runat="server" id="tumbinallink" style="text-decoration: none;">
-
-                                    <div class="caption" style="padding-bottom: 3px;">
-                                        <h4><%# (Eval("Name")) .ToString().Length>15?
-                                        (Eval("Name")) .ToString().Substring(0,15)+ " ....":
-                                        (Eval("Name")) .ToString()%></h4>
-                                        <hr />
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.Alias %>:</strong><%# Eval("Alias") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.Expertise %>:</strong><%# Eval("Expertise") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.City %>:</strong><%# Eval("cityname") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.OwnerName %>:</strong><%# Eval("OwnerName") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.SinceYear %>:</strong><%# Eval("SinceYear") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.Email %>:</strong><%# Eval("EmailID") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.Address %>:</strong><%# Eval("Address") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.ZipCode %>:</strong><%# Eval("ZipCode") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.TelNo %>:</strong><%# Eval("TelNo") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.FaxNo %>:</strong><%# Eval("FaxNo") %></span>
-                                        </div>
-                                        <div>
-                                            <span><strong><%= Resources.DisplayText.HomePage %>:</strong>
-                                                <asp:LinkButton runat="server" target="_blank" Text='<%# Eval("HomePage") %>' href='http://<%# Eval("HomePage") %>'></asp:LinkButton></span>
-                                        </div>
-                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
-                                    </div>
-
-
-
-                                </div>--%>
                             </div>
                         </div>
 
@@ -257,12 +212,6 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             padding-bottom: 10px;
             padding-right: 5px;
             color: black !important;
-        }
-
-        .shadowedbox_hover {
-            background-color: #d3d3d31f;
-            /* box-shadow: 3px 3px 3px #d0d0d0 !important; */
-            box-shadow: 5px 5px 5px 3px #d0d0d0 !important;
         }
     </style>
     <script type="text/javascript">

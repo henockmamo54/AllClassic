@@ -33,9 +33,9 @@ or maincode='Conductor'
                 </div>
 
             </div>
-            <br />
 
             <div class="row">
+            <br />
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 SELECT top 20 m.*,u.EmailID useremailID, majorsubocode FROM Main.[MusicianTbl] m
 join Main.UserTbl u on m.UserID=u.UserID
@@ -46,7 +46,7 @@ or maincode='Composer'
 or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);">
 
                     <table class="table table-striped">
                         <thead>
@@ -78,7 +78,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
             <div class="row">
-                <br />
+                <hr />
                 <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" Style="width: 100%;">
 
                     <GroupTemplate>
@@ -88,8 +88,8 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-sm-4 col-xs-4" style="padding-right: 0px;">
-                            <div class=" col-xs-12 shadowedbox2" style="box-shadow: 0px 0px 5px 2px #d4d3d3; border-radius: 3px; margin-bottom: 2rem; padding-left: 0; background-color: white; font-family: Roboto, Arial, sans-serif;">
+                        <div class="col-sm-4 col-xs-4" style="padding: 0;padding-right: 10px;">
+                            <div class=" col-xs-12 shadowedbox2" style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important; border-radius: 3px; margin-bottom: 10px; padding-left: 0; background-color: white; font-family: Roboto, Arial, sans-serif;">
                                 <div class="col-sm-6 col-xs-6" style="padding: 0;">
                                     <img style="width: 100%; height: 18.25rem; padding: 3px; border-radius: 7px;" class="card-img-top img-rounded" src="../Doc/artist/<%#Eval("Photo1") %>" alt="Card image cap">
                                 </div>
