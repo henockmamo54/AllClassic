@@ -342,9 +342,9 @@
                             <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; display: inline-block;"><%= Resources.DisplayText.en %>/</a>
                             <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
                         </span>
-                        <span class="otheroptions pull-right" style="padding-top: 8px;">
+                        <span  class="otheroptions pull-right" style="padding-top: 8px;">
                             <asp:TextBox runat="server" ID="searchbox" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
-                            <asp:Button runat="server" ID="mainSearchBox" Text="search" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
+                            <asp:Button runat="server"  ID="mainSearchBox" Text="search" UseSubmitBehavior="false" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
                             <asp:HiddenField runat="server" ID="encodedSearchvalue" />
                         </span>
                     </div>
