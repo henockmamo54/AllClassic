@@ -48,16 +48,16 @@ where maincode='GroupType'
                 </div>
 
             </div>
-            <br />
 
             <div class="row" style="padding-right: 15px;">
+            <br />
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 pg.*, c.SubCode as cityname, gt.SubCode as grouptpename, u.EmailID from Main.PerformanceGroupTbl pg
 left join (select * from Main.LookUpTbl where MainCode='city') c on pg.City=c.LookUpID
 left join (select * from Main.LookUpTbl where MainCode='GroupType') gt on pg.GroupType=gt.LookUpID
 join Main.UserTbl u on pg.UserID=u.UserID
 order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px; solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -93,8 +93,8 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                 </div>
             </div>
 
-            <hr style="margin-top: 0px;" />
             <div class="row">
+            <hr  />
                 <asp:ListView runat="server" ID="pgListContainer" DataKeyNames="PerformanceGroupID" DataSourceID="SqlDataSource1_pglist" GroupItemCount="3" Style="width: 100%;">
 
                     <EmptyDataTemplate>
@@ -109,7 +109,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-xs-4" style="padding-right: 5px; padding-left: 5px;">
+                        <div class="col-xs-4" style="padding-right: 5px; padding-left: 5px; margin-bottom:10px;">
                             <div>
                                 <div class="panel panel-default shadowedPanel shadowedbox_hover orchContainer">
                                     <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
@@ -202,22 +202,4 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
         
     </asp:UpdatePanel>
 
-    <style type="text/css">
-        /*.orchContainer {
-            background: white;
-            margin: 5px;
-            border-radius: 5px;
-        
-         5px;
-            b r er  px s
-            
-        }*/            
-            
-                   rowwithbo tomborder >
-                      borde -bott
-            #eaeaea94 !imp rtan
-              padd ng-bo tom: 10px;         
-        g-right: 5px;  color: bla  color: black !important;
-        }
-    </style>
 </asp:Content>

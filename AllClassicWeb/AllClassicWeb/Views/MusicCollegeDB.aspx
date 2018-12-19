@@ -33,14 +33,13 @@ SELECT Distinct country from main.CollegeTbl
 
             </div>
 
-            <br />
-
             <div class="row" style="padding-right: 15px;">
+                <br />
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 c.*,u.EmailID from Main.CollegeTbl c
 join Main.usertbl u on c.Userid=u.userid
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
 
                     <table class="table table-striped">
                         <thead>
@@ -72,9 +71,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                 </div>
             </div>
-
-            <hr style="margin-top: 0px;" />
-
+            
             <div class="row">
                 <hr />
 

@@ -33,9 +33,9 @@ or maincode='Conductor'
                 </div>
 
             </div>
-            <br />
 
             <div class="row">
+            <br />
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 SELECT top 20 m.*,u.EmailID useremailID, majorsubocode FROM Main.[MusicianTbl] m
 join Main.UserTbl u on m.UserID=u.UserID
@@ -46,7 +46,7 @@ or maincode='Composer'
 or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);">
 
                     <table class="table table-striped">
                         <thead>
@@ -78,7 +78,6 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
             <div class="row">
-                <br />
                 <hr />
                 <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" Style="width: 100%;">
 

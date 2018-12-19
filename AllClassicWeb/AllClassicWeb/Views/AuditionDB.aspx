@@ -76,14 +76,14 @@
 
             </div>
 
-            <br />
 
             <div class="row" style="padding-right: 15px;">
+            <br />
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 a.*, u.FullName userName, u.EmailID from Auxiliary.AuditionTbl a
                     join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
 
                     <table class="table table-striped">
                         <thead>
@@ -113,11 +113,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                 </div>
             </div>
 
-            <br />
-            <br />
 
             <div class="row">
-
+                <hr />
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="AuditionID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="1" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                     <EmptyDataTemplate>
@@ -132,7 +130,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-md-8 col-xs-8" style="margin-bottom: 0;">
+                        <div class=" col-xs-10" style="margin-bottom: 0;">
                             <div>
                                 <asp:Label runat="server" ID="tumbinallink" Style="text-decoration: none;">
 

@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-md-6 col-xs-6 " style="padding: 0;">
                     <h5 style="color: #28878a; font-weight: 700;" class="contentTitle"><%= Resources.DisplayText.Performanceschedule %>: <%= Resources.DisplayText.ThisWeek %></h5>
-                    <div class="shadowedPanel" style="overflow-y: scroll; max-height: 200px; height: 200px;">
+                    <div class="shadowedPanel" style="overflow-y: scroll; max-height: 200px; height: 200px; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
                         <table class="table table-striped ">
                             <thead>
                                 <tr class="filedName">
@@ -99,7 +99,7 @@ and subcode not like N'%전체%'
                         <div class="col-md-3 col-xs-3" style="margin-bottom: 1em; padding-right: 0px;">
                             <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);">
                                 <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="performancepageclicked" CommandArgument='<%# Eval("PerformanceID") %>'>
-                                                                            <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 220px;">
+                                                                            <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 200px;">
 
                                             <div class="caption" style="padding-bottom:3px;">
                                                 <h4 class="contentHeader"><%# (Eval("MainTitle")) .ToString().Length>15?
