@@ -58,6 +58,15 @@ namespace AllClassicWeb {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor introductiontab;
         
         /// <summary>
+        /// searchbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox searchbox;
+        
+        /// <summary>
         /// mainSearchBox control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace AllClassicWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button mainSearchBox;
+        
+        /// <summary>
+        /// encodedSearchvalue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField encodedSearchvalue;
         
         /// <summary>
         /// signinLink control.

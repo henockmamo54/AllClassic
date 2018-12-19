@@ -29,6 +29,11 @@ namespace AllClassicWeb
 
         }
 
+        public void searchClicked(object sender, EventArgs e) {
+            var endcodestring=encodedSearchvalue.Value;
+            Response.Redirect("SearchEngineResult.aspx?q="+ endcodestring);
+        }
+
         protected void changecolor(object sender, CommandEventArgs e) {
             Session["Theme"] = e.CommandArgument;
         }

@@ -567,6 +567,7 @@
     <Content Include="Views\QADbAddNew.aspx" />
     <Content Include="Views\RepairShopDB.aspx" />
     <Content Include="Views\RepairShopDBAddNew.aspx" />
+    <Content Include="Views\SearchEngineResult.aspx" />
     <Content Include="Views\SignUp\TermsOfUsePage.aspx" />
     <Content Include="Views\SignUp\UserInformationRegistration.aspx" />
     <Content Include="Web.config" />
@@ -862,6 +863,13 @@
     </Compile>
     <Compile Include="Views\RepairShopDBAddNew.aspx.designer.cs">
       <DependentUpon>RepairShopDBAddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchEngineResult.aspx.cs">
+      <DependentUpon>SearchEngineResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SearchEngineResult.aspx.designer.cs">
+      <DependentUpon>SearchEngineResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\SignUp\TermsOfUsePage.aspx.cs">
       <DependentUpon>TermsOfUsePage.aspx</DependentUpon>

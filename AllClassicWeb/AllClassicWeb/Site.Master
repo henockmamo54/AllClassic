@@ -11,11 +11,11 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    
+
     <script src="https://cdn.ckeditor.com/4.11.1/standard-all/ckeditor.js"></script>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <script type="text/javascript">
         function modifyCss(color, page) {
@@ -24,7 +24,7 @@
                 //    $(".whitesmokeBG").css('background-color', '#D9EDF7');
                 //    //$(".whitesmokeBG").css('color', '#ffffff ');
                 //    //document.getElementById("whitesmokeBG").setAttribute('style', 'color: #ffffff');
-                    
+
                 //    $(".whitesmokeBG").css('font-weight', '800');
                 //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
                 //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
@@ -38,7 +38,7 @@
                 //    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
                 //    $("#mainSearchBox").css('background-color', '#5bc0de');
 
-                    
+
                 //    $(".whitesmokeBG").css('font-weight', '800');
                 //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
                 //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
@@ -51,7 +51,7 @@
                     $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
                     $("#mainSearchBox").css('background-color', '#5bc0de');
 
-                    
+
                     $(".whitesmokeBG").css('font-weight', 'bold');
                     $(".whitesmokeBG > div > a ").css('font-weight', 'bold');
                     $(".whitesmokeBG > div > span >a ").css('font-weight', 'bold');
@@ -64,7 +64,7 @@
                 //    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
                 //    $("#mainSearchBox").css('background-color', '#5bc0de');
 
-                    
+
                 //    $(".whitesmokeBG").css('font-weight', '800');
                 //    $(".whitesmokeBG > div > a ").css('font-weight', '800');
                 //    $(".whitesmokeBG > div > span >a ").css('font-weight', '800');
@@ -260,15 +260,47 @@
                     document.getElementById("signuptab").style.borderRight = "none";
                     document.getElementById("signuptab").style.color = "#000000";
                     break;
-                } 
+                }
                 case "ASP.views_qadbnew_aspx": {
                     document.getElementById("qatab").style.backgroundColor = "rgb(255, 255, 255) ";
                     document.getElementById("qatab").style.borderRight = "none";
                     document.getElementById("qatab").style.color = "#000000";
                     break;
-                }  
+                }
             }
         }
+
+        function SiteSearch() { 
+             $('#encodedSearchvalue').val(EncodeText(document.getElementById('searchbox').value)); 
+        }
+
+        function EncodeText(value) {
+            var returnValue = "";
+            var x = 0;
+            var regex = /(^[a-zA-Z0-9_.]*)/;
+
+            while (x < value.toString().length) {
+                var match = regex.exec(value.substr(x));
+                if (match != null && match.length > 1 && match[1] != '') {
+                    returnValue += match[1];
+                    x += match[1].length;
+                }
+                else {
+                    if (value[x] == ' ') {
+                        returnValue += '+';
+
+                    }
+                    else {
+                        var charCode = value.charCodeAt(x);
+                        var haxValue = charCode.toString(16);
+                        returnValue += "%" + (haxValue.length < 2 ? '0' : '') + haxValue.toUpperCase();
+                    }
+                    x++;
+                }
+            }
+            return returnValue;
+        }
+
     </script>
 </head>
 <body style="padding-top: 2px; background-color: white;">
@@ -299,7 +331,7 @@
             <div id="masterNavigationBar">
                 <div class="row whitesmokeBG">
                     <div>
-                        <a class="navbar-brand allclasic_home" style="text-decoration: none; background-color:darkorange;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
+                        <a class="navbar-brand allclasic_home" style="text-decoration: none; background-color: darkorange;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
                         <a class="otheroptions " id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
                         <a class="otheroptions " id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
                         <a class="otheroptions " id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
@@ -307,13 +339,13 @@
                         <a class="otheroptions " runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
                         <a class="otheroptions " id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
                         <span class="otheroptions ">
-                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px;  display: inline-block;"><%= Resources.DisplayText.en %>/</a>
-                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px;  display: inline-block;"><%= Resources.DisplayText.kr %></a>
+                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; display: inline-block;"><%= Resources.DisplayText.en %>/</a>
+                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
                         </span>
                         <span class="otheroptions pull-right" style="padding-top: 8px;">
-                            <asp:TextBox runat="server" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
-                            <asp:Button runat="server" ID="mainSearchBox" Text="search" class="btn btn-primary" />
-
+                            <asp:TextBox runat="server" ID="searchbox" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
+                            <asp:Button runat="server" ID="mainSearchBox" Text="search" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
+                            <asp:HiddenField runat="server" ID="encodedSearchvalue" />
                         </span>
                     </div>
                 </div>
@@ -346,12 +378,10 @@
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="3" Text="3"></asp:Button>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="4" Text="4"></asp:Button>
                         </div>--%>
-
                     </ul>
-                    <asp:ImageButton ImageUrl="~/Doc/ads/1d63a0_c98934b833c94affa65a41837b01c878_mv2_d_1388_1654_s_2.jpg" style="width:100%;"   runat="server" />
-                    <asp:ImageButton ImageUrl="~/Doc/ads/P20181203000.jpg" runat="server"  style="width:100%;"  />
+                    <asp:ImageButton ImageUrl="~/Doc/ads/1d63a0_c98934b833c94affa65a41837b01c878_mv2_d_1388_1654_s_2.jpg" Style="width: 100%;" runat="server" />
+                    <asp:ImageButton ImageUrl="~/Doc/ads/P20181203000.jpg" runat="server" Style="width: 100%;" />
                 </div>
-
 
                 <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding-right: 0;">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -363,7 +393,6 @@
                 <p>&copy; <%: DateTime.Now.Year %> All Copyrights are reserved www.allclassickorea.co.kr 3F honsung Bldg. 220 Yeoksam-Ro Gangnam-gu, Seoul, Korea 06227</p>
             </footer>
         </div>
-
     </form>
 </body>
 </html>
