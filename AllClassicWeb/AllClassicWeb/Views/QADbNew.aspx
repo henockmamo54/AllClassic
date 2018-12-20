@@ -18,7 +18,7 @@
 
                     <div class="col-xs-4">
                         <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Question %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txt_question" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;" ></asp:TextBox>
+                        <asp:TextBox AutoPostBack="true" ID="txt_question" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
                     </div>
                     <div class="col-xs-4">
 
@@ -43,7 +43,7 @@
 
                 <div class=" col-xs-2 pull-right">
                     <br />
-                    <asp:Button ID="inquiry" runat="server" style="float: right;" CssClass="btn btn-primary contentButton " OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
+                    <asp:Button ID="inquiry" runat="server" Style="float: right;" CssClass="btn btn-primary contentButton " OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
                 </div>
             </div>
 
@@ -111,6 +111,12 @@
                                                     </div>
 
                                                     <a class="link" id='lnkReplyParent<%# Eval("AnswerID") %>' href="javascript:void(0)" onclick='showReply(<%# Eval("AnswerID") %>,"Parent"); return false;'><%=Resources.DisplayText.Reply %></a>
+
+                                                    <asp:LinkButton class="link" runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveAnswer_Click" CommandArgument='<%#Eval("AnswerID") %>'>
+                                                        <%=Resources.DisplayText.Delete %>
+                                                    </asp:LinkButton>
+
+
                                                 </div>
 
                                                 <div id='divReplyParent<%# Eval("AnswerID") %>' style="display: none; margin-top: 5px;">
@@ -138,10 +144,15 @@
                                                                 </div>
 
                                                                 <a class="link" id='lnkReplyParent<%# Eval("AnswerID") %>' href="javascript:void(0)" onclick="showReply(<%# Eval("AnswerID") %>,'FirstChild'); return false;"><%=Resources.DisplayText.Reply %></a>
+
+                                                                <asp:LinkButton class="link" runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveAnswer_Click" CommandArgument='<%#Eval("AnswerID") %>'>
+                                                        <%=Resources.DisplayText.Delete %>
+                                                                </asp:LinkButton>
+
                                                             </div>
 
 
-                                                            <asp:Repeater ID="SecondChildRepeater" runat="server">
+                                                            <asp:Repeater ID="SecondChildRepeater" runat="server" OnItemDataBound="SecondChildRepeater_onItemDatabound">
 
                                                                 <ItemTemplate>
                                                                     <div style="padding-left: 30px; margin-bottom: 5px; margin-top: 5px; margin-right: 0px; margin-left: 0px; width: 100% !important; padding-right: 0px;">
@@ -157,6 +168,9 @@
                                                                                 <%# DataBinder.Eval(Container.DataItem, "UserTbl.FullName") %>
                                                                             </div>
 
+                                                                            <asp:LinkButton class="link" runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveAnswer_Click" CommandArgument='<%#Eval("AnswerID") %>'>
+                                                        <%=Resources.DisplayText.Delete %>
+                                                                            </asp:LinkButton>
                                                                         </div>
                                                                     </div>
                                                                 </ItemTemplate>
@@ -223,7 +237,7 @@ order by timestamp desc"></asp:SqlDataSource>
 
     <script type="text/javascript">
 
-        
+
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
                 format: 'MM/DD/YYYY'
@@ -240,6 +254,45 @@ order by timestamp desc"></asp:SqlDataSource>
         function closeReply(n, t) {
             $("#divReply" + t + n).hide();
             return false;
+        }
+
+        function DeleteAnswer(n) {
+            console.log(n);
+            $.support.cors = true;
+
+            //check confirmation
+            if (confirm("Are you sure you want to delete?")) {
+                // check for user login
+
+                $.ajax({
+                    type: "POST",
+                    url: "QADbNew.aspx/DeleteAnswerByID", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ id: n }), //{ },//data
+                    success: function (data) {
+                        //alert('success') 
+
+                        //if log in show the reply message 
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            location.reload(); 
+                        }
+
+                        else {
+                            alert('Entry not deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
+                    }
+                });
+
+            }
         }
 
         function showReply(n, t) {

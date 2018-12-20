@@ -28,12 +28,43 @@ namespace AllClassicWeb
             else showMsg(Resources.DisplayText.Pleasesignintocontinue);
         }
 
+        public void btnRemoveAnswer_Click(object sender, CommandEventArgs e)
+        {
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "PopDeleteAnswer", "DeleteAnswer('" + e.CommandArgument + "');", true);
+        }
+
+        protected void SecondChildRepeater_onItemDatabound(object sender, RepeaterItemEventArgs e) {
+            var answer = ((AnswersTbl)e.Item.DataItem);
+
+            var DlnkReplyParent = (LinkButton)e.Item.FindControl("DlnkReplyParent");
+            if (user != null)
+            {
+
+                if (user.UserID != answer.UserID)
+                    DlnkReplyParent.Visible = false;
+                else DlnkReplyParent.Visible = true;
+            }
+            else DlnkReplyParent.Visible = false;
+        }
 
         protected void ParentRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             AllClassicDBEntities entities = new AllClassicDBEntities();
+            var answer = ((AnswersTbl)e.Item.DataItem);
+
+            var DlnkReplyParent = (LinkButton)e.Item.FindControl("DlnkReplyParent");
+            if (user != null)
+            {
+
+                if (user.UserID != answer.UserID)
+                    DlnkReplyParent.Visible = false;
+                else DlnkReplyParent.Visible = true;
+            }
+            else DlnkReplyParent.Visible = false;
+
             var detail = (Repeater)e.Item.FindControl("FirstChildRepeater");
-            int parentID = ((AnswersTbl)e.Item.DataItem).AnswerID;
+            int parentID = answer.AnswerID;
             detail.DataSource = entities.AnswersTbls.Where(x => x.ParentAnswer == parentID).ToList();
             detail.DataBind();
         }
@@ -45,7 +76,6 @@ namespace AllClassicWeb
             int questionID = int.Parse(DataBinder.Eval(e.Item.DataItem, "QuestionID").ToString());
 
             var detail = (Repeater)item.FindControl("ParentRepeater");
-
             AllClassicDBEntities entities = new AllClassicDBEntities();
             detail.DataSource = entities.AnswersTbls.Where(x => x.QuestionID == questionID).ToList();
             try
@@ -59,9 +89,21 @@ namespace AllClassicWeb
         protected void FirstChildRepeater_onItemDatabound(object sender, RepeaterItemEventArgs e)
         {
             AllClassicDBEntities entities = new AllClassicDBEntities();
-            int answerID = int.Parse(DataBinder.Eval(e.Item.DataItem, "AnswerID").ToString());
+            //int answerID = int.Parse(DataBinder.Eval(e.Item.DataItem, "AnswerID").ToString());
+            var answer = ((AnswersTbl)e.Item.DataItem);
+
+            var DlnkReplyParent = (LinkButton)e.Item.FindControl("DlnkReplyParent");
+            if (user != null)
+            {
+
+                if (user.UserID != answer.UserID)
+                    DlnkReplyParent.Visible = false;
+                else DlnkReplyParent.Visible = true;
+            }
+            else DlnkReplyParent.Visible = false;
+
             var SecondChildRepeater = (Repeater)e.Item.FindControl("SecondChildRepeater");
-            SecondChildRepeater.DataSource = entities.AnswersTbls.Where(x => x.ParentAnswer == answerID).ToList();
+            SecondChildRepeater.DataSource = entities.AnswersTbls.Where(x => x.ParentAnswer == answer.AnswerID).ToList();
             SecondChildRepeater.DataBind();
 
         }
@@ -144,6 +186,35 @@ namespace AllClassicWeb
         {
 
             return user != null;
+        }
+
+
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteAnswerByID(int id)
+        {
+            AllClassicDBEntities entities = new AllClassicDBEntities();
+
+            var childanswers = entities.AnswersTbls.Where(x => x.ParentAnswer == id).ToList();
+            foreach (var item in childanswers)
+            {
+                // check if the child has child answer
+                if (item.AnswersTbl1 != null) {
+                    if (item.AnswersTbl1.Count > 0) {
+
+                        entities.AnswersTbls.RemoveRange(item.AnswersTbl1);
+                        entities.SaveChanges();
+                    }
+                }
+                entities.AnswersTbls.Remove(item);
+                entities.SaveChanges();
+            }
+
+
+            entities.AnswersTbls.Remove(entities.AnswersTbls.Where(x => x.AnswerID == id).FirstOrDefault());
+            entities.SaveChanges();
+
+            return true;
         }
 
         public void selectedFilterChanged(object sender, EventArgs e)
