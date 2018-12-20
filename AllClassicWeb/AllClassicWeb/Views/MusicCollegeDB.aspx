@@ -6,28 +6,28 @@
 
             <br />
             <div class="row">
-                <div class="row col-xs-12">
-                    <div class="col-xs-3" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Name %> </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                <div class=" col-xs-12">
+                    <div class="pull-right" style="padding: 0px;">
+                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary contentButton" OnClick="selectedFilterChanged" />
+                    </div>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Name %> </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
 
                     </div>
-                    <div class="col-xs-3" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.ShortName %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_shortnamefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 62%; display: inline-block;"></asp:TextBox>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.ShortName %>  </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_shortnamefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
                     </div>
-                    <div class="col-xs-3" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Country %>  </h5>
-                        <asp:DropDownList Style="display: inline-block; width: 70%;" ID="DropDownList1_countryfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Country %>  </span>
+                        <asp:DropDownList Style="display: inline-block; width: 100px;" ID="DropDownList1_countryfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT  Name='ALL'
 Union
 SELECT Distinct country from main.CollegeTbl
 "></asp:SqlDataSource>
 
 
-                    </div>
-                    <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary contentButton" OnClick="selectedFilterChanged" />
                     </div>
                 </div>
 

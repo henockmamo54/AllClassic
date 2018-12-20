@@ -5,18 +5,18 @@
         <ContentTemplate>
             <br />
             <div class="row">
-                <div class="row  col-xs-12" style="padding-right: 0px;">
-                    <div class="col-xs-3 pull-right" style="padding-right: 0px;">
+                <div class=" col-xs-12" >
+                   <div class="pull-right" style="padding: 0px; ">
                         <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary contentButton" OnClick="selectedFilterChanged" />
                     </div>
-                    <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Repertory %> </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txt_repertoryfilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Repertory %> </span>
+                        <asp:TextBox AutoPostBack="true" ID="txt_repertoryfilter" runat="server" CssClass="form-control" Style="width: 150px; display: inline-block;"></asp:TextBox>
 
                     </div>
-                    <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Major %>  </h5>
-                        <asp:DropDownList Style="display: inline-block; width: 83%;" ID="DropDownList1_Majorfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                   <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Major %>  </span>
+                        <asp:DropDownList Style="display: inline-block; width: 100px;" ID="DropDownList1_Majorfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -26,9 +26,9 @@ or maincode='Composer'
 or maincode='Conductor'
 "></asp:SqlDataSource>
                     </div>
-                    <div class="col-xs-3 pull-right" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.FullName %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                   <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.FullName %>  </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control" Style="width: 150px; display: inline-block;"></asp:TextBox>
                     </div>
                 </div>
 
@@ -80,7 +80,12 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
             <div class="row">
                 <hr />
                 <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" Style="width: 100%;">
-
+                    
+                    <EmptyDataTemplate>
+                        <div class=" col-xs-12 contentHeader">
+                            <h3>No records available.</h3>
+                        </div>
+                    </EmptyDataTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
                             <div id="itemPlaceholder" runat="server">
