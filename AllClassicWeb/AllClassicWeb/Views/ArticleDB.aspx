@@ -15,40 +15,44 @@
             <br />
 
             <div class="row">
-                <div class="row col-md-12 col-xs-12  col-xs-12">
-                    <div class="col-xs-4">
-                        <div class="col-xs-4">
-                            <h5 style="display: inline-block; display: inline-block;" class="filedName"><%= Resources.DisplayText.PostingDate %> </h5>
-                        </div>
-                        <div class="col-xs-8" style="padding: 0;">
+                <div class="col-xs-12">
+
+                    <div class="col-xs-1 pull-right" style="padding: 0px;">
+                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary contentButton  pull-right" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
+                    </div>
+
+                    <div class="col-xs-4 pull-right" style="padding-right: 10px; padding-left: 10px;">
+                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.PosterEmailID %>  </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay  pull-right" Style="width: 65%; display: inline-block;"></asp:TextBox>
+                    </div>
+
+                    <div class="col-xs-3 pull-right" style="padding: 0px;">
+
+                        <span style="display: inline-block; display: inline-block;" class="filedName"><%= Resources.DisplayText.PostingDate %> </span>
+                        <div style="display: inline-block;">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
-                                <input type='text' class="form-control filedDisplay" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
+                                <input type='text' class="form-control filedDisplay" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="width: 65%; display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.PosterEmailID %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
+
                     </div>
 
-                    <div class="col-md-2 col-xs-2">
-                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary contentButton " OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
-                    </div>
                 </div>
 
             </div>
 
 
+
             <div class="row" style="padding-right: 15px;">
-            <br />
+                <br />
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 a.*, u.FullName userName, u.emailid from Auxiliary.ArticleTbl a
 join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; margin-bottom: 3px;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; margin-bottom: 3px; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -107,7 +111,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <br />
                                         <span runat="server" class="Contentdisplay" style="color: black; font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
-                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
                                         <%--<asp:LinkButton   runat="server" CssClass="Contentdisplay"ID="btn_deleteArticle" OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>" />--%>
                                         <%--OnClientClick='passAccessory(\"<%# Eval("variable") %>\");'--%>
                                         <%--OnClientClick="deletebtnclicked('<%# Eval("ArticleID") %>');"--%>
@@ -162,42 +166,42 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
         document.getElementById("articletab").style.borderRight = "none";
     </script>
     <script type="text/javascript"> 
-        
+
         function deletebtnclicked(id) {
             var txt;
             if (confirm('Are you sure you want to delete?')) {
                 txt = "You pressed OK!";
 
-                 $.ajax({
-                type: "POST",
-                url: "ArticleDB.aspx/DeleteArticle", //Pagename/Functionname
-                contentType: "application/json;charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({ n: id }), //{ },//data
-                success: function (data) {
-                     
-                    if (data.d) {
+                $.ajax({
+                    type: "POST",
+                    url: "ArticleDB.aspx/DeleteArticle", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ n: id }), //{ },//data
+                    success: function (data) {
 
-                        alert('Entry deleted!!!');
-                        location.reload();
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            location.reload();
+                        }
+
+                        else {
+                            alert('Entry not  deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
                     }
-
-                    else {
-                        alert('Entry not  deleted!!!');
-                    }
-
-                },
-                error: function (result) {
-                    console.log(result)
-                    //alert("error")
-
-                }
-            });
+                });
 
 
             } else {
                 txt = "You pressed Cancel!";
-            } 
+            }
         }
 
 

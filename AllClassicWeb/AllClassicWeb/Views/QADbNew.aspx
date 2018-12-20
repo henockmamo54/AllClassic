@@ -231,7 +231,7 @@ order by timestamp desc"></asp:SqlDataSource>
             </div>
 
             <div class="row">
-                <asp:Button runat="server" ID="btn_addNew" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNew" />
+                <asp:Button runat="server" ID="btn_addNew" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,NewQuestion %>" OnClick="onclick_btn_addNew" />
             </div>
 
 

@@ -286,22 +286,26 @@ namespace AllClassicWeb.Views
             {
                 this.Session["FileUpload_photo1"] = FileUpload_photo1;
             }
+            else
+                this.Session["FileUpload_photo1"] = null;
         }
 
         public void manageFileUpload2()
         {
-            if (this.Session["FileUpload_photo2"] == null && FileUpload_photo2.HasFile)
+            if (this.Session["FileUpload_photo1"] == null && FileUpload_photo1.HasFile)
             {
-                this.Session["FileUpload_photo2"] = FileUpload_photo2;
+                this.Session["FileUpload_photo1"] = FileUpload_photo1;
             }
-            else if (this.Session["FileUpload_photo2"] != null && FileUpload_photo2.HasFile)
+            else if (this.Session["FileUpload_photo1"] != null && FileUpload_photo1.HasFile)
             {
-                FileUpload_photo2 = (FileUpload)this.Session["FileUpload_photo2"];
+                FileUpload_photo1 = (FileUpload)this.Session["FileUpload_photo1"];
             }
-            else if (FileUpload_photo2.HasFile)
+            else if (FileUpload_photo1.HasFile)
             {
-                this.Session["FileUpload_photo2"] = FileUpload_photo2;
+                this.Session["FileUpload_photo1"] = FileUpload_photo1;
             }
+            else
+                this.Session["FileUpload_photo1"] = null;
         }
 
         public void btn_artistsave_Click(object sender, EventArgs e)
