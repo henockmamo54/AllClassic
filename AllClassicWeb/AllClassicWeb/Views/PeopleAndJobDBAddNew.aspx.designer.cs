@@ -136,16 +136,16 @@ namespace AllClassicWeb.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_description;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_description;
         
         /// <summary>
-        /// RequiredFieldValidator6 control.
+        /// HiddenField2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField2;
         
         /// <summary>
         /// btn_PeopleAndJob_cancel control.

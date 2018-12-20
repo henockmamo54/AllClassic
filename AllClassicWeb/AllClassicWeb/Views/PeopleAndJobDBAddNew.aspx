@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PeopleAndJobDBAddNew.aspx.cs" Inherits="AllClassicWeb.Views.PeopleAndJobDBAddNew" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  ValidateRequest="false"  CodeBehind="PeopleAndJobDBAddNew.aspx.cs" Inherits="AllClassicWeb.Views.PeopleAndJobDBAddNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -102,8 +102,10 @@ where maincode='City'
         <div class="col-xs-12" style="padding: 0;">
             <div class="col-xs-12 form-group">
                 <div class="filedName"><%=Resources.DisplayText.Description %>*</div>
-                <asp:TextBox runat="server" ID="txt_description" ValidationGroup="a" CssClass="form-control filedDisplay" TextMode="MultiLine" Rows="10" Style="max-width: 500px;" />
-                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator6" ControlToValidate="txt_description" ErrorMessage="<%$Resources:DisplayText,PleasefillDescriptionfield %>" />
+                <%--<asp:TextBox runat="server" ID="txt_description" ValidationGroup="a" CssClass="form-control filedDisplay" TextMode="MultiLine" Rows="10" Style="max-width: 500px;" />--%>
+                 <textarea cols="80" id="txt_description" runat="server" name="editor1" rows="10"> </textarea>                
+                    <asp:HiddenField ID="HiddenField2" runat="server" Value="" /> 
+                <%--<asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator6" ControlToValidate="txt_description" ErrorMessage="<%$Resources:DisplayText,PleasefillDescriptionfield %>" />--%>
 
             </div>
         </div>
@@ -114,13 +116,46 @@ where maincode='City'
 
     <div class="row col-md-4 col-xs-4">
         <asp:Button Visible="true" ID="btn_PeopleAndJob_cancel" CssClass="btn btn-danger pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_PeopleAndJob_cancel_Click" Style="margin-right: 10px;" />
-        <asp:Button Visible="false" ID="btn_PeopleAndJob_save" CssClass="btn btn-warning pull-right contentButton" runat="server" ValidationGroup="a" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_PeopleAndJob_save_Click" Style="margin-right: 10px;" />
-        <asp:Button ID="btn_PeopleAndJob_add" Visible="false" CssClass="btn btn-primary pull-right contentButton" ValidationGroup="a" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_PeopleAndJob_add_Click" Style="margin-right: 10px;" />
+        <asp:Button Visible="false" ID="btn_PeopleAndJob_save" CssClass="btn btn-warning pull-right contentButton" runat="server" ValidationGroup="a"  OnClientClick="getValueFromHtmlEditor();"  Text="<%$Resources:DisplayText,Update %>" OnClick="btn_PeopleAndJob_save_Click" Style="margin-right: 10px;" />
+        <asp:Button ID="btn_PeopleAndJob_add" Visible="false" CssClass="btn btn-primary pull-right contentButton" ValidationGroup="a" runat="server"  OnClientClick="getValueFromHtmlEditor();" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_PeopleAndJob_add_Click" Style="margin-right: 10px;" />
 
     </div>
 
 
     <script type="text/javascript">
+        
+        function loadCkEditor() {
+             
+            CKEDITOR.replace('MainContent_txt_description', { 
+                toolbarGroups: [
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                    { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+                    { name: 'forms', groups: ['forms'] },
+
+                    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                    { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+                    { name: 'links', groups: ['links'] },
+                    { name: 'insert', groups: ['insert'] },
+
+                    { name: 'styles', groups: ['styles'] },
+                    { name: 'colors', groups: ['colors'] },
+                    { name: 'tools', groups: ['tools'] },
+                    { name: 'others', groups: ['others'] },
+                    { name: 'about', groups: ['about'] }
+                ], 
+                removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
+            });
+
+
+        }
+
+        function getValueFromHtmlEditor() {
+            var value = CKEDITOR.instances['MainContent_txt_description'].getData();
+            var x = $("#MainContent_txt_description")[0].innerHTML;  
+            $('#MainContent_HiddenField2').val(value); 
+        }
+
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
                 format: 'MM/DD/YYYY'

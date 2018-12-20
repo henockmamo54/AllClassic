@@ -13,6 +13,8 @@ namespace AllClassicWeb.Views
         {
             user = (UserTbl)Session["User"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "bindDateTime();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCkEditor", "loadCkEditor();", true);
+
             if (!IsPostBack)
             {
                 handleButtons(true);
@@ -28,7 +30,9 @@ namespace AllClassicWeb.Views
                         txt_title.Text = p.Title;
                         txt_email.Text = p.EmailID;
                         txt_telno.Text = p.TelNo;
-                        txt_description.Text = p.Description;
+                        //txt_description.Text = p.Description;
+                        txt_description.InnerText = Server.HtmlDecode(p.Description);
+                        Session["txt_description"] = Server.HtmlDecode(p.Description);
                         DropDownList1_type.Items.FindByValue(p.PeopleOrJob.ToString()).Selected = true;
                     }
                 }
@@ -41,7 +45,7 @@ namespace AllClassicWeb.Views
             txt_title.Text = "";
             txt_email.Text = "";
             txt_telno.Text = "";
-            txt_description.Text = "";
+            txt_description.InnerHtml = "";
 
             Session["updatePeopleAndJob"] = null;
             handleButtons(true);
@@ -59,7 +63,20 @@ namespace AllClassicWeb.Views
                 r.ContactName = txt_contactname.Text;
                 r.EmailID = txt_email.Text;
                 r.TelNo = txt_telno.Text;
-                r.Description = txt_description.Text;
+
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_description"] = msg; 
+                if (msg.Length > 399)
+                {
+                    showMsg("The description content is more than the specified limit. please  minimize the content of the the outline.");
+                    if (Session["txt_auditionoutline"] != null)
+                    {
+                        txt_description.InnerText = Server.HtmlDecode(Session["txt_description"].ToString());
+                    }
+                    return;
+                }
+
+                r.Description = msg;
                 r.UpdateTimeStamp = DateTime.Now;
                 r.UserID = user.UserID;
 
@@ -92,7 +109,19 @@ namespace AllClassicWeb.Views
                 r.ContactName = txt_contactname.Text;
                 r.EmailID = txt_email.Text;
                 r.TelNo = txt_telno.Text;
-                r.Description = txt_description.Text;                
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_description"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The description content is more than the specified limit. please  minimize the content of the the outline.");
+                    if (Session["txt_auditionoutline"] != null)
+                    {
+                        txt_description.InnerText = Server.HtmlDecode(Session["txt_description"].ToString());
+                    }
+                    return;
+                }
+
+                r.Description = msg;
                 r.UpdateTimeStamp = DateTime.Now;
                 r.UserID = user.UserID;
 

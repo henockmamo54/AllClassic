@@ -137,7 +137,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                     <ItemTemplate>
                         <div class="col-md-4 col-xs-4 " style="margin-bottom: 1em;">
 
-                            <div class="panel panel-success shadowedPanel shadowedbox_hover">
+                            <div class="panel panel-success shadowedPanel ">
                                 <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
                                     <h4><%# (Eval("Title")) .ToString().Length>15?
                                         (Eval("Title")) .ToString().Substring(0,15)+ " ....":
@@ -172,13 +172,13 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 <td class="filedName"><%# Resources.DisplayText.Email %>:</td>
                                                 <td class="filedDisplay"><%#Eval("EmailID") %></td>
                                             </tr>
-                                            <tr>
+                                            <%--<tr>
                                                 <td class="filedName"><%# Resources.DisplayText.Description %>:</td>
-                                                <td class="filedDisplay"><%#Eval("Description") %></td>
-                                            </tr>
+                                                <td class="filedDisplay">  <%#Server.HtmlDecode(Eval("Description").ToString()) %> </td>
+                                            </tr>--%>
                                             <tr>
                                                 <td>
-                                                    <br />
+                                                    <a class="Contentdisplay" data-toggle="modal" data-target="#myModal<%#Eval("PeopleAndJobID")%>"><%# Resources.DisplayText.Seemore %> </a>
                                                 </td>
                                                 <td>
                                                     <asp:LinkButton runat="server" ID="edit" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
@@ -186,6 +186,29 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                                 </td>
                                             </tr>
+
+                                            <!-- Modal -->
+                                            <div id="myModal<%#Eval("PeopleAndJobID")%>" class="modal fade" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title"><%# (Eval("PeopleOrJob")).ToString()=="1"? Resources.DisplayText.Job :Resources.DisplayText.People %>
+                                                                - <%# (Eval("Title")) .ToString().Length>15?  (Eval("Title")) .ToString().Substring(0,15)+ " ....":  (Eval("Title")) .ToString()%></h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p><%#Server.HtmlDecode(Eval("Description").ToString()) %></p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
                                         </tbody>
                                     </table>
 
