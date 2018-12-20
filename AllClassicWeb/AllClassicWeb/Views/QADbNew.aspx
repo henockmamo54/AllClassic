@@ -66,13 +66,13 @@
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class=" col-xs-12 filedDisplay" style="margin-bottom: 1em;">
+                        <div class=" col-xs-12 filedDisplay" style="margin-bottom: 1em; color:black !important;">
 
                             <div class="row">
                                 <div style="width: 5%; display: inline-block;">
                                     <%# Container.DataItemIndex+1 %>
                                 </div>
-                                <div style="width: 50%; display: inline-block; overflow-wrap: break-word;">
+                                <div style="width: 48%; display: inline-block; overflow-wrap: break-word;">
                                     <%#Eval("Question") %>
                                 </div>
                                 <div style="width: 10%; display: inline-block;">
@@ -81,8 +81,11 @@
                                 <div style="width: 20%; display: inline-block;">
                                     <%#Eval("posterEmailID") %>
                                 </div>
-                                <div style="width: 10%; display: inline-block;">
+                                <div style="width: 15%; display: inline-block;">
                                     <a class="link btn btn-primary" style="display: inline-block" id='lnkReplyParent<%# Eval("QuestionID") %>' href="javascript:void(0)" onclick='showReply(<%# Eval("QuestionID") %>,"Main"); return false;'><%=Resources.DisplayText.Answer %></a>
+
+                                    <asp:LinkButton class="link btn btn-danger" runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveQuestion_Click" CommandArgument='<%#Eval("QuestionID") %>'>  <%=Resources.DisplayText.Delete %>  </asp:LinkButton>
+
                                 </div>
                             </div>
                             <div class="row" style="margin-right: 0px; margin-top: 5px; border-bottom: 1px solid  #d3d3d333;">
@@ -254,7 +257,47 @@ order by timestamp desc"></asp:SqlDataSource>
         function closeReply(n, t) {
             $("#divReply" + t + n).hide();
             return false;
+        }        
+        
+        function DeleteQuestion(n) {
+            console.log(n);
+            $.support.cors = true;
+
+            //check confirmation
+            if (confirm("Are you sure you want to delete?")) {
+                // check for user login
+
+                $.ajax({
+                    type: "POST",
+                    url: "QADbNew.aspx/DeleteQuestionByID", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ id: n }), //{ },//data
+                    success: function (data) {
+                        //alert('success') 
+
+                        //if log in show the reply message 
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            location.reload();
+                        }
+
+                        else {
+                            alert('Entry not deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
+                    }
+                });
+
+            }
         }
+
 
         function DeleteAnswer(n) {
             console.log(n);
@@ -277,7 +320,7 @@ order by timestamp desc"></asp:SqlDataSource>
                         if (data.d) {
 
                             alert('Entry deleted!!!');
-                            location.reload(); 
+                            location.reload();
                         }
 
                         else {

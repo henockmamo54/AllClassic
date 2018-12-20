@@ -34,7 +34,14 @@ namespace AllClassicWeb
             ScriptManager.RegisterStartupScript(this, this.GetType(), "PopDeleteAnswer", "DeleteAnswer('" + e.CommandArgument + "');", true);
         }
 
-        protected void SecondChildRepeater_onItemDatabound(object sender, RepeaterItemEventArgs e) {
+        public void btnRemoveQuestion_Click(object sender, CommandEventArgs e)
+        {
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "PopDeleteAnswer", "DeleteQuestion('" + e.CommandArgument + "');", true);
+        }
+
+        protected void SecondChildRepeater_onItemDatabound(object sender, RepeaterItemEventArgs e)
+        {
             var answer = ((AnswersTbl)e.Item.DataItem);
 
             var DlnkReplyParent = (LinkButton)e.Item.FindControl("DlnkReplyParent");
@@ -72,8 +79,20 @@ namespace AllClassicWeb
         protected void collegeListContainer_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             ListViewItem item = e.Item;
-
+            
             int questionID = int.Parse(DataBinder.Eval(e.Item.DataItem, "QuestionID").ToString());
+            int userid= int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString());
+
+            var DlnkReplyParent = (LinkButton)e.Item.FindControl("DlnkReplyParent");
+            if (user != null)
+            {
+
+                if (user.UserID != userid)
+                    DlnkReplyParent.Visible = false;
+                else DlnkReplyParent.Visible = true;
+            }
+            else DlnkReplyParent.Visible = false;
+
 
             var detail = (Repeater)item.FindControl("ParentRepeater");
             AllClassicDBEntities entities = new AllClassicDBEntities();
@@ -166,7 +185,7 @@ namespace AllClassicWeb
             answer.QuestionID = int.Parse(e.CommandArgument.ToString());
             answer.Answer = message;
             answer.timestamp = DateTime.Now;
-            answer.UserID = 5;
+            answer.UserID = user.UserID;
 
             AllClassicDBEntities entities = new AllClassicDBEntities();
             entities.AnswersTbls.Add(answer);
@@ -188,6 +207,50 @@ namespace AllClassicWeb
             return user != null;
         }
 
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteQuestionByID(int id)
+        {
+            AllClassicDBEntities entities = new AllClassicDBEntities();
+            var answers = entities.AnswersTbls.Where(x => x.QuestionID == id).ToList();
+
+            foreach (var answer in answers)
+            {
+                if (answer.AnswersTbl1 != null)
+                {
+                    if (answer.AnswersTbl1.Count > 0)
+                    {
+                        foreach (var item in answer.AnswersTbl1)
+                        {
+                            // check if the child has child answer
+                            if (item.AnswersTbl1 != null)
+                            {
+                                if (item.AnswersTbl1.Count > 0)
+                                {
+
+                                    entities.AnswersTbls.RemoveRange(item.AnswersTbl1);
+                                    entities.SaveChanges();
+                                }
+                            }
+                        }
+
+                        entities.AnswersTbls.RemoveRange(answer.AnswersTbl1);
+                        entities.SaveChanges();
+                    }
+                }
+
+
+                entities.AnswersTbls.Remove(entities.AnswersTbls.Where(x => x.AnswerID == answer.AnswerID).FirstOrDefault());
+                entities.SaveChanges();
+
+            }
+
+            entities.QuestionsTbls.Remove(entities.QuestionsTbls.Where(x => x.QuestionID == id).FirstOrDefault());
+            entities.SaveChanges();
+
+            return true;
+        }
+
 
         [System.Web.Services.WebMethod]
         [System.Web.Script.Services.ScriptMethod()]
@@ -199,8 +262,10 @@ namespace AllClassicWeb
             foreach (var item in childanswers)
             {
                 // check if the child has child answer
-                if (item.AnswersTbl1 != null) {
-                    if (item.AnswersTbl1.Count > 0) {
+                if (item.AnswersTbl1 != null)
+                {
+                    if (item.AnswersTbl1.Count > 0)
+                    {
 
                         entities.AnswersTbls.RemoveRange(item.AnswersTbl1);
                         entities.SaveChanges();
