@@ -10,7 +10,7 @@
                 <span class="filedName"><%= Resources.DisplayText.Question  %>
                 </span>
                 <asp:TextBox runat="server" ID="txt_question" Style="max-width: 500px; width: 500px; display: inline-block;" CssClass="form-control filedDisplay"></asp:TextBox>
-                <asp:Button runat="server" ID="btn_addNew" ValidationGroup="a" CssClass="btn btn-success contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNew" />
+                <asp:Button runat="server" ID="btn_addNew" ValidationGroup="a" CssClass="btn btn-success contentButton" Text="<%$Resources:DisplayText,Add %>" OnClick="onclick_btn_addNew" />
                 <br />
                 <asp:RequiredFieldValidator CssClass="filedDisplay" Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_question"
                     ErrorMessage="<%$Resources:DisplayText,PleaseFilltheQuestionFiled %>" />

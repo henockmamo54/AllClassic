@@ -14,37 +14,35 @@
 
 
             <div class="row">
-                <div class="row  col-xs-12" style="float: right;">
+                <div class="col-xs-12">
 
-                    <div class="col-xs-4">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Question %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txt_question" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                    <div class="pull-right" style="padding: 0px;">
+                        <asp:Button ID="inquiry" runat="server" Style="float: right;" CssClass="btn btn-primary contentButton " OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
                     </div>
-                    <div class="col-xs-4">
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Question %>  </span>
+                        <asp:TextBox AutoPostBack="true" ID="txt_question" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
+                    </div>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
 
-                        <div class="col-xs-3">
-                            <h5 style="display: inline-block; display: inline-block;" class="filedName"><%= Resources.DisplayText.Date %> </h5>
-                        </div>
-                        <div class="col-xs-8" style="padding: 0;">
+
+                        <span style="display: inline-block; padding-right: 5px; display: inline-block;" class="filedName"><%= Resources.DisplayText.Date %> </span>
+                        <div style="display: inline-block;">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
-                                <input type='text' class="form-control filedDisplay" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px;" />
+                                <input type='text' class="form-control filedDisplay" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px; width: 100px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-4">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.PosterEmailID %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px; display: inline-block;" class="filedName"><%= Resources.DisplayText.PosterEmailID %> </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox>
                     </div>
 
                 </div>
 
-                <div class=" col-xs-2 pull-right">
-                    <br />
-                    <asp:Button ID="inquiry" runat="server" Style="float: right;" CssClass="btn btn-primary contentButton " OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
-                </div>
             </div>
 
             <hr />
@@ -66,7 +64,7 @@
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class=" col-xs-12 filedDisplay" style="margin-bottom: 1em; color:black !important;">
+                        <div class=" col-xs-12 filedDisplay" style="margin-bottom: 1em; color: black !important;">
 
                             <div class="row">
                                 <div style="width: 5%; display: inline-block;">
@@ -257,8 +255,8 @@ order by timestamp desc"></asp:SqlDataSource>
         function closeReply(n, t) {
             $("#divReply" + t + n).hide();
             return false;
-        }        
-        
+        }
+
         function DeleteQuestion(n) {
             console.log(n);
             $.support.cors = true;

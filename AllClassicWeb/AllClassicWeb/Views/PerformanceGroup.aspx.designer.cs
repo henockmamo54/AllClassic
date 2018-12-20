@@ -13,6 +13,15 @@ namespace AllClassicWeb.Views {
     public partial class PerformanceGroup {
         
         /// <summary>
+        /// inquiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inquiry;
+        
+        /// <summary>
         /// DropDownList1_city control.
         /// </summary>
         /// <remarks>
@@ -65,15 +74,6 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_performancegroup;
-        
-        /// <summary>
-        /// inquiry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button inquiry;
         
         /// <summary>
         /// SqlDataSource1_getrecent20artists control.

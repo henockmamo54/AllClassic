@@ -158,7 +158,7 @@ namespace AllClassicWeb.Views
         {
 
             var x = e.CommandArgument;
-            Response.Redirect("PerformanceDetail.aspx?PID=" + x);
+            Response.Redirect("~/Views/PerformanceDetail.aspx?PID=" + x);
         }
 
         public void regionclicked(object sender, EventArgs e)

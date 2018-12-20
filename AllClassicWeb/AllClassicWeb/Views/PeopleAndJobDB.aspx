@@ -14,11 +14,53 @@
             <br />
 
             <div class="row">
-                <div class="row  col-xs-12" style="padding-right: 0px;">
+                <div class=" col-xs-12">
 
-                    <div class="col-xs-3" style="padding-left: 0;">
-                        <h5 style="display: inline-block;" class="filedName"><%=Resources.DisplayText.PeopleOrJob %></h5>
-                        <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control filedDisplay" Style="display: inline-block; width: 60%;">
+                    <div class="pull-right" style="padding: 0px;">
+                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
+                    </div>
+
+
+
+
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+
+                        <span style="display: inline-block;padding-right: 5px;" class="filedName"><%= Resources.DisplayText.ValidDate %> </span>
+                        <div style="display: inline-block;">
+                            <div class='input-group date' id='datetimepicker3' style="display: flex;">
+                                <input type='text' class="form-control filedDisplay" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker3" style="display: inline-block; border-right-width: 0px; width:100px;" />
+                                <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+
+                        <span style="display: inline-block;padding-right: 5px;" class="filedName"><%= Resources.DisplayText.City %> </span>
+
+                        <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control filedDisplay" Style="width: 100px;display: inline-block;" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+                                SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
+                                union
+                                SELECT LookUpID, MainCode, SubCode 
+FROM Main.LookUpTbl
+where maincode='City'
+"></asp:SqlDataSource>
+
+                    </div>
+
+
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;padding-right: 5px;" class="filedName"><%=Resources.DisplayText.Title %></span>
+                        <asp:TextBox runat="server" ID="txt_title" CssClass="form-control filedDisplay" Style="display: inline-block; width: 150px;" />
+
+                    </div>
+
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;padding-right: 5px;" class="filedName"><%=Resources.DisplayText.PeopleOrJob %></span>
+                        <asp:DropDownList ID="DropDownList1_type" runat="server" class="form-control filedDisplay" Style="display: inline-block; width: 100px;">
                             <asp:ListItem Value="0" Text="ALL"></asp:ListItem>
                             <asp:ListItem Value="1" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
                             <asp:ListItem Value="2" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
@@ -27,46 +69,6 @@
                     </div>
 
 
-                    <div class="col-xs-3">
-                        <h5 style="display: inline-block;" class="filedName"><%=Resources.DisplayText.Title %></h5>
-                        <asp:TextBox runat="server" ID="txt_title" CssClass="form-control filedDisplay" Style="display: inline-block; width: 60%;" />
-
-                    </div>
-
-                    <div class="col-xs-3" style="padding: 0;">
-                        <div class=" col-xs-6" style="margin-top: 10px; margin-bottom: 10px; padding: 0;">
-                            <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.ValidDate %> </span>
-                        </div>
-                        <div class=" col-xs-6" style="padding: 0;">
-                            <div class='input-group date' id='datetimepicker3' style="display: flex;">
-                                <input type='text' class="form-control filedDisplay" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker3" style="display: inline-block; border-right-width: 0px;" />
-                                <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-3" style="padding: 0;">
-                        <div class="col-xs-4 filedName" style="margin-top: 10px; margin-bottom: 10px;"><%=Resources.DisplayText.City %></div>
-                        <div class="col-xs-8" style="padding: 0;">
-                            <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control filedDisplay" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-                                SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
-                                union
-                                SELECT LookUpID, MainCode, SubCode 
-FROM Main.LookUpTbl
-where maincode='City'
-"></asp:SqlDataSource>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-12 col-xs-12" style="padding-right: 0px;">
-
-                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
-                        <%--<asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("VenueID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>--%>
-                    </div>
                 </div>
 
             </div>

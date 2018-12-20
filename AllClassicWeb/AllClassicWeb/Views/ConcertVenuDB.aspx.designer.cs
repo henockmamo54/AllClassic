@@ -13,6 +13,15 @@ namespace AllClassicWeb.Views {
     public partial class ConcertVenuDB {
         
         /// <summary>
+        /// inquiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inquiry;
+        
+        /// <summary>
         /// txtbox_namefilter control.
         /// </summary>
         /// <remarks>
@@ -47,15 +56,6 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// inquiry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button inquiry;
         
         /// <summary>
         /// SqlDataSource1_getrecent20artists control.
