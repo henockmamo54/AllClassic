@@ -5,7 +5,7 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
     <title><%: Page.Title %> - AllClassic Korea</title>
 
     <asp:PlaceHolder runat="server">
@@ -351,7 +351,7 @@
             </div>
             <hr />
             <footer id="masterFooter">
-                <p>&copy; <%: DateTime.Now.Year %> All Copyrights are reserved www.allclassickorea.co.kr 3F honsung Bldg. 220 Yeoksam-Ro Gangnam-gu, Seoul, Korea 06227</p>
+                <p>&copy; <%: DateTime.Now.Year %> All Copyrights are reserved www.allclassickorea.co.kr 3F HongSung Bldg. 220 Yeoksam-Ro Gangnam-gu, Seoul, Korea 06227</p>
             </footer>
         </div>
     </form>
