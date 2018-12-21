@@ -83,6 +83,8 @@
                                                     <asp:Label ID="lbldatetime" runat="server" Text='<% #Eval("CommentDate") %>'> date</asp:Label><br />
                                                     <a class="link" id='lnkReplyParent<%# Eval("CommentID") %>' href="javascript:void(0)" onclick="showReply(<%# Eval("CommentID") %>); return false;"><%=Resources.DisplayText.Reply %></a>
                                                     <a class="link" id="lnkCancel" href="javascript:void(0)" onclick='closeReply(<%# Eval("CommentID") %>); return false;'><%=Resources.DisplayText.Cancel %></a>
+                                                    
+		 <asp:LinkButton class="link " runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveComment_Click" CommandArgument='<%#Eval("CommentID") %>'>  <%=Resources.DisplayText.Delete %>  </asp:LinkButton>
 
                                                     <div id='divReply<%# Eval("CommentID") %>' style="display: none; margin-top: 5px;">
                                                         <asp:TextBox ID="txtCommentReplyParent" runat="server" TextMode="MultiLine" Rows="1" Width="100%" Height="60px" Style="display: inline-block; border-radius: 5px; vertical-align: middle; max-width: 85%;"></asp:TextBox>
@@ -492,6 +494,45 @@
 
 
 
+        }
+
+        
+        function DeleteComment(n) { 
+            $.support.cors = true;
+
+            //check confirmation
+            if (confirm("Are you sure you want to delete?")) {
+                // check for user login
+
+                $.ajax({
+                    type: "POST",
+                    url: "PerformanceDetail.aspx/DeleteCommentByID", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ CommentID: n }), //{ },//data
+                    success: function (data) {
+                        //alert('success') 
+
+                        //if log in show the reply message 
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            location.reload();
+                        }
+
+                        else {
+                            alert('Entry not deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
+                    }
+                });
+
+            }
         }
 
     </script>

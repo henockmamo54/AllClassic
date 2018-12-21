@@ -79,7 +79,44 @@ namespace AllClassicWeb.Views
             }
         }
 
-        
+        public void btnRemoveComment_Click(object sender, CommandEventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "PopDeleteAnswerDeleteComment", "DeleteComment('" + e.CommandArgument + "');", true);
+        }
+
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteCommentByID(int CommentID)
+        {
+            AllClassicDBEntities entities = new AllClassicDBEntities();
+
+            List<PerformanceCommentTbl> comments = entities.PerformanceCommentTbls.ToList().Where(x => x.ParentCommentID == CommentID).ToList();
+
+            foreach (var item in comments)
+            {
+                // check if the child has child answer
+                if (item.PerformanceCommentTbl1 != null)
+                {
+                    if (item.PerformanceCommentTbl1.Count > 0)
+                    {
+
+                        entities.PerformanceCommentTbls.RemoveRange(item.PerformanceCommentTbl1.ToList());
+                        entities.SaveChanges();
+                    }
+                }
+
+                entities.PerformanceCommentTbls.Remove(item);
+                entities.SaveChanges();
+            }
+
+
+            entities.PerformanceCommentTbls.Remove(entities.PerformanceCommentTbls.ToList().Where(x => x.CommentID == CommentID).FirstOrDefault());
+            entities.SaveChanges();
+
+            return true;
+        }
+
+
         public void onclick_btn_deleteArtist(object sender, EventArgs e)
         {
 
@@ -103,11 +140,38 @@ namespace AllClassicWeb.Views
                 (item.ItemType == ListItemType.AlternatingItem))
             {
                 var detail = (Repeater)item.FindControl("SecondChildRepeater");
-                int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID;
-                detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID);
+                var parent = ((PerformanceCommentTbl)e.Item.DataItem);
+
+                var DlnkReplyParent = (LinkButton)e.Item.FindControl("DlnkReplyParent");
+                if (user != null)
+                {
+
+                    if (user.UserID != parent.UserID)
+                        DlnkReplyParent.Visible = false;
+                    else DlnkReplyParent.Visible = true;
+                }
+                else DlnkReplyParent.Visible = false;
+
+                detail.DataSource = CommentLogic.getCommentsByParentCommentID(parent.CommentID);
                 detail.DataBind();
 
             }
+        }
+
+
+        protected void SecondChildRepeater_onItemDatabound(object sender, RepeaterItemEventArgs e)
+        {
+            var parent = ((PerformanceCommentTbl)e.Item.DataItem);
+
+            var DlnkReplyParent = (LinkButton)e.Item.FindControl("DlnkReplyParent");
+            if (user != null)
+            {
+
+                if (user.UserID != parent.UserID)
+                    DlnkReplyParent.Visible = false;
+                else DlnkReplyParent.Visible = true;
+            }
+            else DlnkReplyParent.Visible = false;
         }
 
 
@@ -118,8 +182,19 @@ namespace AllClassicWeb.Views
                 (item.ItemType == ListItemType.AlternatingItem))
             {
                 var detail = (Repeater)item.FindControl("FirstChildRepeater");
-                int parentID = ((PerformanceCommentTbl)e.Item.DataItem).CommentID;
-                detail.DataSource = CommentLogic.getCommentsByParentCommentID(parentID);
+                var parent = ((PerformanceCommentTbl)e.Item.DataItem);
+
+                var DlnkReplyParent = (LinkButton)e.Item.FindControl("DlnkReplyParent");
+                if (user != null)
+                {
+
+                    if (user.UserID != parent.UserID)
+                        DlnkReplyParent.Visible = false;
+                    else DlnkReplyParent.Visible = true;
+                }
+                else DlnkReplyParent.Visible = false;
+
+                detail.DataSource = CommentLogic.getCommentsByParentCommentID(parent.CommentID); 
                 detail.DataBind();
 
             }
