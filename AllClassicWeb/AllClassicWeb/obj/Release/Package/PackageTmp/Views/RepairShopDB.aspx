@@ -6,22 +6,18 @@
 
             <br />
             <div class="row">
-                <div class="row col-md-12 col-xs-12  col-xs-12">
-                    <div class="col-md-3 col-xs-3 ">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Name %> </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                <div class="col-xs-12">
+
+                    <div class="pull-right" style="padding: 0px;">
+                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
                     </div>
-                    <div class="col-md-3 col-xs-3  ">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Alias %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Expertise %>  </span>
+                        <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
                     </div>
-                    <div class="col-md-3 col-xs-3 ">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Expertise %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" CssClass="form-control filedDisplay" Style="width: 69%; display: inline-block;"></asp:TextBox>
-                    </div>
-                    <div class="col-md-3 col-xs-3 " style="padding-right: 0;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.City %>  </h5>
-                        <asp:DropDownList Style="display: inline-block; width: 85%;" ID="DropDownList1_cityfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.City %>  </span>
+                        <asp:DropDownList Style="display: inline-block; width: 100px;" ID="DropDownList1_cityfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT   LookUpID=-1, MainCode='ALL', SubCode='ALL'
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -29,13 +25,18 @@ FROM Main.LookUpTbl
 where maincode='City'
 "></asp:SqlDataSource>
                     </div>
+                    
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Alias %>  </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
+                    </div>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Name %> </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
+                    </div>
+
                 </div>
             </div>
-            <br />
-            <div class="col-md-12 col-xs-12">
-                <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
-            </div>
-            <br />
 
             <div class="row" style="padding-right: 15px;">
 
@@ -47,7 +48,7 @@ join Main.usertbl u on c.Userid=u.userid
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
 
                     <table class="table table-striped">
                         <thead>
@@ -80,15 +81,15 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
             <div class="row">
-                
-            <hr />
 
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="RepairShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;"   OnItemDataBound="collegeListContainer_OnItemDataBound">
-                    
+                <hr />
+
+                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="RepairShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
+
                     <EmptyDataTemplate>
                         <div class=" col-xs-12 contentHeader">
                             <h3>No records available.</h3>
-                        </div> 
+                        </div>
                     </EmptyDataTemplate>
                     <GroupTemplate>
                         <div id="itemPlaceholderContainer" runat="server">
@@ -101,7 +102,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             <%--<div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">--%>
                             <div>
                                 <div class="panel panel-default shadowedPanel shadowedbox_hover">
-                                    <div class="panel-heading contentHeader" style="background-color:#eaf2f7;">
+                                    <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
                                         <h4><%# (Eval("Name")) .ToString().Length>15?
                                         (Eval("Name")) .ToString().Substring(0,15)+ " ....":
                                         (Eval("Name")) .ToString()%></h4>
@@ -128,7 +129,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 </tr>
                                                 <tr>
                                                     <td class="filedName"><%# Resources.DisplayText.Email %>:</td>
-                                                    <td  class="filedDisplay"><%#Eval("EmailID") %></td>
+                                                    <td class="filedDisplay"><%#Eval("EmailID") %></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="filedName"><%# Resources.DisplayText.Address %>:</td>
@@ -148,20 +149,23 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 </tr>
                                                 <tr>
                                                     <td class="filedName"><%# Resources.DisplayText.HomePage %>:</td>
-                                                    <td  class="filedDisplay">
+                                                    <td class="filedDisplay">
                                                         <asp:LinkButton runat="server" target="_blank" OnCommand="homePageClicked" CommandArgument='<%# Eval("HomePage") %>' Text='<%# Eval("HomePage") %>'></asp:LinkButton></td>
                                                     <%--href='http://<%# Eval("HomePage") %>'--%>
                                                 </tr>
                                                 <tr>
-                                                    <td><br /></td>
-                                                    <td><asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'> <%= Resources.DisplayText.Edit %></asp:LinkButton>
-                                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" style="margin-left:5px;" ID="delete"  OnClientClick='<%# "deletebtnclicked(" +Eval("RepairShopID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
-                                       
+                                                    <td>
+                                                        <br />
+                                                    </td>
+                                                    <td>
+                                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'> <%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("RepairShopID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        
+
                                     </div>
                                 </div>
 
@@ -216,42 +220,42 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
     </style>
     <script type="text/javascript">
 
-        
+
         function deletebtnclicked(id) {
             var txt;
             if (confirm('Are you sure you want to delete?')) {
                 txt = "You pressed OK!";
 
-                 $.ajax({
-                type: "POST",
-                url: "RepairShopDB.aspx/DeleteRepairshop", //Pagename/Functionname
-                contentType: "application/json;charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({ n: id }), //{ },//data
-                success: function (data) {
-                     
-                    if (data.d) {
+                $.ajax({
+                    type: "POST",
+                    url: "RepairShopDB.aspx/DeleteRepairshop", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ n: id }), //{ },//data
+                    success: function (data) {
 
-                        alert('Entry deleted!!!');
-                        location.reload();
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            location.reload();
+                        }
+
+                        else {
+                            alert('Entry not  deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
                     }
-
-                    else {
-                        alert('Entry not  deleted!!!');
-                    }
-
-                },
-                error: function (result) {
-                    console.log(result)
-                    //alert("error")
-
-                }
-            });
+                });
 
 
             } else {
                 txt = "You pressed Cancel!";
-            } 
+            }
         }
 
 

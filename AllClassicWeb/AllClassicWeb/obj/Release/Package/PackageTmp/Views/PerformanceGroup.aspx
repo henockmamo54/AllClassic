@@ -4,13 +4,17 @@
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
             <br />
-           
-            <div class="row">
-                <div class="col-xs-12" style="padding-right: 0px;">
 
-                    <div class="col-xs-2 " style="padding-right: 0px; padding-left: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.City %>  </h5>
-                        <asp:DropDownList ID="DropDownList1_city" runat="server" class="form-control filedDisplay" AutoPostBack="True" Style="width: 80%; display: inline-block;" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="pull-right" style="padding: 0px;">
+                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
+                    </div>
+
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.City %>  </span>
+                        <asp:DropDownList ID="DropDownList1_city" runat="server" class="form-control filedDisplay" AutoPostBack="True" Style="width: 100px; display: inline-block;" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -20,9 +24,9 @@ where maincode='City'
 
                     </div>
 
-                    <div class="col-xs-3">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.GroupType %>  </h5>
-                        <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control filedDisplay" Style="width: 63%; display: inline-block;" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.GroupType %>  </span>
+                        <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control filedDisplay" Style="width: 100px; display: inline-block;" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1_grouptypelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -32,25 +36,22 @@ where maincode='GroupType'
 
                     </div>
 
-                    <div class="col-xs-3 " style="padding-right: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Alias %> </h5>
-                        <asp:TextBox  ID="txt_alias" runat="server" class="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Alias %> </span>
+                        <asp:TextBox ID="txt_alias" runat="server" class="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
                     </div>
 
-                    <div class="col-xs-4" style="padding-right: 0px;">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.PerformanceGroup %> </h5>
-                        <asp:TextBox  ID="txt_performancegroup" runat="server" class="form-control filedDisplay" Style="width: 58%; display: inline-block;"></asp:TextBox>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.PerformanceGroup %> </span>
+                        <asp:TextBox ID="txt_performancegroup" runat="server" class="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
                     </div>
-                  
-                    <div class="col-xs-12" style="margin-top: 10px;">
-                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton"  OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
-                    </div>
+
                 </div>
 
             </div>
 
             <div class="row" style="padding-right: 15px;">
-            <br />
+                <br />
                 <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 pg.*, c.SubCode as cityname, gt.SubCode as grouptpename, u.EmailID from Main.PerformanceGroupTbl pg
 left join (select * from Main.LookUpTbl where MainCode='city') c on pg.City=c.LookUpID
@@ -94,7 +95,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
 
             <div class="row">
-            <hr  />
+                <hr />
                 <asp:ListView runat="server" ID="pgListContainer" DataKeyNames="PerformanceGroupID" DataSourceID="SqlDataSource1_pglist" GroupItemCount="3" Style="width: 100%;">
 
                     <EmptyDataTemplate>
@@ -109,7 +110,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                         </div>
                     </GroupTemplate>
                     <ItemTemplate>
-                        <div class="col-xs-4" style="padding-right: 5px; padding-left: 5px; margin-bottom:10px;">
+                        <div class="col-xs-4" style="padding-right: 5px; padding-left: 5px; margin-bottom: 10px;">
                             <div>
                                 <div class="panel panel-default shadowedPanel shadowedbox_hover orchContainer">
                                     <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
@@ -199,7 +200,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                 <asp:Button runat="server" ID="btn_addNewPerformanceGroup" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNewPerformanceGroup" />
             </div>
         </ContentTemplate>
-        
+
     </asp:UpdatePanel>
 
 </asp:Content>

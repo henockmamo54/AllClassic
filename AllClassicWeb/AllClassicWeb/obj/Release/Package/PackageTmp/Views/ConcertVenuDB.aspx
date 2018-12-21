@@ -8,27 +8,28 @@
 
             <br />
             <div class="row">
-                <div class="row col-md-12 col-xs-12  col-xs-12">
-                    <div class="col-md-4 col-xs-4 ">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.VenuName %> </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" class="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                <div class=" col-xs-12">
+
+                    <div class="pull-right" style="padding: 0px;">
+                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
                     </div>
-                    <div class="col-md-3 col-xs-3  ">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Alias %>  </h5>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" class="form-control filedDisplay" Style="width: 70%; display: inline-block;"></asp:TextBox>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;padding-right: 5px;" class="filedName"><%= Resources.DisplayText.VenuName %> </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" class="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
                     </div>
-                    <div class="col-md-3 col-xs-3 ">
-                        <h5 style="display: inline-block;" class="filedName"><%= Resources.DisplayText.City %>  </h5>
-                        <asp:DropDownList Style="display: inline-block; width: 70%;" ID="DropDownList1_cityfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Alias %>  </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" class="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
+                    </div>
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;padding-right: 5px;" class="filedName"><%= Resources.DisplayText.City %>  </span>
+                        <asp:DropDownList Style="display: inline-block; width: 100px;" ID="DropDownList1_cityfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT   LookUpID=-1, MainCode='ALL', SubCode='ALL'
 Union
 SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='City'
 "></asp:SqlDataSource>
-                    </div>
-                    <div class="col-md-2 col-xs-2 ">
-                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right Contentdisplay" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
                     </div>
 
                 </div>
@@ -43,7 +44,7 @@ left join Main.usertbl u on c.Userid=u.userid
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
+                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
 
                     <table class="table table-striped">
                         <thead>
@@ -79,7 +80,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
             <div class="row">
-            <hr />
+                <hr />
                 <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="VenueID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                     <EmptyDataTemplate>
@@ -151,7 +152,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 <%--href='http://<%# Eval("HomePage") %>'--%>
                                             </tr>
                                             <tr>
-                                                <td> <br /></td>
+                                                <td>
+                                                    <br />
+                                                </td>
                                                 <td>
                                                     <asp:LinkButton runat="server" ID="edit" OnCommand="editvenuClicked" CommandArgument='<%# Eval("VenueID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                                     <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("VenueID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
@@ -207,42 +210,42 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
     </asp:UpdatePanel>
 
     <script type="text/javascript">
-               
+
         function deletebtnclicked(id) {
             var txt;
             if (confirm('Are you sure you want to delete?')) {
                 txt = "You pressed OK!";
 
-                 $.ajax({
-                type: "POST",
-                url: "ConcertVenuDB.aspx/DeleteVenu", //Pagename/Functionname
-                contentType: "application/json;charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({ n: id }), //{ },//data
-                success: function (data) {
-                     
-                    if (data.d) {
+                $.ajax({
+                    type: "POST",
+                    url: "ConcertVenuDB.aspx/DeleteVenu", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ n: id }), //{ },//data
+                    success: function (data) {
 
-                        alert('Entry deleted!!!');
-                        location.reload();
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            location.reload();
+                        }
+
+                        else {
+                            alert('Entry not  deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
                     }
-
-                    else {
-                        alert('Entry not  deleted!!!');
-                    }
-
-                },
-                error: function (result) {
-                    console.log(result)
-                    //alert("error")
-
-                }
-            });
+                });
 
 
             } else {
                 txt = "You pressed Cancel!";
-            } 
+            }
         }
 
     </script>
@@ -254,6 +257,5 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             padding-right: 5px;
             color: black !important;
         }
-
     </style>
 </asp:Content>

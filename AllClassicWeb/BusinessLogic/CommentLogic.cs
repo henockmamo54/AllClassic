@@ -33,6 +33,14 @@ namespace BusinessLogic
                     .ToList();
         }
 
+        public static List<PerformanceCommentTbl> getCommentsByID(int commentID)
+        {
+            AllClassicDBEntities entities = new AllClassicDBEntities();
+            return entities.PerformanceCommentTbls.ToList().Where(x => x.CommentID == commentID)
+                    .OrderByDescending(x => x.CommentDate)
+                    .ToList();
+        }
+
         public static List<PerformanceCommentTbl> getParentCommentsByPerformanceID(int performanceID)
         {
             AllClassicDBEntities entities = new AllClassicDBEntities();

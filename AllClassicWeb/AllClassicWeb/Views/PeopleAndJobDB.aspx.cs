@@ -69,7 +69,7 @@ namespace AllClassicWeb.Views
         {
 
             var filterQuery = "";
-            if (DropDownList1_type.SelectedIndex != 0) filterQuery += " where p.PeopleOrJob like N'%" + DropDownList1_type.SelectedItem.Text + "%'";
+            if (DropDownList1_type.SelectedIndex != 0) filterQuery += " where p.PeopleOrJob like N'%" + DropDownList1_type.SelectedItem.Value + "%'";
 
             if (datetimepicker3.Value.Length != 0)
             {

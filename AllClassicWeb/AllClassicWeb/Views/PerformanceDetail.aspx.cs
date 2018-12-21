@@ -79,6 +79,7 @@ namespace AllClassicWeb.Views
             }
         }
 
+        
         public void onclick_btn_deleteArtist(object sender, EventArgs e)
         {
 

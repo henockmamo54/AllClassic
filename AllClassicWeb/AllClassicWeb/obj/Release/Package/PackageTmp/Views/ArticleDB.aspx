@@ -17,21 +17,22 @@
             <div class="row">
                 <div class="col-xs-12">
 
-                    <div class="col-xs-1 pull-right" style="padding: 0px;">
+                    <div class="pull-right" style="padding: 0px;">
                         <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary contentButton  pull-right" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText,Inquiry %>" />
                     </div>
 
-                    <div class="col-xs-4 pull-right" style="padding-right: 10px; padding-left: 10px;">
-                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.PosterEmailID %>  </span>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay  pull-right" Style="width: 65%; display: inline-block;"></asp:TextBox>
+                    <div class="pull-right" style="padding-right: 15px; padding-left: 15px;">
+                        <span style="display: inline-block;vertical-align: -webkit-baseline-middle; padding-right:5px;" class="filedName" ><%= Resources.DisplayText.PosterEmailID %>  </span>
+                        <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" CssClass="form-control filedDisplay  pull-right" Style="width: 150px; display: inline-block;"></asp:TextBox>
                     </div>
 
-                    <div class="col-xs-3 pull-right" style="padding: 0px;">
+                    <div class="pull-right" >
 
-                        <span style="display: inline-block; display: inline-block;" class="filedName"><%= Resources.DisplayText.PostingDate %> </span>
+                        <span style="display: inline-block; padding-right:5px;" class="filedName"><%= Resources.DisplayText.PostingDate %> </span>
+
                         <div style="display: inline-block;">
                             <div class='input-group date' id='datetimepicker2' style="display: flex;">
-                                <input type='text' class="form-control filedDisplay" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="width: 65%; display: inline-block; border-right-width: 0px;" />
+                                <input type='text' class="form-control filedDisplay" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="width: 100px; display: inline-block; border-right-width: 0px;" />
                                 <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
