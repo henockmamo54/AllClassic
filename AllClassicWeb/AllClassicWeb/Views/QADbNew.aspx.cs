@@ -48,7 +48,7 @@ namespace AllClassicWeb
             if (user != null)
             {
 
-                if (user.UserID != answer.UserID)
+                if (user.UserID != answer.UserID || user.IsMasterUser == 1)
                     DlnkReplyParent.Visible = false;
                 else DlnkReplyParent.Visible = true;
             }
@@ -64,7 +64,7 @@ namespace AllClassicWeb
             if (user != null)
             {
 
-                if (user.UserID != answer.UserID)
+                if (user.UserID != answer.UserID || user.IsMasterUser == 1)
                     DlnkReplyParent.Visible = false;
                 else DlnkReplyParent.Visible = true;
             }
@@ -87,9 +87,9 @@ namespace AllClassicWeb
             if (user != null)
             {
 
-                if (user.UserID != userid)
-                    DlnkReplyParent.Visible = false;
-                else DlnkReplyParent.Visible = true;
+                if (user.UserID == userid || user.IsMasterUser == 1)
+                    DlnkReplyParent.Visible = true;
+                else DlnkReplyParent.Visible = false;
             }
             else DlnkReplyParent.Visible = false;
 
@@ -115,7 +115,7 @@ namespace AllClassicWeb
             if (user != null)
             {
 
-                if (user.UserID != answer.UserID)
+                if (user.UserID != answer.UserID || user.IsMasterUser == 1)
                     DlnkReplyParent.Visible = false;
                 else DlnkReplyParent.Visible = true;
             }

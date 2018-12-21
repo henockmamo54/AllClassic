@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="63806996df3c499094cf0d1d165ac080" Name="Diagram1" ZoomLevel="10">
+      <Diagram DiagramId="63806996df3c499094cf0d1d165ac080" Name="Diagram1" ZoomLevel="108">
         <EntityTypeShape EntityType="AllClassicDBModel.AnswersTbl" Width="1.5" PointX="5.25" PointY="42.375" />
         <EntityTypeShape EntityType="AllClassicDBModel.ArticleTbl" Width="1.5" PointX="3" PointY="52.375" />
         <EntityTypeShape EntityType="AllClassicDBModel.AuditionTbl" Width="1.5" PointX="3" PointY="48.875" />
@@ -26,35 +26,20 @@
         <EntityTypeShape EntityType="AllClassicDBModel.PerformanceGroupTbl" Width="1.5" PointX="5.25" PointY="24.5" />
         <EntityTypeShape EntityType="AllClassicDBModel.PerformanceMusicianInstrumentTbl" Width="1.5" PointX="12.75" PointY="47.75" />
         <EntityTypeShape EntityType="AllClassicDBModel.PerformanceTbl" Width="1.5" PointX="10.5" PointY="35.25" />
-        <EntityTypeShape EntityType="AllClassicDBModel.UserTbl" Width="1.5" PointX="0.75" PointY="30.125" />
         <EntityTypeShape EntityType="AllClassicDBModel.UserUserType" Width="1.5" PointX="6" PointY="33" />
         <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__Paren__2CF2ADDF" />
         <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__Quest__2B0A656D" />
-        <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__UserI__2DE6D218" />
-        <AssociationConnector Association="AllClassicDBModel.FK__ArticleTb__UserI__04E4BC85" />
-        <AssociationConnector Association="AllClassicDBModel.FK__AuditionT__UserI__05D8E0BE" />
-        <AssociationConnector Association="AllClassicDBModel.FK__ConcourTb__UserI__06CD04F7" />
-        <AssociationConnector Association="AllClassicDBModel.FK__Instrumen__UserI__5535A963" />
         <AssociationConnector Association="AllClassicDBModel.FK__MusicianT__Major__5812160E" />
         <AssociationConnector Association="AllClassicDBModel.FK__MusicianT__Major__59063A47" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Instr__73BA3083" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__MainI__6E01572D" />
-        <AssociationConnector Association="AllClassicDBModel.FK__MusicShop__UserI__08B54D69" />
-        <AssociationConnector Association="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D" />
         <AssociationConnector Association="AllClassicDBModel.FK__PeopleAndJ__City__0B91BA14" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Paren__1332DBDC" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__10566F31" />
-        <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__114A936A" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__17036CC0" />
-        <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__160F4887" />
-        <AssociationConnector Association="AllClassicDBModel.FK__Questions__UserI__2739D489" />
-        <AssociationConnector Association="AllClassicDBModel.FK__RepairSho__UserI__07C12930" />
         <AssociationConnector Association="AllClassicDBModel.FK__UserUserT__UserT__4F7CD00D" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Venue__693CA210" />
         <AssociationConnector Association="AllClassicDBModel.FK__VenueTbl__City__6383C8BA" />
-        <AssociationConnector Association="AllClassicDBModel.FK__VenueTbl__UserID__6477ECF3" />
-        <AssociationConnector Association="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C" />
-        <AssociationConnector Association="AllClassicDBModel.FK__LookUpTbl__UserI__52593CB8" />
         <AssociationConnector Association="AllClassicDBModel.FK__MusicianT__Major__02084FDA" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Group__5EBF139D" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__6B24EA82" />
@@ -62,13 +47,28 @@
         <AssociationConnector Association="AllClassicDBModel.FK__Performanc__City__5FB337D6" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performanc__City__68487DD7" />
         <AssociationConnector Association="AllClassicDBModel.FK__MusicianE__Music__02FC7413" />
-        <AssociationConnector Association="AllClassicDBModel.FK__MusicianT__UserI__59FA5E80" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Condu__6C190EBB" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__MainT__6D0D32F4" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Music__72C60C4A" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__42E1EEFE" />
-        <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__60A75C0F" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__Perfo__71D1E811" />
+        <EntityTypeShape EntityType="AllClassicDBModel.UserTbl" Width="1.5" PointX="0.75" PointY="38" />
+        <AssociationConnector Association="AllClassicDBModel.FK__AnswersTb__UserI__2DE6D218" />
+        <AssociationConnector Association="AllClassicDBModel.FK__ArticleTb__UserI__04E4BC85" />
+        <AssociationConnector Association="AllClassicDBModel.FK__AuditionT__UserI__05D8E0BE" />
+        <AssociationConnector Association="AllClassicDBModel.FK__ConcourTb__UserI__06CD04F7" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Instrumen__UserI__5535A963" />
+        <AssociationConnector Association="AllClassicDBModel.FK__MusicShop__UserI__08B54D69" />
+        <AssociationConnector Association="AllClassicDBModel.FK__PeopleAnd__UserI__0C85DE4D" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__114A936A" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__160F4887" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Questions__UserI__2739D489" />
+        <AssociationConnector Association="AllClassicDBModel.FK__RepairSho__UserI__07C12930" />
+        <AssociationConnector Association="AllClassicDBModel.FK__VenueTbl__UserID__6477ECF3" />
+        <AssociationConnector Association="AllClassicDBModel.FK__CollegeTb__UserI__03F0984C" />
+        <AssociationConnector Association="AllClassicDBModel.FK__LookUpTbl__UserI__52593CB8" />
+        <AssociationConnector Association="AllClassicDBModel.FK__MusicianT__UserI__59FA5E80" />
+        <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__60A75C0F" />
         <AssociationConnector Association="AllClassicDBModel.FK__Performan__UserI__6EF57B66" />
         <AssociationConnector Association="AllClassicDBModel.FK__UserUserT__UserI__4E88ABD4" />
       </Diagram>

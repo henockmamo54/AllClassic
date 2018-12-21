@@ -26,7 +26,7 @@ namespace DataAccessP
         public Nullable<int> UserID { get; set; }
         public Nullable<System.DateTime> UpdateTimeStamp { get; set; }
     
-        public virtual UserTbl UserTbl { get; set; }
         public virtual LookUpTbl LookUpTbl { get; set; }
+        public virtual UserTbl UserTbl { get; set; }
     }
 }

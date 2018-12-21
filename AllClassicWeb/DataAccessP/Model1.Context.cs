@@ -46,7 +46,7 @@ namespace DataAccessP
         public virtual DbSet<PerformanceGroupTbl> PerformanceGroupTbls { get; set; }
         public virtual DbSet<PerformanceMusicianInstrumentTbl> PerformanceMusicianInstrumentTbls { get; set; }
         public virtual DbSet<PerformanceTbl> PerformanceTbls { get; set; }
-        public virtual DbSet<UserTbl> UserTbls { get; set; }
         public virtual DbSet<UserUserType> UserUserTypes { get; set; }
+        public virtual DbSet<UserTbl> UserTbls { get; set; }
     }
 }

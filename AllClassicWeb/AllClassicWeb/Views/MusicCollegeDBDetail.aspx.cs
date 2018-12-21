@@ -35,7 +35,7 @@ namespace AllClassicWeb.Views
 
                 if (user != null)
                 {
-                    if (user.UserID == college.UserID) { btn_editcollege.Visible = true; btn_deletecollege.Visible = true; }
+                    if (user.UserID == college.UserID || user.IsMasterUser == 1) { btn_editcollege.Visible = true; btn_deletecollege.Visible = true; }
                     else { btn_editcollege.Visible = false; btn_deletecollege.Visible = false; }
                 }
                 else

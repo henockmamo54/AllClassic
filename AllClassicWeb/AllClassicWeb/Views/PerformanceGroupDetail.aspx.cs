@@ -41,7 +41,7 @@ namespace AllClassicWeb.Views
 
                 if (user != null)
                 {
-                    if (user.UserID == pg.UserID) { btn_editpg.Visible = true; btn_delete.Visible = true; }
+                    if (user.UserID == pg.UserID || user.IsMasterUser == 1) { btn_editpg.Visible = true; btn_delete.Visible = true; }
                     else { btn_editpg.Visible = false; btn_delete.Visible = false; }
                 }
                 else { btn_editpg.Visible = false; btn_delete.Visible = false; }

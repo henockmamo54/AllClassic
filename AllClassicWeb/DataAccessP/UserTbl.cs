@@ -53,6 +53,7 @@ namespace DataAccessP
         public string Address { get; set; }
         public string PosterEmailID { get; set; }
         public System.DateTime UpdateTimeStamp { get; set; }
+        public Nullable<int> IsMasterUser { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AnswersTbl> AnswersTbls { get; set; }

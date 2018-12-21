@@ -48,12 +48,12 @@ namespace DataAccessP
         public virtual LookUpTbl LookUpTbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MusicianEndorserTbl> MusicianEndorserTbls { get; set; }
-        public virtual UserTbl UserTbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceTbl> PerformanceTbls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceTbl> PerformanceTbls1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PerformanceMusicianInstrumentTbl> PerformanceMusicianInstrumentTbls { get; set; }
+        public virtual UserTbl UserTbl { get; set; }
     }
 }

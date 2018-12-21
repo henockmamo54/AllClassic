@@ -71,7 +71,7 @@ namespace AllClassicWeb.Views
 
                 if (user != null)
                 {
-                    if (user.UserID == performance.UserID) { btn_editArtist.Visible = true; btn_deleteArtist.Visible = true; }
+                    if ((user.UserID == performance.UserID )|| user.IsMasterUser==1) { btn_editArtist.Visible = true; btn_deleteArtist.Visible = true; }
                     else { btn_editArtist.Visible = false; btn_deleteArtist.Visible = false; }
                 }
                 else { btn_editArtist.Visible = false; btn_deleteArtist.Visible = false; }
@@ -146,7 +146,7 @@ namespace AllClassicWeb.Views
                 if (user != null)
                 {
 
-                    if (user.UserID != parent.UserID)
+                    if (user.UserID != parent.UserID || user.IsMasterUser == 1)
                         DlnkReplyParent.Visible = false;
                     else DlnkReplyParent.Visible = true;
                 }
@@ -167,7 +167,7 @@ namespace AllClassicWeb.Views
             if (user != null)
             {
 
-                if (user.UserID != parent.UserID)
+                if (user.UserID != parent.UserID || user.IsMasterUser == 1)
                     DlnkReplyParent.Visible = false;
                 else DlnkReplyParent.Visible = true;
             }
@@ -188,7 +188,7 @@ namespace AllClassicWeb.Views
                 if (user != null)
                 {
 
-                    if (user.UserID != parent.UserID)
+                    if (user.UserID != parent.UserID || user.IsMasterUser == 1)
                         DlnkReplyParent.Visible = false;
                     else DlnkReplyParent.Visible = true;
                 }

@@ -45,7 +45,7 @@ namespace AllClassicWeb.Views
             int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString());
             if (user != null)
             {
-                if (user.UserID == userID) { editbutton.Visible = true; deleteButton.Visible = true; }
+                if (user.UserID == userID || user.IsMasterUser == 1) { editbutton.Visible = true; deleteButton.Visible = true; }
                 else { editbutton.Visible = false; deleteButton.Visible = false; }
             }
             else { editbutton.Visible = false; deleteButton.Visible = false; }
