@@ -83,8 +83,8 @@
                                                     <asp:Label ID="lbldatetime" runat="server" Text='<% #Eval("CommentDate") %>'> date</asp:Label><br />
                                                     <a class="link" id='lnkReplyParent<%# Eval("CommentID") %>' href="javascript:void(0)" onclick="showReply(<%# Eval("CommentID") %>); return false;"><%=Resources.DisplayText.Reply %></a>
                                                     <a class="link" id="lnkCancel" href="javascript:void(0)" onclick='closeReply(<%# Eval("CommentID") %>); return false;'><%=Resources.DisplayText.Cancel %></a>
-                                                    
-		 <asp:LinkButton class="link " runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveComment_Click" CommandArgument='<%#Eval("CommentID") %>'>  <%=Resources.DisplayText.Delete %>  </asp:LinkButton>
+
+                                                    <asp:LinkButton class="link " runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveComment_Click" CommandArgument='<%#Eval("CommentID") %>'>  <%=Resources.DisplayText.Delete %>  </asp:LinkButton>
 
                                                     <div id='divReply<%# Eval("CommentID") %>' style="display: none; margin-top: 5px;">
                                                         <asp:TextBox ID="txtCommentReplyParent" runat="server" TextMode="MultiLine" Rows="1" Width="100%" Height="60px" Style="display: inline-block; border-radius: 5px; vertical-align: middle; max-width: 85%;"></asp:TextBox>
@@ -111,7 +111,9 @@
                                                                             <a class="link" id='lnkReplyParent<%# Eval("CommentID") %>' href="javascript:void(0)" onclick="showReply(<%# Eval("CommentID") %>+'c'); return false;"><%=Resources.DisplayText.Reply %></a>
                                                                             <a class="link" id="lnkCancel" href="javascript:void(0)" onclick="closeReply(<%# Eval("CommentID") %>+'c'); return false;"><%=Resources.DisplayText.Cancel %></a>
 
-                                                                            <asp:Repeater ID="SecondChildRepeater" runat="server">
+                                                                            <asp:LinkButton class="link " runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveComment_Click" CommandArgument='<%#Eval("CommentID") %>'>  <%=Resources.DisplayText.Delete %>  </asp:LinkButton>
+
+                                                                            <asp:Repeater ID="SecondChildRepeater" runat="server" OnItemDataBound="SecondChildRepeater_onItemDatabound">
 
                                                                                 <ItemTemplate>
                                                                                     <div class="row">
@@ -128,6 +130,7 @@
                                                                                                     <asp:Label ID="lblCommentMessage" runat="server" Text='<% #Eval("CommentMessage") %>'></asp:Label><br />
                                                                                                     <asp:Label ID="lbldatetime" runat="server" Text='<% #Eval("CommentDate") %>'> date</asp:Label><br />
 
+                                                                                                    <asp:LinkButton class="link " runat="server" ID='DlnkReplyParent' OnCommand="btnRemoveComment_Click" CommandArgument='<%#Eval("CommentID") %>'>  <%=Resources.DisplayText.Delete %>  </asp:LinkButton>
                                                                                                 </td>
                                                                                             </tr>
                                                                                         </table>
@@ -176,7 +179,7 @@
                 <div class="col-md-4 col-xs-4" style="padding: 0;">
 
                     <%--<h4 id="txt_subtitle" runat="server" style="color: #28878a;" class="contentHeader"></h4>--%>
-                    
+
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
                         <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.MainTitle %></div>
@@ -191,7 +194,7 @@
                             <asp:Label runat="server" ID="lbl_subtitle"></asp:Label>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
                         <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.SubjectTheme %></div>
@@ -350,9 +353,9 @@
                     </div>
                     <hr />
 
-                    <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0;" >
+                    <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0;">
                         <br />
-                        <div class=" col-xs-12 filedName" style="padding: 0;">  <%= Resources.DisplayText.Program %></div>
+                        <div class=" col-xs-12 filedName" style="padding: 0;"><%= Resources.DisplayText.Program %></div>
                         <div class=" col-xs-12 filedDisplay" style="padding: 0; padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
                             <asp:Label runat="server" ID="lbl_program"></asp:Label>
                         </div>
@@ -373,8 +376,8 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr class="contentHeader">
-                                    <th scope="col"  class="contentHeader"><%=Resources.DisplayText.Instrument %></th>
-                                    <th scope="col"  class="contentHeader"><%=Resources.DisplayText.Playedby %></th>
+                                    <th scope="col" class="contentHeader"><%=Resources.DisplayText.Instrument %></th>
+                                    <th scope="col" class="contentHeader"><%=Resources.DisplayText.Playedby %></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -385,11 +388,11 @@
                                         <tr style="margin-bottom: 3px;" class="filedDisplay">
 
                                             <td>
-                                                <asp:Label  class="filedDisplay" runat="server" ID="Label2" Text='<%# Eval("InstrumentTbl.KoreanName") %>' />
+                                                <asp:Label class="filedDisplay" runat="server" ID="Label2" Text='<%# Eval("InstrumentTbl.KoreanName") %>' />
                                             </td>
 
                                             <td>
-                                                <asp:Label  class="filedDisplay" runat="server" ID="Label1" Text='<%# Eval("MusicianTbl.Name") %>' />
+                                                <asp:Label class="filedDisplay" runat="server" ID="Label1" Text='<%# Eval("MusicianTbl.Name") %>' />
                                             </td>
 
                                         </tr>
@@ -401,7 +404,7 @@
                     <div class="col-xs-12">
                         <br />
                         <asp:Button CssClass="btn btn-primary contentButton" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editPerformance" Text="<%$Resources:DisplayText,Edit %>" />
-                        <asp:Button CssClass="btn btn-danger contentButton" runat="server" ID="btn_deleteArtist" OnClientClick = "deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
+                        <asp:Button CssClass="btn btn-danger contentButton" runat="server" ID="btn_deleteArtist" OnClientClick="deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
                         <%--<asp:Button ID="Button2" runat="server" Text="Button" OnClientClick = "deletebtnclicked('Are you sure you want to delete?');"/>--%>
                         <%--<asp:Button ID="Button1" runat="server" Text="Button" OnClientClick = "return confirm('Are you sure you want to delete?');"/>--%>
                     </div>
@@ -420,36 +423,36 @@
             if (confirm(msg)) {
                 txt = "You pressed OK!";
 
-                 $.ajax({
-                type: "POST",
-                url: "PerformanceDetail.aspx/DeletePerformance", //Pagename/Functionname
-                contentType: "application/json;charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({ n: 1 }), //{ },//data
-                success: function (data) {
-                     
-                    if (data.d) {
+                $.ajax({
+                    type: "POST",
+                    url: "PerformanceDetail.aspx/DeletePerformance", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ n: 1 }), //{ },//data
+                    success: function (data) {
 
-                        alert('Entry deleted!!!');
-                         history.go(-1);
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            history.go(-1);
+                        }
+
+                        else {
+                            alert('Entry not  deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
                     }
-
-                    else {
-                        alert('Entry not  deleted!!!');
-                    }
-
-                },
-                error: function (result) {
-                    console.log(result)
-                    //alert("error")
-
-                }
-            });
+                });
 
 
             } else {
                 txt = "You pressed Cancel!";
-            } 
+            }
         }
 
         function closeReply(n) {
@@ -496,8 +499,8 @@
 
         }
 
-        
-        function DeleteComment(n) { 
+
+        function DeleteComment(n) {
             $.support.cors = true;
 
             //check confirmation

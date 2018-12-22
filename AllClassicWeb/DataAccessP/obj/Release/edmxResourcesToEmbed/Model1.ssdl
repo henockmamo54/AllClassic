@@ -333,6 +333,7 @@
     <Property Name="Address" Type="nvarchar" MaxLength="80" />
     <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="IsMasterUser" Type="int" />
   </EntityType>
   <EntityType Name="UserUserType">
     <Key>
