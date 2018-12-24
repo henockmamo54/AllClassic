@@ -165,7 +165,8 @@
                     if (data.d) {
 
                         alert('Entry deleted!!!');
-                         history.go(-1);
+                        window.location.href="MusicianDB.aspx";
+                         //history.go(-1);
                     }
 
                     else {

@@ -10,7 +10,7 @@ namespace BusinessLogic
 {
     public class MusicianLogic
     {
-        
+
 
         public static MusicianTbl registerMusician(List<MusicianEndorserTbl> endorsers, MusicianTbl musician)
         {
@@ -63,7 +63,8 @@ namespace BusinessLogic
             }
         }
 
-        public static MusicianTbl getMusicianByID(int id) {
+        public static MusicianTbl getMusicianByID(int id)
+        {
             AllClassicDBEntities entities = new AllClassicDBEntities();
             return entities.MusicianTbls.Where(x => x.MusicianID == id).FirstOrDefault();
         }
@@ -143,15 +144,45 @@ namespace BusinessLogic
             }
         }
 
-        public static bool DeleteMusician(int id) {
+        public static bool DeleteMusician(int id)
+        {
             try
             {
-                AllClassicDBEntities entities = new AllClassicDBEntities(); 
-                entities.MusicianTbls.Remove(entities.MusicianTbls.Where(x => x.MusicianID == id).FirstOrDefault());
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                /*Msg 1785, Level 16, State 0, Line 7
+                Introducing FOREIGN KEY constraint 'FK__Performan__Condu__540C7B00' on table 'PerformanceTbl' may cause cycles or multiple cascade paths. Specify ON DELETE NO ACTION or ON UPDATE NO ACTION, or modify other FOREIGN KEY constraints.
+                Msg 1750, Level 16, State 1, Line 7
+                Could not create constraint or index. See previous errors.
+                                 * */
+                //DUE TO THE ABOVE ERRORS I MANUALY REMOVE THE CONDUCTOR REFRENCE FROM THE PERFORMANCE TABLE 
+
+                var musician = entities.MusicianTbls.Where(x => x.MusicianID == id).FirstOrDefault();
+
+                var Conductor = entities.LookUpTbls.Where(x => x.MainCode == "Conductor").FirstOrDefault();
+                var Composer = entities.LookUpTbls.Where(x => x.MainCode == "Composer").FirstOrDefault();
+
+                if (musician.Major == Conductor.LookUpID)
+                {
+                    var linkedPerformances = entities.PerformanceTbls.Where(x => x.Conductor == musician.MusicianID).ToList();
+                    foreach (var x in linkedPerformances)
+                        x.Conductor = null;
+                    entities.SaveChanges();
+                }
+                else if (musician.Major == Composer.LookUpID)
+                {
+                    var linkedPerformances = entities.PerformanceTbls.Where(x => x.MainTitleComposer == musician.MusicianID).ToList();
+                    foreach (var x in linkedPerformances)
+                        x.MainTitleComposer = null;
+                    entities.SaveChanges();
+                }
+
+
+                entities.MusicianTbls.Remove(musician);
                 entities.SaveChanges();
                 return true;
             }
-            catch (Exception ee) {
+            catch (Exception ee)
+            {
                 return false;
             }
 

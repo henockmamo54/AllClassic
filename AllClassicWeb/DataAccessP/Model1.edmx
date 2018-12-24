@@ -305,7 +305,6 @@
           <Property Name="VideoFileName" Type="nvarchar" MaxLength="80" />
           <Property Name="TicketBox" Type="nvarchar" MaxLength="80" />
           <Property Name="PerformanceType" Type="int" Nullable="false" />
-          <Property Name="Conductor" Type="int" />
           <Property Name="MainTitleComposer" Type="int" />
           <Property Name="MainInstrument" Type="int" />
           <Property Name="Organizer" Type="nvarchar" MaxLength="20" />
@@ -317,6 +316,7 @@
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
           <Property Name="ArchivingTimeStamp" Type="datetime" />
           <Property Name="PerformanceGroup" Type="int" />
+          <Property Name="Conductor" Type="int" />
         </EntityType>
         <EntityType Name="UserTbl">
           <Key>
@@ -551,18 +551,6 @@
             </Principal>
             <Dependent Role="PeopleAndJobTbl">
               <PropertyRef Name="City" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Performan__Condu__6C190EBB">
-          <End Role="MusicianTbl" Type="Self.MusicianTbl" Multiplicity="0..1" />
-          <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MusicianTbl">
-              <PropertyRef Name="MusicianID" />
-            </Principal>
-            <Dependent Role="PerformanceTbl">
-              <PropertyRef Name="Conductor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -965,10 +953,6 @@
           <AssociationSet Name="FK__PeopleAndJ__City__0B91BA14" Association="Self.FK__PeopleAndJ__City__0B91BA14">
             <End Role="LookUpTbl" EntitySet="LookUpTbl" />
             <End Role="PeopleAndJobTbl" EntitySet="PeopleAndJobTbl" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Performan__Condu__6C190EBB" Association="Self.FK__Performan__Condu__6C190EBB">
-            <End Role="MusicianTbl" EntitySet="MusicianTbl" />
-            <End Role="PerformanceTbl" EntitySet="PerformanceTbl" />
           </AssociationSet>
           <AssociationSet Name="FK__Performan__Group__5EBF139D" Association="Self.FK__Performan__Group__5EBF139D">
             <End Role="LookUpTbl" EntitySet="LookUpTbl" />
