@@ -157,7 +157,7 @@ namespace AllClassicWeb.Views
                 //artist.Repertory = txt_repertory.Text;
                 var msg = Server.HtmlEncode(HiddenField2.Value);
                 Session["txt_outline"] = msg;
-                if (msg.Length > 399)
+                if (msg.Length > 199)
                 {
                     showMsg("The Profile content is more than the specified limit. please  minimize the content of the the Profile.");
                     if (Session["txt_outline"] != null)
@@ -170,7 +170,7 @@ namespace AllClassicWeb.Views
 
                 var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
                 Session["txt_outlineDescription"] = msg_organizer;
-                if (msg_organizer.Length > 399)
+                if (msg_organizer.Length > 199)
                 {
                     showMsg("The Repertory content is more than the specified limit. please  minimize the content of the the Repertory.");
                     if (Session["txt_outlineDescription"] != null)
@@ -197,6 +197,8 @@ namespace AllClassicWeb.Views
                     showMsg_withredirect("Data inserted succssfuly");
                     cleanArtistTextBoxs();
 
+                    Session["FileUpload_photo1"] = null;
+                    Session["FileUpload_photo2"] = null;
                     //sending message to endorsers
                     //sendEmailToEndorser(x.Email, artist, x);
 
@@ -261,14 +263,21 @@ namespace AllClassicWeb.Views
                     fileupload.SaveAs(path + uniqueid + fileupload.FileName);
 
                     if (photonumber == 1)
+                    {
                         info.Photo1 = uniqueid + fileupload.FileName;
+                        this.Session["FileUpload_photo1"] = FileUpload_photo1;
+                    }
                     else
+                    {
                         info.Photo2 = uniqueid + fileupload.FileName;
+                        this.Session["FileUpload_photo2"] = FileUpload_photo2;
+                    }
 
-                }
+                    }
                 else
                 {
                     showMsg("you can upload only jpeg,jpg,png,gif file formats");
+                    
                     return false;
                 }
 
@@ -284,7 +293,12 @@ namespace AllClassicWeb.Views
 
         public void manageFileUpload1()
         {
-            if (this.Session["FileUpload_photo1"] == null && FileUpload_photo1.HasFile)
+            
+            if (FileUpload_photo1.HasFile)
+            {
+                this.Session["FileUpload_photo1"] = FileUpload_photo1;
+            }
+            else if(this.Session["FileUpload_photo1"] == null && FileUpload_photo1.HasFile)
             {
                 this.Session["FileUpload_photo1"] = FileUpload_photo1;
             }
@@ -292,9 +306,9 @@ namespace AllClassicWeb.Views
             {
                 FileUpload_photo1 = (FileUpload)this.Session["FileUpload_photo1"];
             }
-            else if (FileUpload_photo1.HasFile)
+            else if (this.Session["FileUpload_photo1"] != null && !FileUpload_photo1.HasFile)
             {
-                this.Session["FileUpload_photo1"] = FileUpload_photo1;
+                FileUpload_photo1 = (FileUpload)this.Session["FileUpload_photo1"];
             }
             else
                 this.Session["FileUpload_photo1"] = null;
@@ -302,20 +316,25 @@ namespace AllClassicWeb.Views
 
         public void manageFileUpload2()
         {
-            if (this.Session["FileUpload_photo1"] == null && FileUpload_photo1.HasFile)
+            if (this.Session["FileUpload_photo2"] == null && FileUpload_photo2.HasFile)
             {
-                this.Session["FileUpload_photo1"] = FileUpload_photo1;
+                this.Session["FileUpload_photo2"] = FileUpload_photo2;
             }
-            else if (this.Session["FileUpload_photo1"] != null && FileUpload_photo1.HasFile)
+            else if (this.Session["FileUpload_photo2"] != null && FileUpload_photo2.HasFile)
             {
-                FileUpload_photo1 = (FileUpload)this.Session["FileUpload_photo1"];
+                FileUpload_photo2 = (FileUpload)this.Session["FileUpload_photo2"];
             }
-            else if (FileUpload_photo1.HasFile)
+
+            else if (this.Session["FileUpload_photo2"] != null && !FileUpload_photo2.HasFile)
             {
-                this.Session["FileUpload_photo1"] = FileUpload_photo1;
+                FileUpload_photo2 = (FileUpload)this.Session["FileUpload_photo2"];
+            }
+            else if (FileUpload_photo2.HasFile)
+            {
+                this.Session["FileUpload_photo2"] = FileUpload_photo2;
             }
             else
-                this.Session["FileUpload_photo1"] = null;
+                this.Session["FileUpload_photo2"] = null;
         }
 
         public void btn_artistsave_Click(object sender, EventArgs e)
@@ -344,7 +363,7 @@ namespace AllClassicWeb.Views
 
                 var msg = Server.HtmlEncode(HiddenField2.Value);
                 Session["txt_outline"] = msg;
-                if (msg.Length > 399)
+                if (msg.Length > 199)
                 {
                     showMsg("The Profile content is more than the specified limit. please  minimize the content of the the Profile.");
                     if (Session["txt_outline"] != null)
@@ -357,7 +376,7 @@ namespace AllClassicWeb.Views
                  
                 var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
                 Session["txt_outlineDescription"] = msg;
-                if (msg.Length > 399)
+                if (msg.Length > 199)
                 {
                     showMsg("The Repertory content is more than the specified limit. please  minimize the content of the the Repertory.");
                     if (Session["txt_outlineDescription"] != null)
@@ -393,6 +412,8 @@ namespace AllClassicWeb.Views
                 if (artist != null)
                 {
                     showMsg_withredirect("Data inserted succssfuly");
+                    Session["FileUpload_photo1"] = null;
+                    Session["FileUpload_photo2"] = null;
                     //cleanArtistTextBoxs();
                     //Response.Redirect("MusicianDetailPage?ID=" + artist.MusicianID);
                     //sending message to endorsers
