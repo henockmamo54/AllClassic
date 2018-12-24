@@ -636,7 +636,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Performan__Perfo__10566F31">
-    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1" />
+    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="PerformanceCommentTbl" Type="Self.PerformanceCommentTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PerformanceTbl">
@@ -648,7 +650,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Performan__Perfo__17036CC0">
-    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1" />
+    <End Role="PerformanceTbl" Type="Self.PerformanceTbl" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="PerformanceLikeUnlikeTbl" Type="Self.PerformanceLikeUnlikeTbl" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PerformanceTbl">

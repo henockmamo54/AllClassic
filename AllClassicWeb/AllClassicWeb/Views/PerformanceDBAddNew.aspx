@@ -159,7 +159,7 @@ where maincode='PerformanceType'
                         <div class="col-md-3">
                             <br />
                             <%--OnClick="btn_add_ArtistInstrument_tolist"--%>
-                            <asp:Button ID="btn_addArtistInstrumentcomb" CssClass="btn btn-success contentButton" runat="server" Text="Add" OnClick="onclick_btn_addArtistInstrumentcomb" />
+                            <asp:Button ID="btn_addArtistInstrumentcomb" CssClass="btn btn-success contentButton" runat="server" Text="Add"   OnClientClick="getValueFromHtmlEditor();"  OnClick="onclick_btn_addArtistInstrumentcomb" />
                         </div>
 
                     </div>

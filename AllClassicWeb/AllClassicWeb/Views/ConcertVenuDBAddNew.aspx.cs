@@ -158,15 +158,19 @@ namespace AllClassicWeb.Views
 
         protected void DropDownList3_city_DataBound(object sender, EventArgs e)
         {
-            if (Session["updateConcertVenu"] != null && Boolean.Parse(Session["updateConcertVenu"].ToString()) == true)
+            try
             {
-                try
+                if (Session["updateConcertVenu"] != null && Boolean.Parse(Session["updateConcertVenu"].ToString()) == true)
                 {
-                    VenueTbl MusicShop = (VenueTbl)Session["selectedVenu"];
-                    DropDownList3_city.Items.FindByValue(MusicShop.City.ToString()).Selected = true;
+                    try
+                    {
+                        VenueTbl MusicShop = (VenueTbl)Session["selectedVenu"];
+                        DropDownList3_city.Items.FindByValue(MusicShop.City.ToString()).Selected = true;
+                    }
+                    catch (Exception ee) { }
                 }
-                catch (Exception ee) { }
             }
+            catch (Exception ex) { }
         }
     }
 }

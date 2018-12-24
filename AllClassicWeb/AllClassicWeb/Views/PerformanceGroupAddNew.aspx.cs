@@ -168,24 +168,32 @@ namespace AllClassicWeb.Views
 
         protected void DropDownList1_grouptype_DataBound(object sender, EventArgs e)
         {
-            if (Session["updatePerformanceGroup"] != null && Boolean.Parse(Session["updatePerformanceGroup"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PerformanceGroupID"].ToString());
-                PerformanceGroupTbl pg = pg = PerformanceGroupLogic.getPerformanceGroupByID(id);
-                if (pg != null)
-                    DropDownList1_grouptype.Items.FindByValue(pg.GroupType.ToString()).Selected = true;
+                if (Session["updatePerformanceGroup"] != null && Boolean.Parse(Session["updatePerformanceGroup"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PerformanceGroupID"].ToString());
+                    PerformanceGroupTbl pg = pg = PerformanceGroupLogic.getPerformanceGroupByID(id);
+                    if (pg != null)
+                        DropDownList1_grouptype.Items.FindByValue(pg.GroupType.ToString()).Selected = true;
+                }
             }
+            catch (Exception exx) { }
         }
 
         protected void DropDownList1_city_DataBound(object sender, EventArgs e)
         {
-            if (Session["updatePerformanceGroup"] != null && Boolean.Parse(Session["updatePerformanceGroup"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PerformanceGroupID"].ToString());
-                PerformanceGroupTbl pg = pg = PerformanceGroupLogic.getPerformanceGroupByID(id);
-                if (pg != null)
-                    DropDownList1_city.Items.FindByValue(pg.City.ToString()).Selected = true;
+                if (Session["updatePerformanceGroup"] != null && Boolean.Parse(Session["updatePerformanceGroup"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PerformanceGroupID"].ToString());
+                    PerformanceGroupTbl pg = pg = PerformanceGroupLogic.getPerformanceGroupByID(id);
+                    if (pg != null)
+                        DropDownList1_city.Items.FindByValue(pg.City.ToString()).Selected = true;
+                }
             }
+            catch (Exception exx) { }
         }
     }
 }

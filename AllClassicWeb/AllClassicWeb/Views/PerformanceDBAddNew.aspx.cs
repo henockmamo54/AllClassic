@@ -95,6 +95,16 @@ namespace AllClassicWeb.Views
             pt.MusicianTbl = new MusicianTbl();
             pt.MusicianTbl.Name = DropDownList2_artistlist.SelectedItem.Text;
 
+            // to maintain the values of the profile and repertory feild which after endorser is added 
+            var msg = Server.HtmlEncode(HiddenField2.Value);
+            Session["txt_outline"] = msg;
+            var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+            Session["txt_outlineDescription"] = msg_organizer;
+            if (Session["txt_outline"] != null) txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+            if (Session["txt_outlineDescription"] != null) txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
+
+
+
             if (Session["PerformanceMusicianInstrumentTbl"] != null)
             {
                 List<PerformanceMusicianInstrumentTbl> mylist = (List<PerformanceMusicianInstrumentTbl>)Session["PerformanceMusicianInstrumentTbl"];
@@ -272,8 +282,8 @@ namespace AllClassicWeb.Views
 
                 //pt.Description = txt_description.Text;
                 var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
-                Session["txt_outlineDescription"] = msg;
-                if (msg.Length > 399)
+                Session["txt_outlineDescription"] = msg_organizer;
+                if (msg_organizer.Length > 399)
                 {
                     showMsg("The Description content is more than the specified limit. please  minimize the content of the the Description.");
                     if (Session["txt_outlineDescription"] != null)
@@ -405,25 +415,33 @@ namespace AllClassicWeb.Views
 
         protected void DropDownList1_grouptype_DataBound(object sender, EventArgs e)
         {
-            if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PID"].ToString());
-                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
-                if(performance.PerformanceGroup!=null)
-                    DropDownList1_grouptype.Items.FindByValue(performance.PerformanceGroup.ToString()).Selected = true;
+                if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PID"].ToString());
+                    //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                    PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                    if (performance.PerformanceGroup != null)
+                        DropDownList1_grouptype.Items.FindByValue(performance.PerformanceGroup.ToString()).Selected = true;
+                }
             }
+            catch (Exception ex) { }
         }
 
         protected void DropDownList1_performancetype_DataBound(object sender, EventArgs e)
         {
-            if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PID"].ToString());
-                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
-                DropDownList1_performancetype.Items.FindByValue(performance.PerformanceType.ToString()).Selected = true;
+                if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PID"].ToString());
+                    //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                    PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                    DropDownList1_performancetype.Items.FindByValue(performance.PerformanceType.ToString()).Selected = true;
+                }
             }
+            catch (Exception exs) { }
         }
 
         protected void DropDownList1_conductors_DataBound(object sender, EventArgs e)
@@ -445,54 +463,70 @@ namespace AllClassicWeb.Views
 
         protected void DropDownList1_composer_DataBound(object sender, EventArgs e)
         {
-            if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PID"].ToString());
-                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
-                if (performance.MainTitleComposer != null)
-                    DropDownList1_composer.Items.FindByValue(performance.MainTitleComposer.ToString()).Selected = true;
+                if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PID"].ToString());
+                    //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                    PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                    if (performance.MainTitleComposer != null)
+                        DropDownList1_composer.Items.FindByValue(performance.MainTitleComposer.ToString()).Selected = true;
+                }
             }
+            catch (Exception exs) { }
         }
 
         protected void DropDownList2_maininstrument_DataBound(object sender, EventArgs e)
         {
-            if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PID"].ToString());
-                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
-                if (performance.MainInstrument != null)
-                    DropDownList2_maininstrument.Items.FindByValue(performance.MainInstrument.ToString()).Selected = true;
+                if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PID"].ToString());
+                    //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                    PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                    if (performance.MainInstrument != null)
+                        DropDownList2_maininstrument.Items.FindByValue(performance.MainInstrument.ToString()).Selected = true;
+                }
             }
+            catch (Exception exs) { }
 
         }
 
         protected void DropDownList4_region_DataBound(object sender, EventArgs e)
         {
-            if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PID"].ToString());
-                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
-                DropDownList4_region.Items.FindByValue(performance.Region.ToString()).Selected = true;
+                if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PID"].ToString());
+                    //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                    PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                    DropDownList4_region.Items.FindByValue(performance.Region.ToString()).Selected = true;
+                }
             }
+            catch (Exception eee) { }
         }
 
         protected void DropDownList3_city_DataBound(object sender, EventArgs e)
         {
-            if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PID"].ToString());
-                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
-                DropDownList3_city.Items.FindByValue(performance.City.ToString()).Selected = true;
+                if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PID"].ToString());
+                    //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                    PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                    DropDownList3_city.Items.FindByValue(performance.City.ToString()).Selected = true;
+                }
             }
-
+            catch (Exception eee) { }
         }
 
         protected void DropDownList1_venu_DataBound(object sender, EventArgs e)
         {
+            try { 
             if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
             {
                 int id = int.Parse(Session["PID"].ToString());
@@ -501,6 +535,8 @@ namespace AllClassicWeb.Views
                 if (performance.Venue != null)
                     DropDownList1_venu.Items.FindByValue(performance.Venue.ToString()).Selected = true;
             }
+            }
+            catch (Exception eee) { }
 
         }
     }

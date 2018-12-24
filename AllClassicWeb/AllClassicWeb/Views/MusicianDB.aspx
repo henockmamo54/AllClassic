@@ -109,7 +109,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                             <span class="filedName"><%# Resources.DisplayText.Major %>: </span>
                                             <span class="filedDisplay"><%#Eval("majorsubocode") %> </span>
                                         </p>
-                                        <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default contentButton"><%= Resources.DisplayText.HomePage %></a>
+                                        <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default contentButton"><%= Resources.DisplayText.Seemore %></a>
                                     </div>
                                 </div>
                             </div>

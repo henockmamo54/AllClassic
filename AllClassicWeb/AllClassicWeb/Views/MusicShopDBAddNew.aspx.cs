@@ -151,7 +151,7 @@ namespace AllClassicWeb.Views
         }
 
         protected void DropDownList3_city_DataBound(object sender, EventArgs e)
-        {
+        {           
             if (Boolean.Parse(Session["updateMusicShop"].ToString()) == true)
             {
                 try

@@ -17,6 +17,7 @@ namespace AllClassicWeb.Views
             user = (UserTbl)Session["User"];
             manageFileUpload1();
             manageFileUpload2();
+
             ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCkEditor", "loadCkEditor();", true);
 
             if (!IsPostBack)
@@ -101,6 +102,15 @@ namespace AllClassicWeb.Views
             endorser.RequestedDate = DateTime.Now;
             endorser.status = false;
 
+            // to maintain the values of the profile and repertory feild which after endorser is added 
+            var msg = Server.HtmlEncode(HiddenField2.Value);
+            Session["txt_outline"] = msg;
+            var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+            Session["txt_outlineDescription"] = msg_organizer;
+            if (Session["txt_outline"] != null) txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
+            if (Session["txt_outlineDescription"] != null) txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
+
+
             if (Session["myendorsmentlist"] != null)
             {
                 List<MusicianEndorserTbl> mylist = (List<MusicianEndorserTbl>)Session["myendorsmentlist"];
@@ -159,8 +169,8 @@ namespace AllClassicWeb.Views
                 artist.Profile = msg;
 
                 var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
-                Session["txt_outlineDescription"] = msg;
-                if (msg.Length > 399)
+                Session["txt_outlineDescription"] = msg_organizer;
+                if (msg_organizer.Length > 399)
                 {
                     showMsg("The Repertory content is more than the specified limit. please  minimize the content of the the Repertory.");
                     if (Session["txt_outlineDescription"] != null)
@@ -428,14 +438,17 @@ namespace AllClassicWeb.Views
 
         protected void DropDownList1_Major_DataBound(object sender, EventArgs e)
         {
-
-            if (Session["updateMusician"] != null && Boolean.Parse(Session["updateMusician"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["MusicianID"].ToString());
-                MusicianTbl performance = MusicianLogic.getMusicianByID(id);
-                if (performance.Major != 0)
-                    DropDownList1_Major.Items.FindByValue(performance.Major.ToString()).Selected = true;
+                if (Session["updateMusician"] != null && Boolean.Parse(Session["updateMusician"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["MusicianID"].ToString());
+                    MusicianTbl performance = MusicianLogic.getMusicianByID(id);
+                    if (performance.Major != 0)
+                        DropDownList1_Major.Items.FindByValue(performance.Major.ToString()).Selected = true;
+                }
             }
+            catch (Exception exx) { }
         }
     }
 }

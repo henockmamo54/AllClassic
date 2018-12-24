@@ -241,13 +241,13 @@ or maincode='Conductor'
 
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1" class="filedName"><%= Resources.DisplayText.EndorserEmailID %></label>
-                                        <asp:TextBox runat="server" class="form-control filedDisplay" ID="FormControlTextarea1_email" TextMode="Email" placeholder="Email Address of the Endorser" />
+                                        <asp:TextBox runat="server" class="form-control filedDisplay" ID="FormControlTextarea1_email"  placeholder="Email Address of the Endorser" />
                                     </div>
 
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary contentButton" data-dismiss="modal"><%= Resources.DisplayText.Close %></button>
-                                    <asp:Button runat="server" type="button" class="btn btn-primary contentButton" Text="<%$Resources:DisplayText,Save %>" ID="btnAddReview" OnClick="btnAddEndorser_Click" />
+                                    <asp:Button runat="server" type="button" class="btn btn-primary contentButton" Text="<%$Resources:DisplayText,Save %>" ID="btnAddReview" OnClientClick="getValueFromHtmlEditor();"  OnClick="btnAddEndorser_Click" />
                                 </div>
                             </div>
                         </div>
