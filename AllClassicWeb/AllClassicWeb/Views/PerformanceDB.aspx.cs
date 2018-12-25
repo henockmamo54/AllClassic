@@ -48,7 +48,7 @@ namespace AllClassicWeb.Views
             {
                 Session["PID"] = null;
                 Session["updatePerformance"] = false;
-                Response.Redirect("PerformanceDBAddNew.aspx");
+                Response.Redirect("~/Views/PerformanceDBAddNew.aspx");
             }
             else showMsg(Resources.DisplayText.Pleasesignintocontinue);
         }

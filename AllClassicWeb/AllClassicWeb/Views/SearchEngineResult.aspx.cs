@@ -53,7 +53,7 @@ namespace AllClassicWeb.Views
             var content = "<br />" + countlist[0].InnerHtml + "<hr />";
             foreach (var item in itemslit)
                 content += item.InnerHtml + "<br />";
-
+            if(paging.Count>0)
             content += paging[0].InnerHtml;
 
             serachResultContainer.InnerHtml = content;

@@ -220,11 +220,12 @@ namespace AllClassicWeb.Views
                     showMsg_withredirect("Data inserted succssfuly");
                     //Response.Redirect("~/Views/PerformanceDB");
                 }
-                else showMsg(result.exception.Message);
+
+                else throw result.exception;
             }
             catch (Exception ee)
             {
-                showMsg(ee.Message);
+                showMsg(ee.Message.Replace("'", ""));
 
                 if (Session["txt_outline"] != null)
                 {
@@ -310,7 +311,10 @@ namespace AllClassicWeb.Views
                     issuccess = true;
 
                 }
-                else showMsg("Please check your inputs");
+                else
+                {
+                    showMsg("Please check your inputs");
+                }
             }
             catch (Exception ee)
             {
@@ -356,16 +360,18 @@ namespace AllClassicWeb.Views
             if (fileupload.HasFiles)
             {
                 string ext = System.IO.Path.GetExtension(fileupload.FileName);
-                
+
                 if (ext == ".jpg" || ext == ".png" || ext == ".gif" || ext == ".jpeg")
                 {
                     string uniqueid = DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.Hour + "" + DateTime.Now.Minute + "" + DateTime.Now.Second + "" + DateTime.Now.Millisecond;
-                    string path = Server.MapPath("~//Doc//Performance//"); 
-                    fileupload.SaveAs(path + uniqueid+ fileupload.FileName);
-                    this.Session["FileUpload_photo1"] = FileUpload_photo1;
+                    string path = Server.MapPath("~//Doc//Performance//");
+                    fileupload.SaveAs(path + uniqueid + fileupload.FileName);
 
                     if (photonumber == 1)
-                        info.PosterFileName = uniqueid+ fileupload.FileName;
+                    {
+                        info.PosterFileName = uniqueid + fileupload.FileName;
+                        Session["FileUpload_photo1"] = FileUpload_photo1;
+                    }
                 }
                 else
                 {
@@ -397,7 +403,27 @@ namespace AllClassicWeb.Views
 
         public void manageFileUpload1()
         {
-            if (this.Session["FileUpload_photo1"] == null && FileUpload_photo1.HasFile)
+            //if (this.Session["FileUpload_photo1"] == null && FileUpload_photo1.HasFile)
+            //{
+            //    this.Session["FileUpload_photo1"] = FileUpload_photo1;
+            //}
+            //else if (this.Session["FileUpload_photo1"] != null && FileUpload_photo1.HasFile)
+            //{
+            //    FileUpload_photo1 = (FileUpload)this.Session["FileUpload_photo1"];
+            //}
+            //else if (FileUpload_photo1.HasFile)
+            //{
+            //    this.Session["FileUpload_photo1"] = FileUpload_photo1;
+            //}
+            //else
+            //    this.Session["FileUpload_photo1"] = null;
+
+
+            if (FileUpload_photo1.HasFile)
+            {
+                this.Session["FileUpload_photo1"] = FileUpload_photo1;
+            }
+            else if (this.Session["FileUpload_photo1"] == null && FileUpload_photo1.HasFile)
             {
                 this.Session["FileUpload_photo1"] = FileUpload_photo1;
             }
@@ -405,12 +431,13 @@ namespace AllClassicWeb.Views
             {
                 FileUpload_photo1 = (FileUpload)this.Session["FileUpload_photo1"];
             }
-            else if (FileUpload_photo1.HasFile)
+            else if (this.Session["FileUpload_photo1"] != null && !FileUpload_photo1.HasFile)
             {
-                this.Session["FileUpload_photo1"] = FileUpload_photo1;
+                FileUpload_photo1 = (FileUpload)this.Session["FileUpload_photo1"];
             }
             else
                 this.Session["FileUpload_photo1"] = null;
+
         }
 
         protected void DropDownList1_grouptype_DataBound(object sender, EventArgs e)
@@ -526,15 +553,16 @@ namespace AllClassicWeb.Views
 
         protected void DropDownList1_venu_DataBound(object sender, EventArgs e)
         {
-            try { 
-            if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+            try
             {
-                int id = int.Parse(Session["PID"].ToString());
-                //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
-                PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
-                if (performance.Venue != null)
-                    DropDownList1_venu.Items.FindByValue(performance.Venue.ToString()).Selected = true;
-            }
+                if (Session["updatePerformance"] != null && Boolean.Parse(Session["updatePerformance"].ToString()) == true)
+                {
+                    int id = int.Parse(Session["PID"].ToString());
+                    //PerformanceTbl performance = PerformanceDBLogic.getPerfByID(id);
+                    PerformanceTbl performance = (PerformanceTbl)Session["theSelectedPerformance"];
+                    if (performance.Venue != null)
+                        DropDownList1_venu.Items.FindByValue(performance.Venue.ToString()).Selected = true;
+                }
             }
             catch (Exception eee) { }
 

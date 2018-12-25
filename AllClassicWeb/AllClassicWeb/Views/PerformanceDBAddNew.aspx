@@ -243,7 +243,7 @@ where maincode='PerformanceType'
                                 <br />
                                 <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Time %>*</div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
-                                    <asp:TextBox ID="txt_time" ValidationGroup="a" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txt_time" ValidationGroup="a" runat="server" class="form-control" MaxLength="20"></asp:TextBox>
                                     <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_time" ErrorMessage="<%$Resources:DisplayText,PleaseEnterTime %>" />
 
                                 </div>
@@ -337,7 +337,7 @@ where maincode='City'
                                 <br />
                                 <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.TicketBox %>*</div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
-                                    <asp:TextBox ID="txt_ticketbox" ValidationGroup="a" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txt_ticketbox" ValidationGroup="a" runat="server" class="form-control"  MaxLength="80"></asp:TextBox>
                                     <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_ticketbox" ErrorMessage="<%$Resources:DisplayText,PleaseEnterTicketBoxinfo %>" />
 
                                 </div>

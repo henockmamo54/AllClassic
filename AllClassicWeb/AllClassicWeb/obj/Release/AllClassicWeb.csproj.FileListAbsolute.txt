@@ -119,3 +119,6 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Release\AllClassi
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.pdb
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\CKEditor.NET.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.pdb
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.xml
