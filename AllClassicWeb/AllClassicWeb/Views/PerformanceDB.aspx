@@ -153,7 +153,7 @@ DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarcha
                                                             left join @fooTable cd on cd.LookUpID=p.Conductor
                                                             left join @fooTable cm on cm.LookUpID=p.MainTitleComposer
                                                             left join @fooTable r on r.LookUpID=p.Region
-                                                            left join @fooTable c on c.LookUpID=p.City
+                                                            left join @fooTable c on c.LookUpID=p.City where p.enddate > getdate()
 order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
             </div>
             <div class="row">

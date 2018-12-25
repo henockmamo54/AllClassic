@@ -87,14 +87,14 @@ namespace AllClassicWeb.Views
             Button pb = (Button)Session["previousSelectedLocation"];
             var null_date = DateTime.Parse("1/1/0001 12:00:00 AM", System.Globalization.CultureInfo.InvariantCulture);
 
-            string filter = "";
+            string filter = "where p.enddate > getdate()";
             if (pb != null && selectedDate != null_date)
             {
-                filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
+                filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
                 if (pb.Text != "전체") filter += " and r.subcode = N'" + pb.Text + "' ";
             }
-            else if (pb == null && selectedDate != null_date) filter = @" where datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
-            else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter = @"where r.subcode like N'%" + pb.Text + "%' ";
+            else if (pb == null && selectedDate != null_date) filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
+            else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter += @" and r.subcode like N'%" + pb.Text + "%' ";
 
 
             SqlDataSource1_Performancelist.SelectCommand = @"DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
