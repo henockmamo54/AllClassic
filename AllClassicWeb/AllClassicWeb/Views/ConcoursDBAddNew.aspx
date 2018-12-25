@@ -25,7 +25,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Organizer %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_organizer" ValidationGroup="a" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                            <asp:TextBox ID="txt_organizer" ValidationGroup="a" runat="server" class="form-control filedDisplay"  MaxLength="40"></asp:TextBox>
 
                             <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_organizer" ErrorMessage="<%$Resources:DisplayText,Pleasefillorganizerfield %>" />
 
@@ -38,7 +38,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Title %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_title" ValidationGroup="a" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                            <asp:TextBox ID="txt_title" ValidationGroup="a" runat="server" class="form-control filedDisplay"  MaxLength="40"></asp:TextBox>
                             <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_title" ErrorMessage="<%$Resources:DisplayText,Pleasefilltitlefield %>" />
 
                         </div>

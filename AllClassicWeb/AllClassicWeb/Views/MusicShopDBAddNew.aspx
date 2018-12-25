@@ -11,19 +11,19 @@
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.ShopName %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_shopname" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_shopname" class="form-control filedDisplay"   MaxLength="30"/>
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.Alias %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_alias" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_alias" class="form-control filedDisplay"   MaxLength="30" />
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.Expertise %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_experties" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_experties" class="form-control filedDisplay"   MaxLength="80" />
             </div>
         </div>
 
@@ -45,7 +45,7 @@ where maincode='City'
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.OwnerName %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_ownername" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_ownername" class="form-control filedDisplay"   MaxLength="20" />
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
@@ -65,13 +65,13 @@ where maincode='City'
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.Email %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_email" TextMode="Email" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_email" TextMode="Email" class="form-control filedDisplay"  MaxLength="30"  />
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.Address %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_address" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_address" class="form-control filedDisplay"   MaxLength="80" />
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
@@ -89,19 +89,19 @@ where maincode='City'
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.TelNo %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_telno" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_telno" class="form-control filedDisplay"  MaxLength="20"  />
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.FaxNo %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_faxno" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_faxno" class="form-control filedDisplay"   MaxLength="20" />
             </div>
         </div>
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.HomePage %></div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_homepage" MaxLength="4" class="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_homepage"  class="form-control filedDisplay"   MaxLength="30" />
             </div>
         </div>
 

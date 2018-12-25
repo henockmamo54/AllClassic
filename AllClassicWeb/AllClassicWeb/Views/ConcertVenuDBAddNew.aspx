@@ -15,7 +15,7 @@
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.VenuName %>*</div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_shopname" ValidationGroup="a" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_shopname" ValidationGroup="a" CssClass="form-control"  MaxLength="30"  />
                         <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_shopname" ErrorMessage="<%$Resources:DisplayText,PleasefillVenuNamefield %>" />
 
                     </div>
@@ -23,13 +23,13 @@
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.Alias %></div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_alias" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_alias" CssClass="form-control"   MaxLength="30" />
                     </div>
                 </div>
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.Expertise %></div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_experties" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_experties" CssClass="form-control"  MaxLength="80"  />
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ where maincode='City'
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.OwnerName %></div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_ownername" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_ownername" CssClass="form-control"   MaxLength="20" />
                     </div>
                 </div>
                 <div class="col-xs-4" style="padding: 0;">
@@ -70,7 +70,7 @@ where maincode='City'
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.Email %>*</div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_email" ValidationGroup="a" TextMode="Email" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_email" ValidationGroup="a" TextMode="Email" CssClass="form-control"   MaxLength="30" />
                         <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleasefillEmailfield %>" />
 
                     </div>
@@ -78,7 +78,7 @@ where maincode='City'
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.Address %></div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_address" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_address" CssClass="form-control"   MaxLength="80" />
                     </div>
                 </div>
                 <div class="col-xs-4 " style="padding: 0;">
@@ -96,19 +96,19 @@ where maincode='City'
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.TelNo %></div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_telno" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_telno" CssClass="form-control"   MaxLength="20" />
                     </div>
                 </div>
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.FaxNo %></div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_faxno" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_faxno" CssClass="form-control"   MaxLength="20" />
                     </div>
                 </div>
                 <div class="col-xs-4" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.HomePage %></div>
                     <div class="col-xs-6 filedDisplay" style="padding: 0;">
-                        <asp:TextBox runat="server" ID="txt_homepage" MaxLength="4" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txt_homepage"  CssClass="form-control"   MaxLength="30"  />
                     </div>
                 </div>
 
