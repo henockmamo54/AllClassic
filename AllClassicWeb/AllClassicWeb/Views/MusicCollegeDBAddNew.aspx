@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MusicCollegeDBAddNew.aspx.cs" Inherits="AllClassicWeb.Views.MusicCollegeDBAddNew" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  ValidateRequest="false"  CodeBehind="MusicCollegeDBAddNew.aspx.cs" Inherits="AllClassicWeb.Views.MusicCollegeDBAddNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -78,7 +78,9 @@
                     <br />
                     <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Introduction %></div>
                     <div class="col-md-8 col-xs-8">
-                        <asp:TextBox ID="txt_introduction" runat="server" class="form-control filedDisplay" TextMode="MultiLine" Rows="10"></asp:TextBox>
+                        <%--<asp:TextBox ID="txt_description" runat="server" class="form-control filedDisplay" TextMode="MultiLine" Rows="10"></asp:TextBox>--%>
+                        <textarea cols="80" id="txt_description" runat="server" name="editor1" rows="10"> </textarea>   
+                        <asp:HiddenField ID="HiddenField2" runat="server" Value="" /> 
                     </div>
                     <br />
                 </div>
@@ -86,8 +88,8 @@
             <br />
             <div class="row col-md-4 col-xs-4">
                 <asp:Button Visible="true" ID="btn_musiccollege_cancel" CssClass="btn btn-danger pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_musiccollege_cancel_Click" Style="margin-right: 10px;" />
-                <asp:Button Visible="true" ID="btn_musiccollege_save" ValidationGroup="a" CssClass="btn btn-warning pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_musiccollege_save_Click" Style="margin-right: 10px;" />
-                <asp:Button ID="btn_musiccollege_add" ValidationGroup="a" CssClass="btn btn-primary pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClick="musiccollege_add_Click" Style="margin-right: 10px;" />
+                <asp:Button Visible="true" ID="btn_musiccollege_save" ValidationGroup="a" CssClass="btn btn-warning pull-right contentButton"   OnClientClick="getValueFromHtmlEditor();" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_musiccollege_save_Click" Style="margin-right: 10px;" />
+                <asp:Button ID="btn_musiccollege_add" ValidationGroup="a" CssClass="btn btn-primary pull-right contentButton" runat="server"  OnClientClick="getValueFromHtmlEditor();"  Text="<%$Resources:DisplayText,Add %>" OnClick="musiccollege_add_Click" Style="margin-right: 10px;" />
 
             </div>
 
@@ -106,6 +108,41 @@
             alert('Data inserted succssfuly');
             window.location.href = 'MusicCollegeDB.aspx';
         }
+        
+        function getValueFromHtmlEditor() {
+            var value = CKEDITOR.instances['MainContent_txt_description'].getData();
+            var x = $("#MainContent_txt_description")[0].innerHTML;  
+            $('#MainContent_HiddenField2').val(value); 
+        }
+
+        
+        function loadCkEditor() {
+             
+            CKEDITOR.replace('MainContent_txt_description', { 
+                toolbarGroups: [
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                    { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+                    { name: 'forms', groups: ['forms'] },
+
+                    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                    { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+                    { name: 'links', groups: ['links'] },
+                    { name: 'insert', groups: ['insert'] },
+
+                    { name: 'styles', groups: ['styles'] },
+                    { name: 'colors', groups: ['colors'] },
+                    { name: 'tools', groups: ['tools'] },
+                    { name: 'others', groups: ['others'] },
+                    { name: 'about', groups: ['about'] }
+                ], 
+                removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
+            });
+
+
+        }
+
+
 
     </script>
 

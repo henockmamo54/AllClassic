@@ -43,11 +43,11 @@
                                 <asp:Label runat="server" CssClass="filedDisplay"  ID="txt_country"></asp:Label>
                             </div>
                         </div>
-                        <div class=" row col-md-12 col-xs-12">
-                            <div class="col-xs-4 filedName"><%=Resources.DisplayText.Introduction %>: </div>
-                            <div class="col-xs-8">
+                        <div class=" row col-md-12 col-xs-12" style="padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
+                            <span class="col-xs-4 filedName"><%=Resources.DisplayText.Introduction %>: </span> <br />
+                            <span class="col-xs-8">
                                 <asp:Label runat="server"  CssClass="filedDisplay" ID="txt_introduction"></asp:Label>
-                            </div>
+                            </span>
                         </div>
                         <div class=" row col-md-12 col-xs-12">
                             <div class="col-xs-4 filedName"><%=Resources.DisplayText.LocationMap %>: </div>

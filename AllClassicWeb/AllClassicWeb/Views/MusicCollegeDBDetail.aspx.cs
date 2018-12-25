@@ -28,7 +28,7 @@ namespace AllClassicWeb.Views
                 txt_homepage.CommandArgument = college.HomePage;
                 txt_homepage.Text = college.HomePage;
                 txt_country.Text = college.Country;
-                txt_introduction.Text = college.Introduction;
+                txt_introduction.Text = Server.HtmlDecode(college.Introduction);
                 txt_locationmap.Text = college.LocationMap;
                 txt_locationmap.CommandArgument = college.LocationMap;
 

@@ -103,13 +103,22 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.TextBox txt_locationmap;
         
         /// <summary>
-        /// txt_introduction control.
+        /// txt_description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_introduction;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_description;
+        
+        /// <summary>
+        /// HiddenField2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField2;
         
         /// <summary>
         /// btn_musiccollege_cancel control.

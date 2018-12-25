@@ -16,6 +16,7 @@ namespace AllClassicWeb.Views
         {
             user = (UserTbl)Session["User"];
             manageFileUpload1();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCkEditordsfdsa", "loadCkEditor();", true);
 
             if (!IsPostBack)
             {
@@ -47,7 +48,8 @@ namespace AllClassicWeb.Views
             txt_shortname.Text = c.ShortName;
             txt_country.Text = c.Country;
             txt_homepage.Text = c.HomePage;
-            txt_introduction.Text = c.Introduction;
+            //txt_introduction.Text = c.Introduction;
+            txt_description.InnerText = Server.HtmlDecode(c.Introduction);
             txt_locationmap.Text = c.LocationMap;
 
         }
@@ -66,7 +68,7 @@ namespace AllClassicWeb.Views
             txt_homepage.Text = "";
             txt_country.Text = "";
             txt_locationmap.Text = "";
-            txt_introduction.Text = "";
+            txt_description.InnerHtml = "";
             handleButtons(true);
         }
 
@@ -81,7 +83,21 @@ namespace AllClassicWeb.Views
                 c.Country = txt_country.Text;
                 getPhoto(c, 1, FileUpload_photo1);
                 c.LocationMap = txt_locationmap.Text;
-                c.Introduction = txt_introduction.Text;
+                //c.Introduction = txt_introduction.Text;
+
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_description"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Introduction content is more than the specified limit. please  minimize the content of the the Introduction.");
+                    if (Session["txt_auditionoutline"] != null)
+                    {
+                        txt_description.InnerText = Server.HtmlDecode(Session["txt_description"].ToString());
+                    }
+                    return;
+                }
+                c.Introduction = msg;
+
                 c.UserID = user.UserID;
                 c.UpdateTimeStamp = DateTime.Now;
 
@@ -114,7 +130,21 @@ namespace AllClassicWeb.Views
                 c.Country = txt_country.Text;
                 getPhoto(c, 1, FileUpload_photo1);
                 c.LocationMap = txt_locationmap.Text;
-                c.Introduction = txt_introduction.Text;
+                //c.Introduction = txt_introduction.Text;
+
+                var msg = Server.HtmlEncode(HiddenField2.Value);
+                Session["txt_description"] = msg;
+                if (msg.Length > 399)
+                {
+                    showMsg("The Introduction content is more than the specified limit. please  minimize the content of the the Introduction.");
+                    if (Session["txt_auditionoutline"] != null)
+                    {
+                        txt_description.InnerText = Server.HtmlDecode(Session["txt_description"].ToString());
+                    }
+                    return;
+                }
+                c.Introduction = msg;
+
                 c.UserID = user.UserID;
                 c.UpdateTimeStamp = DateTime.Now;
 
