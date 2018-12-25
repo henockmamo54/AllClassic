@@ -20,7 +20,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.MainTitle %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_maintitle" ValidationGroup="a" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_maintitle" ValidationGroup="a" runat="server" class="form-control" MaxLength="40"></asp:TextBox>
                             <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_maintitle" ErrorMessage="<%$Resources:DisplayText,PleaseEnterMainTitle %>" />
 
                         </div>
@@ -31,7 +31,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.SubTitle %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_subtitle" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_subtitle" runat="server" class="form-control" MaxLength="40"></asp:TextBox>
 
                         </div>
                         <br />
@@ -41,7 +41,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.SubjectTheme %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_subjecttheme" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_subjecttheme" runat="server" class="form-control" MaxLength="40"></asp:TextBox>
 
                         </div>
                         <br />
@@ -117,7 +117,7 @@ where maincode='PerformanceType'
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Organizer %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_organizer" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_organizer" runat="server" class="form-control"  MaxLength="20"></asp:TextBox>
 
                         </div>
                         <br />
@@ -127,17 +127,17 @@ where maincode='PerformanceType'
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Sponser %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_sponser" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_sponser" runat="server" class="form-control"  MaxLength="20"></asp:TextBox>
 
                         </div>
                         <br />
                     </div>
 
-                    <div class="col-md-12 col-xs-12 userregisterinfo filedName">
+                    <div class="col-md-12 col-xs-12 userregisterinfo ">
                         <br />
-                        <div class="col-md-4 col-xs-4"><%= Resources.DisplayText.Language %></div>
+                        <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Language %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_language" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txt_language" runat="server" class="form-control" MaxLength="20"></asp:TextBox>
 
                         </div>
                         <br />
@@ -320,7 +320,7 @@ where maincode='City'
                                 <br />
                                 <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Video %></div>
                                 <div class="col-md-8 col-xs-8" style="padding: 0px;">
-                                    <asp:TextBox ID="txt_video" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txt_video" runat="server" class="form-control" MaxLength="80"></asp:TextBox>
                                 </div>
                                 <br />
                             </div>

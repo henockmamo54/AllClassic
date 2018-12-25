@@ -17,7 +17,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.FullName %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_name" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                            <asp:TextBox ID="txt_name" runat="server" class="form-control filedDisplay" MaxLength="40"></asp:TextBox>
                             <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_name" ErrorMessage="<%$Resources:DisplayText,PleaseEnterMainTitle %>" />
 
                         </div>
@@ -28,7 +28,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Email %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_email" runat="server" class="form-control filedDisplay" TextMode="Email"></asp:TextBox>
+                            <asp:TextBox ID="txt_email" runat="server" class="form-control filedDisplay" TextMode="Email"  MaxLength="30"></asp:TextBox>
                             <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleaseEnterMainTitle %>" />
 
                         </div>
@@ -39,7 +39,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.MobileNo %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_mobilenumber" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                            <asp:TextBox ID="txt_mobilenumber" runat="server" class="form-control filedDisplay"  MaxLength="20"></asp:TextBox>
                         </div>
                         <br />
                     </div>
@@ -51,7 +51,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Address %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_address" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                            <asp:TextBox ID="txt_address" runat="server" class="form-control filedDisplay" MaxLength="80"></asp:TextBox>
                         </div>
                         <br />
                     </div>
@@ -69,7 +69,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.FacebookURL %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_facebook" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                            <asp:TextBox ID="txt_facebook" runat="server" class="form-control filedDisplay" MaxLength="30"></asp:TextBox>
                         </div>
                         <br />
                     </div>
@@ -81,7 +81,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.TwitterURL %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_twitter" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                            <asp:TextBox ID="txt_twitter" runat="server" class="form-control filedDisplay" MaxLength="30"></asp:TextBox>
                         </div>
                         <br />
                     </div>
@@ -90,7 +90,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.YourAffilation %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_youraffiliation" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                            <asp:TextBox ID="txt_youraffiliation" runat="server" class="form-control filedDisplay" MaxLength="40"></asp:TextBox>
                         </div>
                         <br />
                     </div>
@@ -123,7 +123,7 @@ or maincode='Conductor'
                 <br />
                 <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.KakaoTalkID %></div>
                 <div class="col-md-8 col-xs-8">
-                    <asp:TextBox ID="txt_kakaoID" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                    <asp:TextBox ID="txt_kakaoID" runat="server" class="form-control filedDisplay" MaxLength="30"></asp:TextBox>
                 </div>
                 <br />
             </div>
@@ -236,12 +236,12 @@ or maincode='Conductor'
 
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1" class="filedName"><%= Resources.DisplayText.EndorserName %></label>
-                                        <asp:TextBox runat="server" type="text" TextMode="SingleLine" class="form-control filedDisplay" ID="FormControlInput1_Name" placeholder="Name of the Endorser" />
+                                        <asp:TextBox runat="server" type="text" TextMode="SingleLine" class="form-control filedDisplay"  MaxLength="40" ID="FormControlInput1_Name" placeholder="Name of the Endorser" />
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1" class="filedName"><%= Resources.DisplayText.EndorserEmailID %></label>
-                                        <asp:TextBox runat="server" class="form-control filedDisplay" ID="FormControlTextarea1_email"  placeholder="Email Address of the Endorser" />
+                                        <asp:TextBox runat="server" class="form-control filedDisplay" ID="FormControlTextarea1_email" MaxLength="30"  placeholder="Email Address of the Endorser" />
                                     </div>
 
                                 </div>
