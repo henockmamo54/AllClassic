@@ -15,7 +15,7 @@
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.PerformanceGroup %>*</div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:TextBox ID="txt_pgname"  ValidationGroup="a" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                <asp:TextBox ID="txt_pgname"  ValidationGroup="a" runat="server" class="form-control filedDisplay"  MaxLength="40"></asp:TextBox>
                                  <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_pgname" ErrorMessage="<%$Resources:DisplayText,PleasefillPerformanceGroupfield %>" />
 
                             </div>
@@ -25,7 +25,7 @@
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Alias %></div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:TextBox ID="txt_alias" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                <asp:TextBox ID="txt_alias" runat="server" class="form-control filedDisplay"  MaxLength="40"></asp:TextBox>
 
                             </div>
                             <br />
@@ -61,7 +61,7 @@ where maincode='City'
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Conductor %></div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:TextBox ID="txt_coductor" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                <asp:TextBox ID="txt_coductor" runat="server" class="form-control filedDisplay"  MaxLength="40"></asp:TextBox>
 
                             </div>
                             <br />
@@ -82,7 +82,7 @@ where maincode='City'
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Email %>*</div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:TextBox ID="txt_email" runat="server" ValidationGroup="a"  class="form-control filedDisplay" TextMode="Email"></asp:TextBox>
+                                <asp:TextBox ID="txt_email" runat="server" ValidationGroup="a"  class="form-control filedDisplay" TextMode="Email"  MaxLength="30"></asp:TextBox>
                                  <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator3" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleasefillEmailfield %>" />
 
                             </div>
@@ -92,7 +92,7 @@ where maincode='City'
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Address %>*</div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:TextBox ID="txt_address" ValidationGroup="a"  runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                <asp:TextBox ID="txt_address" ValidationGroup="a"  runat="server" class="form-control filedDisplay"  MaxLength="80"></asp:TextBox>
                                  <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_address" ErrorMessage="<%$Resources:DisplayText,PleasefillAddressfield %>" />
                             </div>
                             <br />
@@ -113,7 +113,7 @@ where maincode='City'
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.TelNo %>*</div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:TextBox ID="txt_telno"  ValidationGroup="a" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                <asp:TextBox ID="txt_telno"  ValidationGroup="a" runat="server" class="form-control filedDisplay"  MaxLength="20"></asp:TextBox>
                                  <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator6" ControlToValidate="txt_telno" ErrorMessage="<%$Resources:DisplayText,PleasefillTelNofield %>" />
 
                             </div>
@@ -123,7 +123,7 @@ where maincode='City'
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.FaxNo %></div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:TextBox ID="txt_faxno" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                <asp:TextBox ID="txt_faxno" runat="server" class="form-control filedDisplay"  MaxLength="20"></asp:TextBox>
 
                             </div>
                             <br />
@@ -132,7 +132,7 @@ where maincode='City'
                             <br />
                             <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.HomePage %></div>
                             <div class="col-md-8 col-xs-8">
-                                <asp:TextBox ID="txt_homepage" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                <asp:TextBox ID="txt_homepage" runat="server" class="form-control filedDisplay"   MaxLength="60"></asp:TextBox>
 
                             </div>
                             <br />

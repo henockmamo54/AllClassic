@@ -19,7 +19,7 @@
                 <div class="col-xs-6" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.Organizer %>*</div>
                     <div class="col-xs-6" style="padding: 0;">
-                        <asp:TextBox runat="server" ValidationGroup="a" ID="txt_organizer" CssClass="form-control filedDisplay" />
+                        <asp:TextBox runat="server" ValidationGroup="a" ID="txt_organizer" CssClass="form-control filedDisplay"  MaxLength="40"/>
 
                         <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_organizer" ErrorMessage="<%$Resources:DisplayText,Pleasefillorganizerfield %>" />
 

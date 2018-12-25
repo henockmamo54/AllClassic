@@ -40,7 +40,7 @@
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.Title %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_title" CssClass="form-control filedDisplay" ValidationGroup="a" />
+                <asp:TextBox runat="server" ID="txt_title" CssClass="form-control filedDisplay" ValidationGroup="a"   MaxLength="80"  />
                 <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_title" ErrorMessage="<%$Resources:DisplayText,Pleasefilltitlefield %>" />
 
             </div>
@@ -64,7 +64,7 @@ where maincode='City'
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.ContactName %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_contactname" ValidationGroup="a" CssClass="form-control filedDisplay" />
+                <asp:TextBox runat="server" ID="txt_contactname" ValidationGroup="a" CssClass="form-control filedDisplay"   MaxLength="80"  />
                 <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator3" ControlToValidate="txt_contactname" ErrorMessage="<%$Resources:DisplayText,PleasefillContactNamefield %>" />
 
             </div>
@@ -72,7 +72,7 @@ where maincode='City'
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.TelNo %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_telno" CssClass="form-control filedDisplay" ValidationGroup="a" />
+                <asp:TextBox runat="server" ID="txt_telno" CssClass="form-control filedDisplay" ValidationGroup="a"   MaxLength="40" />
                 <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_telno" ErrorMessage="<%$Resources:DisplayText,PleasefillTelNofield %>" />
 
             </div>
@@ -88,7 +88,7 @@ where maincode='City'
         <div class="col-xs-4" style="padding: 0;">
             <div class="col-xs-4 filedName"><%=Resources.DisplayText.Email %>*</div>
             <div class="col-xs-6" style="padding: 0;">
-                <asp:TextBox runat="server" ID="txt_email" TextMode="Email" CssClass="form-control filedDisplay" ValidationGroup="a" />
+                <asp:TextBox runat="server" ID="txt_email" TextMode="Email" CssClass="form-control filedDisplay" ValidationGroup="a"  MaxLength="50"  />
                 <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourEmail %>" />
 
             </div>

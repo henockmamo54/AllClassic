@@ -126,6 +126,7 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\CKEditor.NET.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\DataAccessP.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\EntityFramework.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\EntityFramework.SqlServer.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\Microsoft.AspNet.FriendlyUrls.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
@@ -169,6 +170,8 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\DataAccessP.pdb
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\DataAccessP.exe.config
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\EntityFramework.xml
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\EntityFramework.SqlServer.xml
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.pdb
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.xml
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\System.Web.Optimization.xml
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\Newtonsoft.Json.xml
@@ -190,6 +193,3 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicW
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csproj.CopyComplete
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.pdb
-C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.dll
-C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.pdb
-C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.xml
