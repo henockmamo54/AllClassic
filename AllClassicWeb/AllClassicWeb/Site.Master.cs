@@ -31,7 +31,7 @@ namespace AllClassicWeb
 
         public void searchClicked(object sender, EventArgs e) {
             var endcodestring=encodedSearchvalue.Value;
-            Response.Redirect("~/Views/SearchEngineResult.aspx?q=" + searchbox.Text);
+            Response.Redirect("~/Views/SearchEngineResult.aspx?query=" + searchbox.Text);
         }
 
         protected void changecolor(object sender, CommandEventArgs e) {

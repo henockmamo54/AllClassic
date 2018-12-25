@@ -190,3 +190,6 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicW
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.csproj.CopyComplete
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.dll
 C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\obj\Debug\AllClassicWeb.pdb
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.dll
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.pdb
+C:\workplace\C#\AllClassic_git\AllClassicWeb\AllClassicWeb\bin\HtmlAgilityPack.xml
