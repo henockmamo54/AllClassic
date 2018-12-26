@@ -14,11 +14,11 @@
         <ContentTemplate>
 
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#menu1">Personal Info</a>
+                <li class="active"><a data-toggle="tab" href="#menu1"><%=Resources.DisplayText.PersonalInfo %></a>
 
                 </li>
-                <li><a data-toggle="tab" href="#menu2">Edit</a></li>
-                <li><a data-toggle="tab" href="#menu3">Unsubscribe</a></li>
+                <li><a data-toggle="tab" href="#menu2"><%=Resources.DisplayText.Edit %></a></li>
+                <li><a data-toggle="tab" href="#menu3"><%=Resources.DisplayText.Unsubscribe %></a></li>
             </ul>
 
             <div class="tab-content">
@@ -333,7 +333,7 @@
                     <p>If you want delete your account and Unsubscribe from all classic korea, click the  unsubsribe button below.</p>
                     <div class="col-md-12 col-xs-12 pull-right" style="text-align: center;">
                         <br />
-                        <asp:Button ID="Button3" CssClass="btn btn-danger contentButton " runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClientClick="DeleteAccount(1)" />
+                        <asp:Button ID="Button3" CssClass="btn btn-danger contentButton " runat="server" Text="<%$Resources:DisplayText,Unsubscribe %>" OnClientClick="DeleteAccount(1)" />
 
                     </div>
                 </div>

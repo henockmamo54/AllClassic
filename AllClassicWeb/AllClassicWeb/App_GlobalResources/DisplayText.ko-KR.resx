@@ -742,4 +742,10 @@
   <data name="Mypage" xml:space="preserve">
     <value>마이페이지</value>
   </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>개인적인 정보</value>
+  </data>
+  <data name="Unsubscribe" xml:space="preserve">
+    <value>수신 거부</value>
+  </data>
 </root>

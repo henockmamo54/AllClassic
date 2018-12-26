@@ -724,4 +724,10 @@
   <data name="Mypage" xml:space="preserve">
     <value>My page</value>
   </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>Personal Info</value>
+  </data>
+  <data name="Unsubscribe" xml:space="preserve">
+    <value>Unsubscribe</value>
+  </data>
 </root>
