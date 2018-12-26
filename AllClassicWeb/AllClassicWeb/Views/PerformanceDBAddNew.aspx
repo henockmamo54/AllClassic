@@ -305,6 +305,11 @@ where maincode='City'
                         <br />
                         <div class="col-md-4 col-xs-4 filedName" style="padding-left: 0px;"><%= Resources.DisplayText.Poster %>*</div>
                         <div class="col-md-8 col-xs-8" style="padding: 0px;">
+                            <asp:Label ID="FileUpload_photo1_label" runat="server" style="visibility:hidden;"> </asp:Label> 
+                            <a ID="FileUpload_photo1_Changelink" style="visibility:hidden;" 
+                                onclick='$("#MainContent_FileUpload_photo1_label").hide(); $("#FileUpload_photo1_Changelink").hide();  $("#MainContent_FileUpload_photo1").show();
+                                $("#MainContent_FileUpload_photo1").css("visibility", "visible");'  ><%=Resources.DisplayText.Edit %></a>
+                    
                             <asp:FileUpload ID="FileUpload_photo1" runat="server" Style="display: inline; display: inline; padding-left: 0; padding-right: 0; border: none; box-shadow: none;"
                                 class="form-control" />
                         </div>
@@ -447,6 +452,26 @@ where maincode='City'
             });
 
 
+        }
+
+        
+        function preparetheFileuploadForEdit(isOnEdit) {
+            if (isOnEdit) {
+
+                $("#MainContent_FileUpload_photo1").css("visibility", "hidden");
+                $("#FileUpload_photo1_Changelink").show();
+                $("#MainContent_FileUpload_photo1_label").show();
+                $("#FileUpload_photo1_Changelink").css("visibility", "visible");
+                $("#MainContent_FileUpload_photo1_label").css("visibility", "visible");  
+            }
+            else {
+
+                $("#FileUpload_photo1_Changelink").hide();
+                $("#MainContent_FileUpload_photo1_label").hide();                
+                $("#FileUpload_photo1_Changelink").css("visibility", "hidden");
+                $("#MainContent_FileUpload_photo1_label").css("visibility", "hidden");                
+                $("#MainContent_FileUpload_photo1").css("visibility", "visible");  
+            }
         }
 
 

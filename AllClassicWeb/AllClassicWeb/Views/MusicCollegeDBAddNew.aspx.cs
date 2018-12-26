@@ -30,12 +30,17 @@ namespace AllClassicWeb.Views
                     {
                         try
                         {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfds", "preparetheFileuploadForEdit(true);", true);
                             handleButtons(false);
                             loadMuscianInfo(int.Parse(Session["MusicCollegeID"].ToString()));
                         }
                         catch (Exception loaingexception) { }
                     }
+                    else
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfds", "preparetheFileuploadForEdit(false);", true);
                 }
+                else
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfds", "preparetheFileuploadForEdit(false);", true);
 
 
             }
@@ -51,6 +56,15 @@ namespace AllClassicWeb.Views
             //txt_introduction.Text = c.Introduction;
             txt_description.InnerText = Server.HtmlDecode(c.Introduction);
             txt_locationmap.Text = c.LocationMap;
+
+
+            if (c.CollegePhoto.Length == 0)
+                FileUpload_photo1_label.Text = "No File chosen";
+            else if (c.CollegePhoto.Length < 28 & c.CollegePhoto.Length > 17)
+                FileUpload_photo1_label.Text = c.CollegePhoto.Substring(17) + "...";
+            else if (c.CollegePhoto.Length > 28)
+                FileUpload_photo1_label.Text = c.CollegePhoto.Substring(17, 10) + "...";
+            else FileUpload_photo1_label.Text = c.CollegePhoto;
 
         }
 

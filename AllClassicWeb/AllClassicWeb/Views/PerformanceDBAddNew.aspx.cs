@@ -31,12 +31,17 @@ namespace AllClassicWeb.Views
                     {
                         try
                         {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfds", "preparetheFileuploadForEdit(true);", true);
                             handleButtons(false);
                             load_performanceInfo(int.Parse(Session["PID"].ToString()));
                         }
                         catch (Exception myexception) { }
                     }
+                    else
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfds", "preparetheFileuploadForEdit(false);", true);
                 }
+                else
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfds", "preparetheFileuploadForEdit(false);", true);
             }
         }
 
@@ -62,6 +67,15 @@ namespace AllClassicWeb.Views
                 txt_outline_organizer.InnerText = Server.HtmlDecode(performance.Description);
                 startdate.Value = performance.StartDate.ToString("MM/dd/yyyy");
                 enddate.Value = performance.EndDate.ToString("MM/dd/yyyy");
+
+                if (performance.PosterFileName.Length == 0)
+                    FileUpload_photo1_label.Text = "No File chosen";
+                else if (performance.PosterFileName.Length < 28 & performance.PosterFileName.Length > 17)
+                    FileUpload_photo1_label.Text = performance.PosterFileName.Substring(17) + "...";
+                else if (performance.PosterFileName.Length > 28)
+                    FileUpload_photo1_label.Text = performance.PosterFileName.Substring(17, 10) + "...";
+                else FileUpload_photo1_label.Text = performance.PosterFileName;
+
 
 
                 var artistinstrumentlist = performance.PerformanceMusicianInstrumentTbls.ToList();

@@ -81,6 +81,14 @@ namespace AllClassicWeb.Views
                     FileUpload_photo1_label.Text = artist.Photo1.Substring(17, 10) + "...";
                 else FileUpload_photo1_label.Text = artist.Photo1;
 
+                if (artist.Photo2.Length == 0)
+                    FileUpload_photo2_label.Text = "No File chosen";
+                else if (artist.Photo2.Length < 28 & artist.Photo2.Length > 17)
+                    FileUpload_photo2_label.Text = artist.Photo2.Substring(17) + "...";
+                else if (artist.Photo2.Length > 28)
+                    FileUpload_photo2_label.Text = artist.Photo2.Substring(17, 10) + "...";
+                else FileUpload_photo2_label.Text = artist.Photo2;
+
 
                 //DropDownList1_Major.Items.FindByValue(artist.Major.ToString()).Selected = true;
 
