@@ -22,6 +22,15 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.Image profileImage;
         
         /// <summary>
+        /// profileImage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image profileImage2;
+        
+        /// <summary>
         /// artistnamecontainer control.
         /// </summary>
         /// <remarks>

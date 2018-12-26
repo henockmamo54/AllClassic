@@ -33,10 +33,16 @@ namespace AllClassicWeb.Views
                         {
                             handleButtons(false);
                             loadMuscianInfo(int.Parse(Session["MusicianID"].ToString()));
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfdsaf", "preparetheFileuploadForEdit(true);", true);
+                            
                         }
-                        catch (Exception loaingexception) { }
+                        catch (Exception exception) { }
                     }
+                    else
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfds", "preparetheFileuploadForEdit(false);", true);
                 }
+                else
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "dsfdsfds", "preparetheFileuploadForEdit(false);", true);
             }
         }
 
@@ -67,6 +73,15 @@ namespace AllClassicWeb.Views
                 txt_outline.InnerText = Server.HtmlDecode(artist.Profile);
                 txt_outline_organizer.InnerText = Server.HtmlDecode(artist.Repertory);
 
+                if (artist.Photo1.Length == 0)
+                    FileUpload_photo1_label.Text = "No File chosen";
+                else if (artist.Photo1.Length < 28 & artist.Photo1.Length > 17)
+                    FileUpload_photo1_label.Text = artist.Photo1.Substring(17) + "...";
+                else if (artist.Photo1.Length > 28)
+                    FileUpload_photo1_label.Text = artist.Photo1.Substring(17, 10) + "...";
+                else FileUpload_photo1_label.Text = artist.Photo1;
+
+
                 //DropDownList1_Major.Items.FindByValue(artist.Major.ToString()).Selected = true;
 
                 var endorserlist = artist.MusicianEndorserTbls.ToList();
@@ -79,7 +94,7 @@ namespace AllClassicWeb.Views
 
             }
         }
-
+                
         public void btn_remove_endorser_tolist(object sender, CommandEventArgs e)
         {
             if (Session["myendorsmentlist"] != null)

@@ -386,7 +386,7 @@
     <comment>Table Schema</comment>
   </data>
   <data name="ProfilePage" xml:space="preserve">
-    <value>프로필 화면</value>
+    <value>프로필</value>
   </data>
   <data name="Repertory" xml:space="preserve">
     <value>레파토리</value>

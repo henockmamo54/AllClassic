@@ -23,6 +23,7 @@ namespace AllClassicWeb.Views
             if (artist != null)
             {
                 profileImage.ImageUrl = "../Doc/artist/" + artist.Photo1;
+                profileImage2.ImageUrl = "../Doc/artist/" + artist.Photo2; 
                 artistnamecontainer.InnerText = artist.Name;
                 address.Text = artist.Address;
                 zipCode.Text = artist.ZipCode;
