@@ -347,6 +347,7 @@
     <EntitySetMapping Name="UserTbls">
       <EntityTypeMapping TypeName="AllClassicDBModel.UserTbl">
         <MappingFragment StoreEntitySet="UserTbl">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="IsMasterUser" ColumnName="IsMasterUser" />
           <ScalarProperty Name="UpdateTimeStamp" ColumnName="UpdateTimeStamp" />
           <ScalarProperty Name="PosterEmailID" ColumnName="PosterEmailID" />

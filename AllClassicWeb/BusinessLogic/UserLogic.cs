@@ -32,6 +32,7 @@ namespace BusinessLogic
                         newuser.Birthday = user.Birthday;
                         newuser.ZipCode = user.ZipCode;
                         newuser.Address = user.Address;
+                        newuser.IsActive = true;
 
                         context.SaveChanges();
 
@@ -81,6 +82,7 @@ namespace BusinessLogic
                 {
                     try
                     {
+                        user.IsActive = true;
                         context.UserTbls.Add(user);
                         context.SaveChanges();
 
@@ -117,6 +119,22 @@ namespace BusinessLogic
         public static List<UserTbl> checkUserLoginInfo(string email, string password)
         {
             return entity.UserTbls.Where(x => x.EmailID == email && x.Password == password).ToList(); ;
+        }
+
+
+        public static bool DeactiveUser(UserTbl user) {
+            try
+            {
+                AllClassicDBEntities entities = new AllClassicDBEntities();
+                var u = entities.UserTbls.Where(x => x.UserID == user.UserID & x.IsActive == true).FirstOrDefault();
+                u.IsActive = false;
+                entities.SaveChanges();
+                return true;
+            }
+            catch(Exception exc)
+            {
+                return false;
+            }
         }
 
         public struct Result

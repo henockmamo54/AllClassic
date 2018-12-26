@@ -334,6 +334,7 @@
     <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
     <Property Name="IsMasterUser" Type="int" />
+    <Property Name="IsActive" Type="bit" />
   </EntityType>
   <EntityType Name="UserUserType">
     <Key>

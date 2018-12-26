@@ -24,6 +24,15 @@ namespace AllClassicWeb.Views
             }
         }
 
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool DeleteUserByID(int userID) {
+
+            HttpContext.Current.Session["User"] = null;
+            //Response.Redirect("~/Views/PerformanceDb.aspx");
+            return UserLogic.DeactiveUser(user);
+        }
+
         public void loaduserdata(UserTbl user)
         {
             user= UserLogic.getusertByID(user.UserID);

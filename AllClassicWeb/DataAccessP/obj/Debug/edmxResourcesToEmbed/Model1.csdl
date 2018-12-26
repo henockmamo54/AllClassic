@@ -931,6 +931,7 @@
     <NavigationProperty Name="PerformanceGroupTbls" Relationship="AllClassicDBModel.FK__Performan__UserI__60A75C0F" FromRole="UserTbl" ToRole="PerformanceGroupTbl" />
     <NavigationProperty Name="PerformanceTbls" Relationship="AllClassicDBModel.FK__Performan__UserI__6EF57B66" FromRole="UserTbl" ToRole="PerformanceTbl" />
     <NavigationProperty Name="UserUserTypes" Relationship="AllClassicDBModel.FK__UserUserT__UserI__4E88ABD4" FromRole="UserTbl" ToRole="UserUserType" />
+    <Property Name="IsActive" Type="Boolean" />
   </EntityType>
   <Association Name="FK__AnswersTb__UserI__2DE6D218">
     <End Type="AllClassicDBModel.UserTbl" Role="UserTbl" Multiplicity="0..1" />

@@ -166,7 +166,7 @@
 
                         <div class="col-md-6 col-xs-6 form-group">
 
-                            <asp:CheckBox runat="server"  ID="chk_composer" Text="<%$Resources:DisplayText,Composer %>" Style="padding: 5px;" AutoPostBack="false" /><br />
+                            <asp:CheckBox runat="server" ID="chk_composer" Text="<%$Resources:DisplayText,Composer %>" Style="padding: 5px;" AutoPostBack="false" /><br />
                             <asp:CheckBox runat="server" ID="chk_conductor" Text="<%$Resources:DisplayText,Conductor %>" Style="padding: 5px;" AutoPostBack="false" /><br />
                             <asp:CheckBox runat="server" ID="chk_professor" Text="<%$Resources:DisplayText,TeacherProfessor %>" Style="padding: 5px;" AutoPostBack="false" /><br />
                             <asp:CheckBox runat="server" ID="chk_promusician" Text="<%$Resources:DisplayText,ProMusician %>" Style="padding: 5px;" AutoPostBack="false" /><br />
@@ -197,10 +197,10 @@
                             <br />
                             <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Email %>*</div>
                             <div class=" col-xs-4 filedDisplay">
-                                <asp:TextBox ID="uemail" ValidationGroup="a" TextMode="Email" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                <asp:Label ID="uemail" Enabled="false"  TextMode="Email" runat="server" class="form-control filedDisplay"></asp:Label>
                             </div>
                             <div class=" col-xs-4 filedDisplay">
-                                <asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ID="reqName" ValidationGroup="a" Font-Bold="true" ControlToValidate="uemail" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourEmail %>" />
+                                <%--<asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ID="reqName" ValidationGroup="a" Font-Bold="true" ControlToValidate="uemail" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourEmail %>" />--%>
                             </div>
                             <br />
 
@@ -323,14 +323,19 @@
 
                     <div class="col-md-12 col-xs-12 pull-right" style="text-align: center;">
                         <br />
-                        <asp:Button ID="Button1" CssClass="btn btn-danger contentButton "  runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_cancel_click" />
+                        <asp:Button ID="Button1" CssClass="btn btn-danger contentButton " runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_cancel_click" />
                         <asp:Button ID="Button2" CssClass="btn btn-success contentButton" ValidationGroup="a" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_reguserInfo_click" />
                     </div>
 
                 </div>
                 <div id="menu3" class="tab-pane fade">
-                    <h3>Menu 3</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <br />
+                    <p>If you want delete your account and Unsubscribe from all classic korea, click the  unsubsribe button below.</p>
+                    <div class="col-md-12 col-xs-12 pull-right" style="text-align: center;">
+                        <br />
+                        <asp:Button ID="Button3" CssClass="btn btn-danger contentButton " runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClientClick="DeleteAccount(1)" />
+
+                    </div>
                 </div>
             </div>
 
@@ -355,9 +360,50 @@
             });
         });
 
-        function activaTab(tab){
-    $('.nav-tabs a[href="#' + tab + '"]').tab('show');
-};
+        function activaTab(tab) {
+            $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+        };
+
+        
+
+        function DeleteAccount(n) {
+            $.support.cors = true;
+
+            //check confirmation
+            if (confirm("Are you sure you want to delete?")) {
+                // check for user login
+
+                $.ajax({
+                    type: "POST",
+                    url: "Mypage.aspx/DeleteUserByID", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ userID: n }), //{ },//data
+                    success: function (data) {
+                        //alert('success') 
+
+                        //if log in show the reply message 
+                        if (data.d) {
+
+                            alert('Entry deleted!!!');
+                            window.location="PerformanceDB.aspx"
+                        }
+
+                        else {
+                            alert('Entry not deleted!!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
+                    }
+                });
+
+            }
+        }
+
 
     </script>
 </asp:Content>
