@@ -482,8 +482,8 @@
     <Property Name="Major2" Type="Int32" />
     <Property Name="Photo1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
     <Property Name="Photo2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-    <Property Name="Profile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="Repertory" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Profile" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="Repertory" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
     <Property Name="UserID" Type="Int32" />
     <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Major" Type="Int32" Nullable="false" />
@@ -557,8 +557,8 @@
     <Property Name="Organizer" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Sponser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Program" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Program" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
     <Property Name="UserID" Type="Int32" />
     <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ArchivingTimeStamp" Type="DateTime" Precision="3" />

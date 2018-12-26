@@ -76,7 +76,7 @@
             <div class="row ">
                 <div class="col-md-8 col-xs-8 userregisterinfo">
                     <br />
-                    <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Introduction %></div>
+                    <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Introduction %> (Maximum 400 characters)</div>
                     <div class="col-md-8 col-xs-8">
                         <%--<asp:TextBox ID="txt_description" runat="server" class="form-control filedDisplay" TextMode="MultiLine" Rows="10"></asp:TextBox>--%>
                         <textarea cols="80" id="txt_description" runat="server" name="editor1" rows="10"> </textarea>   

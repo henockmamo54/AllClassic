@@ -75,7 +75,7 @@
 
             <div class="row">
                 <br />
-                <div class="col-xs-12 filedName"><%= Resources.DisplayText.AuditionOutlineandApplicationInfo %>*</div>
+                <div class="col-xs-12 filedName"><%= Resources.DisplayText.AuditionOutlineandApplicationInfo %>* (Maximum 400 characters)</div>
                 <div class="col-xs-12">
 
                     <textarea cols="80" id="txt_auditionoutline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>

@@ -30,6 +30,7 @@ namespace AllClassicWeb.Views
                         txt_title.Text = p.Title;
                         txt_email.Text = p.EmailID;
                         txt_telno.Text = p.TelNo;
+                        txt_contactname.Text = p.ContactName;
                         //txt_description.Text = p.Description;
                         txt_description.InnerText = Server.HtmlDecode(p.Description);
                         Session["txt_description"] = Server.HtmlDecode(p.Description);
@@ -64,7 +65,7 @@ namespace AllClassicWeb.Views
                 r.EmailID = txt_email.Text;
                 r.TelNo = txt_telno.Text;
 
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_description"] = msg; 
                 if (msg.Length > 399)
                 {
@@ -109,7 +110,7 @@ namespace AllClassicWeb.Views
                 r.ContactName = txt_contactname.Text;
                 r.EmailID = txt_email.Text;
                 r.TelNo = txt_telno.Text;
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_description"] = msg;
                 if (msg.Length > 399)
                 {

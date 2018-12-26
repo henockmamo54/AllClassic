@@ -85,7 +85,7 @@ namespace AllClassicWeb.Views
                 c.LocationMap = txt_locationmap.Text;
                 //c.Introduction = txt_introduction.Text;
 
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_description"] = msg;
                 if (msg.Length > 399)
                 {
@@ -132,7 +132,7 @@ namespace AllClassicWeb.Views
                 c.LocationMap = txt_locationmap.Text;
                 //c.Introduction = txt_introduction.Text;
 
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_description"] = msg;
                 if (msg.Length > 399)
                 {

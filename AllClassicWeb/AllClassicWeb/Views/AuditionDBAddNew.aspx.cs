@@ -61,7 +61,7 @@ namespace AllClassicWeb.Views
                 audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 audition.UpdateTimeStamp = DateTime.Now;
 
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_auditionoutline"] = msg;
                 //audition.AuditionOutline = txt_auditionoutline.InnerHtml;
                 if (msg.Length > 999)
@@ -129,7 +129,7 @@ namespace AllClassicWeb.Views
                 audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 audition.UpdateTimeStamp = DateTime.Now;
 
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_auditionoutline"] = msg;
                 //audition.AuditionOutline = txt_auditionoutline.InnerHtml;
                 if (msg.Length > 999) {

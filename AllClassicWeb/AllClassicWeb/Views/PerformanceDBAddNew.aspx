@@ -349,7 +349,7 @@ where maincode='City'
                     <div class="col-xs-12" style="padding: 0px;">
                         <br />
                         <div class="col-xs-12"  style="padding: 0px;">
-                         <span class="filedName"> <%= Resources.DisplayText.Program %></span>  <br />
+                         <span class="filedName"> <%= Resources.DisplayText.Program %> (Maximum 400 characters)</span>   <br />
                             <%--<asp:TextBox ID="txt_program" runat="server" class="form-control" TextMode="MultiLine" Rows="10"></asp:TextBox>--%>
 
                             
@@ -359,7 +359,7 @@ where maincode='City'
                         </div>
                         <div class="col-xs-12"   style="padding: 0px;">
                         <br />
-                          <span class="filedName"> <%= Resources.DisplayText.Description %> </span>  <br />
+                          <span class="filedName"> <%= Resources.DisplayText.Description %> (Maximum 400 characters)</span>  <br />
                             <%--<asp:TextBox ID="txt_description" runat="server" class="form-control" TextMode="MultiLine" Rows="10"></asp:TextBox>--%>
                             
                             <textarea cols="80" id="txt_outline_organizer" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>

@@ -156,7 +156,7 @@ or maincode='Conductor'
 
                     <div class="col-md-6 col-xs-6 userregisterinfo">
                         <br />
-                        <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.ProfilePage %></div>
+                        <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.ProfilePage %> (Maximum 400 characters)</div>
                         <br />
                         <div class="col-md-12 col-xs-12">
                             <%--<asp:TextBox ID="txt_profilepage" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>--%>
@@ -170,7 +170,7 @@ or maincode='Conductor'
 
                     <div class="col-md-6 col-xs-6 userregisterinfo">
                         <br />
-                        <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.Repertory %></div>
+                        <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.Repertory %> (Maximum 400 characters)</div>
                         <br />
                         <div class="col-md-12 col-xs-12">
                             <%--<asp:TextBox ID="txt_repertory" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>--%>

@@ -157,7 +157,7 @@ namespace AllClassicWeb.Views
                 //artist.Repertory = txt_repertory.Text;
                 var msg = Server.HtmlEncode(HiddenField2.Value);
                 Session["txt_outline"] = msg;
-                if (msg.Length > 199)
+                if (msg.Length > 399)
                 {
                     showMsg("The Profile content is more than the specified limit. please  minimize the content of the the Profile.");
                     if (Session["txt_outline"] != null)
@@ -170,7 +170,7 @@ namespace AllClassicWeb.Views
 
                 var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
                 Session["txt_outlineDescription"] = msg_organizer;
-                if (msg_organizer.Length > 199)
+                if (msg_organizer.Length > 399)
                 {
                     showMsg("The Repertory content is more than the specified limit. please  minimize the content of the the Repertory.");
                     if (Session["txt_outlineDescription"] != null)
@@ -361,9 +361,10 @@ namespace AllClassicWeb.Views
                 //artist.Profile = txt_profilepage.Text;
                 //artist.Repertory = txt_repertory.Text;
 
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                //var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_outline"] = msg;
-                if (msg.Length > 199)
+                if (msg.Length > 399)
                 {
                     showMsg("The Profile content is more than the specified limit. please  minimize the content of the the Profile.");
                     if (Session["txt_outline"] != null)
@@ -374,9 +375,9 @@ namespace AllClassicWeb.Views
                 }
                 artist.Profile = msg;
                  
-                var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+                var msg_organizer = (HiddenField_organizer.Value);
                 Session["txt_outlineDescription"] = msg;
-                if (msg.Length > 199)
+                if (msg.Length > 399)
                 {
                     showMsg("The Repertory content is more than the specified limit. please  minimize the content of the the Repertory.");
                     if (Session["txt_outlineDescription"] != null)

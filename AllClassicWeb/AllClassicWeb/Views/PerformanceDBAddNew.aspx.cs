@@ -96,9 +96,9 @@ namespace AllClassicWeb.Views
             pt.MusicianTbl.Name = DropDownList2_artistlist.SelectedItem.Text;
 
             // to maintain the values of the profile and repertory feild which after endorser is added 
-            var msg = Server.HtmlEncode(HiddenField2.Value);
+            var msg = (HiddenField2.Value);
             Session["txt_outline"] = msg;
-            var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+            var msg_organizer = (HiddenField_organizer.Value);
             Session["txt_outlineDescription"] = msg_organizer;
             if (Session["txt_outline"] != null) txt_outline.InnerText = Server.HtmlDecode(Session["txt_outline"].ToString());
             if (Session["txt_outlineDescription"] != null) txt_outline_organizer.InnerText = Server.HtmlDecode(Session["txt_outlineDescription"].ToString());
@@ -175,7 +175,7 @@ namespace AllClassicWeb.Views
                 pt.VideoFileName = txt_video.Text;
                 pt.TicketBox = txt_ticketbox.Text;
                 //pt.Program = txt_program.Text;
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_outline"] = msg;
                 if (msg.Length > 399)
                 {
@@ -189,7 +189,7 @@ namespace AllClassicWeb.Views
                 pt.Program = msg;
 
                 //pt.Description = txt_description.Text;
-                var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+                var msg_organizer = (HiddenField_organizer.Value);
                 Session["txt_outlineDescription"] = msg;
                 if (msg.Length > 399)
                 {
@@ -268,7 +268,7 @@ namespace AllClassicWeb.Views
                 pt.VideoFileName = txt_video.Text;
                 pt.TicketBox = txt_ticketbox.Text;
                 //pt.Program = txt_program.Text;
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_outline"] = msg;
                 if (msg.Length > 399)
                 {
@@ -282,7 +282,7 @@ namespace AllClassicWeb.Views
                 pt.Program = msg;
 
                 //pt.Description = txt_description.Text;
-                var msg_organizer = Server.HtmlEncode(HiddenField_organizer.Value);
+                var msg_organizer = (HiddenField_organizer.Value);
                 Session["txt_outlineDescription"] = msg_organizer;
                 if (msg_organizer.Length > 399)
                 {

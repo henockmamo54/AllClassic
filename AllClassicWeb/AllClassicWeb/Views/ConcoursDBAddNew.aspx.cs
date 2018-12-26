@@ -62,7 +62,7 @@ namespace AllClassicWeb.Views
                 c.FromDate = DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 c.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 //c.ConcourOutline = txt_outline.Text;
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg =(HiddenField2.Value);
                 Session["txt_outline"] = msg;
                 if (msg.Length > 399)
                 {
@@ -108,7 +108,7 @@ namespace AllClassicWeb.Views
                 c.FromDate= DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 c.ToDate= DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 //c.ConcourOutline = txt_outline.Text;
-                var msg = Server.HtmlEncode(HiddenField2.Value);
+                var msg = (HiddenField2.Value);
                 Session["txt_outline"] = msg;
                 if (msg.Length > 399)
                 {

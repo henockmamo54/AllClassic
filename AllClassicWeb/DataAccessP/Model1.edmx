@@ -251,8 +251,8 @@
           <Property Name="Major2" Type="int" />
           <Property Name="Photo1" Type="nvarchar" MaxLength="80" />
           <Property Name="Photo2" Type="nvarchar" MaxLength="80" />
-          <Property Name="Profile" Type="nvarchar" MaxLength="200" />
-          <Property Name="Repertory" Type="nvarchar" MaxLength="200" />
+          <Property Name="Profile" Type="nvarchar" MaxLength="400" />
+          <Property Name="Repertory" Type="nvarchar" MaxLength="400" />
           <Property Name="UserID" Type="int" />
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
           <Property Name="Major" Type="int" Nullable="false" />
@@ -310,8 +310,8 @@
           <Property Name="Organizer" Type="nvarchar" MaxLength="20" />
           <Property Name="Sponser" Type="nvarchar" MaxLength="20" />
           <Property Name="Language" Type="nvarchar" MaxLength="20" />
-          <Property Name="Program" Type="nvarchar" MaxLength="200" />
-          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Program" Type="nvarchar" MaxLength="400" />
+          <Property Name="Description" Type="nvarchar" MaxLength="400" />
           <Property Name="UserID" Type="int" />
           <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
           <Property Name="ArchivingTimeStamp" Type="datetime" />
@@ -1541,8 +1541,8 @@
           <Property Name="Major2" Type="Int32" />
           <Property Name="Photo1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="Photo2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="Profile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Repertory" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Profile" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Repertory" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
           <Property Name="UserID" Type="Int32" />
           <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Major" Type="Int32" Nullable="false" />
@@ -1616,8 +1616,8 @@
           <Property Name="Organizer" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Sponser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Program" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Program" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
           <Property Name="UserID" Type="Int32" />
           <Property Name="UpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ArchivingTimeStamp" Type="DateTime" Precision="3" />
