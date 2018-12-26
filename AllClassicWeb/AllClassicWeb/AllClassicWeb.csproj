@@ -507,6 +507,7 @@
     <Content Include="Scripts\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\ckeditor\themes\default\theme.js" />
+    <Content Include="Views\Mypage.aspx" />
     <Content Include="Views\QADbNew.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -613,6 +614,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Mypage.aspx.cs">
+      <DependentUpon>Mypage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Mypage.aspx.designer.cs">
+      <DependentUpon>Mypage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\QADbNew.aspx.cs">
       <DependentUpon>QADbNew.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

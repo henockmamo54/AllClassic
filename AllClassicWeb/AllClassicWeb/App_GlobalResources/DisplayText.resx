@@ -721,4 +721,7 @@
   <data name="Seemore" xml:space="preserve">
     <value>See more</value>
   </data>
+  <data name="Mypage" xml:space="preserve">
+    <value>My page</value>
+  </data>
 </root>

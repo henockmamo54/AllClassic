@@ -763,6 +763,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My page.
+        /// </summary>
+        internal static string Mypage {
+            get {
+                return ResourceManager.GetString("Mypage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         internal static string Name {

@@ -739,4 +739,7 @@
   <data name="Seemore" xml:space="preserve">
     <value>더보기</value>
   </data>
+  <data name="Mypage" xml:space="preserve">
+    <value>마이페이지</value>
+  </data>
 </root>
