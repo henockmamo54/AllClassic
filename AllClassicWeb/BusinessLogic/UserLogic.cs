@@ -118,9 +118,14 @@ namespace BusinessLogic
 
         public static List<UserTbl> checkUserLoginInfo(string email, string password)
         {
-            return entity.UserTbls.Where(x => x.EmailID == email && x.Password == password).ToList(); ;
+            return entity.UserTbls.Where(x => x.EmailID == email & x.Password == password & x.IsActive==true).ToList(); ;
         }
 
+
+        public static List<UserTbl> checkUserEmailExists(string email)
+        {
+            return entity.UserTbls.Where(x => x.EmailID == email & x.IsActive == true).ToList(); ;
+        }
 
         public static bool DeactiveUser(UserTbl user) {
             try

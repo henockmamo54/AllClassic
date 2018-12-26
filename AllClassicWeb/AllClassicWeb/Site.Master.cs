@@ -20,10 +20,10 @@ namespace AllClassicWeb
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "modifyCss('1','"+pageName+"');", true);
 
             var user = Session["User"];
-            if (user == null) { signinLink.Visible = true; signoutLink.Visible = false; }
+            if (user == null) { signinLink.Visible = true; signoutLink.Visible = false; mypagetab.Visible = false; }
             if (user != null)
             {
-                signinLink.Visible = false; signoutLink.Visible = true;
+                signinLink.Visible = false; signoutLink.Visible = true; mypagetab.Visible = true;
                 //mypageLink.Visible = true;
             }
 

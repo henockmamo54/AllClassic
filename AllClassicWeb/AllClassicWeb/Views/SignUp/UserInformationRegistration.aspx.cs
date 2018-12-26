@@ -105,9 +105,15 @@ namespace AllClassicWeb.Views.SignUp
             user.ZipCode = uzipcode.Text;
             user.Address = uaddress.Text;
 
+            //check if the emailAddress is registered and active
+            var checkemail = UserLogic.checkUserEmailExists(user.EmailID);
+            if (checkemail.Count > 0)
+            {
+                showMsg("This email address is already registered in the system");
+                return;
+            }
 
-
-            //login in the user
+            //register and login in the user           
             UserLogic.Result result = UserLogic.registerUser(usertypes, user);
             bool isSuccess = result .user!= null;
             if (isSuccess)
