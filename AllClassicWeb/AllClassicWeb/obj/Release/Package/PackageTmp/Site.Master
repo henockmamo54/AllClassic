@@ -228,6 +228,12 @@
                     document.getElementById("qatab").style.color = "#000000";
                     break;
                 }
+                case "ASP.views_mypage_aspx": {
+                    document.getElementById("mypagetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("mypagetab").style.borderRight = "none";
+                    document.getElementById("mypagetab").style.color = "#000000";
+                    break;
+                } 
             }
         }
 
@@ -333,6 +339,7 @@
                         <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
                         <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
                         <a id="qatab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/QADbNew"><%= Resources.DisplayText.QA %></a>
+                        <a id="mypagetab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
                         <%--<div>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>

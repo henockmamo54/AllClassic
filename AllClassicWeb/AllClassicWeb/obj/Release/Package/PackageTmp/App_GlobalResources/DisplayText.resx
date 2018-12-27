@@ -369,7 +369,7 @@
     <comment>Table Schema</comment>
   </data>
   <data name="ProfilePage" xml:space="preserve">
-    <value>Profile Page</value>
+    <value>Profile</value>
   </data>
   <data name="Repertory" xml:space="preserve">
     <value>Repertory</value>
@@ -720,5 +720,14 @@
   </data>
   <data name="Seemore" xml:space="preserve">
     <value>See more</value>
+  </data>
+  <data name="Mypage" xml:space="preserve">
+    <value>My page</value>
+  </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>Personal Info</value>
+  </data>
+  <data name="Unsubscribe" xml:space="preserve">
+    <value>Unsubscribe</value>
   </data>
 </root>

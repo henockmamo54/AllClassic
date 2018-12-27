@@ -101,7 +101,7 @@ where maincode='City'
 
         <div class="col-xs-12" style="padding: 0;">
             <div class="col-xs-12 form-group">
-                <div class="filedName"><%=Resources.DisplayText.Description %>*</div>
+                <div class="filedName"><%=Resources.DisplayText.Description %>* (Maximum 400 characters)</div>
                 <%--<asp:TextBox runat="server" ID="txt_description" ValidationGroup="a" CssClass="form-control filedDisplay" TextMode="MultiLine" Rows="10" Style="max-width: 500px;" />--%>
                  <textarea cols="80" id="txt_description" runat="server" name="editor1" rows="10"> </textarea>                
                     <asp:HiddenField ID="HiddenField2" runat="server" Value="" /> 

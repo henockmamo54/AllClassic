@@ -69,7 +69,13 @@ namespace BusinessLogic
 
         public static UserTbl getusertByID(int id) {
             AllClassicDBEntities entities = new AllClassicDBEntities();
-            return entities.UserTbls.Where(x => x.UserID == id).FirstOrDefault();
+            return entities.UserTbls.Where(x => x.UserID == id && x.IsActive == true).FirstOrDefault();
+        }
+
+        public static UserTbl getusertByEmail(string Email)
+        {
+            AllClassicDBEntities entities = new AllClassicDBEntities();
+            return entities.UserTbls.Where(x => x.EmailID == Email).FirstOrDefault();
         }
 
         public static Result registerUser(List<int> usertypes, UserTbl user)

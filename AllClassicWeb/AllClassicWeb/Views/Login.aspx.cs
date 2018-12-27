@@ -1,7 +1,9 @@
 ﻿using BusinessLogic;
+using BusinessLogic.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -37,6 +39,22 @@ namespace AllClassicWeb.Views
                 Response.Redirect("~/Views/PerformanceDB.aspx");
             }
             else Label1_warnningmessage.Visible = true;
+        }
+
+        
+
+        [System.Web.Services.WebMethod]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool SendPasswordResetEmail(string email)
+        {
+            new Thread(() =>
+            {
+                EmailSender.sendPasswordResetEmail(UserLogic.getusertByEmail(email));
+            }).Start();
+
+            //HttpContext.Current.Session["User"] = null;
+            //Response.Redirect("~/Views/PerformanceDb.aspx");
+            return true;
         }
 
     }

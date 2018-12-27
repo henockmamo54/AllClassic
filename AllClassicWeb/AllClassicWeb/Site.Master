@@ -329,7 +329,7 @@
                             <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
                         </a>
 
-                        <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked">SignOut</a>
+                        <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
                         <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
                         <a id="concoursdbtab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>

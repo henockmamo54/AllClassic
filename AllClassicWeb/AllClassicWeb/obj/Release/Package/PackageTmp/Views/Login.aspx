@@ -5,7 +5,9 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link rel="stylesheet" type="text/css" href="../Content/Site.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+
 </head>
 <body style="padding-top: 2px;">
 
@@ -43,7 +45,7 @@
 
                         </form>
                         <!-- /form -->
-                        <a href="#" class="forgot-password"><%= Resources.DisplayText.Forgotthepassword %>
+                        <a onclick="ForgotPassword()" class="forgot-password"><%= Resources.DisplayText.Forgotthepassword %>
                             <asp:LinkButton ID="LinkButton1" runat="server" OnClientClick='redirect()'><%= Resources.DisplayText.SignUp %></asp:LinkButton>
                         </a>
                     </div>
@@ -60,6 +62,48 @@
                 //location.href = 'UserPage.aspx';
                 location.href = 'SignUp/TermsOfUsePage.aspx';
             }
+
+             
+
+        function ForgotPassword() {
+            $.support.cors = true;
+
+            //check confirmation
+            if (confirm("Do you want to send Password reset Email?")) {
+                // check for user login
+
+                $.ajax({
+                    type: "POST",
+                    url: "Login.aspx/SendPasswordResetEmail", //Pagename/Functionname
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ email: $("#inputEmail").val() }), //{ },//data
+                    success: function (data) {
+                        //alert('success') 
+
+                        //if log in show the reply message 
+                        if (data.d) {
+
+                            alert('Please check your email to continue!!!'); 
+                        }
+
+                        else {
+                            alert('Email not sent !!!');
+                        }
+
+                    },
+                    error: function (result) {
+                        console.log(result)
+                        //alert("error")
+
+                    }
+                });
+
+            }
+        }
+
+
+
 
         </script>
 

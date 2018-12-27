@@ -318,3 +318,14 @@ blockquote {
     padding-right: 5px;
     color: black !important;
 }
+
+
+
+.userregisterinfo div {
+    padding: 0px;
+    margin: 2px;
+}
+
+.userregisterinfo {
+    padding-left: 20px;
+}

@@ -8,6 +8,9 @@
             <div class="row">
                 <div class="col-md-6 col-xs-6 pull-left">
                     <asp:Image runat="server" ID="profileImage" Width="100%" CssClass="shadowedPanel" />
+                    <hr />
+                    <asp:Image runat="server" ID="profileImage2" Width="100%" CssClass="shadowedPanel" />
+
                 </div>
 
                 <div class="col-md-6 col-xs-6 pull-center">

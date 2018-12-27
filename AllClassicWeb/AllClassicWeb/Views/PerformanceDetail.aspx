@@ -147,13 +147,9 @@
                                                                     </tr>
                                                                 </table>
                                                             </div>
-                                                        </ItemTemplate>
+                                                        </ItemTemplate> 
 
-
-
-                                                    </asp:Repeater>
-
-
+                                                    </asp:Repeater> 
 
                                                 </td>
                                             </tr>
@@ -182,14 +178,14 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.MainTitle %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.MainTitle %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_Maintitle"></asp:Label>
                         </div>
                     </div>
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.SubTitle %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.SubTitle %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_subtitle"></asp:Label>
                         </div>
@@ -197,7 +193,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.SubjectTheme %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.SubjectTheme %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_subjectTheme"></asp:Label>
                         </div>
@@ -205,7 +201,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.PerformanceGroup %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.PerformanceGroup %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_pg"></asp:Label>
                         </div>
@@ -213,7 +209,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.PerformanceType %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.PerformanceType %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_pt"></asp:Label>
                         </div>
@@ -222,7 +218,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Conductor %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Conductor %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_conductor"></asp:Label>
                         </div>
@@ -231,7 +227,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.MainTitleComposer %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.MainTitleComposer %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_maintitlecomposer"></asp:Label>
                         </div>
@@ -240,7 +236,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.MainInstrument %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.MainInstrument %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_maininstrument"></asp:Label>
                         </div>
@@ -249,7 +245,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Organizer %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Organizer %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_organizer"></asp:Label>
                         </div>
@@ -258,7 +254,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Sponser %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Sponser %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_sponser"></asp:Label>
                         </div>
@@ -267,7 +263,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Language %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Language %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_language"></asp:Label>
                         </div>
@@ -276,7 +272,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Start %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Start %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_start"></asp:Label>
                         </div>
@@ -285,7 +281,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.End %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.End %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_end"></asp:Label>
                         </div>
@@ -294,7 +290,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Time %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Time %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_time"></asp:Label>
                         </div>
@@ -303,7 +299,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Region %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Region %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_region"></asp:Label>
                         </div>
@@ -312,7 +308,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.City %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.City %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_city"></asp:Label>
                         </div>
@@ -321,7 +317,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Venue %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Venue %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_venu"></asp:Label>
                         </div>
@@ -337,7 +333,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.Video %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Video %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_video"></asp:Label>
                         </div>
@@ -345,7 +341,7 @@
                     </div>
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0; border-bottom: solid 1px #d3d3d370; margin-bottom: 2px;">
 
-                        <div class="col-md-6 col-xs-6 filedName" style="padding: 0;"><%= Resources.DisplayText.TicketBox %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.TicketBox %></div>
                         <div class="col-md-6 col-xs-6 filedDisplay" style="padding: 0;">
                             <asp:Label runat="server" ID="lbl_ticketbox"></asp:Label>
                         </div>
@@ -355,7 +351,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0;">
                         <br />
-                        <div class=" col-xs-12 filedName" style="padding: 0;"><%= Resources.DisplayText.Program %></div>
+                        <div class=" col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Program %></div>
                         <div class=" col-xs-12 filedDisplay" style="padding: 0; padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
                             <asp:Label runat="server" ID="lbl_program"></asp:Label>
                         </div>
@@ -364,7 +360,7 @@
 
                     <div class="col-md-12 col-xs-12 userregisterinfo" style="padding: 0;">
                         <br />
-                        <div class="col-xs-12 filedName" style="padding: 0;"><%= Resources.DisplayText.Description %></div>
+                        <div class="col-xs-4 filedName" style="padding: 0;"><%= Resources.DisplayText.Description %></div>
                         <div class="col-xs-12 filedDisplay" style="padding: 0; padding: 10px; background-color: #d3d3d35c; border-radius: 5px; margin-top: 8px; margin-bottom: 8px;">
                             <asp:Label runat="server" ID="lbl_description"></asp:Label>
                         </div>

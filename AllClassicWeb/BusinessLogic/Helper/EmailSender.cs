@@ -20,8 +20,8 @@ namespace BusinessLogic.Helper
             {
                 var toAddress = user.EmailID;
                 string subject = "New account confirmation";
-                string body = string.Format(@"<p><strong> Dear Mr. {0}, \n An account has been created for you at All Classic Korea. Click this link to activate your account and log in.
-                            <a href='http://13.125.250.101/web/Views/AccountVerification?ID={1}'> http://13.125.250.101/web/Views/AccountVerification?ID={1}
+                string body = string.Format(@"<p><strong> Dear Mr. {0}, An account has been created for you at All Classic Korea. Click this link to activate your account and log in.
+                            <a href='http://allclassickorea.co.kr/Views/AccountVerification?ID={1}'> http://allclassickorea.co.kr/Views/AccountVerification?ID={1}
                             </a> and fill the form <br /></strong></p> ", user.FullName,  user.UserID);
 
                 System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
@@ -61,7 +61,7 @@ namespace BusinessLogic.Helper
                     var toAddress = endorser.EndorserEmail;
                     string subject = "Endorsement Request";
                     string body = string.Format(@"<p><strong> Dear Mr. {0} we would like to request your endorsement in the behalf of Mr. {1}. please follow 
-                            <a href='http://13.125.250.101/web/Views/EndorsementPage?ID={2}'>http://13.125.250.101/web/Views/EndorsementPage?ID={2}
+                            <a href='http://allclassickorea.co.kr/Views/EndorsementPage?ID={2}'>http://allclassickorea.co.kr/Views/EndorsementPage?ID={2}
                             </a> and fill the form <br /></strong></p> ", endorser.EndorserName, m.Name, endorser.ID);
 
                     //string body = string.Format(@"<p><strong> Dear Mr. {0}, \n An account has been created for you at All Classic Korea. Click this link to activate your account and log in.
@@ -98,6 +98,45 @@ namespace BusinessLogic.Helper
             }
 
         }
+
+        public static void sendPasswordResetEmail(UserTbl user)
+        {
+            try
+            {
+                var toAddress = user.EmailID;
+                string subject = "AllClassic Password Reset";
+                string body = string.Format(@"<p><strong> Dear Mr. {0},   We received a request to change your AllClassic password. Please click this link to reset your password. 
+                            <a href='http://allclassickorea.co.kr/Views/passwordReset.aspx?ID={1}'> http://allclassickorea.co.kr/Views/passwordReset.aspx?ID={1}
+                            </a> and fill the form <br /></strong></p> ", user.FullName, user.UserID);
+
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+
+                };
+
+                using (var message = new MailMessage(fromAddress.Address, toAddress)
+                {
+                    Subject = subject,
+                    Body = body,
+                    IsBodyHtml = true
+                })
+                    smtp.Send(message);
+                Console.WriteLine("done");
+            }
+            catch (Exception eee)
+            {
+                //Response.Write(eee.Message + "\n" + eee.InnerException + "\n" + eee.StackTrace);
+                //showMsg(eee.Message);
+                Console.WriteLine(eee.Message);
+            }
+        }
+
 
     }
 }

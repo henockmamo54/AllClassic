@@ -14,9 +14,9 @@
                 </div>
                 <div class="col-md-10 col-xs-10 ">
 
-                    <h6><strong><%= Resources.DisplayText.Termsofuse %></strong></h6>
+                    <h6 class="contentHeader"><%= Resources.DisplayText.Termsofuse %></h6>
                     <div style="background-color: white; height: 500px; overflow-y: scroll;"
-                        class="shadowedPanel">
+                        class="shadowedPanel filedDisplay">
                         <ol>
                             <li style="font-weight: 400;"><span style="font-weight: 400;">회원 기본서비스</span></li>
                         </ol>
@@ -159,13 +159,13 @@
                         <p><span style="font-weight: 400;">부 칙 1. 본 약관은 2018년 00월 00일부터 시행합니다.</span></p>
                     </div>
                     <div>
-                        <asp:CheckBox runat="server" ID="CheckBox1_terms" class="form-group pull-right" Text="<%$Resources:DisplayText,Doyouaccepttermsofuse %>" />
+                        <asp:CheckBox runat="server" ID="CheckBox1_terms" class="form-group pull-right filedDisplay" Text="<%$Resources:DisplayText,Doyouaccepttermsofuse %>" />
                         <br />
                     </div>
                     <br />
 
-                    <h6><strong><%= Resources.DisplayText.PrivacyPolicy %></strong></h6>
-                    <div style="background-color: white; white; height: 500px; overflow-y: scroll;" class="shadowedPanel">
+                    <h6 class="contentHeader"> <%= Resources.DisplayText.PrivacyPolicy %> </h6>
+                    <div style="background-color: white; white; height: 500px; overflow-y: scroll;" class="shadowedPanel filedDisplay">
                         <p><span style="font-weight: 400;">개인정보보호 </span></p>
                         <p><span style="font-weight: 400;">제1조 (올클래식의 기본의무) </span></p>
                         <ol>
@@ -220,13 +220,13 @@
                     </div>
 
                     <div>
-                        <asp:CheckBox runat="server" ID="CheckBox1_privacy" class="form-group pull-right" Text="<%$Resources:DisplayText,Doyouacceptprivacypolicy %>" />
+                        <asp:CheckBox runat="server" ID="CheckBox1_privacy" class="form-group pull-right filedDisplay" Text="<%$Resources:DisplayText,Doyouacceptprivacypolicy %>" />
                         <br />
                     </div>
 
                 </div>
                 <div class="col-md-12 col-xs-12 pull-right" style="text-align: center;">
-                    <asp:Button ID="txt_addInstrument" CssClass="btn btn-success " runat="server" Text="<%$Resources:DisplayText,Continue %>" OnClick="btn_continueclicked" />
+                    <asp:Button ID="txt_addInstrument" CssClass="btn btn-success contentButton" runat="server" Text="<%$Resources:DisplayText,Continue %>" OnClick="btn_continueclicked" />
                 </div>
             </div>
 

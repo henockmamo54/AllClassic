@@ -84,7 +84,7 @@
                 <div class="row ">
                     <div class="col-xs-12 userregisterinfo">
                         <br />
-                        <div class=" col-xs-12 filedName"><%= Resources.DisplayText.ConcourOutline %>*</div>
+                        <div class=" col-xs-12 filedName"><%= Resources.DisplayText.ConcourOutline %>* (Maximum 400 characters)</div>
 
                         <div class="col-xs-12">
                             <%--<asp:TextBox ID="txt_outline" runat="server"  class="form-control filedDisplay" style="max-width:500px;"  ValidationGroup="a" TextMode="MultiLine" Rows="15"></asp:TextBox>--%>

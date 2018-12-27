@@ -132,8 +132,14 @@ or maincode='Conductor'
                 <br />
                 <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Photo1 %>:</div>
                 <div class="col-md-8 col-xs-8">
-                    <asp:FileUpload ID="FileUpload_photo1" runat="server" Style="display: inline; display: inline; padding-left: 0; padding-right: 0; border: none; box-shadow: none;"
+                    
+                    <asp:Label ID="FileUpload_photo1_label" runat="server" style="visibility:hidden;">
+                    </asp:Label> 
+                    <a ID="FileUpload_photo1_Changelink" style="visibility:hidden;" onclick='$("#MainContent_FileUpload_photo1_label").hide(); $("#FileUpload_photo1_Changelink").hide();  $("#MainContent_FileUpload_photo1").show();  $("#MainContent_FileUpload_photo1").css("visibility", "visible");'  ><%=Resources.DisplayText.Edit %></a>
+                    
+                    <asp:FileUpload ID="FileUpload_photo1" runat="server" Style="display: inline; display: inline; padding-left: 0; padding-right: 0; border: none; box-shadow: none; visibility:visible; "
                        class="form-control filedDisplay" />
+
                 </div>
                 <br />
             </div>
@@ -141,6 +147,12 @@ or maincode='Conductor'
                 <br />
                 <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Photo2 %>:</div>
                 <div class="col-md-8 col-xs-8">
+
+                    <asp:Label ID="FileUpload_photo2_label" runat="server" style="visibility:hidden;">  </asp:Label> 
+                    <a ID="FileUpload_photo2_Changelink" style="visibility:hidden;" 
+                        onclick='$("#MainContent_FileUpload_photo2_label").hide(); $("#FileUpload_photo2_Changelink").hide();  
+                        $("#MainContent_FileUpload_photo2").show();  $("#MainContent_FileUpload_photo2").css("visibility", "visible");'  ><%=Resources.DisplayText.Edit %></a>                    
+
                     <asp:FileUpload ID="FileUpload_photo2" runat="server" Style="display: inline; display: inline; padding-left: 0; padding-right: 0; border: none; box-shadow: none;"
                        class="form-control filedDisplay" />
                 </div>
@@ -156,7 +168,7 @@ or maincode='Conductor'
 
                     <div class="col-md-6 col-xs-6 userregisterinfo">
                         <br />
-                        <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.ProfilePage %></div>
+                        <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.ProfilePage %> (Maximum 400 characters)</div>
                         <br />
                         <div class="col-md-12 col-xs-12">
                             <%--<asp:TextBox ID="txt_profilepage" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>--%>
@@ -170,7 +182,7 @@ or maincode='Conductor'
 
                     <div class="col-md-6 col-xs-6 userregisterinfo">
                         <br />
-                        <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.Repertory %></div>
+                        <div class="col-md-12 col-xs-12 filedName"><%= Resources.DisplayText.Repertory %> (Maximum 400 characters)</div>
                         <br />
                         <div class="col-md-12 col-xs-12">
                             <%--<asp:TextBox ID="txt_repertory" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>--%>
@@ -342,7 +354,41 @@ or maincode='Conductor'
             $('#MainContent_HiddenField_organizer').val(value);
         }
 
+        function preparetheFileuploadForEdit(isOnEdit) {
+            if (isOnEdit) {
 
+                $("#MainContent_FileUpload_photo1").css("visibility", "hidden");
+                $("#FileUpload_photo1_Changelink").show();
+                $("#MainContent_FileUpload_photo1_label").show();
+                $("#FileUpload_photo1_Changelink").css("visibility", "visible");
+                $("#MainContent_FileUpload_photo1_label").css("visibility", "visible");
+
+                
+
+                $("#MainContent_FileUpload_photo2").css("visibility", "hidden");
+                $("#FileUpload_photo2_Changelink").show();
+                $("#MainContent_FileUpload_photo2_label").show();
+                $("#FileUpload_photo2_Changelink").css("visibility", "visible");
+                $("#MainContent_FileUpload_photo2_label").css("visibility", "visible");
+
+            }
+            else {
+
+                $("#FileUpload_photo1_Changelink").hide();
+                $("#MainContent_FileUpload_photo1_label").hide();                
+                $("#FileUpload_photo1_Changelink").css("visibility", "hidden");
+                $("#MainContent_FileUpload_photo1_label").css("visibility", "hidden");                
+                $("#MainContent_FileUpload_photo1").css("visibility", "visible");
+
+                
+                $("#FileUpload_photo2_Changelink").hide();
+                $("#MainContent_FileUpload_photo2_label").hide();                
+                $("#FileUpload_photo2_Changelink").css("visibility", "hidden");
+                $("#MainContent_FileUpload_photo2_label").css("visibility", "hidden");                
+                $("#MainContent_FileUpload_photo2").css("visibility", "visible");
+
+            }
+        }
 
         document.getElementById("artisttab").style.backgroundColor = "white";
         document.getElementById("artisttab").style.borderBottom = "none";

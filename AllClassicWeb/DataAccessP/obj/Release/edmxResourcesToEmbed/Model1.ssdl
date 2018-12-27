@@ -246,8 +246,8 @@
     <Property Name="Major2" Type="int" />
     <Property Name="Photo1" Type="nvarchar" MaxLength="80" />
     <Property Name="Photo2" Type="nvarchar" MaxLength="80" />
-    <Property Name="Profile" Type="nvarchar" MaxLength="200" />
-    <Property Name="Repertory" Type="nvarchar" MaxLength="200" />
+    <Property Name="Profile" Type="nvarchar" MaxLength="400" />
+    <Property Name="Repertory" Type="nvarchar" MaxLength="400" />
     <Property Name="UserID" Type="int" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
     <Property Name="Major" Type="int" Nullable="false" />
@@ -305,8 +305,8 @@
     <Property Name="Organizer" Type="nvarchar" MaxLength="20" />
     <Property Name="Sponser" Type="nvarchar" MaxLength="20" />
     <Property Name="Language" Type="nvarchar" MaxLength="20" />
-    <Property Name="Program" Type="nvarchar" MaxLength="200" />
-    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Program" Type="nvarchar" MaxLength="400" />
+    <Property Name="Description" Type="nvarchar" MaxLength="400" />
     <Property Name="UserID" Type="int" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
     <Property Name="ArchivingTimeStamp" Type="datetime" />
@@ -334,6 +334,7 @@
     <Property Name="PosterEmailID" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="UpdateTimeStamp" Type="datetime" Nullable="false" />
     <Property Name="IsMasterUser" Type="int" />
+    <Property Name="IsActive" Type="bit" />
   </EntityType>
   <EntityType Name="UserUserType">
     <Key>
