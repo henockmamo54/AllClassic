@@ -39,7 +39,7 @@ namespace BusinessLogic
                 a.ToDate = audition.ToDate;
                 a.UpdateTimeStamp = audition.UpdateTimeStamp;
                 a.AuditionOutline = audition.AuditionOutline;
-                a.UserID = audition.UserID;
+                //a.UserID = audition.UserID;
                 entities.SaveChanges();
 
                 return audition;

@@ -32,7 +32,7 @@ namespace BusinessLogic
                 ArticleTbl article = entities.ArticleTbls.Where(x => x.ArticleID == a.ArticleID).FirstOrDefault();
                 article.ArticleTitle = a.ArticleTitle;
                 article.ArticleURL = a.ArticleURL;
-                article.UserID = a.UserID;
+                //article.UserID = a.UserID;
                 article.UpdateTimeStamp = a.UpdateTimeStamp;
                 entities.SaveChanges();
                 return article;

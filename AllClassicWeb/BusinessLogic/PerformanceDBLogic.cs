@@ -92,7 +92,7 @@ namespace BusinessLogic
                         pt.TicketBox = p.TicketBox;
                         pt.Program = p.Program;
                         pt.Description = p.Description;
-                        pt.UserID = p.UserID;
+                        //pt.UserID = p.UserID;
                         pt.UpdateTimeStamp = DateTime.Now;
                         
                         context.SaveChanges();

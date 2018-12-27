@@ -93,7 +93,7 @@ namespace BusinessLogic
                         artist.Photo2 = musician.Photo2;
                         artist.Profile = musician.Profile;
                         artist.Repertory = musician.Repertory;
-                        artist.UserID = musician.UserID;
+                        //artist.UserID = musician.UserID;
                         artist.UpdateTimeStamp = DateTime.Now;
                         artist.Major = musician.Major;
                         context.SaveChanges();

@@ -45,7 +45,7 @@ namespace BusinessLogic
                 CollegeLogic.CollegePhoto = c.CollegePhoto;
                 CollegeLogic.Introduction = c.Introduction;
                 CollegeLogic.UpdateTimeStamp = c.UpdateTimeStamp;
-                CollegeLogic.UserID = c.UserID;
+                //CollegeLogic.UserID = c.UserID;
                 entities.SaveChanges();
                 return CollegeLogic;
             }

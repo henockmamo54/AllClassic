@@ -40,7 +40,7 @@ namespace BusinessLogic
                 r.Description = p.Description;
                 r.UpdateTimeStamp = DateTime.Now;
 
-                r.UserID = p.UserID;
+                //r.UserID = p.UserID;
                 entities.SaveChanges();
                 return p;
             }

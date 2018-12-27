@@ -26,7 +26,7 @@ namespace AllClassicWeb.Views
 
                 try
                 {
-                    repeater_thisweekPerformanceInfo.DataSource = entity.PerformanceTbls.Where(x => SqlFunctions.DatePart("ISO_WEEK", x.StartDate) == SqlFunctions.DatePart("ISO_WEEK", DateTime.Today)).ToList();
+                    repeater_thisweekPerformanceInfo.DataSource = entity.PerformanceTbls.Where(x => SqlFunctions.DatePart("ISO_WEEK", x.StartDate) == SqlFunctions.DatePart("ISO_WEEK", DateTime.Today) & x.EndDate>DateTime.Now).ToList();
                     repeater_thisweekPerformanceInfo.DataBind();
                     label_countofitems.Text = artistListContainer.Items.Count + "";
                 }

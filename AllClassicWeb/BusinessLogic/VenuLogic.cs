@@ -42,7 +42,7 @@ namespace BusinessLogic
                 r.FaxNo = venu.FaxNo;
                 r.HomePage = venu.HomePage;
                 r.UpdateTimeStamp = DateTime.Now;
-                r.UserID = venu.UserID;
+                //r.UserID = venu.UserID;
 
                 entities.SaveChanges();
                 return r;

@@ -44,7 +44,7 @@ namespace BusinessLogic
                 r.FaxNo = musicshop.FaxNo;
                 r.HomePage = musicshop.HomePage;
                 r.UpdateTimeStamp = DateTime.Now;
-                r.UserID = musicshop.UserID;
+                //r.UserID = musicshop.UserID;
 
                 entities.SaveChanges();
                 return r;

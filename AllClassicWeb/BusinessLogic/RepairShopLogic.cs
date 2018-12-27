@@ -40,7 +40,7 @@ namespace BusinessLogic
                 r.FaxNo = repairShop.FaxNo;
                 r.HomePage = repairShop.HomePage;
                 r.UpdateTimeStamp = DateTime.Now;
-                r.UserID = 5;
+                //r.UserID = 5;
                 entities.SaveChanges();
                 return r;
             }

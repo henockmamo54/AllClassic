@@ -26,7 +26,7 @@ namespace BusinessLogic
         public static ConcourTbl updateConcours(ConcourTbl c) {
             try
             {
-                c.UserID = 5;
+                //c.UserID = 5;
                 AllClassicDBEntities entities = new AllClassicDBEntities();
                 var concours = entities.ConcourTbls.Where(x => x.ConcourID == c.ConcourID).FirstOrDefault();
                 concours.Title = c.Title;
