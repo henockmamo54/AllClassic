@@ -516,7 +516,9 @@
                         if (data.d) {
 
                             alert('Entry deleted!!!');
-                            location.reload();
+                            //location.reload();                            
+                            
+                        window.location.href="PerformanceDB.aspx";
                         }
 
                         else {

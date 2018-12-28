@@ -114,7 +114,9 @@
                         if (data.d) {
 
                             alert('Entry deleted!!!');
-                            history.go(-1);
+                            //history.go(-1);
+                            
+                        window.location.href="PerformanceGroup.aspx";
                         }
 
                         else {
