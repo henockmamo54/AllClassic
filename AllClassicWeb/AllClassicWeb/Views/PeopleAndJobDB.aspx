@@ -261,12 +261,12 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
     <script type="text/javascript">
         function bindDateTime() {
             $('#datetimepicker3').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         }
         $(function () {
             $('#datetimepicker3').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         });
 

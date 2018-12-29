@@ -287,7 +287,7 @@ namespace AllClassicWeb
             var filterQuery = "";
             if (datetimefilter.Value.Length != 0)
             {
-                var date = DateTime.ParseExact(datetimefilter.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                var date = DateTime.ParseExact(datetimefilter.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 filterQuery += " where datepart(dd,p.timestamp) =" + date.Day + " and datepart(mm,p.timestamp) =" + date.Month + " and datepart(yy,p.timestamp) =" + date.Year;
             }
             if (txtbox_emailfilter.Text.ToString().Length > 0)

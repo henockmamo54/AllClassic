@@ -26,7 +26,7 @@ namespace AllClassicWeb.Views
                         PeopleAndJobTbl p = PeopleAndJobLogic.GetPeopleAndJobByID(int.Parse(Session["PeopleAndJobID"].ToString()));
                         Session["selectedPeopleAndJobTbl"] = p;
 
-                        datetimefilter.Value = ((DateTime)p.ValidDate).ToString("MM/dd/yyyy");
+                        datetimefilter.Value = ((DateTime)p.ValidDate).ToString("dd/MM/yyyy");
                         txt_title.Text = p.Title;
                         txt_email.Text = p.EmailID;
                         txt_telno.Text = p.TelNo;
@@ -58,7 +58,7 @@ namespace AllClassicWeb.Views
             {
                 PeopleAndJobTbl r = (PeopleAndJobTbl)Session["selectedPeopleAndJobTbl"];
                 r.PeopleOrJob = DropDownList1_type.SelectedItem.Value;
-                r.ValidDate = DateTime.ParseExact(datetimefilter.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                r.ValidDate = DateTime.ParseExact(datetimefilter.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 r.City = int.Parse(DropDownList3_city.SelectedItem.Value);
                 r.Title = txt_title.Text;
                 r.ContactName = txt_contactname.Text;
@@ -104,7 +104,7 @@ namespace AllClassicWeb.Views
             {
                 PeopleAndJobTbl r = new PeopleAndJobTbl();
                 r.PeopleOrJob = DropDownList1_type.SelectedItem.Value;
-                r.ValidDate = DateTime.ParseExact(datetimefilter.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);                
+                r.ValidDate = DateTime.ParseExact(datetimefilter.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);                
                 r.City = int.Parse(DropDownList3_city.SelectedItem.Value);
                 r.Title = txt_title.Text;
                 r.ContactName = txt_contactname.Text;

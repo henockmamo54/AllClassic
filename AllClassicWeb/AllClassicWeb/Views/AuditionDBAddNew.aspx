@@ -155,18 +155,18 @@
 
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
             $('#datetimepicker3').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         }
         $(function () {
             $('#datetimepicker3').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
             $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         });
     </script>

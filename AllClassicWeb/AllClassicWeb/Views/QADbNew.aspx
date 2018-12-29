@@ -241,13 +241,13 @@ order by timestamp desc"></asp:SqlDataSource>
 
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         }
 
         $(function () {
             $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         });
 

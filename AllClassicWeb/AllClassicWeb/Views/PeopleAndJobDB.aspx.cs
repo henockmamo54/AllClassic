@@ -76,7 +76,7 @@ namespace AllClassicWeb.Views
                 if (DropDownList1_type.SelectedIndex != 0) filterQuery += " And ";
                 else filterQuery += " Where ";
 
-                var date = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                var date = DateTime.ParseExact(datetimepicker3.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 filterQuery += " datepart(dd,p.ValidDate) =" + date.Day + " and datepart(mm,p.ValidDate) =" + date.Month + " and datepart(yy,p.ValidDate) =" + date.Year;
             }
 

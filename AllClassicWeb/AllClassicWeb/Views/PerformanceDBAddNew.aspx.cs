@@ -65,8 +65,8 @@ namespace AllClassicWeb.Views
                 txt_outline.InnerText = Server.HtmlDecode(performance.Program);
                 //txt_description.Text = performance.Description;
                 txt_outline_organizer.InnerText = Server.HtmlDecode(performance.Description);
-                startdate.Value = performance.StartDate.ToString("MM/dd/yyyy");
-                enddate.Value = performance.EndDate.ToString("MM/dd/yyyy");
+                startdate.Value = performance.StartDate.ToString("dd/MM/yyyy");
+                enddate.Value = performance.EndDate.ToString("dd/MM/yyyy");
 
                 if (performance.PosterFileName.Length == 0)
                     FileUpload_photo1_label.Text = "No File chosen";
@@ -179,8 +179,8 @@ namespace AllClassicWeb.Views
                 pt.Organizer = txt_organizer.Text;
                 pt.Sponser = txt_sponser.Text;
                 pt.Language = txt_language.Text;
-                pt.StartDate = DateTime.ParseExact(startdate.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                pt.EndDate = DateTime.ParseExact(enddate.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                pt.StartDate = DateTime.ParseExact(startdate.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                pt.EndDate = DateTime.ParseExact(enddate.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 pt.Time = txt_time.Text;
                 pt.Region = int.Parse(DropDownList4_region.SelectedItem.Value.ToString());
                 pt.City = int.Parse(DropDownList3_city.SelectedItem.Value.ToString());
@@ -272,8 +272,8 @@ namespace AllClassicWeb.Views
                 pt.Organizer = txt_organizer.Text;
                 pt.Sponser = txt_sponser.Text;
                 pt.Language = txt_language.Text;
-                pt.StartDate = DateTime.ParseExact(startdate.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                pt.EndDate = DateTime.ParseExact(enddate.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                pt.StartDate = DateTime.ParseExact(startdate.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                pt.EndDate = DateTime.ParseExact(enddate.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 pt.Time = txt_time.Text;
                 pt.Region = int.Parse(DropDownList4_region.SelectedItem.Value.ToString());
                 pt.City = int.Parse(DropDownList3_city.SelectedItem.Value.ToString());

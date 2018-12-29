@@ -23,19 +23,6 @@
                         <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
                     </div>
 
-
-                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
-                        <span style="display: inline-block;padding-right:5px;" class="filedName"><%= Resources.DisplayText.FromDate %> </span>
-                        <div style="display: inline-block;">
-                            <div class='input-group date' id='datetimepicker2' style="display: flex; padding: 0;">
-                                <input type='text' class="form-control" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker2" style="display: inline-block; border-right-width: 0px; width: 100px;" />
-                                <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="pull-right" style="padding: 0px; padding-right: 15px;">
                         <span style="display: inline-block;padding-right:5px;" class="filedName"><%= Resources.DisplayText.ToDate %> </span>
                         <div style="display: inline-block;">
@@ -47,7 +34,18 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
+                        <span style="display: inline-block;padding-right:5px;" class="filedName"><%= Resources.DisplayText.FromDate %> </span>
+                        <div style="display: inline-block;">
+                            <div class='input-group date' id='datetimepicker2' style="display: flex; padding: 0;">
+                                <input type='text' class="form-control" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker2" style="display: inline-block; border-right-width: 0px; width: 100px;" />
+                                <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="pull-right" style="padding: 0px; padding-right: 15px;">
                         <span style="display: inline-block;padding-right:5px;" class="filedName"><%= Resources.DisplayText.Organizer %>  </span>

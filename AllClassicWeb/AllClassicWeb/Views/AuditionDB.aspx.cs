@@ -64,7 +64,7 @@ namespace AllClassicWeb.Views
             var filterQuery = "";
             if (datetimepicker2.Value.Length != 0)
             {
-                var date = DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                var date = DateTime.ParseExact(datetimepicker2.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 filterQuery += " where datepart(dd,a.FromDate) =" + date.Day + " and datepart(mm,a.FromDate) =" + date.Month + " and datepart(yy,a.FromDate) =" + date.Year;
             }
             if (datetimepicker3.Value.Length != 0)
@@ -72,7 +72,7 @@ namespace AllClassicWeb.Views
                 if (datetimepicker2.Value.Length != 0) filterQuery += " And ";
                 else filterQuery += " Where ";
 
-                var date = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                var date = DateTime.ParseExact(datetimepicker3.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 filterQuery += " datepart(dd,a.ToDate) =" + date.Day + " and datepart(mm,a.ToDate) =" + date.Month + " and datepart(yy,a.ToDate) =" + date.Year;
             }
             if (txt_organizer.Text.ToString().Length > 0)

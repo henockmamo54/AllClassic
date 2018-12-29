@@ -22,15 +22,6 @@ namespace AllClassicWeb.Views {
         protected global::System.Web.UI.WebControls.Button inquiry;
         
         /// <summary>
-        /// datetimepicker2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepicker2;
-        
-        /// <summary>
         /// datetimepicker3 control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepicker3;
+        
+        /// <summary>
+        /// datetimepicker2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepicker2;
         
         /// <summary>
         /// txt_organizer control.

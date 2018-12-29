@@ -40,8 +40,8 @@ namespace AllClassicWeb.Views
                         txt_auditionoutline.InnerText = Server.HtmlDecode(audition.AuditionOutline);
                         Session["txt_auditionoutline"] = Server.HtmlDecode(audition.AuditionOutline);
 
-                        datetimepicker2.Value = audition.FromDate.ToString("MM/dd/yyyy");
-                        datetimepicker3.Value = audition.ToDate.ToString("MM/dd/yyyy");
+                        datetimepicker2.Value = audition.FromDate.ToString("dd/MM/yyyy");
+                        datetimepicker3.Value = audition.ToDate.ToString("dd/MM/yyyy");
                     }
                 }
             }
@@ -57,8 +57,8 @@ namespace AllClassicWeb.Views
                 AuditionTbl audition = new AuditionTbl();
                 audition.Organizer = txt_organizer.Text;
                 audition.Title = txt_title.Text;
-                audition.FromDate = DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                audition.FromDate = DateTime.ParseExact(datetimepicker2.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 audition.UpdateTimeStamp = DateTime.Now;
 
                 var msg = (HiddenField2.Value);
@@ -125,8 +125,8 @@ namespace AllClassicWeb.Views
                 audition.AuditionID = int.Parse(Session["AuditionID"].ToString());
                 audition.Organizer = txt_organizer.Text;
                 audition.Title = txt_title.Text;
-                audition.FromDate = DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                audition.FromDate = DateTime.ParseExact(datetimepicker2.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                audition.ToDate = DateTime.ParseExact(datetimepicker3.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 audition.UpdateTimeStamp = DateTime.Now;
 
                 var msg = (HiddenField2.Value);

@@ -83,7 +83,7 @@ namespace AllClassicWeb.Views
             var filterQuery = "";
             if (datetimefilter.Value.Length != 0)
             {
-                var date = DateTime.ParseExact(datetimefilter.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                var date = DateTime.ParseExact(datetimefilter.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 filterQuery += " where datepart(dd,a.UpdateTimeStamp) =" + date.Day + " and datepart(mm,a.UpdateTimeStamp) ="+date.Month + " and datepart(yy,a.UpdateTimeStamp) ="+date.Year;
             }
             if (txtbox_emailfilter.Text.ToString().Length > 0)

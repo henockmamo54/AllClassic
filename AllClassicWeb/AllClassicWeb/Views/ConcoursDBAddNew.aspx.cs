@@ -31,8 +31,8 @@ namespace AllClassicWeb.Views
                         Session["selectedConcour"] = Concour;
                         txt_title.Text = Concour.Title;
                         txt_organizer.Text = Concour.Organizer;
-                        datetimepicker2.Value = Concour.FromDate.ToString("MM/dd/yyyy");
-                        datetimepicker3.Value = Concour.ToDate.ToString("MM/dd/yyyy");
+                        datetimepicker2.Value = Concour.FromDate.ToString("dd/MM/yyyy");
+                        datetimepicker3.Value = Concour.ToDate.ToString("dd/MM/yyyy");
                         txt_outline.InnerText = Server.HtmlDecode(Concour.ConcourOutline);
                     }
                 }
@@ -59,8 +59,8 @@ namespace AllClassicWeb.Views
                 ConcourTbl c = (ConcourTbl)Session["selectedConcour"];
                 c.Organizer = txt_organizer.Text;
                 c.Title = txt_title.Text;
-                c.FromDate = DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                c.ToDate = DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                c.FromDate = DateTime.ParseExact(datetimepicker2.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                c.ToDate = DateTime.ParseExact(datetimepicker3.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 //c.ConcourOutline = txt_outline.Text;
                 var msg =(HiddenField2.Value);
                 Session["txt_outline"] = msg;
@@ -105,8 +105,8 @@ namespace AllClassicWeb.Views
                 ConcourTbl c = new ConcourTbl();
                 c.Organizer = txt_organizer.Text;
                 c.Title = txt_title.Text;
-                c.FromDate= DateTime.ParseExact(datetimepicker2.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                c.ToDate= DateTime.ParseExact(datetimepicker3.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                c.FromDate= DateTime.ParseExact(datetimepicker2.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                c.ToDate= DateTime.ParseExact(datetimepicker3.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 //c.ConcourOutline = txt_outline.Text;
                 var msg = (HiddenField2.Value);
                 Session["txt_outline"] = msg;
