@@ -546,7 +546,7 @@
     <value>등록일</value>
   </data>
   <data name="AuditionOutlineandApplicationInfo" xml:space="preserve">
-    <value>오디션 개요 과 신청 정보</value>
+    <value>오디션 개요 및 신청 정보</value>
   </data>
   <data name="FromDate" xml:space="preserve">
     <value>접수 시작일</value>

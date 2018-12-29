@@ -197,7 +197,7 @@
                             <br />
                             <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Email %>*</div>
                             <div class=" col-xs-4 filedDisplay">
-                                <asp:Label ID="uemail" Enabled="false"  TextMode="Email" runat="server" class="form-control filedDisplay"></asp:Label>
+                                <asp:Label ID="uemail" Enabled="false" TextMode="Email" runat="server" class="form-control filedDisplay"></asp:Label>
                             </div>
                             <div class=" col-xs-4 filedDisplay">
                                 <%--<asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ID="reqName" ValidationGroup="a" Font-Bold="true" ControlToValidate="uemail" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourEmail %>" />--%>
@@ -364,7 +364,7 @@
             $('.nav-tabs a[href="#' + tab + '"]').tab('show');
         };
 
-        
+
 
         function DeleteAccount(n) {
             $.support.cors = true;
@@ -386,7 +386,7 @@
                         if (data.d) {
 
                             alert('Entry deleted!!!');
-                            window.location="PerformanceDB.aspx"
+                            window.location = "PerformanceDB.aspx"
                         }
 
                         else {
@@ -406,4 +406,11 @@
 
 
     </script>
+
+    <style>
+        .userregisterinfo div {
+            padding: 0px;
+            margin: 2px;
+        }
+    </style>
 </asp:Content>
