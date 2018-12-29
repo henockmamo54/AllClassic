@@ -97,8 +97,7 @@ namespace AllClassicWeb.Views
                 }
             }
         }
-
-
+        
         public void handleButtons(Boolean value)
         {
             btn_addnewAudition.Visible = value;
@@ -109,6 +108,7 @@ namespace AllClassicWeb.Views
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
+
         public void showMsg_withredirect(string msg)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);

@@ -19,7 +19,7 @@
                 <div class="col-xs-6" style="padding: 0;">
                     <div class="col-xs-4 filedName"><%=Resources.DisplayText.Organizer %>*</div>
                     <div class="col-xs-6" style="padding: 0;">
-                        <asp:TextBox runat="server" ValidationGroup="a" ID="txt_organizer" CssClass="form-control filedDisplay"  MaxLength="40"/>
+                        <asp:TextBox runat="server" ValidationGroup="a" ID="txt_organizer" CssClass="form-control filedDisplay" MaxLength="40" />
 
                         <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_organizer" ErrorMessage="<%$Resources:DisplayText,Pleasefillorganizerfield %>" />
 
@@ -79,10 +79,10 @@
                 <div class="col-xs-12">
 
                     <textarea cols="80" id="txt_auditionoutline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
-                    <asp:HiddenField ID="HiddenField2" runat="server" Value="" /> 
+                    <asp:HiddenField ID="HiddenField2" runat="server" Value="" />
 
                     <%--<asp:TextBox runat="server" ID="txt_auditionoutline" CssClass="form-control filedDisplay" TextMode="MultiLine" Style="max-width: 500px; width: 500px !important;" Rows="10" />--%>
-                    <%--<asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_auditionoutline" ErrorMessage="<%$Resources:DisplayText,PleasefillAuditionoutlinefield %>" />--%>
+                    <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_auditionoutline" ErrorMessage="<%$Resources:DisplayText,PleasefillAuditionoutlinefield %>" />
                 </div>
             </div>
 
@@ -91,7 +91,7 @@
                 <br />
 
                 <asp:Button runat="server" ValidationGroup="a" ID="btn_saveAudition" UseSubmitBehavior="false" OnClick="onclick_btn_UpdatenewAudition " OnClientClick="getValueFromHtmlEditor();" type="button" Text="<%$Resources:DisplayText,Update %>" class="btn btn-warning contentButton"></asp:Button>
-                <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition"  OnClientClick="getValueFromHtmlEditor();"  type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary contentButton"></asp:Button>
+                <asp:Button runat="server" ValidationGroup="a" ID="btn_addnewAudition" UseSubmitBehavior="false" OnClick="onclick_btn_addnewAudition" OnClientClick="getValueFromHtmlEditor();" type="button" Text="<%$Resources:DisplayText,Add %>" class="btn btn-primary contentButton"></asp:Button>
                 <asp:Button runat="server" type="button" class="btn btn-danger contentButton" OnClick="btn_cancelclicked" data-dismiss="modal" Text="<%$Resources:DisplayText,Cancel %>"></asp:Button>
                 <%--<asp:Button runat="server" ID="btn_addArticle2" OnClick="onclick_btn_addArticle" type="button" Text="Add" class="btn btn-primary" data-dismiss="modal"></asp:Button>--%>
             </div>
@@ -131,6 +131,16 @@
                 removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
             });
 
+            CKEDITOR.on('instanceReady', function () {
+                $.each(CKEDITOR.instances, function (instance) {
+                    CKEDITOR.instances[instance].on("change",
+                        function (e) {
+                            for (instance in CKEDITOR.instances
+                            )
+                                CKEDITOR.instances[instance].updateElement();
+                        });
+                });
+            });
 
         }
 

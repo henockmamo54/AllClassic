@@ -91,7 +91,7 @@
 
                             <textarea cols="80" id="txt_outline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
                             <asp:HiddenField ID="HiddenField2" runat="server" Value="" />
-                            <%--<asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_outline" ErrorMessage="<%$Resources:DisplayText,PleasefillConcouroutlinefield %>" />--%>
+                            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator5" ControlToValidate="txt_outline" ErrorMessage="<%$Resources:DisplayText,PleasefillConcouroutlinefield %>" />
                         </div>
                         <br />
                     </div>
@@ -99,7 +99,7 @@
                 <br />
                 <div class="row col-md-4 col-xs-4">
                     <asp:Button Visible="true" ID="btn_concours_cancel" CssClass="btn btn-danger pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_concours_cancel_Click" Style="margin-right: 10px;" />
-                    <asp:Button Visible="true" ID="btn_concours_save" CssClass="btn btn-warning pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClientClick="getValueFromHtmlEditor();" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />
+                    <asp:Button Visible="true" ID="btn_concours_save"  ValidationGroup="a"  CssClass="btn btn-warning pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClientClick="getValueFromHtmlEditor();" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />
                     <asp:Button ID="btn_concours_add" ValidationGroup="a" CssClass="btn btn-primary pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClientClick="getValueFromHtmlEditor();" OnClick="btn_concours_add_Click" Style="margin-right: 10px;" />
 
                 </div>
@@ -138,6 +138,17 @@
                 removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
             });
 
+            
+            CKEDITOR.on('instanceReady', function () {
+                $.each(CKEDITOR.instances, function (instance) {
+                    CKEDITOR.instances[instance].on("change",
+                        function (e) {
+                            for (instance in CKEDITOR.instances
+                            )
+                                CKEDITOR.instances[instance].updateElement();
+                        });
+                });
+            });
 
         }
 
