@@ -134,7 +134,7 @@
                     <p><strong>소개</strong></p>
                     <ul class="sogea_textcolor">
                         <li>공인회계사</li>
-                        <li>클래식에 관심을 가지려 참여함</li>
+                        <li>클래식에 관심을 가지려 참여함.</li>
                     </ul>
 
                 </div>
@@ -191,7 +191,7 @@
 
                 <div class="col-xs-3">
                     <img src="../Doc/BOD/소개.jpg" class="img-circle" alt="Cinque Terre" style="width: 200px; height: 200px;">
-                    <h5 class="BodmembersNameContainer contentHeader"></h5>
+                    <h5 class="BodmembersNameContainer contentHeader">서훈/마케팅 이사</h5>
                 </div>
                 <div class="col-xs-4 Contentdisplay">
 
@@ -281,7 +281,7 @@
                     <p><strong>약력</strong></p>
                     <ul class="sogea_textcolor2">
 
-                        <li>전 이 담긴 자연스러운 노래를 좋아하는 소프라노</li>
+                        <li>아시아 비즈니스 동맹(ABA) 활동 중</li>
                         <li>대아고등학교/경상대학교 졸</li>
 
                     </ul>
