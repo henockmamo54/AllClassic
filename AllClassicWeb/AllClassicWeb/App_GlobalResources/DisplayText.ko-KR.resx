@@ -748,4 +748,7 @@
   <data name="Unsubscribe" xml:space="preserve">
     <value>수신 거부</value>
   </data>
+  <data name="CompanyBackground" xml:space="preserve">
+    <value>설립 배경 및 운영 방침</value>
+  </data>
 </root>

@@ -730,4 +730,7 @@
   <data name="Unsubscribe" xml:space="preserve">
     <value>Unsubscribe</value>
   </data>
+  <data name="CompanyBackground" xml:space="preserve">
+    <value>Company Background</value>
+  </data>
 </root>
