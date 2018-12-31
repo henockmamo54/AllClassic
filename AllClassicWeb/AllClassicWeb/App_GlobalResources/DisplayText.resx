@@ -575,13 +575,13 @@
     <value>People</value>
   </data>
   <data name="PleaseenteryourEmail" xml:space="preserve">
-    <value>Please enter your Email!</value>
+    <value>Required Field</value>
   </data>
   <data name="PleaseenteryourFullName" xml:space="preserve">
-    <value>Please enter your FullName!</value>
+    <value>Required Field</value>
   </data>
   <data name="PleaseenteryourPassword" xml:space="preserve">
-    <value>Please enter your Password!</value>
+    <value>Required Field</value>
   </data>
   <data name="Pleaseclickasmanyasyouthinkyouare" xml:space="preserve">
     <value>Please click as many as you think you are!</value>
@@ -605,19 +605,19 @@
     <value>Total</value>
   </data>
   <data name="PleaseEnterEndDate" xml:space="preserve">
-    <value>Please enter End date</value>
+    <value>Required Field</value>
   </data>
   <data name="PleaseEnterMainTitle" xml:space="preserve">
-    <value>Please enter Main Title</value>
+    <value>Required Field</value>
   </data>
   <data name="PleaseEnterStartDate" xml:space="preserve">
-    <value>Please enter Start date</value>
+    <value>Required Field</value>
   </data>
   <data name="PleaseEnterTicketBoxinfo" xml:space="preserve">
-    <value>Please Enter TicketBox info</value>
+    <value>Required Field</value>
   </data>
   <data name="PleaseEnterTime" xml:space="preserve">
-    <value>Please Enter Time</value>
+    <value>Required Field</value>
   </data>
   <data name="Comment" xml:space="preserve">
     <value>Comment</value>
@@ -629,64 +629,64 @@
     <value>Affiliation</value>
   </data>
   <data name="Pleasefillthecountryfield" xml:space="preserve">
-    <value>Please fill the country field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefilltheHomepagefield" xml:space="preserve">
-    <value>Please fill the Home page field</value>
+    <value>Required Field</value>
   </data>
   <data name="Pleasefillthenamefield" xml:space="preserve">
-    <value>Please fill the name field</value>
+    <value>Required Field</value>
   </data>
   <data name="Pleasefilltheshortnamefield" xml:space="preserve">
-    <value>Please fill the short name field</value>
+    <value>Required Field</value>
   </data>
   <data name="Pleasefillthearticletitle" xml:space="preserve">
-    <value>Please fill the article title</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillthearticleURL" xml:space="preserve">
-    <value>Please fill the article URL</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillAuditionoutlinefield" xml:space="preserve">
-    <value>Please fill Audition outline field</value>
+    <value>Required Field</value>
   </data>
   <data name="Pleasefillorganizerfield" xml:space="preserve">
-    <value>Please fill organizer field</value>
+    <value>Required Field</value>
   </data>
   <data name="Pleasefilltitlefield" xml:space="preserve">
-    <value>Please fill title field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillConcouroutlinefield" xml:space="preserve">
-    <value>Please fill Concour outline field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillAddressfield" xml:space="preserve">
-    <value>Please fill Address field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillEmailfield" xml:space="preserve">
-    <value>Please fill Email field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillPerformanceGroupfield" xml:space="preserve">
-    <value>Please fill Performance Group field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillSinceYearfield" xml:space="preserve">
-    <value>Please fill Since Year field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillTelNofield" xml:space="preserve">
-    <value>Please fill Tel No field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillZipCodefield" xml:space="preserve">
-    <value>Please fill Zip Code field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillVenuNamefield" xml:space="preserve">
-    <value>Please fill Venu Name field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillContactNamefield" xml:space="preserve">
-    <value>Please fill Contact Name field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillDescriptionfield" xml:space="preserve">
-    <value>Please fill Description field</value>
+    <value>Required Field</value>
   </data>
   <data name="PleasefillValidDatefield" xml:space="preserve">
-    <value>Please fill Valid Date field</value>
+    <value>Required Field</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>None</value>
@@ -707,7 +707,7 @@
     <value>New Question</value>
   </data>
   <data name="PleaseFilltheQuestionFiled" xml:space="preserve">
-    <value>Please Fill the Question filed</value>
+    <value>Required Field</value>
   </data>
   <data name="Question" xml:space="preserve">
     <value>Question</value>

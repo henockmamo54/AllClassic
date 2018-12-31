@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MusicianDBAddNew.aspx.cs"   ValidateRequest="false"  Inherits="AllClassicWeb.Views.MusicianDBAddNew" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MusicianDBAddNew.aspx.cs" ValidateRequest="false" Inherits="AllClassicWeb.Views.MusicianDBAddNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
@@ -18,7 +18,7 @@
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.FullName %>*</div>
                         <div class="col-md-8 col-xs-8">
                             <asp:TextBox ID="txt_name" runat="server" class="form-control filedDisplay" MaxLength="40"></asp:TextBox>
-                            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_name" ErrorMessage="<%$Resources:DisplayText,PleaseEnterMainTitle %>" />
+                            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_name" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourFullName %>" />
 
                         </div>
                         <br />
@@ -28,8 +28,8 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Email %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_email" runat="server" class="form-control filedDisplay" TextMode="Email"  MaxLength="30"></asp:TextBox>
-                            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleaseEnterMainTitle %>" />
+                            <asp:TextBox ID="txt_email" runat="server" class="form-control filedDisplay" TextMode="Email" MaxLength="30"></asp:TextBox>
+                            <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="txt_email" ErrorMessage="<%$Resources:DisplayText,PleasefillEmailfield %>" />
 
                         </div>
                         <br />
@@ -39,7 +39,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.MobileNo %></div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_mobilenumber" runat="server" class="form-control filedDisplay"  MaxLength="20"></asp:TextBox>
+                            <asp:TextBox ID="txt_mobilenumber" runat="server" class="form-control filedDisplay" MaxLength="20"></asp:TextBox>
                         </div>
                         <br />
                     </div>
@@ -132,13 +132,13 @@ or maincode='Conductor'
                 <br />
                 <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Photo1 %>:</div>
                 <div class="col-md-8 col-xs-8">
-                    
-                    <asp:Label ID="FileUpload_photo1_label" runat="server" style="visibility:hidden;">
-                    </asp:Label> 
-                    <a ID="FileUpload_photo1_Changelink" style="visibility:hidden;" onclick='$("#MainContent_FileUpload_photo1_label").hide(); $("#FileUpload_photo1_Changelink").hide();  $("#MainContent_FileUpload_photo1").show();  $("#MainContent_FileUpload_photo1").css("visibility", "visible");'  ><%=Resources.DisplayText.Edit %></a>
-                    
-                    <asp:FileUpload ID="FileUpload_photo1" runat="server" Style="display: inline; display: inline; padding-left: 0; padding-right: 0; border: none; box-shadow: none; visibility:visible; "
-                       class="form-control filedDisplay" />
+
+                    <asp:Label ID="FileUpload_photo1_label" runat="server" Style="visibility: hidden;">
+                    </asp:Label>
+                    <a id="FileUpload_photo1_Changelink" style="visibility: hidden;" onclick='$("#MainContent_FileUpload_photo1_label").hide(); $("#FileUpload_photo1_Changelink").hide();  $("#MainContent_FileUpload_photo1").show();  $("#MainContent_FileUpload_photo1").css("visibility", "visible");'><%=Resources.DisplayText.Edit %></a>
+
+                    <asp:FileUpload ID="FileUpload_photo1" runat="server" Style="display: inline; display: inline; padding-left: 0; padding-right: 0; border: none; box-shadow: none; visibility: visible;"
+                        class="form-control filedDisplay" />
 
                 </div>
                 <br />
@@ -148,13 +148,13 @@ or maincode='Conductor'
                 <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Photo2 %>:</div>
                 <div class="col-md-8 col-xs-8">
 
-                    <asp:Label ID="FileUpload_photo2_label" runat="server" style="visibility:hidden;">  </asp:Label> 
-                    <a ID="FileUpload_photo2_Changelink" style="visibility:hidden;" 
+                    <asp:Label ID="FileUpload_photo2_label" runat="server" Style="visibility: hidden;">  </asp:Label>
+                    <a id="FileUpload_photo2_Changelink" style="visibility: hidden;"
                         onclick='$("#MainContent_FileUpload_photo2_label").hide(); $("#FileUpload_photo2_Changelink").hide();  
-                        $("#MainContent_FileUpload_photo2").show();  $("#MainContent_FileUpload_photo2").css("visibility", "visible");'  ><%=Resources.DisplayText.Edit %></a>                    
+                        $("#MainContent_FileUpload_photo2").show();  $("#MainContent_FileUpload_photo2").css("visibility", "visible");'><%=Resources.DisplayText.Edit %></a>
 
                     <asp:FileUpload ID="FileUpload_photo2" runat="server" Style="display: inline; display: inline; padding-left: 0; padding-right: 0; border: none; box-shadow: none;"
-                       class="form-control filedDisplay" />
+                        class="form-control filedDisplay" />
                 </div>
                 <br />
             </div>
@@ -172,7 +172,7 @@ or maincode='Conductor'
                         <br />
                         <div class="col-md-12 col-xs-12">
                             <%--<asp:TextBox ID="txt_profilepage" runat="server" Style="max-width: 100%;" class="form-control filedDisplay" Rows="10" TextMode="MultiLine"></asp:TextBox>--%>
-                            
+
                             <textarea cols="80" id="txt_outline" validationgroup="a" runat="server" name="editor1" rows="10"> </textarea>
                             <asp:HiddenField ID="HiddenField2" runat="server" Value="" />
 
@@ -218,7 +218,7 @@ or maincode='Conductor'
                                     <tr style="margin-bottom: 5px;">
                                         <asp:Button runat="server" CssClass="btn btn-danger" AutoPostBack="True" Text="x" CommandArgument='<%# Container.ItemIndex  %>' OnCommand="btn_remove_endorser_tolist"></asp:Button>
                                         <td>
-                                            <asp:Label runat="server" ID="Label1" CssClass="filedName"  Text='<%# Eval("EndorserName") %>' />
+                                            <asp:Label runat="server" ID="Label1" CssClass="filedName" Text='<%# Eval("EndorserName") %>' />
                                             - 
                                         </td>
                                         <td>
@@ -248,18 +248,18 @@ or maincode='Conductor'
 
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1" class="filedName"><%= Resources.DisplayText.EndorserName %></label>
-                                        <asp:TextBox runat="server" type="text" TextMode="SingleLine" class="form-control filedDisplay"  MaxLength="40" ID="FormControlInput1_Name" placeholder="Name of the Endorser" />
+                                        <asp:TextBox runat="server" type="text" TextMode="SingleLine" class="form-control filedDisplay" MaxLength="40" ID="FormControlInput1_Name" placeholder="Name of the Endorser" />
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1" class="filedName"><%= Resources.DisplayText.EndorserEmailID %></label>
-                                        <asp:TextBox runat="server" class="form-control filedDisplay" ID="FormControlTextarea1_email" MaxLength="30"  placeholder="Email Address of the Endorser" />
+                                        <asp:TextBox runat="server" class="form-control filedDisplay" ID="FormControlTextarea1_email" MaxLength="30" placeholder="Email Address of the Endorser" />
                                     </div>
 
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary contentButton" data-dismiss="modal"><%= Resources.DisplayText.Close %></button>
-                                    <asp:Button runat="server" type="button" class="btn btn-primary contentButton" Text="<%$Resources:DisplayText,Save %>" ID="btnAddReview" OnClientClick="getValueFromHtmlEditor();"  OnClick="btnAddEndorser_Click" />
+                                    <asp:Button runat="server" type="button" class="btn btn-primary contentButton" Text="<%$Resources:DisplayText,Save %>" ID="btnAddReview" OnClientClick="getValueFromHtmlEditor();" OnClick="btnAddEndorser_Click" />
                                 </div>
                             </div>
                         </div>
@@ -271,8 +271,8 @@ or maincode='Conductor'
 
                     <div class="row col-md-12 col-xs-12">
                         <asp:Button Visible="true" ID="btn_artist_cancel" CssClass="btn btn-danger pull-right" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_artistcancel_Click" Style="margin-right: 10px;" />
-                        <asp:Button Visible="true"  ValidationGroup="a"  ID="btn_artist_save" CssClass="btn btn-warning pull-right contentButton"  OnClientClick="getValueFromHtmlEditor();"  runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
-                        <asp:Button ID="btn_artist_add"  ValidationGroup="a"  CssClass="btn btn-primary pull-right contentButton" runat="server"  OnClientClick="getValueFromHtmlEditor();"  Text="<%$Resources:DisplayText,Add %>" OnClick="btn_artistadd_Click" Style="margin-right: 10px;" />
+                        <asp:Button Visible="true" ValidationGroup="a" ID="btn_artist_save" CssClass="btn btn-warning pull-right contentButton" OnClientClick="getValueFromHtmlEditor();" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClick="btn_artistsave_Click" Style="margin-right: 10px;" />
+                        <asp:Button ID="btn_artist_add" ValidationGroup="a" CssClass="btn btn-primary pull-right contentButton" runat="server" OnClientClick="getValueFromHtmlEditor();" Text="<%$Resources:DisplayText,Add %>" OnClick="btn_artistadd_Click" Style="margin-right: 10px;" />
                     </div>
                 </div>
             </ContentTemplate>
@@ -291,9 +291,9 @@ or maincode='Conductor'
     </style>
     <script>
 
-        
+
         function loadCkEditor() {
-            
+
             //CKEDITOR.replace('MainContent_txt_auditionoutline');
             CKEDITOR.replace('MainContent_txt_outline', {
                 // Define the toolbar groups as it is a more accessible solution.
@@ -363,7 +363,7 @@ or maincode='Conductor'
                 $("#FileUpload_photo1_Changelink").css("visibility", "visible");
                 $("#MainContent_FileUpload_photo1_label").css("visibility", "visible");
 
-                
+
 
                 $("#MainContent_FileUpload_photo2").css("visibility", "hidden");
                 $("#FileUpload_photo2_Changelink").show();
@@ -375,16 +375,16 @@ or maincode='Conductor'
             else {
 
                 $("#FileUpload_photo1_Changelink").hide();
-                $("#MainContent_FileUpload_photo1_label").hide();                
+                $("#MainContent_FileUpload_photo1_label").hide();
                 $("#FileUpload_photo1_Changelink").css("visibility", "hidden");
-                $("#MainContent_FileUpload_photo1_label").css("visibility", "hidden");                
+                $("#MainContent_FileUpload_photo1_label").css("visibility", "hidden");
                 $("#MainContent_FileUpload_photo1").css("visibility", "visible");
 
-                
+
                 $("#FileUpload_photo2_Changelink").hide();
-                $("#MainContent_FileUpload_photo2_label").hide();                
+                $("#MainContent_FileUpload_photo2_label").hide();
                 $("#FileUpload_photo2_Changelink").css("visibility", "hidden");
-                $("#MainContent_FileUpload_photo2_label").css("visibility", "hidden");                
+                $("#MainContent_FileUpload_photo2_label").css("visibility", "hidden");
                 $("#MainContent_FileUpload_photo2").css("visibility", "visible");
 
             }
@@ -403,7 +403,7 @@ or maincode='Conductor'
     </script>
 
     <script type="text/javascript">
-        
+
         function ShowMessage() {
             alert('Data inserted succssfuly');
             window.location.href = 'MusicianDB.aspx';

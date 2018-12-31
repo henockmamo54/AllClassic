@@ -970,7 +970,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter End date.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseEnterEndDate {
             get {
@@ -979,7 +979,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter Main Title.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseEnterMainTitle {
             get {
@@ -988,7 +988,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter Start date.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseEnterStartDate {
             get {
@@ -997,7 +997,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please Enter TicketBox info.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseEnterTicketBoxinfo {
             get {
@@ -1006,7 +1006,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please Enter Time.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseEnterTime {
             get {
@@ -1015,7 +1015,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter your Email!.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseenteryourEmail {
             get {
@@ -1024,7 +1024,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter your FullName!.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseenteryourFullName {
             get {
@@ -1033,7 +1033,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter your Password!.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseenteryourPassword {
             get {
@@ -1042,7 +1042,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Address field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillAddressfield {
             get {
@@ -1051,7 +1051,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Audition outline field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillAuditionoutlinefield {
             get {
@@ -1060,7 +1060,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Concour outline field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillConcouroutlinefield {
             get {
@@ -1069,7 +1069,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Contact Name field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillContactNamefield {
             get {
@@ -1078,7 +1078,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Description field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillDescriptionfield {
             get {
@@ -1087,7 +1087,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Email field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillEmailfield {
             get {
@@ -1096,7 +1096,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill organizer field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string Pleasefillorganizerfield {
             get {
@@ -1105,7 +1105,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Performance Group field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillPerformanceGroupfield {
             get {
@@ -1114,7 +1114,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Since Year field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillSinceYearfield {
             get {
@@ -1123,7 +1123,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Tel No field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillTelNofield {
             get {
@@ -1132,7 +1132,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill the article title.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string Pleasefillthearticletitle {
             get {
@@ -1141,7 +1141,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill the article URL.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillthearticleURL {
             get {
@@ -1150,7 +1150,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill the country field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string Pleasefillthecountryfield {
             get {
@@ -1159,7 +1159,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill the Home page field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefilltheHomepagefield {
             get {
@@ -1168,7 +1168,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill the name field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string Pleasefillthenamefield {
             get {
@@ -1177,7 +1177,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please Fill the Question filed.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleaseFilltheQuestionFiled {
             get {
@@ -1186,7 +1186,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill the short name field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string Pleasefilltheshortnamefield {
             get {
@@ -1195,7 +1195,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill title field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string Pleasefilltitlefield {
             get {
@@ -1204,7 +1204,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Valid Date field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillValidDatefield {
             get {
@@ -1213,7 +1213,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Venu Name field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillVenuNamefield {
             get {
@@ -1222,7 +1222,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill Zip Code field.
+        ///   Looks up a localized string similar to Required Field.
         /// </summary>
         internal static string PleasefillZipCodefield {
             get {
