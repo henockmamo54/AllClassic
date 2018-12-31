@@ -22,18 +22,6 @@
                     </div>
 
                     <div class="pull-right" style="padding: 0px;padding-right: 15px; ">
-                        <span style="display: inline-block;padding-right:5px;" class="filedName"><%= Resources.DisplayText.FromDate %> </span>
-                        <div style="display: inline-block;">
-                            <div class='input-group date' id='datetimepicker2' style="display: flex; padding: 0;">
-                                <input type='text' class="form-control filedDisplay" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker2" style="display: inline-block; border-right-width: 0px; width: 100px;" />
-                                <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pull-right" style="padding: 0px;padding-right: 15px; ">
                         <div style="display: inline-block;">
                             <span style="display: inline-block;padding-right:5px;" class="filedName"><%= Resources.DisplayText.ToDate %> </span>
                             <div style="display: inline-block;">
@@ -47,7 +35,19 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <div class="pull-right" style="padding: 0px;padding-right: 15px; ">
+                        <span style="display: inline-block;padding-right:5px;" class="filedName"><%= Resources.DisplayText.FromDate %> </span>
+                        <div style="display: inline-block;">
+                            <div class='input-group date' id='datetimepicker2' style="display: flex; padding: 0;">
+                                <input type='text' class="form-control filedDisplay" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker2" style="display: inline-block; border-right-width: 0px; width: 100px;" />
+                                <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                                        
                     <div class="pull-right" style="padding: 0px;padding-right: 15px; ">
                         <span style="display: inline-block;padding-right:5px;" class="filedName"><%= Resources.DisplayText.Organizer %>  </span>
                         <asp:TextBox AutoPostBack="true" ID="txt_organizer" runat="server" CssClass="form-control filedDisplay" Style="display: inline-block; width: 150px; display: inline-block;"></asp:TextBox>
@@ -252,18 +252,18 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
     <script type="text/javascript">
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
             $('#datetimepicker3').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         }
         $(function () {
             $('#datetimepicker3').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
             $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         });
     </script>

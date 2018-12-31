@@ -105,7 +105,7 @@ where maincode='City'
                 <%--<asp:TextBox runat="server" ID="txt_description" ValidationGroup="a" CssClass="form-control filedDisplay" TextMode="MultiLine" Rows="10" Style="max-width: 500px;" />--%>
                  <textarea cols="80" id="txt_description" runat="server" name="editor1" rows="10"> </textarea>                
                     <asp:HiddenField ID="HiddenField2" runat="server" Value="" /> 
-                <%--<asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator6" ControlToValidate="txt_description" ErrorMessage="<%$Resources:DisplayText,PleasefillDescriptionfield %>" />--%>
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator6" ControlToValidate="txt_description" ErrorMessage="<%$Resources:DisplayText,PleasefillDescriptionfield %>" />
 
             </div>
         </div>
@@ -147,7 +147,17 @@ where maincode='City'
                 removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
             });
 
-
+            
+            CKEDITOR.on('instanceReady', function () {
+                $.each(CKEDITOR.instances, function (instance) {
+                    CKEDITOR.instances[instance].on("change",
+                        function (e) {
+                            for (instance in CKEDITOR.instances
+                            )
+                                CKEDITOR.instances[instance].updateElement();
+                        });
+                });
+            });
         }
 
         function getValueFromHtmlEditor() {
@@ -158,12 +168,12 @@ where maincode='City'
 
         function bindDateTime() {
             $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         }
         $(function () {
             $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         });
     </script>

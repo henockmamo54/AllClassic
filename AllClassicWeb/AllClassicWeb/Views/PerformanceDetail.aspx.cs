@@ -46,8 +46,8 @@ namespace AllClassicWeb.Views
                 lbl_organizer.Text = performance.Organizer;
                 lbl_sponser.Text = performance.Sponser;
                 lbl_language.Text = performance.Language;
-                lbl_start.Text = performance.StartDate.ToShortDateString();
-                lbl_end.Text = performance.EndDate.ToShortDateString();
+                lbl_start.Text = performance.StartDate.ToString("dd/MM/yyyy");
+                lbl_end.Text = performance.EndDate.ToString("dd/MM/yyyy");
                 lbl_time.Text = performance.Time;
                 if (performance.LookUpTbl1 != null)
                     lbl_region.Text = performance.LookUpTbl1.SubCode;

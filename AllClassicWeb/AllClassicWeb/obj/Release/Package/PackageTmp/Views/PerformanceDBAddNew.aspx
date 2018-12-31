@@ -491,20 +491,20 @@ where maincode='City'
 
         function bindDateTime() {
             $('#datetimepicker2_start').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
             $('#datetimepicker3_end').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
 
         }
         $(function () {
             $('#datetimepicker2_start').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
 
             $('#datetimepicker3_end').datetimepicker({
-                format: 'MM/DD/YYYY'
+                format: 'DD/MM/YYYY'
             });
         });
     </script>

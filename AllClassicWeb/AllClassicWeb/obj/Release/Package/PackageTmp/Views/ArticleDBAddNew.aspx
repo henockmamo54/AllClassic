@@ -6,7 +6,7 @@
     <div class="row">
         <div class="row col-xs-8">
             <div class="col-xs-4 filedName">
-              <%= Resources.DisplayText.ArticleTitle %>
+              <%= Resources.DisplayText.ArticleTitle %>*
             </div>
 
             <div class="col-xs-8">
@@ -19,7 +19,7 @@
         <div class="row col-xs-8">
             <br />
             <div class="col-xs-4 filedName">
-               <%= Resources.DisplayText.ArticleURL %>
+               <%= Resources.DisplayText.ArticleURL %>*
             </div>
 
             <div class="col-xs-8">
