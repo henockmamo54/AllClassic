@@ -751,4 +751,16 @@
   <data name="CompanyBackground" xml:space="preserve">
     <value>설립 배경 및 운영 방침</value>
   </data>
+  <data name="Advisorymembers" xml:space="preserve">
+    <value>자문 위원 소개</value>
+  </data>
+  <data name="BODMembers" xml:space="preserve">
+    <value>운영 이사진 소개</value>
+  </data>
+  <data name="CEOMessage" xml:space="preserve">
+    <value>대표 이사 인사말씀</value>
+  </data>
+  <data name="CompLocation" xml:space="preserve">
+    <value>오시는 길</value>
+  </data>
 </root>

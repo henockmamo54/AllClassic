@@ -132,7 +132,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         
                                         
                                         <br />
-                                        <div class="Contentdisplay" runat="server" style="font-size: 14px; color: black; background-color: #f1f1f1; padding: 5px; padding-top: 0px; border-radius: 5px; margin: 5px; margin-left: 0px;">
+                                        <div class="Contentdisplay" runat="server" style="font-size: 14px; color: black; background-color: #F5F4F4; padding: 5px; padding-top: 0px; border-radius: 5px; margin: 5px; margin-left: 0px;">
                                             <%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %>
                                         </div>
                                         <a class="Contentdisplay" data-toggle="modal" data-target="#myModal<%#Eval("ConcourID")%>"><%# Resources.DisplayText.Seemore %> </a>

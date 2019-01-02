@@ -297,70 +297,91 @@
 
             <div id="masterNavigationBar">
                 <div class="row">
+                    <span style="float: right; margin-left: 10px;">
+                        <a runat="server" class="Contentdisplay" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; display: inline-block; color: black;"><%= Resources.DisplayText.en %></a>/
+                        <a runat="server" class="Contentdisplay" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; display: inline-block; color: black;"><%= Resources.DisplayText.kr %></a>
+                    </span>
+
                     <a runat="server" id="signinLink" visible="false">
-                        <a runat="server" style="float: right; margin-left: 10px;" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
-                        <a runat="server" style="float: right;" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
+                        <a runat="server" class="Contentdisplay" style="float: right; margin-left: 10px; color: black;" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
+                        <a runat="server" class="Contentdisplay" style="float: right; color: black;" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
                     </a>
 
-                    <a runat="server" id="signoutLink" style="float: right; margin-left: 10px;" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
-                    <a id="mypagetab" runat="server" style="float: right;" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
+                    <a runat="server" class="Contentdisplay" id="signoutLink" style="float: right; color: black; margin-left: 10px;" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
+                    <a id="mypagetab" class="Contentdisplay" runat="server" style="float: right; color: black;" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
 
                     <br />
 
                 </div>
-                <div class="row whitesmokeBG">
-                    <div>
-                        <a class="navbar-brand allclasic_home" style="text-decoration: none; background-color: darkorange;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
-                        <a class="otheroptions " id="performancetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
-                        <a class="otheroptions " id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
-                        <a class="otheroptions " id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
-                        <a class="otheroptions " id="performanceArchivetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
-                        <a class="otheroptions " runat="server" style="text-decoration: none;" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
-                        <a class="otheroptions " id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
-                        <span class="otheroptions ">
-                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; display: inline-block;"><%= Resources.DisplayText.en %>/</a>
-                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
-                        </span>
-                        <span class="otheroptions pull-right" style="padding-top: 8px;">
-                            <asp:TextBox runat="server" ID="searchbox" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
-                            <asp:Button runat="server" ID="mainSearchBox" Text="search" UseSubmitBehavior="false" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
-                            <asp:HiddenField runat="server" ID="encodedSearchvalue" />
-                        </span>
+                <div class="row">
+
+                    <a class="navbar-brand allclasic_home" style="text-decoration: none; border-radius: 5px; background-color: darkorange; color: white !important;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
+
+
+                    <span class="otheroptions " style="padding-top: 8px;">
+                        <asp:TextBox runat="server" ID="searchbox" class="form-control" Style="display: inline; width: 450px;"></asp:TextBox>
+                        <asp:Button Style="margin-left: -15px; background-color: rgb(91, 192, 222); border: 1.15px solid rgb(91, 192, 222); border-radius: 0; margin-bottom: 3.7px;"
+                            runat="server" ID="mainSearchBox" Text="search" UseSubmitBehavior="false" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
+                        <asp:HiddenField runat="server" ID="encodedSearchvalue" />
+                    </span>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 10px;" />
+
+
+
+                <div class="row" style="text-align: center;">
+                    <div class="menucontainer">
+                        <a id="performancetab" class="mainTitle" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
+                    </div>
+                    |
+                    <div class="menucontainer">
+                        <a id="artisttab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
+                    </div>
+                    |
+                    <div class="menucontainer">
+                        <a id="MusicCollegetab" class="mainTitle" runat="server" style="text-decoration: none; width: 100px;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
+                    </div>
+                    |                  
+
+                    <div class="menucontainer">
+                        <a id="performancegrouptab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
+                    </div>
+                    |
+                    <div class="menucontainer">
+                        <a id="A1" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
+                    </div>
+                    |
+                    <div class="menucontainer">
+                        <a runat="server" class="mainTitle" style="text-decoration: none; width: 100px;" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
+                    </div>
+                    |
+                    <div class="menucontainer">
+
+                        <a id="introductiontab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
                     </div>
                 </div>
+
+                <span style="margin-top: 10px; margin-bottom: 0;" />
+                <div class="row" style="height: 40px; background-image: linear-gradient(to left, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); position: absolute; left: 0; right: 0; display: block;">
+                </div>
+                <hr />
+
             </div>
-
-
 
             <div class="row">
 
-                <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 0px;">
+                <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 75px;">
                     <ul class="list-group ">
-                        <%--<a runat="server" id="signinLink" visible="false">
-                            <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
-                            <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
-                        </a>
-
-                        <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
-                        
-                        <a id="mypagetab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>--%>
 
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
                         <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
                         <a id="concoursdbtab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
-                        <a id="performancegrouptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
                         <a id="RepairShoptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/RepairShopDB"><%= Resources.DisplayText.RepairShop %></a>
                         <a id="MusicShopDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/MusicShopDB"><%= Resources.DisplayText.MusicShop %></a>
                         <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
                         <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
                         <a id="qatab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/QADbNew"><%= Resources.DisplayText.QA %></a>
-                        <%--<a id="mypagetab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>--%>
-                        <%--<div>
-                            <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
-                            <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>
-                            <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="3" Text="3"></asp:Button>
-                            <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="4" Text="4"></asp:Button>
-                        </div>--%>
+
                     </ul>
                     <asp:ImageButton ImageUrl="~/Doc/ads/1d63a0_c98934b833c94affa65a41837b01c878_mv2_d_1388_1654_s_2.jpg" Style="width: 100%;" runat="server" />
                     <asp:ImageButton ImageUrl="~/Doc/ads/P20181203000.jpg" runat="server" Style="width: 100%;" />
@@ -371,16 +392,25 @@
                     </asp:ContentPlaceHolder>
                 </div>
             </div>
-            <hr />
-            <footer id="masterFooter">
-                <%--<p>&copy; <%: DateTime.Now.Year %> All Copyrights are reserved www.allclassickorea.co.kr 3F HongSung Bldg. 220 Yeoksam-Ro Gangnam-gu, Seoul, Korea 06227</p>--%>
-                <p style="text-align:center;" class="Contentdisplay">
+            <br />
+
+            <footer id="masterFooter" style="background: #F4F5F9; padding: 20px; position: absolute; left: 0; right: 0;">
+                <p style="text-align: center;" class="Contentdisplay">
                     (주)올클래식코리아 | 대표 : 전동수 | 주소: 서울시 강남구 역삼로 220 홍성빌딩 3 층 (06227)<br />
                     사업자등록번호 : 629-88-01114 | 전화 : 02)561-7080 | 팩스 : 02)561-6082<br />
                     개인정보관리책임자 : 백대원 | 이메일: daewonbaek@gmail.com<br />
                     COPYRIGHT @www.allclassickorea.co.kr<br />
                 </p>
             </footer>
+            <style type="text/css">
+                .menucontainer {
+                    min-width: 110px;
+                    display: inline-block;
+                    text-align: center;
+                    margin: 5px;
+                }
+            </style>
+
         </div>
     </form>
 </body>

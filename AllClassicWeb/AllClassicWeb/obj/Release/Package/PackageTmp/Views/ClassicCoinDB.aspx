@@ -19,7 +19,7 @@
             </ul>
             <p class="contentTitle">특징: </p>
             <ul>
-                <li>실물 가치가 coin당 최소 \500이 보장되는 Stable coin 입니다.</li>
+                <li>실물 가치가 coin당 최소 ￦500이 보장되는 Stable coin 입니다.</li>
                 <li>회원간 직접 coin을 주고 받을 수 있는 P2P wallet(Peer to Peer) 기반이어서 전송과 결제가 순식간에 이루어 짐과 동시에 잔고 확인을 할 수 있습니다.</li>
                 <li>비트코인과 같은 투자 자산이 아니라 실 생활에 활용하는 Utility coin 입니다.</li>
                 <li>Classic Coin Mining(마이닝/획득)은, 비트코인이나 이더리움 처럼 많은 전기를 소비해야 하는 PoW(작업증명)방식이 아니라 Social Mining(포스터 혹은 광고의 QR code를 촬영) 방식을 택하였습니다..</li>

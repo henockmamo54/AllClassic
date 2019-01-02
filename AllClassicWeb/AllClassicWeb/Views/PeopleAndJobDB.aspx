@@ -140,8 +140,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                         <div class="col-md-4 col-xs-4 " style="margin-bottom: 1em;">
 
                             <div class="panel panel-success shadowedPanel ">
-                                <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
-                                    <h4><%# (Eval("Title")) .ToString().Length>15?
+                                <div class="panel-heading  mypanelColor" >
+                                    <h4 class="contentHeader"><%# (Eval("Title")) .ToString().Length>15?
                                         (Eval("Title")) .ToString().Substring(0,15)+ " ....":
                                         (Eval("Title")) .ToString()%></h4>
                                 </div>

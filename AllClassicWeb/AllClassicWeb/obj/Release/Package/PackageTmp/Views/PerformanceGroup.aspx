@@ -78,7 +78,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                     <tr>
                                         <td class="col-xs-2">
-                                            <asp:LinkButton runat="server" ID="headertableItem" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("PerformanceGroupID")%>'><%#Eval("Name") %></asp:LinkButton></td>
+                                            <asp:LinkButton runat="server" ID="headertableItem" CssClass="Contentdisplay" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("PerformanceGroupID")%>'><%#Eval("Name") %></asp:LinkButton></td>
                                         <td class="col-xs-2 Contentdisplay"><%#Eval("Alias") %></td>
                                         <td class="col-xs-2 Contentdisplay"><%#Eval("grouptpename") %></td>
                                         <td class="col-xs-2 Contentdisplay"><%#Eval("SinceYear") %></td>
@@ -113,7 +113,7 @@ order by pg.UpdateTimeStamp desc"></asp:SqlDataSource>
                         <div class="col-xs-4" style="padding-right: 5px; padding-left: 5px; margin-bottom: 10px;">
                             <div>
                                 <div class="panel panel-default shadowedPanel shadowedbox_hover orchContainer">
-                                    <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
+                                    <div class="panel-heading contentHeader">
 
                                         <h4><%# (Eval("Name")) .ToString().Length>15?
                                         (Eval("Name")) .ToString().Substring(0,15)+ " ....":

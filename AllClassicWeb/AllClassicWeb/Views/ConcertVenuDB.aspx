@@ -100,8 +100,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
                             <div class="panel panel-default  shadowedPanel shadowedbox_hover">
-                                <div class="panel-heading contentHeader" style="background-color: #eaf2f7;">
-                                    <h4><%# (Eval("Name")) .ToString().Length>15?
+                                <div class="panel-heading  mypanelColor"  >
+                                    <h4 class="contentHeader"><%# (Eval("Name")) .ToString().Length>15?
                                         (Eval("Name")) .ToString().Substring(0,15)+ " ....":
                                         (Eval("Name")) .ToString()%></h4>
                                 </div>

@@ -733,4 +733,16 @@
   <data name="CompanyBackground" xml:space="preserve">
     <value>Company Background</value>
   </data>
+  <data name="Advisorymembers" xml:space="preserve">
+    <value>Advisory Members</value>
+  </data>
+  <data name="BODMembers" xml:space="preserve">
+    <value>BOD Members</value>
+  </data>
+  <data name="CEOMessage" xml:space="preserve">
+    <value>CEO Message</value>
+  </data>
+  <data name="CompLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
 </root>
