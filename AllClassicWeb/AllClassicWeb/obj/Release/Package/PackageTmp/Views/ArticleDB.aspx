@@ -110,7 +110,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <h4 style="padding: 0px; margin: 0px; font-weight: 800; color: black;" class="contentHeader"><%# Eval("ArticleTitle")%></h4>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="font-size: 14px;" ID="navigation" Text='<%# (Eval("ArticleUrl"))%>' OnCommand="ArticleClicked" CommandArgument='<%# Eval("ArticleUrl") %>'></asp:LinkButton>
                                         <br />
-                                        <span runat="server" class="Contentdisplay" style="color: black; font-size: 14px;"><%# (Eval("userName")) %> [<%# (Eval("UpdateTimeStamp")) %>]</span>
+                                        <span runat="server" class="Contentdisplay" style="color: black; font-size: 14px;"><%# (Eval("userName")) %> [<%#  DataBinder.Eval(Container.DataItem,"UpdateTimeStamp","{0:dd/MM/yyyy h:mm tt}")  %>]</span>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" ID="edit" OnCommand="editArticleClicked" CommandArgument='<%# Eval("ArticleID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                         <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
                                         <%--<asp:LinkButton   runat="server" CssClass="Contentdisplay"ID="btn_deleteArticle" OnClientClick='<%# "deletebtnclicked(" +Eval("ArticleID") + " );" %>' Text="<%$Resources:DisplayText,delete %>" />--%>

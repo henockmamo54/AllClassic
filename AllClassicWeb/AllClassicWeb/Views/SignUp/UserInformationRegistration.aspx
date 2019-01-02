@@ -13,13 +13,13 @@
 
             <h4>Sign Up</h4>
             <div class="row">
-                <div class=" col-xs-2 filedName">
+                <%--<div class=" col-xs-2 filedName">
                     <ul class="list-group">
                         <a class="list-group-item list-group-item-action" href="TermsOfUsePage.aspx"><%= Resources.DisplayText.AcceptTerms %></a>
                         <a class="list-group-item list-group-item-action active"><%= Resources.DisplayText.UserInfo %></a>
                     </ul>
-                </div>
-                <div class="col-md-10 col-xs-10">
+                </div>--%>
+                <div class=" col-xs-12">
                     <div class="col-md-12 col-xs-12 shadowedPanel " style="background-color: white;">
                         <div class="rwo " style="padding-bottom: 10px;">
                             <label class="filedName"><%= Resources.DisplayText.WhatkindOfUserAreyou %> <%= Resources.DisplayText.Pleaseclickasmanyasyouthinkyouare %> </label>

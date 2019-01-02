@@ -3,17 +3,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel runat="server" ID="updatepanel1">
         <ContentTemplate>
-
+            <br />
             <h4><%= Resources.DisplayText.SignUp %></h4>
+            <hr />
             <div class="row">
-                <div class="col-md-2 col-xs-2">
+                <%--<div class="col-md-2 col-xs-2">
                     <ul class="list-group">
                         <a class="list-group-item list-group-item-action active"><%= Resources.DisplayText.AcceptTerms %></a>
-                        <%--<a class="list-group-item list-group-item-action" href="UserInformationRegistrationPage.aspx"><%= Resources.HomeView.aspx.UserInfo %></a>--%>
                         <a class="list-group-item list-group-item-action" onclick="showSelectMessage()"><%= Resources.DisplayText.UserInfo %></a>
                     </ul>
-                </div>
-                <div class="col-md-10 col-xs-10 ">
+                </div>--%>
+                <div class="  col-xs-12 ">
 
                     <h6 class="contentHeader"><%= Resources.DisplayText.Termsofuse %></h6>
                     <div style="background-color: white; height: 500px; overflow-y: scroll;"

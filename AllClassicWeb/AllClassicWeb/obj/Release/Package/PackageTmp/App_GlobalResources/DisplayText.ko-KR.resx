@@ -593,13 +593,13 @@
     <value>구인</value>
   </data>
   <data name="PleaseenteryourEmail" xml:space="preserve">
-    <value>이메일을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleaseenteryourFullName" xml:space="preserve">
-    <value>이름을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleaseenteryourPassword" xml:space="preserve">
-    <value>비밀번호를 입력하십시오!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="Pleaseclickasmanyasyouthinkyouare" xml:space="preserve">
     <value>해당 사항을 있는대로 선택하세요!</value>
@@ -623,19 +623,19 @@
     <value>합계</value>
   </data>
   <data name="PleaseEnterEndDate" xml:space="preserve">
-    <value>종료일을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleaseEnterMainTitle" xml:space="preserve">
-    <value>기본 제목을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleaseEnterStartDate" xml:space="preserve">
-    <value>시작 날짜를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleaseEnterTicketBoxinfo" xml:space="preserve">
-    <value>판매처를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleaseEnterTime" xml:space="preserve">
-    <value>시간을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="Comment" xml:space="preserve">
     <value>댓글</value>
@@ -647,64 +647,64 @@
     <value>소속 단체</value>
   </data>
   <data name="Pleasefillthecountryfield" xml:space="preserve">
-    <value>국가를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefilltheHomepagefield" xml:space="preserve">
-    <value>홈페이지를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="Pleasefillthenamefield" xml:space="preserve">
-    <value>이름을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="Pleasefilltheshortnamefield" xml:space="preserve">
-    <value>짧은 이름을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="Pleasefillthearticletitle" xml:space="preserve">
-    <value>기사 제목을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillthearticleURL" xml:space="preserve">
-    <value>기사 URL을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillAuditionoutlinefield" xml:space="preserve">
-    <value>오디션 개요 필드를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="Pleasefillorganizerfield" xml:space="preserve">
-    <value>주최자 정보를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="Pleasefilltitlefield" xml:space="preserve">
-    <value>제목을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillConcouroutlinefield" xml:space="preserve">
-    <value>콩쿠르 개요를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillAddressfield" xml:space="preserve">
-    <value>주소를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillEmailfield" xml:space="preserve">
-    <value>이메일을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillPerformanceGroupfield" xml:space="preserve">
-    <value>공연단 정보를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillSinceYearfield" xml:space="preserve">
-    <value>설립 년도 필드를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillTelNofield" xml:space="preserve">
-    <value>전화 번호를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillZipCodefield" xml:space="preserve">
-    <value>우편 번호를 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillVenuNamefield" xml:space="preserve">
-    <value>공연장 이름을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillContactNamefield" xml:space="preserve">
-    <value>담당자 이름을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillDescriptionfield" xml:space="preserve">
-    <value>설명을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="PleasefillValidDatefield" xml:space="preserve">
-    <value>마감일을 입력하세요!</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>없음</value>
@@ -725,7 +725,7 @@
     <value>새로운 질문</value>
   </data>
   <data name="PleaseFilltheQuestionFiled" xml:space="preserve">
-    <value>질문을 작성하십시오.</value>
+    <value>필수입력 항목</value>
   </data>
   <data name="Question" xml:space="preserve">
     <value>질문</value>
@@ -747,5 +747,8 @@
   </data>
   <data name="Unsubscribe" xml:space="preserve">
     <value>수신 거부</value>
+  </data>
+  <data name="CompanyBackground" xml:space="preserve">
+    <value>설립 배경 및 운영 방침</value>
   </data>
 </root>

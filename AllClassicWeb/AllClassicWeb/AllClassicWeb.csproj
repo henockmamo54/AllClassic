@@ -144,6 +144,7 @@
     <Content Include="Doc\BOD\이해영.jpg" />
     <Content Include="Doc\BOD\조재위.png" />
     <Content Include="Doc\BOD\최승희.png" />
+    <Content Include="Doc\Icons\classicCoin.png" />
     <Content Include="Doc\College\05149.jpg" />
     <Content Include="Doc\College\Dankook Campus Main.jpg" />
     <Content Include="Doc\College\imgpreview.jpg" />
@@ -152,6 +153,7 @@
     <Content Include="Doc\Icons\dl.png" />
     <Content Include="Doc\Icons\l-c.png" />
     <Content Include="Doc\Icons\l.png" />
+    <Content Include="Doc\Icons\location.png" />
     <Content Include="Doc\Performance\1.jpg" />
     <Content Include="Doc\Performance\2.jpg" />
     <Content Include="Doc\Performance\sample poster1.jpg" />
@@ -519,6 +521,7 @@
     <Content Include="Scripts\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\ckeditor\themes\default\theme.js" />
+    <Content Include="Views\ClassicCoinDB.aspx" />
     <Content Include="Views\Mypage.aspx" />
     <Content Include="Views\PasswordReset.aspx" />
     <Content Include="Views\QADbNew.aspx" />
@@ -627,6 +630,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ClassicCoinDB.aspx.cs">
+      <DependentUpon>ClassicCoinDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ClassicCoinDB.aspx.designer.cs">
+      <DependentUpon>ClassicCoinDB.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Mypage.aspx.cs">
       <DependentUpon>Mypage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

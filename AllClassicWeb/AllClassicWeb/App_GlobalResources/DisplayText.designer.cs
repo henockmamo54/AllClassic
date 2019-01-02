@@ -142,6 +142,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Advisory Members.
+        /// </summary>
+        internal static string Advisorymembers {
+            get {
+                return ResourceManager.GetString("Advisorymembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Affiliation.
         /// </summary>
         internal static string Affiliation {
@@ -250,11 +259,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BOD Members.
+        /// </summary>
+        internal static string BODMembers {
+            get {
+                return ResourceManager.GetString("BODMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CEO Message.
+        /// </summary>
+        internal static string CEOMessage {
+            get {
+                return ResourceManager.GetString("CEOMessage", resourceCulture);
             }
         }
         
@@ -318,6 +345,15 @@ namespace Resources {
         internal static string CompanyBackground {
             get {
                 return ResourceManager.GetString("CompanyBackground", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        internal static string CompLocation {
+            get {
+                return ResourceManager.GetString("CompLocation", resourceCulture);
             }
         }
         

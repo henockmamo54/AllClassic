@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <%--<meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
-    <title> AllClassic Korea</title>
+    <title>AllClassic Korea</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -20,7 +20,7 @@
     <script type="text/javascript">
         function modifyCss(color, page) {
             switch (color) {
-                
+
                 case "1":
                     $(".whitesmokeBG").css('background-color', '#004d40');
                     $(".whitesmokeBG").css('color', '#ffffff');
@@ -233,12 +233,12 @@
                     document.getElementById("mypagetab").style.borderRight = "none";
                     document.getElementById("mypagetab").style.color = "#000000";
                     break;
-                } 
+                }
             }
         }
 
-        function SiteSearch() { 
-             $('#encodedSearchvalue').val(EncodeText(document.getElementById('searchbox').value)); 
+        function SiteSearch() {
+            $('#encodedSearchvalue').val(EncodeText(document.getElementById('searchbox').value));
         }
 
         function EncodeText(value) {
@@ -296,6 +296,18 @@
 
 
             <div id="masterNavigationBar">
+                <div class="row">
+                    <a runat="server" id="signinLink" visible="false" >
+                        <a runat="server" style="float:right; margin-left:10px;" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
+                        <a runat="server" style="float:right;" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
+                    </a>
+
+                    <a runat="server" id="signoutLink" style="float:right; margin-left:10px;" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
+                    <a id="mypagetab" runat="server" style="float:right;"  href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
+
+                    <br />
+
+                </div>
                 <div class="row whitesmokeBG">
                     <div>
                         <a class="navbar-brand allclasic_home" style="text-decoration: none; background-color: darkorange;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
@@ -303,15 +315,15 @@
                         <a class="otheroptions " id="artisttab" style="text-decoration: none;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
                         <a class="otheroptions " id="MusicCollegetab" runat="server" style="text-decoration: none;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
                         <a class="otheroptions " id="performanceArchivetab" style="text-decoration: none;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
-                        <a class="otheroptions " runat="server" style="text-decoration: none;" onclick="alert('This page Will be added soon.')"><%= Resources.DisplayText.ClassicCoin %></a>
+                        <a class="otheroptions " runat="server" style="text-decoration: none;" href="~/Views/ClassicCoinDB" ><%= Resources.DisplayText.ClassicCoin %></a>
                         <a class="otheroptions " id="introductiontab" style="text-decoration: none;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
                         <span class="otheroptions ">
                             <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; display: inline-block;"><%= Resources.DisplayText.en %>/</a>
                             <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; display: inline-block;"><%= Resources.DisplayText.kr %></a>
                         </span>
-                        <span  class="otheroptions pull-right" style="padding-top: 8px;">
+                        <span class="otheroptions pull-right" style="padding-top: 8px;">
                             <asp:TextBox runat="server" ID="searchbox" class="form-control" Style="display: inline; width: 150px;"></asp:TextBox>
-                            <asp:Button runat="server"  ID="mainSearchBox" Text="search" UseSubmitBehavior="false" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
+                            <asp:Button runat="server" ID="mainSearchBox" Text="search" UseSubmitBehavior="false" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
                             <asp:HiddenField runat="server" ID="encodedSearchvalue" />
                         </span>
                     </div>
@@ -324,12 +336,15 @@
 
                 <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 0px;">
                     <ul class="list-group ">
-                        <a runat="server" id="signinLink" visible="false">
+                        <%--<a runat="server" id="signinLink" visible="false">
                             <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
                             <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
                         </a>
 
                         <a class="list-group-item list-group-item-action whitesmokeBG" runat="server" id="signoutLink" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
+                        
+                        <a id="mypagetab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>--%>
+
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
                         <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
                         <a id="concoursdbtab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
@@ -339,7 +354,7 @@
                         <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
                         <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
                         <a id="qatab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/QADbNew"><%= Resources.DisplayText.QA %></a>
-                        <a id="mypagetab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
+                        <%--<a id="mypagetab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>--%>
                         <%--<div>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="1" Text="1"></asp:Button>
                             <asp:Button class="list-group-item list-group-item-action  whitesmokeBG" runat="server" Style="display: inline-block;" OnCommand="changecolor" CommandArgument="2" Text="2"></asp:Button>
