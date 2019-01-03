@@ -339,14 +339,14 @@
                     <span class="menucontainer">
                         <a id="artisttab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
                     </span>
-                    |
-                    <span class="menucontainer">
-                        <a id="MusicCollegetab" class="mainTitle" runat="server" style="text-decoration: none; width: 100px;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
-                    </span>
                     |                  
 
                     <span class="menucontainer">
                         <a id="performancegrouptab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
+                    </span>
+                    |
+                    <span class="menucontainer">
+                        <a id="MusicCollegetab" class="mainTitle" runat="server" style="text-decoration: none; width: 100px;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
                     </span>
                     |
                     <span class="menucontainer">

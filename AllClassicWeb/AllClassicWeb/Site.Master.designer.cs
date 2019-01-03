@@ -103,15 +103,6 @@ namespace AllClassicWeb {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor artisttab;
         
         /// <summary>
-        /// MusicCollegetab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor MusicCollegetab;
-        
-        /// <summary>
         /// performancegrouptab control.
         /// </summary>
         /// <remarks>
@@ -119,6 +110,15 @@ namespace AllClassicWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor performancegrouptab;
+        
+        /// <summary>
+        /// MusicCollegetab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor MusicCollegetab;
         
         /// <summary>
         /// A1 control.
