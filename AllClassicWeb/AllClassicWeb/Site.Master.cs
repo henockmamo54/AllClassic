@@ -6,6 +6,7 @@ using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DataAccessP;
 
 namespace AllClassicWeb
 {
@@ -24,6 +25,11 @@ namespace AllClassicWeb
             if (user != null)
             {
                 signinLink.Visible = false; signoutLink.Visible = true; mypagetab.Visible = true;
+
+                try { if (((UserTbl)user).IsMasterUser == 1) lookupmanagementtab.Visible = true; }
+                catch (Exception ee) {
+
+                }
                 //mypageLink.Visible = true;
             }
 

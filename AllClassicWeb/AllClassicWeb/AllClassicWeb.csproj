@@ -522,6 +522,7 @@
     <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\ckeditor\themes\default\theme.js" />
     <Content Include="Views\ClassicCoinDB.aspx" />
+    <Content Include="Views\LookupMangePage.aspx" />
     <Content Include="Views\Mypage.aspx" />
     <Content Include="Views\PasswordReset.aspx" />
     <Content Include="Views\QADbNew.aspx" />
@@ -636,6 +637,13 @@
     </Compile>
     <Compile Include="Views\ClassicCoinDB.aspx.designer.cs">
       <DependentUpon>ClassicCoinDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LookupMangePage.aspx.cs">
+      <DependentUpon>LookupMangePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LookupMangePage.aspx.designer.cs">
+      <DependentUpon>LookupMangePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Mypage.aspx.cs">
       <DependentUpon>Mypage.aspx</DependentUpon>

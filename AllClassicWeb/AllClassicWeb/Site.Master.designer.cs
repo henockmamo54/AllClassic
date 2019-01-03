@@ -49,6 +49,15 @@ namespace AllClassicWeb {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor mypagetab;
         
         /// <summary>
+        /// lookupmanagementtab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lookupmanagementtab;
+        
+        /// <summary>
         /// searchbox control.
         /// </summary>
         /// <remarks>
