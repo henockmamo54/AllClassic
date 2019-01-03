@@ -781,7 +781,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Music College DB.
+        ///   Looks up a localized string similar to Music College.
         /// </summary>
         internal static string MusicCollegeDB {
             get {
@@ -790,7 +790,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Musician DB.
+        ///   Looks up a localized string similar to Musician.
         /// </summary>
         internal static string MusicianDB {
             get {
@@ -934,7 +934,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Performance DB.
+        ///   Looks up a localized string similar to Performance.
         /// </summary>
         internal static string PerformanceDB {
             get {

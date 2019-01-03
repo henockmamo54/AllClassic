@@ -361,16 +361,19 @@
                     </div>
                 </div>
 
-                <span style="margin-top: 10px; margin-bottom: 0;" />
-                <div class="row" style="height: 40px; background-image: linear-gradient(to left, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); position: absolute; left: 0; right: 0; display: block;">
-                </div>
-                <hr />
+                <%--<span style="margin-top: 10px; margin-bottom: 0;" />--%> 
+                <%--position: absolute; left: 0; right: 0; display: block;--%>
+                <div class="row" style="height: 80px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4));position: absolute; left: 0; right: 0; display: block; ">
+                </div> 
+                <br /> <br />
+                <br /> <br />
+                <%--<hr />--%>
 
             </div>
 
             <div class="row">
 
-                <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 75px;">
+                <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 0px;">
                     <ul class="list-group ">
 
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
