@@ -149,18 +149,18 @@ a.list-group-item {
 }
 
 .whitesmokeBG {
-    background-color: #004d40;
+    background-color: #F5F4F4;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
     .whitesmokeBG > div > a {
-        color: white;
+        color: black;
         font-weight: bold;
     }
 
     .whitesmokeBG > div > span > a {
-        color: white;
+        color: black;
         font-weight: bold;
     }
 
@@ -208,7 +208,8 @@ a.list-group-item {
     border-left: none !important;
     border-right: none !important;
     border-bottom: none !important;
-    border-color: rgb(1, 99, 82);
+    /*border-color: rgb(1, 99, 82);*/
+    border-color: rgba(1, 99, 82, 0.24);
 }
 
 
@@ -363,4 +364,10 @@ blockquote {
 .mypanelColor {
     background-color: #F4F5F9 !important;
     /*color: white !important;*/
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top:none
 }

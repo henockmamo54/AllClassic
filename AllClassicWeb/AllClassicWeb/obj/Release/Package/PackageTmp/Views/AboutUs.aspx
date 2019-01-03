@@ -251,7 +251,7 @@
 
                                 <div class="col-xs-3">
                                     <img src="../Doc/BOD/CHUNG%20YEONSIL.jpg" class="img-circle" alt="Cinque Terre" style="width: 200px; height: 200px;">
-                                    <h5 class="BodmembersNameContainer contentHeader"></h5>
+                                    <h5 class="BodmembersNameContainer contentHeader">정연실 (CHUNG YEONSIL)/ 감사</h5>
                                 </div>
                                 <div class="col-xs-4 Contentdisplay">
 

@@ -136,10 +136,10 @@
     <value>Concours</value>
   </data>
   <data name="MusicCollegeDB" xml:space="preserve">
-    <value>Music College DB</value>
+    <value>Music College</value>
   </data>
   <data name="MusicianDB" xml:space="preserve">
-    <value>Musician DB</value>
+    <value>Musician</value>
   </data>
   <data name="MusicShop" xml:space="preserve">
     <value>Music Shop</value>
@@ -148,7 +148,7 @@
     <value>People &amp; Job</value>
   </data>
   <data name="PerformanceDB" xml:space="preserve">
-    <value>Performance DB</value>
+    <value>Performance</value>
   </data>
   <data name="PerformanceGroup" xml:space="preserve">
     <value>Performance Group</value>

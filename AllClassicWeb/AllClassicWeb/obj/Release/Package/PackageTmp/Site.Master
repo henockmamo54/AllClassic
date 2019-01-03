@@ -22,10 +22,10 @@
             switch (color) {
 
                 case "1":
-                    $(".whitesmokeBG").css('background-color', '#004d40');
-                    $(".whitesmokeBG").css('color', '#ffffff');
-                    $(".whitesmokeBG > div > a ").css('color', '#ffffff');
-                    $(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
+                    //$(".whitesmokeBG").css('background-color', '#004d40');
+                    //$(".whitesmokeBG").css('color', '#ffffff');
+                    //$(".whitesmokeBG > div > a ").css('color', '#ffffff');
+                    //$(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
                     $("#mainSearchBox").css('background-color', '#5bc0de');
 
 
@@ -330,47 +330,52 @@
 
 
                 <div class="row" style="text-align: center;">
-                    <div class="menucontainer">
+                    <span class="menucontainer">
                         <a id="performancetab" class="mainTitle" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
-                    </div>
+                    </span>
                     |
-                    <div class="menucontainer">
+                    <span class="menucontainer">
                         <a id="artisttab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
-                    </div>
+                    </span>
                     |
-                    <div class="menucontainer">
+                    <span class="menucontainer">
                         <a id="MusicCollegetab" class="mainTitle" runat="server" style="text-decoration: none; width: 100px;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
-                    </div>
+                    </span>
                     |                  
 
-                    <div class="menucontainer">
+                    <span class="menucontainer">
                         <a id="performancegrouptab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
-                    </div>
+                    </span>
                     |
-                    <div class="menucontainer">
+                    <span class="menucontainer">
                         <a id="A1" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
-                    </div>
+                    </span>
                     |
-                    <div class="menucontainer">
+                    <span class="menucontainer">
                         <a runat="server" class="mainTitle" style="text-decoration: none; width: 100px;" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
-                    </div>
+                    </span>
                     |
-                    <div class="menucontainer">
+                    <span class="menucontainer">
 
                         <a id="introductiontab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
-                    </div>
+                    </span>
                 </div>
 
-                <span style="margin-top: 10px; margin-bottom: 0;" />
-                <div class="row" style="height: 40px; background-image: linear-gradient(to left, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); position: absolute; left: 0; right: 0; display: block;">
+                <%--<span style="margin-top: 10px; margin-bottom: 0;" />--%>
+                <%--position: absolute; left: 0; right: 0; display: block;--%>
+                <div class="row" style="height: 40px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); 
+position: relative; width: 100vw; left: calc(-50vw + 50%);  ">
                 </div>
-                <hr />
-
+               <%-- <br />
+                <br />
+                <br />
+                <br />--%>
+                <%--<hr />--%>
             </div>
 
             <div class="row">
 
-                <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 75px;">
+                <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 0px;">
                     <ul class="list-group ">
 
                         <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
@@ -394,7 +399,7 @@
             </div>
             <br />
 
-            <footer id="masterFooter" style="background: #F4F5F9; padding: 20px; position: absolute; left: 0; right: 0;">
+            <footer id="masterFooter" style="background: #F4F5F9; padding: 20px; position: relative; width: 100vw; left: calc(-50vw + 50%);">
                 <p style="text-align: center;" class="Contentdisplay">
                     (주)올클래식코리아 | 대표 : 전동수 | 주소: 서울시 강남구 역삼로 220 홍성빌딩 3 층 (06227)<br />
                     사업자등록번호 : 629-88-01114 | 전화 : 02)561-7080 | 팩스 : 02)561-6082<br />

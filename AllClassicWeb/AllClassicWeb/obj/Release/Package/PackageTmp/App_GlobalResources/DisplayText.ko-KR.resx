@@ -122,7 +122,7 @@
     <comment>menu bar</comment>
   </data>
   <data name="ArchiveCenter" xml:space="preserve">
-    <value>아카이브 센터</value>
+    <value>공연 아카이브</value>
     <comment>menu bar</comment>
   </data>
   <data name="Article" xml:space="preserve">
@@ -142,11 +142,11 @@
     <comment>menu bar</comment>
   </data>
   <data name="MusicCollegeDB" xml:space="preserve">
-    <value>음악 학교 DB</value>
+    <value>음악학교 정보</value>
     <comment>menu bar</comment>
   </data>
   <data name="MusicianDB" xml:space="preserve">
-    <value>뮤지션 DB</value>
+    <value>연주자 정보</value>
     <comment>menu bar</comment>
   </data>
   <data name="MusicShop" xml:space="preserve">
@@ -158,11 +158,11 @@
     <comment>menu bar</comment>
   </data>
   <data name="PerformanceDB" xml:space="preserve">
-    <value>공연 DB</value>
+    <value>공연정보</value>
     <comment>menu bar</comment>
   </data>
   <data name="PerformanceGroup" xml:space="preserve">
-    <value>공연 단체</value>
+    <value>공연단체 정보</value>
     <comment>menu bar</comment>
   </data>
   <data name="QA" xml:space="preserve">
