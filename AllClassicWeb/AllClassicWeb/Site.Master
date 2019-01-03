@@ -363,10 +363,10 @@
 
                 <%--<span style="margin-top: 10px; margin-bottom: 0;" />--%>
                 <%--position: absolute; left: 0; right: 0; display: block;--%>
-                <div class="row" style="height: 40px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); 
-position: relative; width: 100vw; left: calc(-50vw + 50%);  ">
+                <div class="row" style="/*height: 40px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); margin: 0 -40%; padding: 0 -100%;*/">
+                <div class="row" style="height: 40px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); margin: 0 -40%; padding: 0 -40%;">
                 </div>
-               <%-- <br />
+                <%-- <br />
                 <br />
                 <br />
                 <br />--%>
@@ -399,7 +399,7 @@ position: relative; width: 100vw; left: calc(-50vw + 50%);  ">
             </div>
             <br />
 
-            <footer id="masterFooter" style="background: #F4F5F9; padding: 20px; position: relative; width: 100vw; left: calc(-50vw + 50%);">
+            <footer id="masterFooter" style="background: #F4F5F9; padding: 20px;  margin: 0 -40%; padding: 0 -40%;">
                 <p style="text-align: center;" class="Contentdisplay">
                     (주)올클래식코리아 | 대표 : 전동수 | 주소: 서울시 강남구 역삼로 220 홍성빌딩 3 층 (06227)<br />
                     사업자등록번호 : 629-88-01114 | 전화 : 02)561-7080 | 팩스 : 02)561-6082<br />
