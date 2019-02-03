@@ -16,8 +16,14 @@ namespace AllClassicWeb.Views
 
         protected void ListView1_ItemDeleted(object sender, ListViewDeletedEventArgs e)
         {
-            string success = "alert('Item deleted Successfully!');";
-            ClientScript.RegisterStartupScript(typeof(Page), "MessageDisplay Item deleted S", success, true);
+            if (e.Exception == null)
+            {
+                string success = "alert('Item deleted Successfully!');";
+                ClientScript.RegisterStartupScript(typeof(Page), "MessageDisplay Item deleted S", success, true);
+            }
+            else {
+                Response.Redirect("~/Views/LookupMangePage.aspx");
+            }
         }
 
         protected void ListView1_ItemInserted(object sender, ListViewInsertedEventArgs e)
