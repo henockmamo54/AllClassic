@@ -80,9 +80,9 @@
                     <asp:Button CssClass="btn btn-danger  pull-right  contentButton" style="margin-left:5px;" runat="server" ID="btn_delete" OnClientClick="deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
                     <asp:Button CssClass="btn btn-primary pull-right contentButton" runat="server" ID="btn_editpg" OnClick="onclick_btn_editpg" Text="<%$Resources:DisplayText,Edit %>" />
                 </div>
-                <div class="col-xs-12">
-                    <hr />
+                
                 </div>
+         
         </ContentTemplate>
     </asp:UpdatePanel>
 
