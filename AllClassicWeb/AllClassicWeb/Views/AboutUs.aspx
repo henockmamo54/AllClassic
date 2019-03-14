@@ -484,7 +484,7 @@
 
                 <div id="menu5" class="tab-pane fade">
                     <div class="col-xs-12">
-                    <img src="../Doc/Icons/location.png" style="width:100%;" />
+                    <img src="../img/location.jpg" style="width:100%; margin-bottom:20px;"/>
                     <p>
                         주소: 서울시 강남구 역삼동 220 홍성빌딩 3층 (우)06227
                         <br />

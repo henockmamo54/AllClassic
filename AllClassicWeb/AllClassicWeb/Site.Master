@@ -26,7 +26,7 @@
                     //$(".whitesmokeBG").css('color', '#ffffff');
                     //$(".whitesmokeBG > div > a ").css('color', '#ffffff');
                     //$(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
-                    $("#mainSearchBox").css('background-color', '#5bc0de');
+                    $("#mainSearchBox").css('background-color', '#2a2a2a');
 
 
                     $(".whitesmokeBG").css('font-weight', 'bold');
@@ -39,199 +39,199 @@
             switch (page) {
                 case "ASP.views_aboutus_aspx":
                     {
-                        document.getElementById("introductiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                        document.getElementById("introductiontab").style.backgroundColor = "none";
                         document.getElementById("introductiontab").style.borderBottom = "none";
-                        document.getElementById("introductiontab").style.color = "#000000";
+                        document.getElementById("introductiontab").style.color = "#dfb33a";
 
                         break;
                     }
 
                 case "ASP.views_performancedb_aspx":
                     {
-                        document.getElementById("performancetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                        document.getElementById("performancetab").style.backgroundColor = "none";
                         document.getElementById("performancetab").style.borderBottom = "none";
-                        document.getElementById("performancetab").style.color = "#000000";
+                        document.getElementById("performancetab").style.color = "#dfb33a";
 
                         break;
                     }
                 case "ASP.views_performancedbaddnew_aspx": {
-                    document.getElementById("performancetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancetab").style.backgroundColor = "none";
                     document.getElementById("performancetab").style.borderBottom = "none";
-                    document.getElementById("performancetab").style.color = "#000000";
+                    document.getElementById("performancetab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_performancedetail_aspx": {
-                    document.getElementById("performancetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancetab").style.backgroundColor = "none";
                     document.getElementById("performancetab").style.borderBottom = "none";
-                    document.getElementById("performancetab").style.color = "#000000";
+                    document.getElementById("performancetab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_musiciandb_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("artisttab").style.backgroundColor = "none";
                     document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#000000";
+                    document.getElementById("artisttab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_musiciandbaddnew_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("artisttab").style.backgroundColor = "none";
                     document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#000000";
+                    document.getElementById("artisttab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_musiciandetailpage_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("artisttab").style.backgroundColor = "none";
                     document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#000000";
+                    document.getElementById("artisttab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_musiccollegedb_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
                     document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#000000";
+                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_musiccollegedbaddnew_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
                     document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#000000";
+                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_musiccollegedbdetail_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
                     document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#000000";
+                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_articledb_aspx": {
-                    document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("articletab").style.backgroundColor = "none";
                     document.getElementById("articletab").style.borderRight = "none";
-                    document.getElementById("articletab").style.color = "#000000";
+                    document.getElementById("articletab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_articledbaddnew_aspx": {
-                    document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("articletab").style.backgroundColor = "none";
                     document.getElementById("articletab").style.borderRight = "none";
-                    document.getElementById("articletab").style.color = "#000000";
+                    document.getElementById("articletab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_auditiondb_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.backgroundColor = "none";
                     document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#000000";
+                    document.getElementById("auditiontab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_auditiondb_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.backgroundColor = "none";
                     document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#000000";
+                    document.getElementById("auditiontab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_auditiondbaddnew_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("auditiontab").style.backgroundColor = "none";
                     document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#000000";
+                    document.getElementById("auditiontab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_concoursdb_aspx": {
-                    document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("concoursdbtab").style.backgroundColor = "none";
                     document.getElementById("concoursdbtab").style.borderRight = "none";
-                    document.getElementById("concoursdbtab").style.color = "#000000";
+                    document.getElementById("concoursdbtab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_concoursdbaddnew_aspx": {
-                    document.getElementById("concoursdbtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("concoursdbtab").style.backgroundColor = "none";
                     document.getElementById("concoursdbtab").style.borderRight = "none";
-                    document.getElementById("concoursdbtab").style.color = "#000000";
+                    document.getElementById("concoursdbtab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_performancegroupaddnew_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
                     document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#000000";
+                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_performancegroup_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
                     document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#000000";
+                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_performancegroupdetail_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
                     document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#000000";
+                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_repairshopdb_aspx": {
                     document.getElementById("RepairShoptab").style.backgroundColor = "white";
                     document.getElementById("RepairShoptab").style.borderRight = "none";
-                    document.getElementById("RepairShoptab").style.color = "#000000";
+                    document.getElementById("RepairShoptab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_repairshopdbaddnew_aspx": {
                     document.getElementById("RepairShoptab").style.backgroundColor = "white";
                     document.getElementById("RepairShoptab").style.borderRight = "none";
-                    document.getElementById("RepairShoptab").style.color = "#000000";
+                    document.getElementById("RepairShoptab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_musicshopdb_aspx": {
                     document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
                     document.getElementById("MusicShopDBtab").style.borderRight = "none";
-                    document.getElementById("MusicShopDBtab").style.color = "#000000";
+                    document.getElementById("MusicShopDBtab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_musicshopdbaddnew_aspx": {
                     document.getElementById("MusicShopDBtab").style.backgroundColor = "white";
                     document.getElementById("MusicShopDBtab").style.borderRight = "none";
-                    document.getElementById("MusicShopDBtab").style.color = "#000000";
+                    document.getElementById("MusicShopDBtab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_concertvenudb_aspx": {
                     document.getElementById("ConcertVenutab").style.backgroundColor = "white";
                     document.getElementById("ConcertVenutab").style.borderRight = "none";
-                    document.getElementById("ConcertVenutab").style.color = "#000000";
+                    document.getElementById("ConcertVenutab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_concertvenudbaddnew_aspx": {
                     document.getElementById("ConcertVenutab").style.backgroundColor = "white";
                     document.getElementById("ConcertVenutab").style.borderRight = "none";
-                    document.getElementById("ConcertVenutab").style.color = "#000000";
+                    document.getElementById("ConcertVenutab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_peopleandjobdb_aspx": {
-                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "none";
                     document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.color = "#000000";
+                    document.getElementById("PeopleAndJobDBtab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_peopleandjobdbaddnew_aspx": {
-                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "none";
                     document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.color = "#000000";
+                    document.getElementById("PeopleAndJobDBtab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_performancearchivedb_aspx": {
-                    document.getElementById("performanceArchivetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("performanceArchivetab").style.backgroundColor = "none";
                     document.getElementById("performanceArchivetab").style.borderRight = "none";
-                    document.getElementById("performanceArchivetab").style.color = "#000000";
+                    document.getElementById("performanceArchivetab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_signup_termsofusepage_aspx": {
-                    document.getElementById("signuptab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("signuptab").style.backgroundColor = "none";
                     document.getElementById("signuptab").style.borderRight = "none";
-                    document.getElementById("signuptab").style.color = "#000000";
+                    document.getElementById("signuptab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_qadbnew_aspx": {
-                    document.getElementById("qatab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("qatab").style.backgroundColor = "none";
                     document.getElementById("qatab").style.borderRight = "none";
-                    document.getElementById("qatab").style.color = "#000000";
+                    document.getElementById("qatab").style.color = "#dfb33a";
                     break;
                 }
                 case "ASP.views_mypage_aspx": {
-                    document.getElementById("mypagetab").style.backgroundColor = "rgb(255, 255, 255) ";
+                    document.getElementById("mypagetab").style.backgroundColor = "none";
                     document.getElementById("mypagetab").style.borderRight = "none";
-                    document.getElementById("mypagetab").style.color = "#000000";
+                    document.getElementById("mypagetab").style.color = "#dfb33a";
                     break;
                 }
             }
@@ -317,7 +317,7 @@
                 </div>
                 <div class="row">
 
-                    <a class="navbar-brand allclasic_home" style="text-decoration: none; border-radius: 5px; background-color: darkorange; color: white !important;" runat="server" href="~/Views/PerformanceDB">AllClassic Korea</a>
+                    <a class="navbar-brand allclasic_home" style="text-decoration: none; border-radius: 5px; background-color: darkorange; color: white !important;" runat="server" href="~/Views/PerformanceDB"><img src="../img/logo.png" alt="All Classic Korea" ></a>
 
 
                     <span class="otheroptions " style="padding-top: 8px;">
@@ -335,28 +335,28 @@
                     <span class="menucontainer">
                         <a id="performancetab" class="mainTitle" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
                     </span>
-                    |
+                    <span><img src="../img/menuline.png"</span>
                     <span class="menucontainer">
                         <a id="artisttab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
                     </span>
-                    |                  
+                    <span><img src="../img/menuline.png"</span>                
 
                     <span class="menucontainer">
                         <a id="performancegrouptab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
                     </span>
-                    |
+                    <span><img src="../img/menuline.png"</span>
                     <span class="menucontainer">
                         <a id="MusicCollegetab" class="mainTitle" runat="server" style="text-decoration: none; width: 100px;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
                     </span>
-                    |
+                    <span><img src="../img/menuline.png"</span>
                     <span class="menucontainer">
                         <a id="A1" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
                     </span>
-                    |
+                    <span><img src="../img/menuline.png"</span>
                     <span class="menucontainer">
                         <a runat="server" class="mainTitle" style="text-decoration: none; width: 100px;" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
                     </span>
-                    |
+                    <span><img src="../img/menuline.png"</span>
                     <span class="menucontainer">
 
                         <a id="introductiontab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
