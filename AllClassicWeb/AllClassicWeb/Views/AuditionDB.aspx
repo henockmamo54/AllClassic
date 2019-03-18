@@ -203,8 +203,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
 
     <script type="text/javascript">
-        document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
-        document.getElementById("auditiontab").style.borderRight = "none";
+    //    document.getElementById("auditiontab").style.backgroundColor = "rgb(255, 255, 255) ";
+    //    document.getElementById("auditiontab").style.borderRight = "none";
 
 
         function deletebtnclicked(id) {

@@ -15,6 +15,9 @@ namespace AllClassicWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             string pageName = this.MainContent.Page.GetType().FullName;
+#if DEBUG
+            Console.WriteLine("pageName:" + pageName);
+#endif
             if(Session["Theme"]!=null)
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "modifyCss('"+ Session["Theme"]+"','" + pageName + "');", true);
             else

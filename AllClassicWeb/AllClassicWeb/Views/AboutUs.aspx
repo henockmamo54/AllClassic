@@ -520,8 +520,8 @@
 
 
     <script type="text/javascript">
-        document.getElementById("introductiontab").style.backgroundColor = "white";
-        document.getElementById("introductiontab").style.borderBottom = "none";
+       // document.getElementById("introductiontab").style.backgroundColor = "white";
+       // document.getElementById("introductiontab").style.borderBottom = "none";
     </script>
 
 </asp:Content>

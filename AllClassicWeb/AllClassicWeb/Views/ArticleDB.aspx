@@ -163,8 +163,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
     </asp:UpdatePanel>
 
     <script type="text/javascript">
-        document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
-        document.getElementById("articletab").style.borderRight = "none";
+    //    document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+    //    document.getElementById("articletab").style.borderRight = "none";
     </script>
     <script type="text/javascript"> 
 
