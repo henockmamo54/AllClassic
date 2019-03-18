@@ -122,6 +122,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\headerbg.jpg" />
+    <Content Include="Content\img\location.jpg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\menuline.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Doc\ads\1d63a0_c98934b833c94affa65a41837b01c878_mv2_d_1388_1654_s_2.jpg" />

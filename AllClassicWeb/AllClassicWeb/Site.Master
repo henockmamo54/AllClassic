@@ -234,6 +234,13 @@
                     document.getElementById("mypagetab").style.color = "#dfb33a";
                     break;
                 }
+                case "ASP.views_classiccoindb_aspx": {
+                    
+                    document.getElementById("ClassicCointab").style.backgroundColor = "none";
+                    document.getElementById("ClassicCointab").style.borderRight = "none";
+                    document.getElementById("ClassicCointab").style.color = "#dfb33a";
+                    break;
+                }
             }
         }
 
@@ -307,10 +314,10 @@
                         <a runat="server" class="Contentdisplay" style="float: right; color:#cccccc; margin-top:5px;" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
                     </a>
 
-                    <a runat="server" class="Contentdisplay" id="signoutLink" style="float: right; color: black; margin-left: 10px;" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
-                    <a id="mypagetab" class="Contentdisplay" runat="server" style="float: right; color: black; margin-left: 10px;" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
+                    <a runat="server" class="Contentdisplay" id="signoutLink" style="float: right; color: #cccccc; margin-left: 10px;" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
+                    <a id="mypagetab" class="Contentdisplay" runat="server" style="float: right; color: #cccccc; margin-left: 10px;" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
 
-                    <a id="lookupmanagementtab" class="Contentdisplay" runat="server" style="float: right; color: black; " visible="false" href="~/Views/LookupMangePage">lookup management</a>
+                    <a id="lookupmanagementtab" class="Contentdisplay" runat="server" style="float: right; color: #cccccc; " visible="false" href="~/Views/LookupMangePage">lookup management</a>
 
                     <br />
 
@@ -350,11 +357,11 @@
                     </span>
                     <span><img src="/Content/img/menuline.png"</span>
                     <span class="menucontainer">
-                        <a id="A1" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
+                        <a id="performanceArchivetab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
                     </span>
                     <span><img src="/Content/img/menuline.png"</span>
                     <span class="menucontainer">
-                        <a runat="server" class="mainTitle" style="text-decoration: none; width: 100px;" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
+                        <a id="ClassicCointab" runat="server" class="mainTitle" style="text-decoration: none; width: 100px;" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
                     </span>
                     <span><img src="/Content/img/menuline.png"</span>
                     <span class="menucontainer">

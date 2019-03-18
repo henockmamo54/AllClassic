@@ -148,8 +148,8 @@
     </asp:UpdatePanel>
 
     <script type="text/javascript">
-        document.getElementById("artisttab").style.backgroundColor = "white";
-        document.getElementById("artisttab").style.borderBottom = "none";
+        //document.getElementById("artisttab").style.backgroundColor = "white";
+        //document.getElementById("artisttab").style.borderBottom = "none";
 
         
         function deletebtnclicked(msg) {
