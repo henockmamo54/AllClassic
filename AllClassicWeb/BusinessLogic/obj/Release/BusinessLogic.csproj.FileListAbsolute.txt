@@ -12,3 +12,17 @@ C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Release\BusinessL
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csproj.CopyComplete
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.exe
 C:\workplace\C#\AllClassic_git\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.pdb
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\bin\Release\BusinessLogic.exe.config
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\bin\Release\BusinessLogic.exe
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\bin\Release\BusinessLogic.pdb
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.exe
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.pdb
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.exe.config
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\bin\Release\EntityFramework.xml
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csprojAssemblyReference.cache
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.Properties.Resources.resources
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csproj.GenerateResource.cache
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csproj.CoreCompileInputs.cache
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csproj.CopyComplete
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.exe
+J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.pdb

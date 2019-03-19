@@ -39,8 +39,8 @@
     </div>
     
     <script type="text/javascript">
-        document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
-        document.getElementById("articletab").style.borderRight = "none";
+    //    document.getElementById("articletab").style.backgroundColor = "rgb(255, 255, 255) ";
+   //     document.getElementById("articletab").style.borderRight = "none";
 
         
         function ShowMessage() {
