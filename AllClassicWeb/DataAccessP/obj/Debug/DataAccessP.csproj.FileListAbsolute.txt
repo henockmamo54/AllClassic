@@ -81,3 +81,21 @@ J:\workplace\c#\AllClassic\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.cspro
 J:\workplace\c#\AllClassic\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.CopyComplete
 J:\workplace\c#\AllClassic\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.exe
 J:\workplace\c#\AllClassic\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.pdb
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\DataAccessP.exe.config
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\DataAccessP.exe
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\DataAccessP.pdb
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\EntityFramework.dll
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\EntityFramework.SqlServer.dll
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\EnvDTE.dll
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\VSLangProj.dll
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\EnvDTE80.dll
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\stdole.dll
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\EntityFramework.xml
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\bin\Debug\EntityFramework.SqlServer.xml
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csprojAssemblyReference.cache
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.exe.config
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.Properties.Resources.resources
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.GenerateResource.cache
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.CopyComplete
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.exe
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.pdb

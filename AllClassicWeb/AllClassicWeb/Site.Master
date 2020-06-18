@@ -342,28 +342,31 @@
                     <span class="menucontainer">
                         <a id="performancetab" class="mainTitle" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
                     </span>
-                    <span><img src="/Content/img/menuline.png"</span>
-                    <span class="menucontainer">
-                        <a id="artisttab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
+                    <span>
+                        <img src="/Content/img/menuline.png" />
+
                     </span>
-                    <span><img src="/Content/img/menuline.png"</span>                
+                    <span class="menucontainer">
+                        <a id="artisttab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/MusicianDB.aspx"><%= Resources.DisplayText.MusicianDB %>  </a>
+                    </span>
+                    <span><img src="/Content/img/menuline.png" /></span>                
 
                     <span class="menucontainer">
                         <a id="performancegrouptab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
                     </span>
-                    <span><img src="/Content/img/menuline.png"</span>
+                    <span><img src="/Content/img/menuline.png" /></span>
                     <span class="menucontainer">
                         <a id="MusicCollegetab" class="mainTitle" runat="server" style="text-decoration: none; width: 100px;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
                     </span>
-                    <span><img src="/Content/img/menuline.png"</span>
+                    <span><img src="/Content/img/menuline.png" /></span>
                     <span class="menucontainer">
                         <a id="performanceArchivetab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
                     </span>
-                    <span><img src="/Content/img/menuline.png"</span>
+                    <span><img src="/Content/img/menuline.png" /></span>
                     <span class="menucontainer">
                         <a id="ClassicCointab" runat="server" class="mainTitle" style="text-decoration: none; width: 100px;" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
                     </span>
-                    <span><img src="/Content/img/menuline.png"</span>
+                    <span><img src="/Content/img/menuline.png" /></span>
                     <span class="menucontainer">
 
                         <a id="introductiontab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
