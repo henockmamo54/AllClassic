@@ -775,4 +775,7 @@
   <data name="ORG" xml:space="preserve">
     <value>ORG</value>
   </data>
+  <data name="search" xml:space="preserve">
+    <value>검색</value>
+  </data>
 </root>
