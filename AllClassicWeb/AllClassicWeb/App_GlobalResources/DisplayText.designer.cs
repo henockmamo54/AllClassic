@@ -19,7 +19,7 @@ namespace Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option or rebuild the Visual Studio project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class DisplayText {
@@ -156,6 +156,15 @@ namespace Resources {
         internal static string Affiliation {
             get {
                 return ResourceManager.GetString("Affiliation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agora.
+        /// </summary>
+        internal static string Agora {
+            get {
+                return ResourceManager.GetString("Agora", resourceCulture);
             }
         }
         
@@ -637,6 +646,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        internal static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home Page.
         /// </summary>
         internal static string HomePage {
@@ -792,6 +810,15 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Musician.
         /// </summary>
+        internal static string Musician {
+            get {
+                return ResourceManager.GetString("Musician", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Musician.
+        /// </summary>
         internal static string MusicianDB {
             get {
                 return ResourceManager.GetString("MusicianDB", resourceCulture);
@@ -858,6 +885,15 @@ namespace Resources {
         internal static string None {
             get {
                 return ResourceManager.GetString("None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ORG.
+        /// </summary>
+        internal static string ORG {
+            get {
+                return ResourceManager.GetString("ORG", resourceCulture);
             }
         }
         

@@ -3,18 +3,69 @@
 
 
 /* ================== reset css ================== */
-body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,
-input,textarea,button,section{margin:0;padding:0;box-sizing:border-box;font-family:"NanumSquare", "나눔스퀘어", "Nanum Gothic", sans-serif;line-height:1.2;word-break: keep-all;}
-body,input,textarea,select,table,button{font-weight:normal;}
-table {border-collapse:collapse; border-spacing:0;}
-img{vertical-align: middle; border:0;}
-input,select,textarea{vertical-align:top;}
-address,caption,th{font-style:normal;}
-ol,ul,li {list-style:none;}
-h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
-.hidden{font-size:0 !important;height:0 !important;left:0 !important;line-height:0 !important;margin:0 !important;overflow:hidden !important;padding:0 !important;position:absolute !important;top:0 !important;width:0 !important;z-index:-1 !important;}
-a{color:#010101;text-decoration:none;}
-a:link,a:hover,a:active{text-decoration:none;}
+body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form,
+input, textarea, button, section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "NanumSquare", "나눔스퀘어", "Nanum Gothic", sans-serif;
+    line-height: 1.2;
+    word-break: keep-all;
+}
+
+body, input, textarea, select, table, button {
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+input, select, textarea {
+    vertical-align: top;
+}
+
+address, caption, th {
+    font-style: normal;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.hidden {
+    font-size: 0 !important;
+    height: 0 !important;
+    left: 0 !important;
+    line-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 0 !important;
+    z-index: -1 !important;
+}
+
+a {
+    color: #010101;
+    text-decoration: none;
+}
+
+    a:link, a:hover, a:active {
+        text-decoration: none;
+    }
 
 
 
@@ -27,47 +78,134 @@ a:link,a:hover,a:active{text-decoration:none;}
 
 
 /* margin css */
-.mt5 { margin-top:5px; }
-.mt15 { margin-top:15px; }
-.mb50 { margin-bottom:50px; }
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mb50 {
+    margin-bottom: 50px;
+}
 
 
-.bold{font-weight: bold}
-.bolder{font-weight: 900}
+.bold {
+    font-weight: bold
+}
 
-.hanna{font-family: "배달의민족 한나";}
-.dohyeon{font-family: "배달의민족 도현";}
-.jua{font-family: "배달의민족 주아";}
-.barun{font-family: "나눔바른고딕" , "NanumBarunGothic"} 
-.myeongjo{font-family: "나눔명조", "NanumMyeongjo"}
+.bolder {
+    font-weight: 900
+}
+
+.hanna {
+    font-family: "배달의민족 한나";
+}
+
+.dohyeon {
+    font-family: "배달의민족 도현";
+}
+
+.jua {
+    font-family: "배달의민족 주아";
+}
+
+.barun {
+    font-family: "나눔바른고딕", "NanumBarunGothic"
+}
+
+.myeongjo {
+    font-family: "나눔명조", "NanumMyeongjo"
+}
 
 
-.blind { font-size:1px; color:#fff;position:absolute;  top:-1000px; }
+.blind {
+    font-size: 1px;
+    color: #fff;
+    position: absolute;
+    top: -1000px;
+}
 
 
 /* list float css */
-.float:before, .float:after{content: ""; display: block; clear: both}
-.float>*{float: left}
-.float-02>*{width: 50%;}
-.float-03>*{width: 33.33%;}
-.float-04>*{width: 25%;}
-.float-05>*{width: 20%;}
-.floatleft { float:left; }
-.floatright { float:right; }
+.float:before, .float:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.float > * {
+    float: left
+}
+
+.float-02 > * {
+    width: 50%;
+}
+
+.float-03 > * {
+    width: 33.33%;
+}
+
+.float-04 > * {
+    width: 25%;
+}
+
+.float-05 > * {
+    width: 20%;
+}
+
+.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: right;
+}
 
 /* list table css */
-.table-cell{display: table; width: 100%}
-.table-cell>*{display: table-cell; vertical-align: middle}
-.table-cell-02>*{width: 50%;}
-.table-cell-03>*{width: 33.33%;}
-.table-cell-04>*{width: 25%;}
-.table-cell-05>*{width: 20%;}
+.table-cell {
+    display: table;
+    width: 100%
+}
+
+    .table-cell > * {
+        display: table-cell;
+        vertical-align: middle
+    }
+
+.table-cell-02 > * {
+    width: 50%;
+}
+
+.table-cell-03 > * {
+    width: 33.33%;
+}
+
+.table-cell-04 > * {
+    width: 25%;
+}
+
+.table-cell-05 > * {
+    width: 20%;
+}
 
 /* 기타 */
-.italic{font-style: italic}
-.text-left{text-align: left!important}
-.text-right{text-align: right!important}
-.text-center{text-align: center!important}
+.italic {
+    font-style: italic
+}
+
+.text-left {
+    text-align: left !important
+}
+
+.text-right {
+    text-align: right !important
+}
+
+.text-center {
+    text-align: center !important
+}
 
 /* ================== company change css ================== */
 
@@ -84,314 +222,1362 @@ a:link,a:hover,a:active{text-decoration:none;}
 /* ================== header css =========================================================================================== */
 
 
-.wrap {	width: 100%; overflow:hidden; background:url("img/bg.jpg"); background-size:cover;}
-.header { width:80%;  height:167px;	margin: 0 auto;	position: relative; }
-.logo a { position:absolute; top:19px; left:		}
-.logo a img { }
-.btnmenu { display:none;}
+.wrap {
+    width: 100%;
+    overflow: hidden;
+    background: url("img/bg.jpg");
+    background-size: cover;
+}
+
+.header {
+    width: 80%;
+    height: 167px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo a {
+    position: absolute;
+    top: 19px;
+    left:
+}
+
+    .logo a img {
+    }
+
+.btnmenu {
+    display: none;
+}
 
 
 
 
-.user { width:250px; height:30px; position:absolute; top:40px; right:180px; font-size:12px;}
-	.user li { float:left; border-right:1px solid #4a4a49; }
-	.user li a { color:#bbbbbb;  padding:10px; }
-	.user li a:hover  {   }
-	.user li.point a {  color:#f2c852; font-weight:bold; }
-	.user li:last-child {border-right:none;  background:url("img/user_dropdown.png") no-repeat 75px 2px; padding-right:10px;}
-	
-	
-.searchbox {display:inline-block; width:190px; height:35px; position:absolute; top:30px; right:0;  background:#fff; border-radius:20px;}
-	
-	.searchbox .form { width:100%; position:relative; padding:2px 0 0 15px;   }
-		.searchbox .form .search {	display:block; font-size:13px; width:80%;	padding:8px; border:0;	  color:#000; background:none; }
-		.searchbox .form .submit {	 border:0;   color:#999999;  background:url("img/btn_search.png") ;  }
-	.searchbox .icon { position:absolute; top:10px; right:10px;  }
-	
-	
+.user {
+    width: 250px;
+    height: 30px;
+    position: absolute;
+    top: 40px;
+    right: 180px;
+    font-size: 12px;
+}
 
-.gnb { width:100%; height:60px; position:absolute; top:107px; left:0; font-size:20px;  background:#7d9596; padding-left:20px;  }
-	.gnb li.on a { background:#6e8281;  }
-	.gnb li a { float:left; color:#0a1621; padding:18px 25px; }
-	.gnb li a:hover  { background:#6e8281;  }
-	.gnb li.point a {  color:#f2c852; font-weight:bold; }
-	
+    .user li {
+        float: left;
+        border-right: 1px solid #4a4a49;
+    }
 
-	
+        .user li a {
+            color: #bbbbbb;
+            padding: 10px;
+        }
+
+            .user li a:hover {
+            }
+
+        .user li.point a {
+            color: #f2c852;
+            font-weight: bold;
+        }
+
+        .user li:last-child {
+            border-right: none;
+            /*background: url("img/user_dropdown.png") no-repeat 75px 2px;*/
+            padding-right: 10px;
+        }
+
+
+.searchbox {
+    display: inline-block;
+    width: 190px;
+    height: 35px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: #fff;
+    border-radius: 20px;
+}
+
+    .searchbox .form {
+        width: 100%;
+        position: relative;
+        padding: 2px 0 0 15px;
+    }
+
+        .searchbox .form .search {
+            display: block;
+            font-size: 13px;
+            width: 80%;
+            padding: 8px;
+            border: 0;
+            color: #000;
+            background: none;
+        }
+
+        .searchbox .form .submit {
+            border: 0;
+            color: #999999;
+            background: url("img/btn_search.png");
+        }
+
+    .searchbox .icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+
+
+.gnb {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 107px;
+    left: 0;
+    font-size: 20px;
+    background: #7d9596;
+    padding-left: 20px;
+}
+
+    .gnb li.on a {
+        background: #6e8281;
+    }
+
+    .gnb li a {
+        float: left;
+        color: #0a1621;
+        padding: 18px 25px;
+    }
+
+        .gnb li a:hover {
+            background: #6e8281;
+        }
+
+    .gnb li.point a {
+        color: #f2c852;
+        font-weight: bold;
+    }
+
+
+
 
 
 /* ================== contents css =============================================================================================== */
 
 
 .container {
-	width: 80%;
-	margin: 0 auto;
-	margin-top: 5px;
-	margin-bottom: 50px;
-	position: relative;
-	overflow: hidden;
-	padding: 0;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
 }
 
 
 .banner {
-	width: 100%;
-	float: left;
-	margin-bottom: 50px;
+    width: 100%;
+    float: left;
+    margin-bottom: 50px;
 }
-	.banner img { width:100%;  }
 
-.section1 { width:46%; height:295px; margin-right:4%; float:left;  }
-.section2 { width:50%; height:295px; float:left;}
-.section2-1 { width:48%; height:295px; margin-right:4%; float:left; position:relative; }
-.section2-2 { width:48%; height:295px; float:left; position:relative;  }
+    .banner img {
+        width: 100%;
+    }
 
-.section1 .tab  { float:left; height:50px; width:100%;  font-size:16px; }
-.section1 .tab li { float:left; width:25%; background:#000; text-align:center;padding:16px; border-left:1px solid #1d1d1d; }
-.section1 .tab li a {  color:#666666;  }
-.section1 .tab li.on { background:#7d9596;  }
-.section1 .tab li.on a { color:#fff;  }
-.section1 .list  { float:left; margin:25px 0 0 22px; }
-.section1 .list li  { line-height:36px;  background:url("img/icon_noti.png") 0 15px no-repeat ; padding-left:20px;  }
-.section1 .list li a  { color:#666666;  }
+.section1 {
+    width: 46%;
+    height: 295px;
+    margin-right: 4%;
+    float: left;
+}
 
-.section2-1 h2 { width:100%; font-size:25px; color:#faf9f9; margin-top:10px; padding:0 0 10px 0; border-bottom:1px solid #7d9596; }
-.section2-1 .txt { font-size:16px; margin-top:15px; line-height:24px;  }
-.section2-1 .txt a { color:#999999;}
-.section2-1 .txt a span { display:block; font-size:14px; margin-top:8px;}
-.section2-1 .img  { margin-top:10px;  }
-.section2-1 .img img { width:100%;  }
-.section2-1 .more  { margin-top:15px; position:absolute; top:0; right:0; font-size:20px; }
-.section2-1 .more a  {  color:#a3a3a2; padding:10px 0 10px 10px; }
+.section2 {
+    width: 50%;
+    height: 295px;
+    float: left;
+}
 
-.section2-2 h2 { width:100%; font-size:25px; color:#faf9f9; margin-top:10px; padding:0 0 10px 0; border-bottom:1px solid #7d9596; }
-.section2-2 .img  { margin-top:20px;  }
-.section2-2 .img img { width:100%;  }
-.section2-2 .more  { margin-top:15px; position:absolute; top:0; right:0; font-size:20px; }
-.section2-2 .more a  {  color:#a3a3a2; padding:10px 0 10px 10px; }
+.section2-1 {
+    width: 48%;
+    height: 295px;
+    margin-right: 4%;
+    float: left;
+    position: relative;
+}
+
+.section2-2 {
+    width: 48%;
+    height: 295px;
+    float: left;
+    position: relative;
+}
+
+.section1 .tab {
+    float: left;
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+}
+
+    .section1 .tab li {
+        float: left;
+        width: 25%;
+        background: #000;
+        text-align: center;
+        padding: 16px;
+        border-left: 1px solid #1d1d1d;
+    }
+
+        .section1 .tab li a {
+            color: #666666;
+        }
+
+        .section1 .tab li.on {
+            background: #7d9596;
+        }
+
+            .section1 .tab li.on a {
+                color: #fff;
+            }
+
+.section1 .list {
+    float: left;
+    margin: 25px 0 0 22px;
+}
+
+    .section1 .list li {
+        line-height: 36px;
+        background: url("img/icon_noti.png") 0 15px no-repeat;
+        padding-left: 20px;
+    }
+
+        .section1 .list li a {
+            color: #666666;
+        }
+
+.section2-1 h2 {
+    width: 100%;
+    font-size: 25px;
+    color: #faf9f9;
+    margin-top: 10px;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #7d9596;
+}
+
+.section2-1 .txt {
+    font-size: 16px;
+    margin-top: 15px;
+    line-height: 24px;
+}
+
+    .section2-1 .txt a {
+        color: #999999;
+    }
+
+        .section2-1 .txt a span {
+            display: block;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+.section2-1 .img {
+    margin-top: 10px;
+}
+
+    .section2-1 .img img {
+        width: 100%;
+    }
+
+.section2-1 .more {
+    margin-top: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+}
+
+    .section2-1 .more a {
+        color: #a3a3a2;
+        padding: 10px 0 10px 10px;
+    }
+
+.section2-2 h2 {
+    width: 100%;
+    font-size: 25px;
+    color: #faf9f9;
+    margin-top: 10px;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #7d9596;
+}
+
+.section2-2 .img {
+    margin-top: 20px;
+}
+
+    .section2-2 .img img {
+        width: 100%;
+    }
+
+.section2-2 .more {
+    margin-top: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+}
+
+    .section2-2 .more a {
+        color: #a3a3a2;
+        padding: 10px 0 10px 10px;
+    }
 
 
 
-.section3 { width:100%; float:left; position:relative; margin-top:32px;    }
-.section3 h2 { width:100%; font-size:25px; color:#faf9f9; margin-top:10px; padding:0 0 10px 0; border-bottom:1px solid #7d9596; }
-.section3 .more  { margin-top:15px; position:absolute; top:0; right:0; font-size:20px; }
-.section3 .more a  {  color:#a3a3a2; padding:10px 0 10px 10px; }
-.section3 { color:#fff;   }
-.section3 a { color:#fff;  }
-.section3 .section3-1 { width:20%; float:left; margin-top:30px; }
-	.section3 .section3-1 .day_m { width:220px; height:220px; position:relative;  background:#2c3e3f; border-radius:1000px; }
-	.section3 .section3-1 .day_m h3 { position:absolute; top:37px; left:55px; font-size:17px; padding-bottom:12px; border-bottom:1px dotted #7d9596;  }
-	.section3 .section3-1 .day_m .year { position:absolute; top:90px; left:85px; font-size:20px;  }
-	.section3 .section3-1 .day_m .month { position:absolute; top:110px; left:70px; font-size:70px;  }
-	.section3 .section3-1 .day_m .arr1 { position:absolute; top:120px; left:25px; }
-	.section3 .section3-1 .day_m .arr2 { position:absolute; top:120px; left:175px; }
-.section3 .section3-2 { width:78%; float:right; margin-top:30px; }
-	.section3 .section3-2 .day_d { width:100%; height:220px;   }
-	.section3 .section3-2 .day_d .dday { width:100%; display:inline-block; padding-bottom:10px;     border-bottom:1px solid #413e3e; }
-	.section3 .section3-2 .day_d .dday li { float:left;  font-size:16px; padding:6px;  }
-	.section3 .section3-2 .day_d .dday li.on { background:#2c3e3f; border-radius:100px;  }
-	.section3 .section3-2 .day_d .dimg { width:100%; display:inline-block; margin-top:20px;    }
-	.section3 .section3-2 .day_d .dimg li { float:left; width:30%; margin-right:2%;   }
-	.section3 .section3-2 .day_d .dimg li img { width:100%;    }
+.section3 {
+    width: 100%;
+    float: left;
+    position: relative;
+    margin-top: 32px;
+}
+
+    .section3 h2 {
+        width: 100%;
+        font-size: 25px;
+        color: #faf9f9;
+        margin-top: 10px;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid #7d9596;
+    }
+
+    .section3 .more {
+        margin-top: 15px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 20px;
+    }
+
+        .section3 .more a {
+            color: #a3a3a2;
+            padding: 10px 0 10px 10px;
+        }
+
+.section3 {
+    color: #fff;
+}
+
+    .section3 a {
+        color: #fff;
+    }
+
+    .section3 .section3-1 {
+        width: 20%;
+        float: left;
+        margin-top: 30px;
+    }
+
+        .section3 .section3-1 .day_m {
+            width: 220px;
+            height: 220px;
+            position: relative;
+            background: #2c3e3f;
+            border-radius: 1000px;
+        }
+
+            .section3 .section3-1 .day_m h3 {
+                position: absolute;
+                top: 37px;
+                left: 55px;
+                font-size: 17px;
+                padding-bottom: 12px;
+                border-bottom: 1px dotted #7d9596;
+            }
+
+            .section3 .section3-1 .day_m .year {
+                position: absolute;
+                top: 90px;
+                left: 85px;
+                font-size: 20px;
+            }
+
+            .section3 .section3-1 .day_m .month {
+                position: absolute;
+                top: 110px;
+                left: 70px;
+                font-size: 70px;
+            }
+
+            .section3 .section3-1 .day_m .arr1 {
+                position: absolute;
+                top: 120px;
+                left: 25px;
+            }
+
+            .section3 .section3-1 .day_m .arr2 {
+                position: absolute;
+                top: 120px;
+                left: 175px;
+            }
+
+    .section3 .section3-2 {
+        width: 78%;
+        float: right;
+        margin-top: 30px;
+    }
+
+        .section3 .section3-2 .day_d {
+            width: 100%;
+            height: 220px;
+        }
+
+            .section3 .section3-2 .day_d .dday {
+                width: 100%;
+                display: inline-block;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #413e3e;
+            }
+
+                .section3 .section3-2 .day_d .dday li {
+                    float: left;
+                    font-size: 16px;
+                    padding: 6px;
+                }
+
+                    .section3 .section3-2 .day_d .dday li.on {
+                        background: #2c3e3f;
+                        border-radius: 100px;
+                    }
+
+            .section3 .section3-2 .day_d .dimg {
+                width: 100%;
+                display: inline-block;
+                margin-top: 20px;
+            }
+
+                .section3 .section3-2 .day_d .dimg li {
+                    float: left;
+                    width: 30%;
+                    margin-right: 2%;
+                }
+
+                    .section3 .section3-2 .day_d .dimg li img {
+                        width: 100%;
+                    }
 
 
 
 /* ================== 서브페이지  css =============================================================================================== */
 
-.conbox {  width:80%; margin:0 auto; margin-top:5px; position:relative; overflow:hidden; background:#0c0c0c; color:#999; padding:40px 40px 40px 20px; margin-bottom:20px;  }
+.conbox {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+    background: #0c0c0c;
+    color: #999;
+    padding: 40px 40px 40px 20px;
+    margin-bottom: 20px;
+}
 
-.conbox h2 { font-size:40px;  color:#faf9f9; margin:0 0 10px 20px; } 
+    .conbox h2 {
+        font-size: 40px;
+        color: #faf9f9;
+        margin: 0 0 10px 20px;
+    }
 
-.conbox .conlist { font-size:16px; position:relative; padding-left:20px; float:left; width:100%;  }
-.conbox .conlist ul {  float:right; display:inline-block; margin-right:65px; margin-bottom:10px;    }
-.conbox .conlist ul li { float:left; margin-left:20px; position: relative; margin-bottom: 5px;   }
-.conbox .conlist ul li input { width:100px; padding:5px; vertical-align:middle; margin:0 0 0 8px; }
-.conbox .conlist ul li select { width:100px; padding:3px 5px; vertical-align:middle; margin:0 0 0 8px; }
-.conbox .conlist ul li span { position: absolute; top:3px; right: 5px; z-index: 100;   }
+    .conbox .conlist {
+        font-size: 16px;
+        position: relative;
+        padding-left: 20px;
+        float: left;
+        width: 100%;
+    }
 
-.conbox .conlist ul.agora li input { width:90px; }
-.conbox .conlist ul.agora li select { width:90px; padding:5px;  }
+        .conbox .conlist ul {
+            float: right;
+            display: inline-block;
+            margin-right: 65px;
+            margin-bottom: 10px;
+        }
 
-.conbox .conlist h3 {  float:left; display:inline-block; margin:0 0 10px 0;      }
-.conbox .conlist ul.area_btn {  float:left; display:inline-block; margin-left:12px; margin-bottom:10px;    }
-.conbox .conlist ul.area_btn li {  float:left; margin-left:7px;    }
-.conbox .conlist ul.area_btn li.on a { background:#7d9596; color:#131717; padding:5px 10px; border-radius:5px;    }
-.conbox .conlist ul.area_btn li a {  border:1px solid #7d9596;  background:none; color:#fff; padding:5px 10px; border-radius:5px;    }
+            .conbox .conlist ul li {
+                float: left;
+                margin-left: 20px;
+                position: relative;
+                margin-bottom: 5px;
+            }
 
+                .conbox .conlist ul li input {
+                    width: 100px;
+                    padding: 5px;
+                    vertical-align: middle;
+                    margin: 0 0 0 8px;
+                }
 
-.conbox .conlist .btn1 a { position:absolute; top:0; right:0; background:#7d9596; color:#131717; padding:5px 10px; border-radius:5px;  }
-.conbox .conlist .btn2 a { position:absolute; top:0; right:0; background:#7d9596; color:#131717; padding:5px 10px; border-radius:5px;  }
-.conbox .conlist .btn3 a { position:absolute; top:0; right:0; background:#7d9596; color:#131717; padding:5px 10px; border-radius:5px;  }
-.conbox .conlist .btn4 a { position:absolute; top:0; right:0; background:#7d9596; color:#131717; padding:5px 10px; border-radius:5px;  }
-.conbox .conlist .btn5 a { position:absolute; top:0; right:0; background:#7d9596; color:#131717; padding:5px 10px; border-radius:5px;  }
+                .conbox .conlist ul li select {
+                    width: 100px;
+                    padding: 3px 5px;
+                    vertical-align: middle;
+                    margin: 0 0 0 8px;
+                }
 
-.conbox .conlist a.btna { background:#212a2d; color:#8ebbbe; padding:5px 10px; border-radius:5px;  }
+                .conbox .conlist ul li span {
+                    position: absolute;
+                    top: 3px;
+                    right: 5px;
+                    z-index: 100;
+                }
 
+            .conbox .conlist ul.agora li input {
+                width: 90px;
+            }
 
-.conbox .conlist table { width:100%;  }
-.conbox .conlist table th { background:#212e2f; padding:10px; color:#93B1B3;   }
-.conbox .conlist table td { background:#131717; padding:10px; text-align:center; color:#FFF;   }
-.conbox .conlist table td.td2 { background:#101212;  }
-.conbox .conlist table td.td3 { background:#202e2f; padding: 20px 10px; color:#8ebbbe; line-height: 24px;  }
+            .conbox .conlist ul.agora li select {
+                width: 90px;
+                padding: 5px;
+            }
 
-.conbox .manlist { float:left; width:100%;  margin:20px 0 20px 0px;  }
-.conbox .manlist li { width:33.33%; float:left;  margin-left:0px; margin-top:20px; padding-left:20px;   }
-.conbox .manlist li a { display:block;   }
-.conbox .manlist li .man { float:left; width:50%;    }
-.conbox .manlist li .man img { width:100%;  height:190px;   }
-.conbox .manlist li .box { float:left; width:50%; height:190px;   background:#212e2f;   position:relative;   }
-.conbox .manlist li .box .name {  position:absolute; bottom:65px; left:20px;  display:inline-block; font-size:24px; color:#f1b8a5;   }
-.conbox .manlist li .box .txt {   position:absolute; bottom:20px; left:20px;  display:inline-block; font-size:14px; line-height:20px;  color:#FFF;     }
-.conbox .manlist li .box .go { position:absolute; top:15px; right:15px;   }
+        .conbox .conlist h3 {
+            float: left;
+            display: inline-block;
+            margin: 0 0 10px 0;
+        }
 
+        .conbox .conlist ul.area_btn {
+            float: left;
+            display: inline-block;
+            margin-left: 12px;
+            margin-bottom: 10px;
+        }
 
+            .conbox .conlist ul.area_btn li {
+                float: left;
+                margin-left: 7px;
+            }
 
-.conbox .section3 {  margin-top:0px; padding-bottom:50px;    }
+                .conbox .conlist ul.area_btn li.on a {
+                    background: #7d9596;
+                    color: #131717;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                }
 
-
-
-
-
-.conbox .orglist { float:left; width:100%;  margin:20px 0 20px 0px;  }
-	.conbox .orglist li { width:31.4%; float:left;  margin:20px 0 0 20px;  padding:30px;   background:#212e2f; position:relative;  }
-	.conbox .orglist li a { display:block;   }
-	.conbox .orglist li .name {    font-size:24px; color:#f1b8a5;   }
-	.conbox .orglist li .txt {    font-size:14px; margin:15px 0 0 0; color:#FFF;     }
-	.conbox .orglist li .txt li { display:block; width:100%;   margin:0px; padding:0; line-height:28px;  }
-	.conbox .orglist li .txt li span { width:100px; color:#9acace; display:inline-block;   }
-
-
-
-.conbox .agoralist1 { float:left; width:100%;  margin:20px 0 20px 0px;  }
-	.conbox .agoralist1 li { width:100%; float:left;  margin:20px 0 0 20px;  padding:30px;   background:#212e2f; position:relative;  }
-	.conbox .agoralist1agoralist1 li a { display:block;   }
-	.conbox .agoralist1 li .name {    font-size:24px; color:#f1b8a5;   }
-	.conbox .agoralist1agoralist1 li .txt {   margin:15px 0 0 0;     }
-	.conbox .agoralist1 li .txt li { display:block; width:100%;   margin:0px; padding:0; line-height:24px;  color:#FFF;   font-size:14px; }
-	.conbox .agoralist1 li .txt li span {  color:#9acace; display:inline-block;   }
-
-
-
-.conbox .agoralist2 { float:left; width:100%;  margin:20px 0 20px 0px;  }
-	.conbox .agoralist2 li { width:47%; float:left;  margin:20px 0 0 20px;  padding:30px;   background:#212e2f; position:relative;  }
-	.conbox .agoralist2 li a { display:block;   }
-	.conbox .agoralist2 li .name {    font-size:24px; color:#f1b8a5;   }
-	.conbox .agoralist2 li .txt {    font-size:14px; margin:15px 0 0 0; color:#FFF;     }
-	.conbox .agoralist2 li .txt li { display:block; width:100%;   margin:0px; padding:0; line-height:28px;  }
-	.conbox .agoralist2 li .txt li span { width:100px; color:#9acace; display:inline-block;   }
-
-   
-
-
-.conbox .condetail { font-size:16px; position:relative; padding:30px 30px 60px 30px; background:#212e2f; margin-left:20px; overflow:hidden; margin-bottom:50px; height:auto;  }
-	.conbox .condetail .man { float:left; width:35%;    }
-	.conbox .condetail .man img { width:100%;   }
-	.conbox .condetail .box { float:left; width:55%; margin-left:10%;    }
-	.conbox .condetail .box .name { margin-top:40px;    display:block; font-size:40px; color:#f1b8a5;   }
-	.conbox .condetail .box .txt {  margin:10px 0 20px 0;      display:block; font-size:20px;  color:#FFF; border-bottom:1px solid #313d3e; padding-bottom:20px;    }
-	.conbox .condetail .box dl {   margin:20px 0 0px 0;    width:100%; float:left;     }
-	.conbox .condetail .box dt {   font-size:18px;    color:#9acace;     }
-	.conbox .condetail .box dd {   font-size:16px;  color:#FFF;    line-height:24px;   }
-
-
-.conbox .textpage { font-size:20px; position:relative; padding:30px 30px 60px 30px; margin-left:20px; overflow:hidden; margin-bottom:50px; height:auto;  }
-.conbox .textpage h3 { font-size:35px; color:#f1b8a5; }
-.conbox .textpage ul { margin:10px 0 50px 20px; color:#fff;  }
-.conbox .textpage ul li { line-height:32px; background:url(img/iconyellow.jpg) 0 10px no-repeat; padding-left:20px; }
-.conbox .textpage ul li.img {  background:none; }
-
-
-
-
-.conbox .archivelist { font-size:16px; position:relative; padding-left:20px; float:left; width:100%;   }
-.conbox .archivelist ul {  background:#212e2f; width:100%; height:auto; overflow:hidden; padding:20px; padding-bottom:60px;   }
-.conbox .archivelist ul li { float:left; margin:5px 10px; width:30%;   }
-.conbox .archivelist ul li span { width:90px; display:inline-block; letter-spacing:-1px;  color:#fff;}
-.conbox .archivelist ul li input { width:60%; padding:5px; vertical-align:middle; margin:0 0 0 8px; }
-.conbox .archivelist ul li select { width:60%; padding:5px; vertical-align:middle; margin:0 0 0 8px; }
-.conbox .archivelist .btn a { position:absolute; bottom:20px; right:30px; background:#7d9596; color:#131717; padding:5px 10px; border-radius:5px;  }
-
-.conbox .archimglist { float:left; width:100%;  margin:20px 0 20px 0px;  }
-.conbox .archimglist li { width:25%; float:left;  margin-left:0px; margin-top:20px; padding-left:20px; letter-spacing:-1px;   }
-.conbox .archimglist li a { display:block;   }
-.conbox .archimglist li .img { width:100%;    }
-.conbox .archimglist li .img img { width:100%;  height:320px;   }
-.conbox .archimglist li .box { float:left; width:100%; height:115px;   background:#212e2f;   position:relative;   }
-.conbox .archimglist li .box .name {  position:absolute; top:20px; left:20px;  display:inline-block; font-size:22px; color:#f1b8a5;   }
-.conbox .archimglist li .box .txt {   position:absolute; bottom:20px; left:20px;  display:inline-block; font-size:14px; line-height:20px;  color:#FFF;     }
-
-.conbox .archdetail { font-size:16px; position:relative; padding:30px 30px 60px 30px; background:#212e2f; margin-left:20px; overflow:hidden; margin-bottom:50px; height:auto;  }
-	.conbox .archdetail .img { float:left; width:35%;    }
-	.conbox .archdetail .img img { width:100%;   }
-	.conbox .archdetail .box { float:left; width:55%; margin-left:7%;    }
-	.conbox .archdetail .box .name { margin-top:40px;    display:block; font-size:30px; color:#f1b8a5;border-bottom:1px solid #313d3e; padding-bottom:20px; margin-bottom:20px;    }
-	.conbox .archdetail .box dl {   margin:10px 0 0px 0;    width:100%; display:inline-block;      }
-	.conbox .archdetail .box dt {   font-size:18px;    color:#9acace;  float:left; width:20%;   }
-	.conbox .archdetail .box dd {   font-size:16px;  color:#FFF;    line-height:24px;  float:left;  width:80%; }
+                .conbox .conlist ul.area_btn li a {
+                    border: 1px solid #7d9596;
+                    background: none;
+                    color: #fff;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                }
 
 
+        .conbox .conlist .btn1 a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #7d9596;
+            color: #131717;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .conbox .conlist .btn2 a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #7d9596;
+            color: #131717;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .conbox .conlist .btn3 a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #7d9596;
+            color: #131717;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .conbox .conlist .btn4 a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #7d9596;
+            color: #131717;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .conbox .conlist .btn5 a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #7d9596;
+            color: #131717;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .conbox .conlist a.btna {
+            background: #212a2d;
+            color: #8ebbbe;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+
+        .conbox .conlist table {
+            width: 100%;
+        }
+
+            .conbox .conlist table th {
+                background: #212e2f;
+                padding: 10px;
+                color: #93B1B3;
+            }
+
+            .conbox .conlist table td {
+                background: #131717;
+                padding: 10px;
+                text-align: center;
+                color: #FFF;
+            }
+
+                .conbox .conlist table td.td2 {
+                    background: #101212;
+                }
+
+                .conbox .conlist table td.td3 {
+                    background: #202e2f;
+                    padding: 20px 10px;
+                    color: #8ebbbe;
+                    line-height: 24px;
+                }
+
+    .conbox .manlist {
+        float: left;
+        width: 100%;
+        margin: 20px 0 20px 0px;
+    }
+
+        .conbox .manlist li {
+            width: 33.33%;
+            float: left;
+            margin-left: 0px;
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+            .conbox .manlist li a {
+                display: block;
+            }
+
+            .conbox .manlist li .man {
+                float: left;
+                width: 50%;
+            }
+
+                .conbox .manlist li .man img {
+                    width: 100%;
+                    height: 190px;
+                }
+
+            .conbox .manlist li .box {
+                float: left;
+                width: 50%;
+                height: 190px;
+                background: #212e2f;
+                position: relative;
+            }
+
+                .conbox .manlist li .box .name {
+                    position: absolute;
+                    bottom: 65px;
+                    left: 20px;
+                    display: inline-block;
+                    font-size: 24px;
+                    color: #f1b8a5;
+                }
+
+                .conbox .manlist li .box .txt {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    display: inline-block;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #FFF;
+                }
+
+                .conbox .manlist li .box .go {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                }
+
+
+
+    .conbox .section3 {
+        margin-top: 0px;
+        padding-bottom: 50px;
+    }
 
 
 
 
-.con_section1 { width:20%; height:auto; overflow:hidden; float:left; padding-left:20px; }
-.con_section1 .subtit {  font-size:30px; color:#fff;  }
-.con_section1 .submenu { margin-top:40px;   }
-.con_section1 .submenu li { line-height:24px; margin-bottom:15px;   }
-.con_section1 .submenu li a {   font-size:20px;  color:#fff; letter-spacing:-1px;   }
-.con_section1 .submenu li.on a {  color:#f2c852;  }
-.con_section1 .submenu li a:hover {  color:#f2c852;  }
-	
-	
-	
 
+    .conbox .orglist {
+        float: left;
+        width: 100%;
+        margin: 20px 0 20px 0px;
+    }
 
-.con_section2 { width:80%; height:auto; overflow:hidden; float:left;}
-.con_section2 h2 { font-size:30px;}
-.con_section2 .textpage h3 { font-size:24px;}
-.con_section2 .textpage { font-size:16px; }
-.con_section2 .textpage ul li { line-height:24px;}
+        .conbox .orglist li {
+            width: 31.4%;
+            float: left;
+            margin: 20px 0 0 20px;
+            padding: 30px;
+            background: #212e2f;
+            position: relative;
+        }
 
-	.con_section2 .condetail {   }
-	.con_section2 .condetail .man { float:left; width:40%;    }
-	.con_section2 .condetail .man img { width:100%;   }
-	.con_section2 .condetail .box { float:left; width:52%; margin-left:8%;    }
-	.con_section2 .condetail .box .name { margin-top:40px;    display:block; font-size:40px; color:#f1b8a5;   }
-	.con_section2 .condetail .box .txt {  margin:20px 0 20px 0;      display:block; font-size:20px;  color:#FFF; border-bottom:1px solid #313d3e; padding-bottom:20px;    }
-	.con_section2 .condetail .box div {   font-size:14px;    color:#fff; line-height:24px;     }
-	
-	
-	.con_section2 .introduce { padding: 30px 30px 60px 30px;   background: #212e2f; height: auto; overflow: hidden; margin-top:20px;margin-left: 20px; }
-	.con_section2 .introduce .man { float:left; width:30%;    }
-	.con_section2 .introduce .man img { width:100%;   }
-	.con_section2 .introduce .box { float:left; width:62%; margin-left:8%;    }
-	.con_section2 .introduce .box .name { margin-top:40px;    display:block; font-size:40px; color:#f1b8a5;   }
-	.con_section2 .introduce .box .txt {  margin:20px 0 20px 0;      display:block; font-size:20px;  color:#FFF; border-bottom:1px solid #313d3e; padding-bottom:20px;    }
-	.con_section2 .introduce .box dl {   margin:20px 0 0px 0;    width:100%; float:left;     }
-	.con_section2 .introduce .box dt {   font-size:18px;    color:#9acace;     width:15%; float:left;    }
-	.con_section2 .introduce .box dd {   font-size:16px;  color:#FFF;    line-height:24px;    width:85%; float:left;   }
+            .conbox .orglist li a {
+                display: block;
+            }
 
-	.con_section2 .map { padding: 0px 0 50px 0;   height: auto; overflow: hidden; margin-top:20px; margin-left: 20px; }
-	.con_section2 .map .img img { width:100%; }
-	.con_section2 .map .box { float:right;   }
-	.con_section2 .map .box .name { margin-top:40px;    display:block; font-size:30px; color:#f1b8a5;   }
-	.con_section2 .map .box dl {   margin:20px 0 0px 0; width:300px;     }
-	.con_section2 .map .box dt {   font-size:18px;    color:#9acace;     width:50px; float:left;    }
-	.con_section2 .map .box dd {   font-size:16px;  color:#FFF;    line-height:24px;    width:250px; float:left;   }
+            .conbox .orglist li .name {
+                font-size: 24px;
+                color: #f1b8a5;
+            }
 
+            .conbox .orglist li .txt {
+                font-size: 14px;
+                margin: 15px 0 0 0;
+                color: #FFF;
+            }
 
+                .conbox .orglist li .txt li {
+                    display: block;
+                    width: 100%;
+                    margin: 0px;
+                    padding: 0;
+                    line-height: 28px;
+                }
 
+                    .conbox .orglist li .txt li span {
+                        width: 100px;
+                        color: #9acace;
+                        display: inline-block;
+                    }
 
 
 
+    .conbox .agoralist1 {
+        float: left;
+        width: 100%;
+        margin: 20px 0 20px 0px;
+    }
+
+        .conbox .agoralist1 li {
+            width: 100%;
+            float: left;
+            margin: 20px 0 0 20px;
+            padding: 30px;
+            background: #212e2f;
+            position: relative;
+        }
+
+    .conbox .agoralist1agoralist1 li a {
+        display: block;
+    }
+
+    .conbox .agoralist1 li .name {
+        font-size: 24px;
+        color: #f1b8a5;
+    }
+
+    .conbox .agoralist1agoralist1 li .txt {
+        margin: 15px 0 0 0;
+    }
+
+    .conbox .agoralist1 li .txt li {
+        display: block;
+        width: 100%;
+        margin: 0px;
+        padding: 0;
+        line-height: 24px;
+        color: #FFF;
+        font-size: 14px;
+    }
+
+        .conbox .agoralist1 li .txt li span {
+            color: #9acace;
+            display: inline-block;
+        }
 
 
 
-.dropdown { position:absolute; top:56px; left:251px; width:700px; height:400px; background:#fff;  box-shadow: 2px 4px 10px #999; z-index:100;     }
-.dropdown ul { margin:20px 10px 0 40px; float:left;   }
-.dropdown ul li { line-height:32px;  }
-.dropdown ul li a { color:#666; padding:5px;  }
-.dropdown ul li a:hover { color:#fff; background:#0b975f;  }
+    .conbox .agoralist2 {
+        float: left;
+        width: 100%;
+        margin: 20px 0 20px 0px;
+    }
+
+        .conbox .agoralist2 li {
+            width: 47%;
+            float: left;
+            margin: 20px 0 0 20px;
+            padding: 30px;
+            background: #212e2f;
+            position: relative;
+        }
+
+            .conbox .agoralist2 li a {
+                display: block;
+            }
+
+            .conbox .agoralist2 li .name {
+                font-size: 24px;
+                color: #f1b8a5;
+            }
+
+            .conbox .agoralist2 li .txt {
+                font-size: 14px;
+                margin: 15px 0 0 0;
+                color: #FFF;
+            }
+
+                .conbox .agoralist2 li .txt li {
+                    display: block;
+                    width: 100%;
+                    margin: 0px;
+                    padding: 0;
+                    line-height: 28px;
+                }
+
+                    .conbox .agoralist2 li .txt li span {
+                        width: 100px;
+                        color: #9acace;
+                        display: inline-block;
+                    }
+
+
+
+
+    .conbox .condetail {
+        font-size: 16px;
+        position: relative;
+        padding: 30px 30px 60px 30px;
+        background: #212e2f;
+        margin-left: 20px;
+        overflow: hidden;
+        margin-bottom: 50px;
+        height: auto;
+    }
+
+        .conbox .condetail .man {
+            float: left;
+            width: 35%;
+        }
+
+            .conbox .condetail .man img {
+                width: 100%;
+            }
+
+        .conbox .condetail .box {
+            float: left;
+            width: 55%;
+            margin-left: 10%;
+        }
+
+            .conbox .condetail .box .name {
+                margin-top: 40px;
+                display: block;
+                font-size: 40px;
+                color: #f1b8a5;
+            }
+
+            .conbox .condetail .box .txt {
+                margin: 10px 0 20px 0;
+                display: block;
+                font-size: 20px;
+                color: #FFF;
+                border-bottom: 1px solid #313d3e;
+                padding-bottom: 20px;
+            }
+
+            .conbox .condetail .box dl {
+                margin: 20px 0 0px 0;
+                width: 100%;
+                float: left;
+            }
+
+            .conbox .condetail .box dt {
+                font-size: 18px;
+                color: #9acace;
+            }
+
+            .conbox .condetail .box dd {
+                font-size: 16px;
+                color: #FFF;
+                line-height: 24px;
+            }
+
+
+    .conbox .textpage {
+        font-size: 20px;
+        position: relative;
+        padding: 30px 30px 60px 30px;
+        margin-left: 20px;
+        overflow: hidden;
+        margin-bottom: 50px;
+        height: auto;
+    }
+
+        .conbox .textpage h3 {
+            font-size: 35px;
+            color: #f1b8a5;
+        }
+
+        .conbox .textpage ul {
+            margin: 10px 0 50px 20px;
+            color: #fff;
+        }
+
+            .conbox .textpage ul li {
+                line-height: 32px;
+                background: url(img/iconyellow.jpg) 0 10px no-repeat;
+                padding-left: 20px;
+            }
+
+                .conbox .textpage ul li.img {
+                    background: none;
+                }
+
+
+
+
+    .conbox .archivelist {
+        font-size: 16px;
+        position: relative;
+        padding-left: 20px;
+        float: left;
+        width: 100%;
+    }
+
+        .conbox .archivelist ul {
+            background: #212e2f;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            padding: 20px;
+            padding-bottom: 60px;
+        }
+
+            .conbox .archivelist ul li {
+                float: left;
+                margin: 5px 10px;
+                width: 30%;
+            }
+
+                .conbox .archivelist ul li span {
+                    width: 90px;
+                    display: inline-block;
+                    letter-spacing: -1px;
+                    color: #fff;
+                }
+
+                .conbox .archivelist ul li input {
+                    width: 60%;
+                    padding: 5px;
+                    vertical-align: middle;
+                    margin: 0 0 0 8px;
+                }
+
+                .conbox .archivelist ul li select {
+                    width: 60%;
+                    padding: 5px;
+                    vertical-align: middle;
+                    margin: 0 0 0 8px;
+                }
+
+        .conbox .archivelist .btn a {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            background: #7d9596;
+            color: #131717;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+    .conbox .archimglist {
+        float: left;
+        width: 100%;
+        margin: 20px 0 20px 0px;
+    }
+
+        .conbox .archimglist li {
+            width: 25%;
+            float: left;
+            margin-left: 0px;
+            margin-top: 20px;
+            padding-left: 20px;
+            letter-spacing: -1px;
+        }
+
+            .conbox .archimglist li a {
+                display: block;
+            }
+
+            .conbox .archimglist li .img {
+                width: 100%;
+            }
+
+                .conbox .archimglist li .img img {
+                    width: 100%;
+                    height: 320px;
+                }
+
+            .conbox .archimglist li .box {
+                float: left;
+                width: 100%;
+                height: 115px;
+                background: #212e2f;
+                position: relative;
+            }
+
+                .conbox .archimglist li .box .name {
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    display: inline-block;
+                    font-size: 22px;
+                    color: #f1b8a5;
+                }
+
+                .conbox .archimglist li .box .txt {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    display: inline-block;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #FFF;
+                }
+
+    .conbox .archdetail {
+        font-size: 16px;
+        position: relative;
+        padding: 30px 30px 60px 30px;
+        background: #212e2f;
+        margin-left: 20px;
+        overflow: hidden;
+        margin-bottom: 50px;
+        height: auto;
+    }
+
+        .conbox .archdetail .img {
+            float: left;
+            width: 35%;
+        }
+
+            .conbox .archdetail .img img {
+                width: 100%;
+            }
+
+        .conbox .archdetail .box {
+            float: left;
+            width: 55%;
+            margin-left: 7%;
+        }
+
+            .conbox .archdetail .box .name {
+                margin-top: 40px;
+                display: block;
+                font-size: 30px;
+                color: #f1b8a5;
+                border-bottom: 1px solid #313d3e;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+
+            .conbox .archdetail .box dl {
+                margin: 10px 0 0px 0;
+                width: 100%;
+                display: inline-block;
+            }
+
+            .conbox .archdetail .box dt {
+                font-size: 18px;
+                color: #9acace;
+                float: left;
+                width: 20%;
+            }
+
+            .conbox .archdetail .box dd {
+                font-size: 16px;
+                color: #FFF;
+                line-height: 24px;
+                float: left;
+                width: 80%;
+            }
+
+
+
+
+
+
+.con_section1 {
+    width: 20%;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    padding-left: 20px;
+}
+
+    .con_section1 .subtit {
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .con_section1 .submenu {
+        margin-top: 40px;
+    }
+
+        .con_section1 .submenu li {
+            line-height: 24px;
+            margin-bottom: 15px;
+        }
+
+            .con_section1 .submenu li a {
+                font-size: 20px;
+                color: #fff;
+                letter-spacing: -1px;
+            }
+
+            .con_section1 .submenu li.on a {
+                color: #f2c852;
+            }
+
+            .con_section1 .submenu li a:hover {
+                color: #f2c852;
+            }
+
+
+
+
+
+.con_section2 {
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    float: left;
+}
+
+    .con_section2 h2 {
+        font-size: 30px;
+    }
+
+    .con_section2 .textpage h3 {
+        font-size: 24px;
+    }
+
+    .con_section2 .textpage {
+        font-size: 16px;
+    }
+
+        .con_section2 .textpage ul li {
+            line-height: 24px;
+        }
+
+    .con_section2 .condetail {
+    }
+
+        .con_section2 .condetail .man {
+            float: left;
+            width: 40%;
+        }
+
+            .con_section2 .condetail .man img {
+                width: 100%;
+            }
+
+        .con_section2 .condetail .box {
+            float: left;
+            width: 52%;
+            margin-left: 8%;
+        }
+
+            .con_section2 .condetail .box .name {
+                margin-top: 40px;
+                display: block;
+                font-size: 40px;
+                color: #f1b8a5;
+            }
+
+            .con_section2 .condetail .box .txt {
+                margin: 20px 0 20px 0;
+                display: block;
+                font-size: 20px;
+                color: #FFF;
+                border-bottom: 1px solid #313d3e;
+                padding-bottom: 20px;
+            }
+
+            .con_section2 .condetail .box div {
+                font-size: 14px;
+                color: #fff;
+                line-height: 24px;
+            }
+
+
+    .con_section2 .introduce {
+        padding: 30px 30px 60px 30px;
+        background: #212e2f;
+        height: auto;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+        .con_section2 .introduce .man {
+            float: left;
+            width: 30%;
+        }
+
+            .con_section2 .introduce .man img {
+                width: 100%;
+            }
+
+        .con_section2 .introduce .box {
+            float: left;
+            width: 62%;
+            margin-left: 8%;
+        }
+
+            .con_section2 .introduce .box .name {
+                margin-top: 40px;
+                display: block;
+                font-size: 40px;
+                color: #f1b8a5;
+            }
+
+            .con_section2 .introduce .box .txt {
+                margin: 20px 0 20px 0;
+                display: block;
+                font-size: 20px;
+                color: #FFF;
+                border-bottom: 1px solid #313d3e;
+                padding-bottom: 20px;
+            }
+
+            .con_section2 .introduce .box dl {
+                margin: 20px 0 0px 0;
+                width: 100%;
+                float: left;
+            }
+
+            .con_section2 .introduce .box dt {
+                font-size: 18px;
+                color: #9acace;
+                width: 15%;
+                float: left;
+            }
+
+            .con_section2 .introduce .box dd {
+                font-size: 16px;
+                color: #FFF;
+                line-height: 24px;
+                width: 85%;
+                float: left;
+            }
+
+    .con_section2 .map {
+        padding: 0px 0 50px 0;
+        height: auto;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+        .con_section2 .map .img img {
+            width: 100%;
+        }
+
+        .con_section2 .map .box {
+            float: right;
+        }
+
+            .con_section2 .map .box .name {
+                margin-top: 40px;
+                display: block;
+                font-size: 30px;
+                color: #f1b8a5;
+            }
+
+            .con_section2 .map .box dl {
+                margin: 20px 0 0px 0;
+                width: 300px;
+            }
+
+            .con_section2 .map .box dt {
+                font-size: 18px;
+                color: #9acace;
+                width: 50px;
+                float: left;
+            }
+
+            .con_section2 .map .box dd {
+                font-size: 16px;
+                color: #FFF;
+                line-height: 24px;
+                width: 250px;
+                float: left;
+            }
+
+
+
+
+
+
+
+
+
+.dropdown {
+    position: absolute;
+    top: 56px;
+    left: 251px;
+    width: 700px;
+    height: 400px;
+    background: #fff;
+    box-shadow: 2px 4px 10px #999;
+    z-index: 100;
+}
+
+    .dropdown ul {
+        margin: 20px 10px 0 40px;
+        float: left;
+    }
+
+        .dropdown ul li {
+            line-height: 32px;
+        }
+
+            .dropdown ul li a {
+                color: #666;
+                padding: 5px;
+            }
+
+                .dropdown ul li a:hover {
+                    color: #fff;
+                    background: #0b975f;
+                }
 
 
 
@@ -402,11 +1588,32 @@ a:link,a:hover,a:active{text-decoration:none;}
 
 
 /* 페이징 */
-.pagingbox { float:left; width:100%; text-align:center; margin:50px 0 20px 0; }
-.paging { width:800px; margin:0 auto;  height:30px;    }
-.paging a { padding:20px; font-size:18px; color:#999999; }
-.paging a.on { color:#39b34a;  }
-.paging a img {vertical-align:middle;  }
+.pagingbox {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.paging {
+    width: 800px;
+    margin: 0 auto;
+    height: 30px;
+}
+
+    .paging a {
+        padding: 20px;
+        font-size: 18px;
+        color: #999999;
+    }
+
+        .paging a.on {
+            color: #39b34a;
+        }
+
+        .paging a img {
+            vertical-align: middle;
+        }
 
 
 
@@ -415,14 +1622,59 @@ a:link,a:hover,a:active{text-decoration:none;}
 
 
 /* 로그인 -----------------*/
-.login { padding:24px 40px 0 54px; position:relative; width:400px; margin:150px auto; }
-.login .tit { color:#666;   font-size:40px; width:100%; margin:0 0 20px 0;  }
-.login .txt { color:#666;   font-size:16px; width:100%;  margin:0 0 20px 0; line-height:24px; letter-spacing:-0.5px;  }
-.login .input {   margin:0 0 40px 0;   }
-.login .input li {   margin:0 0 10px 0;   }
-.login .input input { padding:20px;  background:#fff; border:1px solid #dcdcdc;   border-radius: 10px; width:425px; }
-.login .btn {  margin:0 0 20px 0;   }
-.login .btn a { padding:15px 175px; color:#fff; height:75px;   background:#0074c9; box-shadow: 0px 5px 0px #c1cac0;   border-radius: 10px; text-align:center;   font-size:30px;  }
+.login {
+    padding: 24px 40px 0 54px;
+    position: relative;
+    width: 400px;
+    margin: 150px auto;
+}
+
+    .login .tit {
+        color: #666;
+        font-size: 40px;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .login .txt {
+        color: #666;
+        font-size: 16px;
+        width: 100%;
+        margin: 0 0 20px 0;
+        line-height: 24px;
+        letter-spacing: -0.5px;
+    }
+
+    .login .input {
+        margin: 0 0 40px 0;
+    }
+
+        .login .input li {
+            margin: 0 0 10px 0;
+        }
+
+        .login .input input {
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            width: 425px;
+        }
+
+    .login .btn {
+        margin: 0 0 20px 0;
+    }
+
+        .login .btn a {
+            padding: 15px 175px;
+            color: #fff;
+            height: 75px;
+            background: #0074c9;
+            box-shadow: 0px 5px 0px #c1cac0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
 
 
 
@@ -430,553 +1682,1496 @@ a:link,a:hover,a:active{text-decoration:none;}
 
 /* ================== footer css =============================================================================================== */
 
-.footerwrap { width:100%;  background:#000;   }
-.footer {  width:80%;  margin:0 auto;  font-size:14px; line-height:34px; position:relative; padding-top:30px;   }
+.footerwrap {
+    width: 100%;
+    background: #000;
+}
 
-.footer .f1 { margin-bottom:10px;  }
-.footer .f1 li { float:left;  border-right:1px  solid #333; margin-right:10px;  }
-.footer .f1 li:last-child {border-right:none; }
-.footer .f1 a {  color:#666; margin-right:10px;  }
+.footer {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 34px;
+    position: relative;
+    padding-top: 30px;
+}
 
-.footer .f2 {  border-bottom:1px  solid #333;  padding:15px 20px; margin-bottom:20px; }
-.footer .f2 li { float:left; margin-right:20px; }
+    .footer .f1 {
+        margin-bottom: 10px;
+    }
 
-.footer .f2 .btn { display:none; }
-.footer .f3 {  color:#666;line-height:24px; padding:0 0 40px 0px; }
+        .footer .f1 li {
+            float: left;
+            border-right: 1px solid #333;
+            margin-right: 10px;
+        }
+
+            .footer .f1 li:last-child {
+                border-right: none;
+            }
+
+        .footer .f1 a {
+            color: #666;
+            margin-right: 10px;
+        }
+
+    .footer .f2 {
+        border-bottom: 1px solid #333;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+    }
+
+        .footer .f2 li {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .footer .f2 .btn {
+            display: none;
+        }
+
+    .footer .f3 {
+        color: #666;
+        line-height: 24px;
+        padding: 0 0 40px 0px;
+    }
 
 
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1400px) {
 }
 
 
 
-@media screen and (max-width: 1300px){
-.header { width:90%; height:167px; }
-.container { width:90%;  }
-.footer { width:90%;  }
+@media screen and (max-width: 1300px) {
+    .header {
+        width: 90%;
+        height: 167px;
+    }
 
-.gnb { width:100%; height:60px; font-size:20px;  padding-left:15px;  }
-	.gnb li a {  padding:18px 20px; }
-	
-.section3 .section3-1 { width:20%;  }
-.section3 .section3-2 { width:76%;  }
-	
-	
-.conbox { width:90%;  }
-    
-.conbox .conlist ul.agora li input { width:130px; }
-.conbox .conlist ul.agora li select { width:130px; }
-.conbox .conlist .btn3 a { position:absolute; top:34px; left:240px; right: auto;}
-.conbox .conlist .btn4 a { position:absolute; top:34px; left:250px; right: auto;}
-    
-    
-    
-.conbox .orglist li { width:31%; }
-.conbox .conlist ul.area_btn li {  margin:5px 0 15px 7px;    }
+    .container {
+        width: 90%;
+    }
 
+    .footer {
+        width: 90%;
+    }
 
+    .gnb {
+        width: 100%;
+        height: 60px;
+        font-size: 20px;
+        padding-left: 15px;
+    }
 
+        .gnb li a {
+            padding: 18px 20px;
+        }
 
+    .section3 .section3-1 {
+        width: 20%;
+    }
 
-	.conbox .archdetail .box dt {   width:30%;   }
-	.conbox .archdetail .box dd {  width:70%; }
-
-
-
-
+    .section3 .section3-2 {
+        width: 76%;
+    }
 
 
+    .conbox {
+        width: 90%;
+    }
+
+        .conbox .conlist ul.agora li input {
+            width: 130px;
+        }
+
+        .conbox .conlist ul.agora li select {
+            width: 130px;
+        }
+
+        .conbox .conlist .btn3 a {
+            position: absolute;
+            top: 34px;
+            left: 240px;
+            right: auto;
+        }
+
+        .conbox .conlist .btn4 a {
+            position: absolute;
+            top: 34px;
+            left: 250px;
+            right: auto;
+        }
+
+
+
+        .conbox .orglist li {
+            width: 31%;
+        }
+
+        .conbox .conlist ul.area_btn li {
+            margin: 5px 0 15px 7px;
+        }
+
+
+
+
+
+        .conbox .archdetail .box dt {
+            width: 30%;
+        }
+
+        .conbox .archdetail .box dd {
+            width: 70%;
+        }
 }
 
 
-@media screen and (max-width: 1100px){
-.header { height:162px; }
+@media screen and (max-width: 1100px) {
+    .header {
+        height: 162px;
+    }
 
-.gnb { width:100%; height:55px; font-size:18px;  padding-left:15px;  }
-	.gnb li a {  padding:17px 18px; }
-	
-.section3 .section3-1 { width:18%;  }
-.section3 .section3-2 { width:74%;  }
+    .gnb {
+        width: 100%;
+        height: 55px;
+        font-size: 18px;
+        padding-left: 15px;
+    }
+
+        .gnb li a {
+            padding: 17px 18px;
+        }
+
+    .section3 .section3-1 {
+        width: 18%;
+    }
+
+    .section3 .section3-2 {
+        width: 74%;
+    }
 
 
-.conbox .manlist li { width:50%;   }
-.conbox .manlist li .man {  width:40%;    }
-.conbox .manlist li .box {  width:60%;   }
+    .conbox .manlist li {
+        width: 50%;
+    }
+
+        .conbox .manlist li .man {
+            width: 40%;
+        }
+
+        .conbox .manlist li .box {
+            width: 60%;
+        }
 
 
-.conbox .conlist { font-size:14px; position:relative;  }
-.conbox .conlist ul {  float:left; display:inline-block; margin-right:0px; margin-bottom:10px;    }
-.conbox .conlist ul li { float:left; margin:5px 10px 5px 2px;   }
-.conbox .conlist ul li input { width:80px; padding:3px;  margin:0 0 0 5px; }
-.conbox .conlist .btn1 a { position:absolute; top:4px; left:425px; right:auto; padding:5px 10px;  }
-.conbox .conlist .btn2 a { position:absolute; top:4px; left:665px; right:auto; padding:5px 10px;  }
-.conbox .conlist .btn3 a { position:absolute; top:40px; left:210px; right:auto; padding:5px 10px;  }
-.conbox .conlist .btn4 a { position:absolute; top:40px; left:220px; right:auto; padding:5px 10px;  }
-.conbox .conlist .btn5 a { position:absolute; top:4px; left:590px; right:auto; padding:5px 10px;  }
-.conbox .conlist ul.agora li span { top:4px; right:1px;   }
-.conbox .conlist ul.agora li span img { width: 80%; }
+    .conbox .conlist {
+        font-size: 14px;
+        position: relative;
+    }
 
-    .conbox .conlist ul.agora li select {padding: 3px;}
-    
-    
-.conbox .orglist {  }
-	.conbox .orglist li { width:47.5%;    padding:25px;    }
-	.conbox .orglist li .name {   }
-	.conbox .orglist li .txt {    margin:10px 0 0 0;    }
-	.conbox .orglist li .txt li {   line-height:24px;  }
-	.conbox .orglist li .txt li span { width:90px;  }
+        .conbox .conlist ul {
+            float: left;
+            display: inline-block;
+            margin-right: 0px;
+            margin-bottom: 10px;
+        }
 
-.conbox .agoralist2 li { width:46%; }
+            .conbox .conlist ul li {
+                float: left;
+                margin: 5px 10px 5px 2px;
+            }
 
-.conbox .archivelist ul li input, .conbox .archivelist ul li select { width:50%; }
+                .conbox .conlist ul li input {
+                    width: 80px;
+                    padding: 3px;
+                    margin: 0 0 0 5px;
+                }
 
-.conbox .archimglist li { width:33.3%;   }
-	
+        .conbox .conlist .btn1 a {
+            position: absolute;
+            top: 4px;
+            left: 425px;
+            right: auto;
+            padding: 5px 10px;
+        }
+
+        .conbox .conlist .btn2 a {
+            position: absolute;
+            top: 4px;
+            left: 665px;
+            right: auto;
+            padding: 5px 10px;
+        }
+
+        .conbox .conlist .btn3 a {
+            position: absolute;
+            top: 40px;
+            left: 210px;
+            right: auto;
+            padding: 5px 10px;
+        }
+
+        .conbox .conlist .btn4 a {
+            position: absolute;
+            top: 40px;
+            left: 220px;
+            right: auto;
+            padding: 5px 10px;
+        }
+
+        .conbox .conlist .btn5 a {
+            position: absolute;
+            top: 4px;
+            left: 590px;
+            right: auto;
+            padding: 5px 10px;
+        }
+
+        .conbox .conlist ul.agora li span {
+            top: 4px;
+            right: 1px;
+        }
+
+            .conbox .conlist ul.agora li span img {
+                width: 80%;
+            }
+
+        .conbox .conlist ul.agora li select {
+            padding: 3px;
+        }
+
+
+    .conbox .orglist {
+    }
+
+        .conbox .orglist li {
+            width: 47.5%;
+            padding: 25px;
+        }
+
+            .conbox .orglist li .name {
+            }
+
+            .conbox .orglist li .txt {
+                margin: 10px 0 0 0;
+            }
+
+                .conbox .orglist li .txt li {
+                    line-height: 24px;
+                }
+
+                    .conbox .orglist li .txt li span {
+                        width: 90px;
+                    }
+
+    .conbox .agoralist2 li {
+        width: 46%;
+    }
+
+    .conbox .archivelist ul li input, .conbox .archivelist ul li select {
+        width: 50%;
+    }
+
+    .conbox .archimglist li {
+        width: 33.3%;
+    }
 }
 
 
 
-@media screen and (max-width: 990px){
-.header { height:157px; }
+@media screen and (max-width: 990px) {
+    .header {
+        height: 157px;
+    }
 
-.gnb { height:50px; font-size:16px;  padding-left:0px;  }
-	.gnb li a {  padding:15px 10px; }
-	
-.section1 { height:280px;   }
-.section2 { height:280px; }
+    .gnb {
+        height: 50px;
+        font-size: 16px;
+        padding-left: 0px;
+    }
 
-.section1 .tab  { font-size:14px; }
-.section1 .tab li { padding:16px 10px;  }
-.section1 .list  { margin:15px 0 0 22px; font-size:14px; }
-.section1 .list li  { line-height:30px;    }
-	
-.section2-1 h2,.section2-2 h2,.section3 h2 { font-size:22px;  }
+        .gnb li a {
+            padding: 15px 10px;
+        }
 
-.section1 .tab li { padding:16px 5px;  }
+    .section1 {
+        height: 280px;
+    }
 
-.section3 .section3-1 { width:15%;  }
-	.section3 .section3-1 .day_m { width:200px; height:200px; }
-	.section3 .section3-1 .day_m h3 { position:absolute; top:37px; left:50px; font-size:15px;  }
-	.section3 .section3-1 .day_m .year { position:absolute; top:80px; left:75px; font-size:20px;  }
-	.section3 .section3-1 .day_m .month { position:absolute; top:100px; left:60px; font-size:70px;  }
-	.section3 .section3-1 .day_m .arr1 { position:absolute; top:100px; left:25px; }
-	.section3 .section3-1 .day_m .arr2 { position:absolute; top:100px; left:155px; }
-.section3 .section3-2 { width:70%;  }
-	.section3 .section3-2 .day_d .dday li { font-size:15px; padding:5px;  }
+    .section2 {
+        height: 280px;
+    }
+
+    .section1 .tab {
+        font-size: 14px;
+    }
+
+        .section1 .tab li {
+            padding: 16px 10px;
+        }
+
+    .section1 .list {
+        margin: 15px 0 0 22px;
+        font-size: 14px;
+    }
+
+        .section1 .list li {
+            line-height: 30px;
+        }
+
+    .section2-1 h2, .section2-2 h2, .section3 h2 {
+        font-size: 22px;
+    }
+
+    .section1 .tab li {
+        padding: 16px 5px;
+    }
+
+    .section3 .section3-1 {
+        width: 15%;
+    }
+
+        .section3 .section3-1 .day_m {
+            width: 200px;
+            height: 200px;
+        }
+
+            .section3 .section3-1 .day_m h3 {
+                position: absolute;
+                top: 37px;
+                left: 50px;
+                font-size: 15px;
+            }
+
+            .section3 .section3-1 .day_m .year {
+                position: absolute;
+                top: 80px;
+                left: 75px;
+                font-size: 20px;
+            }
+
+            .section3 .section3-1 .day_m .month {
+                position: absolute;
+                top: 100px;
+                left: 60px;
+                font-size: 70px;
+            }
+
+            .section3 .section3-1 .day_m .arr1 {
+                position: absolute;
+                top: 100px;
+                left: 25px;
+            }
+
+            .section3 .section3-1 .day_m .arr2 {
+                position: absolute;
+                top: 100px;
+                left: 155px;
+            }
+
+    .section3 .section3-2 {
+        width: 70%;
+    }
+
+        .section3 .section3-2 .day_d .dday li {
+            font-size: 15px;
+            padding: 5px;
+        }
 
 
 
-.conbox .conlist ul li input { width:160px; }
-.conbox .conlist ul li select { width:160px; }
-.conbox .conlist .btn1 a { position:absolute; top:39px; left:210px;   }
-.conbox .conlist .btn2 a { position:absolute; top:39px; left:230px;   }
+    .conbox .conlist ul li input {
+        width: 160px;
+    }
 
-.conbox .orglist li { width:47%;    padding:15px;   }
-	.conbox .orglist li .name {    }
-	
-.conbox .section3 {  padding-bottom:20px;    }
-	
-.conbox .archivelist ul li input, .conbox .archivelist ul li select { width:48%; }
+    .conbox .conlist ul li select {
+        width: 160px;
+    }
+
+    .conbox .conlist .btn1 a {
+        position: absolute;
+        top: 39px;
+        left: 210px;
+    }
+
+    .conbox .conlist .btn2 a {
+        position: absolute;
+        top: 39px;
+        left: 230px;
+    }
+
+    .conbox .orglist li {
+        width: 47%;
+        padding: 15px;
+    }
+
+        .conbox .orglist li .name {
+        }
+
+    .conbox .section3 {
+        padding-bottom: 20px;
+    }
+
+    .conbox .archivelist ul li input, .conbox .archivelist ul li select {
+        width: 48%;
+    }
 }
 
 
 
 
-@media screen and (max-width: 920px){
-  
-.conbox .conlist .btn3 a {  left:425px;  }  
-.conbox .agoralist2 li { width:100%; }
-    
+@media screen and (max-width: 920px) {
+
+    .conbox .conlist .btn3 a {
+        left: 425px;
+    }
+
+    .conbox .agoralist2 li {
+        width: 100%;
+    }
 }
 
 
 
-@media screen and (max-width: 906px){
-.conbox .conlist .btn5 a { top:39px; left:235px;   }
+@media screen and (max-width: 906px) {
+    .conbox .conlist .btn5 a {
+        top: 39px;
+        left: 235px;
+    }
 }
 
-@media screen and (max-width: 902px){
-.conbox .conlist .btn2 a { position:absolute; top:39px; left:480px;   }
+@media screen and (max-width: 902px) {
+    .conbox .conlist .btn2 a {
+        position: absolute;
+        top: 39px;
+        left: 480px;
+    }
 
-.conbox .archivelist ul li{ width:45%; }
-.conbox .archivelist ul li input, .conbox .archivelist ul li select { width:60%; }
+    .conbox .archivelist ul li {
+        width: 45%;
+    }
 
+        .conbox .archivelist ul li input, .conbox .archivelist ul li select {
+            width: 60%;
+        }
 }
 
 
 
-@media screen and (max-width: 848px){
-  
-.conbox .conlist .btn4 a {  left:400px;  }  
-    
+@media screen and (max-width: 848px) {
+
+    .conbox .conlist .btn4 a {
+        left: 400px;
+    }
 }
 
 
 
 
-@media screen and (max-width: 820px){
-	.conbox .orglist li { width:46.5%;    padding:15px;   }
-	
-.conbox .conlist ul li input { width:120px; }
-.conbox .conlist ul li select { width:120px; }
-.conbox .conlist .btn2 a { position:absolute; top:39px; left:190px;   }
+@media screen and (max-width: 820px) {
+    .conbox .orglist li {
+        width: 46.5%;
+        padding: 15px;
+    }
 
-.conbox .archivelist ul li{ width:45.5%; }
-.conbox .archivelist ul li input, .conbox .archivelist ul li select { width:50%; }
+    .conbox .conlist ul li input {
+        width: 120px;
+    }
 
-.conbox .archimglist li .box .name { font-size:20px;   }
-.conbox .archimglist li .box .txt {  font-size:12px;  }
+    .conbox .conlist ul li select {
+        width: 120px;
+    }
 
+    .conbox .conlist .btn2 a {
+        position: absolute;
+        top: 39px;
+        left: 190px;
+    }
 
-	
+    .conbox .archivelist ul li {
+        width: 45.5%;
+    }
+
+        .conbox .archivelist ul li input, .conbox .archivelist ul li select {
+            width: 50%;
+        }
+
+    .conbox .archimglist li .box .name {
+        font-size: 20px;
+    }
+
+    .conbox .archimglist li .box .txt {
+        font-size: 12px;
+    }
 }
 
 /* ================== tablet css ================== */
-@media screen and (max-width: 768px){
-.user { right:160px; }
-.banner  { margin-bottom:30px; }
-.header { height:140px; }
+@media screen and (max-width: 768px) {
+    .user {
+        right: 160px;
+    }
 
-.gnb { height:50px; font-size:16px;    position:absolute; top:90px; }
-	.gnb li a {  padding:15px 8px; letter-spacing:-0.3px; }
+    .banner {
+        margin-bottom: 30px;
+    }
 
-.section1 { height:265px;   }
-.section2 { height:265px; }
+    .header {
+        height: 140px;
+    }
 
+    .gnb {
+        height: 50px;
+        font-size: 16px;
+        position: absolute;
+        top: 90px;
+    }
 
-.section2-1 h2,.section2-2 h2,.section3 h2 { font-size:20px;  }
+        .gnb li a {
+            padding: 15px 8px;
+            letter-spacing: -0.3px;
+        }
 
+    .section1 {
+        height: 265px;
+    }
 
-.section3 .section3-1 { width:15%;  }
-	.section3 .section3-1 .day_m { width:180px; height:180px; }
-	.section3 .section3-1 .day_m h3 { position:absolute; top:37px; left:40px; font-size:15px; padding-bottom:8px;  }
-	.section3 .section3-1 .day_m .year { position:absolute; top:75px; left:65px; font-size:20px;  }
-	.section3 .section3-1 .day_m .month { position:absolute; top:95px; left:55px; font-size:60px;  }
-	.section3 .section3-1 .day_m .arr1 { position:absolute; top:100px; left:15px; }
-	.section3 .section3-1 .day_m .arr2 { position:absolute; top:100px; left:145px; }
-.section3 .section3-2 { width:70%;  }
-	.section3 .section3-2 .day_d { width:100%; height:190px;   }
-
-.footer { font-size:13px; line-height:28px;   }
-
-
-.conbox .conlist .btn2 a { position:absolute; top:39px; left:400px;   }
-.conbox .conlist .btn3 a {  left:180px;  }  
-.conbox .conlist .btn4 a {  left:190px;  }   
-.conbox .conlist .btn5 a { top: 5px; left:500px;  }  
-    
-.conbox .conlist ul.agora li input { width:100px; }
-.conbox .conlist ul.agora li select { width:100px; }
-    
-.conbox .manlist li { width:50%;   }
-.conbox .manlist li .man {  width:40%;   }
-.conbox .manlist li .man img {  height:150px;    }
-.conbox .manlist li .box {  width:60%;  height:150px; }
-
-.conbox .orglist li { width:46.3%;      }
+    .section2 {
+        height: 265px;
+    }
 
 
+    .section2-1 h2, .section2-2 h2, .section3 h2 {
+        font-size: 20px;
+    }
 
 
-.conbox .textpage {  padding:30px 0px 30px 0; margin-bottom:0px;   }
-.conbox .textpage h3 { font-size:25px; color:#f1b8a5; }
-.conbox .textpage ul {  color:#fff; font-size:18px; }
-.conbox .textpage ul li { line-height:28px; padding-left:20px; }
+    .section3 .section3-1 {
+        width: 15%;
+    }
+
+        .section3 .section3-1 .day_m {
+            width: 180px;
+            height: 180px;
+        }
+
+            .section3 .section3-1 .day_m h3 {
+                position: absolute;
+                top: 37px;
+                left: 40px;
+                font-size: 15px;
+                padding-bottom: 8px;
+            }
+
+            .section3 .section3-1 .day_m .year {
+                position: absolute;
+                top: 75px;
+                left: 65px;
+                font-size: 20px;
+            }
+
+            .section3 .section3-1 .day_m .month {
+                position: absolute;
+                top: 95px;
+                left: 55px;
+                font-size: 60px;
+            }
+
+            .section3 .section3-1 .day_m .arr1 {
+                position: absolute;
+                top: 100px;
+                left: 15px;
+            }
+
+            .section3 .section3-1 .day_m .arr2 {
+                position: absolute;
+                top: 100px;
+                left: 145px;
+            }
+
+    .section3 .section3-2 {
+        width: 70%;
+    }
+
+        .section3 .section3-2 .day_d {
+            width: 100%;
+            height: 190px;
+        }
+
+    .footer {
+        font-size: 13px;
+        line-height: 28px;
+    }
+
+
+    .conbox .conlist .btn2 a {
+        position: absolute;
+        top: 39px;
+        left: 400px;
+    }
+
+    .conbox .conlist .btn3 a {
+        left: 180px;
+    }
+
+    .conbox .conlist .btn4 a {
+        left: 190px;
+    }
+
+    .conbox .conlist .btn5 a {
+        top: 5px;
+        left: 500px;
+    }
+
+    .conbox .conlist ul.agora li input {
+        width: 100px;
+    }
+
+    .conbox .conlist ul.agora li select {
+        width: 100px;
+    }
+
+    .conbox .manlist li {
+        width: 50%;
+    }
+
+        .conbox .manlist li .man {
+            width: 40%;
+        }
+
+            .conbox .manlist li .man img {
+                height: 150px;
+            }
+
+        .conbox .manlist li .box {
+            width: 60%;
+            height: 150px;
+        }
+
+    .conbox .orglist li {
+        width: 46.3%;
+    }
 
 
 
 
-.conbox .archdetail { padding: 30px 20px 60px 20px;  }
-	.conbox .archdetail .img { width:30%;  position:absolute; top:30px; right:30px;  }
-	.conbox .archdetail .box { margin-left:0; width:100%;    }
-	.conbox .archdetail .box .name {  width:60%;      }
-	.conbox .archdetail .box .txt {    font-size:14px;     }
+    .conbox .textpage {
+        padding: 30px 0px 30px 0;
+        margin-bottom: 0px;
+    }
+
+        .conbox .textpage h3 {
+            font-size: 25px;
+            color: #f1b8a5;
+        }
+
+        .conbox .textpage ul {
+            color: #fff;
+            font-size: 18px;
+        }
+
+            .conbox .textpage ul li {
+                line-height: 28px;
+                padding-left: 20px;
+            }
 
 
 
 
-.con_section1 { width:100%;  }
-.con_section1 .subtit {  font-size:30px; color:#fff;  }
-.con_section1 .submenu { margin-top:20px; background:#202e2f; height:auto; overflow:hidden; padding:10px 20px;    }
-.con_section1 .submenu li { float:left; margin-right:30px;   margin-bottom:0px; line-height:30px;   }
-.con_section1 .submenu li a {   font-size:16px;   }
-	
-	
-.con_section2 { width:100%; margin-top:30px; }
+    .conbox .archdetail {
+        padding: 30px 20px 60px 20px;
+    }
+
+        .conbox .archdetail .img {
+            width: 30%;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+
+        .conbox .archdetail .box {
+            margin-left: 0;
+            width: 100%;
+        }
+
+            .conbox .archdetail .box .name {
+                width: 60%;
+            }
+
+            .conbox .archdetail .box .txt {
+                font-size: 14px;
+            }
 
 
 
 
+    .con_section1 {
+        width: 100%;
+    }
+
+        .con_section1 .subtit {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .con_section1 .submenu {
+            margin-top: 20px;
+            background: #202e2f;
+            height: auto;
+            overflow: hidden;
+            padding: 10px 20px;
+        }
+
+            .con_section1 .submenu li {
+                float: left;
+                margin-right: 30px;
+                margin-bottom: 0px;
+                line-height: 30px;
+            }
+
+                .con_section1 .submenu li a {
+                    font-size: 16px;
+                }
 
 
-
+    .con_section2 {
+        width: 100%;
+        margin-top: 30px;
+    }
 }
 
 
 
 /* ================== tablet css ================== */
-@media screen and (max-width: 700px){
-	
-.banner  { margin-bottom:30px; }
-.header { height:170px; }
+@media screen and (max-width: 700px) {
 
-.gnb { height:80px; font-size:17px;    position:absolute; top:90px; }
-	.gnb li a {  padding:10px 15px; letter-spacing:0; }
+    .banner {
+        margin-bottom: 30px;
+    }
 
-.section1 .tab  { height:40px; font-size:14px; }
-.section1 .tab li { padding:16px 0px;}
+    .header {
+        height: 170px;
+    }
 
-.section2-1 h2,.section2-2 h2,.section3 h2 { font-size:18px;  }
+    .gnb {
+        height: 80px;
+        font-size: 17px;
+        position: absolute;
+        top: 90px;
+    }
+
+        .gnb li a {
+            padding: 10px 15px;
+            letter-spacing: 0;
+        }
+
+    .section1 .tab {
+        height: 40px;
+        font-size: 14px;
+    }
+
+        .section1 .tab li {
+            padding: 16px 0px;
+        }
+
+    .section2-1 h2, .section2-2 h2, .section3 h2 {
+        font-size: 18px;
+    }
 
 
-.conbox .manlist li { width:50%;   }
-.conbox .manlist li .man {  width:40%;   }
-.conbox .manlist li .man img {  height:130px;    }
-.conbox .manlist li .box {  width:60%;  height:130px; }
+    .conbox .manlist li {
+        width: 50%;
+    }
 
-.conbox .orglist  { margin:10px 0 10px 0;   }
-.conbox .orglist li { width:95%; margin-right:20px;   }
+        .conbox .manlist li .man {
+            width: 40%;
+        }
 
-.conbox .archivelist ul li{ width:100%; }
-.conbox .archivelist ul li input, .conbox .archivelist ul li select { width:70%; }
+            .conbox .manlist li .man img {
+                height: 130px;
+            }
 
-.conbox .archimglist li  { width:50%;   }
+        .conbox .manlist li .box {
+            width: 60%;
+            height: 130px;
+        }
+
+    .conbox .orglist {
+        margin: 10px 0 10px 0;
+    }
+
+        .conbox .orglist li {
+            width: 95%;
+            margin-right: 20px;
+        }
+
+    .conbox .archivelist ul li {
+        width: 100%;
+    }
+
+        .conbox .archivelist ul li input, .conbox .archivelist ul li select {
+            width: 70%;
+        }
+
+    .conbox .archimglist li {
+        width: 50%;
+    }
 }
 
 
 
 
-@media screen and (max-width: 653px){
-.conbox .conlist .btn3 a {  left:365px;  }  
+@media screen and (max-width: 653px) {
+    .conbox .conlist .btn3 a {
+        left: 365px;
+    }
 }
 
 
 
 
-@media screen and (max-width: 642px){
-.conbox .conlist .btn5 a { top:40px;  left:205px;  }  
+@media screen and (max-width: 642px) {
+    .conbox .conlist .btn5 a {
+        top: 40px;
+        left: 205px;
+    }
 }
 
 
 
 
 /* ================== tablet css ================== */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
 
-.user { width:210px; position:absolute; top:15px; right:0px; font-size:12px;}
-.searchbox { width:190px; height:35px; position:absolute; top:40px; right:0;  background:#fff; border-radius:20px;}
-	
-.container { margin-bottom:30px; }	
-	
-	
-.section1 { width:100%; height:230px;  }
-.section2 { width:100%; height:260px; }
+    .user {
+        width: 210px;
+        position: absolute;
+        top: 15px;
+        right: 0px;
+        font-size: 12px;
+    }
 
-.section1 .list  { margin:20px 0 0 22px; }
-.section1 .list li  { line-height:26px;    }
+    .searchbox {
+        width: 190px;
+        height: 35px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background: #fff;
+        border-radius: 20px;
+    }
 
-.section3 .section3-1 { width:15%;  }
-	.section3 .section3-1 .day_m { width:150px; height:150px; }
-	.section3 .section3-1 .day_m h3 { position:absolute; top:30px; left:35px; font-size:12px; padding-bottom:8px;  }
-	.section3 .section3-1 .day_m .year { position:absolute; top:60px; left:53px; font-size:18px;  }
-	.section3 .section3-1 .day_m .month { position:absolute; top:75px; left:45px; font-size:50px;  }
-	.section3 .section3-1 .day_m .arr1 { position:absolute; top:80px; left:15px; }
-	.section3 .section3-1 .day_m .arr2 { position:absolute; top:80px; left:115px; }
-.section3 .section3-2 { width:60%;  }
-	.section3 .section3-2 .day_d .dday li { font-size:13px; padding:5px;  }
-
-.footer { font-size:12px; line-height:24px;   }
+    .container {
+        margin-bottom: 30px;
+    }
 
 
+    .section1 {
+        width: 100%;
+        height: 230px;
+    }
 
-.conbox  { padding:20px 20px 20px 0px;  }
-.conbox h2 { font-size:35px;  margin-bottom:0px; } 
+    .section2 {
+        width: 100%;
+        height: 260px;
+    }
+
+    .section1 .list {
+        margin: 20px 0 0 22px;
+    }
+
+        .section1 .list li {
+            line-height: 26px;
+        }
+
+    .section3 .section3-1 {
+        width: 15%;
+    }
+
+        .section3 .section3-1 .day_m {
+            width: 150px;
+            height: 150px;
+        }
+
+            .section3 .section3-1 .day_m h3 {
+                position: absolute;
+                top: 30px;
+                left: 35px;
+                font-size: 12px;
+                padding-bottom: 8px;
+            }
+
+            .section3 .section3-1 .day_m .year {
+                position: absolute;
+                top: 60px;
+                left: 53px;
+                font-size: 18px;
+            }
+
+            .section3 .section3-1 .day_m .month {
+                position: absolute;
+                top: 75px;
+                left: 45px;
+                font-size: 50px;
+            }
+
+            .section3 .section3-1 .day_m .arr1 {
+                position: absolute;
+                top: 80px;
+                left: 15px;
+            }
+
+            .section3 .section3-1 .day_m .arr2 {
+                position: absolute;
+                top: 80px;
+                left: 115px;
+            }
+
+    .section3 .section3-2 {
+        width: 60%;
+    }
+
+        .section3 .section3-2 .day_d .dday li {
+            font-size: 13px;
+            padding: 5px;
+        }
+
+    .footer {
+        font-size: 12px;
+        line-height: 24px;
+    }
 
 
 
-.conbox .conlist { font-size:14px; position:relative;   }
-.conbox .conlist ul {  float:left; display:inline-block; margin-right:0px; margin-bottom:10px; padding-bottom:50px;   }
-.conbox .conlist ul li { float:left; margin:5px 0px 5px 2px; width:100%;   }
-.conbox .conlist ul li input { float:right; width:75%; padding:3px;  margin:00px; }
-.conbox .conlist ul li select { float:right; width:75%; padding:3px;  margin:00px; }
-.conbox .conlist ul.agora li input { float:right; width:75%; padding:3px;  margin:00px; }
-.conbox .conlist ul.agora li select { float:right; width:75%; padding:3px;  margin:00px; }
-.conbox .conlist .btn1 a { position:absolute; top:110px; left:auto; right:0; padding:10px 30px;  }
-.conbox .conlist .btn2 a { position:absolute; top:145px; left:auto; right:0; padding:10px 30px;  }
-.conbox .conlist .btn3 a { position:absolute; top:145px; left:auto; right:0; padding:10px 30px;  }
-.conbox .conlist .btn4 a { position:absolute; top:145px; left:auto; right:0; padding:10px 30px;  }
-.conbox .conlist .btn5 a { position:absolute; top:110px; left:auto; right:0; padding:10px 30px;  }
+    .conbox {
+        padding: 20px 20px 20px 0px;
+    }
 
-    
-
-.conbox .conlist ul.area_btn  {  padding-bottom:0px;    }
-.conbox .conlist ul.area_btn li {  width:auto;    }
+        .conbox h2 {
+            font-size: 35px;
+            margin-bottom: 0px;
+        }
 
 
 
-.conbox .conlist table { width:100%; font-size:13px; letter-spacing:-1px;  }
-.conbox .conlist table th {   padding:10px 5px;   }
-.conbox .conlist table td {  padding:10px 5px; text-align:center;   }
-.conbox .conlist table td.td3 {  line-height: 20px;  }
-    
+        .conbox .conlist {
+            font-size: 14px;
+            position: relative;
+        }
 
-.conbox .manlist li { width:100%; margin-top:5px;   }
-.conbox .manlist li .man {  width:35%;   }
-.conbox .manlist li .man img {  height:130px;    }
-.conbox .manlist li .box {  width:65%;  height:130px; }
+            .conbox .conlist ul {
+                float: left;
+                display: inline-block;
+                margin-right: 0px;
+                margin-bottom: 10px;
+                padding-bottom: 50px;
+            }
+
+                .conbox .conlist ul li {
+                    float: left;
+                    margin: 5px 0px 5px 2px;
+                    width: 100%;
+                }
+
+                    .conbox .conlist ul li input {
+                        float: right;
+                        width: 75%;
+                        padding: 3px;
+                        margin: 00px;
+                    }
+
+                    .conbox .conlist ul li select {
+                        float: right;
+                        width: 75%;
+                        padding: 3px;
+                        margin: 00px;
+                    }
+
+                .conbox .conlist ul.agora li input {
+                    float: right;
+                    width: 75%;
+                    padding: 3px;
+                    margin: 00px;
+                }
+
+                .conbox .conlist ul.agora li select {
+                    float: right;
+                    width: 75%;
+                    padding: 3px;
+                    margin: 00px;
+                }
+
+            .conbox .conlist .btn1 a {
+                position: absolute;
+                top: 110px;
+                left: auto;
+                right: 0;
+                padding: 10px 30px;
+            }
+
+            .conbox .conlist .btn2 a {
+                position: absolute;
+                top: 145px;
+                left: auto;
+                right: 0;
+                padding: 10px 30px;
+            }
+
+            .conbox .conlist .btn3 a {
+                position: absolute;
+                top: 145px;
+                left: auto;
+                right: 0;
+                padding: 10px 30px;
+            }
+
+            .conbox .conlist .btn4 a {
+                position: absolute;
+                top: 145px;
+                left: auto;
+                right: 0;
+                padding: 10px 30px;
+            }
+
+            .conbox .conlist .btn5 a {
+                position: absolute;
+                top: 110px;
+                left: auto;
+                right: 0;
+                padding: 10px 30px;
+            }
 
 
 
-.conbox .condetail { padding: 30px 20px 60px 20px;  }
-	.conbox .condetail .man { width:30%;  position:absolute; top:30px; right:30px;  }
-	.conbox .condetail .box { margin-left:0; width:100%;    }
-	.conbox .condetail .box .name { margin-top:80px;      }
-	.conbox .condetail .box .txt {    font-size:14px;     }
+            .conbox .conlist ul.area_btn {
+                padding-bottom: 0px;
+            }
 
-
-.conbox .textpage ul  { font-size:16px;line-height: 24px;}
-.conbox .textpage ul li.img img { width:60%;}
-
-.conbox .archivelist { font-size:14px;  }
-.conbox .archivelist ul  { padding:20px 10px  }
-.conbox .archivelist ul li span { width:80px; }
-.conbox .archivelist ul li input, .conbox .archivelist ul li select { width:70%; }
-
-.conbox .archimglist li .img img { width:100%;  height:270px;   }
+                .conbox .conlist ul.area_btn li {
+                    width: auto;
+                }
 
 
 
-	.conbox .con_section2 .condetail .box .name { margin-top:130px;      }
-	
-	
-	.con_section2 .introduce { padding: 30px 30px 60px 20px; position:relative; }
-	.con_section2 .introduce .man {  width:30%;  position:absolute; top:30px; right:30px;   }
-	.con_section2 .introduce .man img { height:168px; }
-	.con_section2 .introduce .box { margin-left:0; width:100%;    }
-	.con_section2 .introduce .box .name { margin-top:80px;     }
-	.con_section2 .introduce .box .txt {   font-size:14px;    }
-	.con_section2 .introduce .box dl {   margin:20px 0 0px 0;    width:100%; float:left;     }
-	.con_section2 .introduce .box dt {   font-size:18px;    color:#9acace;     width:15%; float:left;    }
-	.con_section2 .introduce .box dd {   font-size:16px;  color:#FFF;    line-height:24px;    width:85%; float:left;   }
+            .conbox .conlist table {
+                width: 100%;
+                font-size: 13px;
+                letter-spacing: -1px;
+            }
 
-	
-	
+                .conbox .conlist table th {
+                    padding: 10px 5px;
+                }
+
+                .conbox .conlist table td {
+                    padding: 10px 5px;
+                    text-align: center;
+                }
+
+                    .conbox .conlist table td.td3 {
+                        line-height: 20px;
+                    }
 
 
+        .conbox .manlist li {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+            .conbox .manlist li .man {
+                width: 35%;
+            }
+
+                .conbox .manlist li .man img {
+                    height: 130px;
+                }
+
+            .conbox .manlist li .box {
+                width: 65%;
+                height: 130px;
+            }
+
+
+
+        .conbox .condetail {
+            padding: 30px 20px 60px 20px;
+        }
+
+            .conbox .condetail .man {
+                width: 30%;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+            }
+
+            .conbox .condetail .box {
+                margin-left: 0;
+                width: 100%;
+            }
+
+                .conbox .condetail .box .name {
+                    margin-top: 80px;
+                }
+
+                .conbox .condetail .box .txt {
+                    font-size: 14px;
+                }
+
+
+        .conbox .textpage ul {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+            .conbox .textpage ul li.img img {
+                width: 60%;
+            }
+
+        .conbox .archivelist {
+            font-size: 14px;
+        }
+
+            .conbox .archivelist ul {
+                padding: 20px 10px
+            }
+
+                .conbox .archivelist ul li span {
+                    width: 80px;
+                }
+
+                .conbox .archivelist ul li input, .conbox .archivelist ul li select {
+                    width: 70%;
+                }
+
+        .conbox .archimglist li .img img {
+            width: 100%;
+            height: 270px;
+        }
+
+
+
+        .conbox .con_section2 .condetail .box .name {
+            margin-top: 130px;
+        }
+
+
+    .con_section2 .introduce {
+        padding: 30px 30px 60px 20px;
+        position: relative;
+    }
+
+        .con_section2 .introduce .man {
+            width: 30%;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+
+            .con_section2 .introduce .man img {
+                height: 168px;
+            }
+
+        .con_section2 .introduce .box {
+            margin-left: 0;
+            width: 100%;
+        }
+
+            .con_section2 .introduce .box .name {
+                margin-top: 80px;
+            }
+
+            .con_section2 .introduce .box .txt {
+                font-size: 14px;
+            }
+
+            .con_section2 .introduce .box dl {
+                margin: 20px 0 0px 0;
+                width: 100%;
+                float: left;
+            }
+
+            .con_section2 .introduce .box dt {
+                font-size: 18px;
+                color: #9acace;
+                width: 15%;
+                float: left;
+            }
+
+            .con_section2 .introduce .box dd {
+                font-size: 16px;
+                color: #FFF;
+                line-height: 24px;
+                width: 85%;
+                float: left;
+            }
 }
 
 /* ================== mobile css ================== */
-@media screen and (max-width: 460px){
+@media screen and (max-width: 460px) {
 
-.logo a img { width:80%; margin-top:5px; }
-	
-.banner  { margin-bottom:20px; }
+    .logo a img {
+        width: 80%;
+        margin-top: 5px;
+    }
 
-.user { width:175px; position:absolute; top:17px; right:0px; font-size:11px;}
-	.user li a { padding:5px; }
-	.user li:last-child {background:url("img/user_dropdown.png") no-repeat 64px 0px; padding-right:10px;}
+    .banner {
+        margin-bottom: 20px;
+    }
 
-.gnb { height:78px; font-size:16px;  }
-	.gnb li a {  padding:10px;  }
+    .user {
+        width: 175px;
+        position: absolute;
+        top: 17px;
+        right: 0px;
+        font-size: 11px;
+    }
 
-.container { margin-bottom:20px; }	
+        .user li a {
+            padding: 5px;
+        }
 
-.section1 { height:210px;  }
-.section2 {  height:220px; }
-.section3 {  height:250px; }
+        .user li:last-child {
+            background: url("img/user_dropdown.png") no-repeat 64px 0px;
+            padding-right: 10px;
+        }
 
-.section1 .list li  { line-height:22px;    }
+    .gnb {
+        height: 78px;
+        font-size: 16px;
+    }
 
-.footer .f3 { line-height:16px;   }
+        .gnb li a {
+            padding: 10px;
+        }
 
+    .container {
+        margin-bottom: 20px;
+    }
 
-.conbox h2 { font-size:25px;  margin-bottom:10px; } 
+    .section1 {
+        height: 210px;
+    }
 
+    .section2 {
+        height: 220px;
+    }
 
+    .section3 {
+        height: 250px;
+    }
 
+    .section1 .list li {
+        line-height: 22px;
+    }
 
-.section3 .section3-1 { width:15%;  }
-	.section3 .section3-1 .day_m { width:120px; height:120px; }
-	.section3 .section3-1 .day_m h3 { position:absolute; top:20px; left:25px; font-size:10px; padding-bottom:5px;  }
-	.section3 .section3-1 .day_m .year { position:absolute; top:45px; left:43px; font-size:14px;  }
-	.section3 .section3-1 .day_m .month { position:absolute; top:60px; left:35px; font-size:40px;  }
-	.section3 .section3-1 .day_m .arr1 { position:absolute; top:50px; left:10px; }
-	.section3 .section3-1 .day_m .arr2 { position:absolute; top:50px; left:90px; }
-.section3 .section3-2 { width:55%;  }
-	.section3 .section3-2 .day_d .dday li { font-size:13px; padding:5px;  }
-
-
-
-
-.conbox .conlist ul li input {  width:60%;   }
-.conbox .conlist ul li select {  width:60%;  }
-
-
-.conbox .conlist ul.agora li input { width:60%;   }
-.conbox .conlist ul.agora li select {  width:60%;   }
-
-.conbox .conlist table {  font-size:12px;   }
-
-.conbox .orglist li { width:93%; margin-right:20px;   }
-	.conbox .orglist li .name { font-size:18px;    }
-	
-.conbox .archivelist ul li input, .conbox .archivelist ul li select { width:60%; }
-
-.conbox .archimglist li { width:100%;   }
-.conbox .archimglist li .img img { width:100%;  height:240px;   }
-.conbox .archimglist li .box .name {  font-size:20px;   }
+    .footer .f3 {
+        line-height: 16px;
+    }
 
 
-	.conbox .archdetail .box .name { margin-top:20px; font-size:20px; width:50%;  }
+    .conbox h2 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
 
-	.conbox .archdetail .box dt {   width:45%;   }
-	.conbox .archdetail .box dd {  width:45%; }
-	
+
+
+
+    .section3 .section3-1 {
+        width: 15%;
+    }
+
+        .section3 .section3-1 .day_m {
+            width: 120px;
+            height: 120px;
+        }
+
+            .section3 .section3-1 .day_m h3 {
+                position: absolute;
+                top: 20px;
+                left: 25px;
+                font-size: 10px;
+                padding-bottom: 5px;
+            }
+
+            .section3 .section3-1 .day_m .year {
+                position: absolute;
+                top: 45px;
+                left: 43px;
+                font-size: 14px;
+            }
+
+            .section3 .section3-1 .day_m .month {
+                position: absolute;
+                top: 60px;
+                left: 35px;
+                font-size: 40px;
+            }
+
+            .section3 .section3-1 .day_m .arr1 {
+                position: absolute;
+                top: 50px;
+                left: 10px;
+            }
+
+            .section3 .section3-1 .day_m .arr2 {
+                position: absolute;
+                top: 50px;
+                left: 90px;
+            }
+
+    .section3 .section3-2 {
+        width: 55%;
+    }
+
+        .section3 .section3-2 .day_d .dday li {
+            font-size: 13px;
+            padding: 5px;
+        }
+
+
+
+
+    .conbox .conlist ul li input {
+        width: 60%;
+    }
+
+    .conbox .conlist ul li select {
+        width: 60%;
+    }
+
+
+    .conbox .conlist ul.agora li input {
+        width: 60%;
+    }
+
+    .conbox .conlist ul.agora li select {
+        width: 60%;
+    }
+
+    .conbox .conlist table {
+        font-size: 12px;
+    }
+
+    .conbox .orglist li {
+        width: 93%;
+        margin-right: 20px;
+    }
+
+        .conbox .orglist li .name {
+            font-size: 18px;
+        }
+
+    .conbox .archivelist ul li input, .conbox .archivelist ul li select {
+        width: 60%;
+    }
+
+    .conbox .archimglist li {
+        width: 100%;
+    }
+
+        .conbox .archimglist li .img img {
+            width: 100%;
+            height: 240px;
+        }
+
+        .conbox .archimglist li .box .name {
+            font-size: 20px;
+        }
+
+
+    .conbox .archdetail .box .name {
+        margin-top: 20px;
+        font-size: 20px;
+        width: 50%;
+    }
+
+    .conbox .archdetail .box dt {
+        width: 45%;
+    }
+
+    .conbox .archdetail .box dd {
+        width: 45%;
+    }
 }
 
 
 
 
 /* ================== mobile css ================== */
-@media screen and (max-width: 385px){
-	
-.header { height:153px; }
-.searchbox { width:150px; height:35px; position:absolute; top:40px; right:0;  background:#fff; border-radius:20px;}
+@media screen and (max-width: 385px) {
 
-.gnb { height:64px; font-size:15px;  }
-	.gnb li a {  padding:7px;  }
+    .header {
+        height: 153px;
+    }
+
+    .searchbox {
+        width: 150px;
+        height: 35px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background: #fff;
+        border-radius: 20px;
+    }
+
+    .gnb {
+        height: 64px;
+        font-size: 15px;
+    }
+
+        .gnb li a {
+            padding: 7px;
+        }
 
 
-.conbox .conlist ul li input {width:55%;  }
-.conbox .conlist ul li select {width:55%;  }
+    .conbox .conlist ul li input {
+        width: 55%;
+    }
 
-	.conbox .condetail .box .name { font-size:30px;  }
+    .conbox .conlist ul li select {
+        width: 55%;
+    }
 
-.conbox .archivelist ul li input, .conbox .archivelist ul li select { width:50%; }
+    .conbox .condetail .box .name {
+        font-size: 30px;
+    }
+
+    .conbox .archivelist ul li input, .conbox .archivelist ul li select {
+        width: 50%;
+    }
 
 
-	.conbox .archdetail .box .name { margin-top:10px; font-size:18px; }
-
-
+    .conbox .archdetail .box .name {
+        margin-top: 10px;
+        font-size: 18px;
+    }
 }
 
 
 /* ================== mobile css ================== */
-@media screen and (max-width: 320px){
-	
-.gnb { height:64px; font-size:14px;  }
-	.gnb li a {  padding:8px 5px;  }
+@media screen and (max-width: 320px) {
 
-	
+    .gnb {
+        height: 64px;
+        font-size: 14px;
+    }
 
-.conbox .manlist li .man img {  height:100px;    }
-.conbox .manlist li .box {  height:100px; }
-.conbox .conlist table {  font-size:10px;   }
+        .gnb li a {
+            padding: 8px 5px;
+        }
 
+
+
+    .conbox .manlist li .man img {
+        height: 100px;
+    }
+
+    .conbox .manlist li .box {
+        height: 100px;
+    }
+
+    .conbox .conlist table {
+        font-size: 10px;
+    }
 }
-
-
-
-
-

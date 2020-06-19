@@ -91,9 +91,25 @@
                     </div>
 
                     <ul class="user">
-                        <li class=""><a href="">로그인</a></li>
-                        <li class=""><a href="">회원가입</a></li>
-                        <li class=""><a href="">LANGUAGE</a></li>
+                        <li class=""><a id="signinLink" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a></li>
+                        <li class=""><a id="signupLink" runat="server" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a></li>
+                        <li class="">
+                            <a runat="server" id="signoutLink" visible="false" href="Default.aspx" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
+                        </li>
+                        <li class="">
+                            <a id="mypagetab" runat="server" visible="false" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
+                        </li>
+                        <li class="">
+                            <a id="lookupmanagementtab" runat="server" visible="false" href="~/Views/LookupMangePage">lookup management</a>
+                        </li>
+
+                        <li class="">
+                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-right: 0"><%= Resources.DisplayText.en %></a>/                       
+                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-left: 0"><%= Resources.DisplayText.kr %></a>
+
+                        </li>
+
+
                     </ul>
 
                     <div class="searchbox">
@@ -108,13 +124,23 @@
                     </div>
 
                     <ul class="gnb">
-                        <li class="point"><a href="">HOME</a></li>
-                        <li class=""><a href="">Musician</a></li>
-                        <li class=""><a href="">Events</a></li>
-                        <li class=""><a href="">ORG</a></li>
-                        <li class=""><a href="">Agora</a></li>
-                        <li class=""><a href="">ClassicCoin</a></li>
-                        <li class=""><a href="">ArchiveCenter *</a></li>
+
+                        <li class="point"><a id="A1" runat="server" href="Default.aspx"><%= Resources.DisplayText.Home %> </a></li>
+                        <li class="">
+                            <a id="artisttab" runat="server" href="~/Views/MusicianDB.aspx"><%= Resources.DisplayText.MusicianDB %>  </a>
+                        </li>
+                        <li class="">
+                            <a id="performancetab" runat="server" href="~/Views/PerformanceDB.aspx"><%= Resources.DisplayText.Events %>  </a>
+                        </li>
+                        <li class="">
+                            <a id="performancegrouptab" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.ORG %></a></li>
+                        <li class="">
+                            <a id="auditiontab" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Agora %></a></li>
+                        <li class="">
+                            <a id="ClassicCointab" runat="server" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
+                        </li>
+                        <li class="">
+                            <a id="performanceArchivetab" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> * </a></li>
                         <li class=""><a href="">About US</a></li>
                     </ul>
 
@@ -225,15 +251,6 @@
                 </div>
                 <br />--%>
 
-            <%--<footer id="masterFooter" style="background: #F4F5F9; padding: 20px; margin: 0 -40%; padding: 0 -40%;">
-                <p style="text-align: center;" class="Contentdisplay">
-                    (주)올클래식코리아 | 대표 : 전동수 | 주소: 서울시 강남구 역삼로 220 홍성빌딩 3 층 (06227)<br />
-                    사업자등록번호 : 629-88-01114 | 전화 : 02)561-7080 | 팩스 : 02)561-6082<br />
-                    개인정보관리책임자 : 백대원 | 이메일: daewonbaek@gmail.com<br />
-                    COPYRIGHT @www.allclassickorea.co.kr<br />
-                </p>
-            </footer>--%>
-          
             <footer id="masterFooter">
 
                 <div class="footerwrap">

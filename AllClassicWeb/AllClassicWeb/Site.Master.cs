@@ -19,27 +19,30 @@ namespace AllClassicWeb
             Console.WriteLine("pageName:" + pageName);
 #endif
 
-            //var user = Session["User"];
-            //if (user == null) { signinLink.Visible = true; signoutLink.Visible = false; mypagetab.Visible = false; }
-            //if (user != null)
-            //{
-            //    signinLink.Visible = false; signoutLink.Visible = true; mypagetab.Visible = true;
+            var user = Session["User"];
+            if (user == null) { signinLink.Visible = true; signupLink.Visible = true; signoutLink.Visible = false; mypagetab.Visible = false; }
+            if (user != null)
+            {
+                signinLink.Visible = false; signupLink.Visible = false; signoutLink.Visible = true; mypagetab.Visible = true;
 
-            //    try { if (((UserTbl)user).IsMasterUser == 1) lookupmanagementtab.Visible = true; }
-            //    catch (Exception ee) {
+                try { if (((UserTbl)user).IsMasterUser == 1) lookupmanagementtab.Visible = true; }
+                catch (Exception ee)
+                {
 
-            //    }
-            //    //mypageLink.Visible = true;
-            //}
+                }
+                //mypageLink.Visible = true;
+            }
 
         }
 
-        public void searchClicked(object sender, EventArgs e) {
+        public void searchClicked(object sender, EventArgs e)
+        {
             //var endcodestring=encodedSearchvalue.Value;
             //Response.Redirect("~/Views/SearchEngineResult.aspx?query=" + searchbox.Text);
         }
 
-        protected void changecolor(object sender, CommandEventArgs e) {
+        protected void changecolor(object sender, CommandEventArgs e)
+        {
             Session["Theme"] = e.CommandArgument;
         }
 
