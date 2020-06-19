@@ -18,29 +18,25 @@ namespace AllClassicWeb
 #if DEBUG
             Console.WriteLine("pageName:" + pageName);
 #endif
-            if(Session["Theme"]!=null)
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "modifyCss('"+ Session["Theme"]+"','" + pageName + "');", true);
-            else
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "modifyCss('1','"+pageName+"');", true);
 
-            var user = Session["User"];
-            if (user == null) { signinLink.Visible = true; signoutLink.Visible = false; mypagetab.Visible = false; }
-            if (user != null)
-            {
-                signinLink.Visible = false; signoutLink.Visible = true; mypagetab.Visible = true;
+            //var user = Session["User"];
+            //if (user == null) { signinLink.Visible = true; signoutLink.Visible = false; mypagetab.Visible = false; }
+            //if (user != null)
+            //{
+            //    signinLink.Visible = false; signoutLink.Visible = true; mypagetab.Visible = true;
 
-                try { if (((UserTbl)user).IsMasterUser == 1) lookupmanagementtab.Visible = true; }
-                catch (Exception ee) {
+            //    try { if (((UserTbl)user).IsMasterUser == 1) lookupmanagementtab.Visible = true; }
+            //    catch (Exception ee) {
 
-                }
-                //mypageLink.Visible = true;
-            }
+            //    }
+            //    //mypageLink.Visible = true;
+            //}
 
         }
 
         public void searchClicked(object sender, EventArgs e) {
-            var endcodestring=encodedSearchvalue.Value;
-            Response.Redirect("~/Views/SearchEngineResult.aspx?query=" + searchbox.Text);
+            //var endcodestring=encodedSearchvalue.Value;
+            //Response.Redirect("~/Views/SearchEngineResult.aspx?query=" + searchbox.Text);
         }
 
         protected void changecolor(object sender, CommandEventArgs e) {

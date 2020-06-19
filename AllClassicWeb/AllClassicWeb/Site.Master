@@ -16,233 +16,11 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="Content/style.css" rel="stylesheet" />
 
     <script type="text/javascript">
-        function modifyCss(color, page) {
-            switch (color) {
-
-                case "1":
-                    //$(".whitesmokeBG").css('background-color', '#004d40');
-                    //$(".whitesmokeBG").css('color', '#ffffff');
-                    //$(".whitesmokeBG > div > a ").css('color', '#ffffff');
-                    //$(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
-                    $("#mainSearchBox").css('background-color', '#2a2a2a');
 
 
-                    $(".whitesmokeBG").css('font-weight', 'bold');
-                    $(".whitesmokeBG > div > a ").css('font-weight', 'bold');
-                    $(".whitesmokeBG > div > span >a ").css('font-weight', 'bold');
-
-                    break;
-            }
-
-            switch (page) {
-                case "ASP.views_aboutus_aspx":
-                    {
-                        document.getElementById("introductiontab").style.backgroundColor = "none";
-                        document.getElementById("introductiontab").style.borderBottom = "none";
-                        document.getElementById("introductiontab").style.color = "#dfb33a";
-
-                        break;
-                    }
-
-                case "ASP.views_performancedb_aspx":
-                    {
-                        document.getElementById("performancetab").style.backgroundColor = "none";
-                        document.getElementById("performancetab").style.borderBottom = "none";
-                        document.getElementById("performancetab").style.color = "#dfb33a";
-
-                        break;
-                    }
-                case "ASP.views_performancedbaddnew_aspx": {
-                    document.getElementById("performancetab").style.backgroundColor = "none";
-                    document.getElementById("performancetab").style.borderBottom = "none";
-                    document.getElementById("performancetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancedetail_aspx": {
-                    document.getElementById("performancetab").style.backgroundColor = "none";
-                    document.getElementById("performancetab").style.borderBottom = "none";
-                    document.getElementById("performancetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiciandb_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "none";
-                    document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiciandbaddnew_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "none";
-                    document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiciandetailpage_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "none";
-                    document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiccollegedb_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
-                    document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiccollegedbaddnew_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
-                    document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiccollegedbdetail_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
-                    document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_articledb_aspx": {
-                    document.getElementById("articletab").style.backgroundColor = "none";
-                    document.getElementById("articletab").style.borderRight = "none";
-                    document.getElementById("articletab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_articledbaddnew_aspx": {
-                    document.getElementById("articletab").style.backgroundColor = "none";
-                    document.getElementById("articletab").style.borderRight = "none";
-                    document.getElementById("articletab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_auditiondb_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "none";
-                    document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_auditiondb_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "none";
-                    document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_auditiondbaddnew_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "none";
-                    document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_concoursdb_aspx": {
-                    document.getElementById("concoursdbtab").style.backgroundColor = "none";
-                    document.getElementById("concoursdbtab").style.borderRight = "none";
-                    document.getElementById("concoursdbtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_concoursdbaddnew_aspx": {
-                    document.getElementById("concoursdbtab").style.backgroundColor = "none";
-                    document.getElementById("concoursdbtab").style.borderRight = "none";
-                    document.getElementById("concoursdbtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancegroupaddnew_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
-                    document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancegroup_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
-                    document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancegroupdetail_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
-                    document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_repairshopdb_aspx": {
-                    document.getElementById("RepairShoptab").style.backgroundColor = "none";
-                    document.getElementById("RepairShoptab").style.borderRight = "none";
-                    document.getElementById("RepairShoptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_repairshopdbaddnew_aspx": {
-                    document.getElementById("RepairShoptab").style.backgroundColor = "none";
-                    document.getElementById("RepairShoptab").style.borderRight = "none";
-                    document.getElementById("RepairShoptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musicshopdb_aspx": {
-                    document.getElementById("MusicShopDBtab").style.backgroundColor = "none";
-                    document.getElementById("MusicShopDBtab").style.borderRight = "none";
-                    document.getElementById("MusicShopDBtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musicshopdbaddnew_aspx": {
-                    document.getElementById("MusicShopDBtab").style.backgroundColor = "none";
-                    document.getElementById("MusicShopDBtab").style.borderRight = "none";
-                    document.getElementById("MusicShopDBtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_concertvenudb_aspx": {
-                    document.getElementById("ConcertVenutab").style.backgroundColor = "none";
-                    document.getElementById("ConcertVenutab").style.borderRight = "none";
-                    document.getElementById("ConcertVenutab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_concertvenudbaddnew_aspx": {
-                    document.getElementById("ConcertVenutab").style.backgroundColor = "none";
-                    document.getElementById("ConcertVenutab").style.borderRight = "none";
-                    document.getElementById("ConcertVenutab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_peopleandjobdb_aspx": {
-                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_peopleandjobdbaddnew_aspx": {
-                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancearchivedb_aspx": {
-                    document.getElementById("performanceArchivetab").style.backgroundColor = "none";
-                    document.getElementById("performanceArchivetab").style.borderRight = "none";
-                    document.getElementById("performanceArchivetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_signup_termsofusepage_aspx": {
-                    document.getElementById("signuptab").style.backgroundColor = "none";
-                    document.getElementById("signuptab").style.borderRight = "none";
-                    document.getElementById("signuptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_qadbnew_aspx": {
-                    document.getElementById("qatab").style.backgroundColor = "none";
-                    document.getElementById("qatab").style.borderRight = "none";
-                    document.getElementById("qatab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_mypage_aspx": {
-                    document.getElementById("mypagetab").style.backgroundColor = "none";
-                    document.getElementById("mypagetab").style.borderRight = "none";
-                    document.getElementById("mypagetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_classiccoindb_aspx": {
-                    
-                    document.getElementById("ClassicCointab").style.backgroundColor = "none";
-                    document.getElementById("ClassicCointab").style.borderRight = "none";
-                    document.getElementById("ClassicCointab").style.color = "#dfb33a";
-                    break;
-                }
-            }
-        }
 
         function SiteSearch() {
             $('#encodedSearchvalue').val(EncodeText(document.getElementById('searchbox').value));
@@ -295,15 +73,55 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
+
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="container body-content" style="padding-left: 20px; font-family: 'Open Sans', sans-serif;">
+        <div class="wrap" style="padding-left: 20px; font-family: 'Open Sans', sans-serif;">
 
 
             <div id="masterNavigationBar">
-                <div class="row">
+                <div class="header">
+
+                    <%--<div class="btnmenu"><a href="/"><img src="Content/img/btnmenu.png"></a></div>--%>
+
+                    <div class="logo">
+                        <a href="/">
+                            <img src="Content/img/logo.png"></a>
+                    </div>
+
+                    <ul class="user">
+                        <li class=""><a href="">로그인</a></li>
+                        <li class=""><a href="">회원가입</a></li>
+                        <li class=""><a href="">LANGUAGE</a></li>
+                    </ul>
+
+                    <div class="searchbox">
+                        <div class="form">
+                            <input name="" type="text" placeholder="" maxlength="30" id="" class="search" title="검색어 입력" value="SEARCH"><input type="text" style="display: none;">
+                            <button id="" type="button" class="submit"><span class="icn"><span class="blind">검색</span></span></button>
+                        </div>
+                        <div class="icon" style="display: ;">
+                            <a href="#">
+                                <img src="Content/img/btn_search.png"></a>
+                        </div>
+                    </div>
+
+                    <ul class="gnb">
+                        <li class="point"><a href="">HOME</a></li>
+                        <li class=""><a href="">Musician</a></li>
+                        <li class=""><a href="">Events</a></li>
+                        <li class=""><a href="">ORG</a></li>
+                        <li class=""><a href="">Agora</a></li>
+                        <li class=""><a href="">ClassicCoin</a></li>
+                        <li class=""><a href="">ArchiveCenter *</a></li>
+                        <li class=""><a href="">About US</a></li>
+                    </ul>
+
+
+                </div>
+
+                <%--                <div class="row">
                     <span style="float: right; margin-left: 10px; margin-top:3px;">
                         <a runat="server" class="Contentdisplay" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; display: inline-block; color:#cccccc;"><%= Resources.DisplayText.en %></a>/
                         <a runat="server" class="Contentdisplay" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; display: inline-block; color: #cccccc;"><%= Resources.DisplayText.kr %></a>
@@ -322,6 +140,7 @@
                     <br />
 
                 </div>
+
                 <div class="row">
 
                     <a class="navbar-brand allclasic_home" style="text-decoration: none; border-radius: 5px;  color: white !important;" runat="server" href="~/Views/PerformanceDB"><img src="/Content/img/logo.png" alt="All Classic Korea" ></a>
@@ -333,11 +152,8 @@
                             runat="server" ID="mainSearchBox" Text="search" UseSubmitBehavior="false" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
                         <asp:HiddenField runat="server" ID="encodedSearchvalue" />
                     </span>
-                </div>
-                <!--<hr style="margin-top: 20px; margin-bottom: 10px;" />-->
-
-
-
+                </div> 
+                
                 <div class="row" style="text-align: center; height:46px;">
                     <span class="menucontainer">
                         <a id="performancetab" class="mainTitle" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
@@ -371,21 +187,18 @@
 
                         <a id="introductiontab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
                     </span>
-                </div>
+                </div>--%>
+            </div>
 
-                <%--<span style="margin-top: 10px; margin-bottom: 0;" />--%>
-                <%--position: absolute; left: 0; right: 0; display: block;--%>
-                <div class="row" style="/*height: 40px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); margin: 0 -40%; padding: 0 -100%; */">
-                    <!--<div class="row" style="height: 40px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); margin: 0 -40%; padding: 0 -40%;">-->
-                    </div>
-                    <%-- <br />
-                <br />
-                <br />
-                <br />--%>
-                    <%--<hr />--%>
-                </div>
+            <div id="mastermaincontent" class="container">
+                <%--<div class="banner"><a href="#"><img src="Content/img/banner.jpg"></a></div>--%>
 
-                <div class="row">
+
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <%--  <div class="row">
 
                     <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 0px;">
                         <ul class="list-group ">
@@ -404,31 +217,53 @@
                         <asp:ImageButton ImageUrl="~/Doc/ads/P20181203000.jpg" runat="server" Style="width: 100%;" />
                     </div>
 
+
                     <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding-right: 0;">
                         <asp:ContentPlaceHolder ID="MainContent" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
                 </div>
-                <br />
+                <br />--%>
 
-                <footer id="masterFooter" style="background: #F4F5F9; padding: 20px; margin: 0 -40%; padding: 0 -40%;">
-                    <p style="text-align: center;" class="Contentdisplay">
-                        (주)올클래식코리아 | 대표 : 전동수 | 주소: 서울시 강남구 역삼로 220 홍성빌딩 3 층 (06227)<br />
-                        사업자등록번호 : 629-88-01114 | 전화 : 02)561-7080 | 팩스 : 02)561-6082<br />
-                        개인정보관리책임자 : 백대원 | 이메일: daewonbaek@gmail.com<br />
-                        COPYRIGHT @www.allclassickorea.co.kr<br />
-                    </p>
-                </footer>
-                <style type="text/css">
-                    .menucontainer {
-                        min-width: 110px;
-                        display: inline-block;
-                        text-align: center;
-                        margin: 5px;
-                    }
-                </style>
+            <%--<footer id="masterFooter" style="background: #F4F5F9; padding: 20px; margin: 0 -40%; padding: 0 -40%;">
+                <p style="text-align: center;" class="Contentdisplay">
+                    (주)올클래식코리아 | 대표 : 전동수 | 주소: 서울시 강남구 역삼로 220 홍성빌딩 3 층 (06227)<br />
+                    사업자등록번호 : 629-88-01114 | 전화 : 02)561-7080 | 팩스 : 02)561-6082<br />
+                    개인정보관리책임자 : 백대원 | 이메일: daewonbaek@gmail.com<br />
+                    COPYRIGHT @www.allclassickorea.co.kr<br />
+                </p>
+            </footer>--%>
+          
+            <footer id="masterFooter">
 
-            </div>
+                <div class="footerwrap">
+                    <div class="footer">
+                        <ul class="f1">
+                            <li class=""><a href="#">개인정보처리방침</a></li>
+                            <li class=""><a href="#">이메일무단수집거부</a></li>
+                            <li class=""><a href="#">찾아오시는 길</a></li>
+                        </ul>
+                        <div class="f2"></div>
+                        <div class="f3">
+                            (주)올클래식코리아 (우06227) 서울시 강남구 역삼로 220 홍성빌딩 3층 / 대표전화 : 02-561-7080 / 팩스 : 02-561-6082 / 사업자등록번호 : 629-88-01114
+                            <br />
+                            개인정보관리책임자 : 백대원 / 이메일: daewonbaek@gmail.com<br />
+                            COPYRIGHT© All Classic Korea. ALL RIGHTS RESERVED.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <style type="text/css">
+                .menucontainer {
+                    min-width: 110px;
+                    display: inline-block;
+                    text-align: center;
+                    margin: 5px;
+                }
+            </style>
+
+        </div>
     </form>
 </body>
 </html>
