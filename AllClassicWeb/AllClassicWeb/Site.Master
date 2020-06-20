@@ -139,7 +139,7 @@
                         </li>
                         <li class="">
                             <a id="performanceArchivetab" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> * </a></li>
-                        <li class=""><a href="">About US</a></li>
+                        <li class=""><a id="aboutustab" runat="server" href="~/Views/AboutUs.aspx"><%= Resources.DisplayText.AboutUS %>  </a></li>
                     </ul>
                 </div>
 
