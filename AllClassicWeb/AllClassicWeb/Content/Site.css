@@ -302,8 +302,8 @@ a.list-group-item {
 }
 
 .contentHeader {
-    font-size: 13px !important;
-    font-weight: bold !important;
+    /*font-size: 13px !important;
+    font-weight: bold !important;*/
 }
 
 .contentButton {
@@ -321,7 +321,7 @@ a.list-group-item {
 }
 
 .Contentdisplay {
-    font-size: 12px !important;
+    /*font-size: 12px !important;*/
 }
 
 .filedDisplay {
