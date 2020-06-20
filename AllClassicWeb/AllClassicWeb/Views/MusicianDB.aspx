@@ -63,13 +63,22 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
                                     <ItemTemplate>
                                         <tr>
-                                            <td class="col-xs-3">
+                                            <td >
                                                 <asp:LinkButton runat="server" ID="headertableItem" CssClass="filedDisplay" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
-                                            <td class="col-xs-3 Contentdisplay"><%#Eval("majorsubocode") %></td>
-                                            <td class="col-xs-3 Contentdisplay"><%#Eval("Affliation") %></td>
-                                            <td class="col-xs-3 Contentdisplay"><%#Eval("useremailID") %></td>
+                                            <td ><%#Eval("majorsubocode") %></td>
+                                            <td ><%#Eval("Affliation") %></td>
+                                            <td ><%#Eval("useremailID") %></td>
                                         </tr>
                                     </ItemTemplate>
+                                    <AlternatingItemTemplate>
+                                        <tr>
+                                            <td class="td2">
+                                                <asp:LinkButton runat="server" ID="headertableItem" CssClass="filedDisplay" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
+                                            <td class="td2"><%#Eval("majorsubocode") %></td>
+                                            <td class="td2"><%#Eval("Affliation") %></td>
+                                            <td class="td2"><%#Eval("useremailID") %></td>
+                                        </tr>
+                                    </AlternatingItemTemplate>
                                 </asp:Repeater>
 
                             </tbody>
