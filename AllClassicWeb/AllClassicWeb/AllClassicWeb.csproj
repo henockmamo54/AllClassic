@@ -157,6 +157,7 @@
     <Content Include="Content\img\menuline.png" />
     <Content Include="Content\img\news.jpg" />
     <Content Include="Content\img\popup.jpg" />
+    <Content Include="Content\img\start.jpg" />
     <Content Include="Content\img\twitter.png" />
     <Content Include="Content\img\user_dropdown.png" />
     <Content Include="Content\img\wallet.png" />

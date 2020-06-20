@@ -109,8 +109,8 @@
                     </div>
 
                     <div class="col-xs-12">
-                        <asp:Button CssClass="btn btn-primary contentButton" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editArtist" Text="<%$Resources:DisplayText,Edit %>" />
-                        <asp:Button CssClass="btn btn-danger contentButton" runat="server" ID="btn_deleteArtist" OnClientClick="deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
+                        <asp:Button CssClass="btn btn-primary contentButton" Visible="false" runat="server" ID="btn_editArtist" OnClick="onclick_btn_editArtist" Text="<%$Resources:DisplayText,Edit %>" />
+                        <asp:Button CssClass="btn btn-danger contentButton" Visible="false" runat="server" ID="btn_deleteArtist" OnClientClick="deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
                     </div>
                 </div>
 
@@ -167,7 +167,7 @@
 
     </script>
 
-    <style>
+    <%--<style>
         .shadowedPanel {
             border: 1px solid transparent;
             border-radius: 10px;
@@ -175,5 +175,5 @@
             /*padding: 1em;*/
             box-shadow: 2px 2px 2px 2px #f5f5f5;
         }
-    </style>
+    </style>--%>
 </asp:Content>

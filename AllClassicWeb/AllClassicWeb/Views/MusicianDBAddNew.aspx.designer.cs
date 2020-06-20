@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllClassicWeb.Views {
-    
-    
-    public partial class MusicianDBAddNew {
-        
+namespace AllClassicWeb.Views
+{
+
+
+    public partial class MusicianDBAddNew
+    {
+
         /// <summary>
         /// headerlabelcontainer control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl headerlabelcontainer;
-        
+
         /// <summary>
         /// txt_name control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_name;
-        
+
         /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
+
         /// <summary>
         /// txt_email control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_email;
-        
+
         /// <summary>
         /// RequiredFieldValidator2 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
+
         /// <summary>
         /// txt_mobilenumber control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_mobilenumber;
-        
+
         /// <summary>
         /// txt_address control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_address;
-        
+
         /// <summary>
         /// txt_zipcode control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_zipcode;
-        
+
         /// <summary>
         /// txt_facebook control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_facebook;
-        
+
         /// <summary>
         /// txt_twitter control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_twitter;
-        
+
         /// <summary>
         /// txt_youraffiliation control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_youraffiliation;
-        
+
         /// <summary>
         /// DropDownList1_Major control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1_Major;
-        
+
         /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
+
         /// <summary>
         /// txt_kakaoID control.
         /// </summary>
@@ -137,16 +139,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_kakaoID;
-        
-        /// <summary>
-        /// FileUpload_photo1_label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FileUpload_photo1_label;
-        
+
         /// <summary>
         /// FileUpload_photo1 control.
         /// </summary>
@@ -155,16 +148,16 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload_photo1;
-        
+
         /// <summary>
-        /// FileUpload_photo2_label control.
+        /// FileUpload_photo1_label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FileUpload_photo2_label;
-        
+        protected global::System.Web.UI.WebControls.Label FileUpload_photo1_label;
+
         /// <summary>
         /// FileUpload_photo2 control.
         /// </summary>
@@ -173,7 +166,16 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload_photo2;
-        
+
+        /// <summary>
+        /// FileUpload_photo2_label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FileUpload_photo2_label;
+
         /// <summary>
         /// txt_outline control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_outline;
-        
+
         /// <summary>
         /// HiddenField2 control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField2;
-        
+
         /// <summary>
         /// txt_outline_organizer control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_outline_organizer;
-        
+
         /// <summary>
         /// HiddenField_organizer control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField_organizer;
-        
+
         /// <summary>
         /// myendorsmentlist control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater myendorsmentlist;
-        
+
         /// <summary>
         /// FormControlInput1_Name control.
         /// </summary>
@@ -227,7 +229,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FormControlInput1_Name;
-        
+
         /// <summary>
         /// FormControlTextarea1_email control.
         /// </summary>
@@ -236,7 +238,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FormControlTextarea1_email;
-        
+
         /// <summary>
         /// btnAddReview control.
         /// </summary>
@@ -245,7 +247,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddReview;
-        
+
         /// <summary>
         /// btn_artist_cancel control.
         /// </summary>
@@ -254,7 +256,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_artist_cancel;
-        
+
         /// <summary>
         /// btn_artist_save control.
         /// </summary>
@@ -263,7 +265,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_artist_save;
-        
+
         /// <summary>
         /// btn_artist_add control.
         /// </summary>
