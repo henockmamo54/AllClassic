@@ -92,7 +92,6 @@ or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
 
-
                     <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" Style="width: 100%;">
 
                         <EmptyDataTemplate>
@@ -126,25 +125,6 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                     </li>
                                 </a>
 
-                                <%--  <div class=" col-xs-12 shadowedbox2" style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important; border-radius: 3px; margin-bottom: 10px; padding-left: 0; background-color: white; font-family: Roboto, Arial, sans-serif;">
-                                <div class="col-sm-6 col-xs-6" style="padding: 0;">
-                                    <img style="width: 100%; height: 18.25rem; padding: 3px; border-radius: 7px;" class="card-img-top img-rounded" src="../Doc/artist/<%#Eval("Photo1") %>" alt="Card image cap">
-                                </div>
-                                <div class="col-sm-6 col-xs-6" style="margin: 0px; padding: 0px; padding-left: 8px; font-size: 1.2rem;">
-                                    <div class="card-body ">
-                                        <br />
-                                        <h4 class="card-title contentHeader" style="margin: 0; margin-top: 5px; margin-bottom: 5px;"><strong><%#Eval("Name") %> </strong></h4>
-                                        <p class="card-text" style="color: dimgray; font-size: 13px;">
-                                            <span class="filedName"><%# Resources.DisplayText.Affiliation %>: </span>
-                                            <span class="filedDisplay"><%#Eval("Affliation") %> </span>
-                                            <br />
-                                            <span class="filedName"><%# Resources.DisplayText.Major %>: </span>
-                                            <span class="filedDisplay"><%#Eval("majorsubocode") %> </span>
-                                        </p>
-                                        <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default contentButton"><%= Resources.DisplayText.Seemore %></a>
-                                    </div>
-                                </div>
-                            </div>--%>
                             </div>
 
                         </ItemTemplate>
@@ -153,7 +133,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                 <div id="groupPlaceholder" runat="server">
                                 </div>
-                                <div class="col-xs-12" style="text-align: center;">
+                                <div class="col-xs-12" style="text-align: center; margin-top:10px;">
                                     <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                         <Fields>
                                             <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
@@ -170,28 +150,15 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                         </GroupSeparatorTemplate>
                     </asp:ListView>
 
-
-
-
                 </ul>
 
-
-
+                <div>
+                    <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNewMusician" />
+                </div>
             </div>
 
 
-            <div class="row">
-                <br />
 
-            </div>
-
-            <div class="row">
-                <hr />
-
-            </div>
-            <div class="row">
-                <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNewMusician" />
-            </div>
 
         </ContentTemplate>
     </asp:UpdatePanel>
