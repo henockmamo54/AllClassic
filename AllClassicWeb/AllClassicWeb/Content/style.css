@@ -670,7 +670,7 @@ a {
 /* ================== 서브페이지  css =============================================================================================== */
 
 .conbox {
-    width: 80%;
+    /*width: 80%;*/
     margin: 0 auto;
     margin-top: 5px;
     position: relative;
@@ -698,7 +698,7 @@ a {
         .conbox .conlist ul {
             float: right;
             display: inline-block;
-            margin-right: 65px;
+            margin-right: 75px;
             margin-bottom: 10px;
         }
 
@@ -839,6 +839,7 @@ a {
                 background: #212e2f;
                 padding: 10px;
                 color: #93B1B3;
+                text-align:center;
             }
 
             .conbox .conlist table td {

@@ -87,7 +87,7 @@
 
                     <div class="logo">
                         <a href="/">
-                            <img src="Content/img/logo.png"></a>
+                            <img runat="server" src="~/Content/img/logo.png"></a>
                     </div>
 
                     <ul class="user">

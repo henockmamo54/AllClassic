@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AllClassicWeb._Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" >
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <div class="banner" >
-                
+    <div class="banner">
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -15,8 +15,8 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item active"> 
-                    <img src="Content/img/banner/banner1.jpg" /> 
+                <div class="item active">
+                    <img src="Content/img/banner/banner1.jpg" />
                 </div>
 
                 <div class="item">
@@ -44,11 +44,12 @@
 
 
     <div class="section1">
+
         <ul class="tab">
-            <li class="on"><a href="">콩클정보</a></li>
-            <li><a href="">오디션정보</a></li>
-            <li><a href="">구인구직</a></li>
-            <li><a href="">Q&amp;A</a></li>
+            <li class="on"><a href=""><%=Resources.DisplayText.ConcleInformation %></a></li>
+            <li><a href=""><%=Resources.DisplayText.Auditions %></a></li>
+            <li><a href=""><%=Resources.DisplayText.Jobsearch %></a></li>
+            <li><a href=""><%=Resources.DisplayText.QA %></a></li>
         </ul>
         <ul class="list">
             <li><a href="">제20회 한국 쇼팽 콩쿠르 안내</a></li>
@@ -63,17 +64,23 @@
     <div class="section2">
         <div class="section2-1">
             <h2>클래식음악 소식</h2>
-            <div class="txt"><a href="#">서산시, 수준 높은 공연문화 유치로 고품격 문화도시 조성
+            <div class="txt">
+                <a href="#">서산시, 수준 높은 공연문화 유치로 고품격 문화도시 조성
                 <br />
-                <span>2018-05-08</span></a></div>
-            <div class="img"><a href="#">
-                <img src="img/news.jpg"></a></div>
+                    <span>2018-05-08</span></a>
+            </div>
+            <div class="img">
+                <a href="#">
+                    <img src="img/news.jpg"></a>
+            </div>
             <div class="more"><a href="#">+</a></div>
         </div>
         <div class="section2-2">
             <h2>팝업존</h2>
-            <div class="img"><a href="#">
-                <img src="img/popup.jpg"></a></div>
+            <div class="img">
+                <a href="#">
+                    <img src="img/popup.jpg"></a>
+            </div>
             <div class="more"><a href="#">+</a></div>
         </div>
     </div>
@@ -85,10 +92,14 @@
                 <h3>이달의 행사일정</h3>
                 <div class="year">2019</div>
                 <div class="month">06</div>
-                <div class="arr1"><a href="#">
-                    <img src="img/day_arr1.png"></a></div>
-                <div class="arr2"><a href="#">
-                    <img src="img/day_arr2.png"></a></div>
+                <div class="arr1">
+                    <a href="#">
+                        <img src="img/day_arr1.png"></a>
+                </div>
+                <div class="arr2">
+                    <a href="#">
+                        <img src="img/day_arr2.png"></a>
+                </div>
             </div>
         </div>
         <div class="section3-2">

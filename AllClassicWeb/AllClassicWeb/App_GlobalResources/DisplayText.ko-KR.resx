@@ -778,4 +778,10 @@
   <data name="search" xml:space="preserve">
     <value>검색</value>
   </data>
+  <data name="ConcleInformation" xml:space="preserve">
+    <value>콩클 정보</value>
+  </data>
+  <data name="Jobsearch" xml:space="preserve">
+    <value>구인구직</value>
+  </data>
 </root>

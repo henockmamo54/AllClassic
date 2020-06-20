@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllClassicWeb.Views {
-    
-    
-    public partial class MusicianDetailPage {
-        
+namespace AllClassicWeb.Views
+{
+
+
+    public partial class MusicianDetailPage
+    {
+
         /// <summary>
         /// profileImage control.
         /// </summary>
@@ -20,16 +22,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image profileImage;
-        
-        /// <summary>
-        /// profileImage2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image profileImage2;
-        
+
         /// <summary>
         /// artistnamecontainer control.
         /// </summary>
@@ -37,8 +30,8 @@ namespace AllClassicWeb.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl artistnamecontainer;
-        
+        protected global::System.Web.UI.WebControls.Label artistnamecontainer;
+
         /// <summary>
         /// major control.
         /// </summary>
@@ -47,25 +40,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label major;
-        
-        /// <summary>
-        /// repertory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label repertory;
-        
-        /// <summary>
-        /// profilePage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label profilePage;
-        
+
         /// <summary>
         /// yourAffilation control.
         /// </summary>
@@ -74,25 +49,25 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label yourAffilation;
-        
+
         /// <summary>
-        /// mobileNo control.
+        /// repertory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mobileNo;
-        
+        protected global::System.Web.UI.WebControls.Label repertory;
+
         /// <summary>
-        /// email control.
+        /// profilePage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label email;
-        
+        protected global::System.Web.UI.WebControls.Label profilePage;
+
         /// <summary>
         /// address control.
         /// </summary>
@@ -101,7 +76,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label address;
-        
+
         /// <summary>
         /// zipCode control.
         /// </summary>
@@ -110,7 +85,25 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label zipCode;
-        
+
+        /// <summary>
+        /// email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label email;
+
+        /// <summary>
+        /// mobileNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mobileNo;
+
         /// <summary>
         /// kakaoTalkID control.
         /// </summary>
@@ -119,7 +112,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label kakaoTalkID;
-        
+
         /// <summary>
         /// facebook control.
         /// </summary>
@@ -128,7 +121,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label facebook;
-        
+
         /// <summary>
         /// twitter control.
         /// </summary>
@@ -137,7 +130,34 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label twitter;
-        
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
+        /// profileImage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image profileImage2;
+
         /// <summary>
         /// repeater_endorser control.
         /// </summary>
@@ -146,7 +166,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater repeater_endorser;
-        
+
         /// <summary>
         /// btn_editArtist control.
         /// </summary>
@@ -155,7 +175,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_editArtist;
-        
+
         /// <summary>
         /// btn_deleteArtist control.
         /// </summary>

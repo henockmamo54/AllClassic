@@ -26,7 +26,7 @@ namespace AllClassicWeb.Views
                 if (artist.Photo2!=null)
                     profileImage2.ImageUrl = "../Doc/artist/" + artist.Photo2;
                 else profileImage2.Visible = false;
-                artistnamecontainer.InnerText = artist.Name;
+                artistnamecontainer.Text = artist.Name;
                 address.Text = artist.Address;
                 zipCode.Text = artist.ZipCode;
                 mobileNo.Text = artist.MobileNo;

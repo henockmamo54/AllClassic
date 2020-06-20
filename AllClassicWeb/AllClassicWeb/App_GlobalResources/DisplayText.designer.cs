@@ -385,6 +385,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Concle Information.
+        /// </summary>
+        internal static string ConcleInformation {
+            get {
+                return ResourceManager.GetString("ConcleInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Concour Outline.
         /// </summary>
         internal static string ConcourOutline {
@@ -696,6 +705,15 @@ namespace Resources {
         internal static string Job {
             get {
                 return ResourceManager.GetString("Job", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job search.
+        /// </summary>
+        internal static string Jobsearch {
+            get {
+                return ResourceManager.GetString("Jobsearch", resourceCulture);
             }
         }
         

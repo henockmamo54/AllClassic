@@ -760,4 +760,10 @@
   <data name="search" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="ConcleInformation" xml:space="preserve">
+    <value>Concle Information</value>
+  </data>
+  <data name="Jobsearch" xml:space="preserve">
+    <value>Job search</value>
+  </data>
 </root>
