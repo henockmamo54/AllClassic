@@ -105,6 +105,15 @@ namespace AllClassicWeb
         protected global::System.Web.UI.HtmlControls.HtmlAnchor performancetab;
 
         /// <summary>
+        /// performancegrouptab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor performancegrouptab;
+
+        /// <summary>
         /// auditiontab control.
         /// </summary>
         /// <remarks>

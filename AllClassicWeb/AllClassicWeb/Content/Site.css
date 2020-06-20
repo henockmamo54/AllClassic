@@ -39,11 +39,15 @@ textarea {
     padding-right: 8px !important;
 }
 
+    .nav > li > a:hover, .nav > li > a:focus {
+        background-color: transparent;
+    }
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-	/*background:url(../img/headerbg.jpg) no-repeat top center;*/
-    background:url(img/headerbg.jpg) no-repeat top center;
+    /*background:url(../img/headerbg.jpg) no-repeat top center;*/
+    background: url(img/headerbg.jpg) no-repeat top center;
 }
 
 /* Wrapping element */
@@ -196,7 +200,7 @@ a.list-group-item {
     text-decoration: none;
     /*border-right: 1px solid #e4e4e4;
     border-bottom: 1px solid #e4e4e4;*/
-	width:520px;
+    width: 520px;
 }
 
 .orchContainer {
@@ -261,8 +265,8 @@ a.list-group-item {
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     border-top: 0.1px solid #f5f2f2;
-    color: black ;
-    padding:10px;
+    color: black;
+    padding: 10px;
 }
 
 .table > thead > tr > th {
@@ -276,28 +280,33 @@ a.list-group-item {
     text-decoration: none;
     color: #ffffff;
 }
+
 .menucontainer {
-	padding:0 20px;
-	display: inline-block;
-	text-align: center;
-	margin: 5px;
+    padding: 0 20px;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
 }
-.menucontainer a {
-    color: #fff;
-}
-.menucontainer a:hover {
-    color: #ccc;
-}
+
+    .menucontainer a {
+        color: #fff;
+    }
+
+        .menucontainer a:hover {
+            color: #ccc;
+        }
+
 .contentTitle {
     font-size: 13px !important;
     font-weight: bold !important;
 }
 
-.contentHeader{
+.contentHeader {
     font-size: 13px !important;
     font-weight: bold !important;
 }
-.contentButton{
+
+.contentButton {
     font-size: 13px !important;
     font-weight: bold !important;
 }
@@ -310,9 +319,11 @@ a.list-group-item {
 .filedDisplayandContentdisplay {
     font-size: 12px !important;
 }
+
 .Contentdisplay {
     font-size: 12px !important;
 }
+
 .filedDisplay {
     font-size: 12px !important;
 }
@@ -352,6 +363,7 @@ blockquote {
     padding: 15px;
     border-radius: 5px;
 }
+
 .BodmembersNameContainer {
     text-align: center;
     color: rgb(0, 77, 64);
@@ -360,7 +372,6 @@ blockquote {
 
 .sogea_textcolor {
     color: rgb(119, 119, 119);
-   
 }
 
 .sogea_textcolor2 {
@@ -383,7 +394,7 @@ blockquote {
 .list-group-item:first-child {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    border-top:none
+    border-top: none
 }
 
 
@@ -401,89 +412,78 @@ blockquote {
 /*--- bootstrap.css 에서 복사해온 것 --*/
 
 a {
-  color: #666666;
-  text-decoration: none;
+    color: #666666;
+    text-decoration: none;
 }
-a:hover,
-a:focus {
-  color: #222;
-  text-decoration: underline;
-}
+
+    a:hover,
+    a:focus {
+        color: #222;
+        text-decoration: underline;
+    }
 
 
 .col-xs-12 {
-  width: 100%;
-  line-height:28px;
+    width: 100%;
+    line-height: 28px;
 }
 
 
 .btn-primary {
-  color: #fff;
-  background-color: #2a2a2a;
-  border:none;
+    color: #fff;
+    background-color: #2a2a2a;
+    border: none;
 }
-.btn-primary:focus,
-.btn-primary.focus {
-  color: #fff;
-  background-color: #3c3c3c;
-  border:none;
-}
-.btn-primary:hover {
-  color: #fff;
-  background-color: #3c3c3c;
-  border:none;
-}
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  color: #fff;
-  background-color: #3c3c3c;
-  border:none;
-}
+
+    .btn-primary:focus,
+    .btn-primary.focus {
+        color: #fff;
+        background-color: #3c3c3c;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #3c3c3c;
+        border: none;
+    }
+
+    .btn-primary:active,
+    .btn-primary.active,
+    .open > .dropdown-toggle.btn-primary {
+        color: #fff;
+        background-color: #3c3c3c;
+        border: none;
+    }
 
 
 .btn-success {
-  color: #fff;
-  background-color: #890830;
-  border-color: #fff;
+    color: #fff;
+    background-color: #890830;
+    border-color: #fff;
 }
 
-.btn-success:hover {
-  color: #fff;
-  background-color: #9b0f3b;
-  border-color: #fff;
-}
+    .btn-success:hover {
+        color: #fff;
+        background-color: #9b0f3b;
+        border-color: #fff;
+    }
 
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  color: #fff;
-  background-color: #890830;
+    /*color: #fff;
+  background-color: #890830;*/
+    color: #F2B629;
+    background-color: transparent;
 }
 
 
 
 .navbar-brand {
-  float: left;
-  height: 50px;
-  padding: 5px 15px;
-  font-size: 18px;
-  line-height: 20px;
+    float: left;
+    height: 50px;
+    padding: 5px 15px;
+    font-size: 18px;
+    line-height: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

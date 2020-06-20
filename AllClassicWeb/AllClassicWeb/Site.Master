@@ -131,7 +131,7 @@
                             <a id="performancetab" runat="server" href="~/Views/PerformanceDB.aspx"><%= Resources.DisplayText.Events %>  </a>
                         </li>
                         <li class="">
-                            <a id="performancegrouptab" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.ORG %></a></li>
+                            <a id="performancegrouptab" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.ORG %></a></li>
                         <li class="">
                             <a id="auditiontab" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Agora %></a></li>
                         <li class="">
@@ -145,11 +145,11 @@
 
             </div>
 
-            <div id="mastermaincontent" class="container">  
+            <div id="mastermaincontent" class="container">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-                      
+
 
             <footer id="masterFooter">
 
