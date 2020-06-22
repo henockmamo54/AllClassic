@@ -8,24 +8,21 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 
-    <br />
-
-
-    <h4 runat="server" id="headerlabelcontainer" class="contentHeader"><%= Resources.DisplayText.NewDataInputScreen %></h4>
-    <hr style="margin-top: 0px;" />
 
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
 
-            <div class="row ">
+            <div class="conbox ">
 
+                <span><%= Resources.DisplayText.NewDataInputScreen %></span>
+                <hr />
                 <div class="row ">
 
                     <div class="col-md-8 col-xs-8 userregisterinfo">
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Organizer %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_organizer" ValidationGroup="a" runat="server" class="form-control filedDisplay"  MaxLength="40"></asp:TextBox>
+                            <asp:TextBox ID="txt_organizer" ValidationGroup="a" runat="server" class="form-control filedDisplay" MaxLength="40"></asp:TextBox>
 
                             <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="txt_organizer" ErrorMessage="<%$Resources:DisplayText,Pleasefillorganizerfield %>" />
 
@@ -38,7 +35,7 @@
                         <br />
                         <div class="col-md-4 col-xs-4 filedName"><%= Resources.DisplayText.Title %>*</div>
                         <div class="col-md-8 col-xs-8">
-                            <asp:TextBox ID="txt_title" ValidationGroup="a" runat="server" class="form-control filedDisplay"  MaxLength="40"></asp:TextBox>
+                            <asp:TextBox ID="txt_title" ValidationGroup="a" runat="server" class="form-control filedDisplay" MaxLength="40"></asp:TextBox>
                             <asp:RequiredFieldValidator Display="Dynamic" runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator4" ControlToValidate="txt_title" ErrorMessage="<%$Resources:DisplayText,Pleasefilltitlefield %>" />
 
                         </div>
@@ -99,7 +96,7 @@
                 <br />
                 <div class="row col-md-4 col-xs-4">
                     <asp:Button Visible="true" ID="btn_concours_cancel" CssClass="btn btn-danger pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_concours_cancel_Click" Style="margin-right: 10px;" />
-                    <asp:Button Visible="true" ID="btn_concours_save"  ValidationGroup="a"  CssClass="btn btn-warning pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClientClick="getValueFromHtmlEditor();" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />
+                    <asp:Button Visible="true" ID="btn_concours_save" ValidationGroup="a" CssClass="btn btn-warning pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Update %>" OnClientClick="getValueFromHtmlEditor();" OnClick="btn_concours_save_Click" Style="margin-right: 10px;" />
                     <asp:Button ID="btn_concours_add" ValidationGroup="a" CssClass="btn btn-primary pull-right contentButton" runat="server" Text="<%$Resources:DisplayText,Add %>" OnClientClick="getValueFromHtmlEditor();" OnClick="btn_concours_add_Click" Style="margin-right: 10px;" />
 
                 </div>
@@ -138,7 +135,7 @@
                 removeButtons: 'Source,Print,NewPage,Preview,Templates,Replace,Blockquote,CreateDiv,Image,Flash,Smiley,PageBreak,ShowBlocks,About,Maximize'
             });
 
-            
+
             CKEDITOR.on('instanceReady', function () {
                 $.each(CKEDITOR.instances, function (instance) {
                     CKEDITOR.instances[instance].on("change",
