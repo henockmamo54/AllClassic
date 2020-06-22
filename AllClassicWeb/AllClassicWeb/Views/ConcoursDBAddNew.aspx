@@ -16,6 +16,7 @@
 
                 <span><%= Resources.DisplayText.NewDataInputScreen %></span>
                 <hr />
+
                 <div class="row ">
 
                     <div class="col-md-8 col-xs-8 userregisterinfo">

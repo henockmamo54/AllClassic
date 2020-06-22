@@ -19,13 +19,13 @@
                 <div class="con_section1">
                     <div class="subtit">Agora</div>
                     <ul class="submenu">
-                        <li><a href="">오디션 정보</a></li>
-                        <li class="on"><a href="">콩클 정보</a></li>
-                        <li><a href="">악기수리</a></li>
-                        <li><a href="">음악가게</a></li>
-                        <li><a href="">공연장</a></li>
-                        <li><a href="">구인/구직</a></li>
-                        <li><a href="">Q&amp;A</a></li>
+                        <li><a runat="server" href="~/Views/AuditionDB.aspx"><%= Resources.DisplayText.Auditions %></a></li>
+                        <li class="on"><a runat="server" href="~/Views/ConcoursDB.aspx"><%= Resources.DisplayText.Concours %></a></li>
+                        <li><a runat="server" href="~/Views/RepairShopDB.aspx"><%= Resources.DisplayText.RepairShop %></a></li>
+                        <li><a runat="server" href="~/Views/MusicShopDB.aspx"><%= Resources.DisplayText.MusicShop %></a></li>
+                        <li><a runat="server" href="~/Views/ConcertVenuDB.aspx"><%= Resources.DisplayText.ConcertVenue %></a></li>
+                        <li><a runat="server" href="~/Views/PeopleAndJobDB.aspx"><%= Resources.DisplayText.PeopleOrJob %></a></li>
+                        <li><a runat="server" href="~/Views/QADbNew.aspx">Q&amp;A</a></li>
                     </ul>
                 </div>
 

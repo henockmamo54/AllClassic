@@ -18,13 +18,13 @@
                 <div class="con_section1">
                     <div class="subtit">Agora</div>
                     <ul class="submenu">
-                        <li class="on"><a href=""><%= Resources.DisplayText.Auditions %></a></li>
+                        <li class="on"><a runat="server" href="~/Views/AuditionDB.aspx"><%= Resources.DisplayText.Auditions %></a></li>
                         <li><a runat="server" href="~/Views/ConcoursDB.aspx"><%= Resources.DisplayText.Concours %></a></li>
-                        <li><a href="">악기수리</a></li>
-                        <li><a href=""><%= Resources.DisplayText.MusicShop %></a></li>
-                        <li><a href=""><%= Resources.DisplayText.ConcertVenue %></a></li>
-                        <li><a href=""><%= Resources.DisplayText.PeopleOrJob %></a></li>
-                        <li><a href="">Q&amp;A</a></li>
+                        <li><a runat="server" href="~/Views/RepairShopDB.aspx"><%= Resources.DisplayText.RepairShop %></a></li>
+                        <li><a runat="server" href="~/Views/MusicShopDB.aspx"><%= Resources.DisplayText.MusicShop %></a></li>
+                        <li><a runat="server" href="~/Views/ConcertVenuDB.aspx"><%= Resources.DisplayText.ConcertVenue %></a></li>
+                        <li><a runat="server" href="~/Views/PeopleAndJobDB.aspx"><%= Resources.DisplayText.PeopleOrJob %></a></li>
+                        <li><a runat="server" href="~/Views/QADbNew.aspx">Q&amp;A</a></li>
                     </ul>
                 </div>
 
