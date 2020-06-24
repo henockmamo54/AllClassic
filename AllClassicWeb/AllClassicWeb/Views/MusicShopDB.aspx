@@ -53,7 +53,7 @@ join Main.usertbl u on c.Userid=u.userid
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                        <div class="col-xs-12" style="max-height: 250px; overflow-y: scroll;">
+                        <div style="max-height: 250px; overflow-y: scroll; width: 100%">
 
                             <table>
                                 <thead>
@@ -141,6 +141,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         </li>
                                     </ul>
                                 </li>
+                                </div>
 
 
                             </ItemTemplate>
