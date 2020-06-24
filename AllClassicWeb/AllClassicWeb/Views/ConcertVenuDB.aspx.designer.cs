@@ -7,38 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllClassicWeb.Views {
-    
-    
-    public partial class ConcertVenuDB {
-        
-        /// <summary>
-        /// inquiry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button inquiry;
-        
-        /// <summary>
-        /// txtbox_namefilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbox_namefilter;
-        
-        /// <summary>
-        /// txtbox_aliasfilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbox_aliasfilter;
-        
+namespace AllClassicWeb.Views
+{
+
+
+    public partial class ConcertVenuDB
+    {
+
         /// <summary>
         /// DropDownList1_cityfilter control.
         /// </summary>
@@ -47,7 +22,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1_cityfilter;
-        
+
         /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
@@ -56,7 +31,34 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
+
+        /// <summary>
+        /// txtbox_aliasfilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbox_aliasfilter;
+
+        /// <summary>
+        /// txtbox_namefilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbox_namefilter;
+
+        /// <summary>
+        /// inquiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton inquiry;
+
         /// <summary>
         /// SqlDataSource1_getrecent20artists control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_getrecent20artists;
-        
+
         /// <summary>
         /// artistPageRepeater control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater artistPageRepeater;
-        
+
         /// <summary>
         /// collegeListContainer control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView collegeListContainer;
-        
+
         /// <summary>
         /// SqlDataSource1_Collegelist control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_Collegelist;
-        
+
         /// <summary>
         /// btn_addNewConcertVenu control.
         /// </summary>

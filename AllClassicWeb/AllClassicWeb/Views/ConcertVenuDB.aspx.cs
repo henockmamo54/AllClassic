@@ -33,16 +33,16 @@ namespace AllClassicWeb.Views
 
         public void collegeListContainer_OnItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            var editbutton = (LinkButton)e.Item.FindControl("edit");
-            var deletebutton = (LinkButton)e.Item.FindControl("delete");
-            var stringvalueOFUserid = DataBinder.Eval(e.Item.DataItem, "UserID").ToString();
-            if (user != null & stringvalueOFUserid.Length!=0)
-            {
-                int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString().Trim());
-                if (user.UserID == userID || user.IsMasterUser == 1) { editbutton.Visible = true; deletebutton.Visible = true; }
-                else { editbutton.Visible = false; deletebutton.Visible = false; }
-            }
-            else { editbutton.Visible = false; deletebutton.Visible = false; }
+            //var editbutton = (LinkButton)e.Item.FindControl("edit");
+            //var deletebutton = (LinkButton)e.Item.FindControl("delete");
+            //var stringvalueOFUserid = DataBinder.Eval(e.Item.DataItem, "UserID").ToString();
+            //if (user != null & stringvalueOFUserid.Length!=0)
+            //{
+            //    int userID = int.Parse(DataBinder.Eval(e.Item.DataItem, "UserID").ToString().Trim());
+            //    if (user.UserID == userID || user.IsMasterUser == 1) { editbutton.Visible = true; deletebutton.Visible = true; }
+            //    else { editbutton.Visible = false; deletebutton.Visible = false; }
+            //}
+            //else { editbutton.Visible = false; deletebutton.Visible = false; }
 
         }
 
