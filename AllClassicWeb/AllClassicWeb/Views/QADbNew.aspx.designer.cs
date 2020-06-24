@@ -7,38 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllClassicWeb {
-    
-    
-    public partial class QADbNew {
-        
-        /// <summary>
-        /// inquiry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button inquiry;
-        
-        /// <summary>
-        /// txt_question control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_question;
-        
-        /// <summary>
-        /// datetimefilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datetimefilter;
-        
+namespace AllClassicWeb
+{
+
+
+    public partial class QADbNew
+    {
+
         /// <summary>
         /// txtbox_emailfilter control.
         /// </summary>
@@ -47,7 +22,34 @@ namespace AllClassicWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtbox_emailfilter;
-        
+
+        /// <summary>
+        /// datetimefilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datetimefilter;
+
+        /// <summary>
+        /// txt_question control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_question;
+
+        /// <summary>
+        /// inquiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton inquiry;
+
         /// <summary>
         /// collegeListContainer control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace AllClassicWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView collegeListContainer;
-        
+
         /// <summary>
         /// SqlDataSource1_Collegelist control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace AllClassicWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_Collegelist;
-        
+
         /// <summary>
         /// btn_addNew control.
         /// </summary>
