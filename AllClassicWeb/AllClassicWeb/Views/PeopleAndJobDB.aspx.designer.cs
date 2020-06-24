@@ -7,56 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllClassicWeb.Views {
-    
-    
-    public partial class PeopleAndJobDB {
-        
-        /// <summary>
-        /// inquiry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button inquiry;
-        
-        /// <summary>
-        /// datetimepicker3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepicker3;
-        
-        /// <summary>
-        /// DropDownList3_city control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3_city;
-        
-        /// <summary>
-        /// SqlDataSource1_city control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_city;
-        
-        /// <summary>
-        /// txt_title control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_title;
-        
+namespace AllClassicWeb.Views
+{
+
+
+    public partial class PeopleAndJobDB
+    {
+
         /// <summary>
         /// DropDownList1_type control.
         /// </summary>
@@ -65,7 +22,52 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1_type;
-        
+
+        /// <summary>
+        /// txt_title control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_title;
+
+        /// <summary>
+        /// DropDownList3_city control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3_city;
+
+        /// <summary>
+        /// SqlDataSource1_city control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_city;
+
+        /// <summary>
+        /// datetimepicker3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepicker3;
+
+        /// <summary>
+        /// inquiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton inquiry;
+
         /// <summary>
         /// SqlDataSource1_getrecent20artists control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_getrecent20artists;
-        
+
         /// <summary>
         /// artistPageRepeater control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater artistPageRepeater;
-        
+
         /// <summary>
         /// collegeListContainer control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView collegeListContainer;
-        
+
         /// <summary>
         /// SqlDataSource1_Collegelist control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_Collegelist;
-        
+
         /// <summary>
         /// btn_addNew control.
         /// </summary>
