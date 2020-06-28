@@ -7,20 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllClassicWeb.Views {
-    
-    
-    public partial class PerformanceDetail {
-        
-        /// <summary>
-        /// forAudience control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl forAudience;
-        
+namespace AllClassicWeb.Views
+{
+
+
+    public partial class PerformanceDetail
+    {
+
         /// <summary>
         /// performancePosterImage control.
         /// </summary>
@@ -29,97 +22,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image performancePosterImage;
-        
-        /// <summary>
-        /// likebuttonliked control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton likebuttonliked;
-        
-        /// <summary>
-        /// likebutton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton likebutton;
-        
-        /// <summary>
-        /// likecountspan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl likecountspan;
-        
-        /// <summary>
-        /// dislikebuttondisliked control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton dislikebuttondisliked;
-        
-        /// <summary>
-        /// dislikebutton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton dislikebutton;
-        
-        /// <summary>
-        /// dislikecountspan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dislikecountspan;
-        
-        /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-        
-        /// <summary>
-        /// txtComment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtComment;
-        
-        /// <summary>
-        /// btnComment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnComment;
-        
-        /// <summary>
-        /// ParentRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater ParentRepeater;
-        
+
         /// <summary>
         /// lbl_Maintitle control.
         /// </summary>
@@ -128,25 +31,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Maintitle;
-        
-        /// <summary>
-        /// lbl_subtitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_subtitle;
-        
-        /// <summary>
-        /// lbl_subjectTheme control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_subjectTheme;
-        
+
         /// <summary>
         /// lbl_pg control.
         /// </summary>
@@ -155,7 +40,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_pg;
-        
+
         /// <summary>
         /// lbl_pt control.
         /// </summary>
@@ -164,7 +49,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_pt;
-        
+
         /// <summary>
         /// lbl_conductor control.
         /// </summary>
@@ -173,52 +58,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_conductor;
-        
-        /// <summary>
-        /// lbl_maintitlecomposer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_maintitlecomposer;
-        
-        /// <summary>
-        /// lbl_maininstrument control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_maininstrument;
-        
-        /// <summary>
-        /// lbl_organizer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_organizer;
-        
-        /// <summary>
-        /// lbl_sponser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_sponser;
-        
-        /// <summary>
-        /// lbl_language control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_language;
-        
+
         /// <summary>
         /// lbl_start control.
         /// </summary>
@@ -227,7 +67,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_start;
-        
+
         /// <summary>
         /// lbl_end control.
         /// </summary>
@@ -236,7 +76,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_end;
-        
+
         /// <summary>
         /// lbl_time control.
         /// </summary>
@@ -245,16 +85,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_time;
-        
-        /// <summary>
-        /// lbl_region control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_region;
-        
+
         /// <summary>
         /// lbl_city control.
         /// </summary>
@@ -263,7 +94,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_city;
-        
+
         /// <summary>
         /// lbl_venu control.
         /// </summary>
@@ -272,16 +103,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_venu;
-        
-        /// <summary>
-        /// lbl_video control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_video;
-        
+
         /// <summary>
         /// lbl_ticketbox control.
         /// </summary>
@@ -290,7 +112,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ticketbox;
-        
+
         /// <summary>
         /// lbl_program control.
         /// </summary>
@@ -299,25 +121,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_program;
-        
-        /// <summary>
-        /// lbl_description control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_description;
-        
-        /// <summary>
-        /// myPerformanceDetailArtistInstrumentlist control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater myPerformanceDetailArtistInstrumentlist;
-        
+
         /// <summary>
         /// btn_editArtist control.
         /// </summary>
@@ -326,7 +130,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_editArtist;
-        
+
         /// <summary>
         /// btn_deleteArtist control.
         /// </summary>

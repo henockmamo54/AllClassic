@@ -31,40 +31,40 @@ namespace AllClassicWeb.Views
                 //txt_maintitle.InnerText = performance.MainTitle;
 
                 lbl_Maintitle.Text = performance.MainTitle;
-                lbl_subtitle.Text = performance.SubTitle;
-                lbl_subjectTheme.Text = performance.Subject;
+                //lbl_subtitle.Text = performance.SubTitle;
+                //lbl_subjectTheme.Text = performance.Subject;
                 if (performance.PerformanceGroupTbl != null)
                     lbl_pg.Text = performance.PerformanceGroupTbl.Name;
                 if (performance.LookUpTbl != null)
                     lbl_pt.Text = performance.LookUpTbl.SubCode;
                 if (performance.MusicianTbl != null)
                     lbl_conductor.Text = performance.MusicianTbl.Name;
-                if (performance.MusicianTbl1 != null)
-                    lbl_maintitlecomposer.Text = performance.MusicianTbl1.Name;
-                if (performance.InstrumentTbl != null)
-                    lbl_maininstrument.Text = performance.InstrumentTbl.KoreanName;
-                lbl_organizer.Text = performance.Organizer;
-                lbl_sponser.Text = performance.Sponser;
-                lbl_language.Text = performance.Language;
+                //if (performance.MusicianTbl1 != null)
+                //    lbl_maintitlecomposer.Text = performance.MusicianTbl1.Name;
+                //if (performance.InstrumentTbl != null)
+                //    lbl_maininstrument.Text = performance.InstrumentTbl.KoreanName;
+                //lbl_organizer.Text = performance.Organizer;
+                //lbl_sponser.Text = performance.Sponser;
+                //lbl_language.Text = performance.Language;
                 lbl_start.Text = performance.StartDate.ToString("dd/MM/yyyy");
                 lbl_end.Text = performance.EndDate.ToString("dd/MM/yyyy");
                 lbl_time.Text = performance.Time;
-                if (performance.LookUpTbl1 != null)
-                    lbl_region.Text = performance.LookUpTbl1.SubCode;
+                //if (performance.LookUpTbl1 != null)
+                //    lbl_region.Text = performance.LookUpTbl1.SubCode;
                 if (performance.LookUpTbl2 != null)
                     lbl_city.Text = performance.LookUpTbl2.SubCode;
                 if (performance.VenueTbl != null)
                     lbl_venu.Text = performance.VenueTbl.Name;
-                lbl_video.Text = performance.VideoFileName;
+                //lbl_video.Text = performance.VideoFileName;
                 lbl_ticketbox.Text = performance.TicketBox;
                 lbl_program.Text = Server.HtmlDecode( performance.Program);
-                lbl_description.Text = Server.HtmlDecode(performance.Description);
-                myPerformanceDetailArtistInstrumentlist.DataSource = performance.PerformanceMusicianInstrumentTbls.ToList();
-                myPerformanceDetailArtistInstrumentlist.DataBind();
+                //lbl_description.Text = Server.HtmlDecode(performance.Description);
+                //myPerformanceDetailArtistInstrumentlist.DataSource = performance.PerformanceMusicianInstrumentTbls.ToList();
+                //myPerformanceDetailArtistInstrumentlist.DataBind();
 
-                //comments
-                ParentRepeater.DataSource = CommentLogic.getCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
-                ParentRepeater.DataBind();
+                ////comments
+                //ParentRepeater.DataSource = CommentLogic.getCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
+                //ParentRepeater.DataBind();
 
                 //like unlike
                 getLikeUnlikeStatusForUser();
@@ -216,8 +216,8 @@ namespace AllClassicWeb.Views
 
             CommentLogic.addComment(comment);
 
-            ParentRepeater.DataSource = CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
-            ParentRepeater.DataBind();
+            //ParentRepeater.DataSource = CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
+            //ParentRepeater.DataBind();
 
         }
 
@@ -277,51 +277,51 @@ namespace AllClassicWeb.Views
             List<PerformanceLikeUnlikeTbl> performancelikeunlike = PerformanceLikeUnlikeLogic.getPerformanceLikeDislikeByPerformanceID(int.Parse(Request.QueryString["PID"]));
             int likecount = performancelikeunlike.Where(x => x.islike == 1).Count();
             int dislikecount = performancelikeunlike.Where(x => x.islike == -1).Count();
-            likecountspan.InnerText = likecount.ToString();
-            dislikecountspan.InnerText = dislikecount.ToString();
+            //likecountspan.InnerText = likecount.ToString();
+            //dislikecountspan.InnerText = dislikecount.ToString();
             if (user != null)
             {
                 var detail = PerformanceLikeUnlikeLogic.getPerformanceLikeDislikeByPerformanceIDAndUserID(int.Parse(Request.QueryString["PID"]), user.UserID).FirstOrDefault();
                 if (detail != null)
                 {
-                    likebutton.Visible = detail.islike != 1;
-                    likebuttonliked.Visible = detail.islike == 1;
+                    //likebutton.Visible = detail.islike != 1;
+                    //likebuttonliked.Visible = detail.islike == 1;
 
-                    dislikebutton.Visible = detail.islike != -1;
-                    dislikebuttondisliked.Visible = detail.islike == -1;
+                    //dislikebutton.Visible = detail.islike != -1;
+                    //dislikebuttondisliked.Visible = detail.islike == -1;
                 }
             }
         }
 
         protected void btnComment_Click(object sender, CommandEventArgs e)
         {
-            var user = (UserTbl)Session["User"];
-            if (user == null)
-            {
-                showMsg("Please sign in to write comments!!!");
-                return;
-            }
+            //var user = (UserTbl)Session["User"];
+            //if (user == null)
+            //{
+            //    showMsg("Please sign in to write comments!!!");
+            //    return;
+            //}
 
-            if (txtComment.Text.Length > 0)
-            {
-                btnComment.Enabled = false;
+            //if (txtComment.Text.Length > 0)
+            //{
+            //    btnComment.Enabled = false;
 
-                PerformanceCommentTbl comment = new PerformanceCommentTbl();
+            //    PerformanceCommentTbl comment = new PerformanceCommentTbl();
 
-                comment.CommentMessage = txtComment.Text;
-                comment.PerformanceID = int.Parse(Request.QueryString["PID"]);
-                comment.CommentDate = DateTime.Now;
-                comment.UserID = user.UserID;
+            //    comment.CommentMessage = txtComment.Text;
+            //    comment.PerformanceID = int.Parse(Request.QueryString["PID"]);
+            //    comment.CommentDate = DateTime.Now;
+            //    comment.UserID = user.UserID;
 
-                CommentLogic.addComment(comment);
-                var value = e.CommandArgument;
+            //    CommentLogic.addComment(comment);
+            //    var value = e.CommandArgument;
 
-                ParentRepeater.DataSource = CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
-                ParentRepeater.DataBind();
+            //    ParentRepeater.DataSource = CommentLogic.getParentCommentsByPerformanceID(int.Parse(Request.QueryString["PID"]));
+            //    ParentRepeater.DataBind();
 
-                btnComment.Enabled = true;
-                txtComment.Text = "";
-            }
+            //    btnComment.Enabled = true;
+            //    txtComment.Text = "";
+            //}
         }
 
 
