@@ -7,65 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllClassicWeb.Views {
-    
-    
-    public partial class PerformanceDB {
-        
-        /// <summary>
-        /// dateselectorcalendar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar dateselectorcalendar;
-        
-        /// <summary>
-        /// btnResetSelection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnResetSelection;
-        
-        /// <summary>
-        /// repeater_thisweekPerformanceInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeater_thisweekPerformanceInfo;
-        
-        /// <summary>
-        /// repeater_location control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeater_location;
-        
-        /// <summary>
-        /// SqlDataSource1_region control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_region;
-        
-        /// <summary>
-        /// label_countofitems control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label_countofitems;
-        
+namespace AllClassicWeb.Views
+{
+
+
+    public partial class PerformanceDB
+    {
+
         /// <summary>
         /// artistListContainer control.
         /// </summary>
@@ -74,7 +22,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView artistListContainer;
-        
+
         /// <summary>
         /// SqlDataSource1_Performancelist control.
         /// </summary>
@@ -83,7 +31,34 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_Performancelist;
-        
+
+        /// <summary>
+        /// repeater_location control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeater_location;
+
+        /// <summary>
+        /// SqlDataSource1_region control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_region;
+
+        /// <summary>
+        /// repeater_thisweekPerformanceInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeater_thisweekPerformanceInfo;
+
         /// <summary>
         /// btn_addNewMusician control.
         /// </summary>

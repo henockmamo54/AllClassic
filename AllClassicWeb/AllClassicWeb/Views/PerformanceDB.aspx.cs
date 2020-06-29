@@ -28,7 +28,7 @@ namespace AllClassicWeb.Views
                 {
                     repeater_thisweekPerformanceInfo.DataSource = entity.PerformanceTbls.Where(x => SqlFunctions.DatePart("ISO_WEEK", x.StartDate) == SqlFunctions.DatePart("ISO_WEEK", DateTime.Today) & x.EndDate>DateTime.Now).ToList();
                     repeater_thisweekPerformanceInfo.DataBind();
-                    label_countofitems.Text = artistListContainer.Items.Count + "";
+                    //label_countofitems.Text = artistListContainer.Items.Count + "";
                 }
                 catch (Exception ee)
                 {
@@ -39,7 +39,7 @@ namespace AllClassicWeb.Views
 
         protected void artistListContainer_ondatabound(object sender, EventArgs e)
         {
-            label_countofitems.Text = artistListContainer.Items.Count + "";
+            //label_countofitems.Text = artistListContainer.Items.Count + "";
         }
 
         protected void onclick_btn_addPG(object sender, EventArgs e)
@@ -76,48 +76,48 @@ namespace AllClassicWeb.Views
 
         public void btnClearSelection(object sender, EventArgs e)
         {
-            dateselectorcalendar.SelectedDates.Clear();
+            //dateselectorcalendar.SelectedDates.Clear();
             filterPerformance();
         }
 
         public void filterPerformance()
         {
 
-            DateTime selectedDate = dateselectorcalendar.SelectedDate;
-            Button pb = (Button)Session["previousSelectedLocation"];
+            //DateTime selectedDate = dateselectorcalendar.SelectedDate;
+            LinkButton pb = (LinkButton)Session["previousSelectedLocation"];
             var null_date = DateTime.Parse("1/1/0001 12:00:00 AM", System.Globalization.CultureInfo.InvariantCulture);
 
-            string filter = "where p.enddate > getdate()";
-            if (pb != null && selectedDate != null_date)
-            {
-                filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
-                if (pb.Text != "전체") filter += " and r.subcode = N'" + pb.Text + "' ";
-            }
-            else if (pb == null && selectedDate != null_date) filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
-            else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter += @" and r.subcode like N'%" + pb.Text + "%' ";
+            //string filter = "where p.enddate > getdate()";
+            //if (pb != null && selectedDate != null_date)
+            //{
+            //    filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
+            //    if (pb.Text != "전체") filter += " and r.subcode = N'" + pb.Text + "' ";
+            //}
+            //else if (pb == null && selectedDate != null_date) filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
+            //else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter += @" and r.subcode like N'%" + pb.Text + "%' ";
 
 
-            SqlDataSource1_Performancelist.SelectCommand = @"DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
+            //SqlDataSource1_Performancelist.SelectCommand = @"DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
 
-                                                            INSERT INTO @fooTable 
-                                                                select lookupid, Maincode, subcode from main.lookuptbl where maincode 
-                                                            in ('PerformanceType','Conductor','Composer','Region','City') 
+            //                                                INSERT INTO @fooTable 
+            //                                                    select lookupid, Maincode, subcode from main.lookuptbl where maincode 
+            //                                                in ('PerformanceType','Conductor','Composer','Region','City') 
 
 
-                                                            SELECT  p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
-                                                            from Main.PerformanceTbl p
-                                                            left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
-                                                            left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
-                                                            left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
-                                                            left join @fooTable pt on pt.LookUpID=p.PerformanceType
-                                                            left join @fooTable cd on cd.LookUpID=p.Conductor
-                                                            left join @fooTable cm on cm.LookUpID=p.MainTitleComposer
-                                                            left join @fooTable r on r.LookUpID=p.Region
-                                                            left join @fooTable c on c.LookUpID=p.City
-                                                             " + filter + " order by p.UpdateTimeStamp desc";
-            //artistListContainer.DataSource = SqlDataSource1_Performancelist;
-            artistListContainer.DataBind();
-            label_countofitems.Text = artistListContainer.Items.Count + "";
+            //                                                SELECT  p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
+            //                                                from Main.PerformanceTbl p
+            //                                                left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
+            //                                                left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
+            //                                                left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
+            //                                                left join @fooTable pt on pt.LookUpID=p.PerformanceType
+            //                                                left join @fooTable cd on cd.LookUpID=p.Conductor
+            //                                                left join @fooTable cm on cm.LookUpID=p.MainTitleComposer
+            //                                                left join @fooTable r on r.LookUpID=p.Region
+            //                                                left join @fooTable c on c.LookUpID=p.City
+            //                                                 " + filter + " order by p.UpdateTimeStamp desc";
+            ////artistListContainer.DataSource = SqlDataSource1_Performancelist;
+            //artistListContainer.DataBind();
+            ////label_countofitems.Text = artistListContainer.Items.Count + "";
         }
 
 
@@ -130,23 +130,23 @@ namespace AllClassicWeb.Views
 
                 if (Session["previousSelectedLocation"] != null)
                 {
-                    Button pb = (Button)Session["previousSelectedLocation"];
-                    var detail = (Button)item.FindControl("location");
+                    LinkButton pb = (LinkButton)Session["previousSelectedLocation"];
+                    var detail = (LinkButton)item.FindControl("location");
                     if (detail.Text == pb.Text)
                     {
-                        detail.BackColor = System.Drawing.ColorTranslator.FromHtml("#28878a");// System.Drawing.Color.LightSkyBlue;
+                        detail.BackColor = System.Drawing.ColorTranslator.FromHtml("#7d9596");// System.Drawing.Color.LightSkyBlue;
                         detail.ForeColor = System.Drawing.Color.White;
                     }
                 }
                 else
                 {
                     // to select the first element on first load
-                    var x = (Button)item.FindControl("location");
+                    var x = (LinkButton)item.FindControl("location");
                     if (x.Text == "전체")
                     {
                         // select it
                         Session["previousSelectedLocation"] = x;
-                        x.BackColor = System.Drawing.ColorTranslator.FromHtml("#28878a");// System.Drawing.Color.LightSkyBlue;
+                        x.BackColor = System.Drawing.ColorTranslator.FromHtml("#7d9596");// System.Drawing.Color.LightSkyBlue;
                         x.ForeColor = System.Drawing.Color.White;
 
                     }
@@ -163,13 +163,13 @@ namespace AllClassicWeb.Views
 
         public void regionclicked(object sender, EventArgs e)
         {
-            Button pb = null;
-            Button b = (Button)sender;
+            LinkButton pb = null;
+            LinkButton b = (LinkButton)sender;
             b.BackColor = System.Drawing.ColorTranslator.FromHtml("#28878a");
 
             if (Session["previousSelectedLocation"] != null)
             {
-                pb = (Button)Session["previousSelectedLocation"];
+                pb = (LinkButton)Session["previousSelectedLocation"];
                 pb.BackColor = System.Drawing.Color.White;
 
             }
