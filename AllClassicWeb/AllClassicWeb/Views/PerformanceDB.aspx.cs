@@ -82,42 +82,45 @@ namespace AllClassicWeb.Views
 
         public void filterPerformance()
         {
-
+            var selectedDate = (dynamic) null;
+            selectedDate = null;
             //DateTime selectedDate = dateselectorcalendar.SelectedDate;
+
             LinkButton pb = (LinkButton)Session["previousSelectedLocation"];
             var null_date = DateTime.Parse("1/1/0001 12:00:00 AM", System.Globalization.CultureInfo.InvariantCulture);
+            selectedDate = null_date;
 
-            //string filter = "where p.enddate > getdate()";
-            //if (pb != null && selectedDate != null_date)
-            //{
-            //    filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
-            //    if (pb.Text != "전체") filter += " and r.subcode = N'" + pb.Text + "' ";
-            //}
-            //else if (pb == null && selectedDate != null_date) filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
-            //else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter += @" and r.subcode like N'%" + pb.Text + "%' ";
-
-
-            //SqlDataSource1_Performancelist.SelectCommand = @"DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
-
-            //                                                INSERT INTO @fooTable 
-            //                                                    select lookupid, Maincode, subcode from main.lookuptbl where maincode 
-            //                                                in ('PerformanceType','Conductor','Composer','Region','City') 
+            string filter = "where p.enddate > getdate()";
+            if (pb != null && selectedDate != null_date)
+            {
+                filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
+                if (pb.Text != "전체") filter += " and r.subcode = N'" + pb.Text + "' ";
+            }
+            else if (pb == null && selectedDate != null_date) filter += @" and datepart(dd,p.startdate) =" + selectedDate.Day + " and datepart(mm,p.startdate) =" + selectedDate.Month + " and datepart(yy,p.startdate) =" + selectedDate.Year;
+            else if (pb != null && pb.Text != "전체" && selectedDate == null_date) filter += @" and r.subcode like N'%" + pb.Text + "%' ";
 
 
-            //                                                SELECT  p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
-            //                                                from Main.PerformanceTbl p
-            //                                                left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
-            //                                                left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
-            //                                                left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
-            //                                                left join @fooTable pt on pt.LookUpID=p.PerformanceType
-            //                                                left join @fooTable cd on cd.LookUpID=p.Conductor
-            //                                                left join @fooTable cm on cm.LookUpID=p.MainTitleComposer
-            //                                                left join @fooTable r on r.LookUpID=p.Region
-            //                                                left join @fooTable c on c.LookUpID=p.City
-            //                                                 " + filter + " order by p.UpdateTimeStamp desc";
-            ////artistListContainer.DataSource = SqlDataSource1_Performancelist;
-            //artistListContainer.DataBind();
-            ////label_countofitems.Text = artistListContainer.Items.Count + "";
+            SqlDataSource1_Performancelist.SelectCommand = @"DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
+
+                                                            INSERT INTO @fooTable 
+                                                                select lookupid, Maincode, subcode from main.lookuptbl where maincode 
+                                                            in ('PerformanceType','Conductor','Composer','Region','City') 
+
+
+                                                            SELECT  p.*, pg.Name performancegroupname, pt.SubCode performancetype, cd.SubCode conductorname, cm.SubCode composerName, i.KoreanName instrumentname, r.SubCode regionname, c.SubCode cityname, v.Name venuname 
+                                                            from Main.PerformanceTbl p
+                                                            left join Main.PerformanceGroupTbl pg on p.PerformanceGroup=pg.PerformanceGroupID
+                                                            left join Auxiliary.InstrumentTbl i on i.InstrumentID=p.MainInstrument
+                                                            left join Auxiliary.VenueTbl v on v.VenueID =p.Venue
+                                                            left join @fooTable pt on pt.LookUpID=p.PerformanceType
+                                                            left join @fooTable cd on cd.LookUpID=p.Conductor
+                                                            left join @fooTable cm on cm.LookUpID=p.MainTitleComposer
+                                                            left join @fooTable r on r.LookUpID=p.Region
+                                                            left join @fooTable c on c.LookUpID=p.City
+                                                             " + filter + " order by p.UpdateTimeStamp desc";
+            //artistListContainer.DataSource = SqlDataSource1_Performancelist;
+            artistListContainer.DataBind();
+            //label_countofitems.Text = artistListContainer.Items.Count + "";
         }
 
 
