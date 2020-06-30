@@ -53,13 +53,30 @@
         </ul>
 
         <div id="ConcleInformation" class="tabcontent">
+            
+                        <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+select top 20 a.*, u.FullName userName, U.EmailID  from Auxiliary.ConcourTbl a
+                    join Main.UserTbl u on u.UserID=a.UserID
+order by UpdateTimeStamp desc"></asp:SqlDataSource>
             <ul class="list">
+                
+                                <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
+
+                                    <ItemTemplate>
+                                        <li>
+                                            <a><%# Eval("Title") %></a> 
+                                        </li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
+            </ul>
+            <%--<ul class="list">
                 <li><a href="">제20회 한국 쇼팽 콩쿠르 안내</a></li>
                 <li><a href="">제35회 음연콩쿨	</a></li>
                 <li><a href="">2018 대구오페라하우스 제9회 전국 아마추어 성악 콩쿠르</a></li>
                 <li><a href="">2018년도 제18회 서울오케스트라 콩쿠르	</a></li>
                 <li><a href="">제4회 새소리 전국 음악 콩쿠르</a></li>
-            </ul>
+            </ul>--%>
         </div>
 
         <div id="Auditions" class="tabcontent" style="display:none;">
