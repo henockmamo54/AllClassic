@@ -17,6 +17,8 @@ namespace AllClassicWeb.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (UserTbl)Session["User"];
+            yearlabel.Text = DateTime.Now.Year.ToString();
+            datelabel.Text = DateTime.Now.Date.Day.ToString();
 
             //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "handletab();", true);
 

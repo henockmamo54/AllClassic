@@ -766,4 +766,7 @@
   <data name="Jobsearch" xml:space="preserve">
     <value>Job search</value>
   </data>
+  <data name="Schedule_of_the_Month" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
 </root>

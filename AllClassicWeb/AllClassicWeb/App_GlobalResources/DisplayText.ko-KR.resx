@@ -784,4 +784,7 @@
   <data name="Jobsearch" xml:space="preserve">
     <value>구인구직</value>
   </data>
+  <data name="Schedule_of_the_Month" xml:space="preserve">
+    <value>이달의 행사일정</value>
+  </data>
 </root>

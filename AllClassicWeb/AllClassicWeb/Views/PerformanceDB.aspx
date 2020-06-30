@@ -16,16 +16,16 @@
                 <div class="section3 ">
                     <div class="section3-1">
                         <div class="day_m">
-                            <h3>이달의 행사일정</h3>
-                            <div class="year">2019</div>
-                            <div class="month">06</div>
+                            <h3><%=Resources.DisplayText.Schedule_of_the_Month %></h3>
+                            <div class="year"><asp:Label runat="server" ID="yearlabel"/></div>
+                            <div class="month"><asp:Label runat="server" ID="datelabel"/></div>
                             <div class="arr1">
                                 <a href="#">
-                                    <img src="img/day_arr1.png"></a>
+                                    <img src="../Content/img/day_arr1.png"></a>
                             </div>
                             <div class="arr2">
                                 <a href="#">
-                                    <img src="img/day_arr2.png"></a>
+                                    <img src="../Content/img/day_arr2.png"></a>
                             </div>
                         </div>
                     </div>
