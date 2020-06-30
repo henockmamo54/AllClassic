@@ -33,6 +33,60 @@ namespace AllClassicWeb
         protected global::System.Web.UI.WebControls.Repeater artistPageRepeater;
 
         /// <summary>
+        /// SqlDataSource1_audition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_audition;
+
+        /// <summary>
+        /// Repeater1_audition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater1_audition;
+
+        /// <summary>
+        /// SqlDataSource1_Jobsearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_Jobsearch;
+
+        /// <summary>
+        /// Repeater1_Jobsearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater1_Jobsearch;
+
+        /// <summary>
+        /// SqlDataSource1_qalist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1_qalist;
+
+        /// <summary>
+        /// Repeater1_qa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater1_qa;
+
+        /// <summary>
         /// yearlabel control.
         /// </summary>
         /// <remarks>
