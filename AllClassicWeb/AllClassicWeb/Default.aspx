@@ -43,21 +43,40 @@
 
 
 
-    <div class="section1">
+    <div class="section1" >
 
         <ul class="tab">
-            <li class="on"><a href=""><%=Resources.DisplayText.ConcleInformation %></a></li>
-            <li><a href=""><%=Resources.DisplayText.Auditions %></a></li>
-            <li><a href=""><%=Resources.DisplayText.Jobsearch %></a></li>
-            <li><a href=""><%=Resources.DisplayText.QA %></a></li>
+            <li class="tablinks on" onclick="openTab(event, 'ConcleInformation')" ><a><%=Resources.DisplayText.ConcleInformation %></a></li>
+            <li class="tablinks" onclick="openTab(event, 'Auditions')"><a><%=Resources.DisplayText.Auditions %></a></li>
+            <li class="tablinks" onclick="openTab(event, 'Jobsearch')"><a><%=Resources.DisplayText.Jobsearch %></a></li>
+            <li class="tablinks" onclick="openTab(event, 'QA')"><a><%=Resources.DisplayText.QA %></a></li>
         </ul>
-        <ul class="list">
-            <li><a href="">제20회 한국 쇼팽 콩쿠르 안내</a></li>
-            <li><a href="">제35회 음연콩쿨	</a></li>
-            <li><a href="">2018 대구오페라하우스 제9회 전국 아마추어 성악 콩쿠르</a></li>
-            <li><a href="">2018년도 제18회 서울오케스트라 콩쿠르	</a></li>
-            <li><a href="">제4회 새소리 전국 음악 콩쿠르</a></li>
-        </ul>
+
+        <div id="ConcleInformation" class="tabcontent">
+            <ul class="list">
+                <li><a href="">제20회 한국 쇼팽 콩쿠르 안내</a></li>
+                <li><a href="">제35회 음연콩쿨	</a></li>
+                <li><a href="">2018 대구오페라하우스 제9회 전국 아마추어 성악 콩쿠르</a></li>
+                <li><a href="">2018년도 제18회 서울오케스트라 콩쿠르	</a></li>
+                <li><a href="">제4회 새소리 전국 음악 콩쿠르</a></li>
+            </ul>
+        </div>
+
+        <div id="Auditions" class="tabcontent" style="display:none;">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p> 
+        </div>
+        
+        <div id="Jobsearch" class="tabcontent" style="display:none;">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+        <div id="QA" class="tabcontent" style="display:none;">
+            <h3>Tokyo2</h3>
+            <p>Tokyo2 is the capital of Japan.</p>
+        </div>
+
     </div>
 
 
@@ -213,7 +232,24 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
                     </div>
         <div class="more"><a href="#">+</a></div>
     </div>
+    
+    
+    <script>
 
-
+        function openTab(evt, cityName) {
+           
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" on", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " on";
+        }
+    </script>
 
 </asp:Content>
