@@ -63,7 +63,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                     <ItemTemplate>
                         <li>
-                            <a><%# Eval("Title") %></a>
+                            <a href="Views/ConcoursDB.aspx"><%# Eval("Title") %></a>
                         </li>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -81,7 +81,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                     <asp:Repeater runat="server" ID="Repeater1_audition" DataSourceID="SqlDataSource1_audition">
                                         <ItemTemplate>
                                             <li>
-                                                <a><%# Eval("Title") %></a> 
+                                                <a href="Views/AuditionDB.aspx"><%# Eval("Title") %></a> 
                                             </li>
                                         </ItemTemplate> 
 
@@ -105,7 +105,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                         <ItemTemplate>
                                             <li>
-                                                <a class="td2"><%# Eval("Title") %></a> 
+                                                <a href="Views/PeopleAndJobDB.aspx"><%# Eval("Title") %></a> 
                                             </li>
                                         </ItemTemplate>
                                     </asp:Repeater>
@@ -124,7 +124,7 @@ order by timestamp desc"></asp:SqlDataSource>
 
                                         <ItemTemplate>
                                             <li>
-                                                <a class="td2"><%#Eval("Question") %></a> 
+                                                <a href="Views/QADbNew.aspx"><%#Eval("Question") %></a> 
                                             </li>
                                         </ItemTemplate>
                                     </asp:Repeater>
