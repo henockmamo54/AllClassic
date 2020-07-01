@@ -239,10 +239,10 @@ a {
 .logo a {
     position: absolute;
     top: 19px;
-    left:
 }
 
     .logo a img {
+        width: 80%;
     }
 
 .btnmenu {
@@ -839,7 +839,7 @@ a {
                 background: #212e2f;
                 padding: 10px;
                 color: #93B1B3;
-                text-align:center;
+                text-align: center;
             }
 
             .conbox .conlist table td {

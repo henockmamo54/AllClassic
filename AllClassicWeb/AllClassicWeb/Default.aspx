@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-
     <div class="banner">
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -40,9 +39,7 @@
         </div>
 
     </div>
-
-
-
+    
     <div class="section1">
 
         <ul class="tab">
@@ -76,16 +73,16 @@ select top 5 a.*, u.FullName userName, u.EmailID from Auxiliary.AuditionTbl a
                     join Main.UserTbl u on u.UserID=a.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
-            <ul class="list"> 
-                
-                                    <asp:Repeater runat="server" ID="Repeater1_audition" DataSourceID="SqlDataSource1_audition">
-                                        <ItemTemplate>
-                                            <li>
-                                                <a href="Views/AuditionDB.aspx"><%# Eval("Title") %></a> 
-                                            </li>
-                                        </ItemTemplate> 
+            <ul class="list">
 
-                                    </asp:Repeater>
+                <asp:Repeater runat="server" ID="Repeater1_audition" DataSourceID="SqlDataSource1_audition">
+                    <ItemTemplate>
+                        <li>
+                            <a href="Views/AuditionDB.aspx"><%# Eval("Title") %></a>
+                        </li>
+                    </ItemTemplate>
+
+                </asp:Repeater>
             </ul>
         </div>
 
@@ -100,40 +97,39 @@ where maincode='City'
         left  join Main.UserTbl u on u.UserID=p.UserID
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
-            <ul class="list"> 
-                                    <asp:Repeater runat="server" ID="Repeater1_Jobsearch" DataSourceID="SqlDataSource1_Jobsearch">
+            <ul class="list">
+                <asp:Repeater runat="server" ID="Repeater1_Jobsearch" DataSourceID="SqlDataSource1_Jobsearch">
 
-                                        <ItemTemplate>
-                                            <li>
-                                                <a href="Views/PeopleAndJobDB.aspx"><%# Eval("Title") %></a> 
-                                            </li>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
+                    <ItemTemplate>
+                        <li>
+                            <a href="Views/PeopleAndJobDB.aspx"><%# Eval("Title") %></a>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
 
-                </ul>
+            </ul>
 
         </div>
 
         <div id="QA" class="tabcontent" style="display: none;">
-              <asp:SqlDataSource ID="SqlDataSource1_qalist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+            <asp:SqlDataSource ID="SqlDataSource1_qalist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 5 p.*, u.EmailID as posterEmailID from Auxiliary.QuestionsTbl p
 left join main.usertbl u on p.userID= u.userid            
 order by timestamp desc"></asp:SqlDataSource>
-            <ul class="list"> 
+            <ul class="list">
                 <asp:Repeater runat="server" ID="Repeater1_qa" DataSourceID="SqlDataSource1_qalist">
 
-                                        <ItemTemplate>
-                                            <li>
-                                                <a href="Views/QADbNew.aspx"><%#Eval("Question") %></a> 
-                                            </li>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                </ul>
+                    <ItemTemplate>
+                        <li>
+                            <a href="Views/QADbNew.aspx"><%#Eval("Question") %></a>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
         </div>
 
     </div>
-
-
+    
     <div class="section2">
         <div class="section2-1">
             <h2>클래식음악 소식</h2>
@@ -144,7 +140,7 @@ order by timestamp desc"></asp:SqlDataSource>
             </div>
             <div class="img">
                 <a href="#">
-                    <img src="img/news.jpg"></a>
+                    <img src="../Content/img/news.jpg"></a>
             </div>
             <div class="more"><a href="#">+</a></div>
         </div>
@@ -152,7 +148,7 @@ order by timestamp desc"></asp:SqlDataSource>
             <h2>팝업존</h2>
             <div class="img">
                 <a href="#">
-                    <img src="img/popup.jpg"></a>
+                    <img src="../Content/img/popup.jpg"></a>
             </div>
             <div class="more"><a href="#">+</a></div>
         </div>
@@ -164,9 +160,11 @@ order by timestamp desc"></asp:SqlDataSource>
             <div class="day_m">
                 <h3><%=Resources.DisplayText.Schedule_of_the_Month %></h3>
                 <div class="year">
-                    <asp:Label runat="server" ID="yearlabel" /></div>
+                    <asp:Label runat="server" ID="yearlabel" />
+                </div>
                 <div class="month">
-                    <asp:Label runat="server" ID="datelabel" /></div>
+                    <asp:Label runat="server" ID="datelabel" />
+                </div>
                 <div class="arr1">
                     <a href="#">
                         <img src="../Content/img/day_arr1.png"></a>
@@ -261,7 +259,8 @@ order by timestamp desc"></asp:SqlDataSource>
                             <div class="clearfix"></div>
                         </GroupSeparatorTemplate>
                     </asp:ListView>
-                    <asp:SqlDataSource ID="SqlDataSource1_Performancelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+                    <asp:SqlDataSource ID="SqlDataSource1_Performancelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>"
+                        SelectCommand="
 DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
 
                                                             INSERT INTO @fooTable 
@@ -287,7 +286,6 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
         </div>
         <div class="more"><a href="#">+</a></div>
     </div>
-
 
     <script>
 

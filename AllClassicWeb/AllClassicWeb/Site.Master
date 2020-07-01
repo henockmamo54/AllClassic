@@ -77,18 +77,22 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="wrap" style="padding-left: 20px; font-family: 'Open Sans', sans-serif;">
+        <div class="wrap">
 
 
             <div id="masterNavigationBar">
                 <div class="header">
 
-                    <%--<div class="btnmenu"><a href="/"><img src="Content/img/btnmenu.png"></a></div>--%>
-
                     <div class="logo">
                         <a href="/">
                             <img runat="server" src="~/Content/img/logo.png"></a>
                     </div>
+
+
+                    <%--<div class="logo">
+                        <a href="/">
+                            <img runat="server" src="~/Content/img/logo.png"></a>
+                    </div>--%>
 
                     <ul class="user">
                         <li class=""><a id="signinLink" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a></li>
