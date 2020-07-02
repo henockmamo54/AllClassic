@@ -11,149 +11,148 @@
             <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 
-            <h4>Sign Up</h4>
-            <div class="row">
-                <%--<div class=" col-xs-2 filedName">
-                    <ul class="list-group">
-                        <a class="list-group-item list-group-item-action" href="TermsOfUsePage.aspx"><%= Resources.DisplayText.AcceptTerms %></a>
-                        <a class="list-group-item list-group-item-action active"><%= Resources.DisplayText.UserInfo %></a>
-                    </ul>
-                </div>--%>
-                <div class=" col-xs-12">
-                    <div class="col-md-12 col-xs-12 shadowedPanel " style="background-color: white;">
-                        <div class="rwo " style="padding-bottom: 10px;">
-                            <label class="filedName"><%= Resources.DisplayText.WhatkindOfUserAreyou %> <%= Resources.DisplayText.Pleaseclickasmanyasyouthinkyouare %> </label>
-                            <hr style="margin-top: 5px;" />
 
-                            <div class="row filedName">
+            <div class="conbox">
 
-                                <div class="col-md-6 col-xs-6 form-group">
+                <h2>Sign Up</h2>
 
-                                    <asp:CheckBox runat="server" ID="chk_composer" Text="<%$Resources:DisplayText,Composer %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_conductor" Text="<%$Resources:DisplayText,Conductor %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_professor" Text="<%$Resources:DisplayText,TeacherProfessor %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_promusician" Text="<%$Resources:DisplayText,ProMusician %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_student" Text="<%$Resources:DisplayText,Student %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_amaturemusician" Text="<%$Resources:DisplayText,AmatureMusician %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_reporter" Text="<%$Resources:DisplayText,Reporter %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                <div class="row">
+
+                    <div class=" col-xs-12">
+                        <div class="col-md-12 col-xs-12 shadowedPanel " style="background-color: white;">
+                            <div class="rwo " style="padding-bottom: 10px;">
+                                <label class="filedName"><%= Resources.DisplayText.WhatkindOfUserAreyou %> <%= Resources.DisplayText.Pleaseclickasmanyasyouthinkyouare %> </label>
+                                <hr style="margin-top: 5px;" />
+
+                                <div class="row filedName">
+
+                                    <div class="col-md-6 col-xs-6 form-group">
+
+                                        <asp:CheckBox runat="server" ID="chk_composer" Text="<%$Resources:DisplayText,Composer %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_conductor" Text="<%$Resources:DisplayText,Conductor %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_professor" Text="<%$Resources:DisplayText,TeacherProfessor %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_promusician" Text="<%$Resources:DisplayText,ProMusician %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_student" Text="<%$Resources:DisplayText,Student %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_amaturemusician" Text="<%$Resources:DisplayText,AmatureMusician %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_reporter" Text="<%$Resources:DisplayText,Reporter %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+
+                                    </div>
+
+                                    <div class="col-md-6 col-xs-6 form-group">
+
+                                        <asp:CheckBox runat="server" ID="chk_classicmani" Text="<%$Resources:DisplayText,ClassicMania %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_adminofPerformanceGroup" Text="<%$Resources:DisplayText,AdmistraterOfPerformanceGroup %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_adminofpromotor" Text="<%$Resources:DisplayText,AdmistraterOfPromoter %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_adminofagent" Text="<%$Resources:DisplayText,AdmistraterOfAgent %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_adminoforganizer" Text="<%$Resources:DisplayText,AdmistraterOfOrganizer %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_shopowner" Text="<%$Resources:DisplayText,ShopOwner %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_blogger" Text="<%$Resources:DisplayText,Blogger %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+                                        <asp:CheckBox runat="server" ID="chk_other" Text="<%$Resources:DisplayText,Other %>" Style="padding: 5px;" AutoPostBack="true" /><br />
+
+                                    </div>
 
                                 </div>
 
-                                <div class="col-md-6 col-xs-6 form-group">
+                                <div class="row  col-xs-10 userregisterinfo">
+                                    <div class=" col-xs-12">
+                                        <br />
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Email %>*</div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="uemail" ValidationGroup="a" TextMode="Email" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ID="reqName" ValidationGroup="a" Font-Bold="true" ControlToValidate="uemail" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourEmail %>" />
+                                        </div>
+                                        <br />
 
-                                    <asp:CheckBox runat="server" ID="chk_classicmani" Text="<%$Resources:DisplayText,ClassicMania %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_adminofPerformanceGroup" Text="<%$Resources:DisplayText,AdmistraterOfPerformanceGroup %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_adminofpromotor" Text="<%$Resources:DisplayText,AdmistraterOfPromoter %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_adminofagent" Text="<%$Resources:DisplayText,AdmistraterOfAgent %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_adminoforganizer" Text="<%$Resources:DisplayText,AdmistraterOfOrganizer %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_shopowner" Text="<%$Resources:DisplayText,ShopOwner %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_blogger" Text="<%$Resources:DisplayText,Blogger %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-                                    <asp:CheckBox runat="server" ID="chk_other" Text="<%$Resources:DisplayText,Other %>" Style="padding: 5px;" AutoPostBack="true" /><br />
-
-                                </div>
-
-                            </div>
-
-                            <div class="row  col-xs-10 userregisterinfo">
-                                <div class=" col-xs-12">
-                                    <br />
-                                    <div class=" col-xs-2 filedName" ><%= Resources.DisplayText.Email %>*</div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="uemail" ValidationGroup="a"  TextMode="Email" runat="server" class="form-control filedDisplay"></asp:TextBox>
                                     </div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ID="reqName" ValidationGroup="a"  Font-Bold="true" ControlToValidate="uemail" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourEmail %>" />
+                                    <div class=" col-xs-12">
+
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Password %>*</div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="upassword" ValidationGroup="a" TextMode="Password" runat="server" class="form-control filedDisplay" MaxLength="12"></asp:TextBox>
+                                        </div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="upassword" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourPassword %>" />
+                                        </div>
+                                        <br />
+
                                     </div>
-                                    <br />
+                                    <div class=" col-xs-12">
 
-                                </div>
-                                <div class=" col-xs-12">
-
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Password %>*</div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="upassword" ValidationGroup="a"  TextMode="Password" runat="server" class="form-control filedDisplay" MaxLength="12"></asp:TextBox>
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.FullName %>*</div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="uname" ValidationGroup="a" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="uname" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourFullName %>" />
+                                        </div>
+                                        <br />
                                     </div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:RequiredFieldValidator runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator1" ControlToValidate="upassword" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourPassword %>" />
+                                    <div class=" col-xs-12">
+
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.NickName %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="unickname" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <br />
+                                    <div class=" col-xs-12">
 
-                                </div>
-                                <div class=" col-xs-12">
-
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.FullName %>*</div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="uname" ValidationGroup="a"  runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.MobileNo %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="umobile" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:RequiredFieldValidator  runat="server" ForeColor="IndianRed" ValidationGroup="a" Font-Bold="true" ID="RequiredFieldValidator2" ControlToValidate="uname" ErrorMessage="<%$Resources:DisplayText,PleaseenteryourFullName %>"  />
+                                    <div class=" col-xs-12">
+
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.FacebookURL %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="ufacebookurl" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
+                                    <div class=" col-xs-12">
 
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.NickName %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="unickname" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.TwitterURL %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="utwitterurl" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
+                                    <div class=" col-xs-12">
 
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.MobileNo %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="umobile" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.KakaoTalkID %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="ukakaotalkid" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
+                                    <div class=" col-xs-12">
 
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.FacebookURL %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="ufacebookurl" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.OtherSNS %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="uothersns" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
+                                    <div class=" col-xs-12">
 
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.TwitterURL %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="utwitterurl" runat="server" class="form-control filedDisplay"></asp:TextBox>
-                                    </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.YourAffilation %></div>
+                                        <div class=" col-xs-4 filedDisplay">
 
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.KakaoTalkID %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="ukakaotalkid" runat="server" class="form-control filedDisplay"></asp:TextBox>
-                                    </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
-
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.OtherSNS %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="uothersns" runat="server" class="form-control filedDisplay"></asp:TextBox>
-                                    </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
-
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.YourAffilation %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-
-                                        <asp:TextBox ID="uaffilation" runat="server" placeholder="Your Affilation" class="form-control filedDisplay"></asp:TextBox>
-                                        <%--<asp:DropDownList ID="DropDownList1_youraffilation" runat="server" class="form-control filedDisplay" AutoPostBack="True"></asp:DropDownList>--%>
-                                        <%--<asp:DropDownList ID="DropDownList1_Affilation" runat="server" class="form-control filedDisplay" DataSourceID="SqlDataSource1_allOrchestra" DataTextField="OfficialName" DataValueField="ID" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_Affilation_SelectedIndexChanged"></asp:DropDownList>
+                                            <asp:TextBox ID="uaffilation" runat="server" placeholder="Your Affilation" class="form-control filedDisplay"></asp:TextBox>
+                                            <%--<asp:DropDownList ID="DropDownList1_youraffilation" runat="server" class="form-control filedDisplay" AutoPostBack="True"></asp:DropDownList>--%>
+                                            <%--<asp:DropDownList ID="DropDownList1_Affilation" runat="server" class="form-control filedDisplay" DataSourceID="SqlDataSource1_allOrchestra" DataTextField="OfficialName" DataValueField="ID" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_Affilation_SelectedIndexChanged"></asp:DropDownList>
                                         <asp:SqlDataSource ID="SqlDataSource1_allOrchestra" runat="server" ConnectionString="<%$ ConnectionStrings:OrchestraDBConnectionString %>" SelectCommand="SELECT [OfficialName]='Other', [ID]=-1 FROM  core.[Orchestra]
 union
 SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <br />
-                                </div>
 
-                                <%--<div class=" col-xs-12">
+                                    <%--<div class=" col-xs-12">
 
                                     <div class=" col-xs-4 filedDisplay"></div>
                                     <div class="col-md-6 col-xs-6">
@@ -163,56 +162,56 @@ SELECT [OfficialName], [ID] FROM  core.[Orchestra]"></asp:SqlDataSource>--%>
                                     <br />
                                 </div>--%>
 
-                                <div class=" col-xs-12">
+                                    <div class=" col-xs-12">
 
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Birthday %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <div class='input-group date' id='datetimepicker2' style="display: flex;">
-                                            <input type='text' class="form-control filedDisplay" runat="server" id="userBirthDate" style="display: inline-block; border-right-width: 0px;" />
-                                            <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Birthday %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <div class='input-group date' id='datetimepicker2' style="display: flex;">
+                                                <input type='text' class="form-control filedDisplay" runat="server" id="userBirthDate" style="display: inline-block; border-right-width: 0px;" />
+                                                <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
                                         </div>
+                                        <br />
                                     </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
+                                    <div class=" col-xs-12">
 
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.ZipCode %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="uzipcode" runat="server" class="form-control filedDisplay" MaxLength="6"></asp:TextBox>
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.ZipCode %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="uzipcode" runat="server" class="form-control filedDisplay" MaxLength="6"></asp:TextBox>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <br />
-                                </div>
-                                <div class=" col-xs-12">
+                                    <div class=" col-xs-12">
 
-                                    <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Address %></div>
-                                    <div class=" col-xs-4 filedDisplay">
-                                        <asp:TextBox ID="uaddress" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        <div class=" col-xs-2 filedName"><%= Resources.DisplayText.Address %></div>
+                                        <div class=" col-xs-4 filedDisplay">
+                                            <asp:TextBox ID="uaddress" runat="server" class="form-control filedDisplay"></asp:TextBox>
+                                        </div>
+                                        <br />
                                     </div>
-                                    <br />
+
+
+
                                 </div>
 
+                                <%-- --%>
+                                <div class="col-md-12 col-xs-12 pull-right" style="text-align: center;">
+                                    <br />
+                                    <asp:Button ID="Button1" CssClass="btn btn-danger contentButton " runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_cancel_click" />
+                                    <asp:Button ID="Button2" CssClass="btn btn-success contentButton" ValidationGroup="a" runat="server" Text="<%$Resources:DisplayText,Register %>" OnClick="btn_reguserInfo_click" />
+                                </div>
 
 
                             </div>
-
-                            <%-- --%>
-                            <div class="col-md-12 col-xs-12 pull-right" style="text-align: center;">
-                                <br />
-                                <asp:Button ID="Button1" CssClass="btn btn-danger contentButton " runat="server" Text="<%$Resources:DisplayText,Cancel %>" OnClick="btn_cancel_click" />
-                                <asp:Button ID="Button2" CssClass="btn btn-success contentButton" ValidationGroup="a"  runat="server" Text="<%$Resources:DisplayText,Register %>" OnClick="btn_reguserInfo_click" />
-                            </div>
-
 
                         </div>
-
+                        <br />
                     </div>
-                    <br />
+
                 </div>
-
             </div>
-
         </ContentTemplate>
 
         <Triggers>
