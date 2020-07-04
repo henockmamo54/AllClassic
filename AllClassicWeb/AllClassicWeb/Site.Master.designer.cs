@@ -78,13 +78,13 @@ namespace AllClassicWeb
         protected global::System.Web.UI.WebControls.HiddenField encodedSearchvalue;
 
         /// <summary>
-        /// A1 control.
+        /// hometab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor hometab;
 
         /// <summary>
         /// artisttab control.
@@ -114,13 +114,13 @@ namespace AllClassicWeb
         protected global::System.Web.UI.HtmlControls.HtmlAnchor performancegrouptab;
 
         /// <summary>
-        /// auditiontab control.
+        /// agoratab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor auditiontab;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor agoratab;
 
         /// <summary>
         /// ClassicCointab control.

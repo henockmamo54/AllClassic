@@ -15,6 +15,9 @@ namespace AllClassicWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             string pageName = this.MainContent.Page.GetType().FullName;
+
+            updateActivePageLink(pageName);
+
 #if DEBUG
             Console.WriteLine("pageName:" + pageName);
 #endif
@@ -33,6 +36,110 @@ namespace AllClassicWeb
                 //mypageLink.Visible = true;
             }
 
+        }
+
+        private void updateActivePageLink(string pagename)
+        {
+            // clean all tabs 
+            hometab.Style.Add("color", "#0a1621");
+            hometab.Style.Add("font-weight", "400");
+
+            artisttab.Style.Add("color", "#0a1621");
+            artisttab.Style.Add("font-weight", "400");
+
+            performancetab.Style.Add("color", "#0a1621");
+            performancetab.Style.Add("font-weight", "400");
+
+            performancegrouptab.Style.Add("color", "#0a1621");
+            performancegrouptab.Style.Add("font-weight", "400");
+
+            agoratab.Style.Add("color", "#0a1621");
+            agoratab.Style.Add("font-weight", "400");
+
+            ClassicCointab.Style.Add("color", "#0a1621");
+            ClassicCointab.Style.Add("font-weight", "400");
+
+            performanceArchivetab.Style.Add("color", "#0a1621");
+            performanceArchivetab.Style.Add("font-weight", "400");
+
+            aboutustab.Style.Add("color", "#0a1621");
+            aboutustab.Style.Add("font-weight", "400");
+
+            switch (pagename)
+            {
+                case "ASP.default_aspx":
+                    hometab.Style.Add("color", "#f2c852");
+                    hometab.Style.Add("font-weight", "bold");
+                    break;
+
+                case "ASP.views_musiciandb_aspx":
+                    artisttab.Style.Add("color", "#f2c852");
+                    artisttab.Style.Add("font-weight", "bold");
+                    break;
+
+                case "ASP.views_performancedb_aspx":
+                    performancetab.Style.Add("color", "#f2c852");
+                    performancetab.Style.Add("font-weight", "bold");
+                    break;
+
+                case "ASP.views_performancegroup_aspx":
+                    performancegrouptab.Style.Add("color", "#f2c852");
+                    performancegrouptab.Style.Add("font-weight", "bold");
+                    break;
+
+                #region agora links
+                // agora pages 
+                case "ASP.views_auditiondb_aspx":
+                    agoratab.Style.Add("color", "#f2c852");
+                    agoratab.Style.Add("font-weight", "bold");
+                    break;
+                case "ASP.views_concoursdb_aspx":
+                    agoratab.Style.Add("color", "#f2c852");
+                    agoratab.Style.Add("font-weight", "bold");
+                    break;
+                case "ASP.views_repairshopdb_aspx":
+                    agoratab.Style.Add("color", "#f2c852");
+                    agoratab.Style.Add("font-weight", "bold");
+                    break;
+                case "ASP.views_musicshopdb_aspx":
+                    agoratab.Style.Add("color", "#f2c852");
+                    agoratab.Style.Add("font-weight", "bold");
+                    break;
+                case "ASP.views_concertvenudb_aspx":
+                    agoratab.Style.Add("color", "#f2c852");
+                    agoratab.Style.Add("font-weight", "bold");
+                    break;
+                case "ASP.views_peopleandjobdb_aspx":
+                    agoratab.Style.Add("color", "#f2c852");
+                    agoratab.Style.Add("font-weight", "bold");
+                    break;
+                case "ASP.views_qadbnew_aspx":
+                    agoratab.Style.Add("color", "#f2c852");
+                    agoratab.Style.Add("font-weight", "bold");
+                    break;
+                // agora pages end 
+                #endregion
+
+                case "ASP.views_classiccoindb_aspx":
+                    ClassicCointab.Style.Add("color", "#f2c852");
+                    ClassicCointab.Style.Add("font-weight", "bold");
+                    break;
+                case "ASP.views_performancearchivedb_aspx":
+                    performanceArchivetab.Style.Add("color", "#f2c852");
+                    performanceArchivetab.Style.Add("font-weight", "bold");
+                    break;
+
+                case "ASP.views_aboutus_aspx":
+                    aboutustab.Style.Add("color", "#f2c852");
+                    aboutustab.Style.Add("font-weight", "bold");
+                    break;
+
+
+            }
+
+
+
+            if (pagename == "") { }
         }
 
         public void searchClicked(object sender, EventArgs e)

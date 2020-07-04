@@ -127,7 +127,7 @@
 
                     <ul class="gnb">
 
-                        <li class="point"><a id="A1" runat="server" href="Default.aspx"><%= Resources.DisplayText.Home %> </a></li>
+                        <li class=""><a id="hometab" runat="server" href="Default.aspx"><%= Resources.DisplayText.Home %> </a></li>
                         <li class="">
                             <a id="artisttab" runat="server" href="~/Views/MusicianDB.aspx"><%= Resources.DisplayText.MusicianDB %>  </a>
                         </li>
@@ -137,7 +137,7 @@
                         <li class="">
                             <a id="performancegrouptab" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.ORG %></a></li>
                         <li class="">
-                            <a id="auditiontab" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Agora %></a></li>
+                            <a id="agoratab" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Agora %></a></li>
                         <li class="">
                             <a id="ClassicCointab" runat="server" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
                         </li>
