@@ -87,8 +87,8 @@
     </asp:UpdatePanel>
 
     <script type="text/javascript">
-        document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
-        document.getElementById("performancegrouptab").style.borderRight = "none";
+        //document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+        //document.getElementById("performancegrouptab").style.borderRight = "none";
 
 
         function openInNewTab(url) {

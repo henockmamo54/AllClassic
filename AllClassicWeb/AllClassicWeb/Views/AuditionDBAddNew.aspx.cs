@@ -147,6 +147,7 @@ namespace AllClassicWeb.Views
                 {
                     showMsg_withredirect("Data inserted succssfuly");
 
+                    Response.Redirect("AuditionDB.aspx");
                 }
                 else
                 {
@@ -173,6 +174,8 @@ namespace AllClassicWeb.Views
             txt_auditionoutline.InnerText = "";
             Session["updateAudition"] = null;
             handleButtons(true);
+
+            Response.Redirect("AuditionDB.aspx");
         }
 
     }
