@@ -53,7 +53,7 @@ where maincode='PerformanceType'
                             <li><span><%= Resources.DisplayText.MainTitleComposer %></span>
                                 <asp:DropDownList ID="DropDownList1_composer" runat="server" Style="display: inline-block" DataSourceID="SqlDataSource1_composer" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1_composer" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT MusicianID= -1, Name='None' UNION SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Composer')"></asp:SqlDataSource>
-
+                                    
                             </li>
                             <li><span><%= Resources.DisplayText.MainInstrument %></span>
                                 <asp:DropDownList ID="DropDownList2_maininstrument" runat="server" Style="display: inline-block" DataSourceID="SqlDataSource1_instrumentlist" DataTextField="KoreanName" DataValueField="InstrumentID"></asp:DropDownList>
@@ -68,6 +68,7 @@ where maincode='PerformanceType'
                             <li><span><%= Resources.DisplayText.Sponser %></span>
                                 <asp:TextBox ID="txt_sponser" runat="server" Style="display: inline-block"></asp:TextBox></li>
                             <li><span><%= Resources.DisplayText.Start %></span>
+                                <div style="display:inline-block">
                                 <div class='input-group date' id='datetimepicker2_start' style="display: flex;">
                                     <input type='text' class="form-control filedDisplay" runat="server" validationgroup="a" id="startdate" style="display: inline-block; border-right-width: 0px;" />
                                     <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
@@ -75,15 +76,18 @@ where maincode='PerformanceType'
                                     </span>
                                 </div>
 
+                                </div>
+
                             </li>
                             <li><span><%= Resources.DisplayText.End %></span>
+                                <div style="display:inline-block">
                                 <div class='input-group date' id='datetimepicker3_end' style="display: flex;">
                                     <input type='text' class="form-control filedDisplay" validationgroup="a" runat="server" id="enddate" style="display: inline-block; border-right-width: 0px;" />
                                     <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
                                 </div>
-
+                                    </div>
                             </li>
                             <li><span><%= Resources.DisplayText.Region %></span>
                                 <asp:DropDownList ID="DropDownList4_region" runat="server" Style="display: inline-block" AutoPostBack="false" DataSourceID="SqlDataSource1_region" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
@@ -107,10 +111,10 @@ where maincode='City'
 "></asp:SqlDataSource>
 
                             </li>
-                        </ul>
-                        <div class="btn">
+                        <li class="btn" >
                             <asp:LinkButton runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" OnClick="filterPerformance" />
-                        </div>
+                        </li>
+                        </ul>
 
                     </div>
 

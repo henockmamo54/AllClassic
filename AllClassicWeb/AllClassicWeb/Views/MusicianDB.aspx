@@ -128,7 +128,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                                 <%#Eval("Affliation") %>
                                             </div>
                                             <div class="go">
-                                                <img src="../Content/img/mango.png" />
+                                                <img src="../Doc/Icons/mango.png" />
                                             </div>
                                         </div>
                                     </li>

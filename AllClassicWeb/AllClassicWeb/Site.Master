@@ -85,7 +85,7 @@
 
                     <div class="logo">
                         <a href="/">
-                            <img runat="server" src="~/Content/img/logo.png"></a>
+                            <img runat="server" src="~/Doc/Icons/logo.png" /></a>
                     </div>
 
 

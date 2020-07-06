@@ -76,7 +76,7 @@
 
                     <div class="introduce">
                         <div class="man">
-                            <img src="../Content/img/ceo.jpg">
+                            <img src="../Doc/BOD/JEON%20DONGSU.jpg" />
                         </div>
                         <div class="box">
                             <div class="name">전동수</div>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="introduce">
                         <div class="man">
-                            <img src="../Content/img/member_1.jpg">
+                            <img src="../Doc/BOD/백대원.png" />
                         </div>
                         <div class="box">
                             <div class="name">백대원</div>
@@ -131,7 +131,7 @@
 
                     <div class="introduce">
                         <div class="man">
-                            <img src="../Content/img/member_2.jpg">
+                            <img src="../Doc/BOD/이해영.jpg" />
                         </div>
                         <div class="box">
                             <div class="name">이해영</div>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="introduce">
                         <div class="man">
-                            <img src="../Content/img/member_3.jpg">
+                            <img src="../Doc/BOD/옥영천.jpg" />
                         </div>
                         <div class="box">
                             <div class="name">옥영천</div>
@@ -185,7 +185,7 @@
 
                     <div class="map">
                         <div class="img">
-                            <img src="../Content/img/map.jpg"></div>
+                        <img src="../Doc/Icons/map.jpg" />
                         <div class="box">
                             <div class="name">(주)올클래식코리아</div>
                             <dl>

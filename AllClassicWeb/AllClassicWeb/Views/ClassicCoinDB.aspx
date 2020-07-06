@@ -25,8 +25,10 @@
                 <h3>Classic Wallet의 스크린 샷</h3>
                 <ul>
                     <li>아래와 같이 생겼습니다.</li>
-                    <li class="img">
-                        <img src="../Content/img/wallet.png" /></li>
+                    <li class="img"> 
+                        <img src="../Doc/Icons/classicCoin.png" />
+                    </li>
+                    
                 </ul>
 
 
