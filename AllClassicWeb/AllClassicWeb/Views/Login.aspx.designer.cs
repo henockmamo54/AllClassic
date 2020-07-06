@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllClassicWeb.Views {
-    
-    
-    public partial class Login {
-        
+namespace AllClassicWeb.Views
+{
+
+
+    public partial class Login
+    {
+
         /// <summary>
         /// UpdatePanel2 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
+
         /// <summary>
         /// inputEmail control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inputEmail;
-        
+
         /// <summary>
         /// inputPassword control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inputPassword;
-        
+
         /// <summary>
         /// Label1_warnningmessage control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1_warnningmessage;
-        
+
         /// <summary>
         /// CheckBox1 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
-        
+
         /// <summary>
         /// Button1_signin control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace AllClassicWeb.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1_signin;
-        
+
         /// <summary>
         /// LinkButton1 control.
         /// </summary>

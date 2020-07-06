@@ -22,7 +22,7 @@ namespace AllClassicWeb.Views
                 if (users.Count > 0)
                 {
                     Session["User"] = users[0];
-                    Response.Redirect("~/Views/PerformanceDB.aspx");
+                    Response.Redirect("~/Default.aspx");
                 }
                 else Label1_warnningmessage.Visible = true;
             }
@@ -36,7 +36,7 @@ namespace AllClassicWeb.Views
             if (users.Count > 0)
             {
                 Session["User"] = users[0];
-                Response.Redirect("~/Views/PerformanceDB.aspx");
+                Response.Redirect("~/Default.aspx");
             }
             else Label1_warnningmessage.Visible = true;
         }

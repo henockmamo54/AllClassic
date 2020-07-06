@@ -9,6 +9,7 @@
     <script src="../Scripts/jquery-3.3.1.min.js"></script>
 
 </head>
+
 <body style="padding-top: 2px;">
 
     <form runat="server">
@@ -20,7 +21,7 @@
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
             <ContentTemplate>
 
-                <div class="container" style="padding-top: 90px; font-family: 'Open Sans', sans-serif;">
+                <div class="myForm">
                     <div class="card card-container" style="background: white; border-top: 1px solid lightgray;">
                         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
                         <p id="profile-name" class="profile-name-card"></p>
@@ -117,10 +118,26 @@
         </script>
 
         <style>
+            .myForm {
+                min-width: 500px;
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            @media (max-width: 500px) {
+                .myForm {
+                    min-width: 90%;
+                }
+            }
+
             body, html {
                 height: 100%;
-                background-repeat: no-repeat;
-                /*background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+                /*background-repeat: no-repeat;
+                background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+                background: url("../Content/img/bg.jpg");
+                background-size: cover;
             }
 
             .card-container.card {
@@ -249,7 +266,6 @@
                     color: rgb(12, 97, 33);
                 }
         </style>
-
     </form>
 
 </body>
