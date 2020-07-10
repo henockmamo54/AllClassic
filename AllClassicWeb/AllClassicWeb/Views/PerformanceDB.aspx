@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="section3-2">
-                        <div class="day_d">
+                        <div class="day_d" style="display:inline-block">
                             <ul class="dday">
                                 <li ID="date01" runat="server" ><asp:LinkButton CommandArgument="01"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">01</asp:LinkButton></li>
                                 <li ID="date02" runat="server" ><asp:LinkButton CommandArgument="02"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">02</asp:LinkButton></li>
@@ -64,7 +64,7 @@
                                 <li ID="date30" runat="server" ><asp:LinkButton CommandArgument="30"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">30</asp:LinkButton></li>
                                 <li ID="date31" runat="server" ><asp:LinkButton CommandArgument="31"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">31</asp:LinkButton></li>
                             </ul>
-                            <ul class="dimg">
+                            <ul class="dimg" >
 
 
                                 <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
@@ -97,7 +97,7 @@
 
                                             <div id="groupPlaceholder" runat="server">
                                             </div>
-                                            <div class="col-xs-12" style="text-align: center;">
+                                            <div class="row col-xs-12" style="text-align: center; margin-top:10px;">
                                                 <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                                     <Fields>
                                                         <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
@@ -138,7 +138,7 @@ order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
                             </ul>
                         </div>
                     </div>
-                    <div class="more"><a href="#">+</a></div>
+                    <%--<div class="more"><a href="#">+</a></div>--%>
                 </div>
 
 
