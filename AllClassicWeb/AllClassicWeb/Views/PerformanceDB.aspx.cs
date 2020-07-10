@@ -70,7 +70,7 @@ namespace AllClassicWeb.Views
 
             var newdate = new DateTime(currentDate.Year, currentDate.Month, selectedDate);
             Session["PreviousSelectedDate"] = newdate;
-            
+
             HtmlGenericControl[] datecontainers = { date01, date02, date03, date04, date05, date06, date07, date08, date09,date10,date11,date12,date13,date14,
                 date15,date16,date17,date18,date19,date20,date21,date22,date23,date24,date25,date26,date27,date28,date29,date30,date31 };
 
@@ -79,44 +79,9 @@ namespace AllClassicWeb.Views
                 hc.Attributes.Remove("class");
 
             }
-            datecontainers[selectedDate-1].Attributes.Add("class", "on");
+            datecontainers[selectedDate - 1].Attributes.Add("class", "on");
 
 
-            //switch (selectedDate)
-            //{
-            //    case 1: date01.Attributes.Add("class", "on"); break;
-            //    case 2: date02.Attributes.Add("class", "on"); break;
-            //    case 3: date03.Attributes.Add("class", "on"); break;
-            //    case 4: date04.Attributes.Add("class", "on"); break;
-            //    case 5: date05.Attributes.Add("class", "on"); break;
-            //    case 6: date06.Attributes.Add("class", "on"); break;
-            //    case 7: date07.Attributes.Add("class", "on"); break;
-            //    case 8: date08.Attributes.Add("class", "on"); break;
-            //    case 9: date09.Attributes.Add("class", "on"); break;
-            //    case 10: date10.Attributes.Add("class", "on"); break;
-            //    case 11: date11.Attributes.Add("class", "on"); break;
-            //    case 12: date12.Attributes.Add("class", "on"); break;
-            //    case 13: date13.Attributes.Add("class", "on"); break;
-            //    case 14: date14.Attributes.Add("class", "on"); break;
-            //    case 15: date15.Attributes.Add("class", "on"); break;
-            //    case 16: date16.Attributes.Add("class", "on"); break;
-            //    case 17: date17.Attributes.Add("class", "on"); break;
-            //    case 18: date18.Attributes.Add("class", "on"); break;
-            //    case 19: date19.Attributes.Add("class", "on"); break;
-            //    case 20: date20.Attributes.Add("class", "on"); break;
-            //    case 21: date21.Attributes.Add("class", "on"); break;
-            //    case 22: date22.Attributes.Add("class", "on"); break;
-            //    case 23: date23.Attributes.Add("class", "on"); break;
-            //    case 24: date24.Attributes.Add("class", "on"); break;
-            //    case 25: date25.Attributes.Add("class", "on"); break;
-            //    case 26: date26.Attributes.Add("class", "on"); break;
-            //    case 27: date27.Attributes.Add("class", "on"); break;
-            //    case 28: date28.Attributes.Add("class", "on"); break;
-            //    case 29: date29.Attributes.Add("class", "on"); break;
-            //    case 30: date30.Attributes.Add("class", "on"); break;
-            //    case 31: date31.Attributes.Add("class", "on"); break;
-
-            //}
 
 
 
