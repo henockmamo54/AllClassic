@@ -31,6 +31,12 @@ input, select, textarea {
     vertical-align: top;
 }
 
+input[type="radio"], input[type="checkbox"] {
+    margin-top: 0 !important;
+    margin-right: 5px;
+}
+ 
+
 address, caption, th {
     font-style: normal;
 }
