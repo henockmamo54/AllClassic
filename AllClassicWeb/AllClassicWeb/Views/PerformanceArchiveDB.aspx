@@ -29,15 +29,15 @@
                             <li><span><%= Resources.DisplayText.SubjectTheme %></span>
                                 <asp:TextBox ID="txt_subjecttheme" runat="server" Style="display: inline-block"></asp:TextBox></li>
                             <li><span><%= Resources.DisplayText.PerformanceGroup %></span>
-                                <div style="display: inline-block">
+                                 
                                     <asp:DropDownList ID="DropDownList1_grouptype" runat="server" DataSourceID="SqlDataSource1_performancegrouplist"
-                                        DataTextField="Name" DataValueField="PerformanceGroupID">
+                                        DataTextField="Name" DataValueField="PerformanceGroupID" style="display: inline-block">
                                     </asp:DropDownList>
                                     <asp:SqlDataSource ID="SqlDataSource1_performancegrouplist" runat="server"
                                         ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>"
                                         SelectCommand="SELECT Name='None', PerformanceGroupID=-1  union SELECT Name, PerformanceGroupID FROM Main.PerformanceGroupTbl"></asp:SqlDataSource>
 
-                                </div>
+                                 
                             </li>
                             <li><span><%= Resources.DisplayText.PerformanceType %></span>
                                 <asp:DropDownList ID="DropDownList1_performancetype" Style="display: inline-block" runat="server" AutoPostBack="false" DataSourceID="SqlDataSource1_performancetypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
@@ -47,7 +47,7 @@ where maincode='PerformanceType'
 "></asp:SqlDataSource>
                             </li>
                             <li><span><%= Resources.DisplayText.Conductor %></span>
-                                <asp:DropDownList ID="DropDownList1_conductors" Style="display: inline-block" runat="server" class="form-control filedDisplay" DataSourceID="SqlDataSource1_conductors" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList1_conductors" Style="display: inline-block" runat="server" DataSourceID="SqlDataSource1_conductors" DataTextField="Name" DataValueField="MusicianID"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1_conductors" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT MusicianID= -1, Name='None' UNION SELECT Main.MusicianTbl.MusicianID, Main.MusicianTbl.Name FROM Main.MusicianTbl INNER JOIN Main.LookUpTbl ON Main.MusicianTbl.Major = Main.LookUpTbl.LookUpID WHERE (Main.LookUpTbl.MainCode = 'Conductor')"></asp:SqlDataSource>
                             </li>
                             <li><span><%= Resources.DisplayText.MainTitleComposer %></span>
@@ -67,11 +67,12 @@ where maincode='PerformanceType'
                             </li>
                             <li><span><%= Resources.DisplayText.Sponser %></span>
                                 <asp:TextBox ID="txt_sponser" runat="server" Style="display: inline-block"></asp:TextBox></li>
+
                             <li><span><%= Resources.DisplayText.Start %></span>
                                 <div style="display:inline-block">
                                 <div class='input-group date' id='datetimepicker2_start' style="display: flex;">
                                     <input type='text' class="form-control filedDisplay" runat="server" validationgroup="a" id="startdate" style="display: inline-block; border-right-width: 0px;" />
-                                    <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
+                                    <span class="input-group-addon" style="flex-wrap: wrap; width: auto !important; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
                                 </div>
@@ -118,9 +119,9 @@ where maincode='City'
 
                     </div>
 
-                    <div class="archimglist">
+                    <div class="archimglist" >
 
-                    <ul class=" row ">
+                    <ul >
 
 
                         <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" >
@@ -170,7 +171,7 @@ where maincode='City'
                                     <div id="groupPlaceholder" runat="server">
                                     </div>
 
-                                    <div class="row" style="text-align: center; margin-top: 10px;">
+                                    <div class="col-lg-12" style="text-align: center; margin-top: 10px; display:block;">
                                         <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
                                             <Fields>
                                                 <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
