@@ -99,7 +99,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                     <div class="agoralist2" style="width: 100%">
 
-                        <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="VenueID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3"
+                        <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="VenueID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="2"
                             OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                             <EmptyDataTemplate>
@@ -146,8 +146,8 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                     <div id="groupPlaceholder" runat="server">
                                     </div>
-                                    <div style="text-align: center; margin-top: 10px;">
-                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                    <div class="col-lg-12" style="text-align: center; margin-top: 10px;">
+                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="4">
                                             <Fields>
                                                 <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn " ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                                 <asp:NumericPagerField />
