@@ -5,6 +5,21 @@
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
 
+            <script type="text/javascript">
+                function dateclicked() {
+
+                    //selectedDate = document.getElementById('MainContent_date07');
+                    //selectedDate.className += " on"; 
+
+                    datelinks = document.getElementsByClassName("datelinks");
+                    for (i = 0; i < datelinks.length; i++) {
+                        datelinks[i].className = datelinks[i].className.replace(" on", "");
+                    }
+                    console.log(datelinks)
+                    //selectedDate = document.getElementById('MainContent_date' + x);
+                    //selectedDate.className += " on"; 
+                }
+            </script>
 
             <!-- conbox --------------------------------------->
             <div class="conbox">
@@ -32,37 +47,37 @@
                     <div class="section3-2">
                         <div class="day_d">
                             <ul class="dday">
-                                <li class="on"><a href="#">01</a></li>
-                                <li><a href="#">02</a></li>
-                                <li><a href="#">03</a></li>
-                                <li><a href="#">04</a></li>
-                                <li><a href="#">05</a></li>
-                                <li><a href="#">06</a></li>
-                                <li><a href="#">07</a></li>
-                                <li><a href="#">08</a></li>
-                                <li><a href="#">09</a></li>
-                                <li><a href="#">10</a></li>
-                                <li><a href="#">11</a></li>
-                                <li><a href="#">12</a></li>
-                                <li><a href="#">13</a></li>
-                                <li><a href="#">14</a></li>
-                                <li><a href="#">15</a></li>
-                                <li><a href="#">16</a></li>
-                                <li><a href="#">17</a></li>
-                                <li><a href="#">18</a></li>
-                                <li><a href="#">19</a></li>
-                                <li><a href="#">20</a></li>
-                                <li><a href="#">21</a></li>
-                                <li><a href="#">22</a></li>
-                                <li><a href="#">23</a></li>
-                                <li><a href="#">24</a></li>
-                                <li><a href="#">25</a></li>
-                                <li><a href="#">26</a></li>
-                                <li><a href="#">27</a></li>
-                                <li><a href="#">28</a></li>
-                                <li><a href="#">29</a></li>
-                                <li><a href="#">30</a></li>
-                                <li><a href="#">31</a></li>
+                                <li ID="date01" class="datelinks" runat="server" onclick="dateclicked('01')"><asp:LinkButton CommandArgument="01"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">01</asp:LinkButton></li>
+                                <li ID="date02" class="datelinks" runat="server" onclick="dateclicked('02')"><asp:LinkButton CommandArgument="02"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">02</asp:LinkButton></li>
+                                <li ID="date03" class="datelinks" runat="server" onclick="dateclicked('03')"><asp:LinkButton CommandArgument="03"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">03</asp:LinkButton></li>
+                                <li ID="date04" class="datelinks" runat="server" onclick="dateclicked('04')"><asp:LinkButton CommandArgument="04"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">04</asp:LinkButton></li>
+                                <li ID="date05" class="datelinks" runat="server" onclick="dateclicked('05')"><asp:LinkButton CommandArgument="05"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">05</asp:LinkButton></li>
+                                <li ID="date06" class="datelinks" runat="server" onclick="dateclicked('06')"><asp:LinkButton CommandArgument="06"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">06</asp:LinkButton></li>
+                                <li ID="date07" class="datelinks" runat="server" onclick="dateclicked('07')"><asp:LinkButton CommandArgument="07"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">07</asp:LinkButton></li>
+                                <li ID="date08" class="datelinks" runat="server" onclick="dateclicked('08')"><asp:LinkButton CommandArgument="08"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">08</asp:LinkButton></li>
+                                <li ID="date09" class="datelinks" runat="server" onclick="dateclicked('09')"><asp:LinkButton CommandArgument="09"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">09</asp:LinkButton></li>
+                                <li ID="date10" class="datelinks" runat="server" onclick="dateclicked('10')"><asp:LinkButton CommandArgument="10"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">10</asp:LinkButton></li>
+                                <li ID="date11" class="datelinks" runat="server" onclick="dateclicked('11')"><asp:LinkButton CommandArgument="11"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">11</asp:LinkButton></li>
+                                <li ID="date12" class="datelinks" runat="server" onclick="dateclicked('12')"><asp:LinkButton CommandArgument="12"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">12</asp:LinkButton></li>
+                                <li ID="date13" class="datelinks" runat="server" onclick="dateclicked('13')"><asp:LinkButton CommandArgument="13"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">13</asp:LinkButton></li>
+                                <li ID="date14" class="datelinks" runat="server" onclick="dateclicked('14')"><asp:LinkButton CommandArgument="14"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">14</asp:LinkButton></li>
+                                <li ID="date15" class="datelinks" runat="server" onclick="dateclicked('15')"><asp:LinkButton CommandArgument="15"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">15</asp:LinkButton></li>
+                                <li ID="date16" class="datelinks" runat="server" onclick="dateclicked('16')"><asp:LinkButton CommandArgument="16"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">16</asp:LinkButton></li>
+                                <li ID="date17" class="datelinks" runat="server" onclick="dateclicked('17')"><asp:LinkButton CommandArgument="17"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">17</asp:LinkButton></li>
+                                <li ID="date18" class="datelinks" runat="server" onclick="dateclicked('18')"><asp:LinkButton CommandArgument="18"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">18</asp:LinkButton></li>
+                                <li ID="date19" class="datelinks" runat="server" onclick="dateclicked('19')"><asp:LinkButton CommandArgument="19"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">19</asp:LinkButton></li>
+                                <li ID="date20" class="datelinks" runat="server" onclick="dateclicked('20')"><asp:LinkButton CommandArgument="20"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">20</asp:LinkButton></li>
+                                <li ID="date21" class="datelinks" runat="server" onclick="dateclicked('21')"><asp:LinkButton CommandArgument="21"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">21</asp:LinkButton></li>
+                                <li ID="date22" class="datelinks" runat="server" onclick="dateclicked('22')"><asp:LinkButton CommandArgument="22"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">22</asp:LinkButton></li>
+                                <li ID="date23" class="datelinks" runat="server" onclick="dateclicked('23')"><asp:LinkButton CommandArgument="23"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">23</asp:LinkButton></li>
+                                <li ID="date24" class="datelinks" runat="server" onclick="dateclicked('24')"><asp:LinkButton CommandArgument="24"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">24</asp:LinkButton></li>
+                                <li ID="date25" class="datelinks" runat="server" onclick="dateclicked('25')"><asp:LinkButton CommandArgument="25"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">25</asp:LinkButton></li>
+                                <li ID="date26" class="datelinks" runat="server" onclick="dateclicked('26')"><asp:LinkButton CommandArgument="26"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">26</asp:LinkButton></li>
+                                <li ID="date27" class="datelinks" runat="server" onclick="dateclicked('27')"><asp:LinkButton CommandArgument="27"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">27</asp:LinkButton></li>
+                                <li ID="date28" class="datelinks" runat="server" onclick="dateclicked('28')"><asp:LinkButton CommandArgument="28"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">28</asp:LinkButton></li>
+                                <li ID="date29" class="datelinks" runat="server" onclick="dateclicked('29')"><asp:LinkButton CommandArgument="29"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">29</asp:LinkButton></li>
+                                <li ID="date30" class="datelinks" runat="server" onclick="dateclicked('30')"><asp:LinkButton CommandArgument="30"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">30</asp:LinkButton></li>
+                                <li ID="date31" class="datelinks" runat="server" onclick="dateclicked('31')"><asp:LinkButton CommandArgument="31"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">31</asp:LinkButton></li>
                             </ul>
                             <ul class="dimg">
 

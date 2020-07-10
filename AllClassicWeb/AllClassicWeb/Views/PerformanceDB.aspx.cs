@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DataAccessP;
 using BusinessLogic;
 using System.Data.Entity.SqlServer;
+using System.Web.UI.HtmlControls;
 
 namespace AllClassicWeb.Views
 {
@@ -25,10 +26,11 @@ namespace AllClassicWeb.Views
             if (!IsPostBack)
             {
                 Session["previousSelectedLocation"] = null;
+                Session["PreviousSelectedDate"] = null;
 
                 try
                 {
-                    repeater_thisweekPerformanceInfo.DataSource = entity.PerformanceTbls.Where(x => SqlFunctions.DatePart("ISO_WEEK", x.StartDate) == SqlFunctions.DatePart("ISO_WEEK", DateTime.Today) & x.EndDate>DateTime.Now).ToList();
+                    repeater_thisweekPerformanceInfo.DataSource = entity.PerformanceTbls.Where(x => SqlFunctions.DatePart("ISO_WEEK", x.StartDate) == SqlFunctions.DatePart("ISO_WEEK", DateTime.Today) & x.EndDate > DateTime.Now).ToList();
                     repeater_thisweekPerformanceInfo.DataBind();
                     //label_countofitems.Text = artistListContainer.Items.Count + "";
                 }
@@ -61,13 +63,76 @@ namespace AllClassicWeb.Views
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
 
-        protected void dateselectorcalendar_SelectionChanged(object sender, EventArgs e)
+        protected void dateselectorcalendar_SelectionChanged(object sender, CommandEventArgs e)
         {
+            var currentDate = DateTime.Now;
+            var selectedDate = int.Parse(e.CommandArgument.ToString());
+
+            var newdate = new DateTime(currentDate.Year, currentDate.Month, selectedDate);
+            Session["PreviousSelectedDate"] = newdate;
+            
+            HtmlGenericControl[] datecontainers = { date01, date02, date03, date04, date05, date06, date07, date08, date09,date10,date11,date12,date13,date14,
+                date15,date16,date17,date18,date19,date20,date21,date22,date23,date24,date25,date26,date27,date28,date29,date30,date31 };
+
+            foreach (HtmlGenericControl hc in datecontainers)
+            {
+                hc.Attributes.Remove("class");
+
+            }
+            datecontainers[selectedDate-1].Attributes.Add("class", "on");
+
+
+            //switch (selectedDate)
+            //{
+            //    case 1: date01.Attributes.Add("class", "on"); break;
+            //    case 2: date02.Attributes.Add("class", "on"); break;
+            //    case 3: date03.Attributes.Add("class", "on"); break;
+            //    case 4: date04.Attributes.Add("class", "on"); break;
+            //    case 5: date05.Attributes.Add("class", "on"); break;
+            //    case 6: date06.Attributes.Add("class", "on"); break;
+            //    case 7: date07.Attributes.Add("class", "on"); break;
+            //    case 8: date08.Attributes.Add("class", "on"); break;
+            //    case 9: date09.Attributes.Add("class", "on"); break;
+            //    case 10: date10.Attributes.Add("class", "on"); break;
+            //    case 11: date11.Attributes.Add("class", "on"); break;
+            //    case 12: date12.Attributes.Add("class", "on"); break;
+            //    case 13: date13.Attributes.Add("class", "on"); break;
+            //    case 14: date14.Attributes.Add("class", "on"); break;
+            //    case 15: date15.Attributes.Add("class", "on"); break;
+            //    case 16: date16.Attributes.Add("class", "on"); break;
+            //    case 17: date17.Attributes.Add("class", "on"); break;
+            //    case 18: date18.Attributes.Add("class", "on"); break;
+            //    case 19: date19.Attributes.Add("class", "on"); break;
+            //    case 20: date20.Attributes.Add("class", "on"); break;
+            //    case 21: date21.Attributes.Add("class", "on"); break;
+            //    case 22: date22.Attributes.Add("class", "on"); break;
+            //    case 23: date23.Attributes.Add("class", "on"); break;
+            //    case 24: date24.Attributes.Add("class", "on"); break;
+            //    case 25: date25.Attributes.Add("class", "on"); break;
+            //    case 26: date26.Attributes.Add("class", "on"); break;
+            //    case 27: date27.Attributes.Add("class", "on"); break;
+            //    case 28: date28.Attributes.Add("class", "on"); break;
+            //    case 29: date29.Attributes.Add("class", "on"); break;
+            //    case 30: date30.Attributes.Add("class", "on"); break;
+            //    case 31: date31.Attributes.Add("class", "on"); break;
+
+            //}
+
+
+
+            //var parent = this.FindControl("date01");
+
+
+            //LinkButton lb = (LinkButton)sender;
+            //lb.Parent
+            //lb.Style.Add("class", "on");
+
+
             //if (Session["PreviousSelectedDate"] != null)
             //{
-            //    DateTime previousdate = (DateTime)Session["PreviousSelectedDate"];
-            //    //Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
-            //    if (previousdate == dateselectorcalendar.SelectedDate) dateselectorcalendar.SelectedDates.Clear();
+            //    //DateTime previousdate = (DateTime)Session["PreviousSelectedDate"];
+            //    ////Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
+            //    //if (previousdate == dateselectorcalendar.SelectedDate) dateselectorcalendar.SelectedDates.Clear();
 
             //}
             //else Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
@@ -75,7 +140,10 @@ namespace AllClassicWeb.Views
             filterPerformance();
 
         }
+        public void dateclicked(object sender, EventArgs e)
+        {
 
+        }
         public void btnClearSelection(object sender, EventArgs e)
         {
             //dateselectorcalendar.SelectedDates.Clear();
@@ -84,13 +152,14 @@ namespace AllClassicWeb.Views
 
         public void filterPerformance()
         {
-            var selectedDate = (dynamic) null;
-            selectedDate = null;
+            var selectedDate = (dynamic)null;
+            var null_date = DateTime.Parse("1/1/0001 12:00:00 AM", System.Globalization.CultureInfo.InvariantCulture);
+            selectedDate = null_date;
+            if (Session["PreviousSelectedDate"] != null) selectedDate = (DateTime)Session["PreviousSelectedDate"];
             //DateTime selectedDate = dateselectorcalendar.SelectedDate;
 
             LinkButton pb = (LinkButton)Session["previousSelectedLocation"];
-            var null_date = DateTime.Parse("1/1/0001 12:00:00 AM", System.Globalization.CultureInfo.InvariantCulture);
-            selectedDate = null_date;
+            //selectedDate = null_date;
 
             string filter = "where p.enddate > getdate()";
             if (pb != null && selectedDate != null_date)
