@@ -50,7 +50,7 @@
                     <div class="condetail" style="background: none;">
 
                         <div class="man">
-                            <img src="../Content/img/ceo.jpg" />
+                            <img src="../Doc/BOD/JEON%20DONGSU.jpg" />
                         </div>
                         <div class="box">
                             <div class="name">전동수</div>
