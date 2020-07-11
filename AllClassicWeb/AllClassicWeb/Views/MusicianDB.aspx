@@ -9,13 +9,16 @@
                 <h2>Musician</h2>
 
                 <div class="conlist">
+
                     <ul>
+
                         <li><%= Resources.DisplayText.FullName %>
-                            <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control" Style="display: inline-block;"></asp:TextBox>
+                            <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server"></asp:TextBox>
 
                         </li>
-                        <li><%= Resources.DisplayText.Major %>
-                            <asp:DropDownList Style="display: inline-block; width: 100px;" ID="DropDownList1_Majorfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                        <li>
+                            <%= Resources.DisplayText.Major %>
+                            <asp:DropDownList ID="DropDownList1_Majorfilter" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -24,17 +27,15 @@ where maincode='Instrument'
 or maincode='Composer'
 or maincode='Conductor'
 "></asp:SqlDataSource>
+                        </li>
 
+                        <li><%= Resources.DisplayText.Repertory %>
+                            <asp:TextBox AutoPostBack="true" ID="txt_repertoryfilter" runat="server"></asp:TextBox>
 
-                            <li><%= Resources.DisplayText.Repertory %>
-                                <asp:TextBox AutoPostBack="true" ID="txt_repertoryfilter" runat="server" CssClass="form-control" Style="display: inline-block;"></asp:TextBox>
-
-                            </li>
+                        </li>
                     </ul>
                     <div class="btn1">
                         <asp:LinkButton ID="inquiry" runat="server" OnClick="selectedFilterChanged"><%= Resources.DisplayText.Inquiry %> </asp:LinkButton>
-
-                        <%--<asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary contentButton" OnClick="selectedFilterChanged" />--%>
                     </div>
 
                     <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
@@ -47,15 +48,15 @@ or maincode='Composer'
 or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
-                    <div class="col-xs-12" style="max-height: 250px; height: 250px; overflow-y: scroll; box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);">
 
+                    <div style="max-height: 250px !important; overflow-y: scroll; width:100%;">
                         <table>
                             <thead>
                                 <tr>
-                                    <th scope="col"><%= Resources.DisplayText.FullName %></th>
-                                    <th scope="col"><%= Resources.DisplayText.Major %></th>
-                                    <th scope="col"><%= Resources.DisplayText.Affiliation %></th>
-                                    <th scope="col"><%= Resources.DisplayText.PosterEmailID %></th>
+                                    <th><%= Resources.DisplayText.FullName %></th>
+                                    <th><%= Resources.DisplayText.Major %></th>
+                                    <th><%= Resources.DisplayText.Affiliation %></th>
+                                    <th><%= Resources.DisplayText.PosterEmailID %></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -63,11 +64,11 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
                                 <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
                                     <ItemTemplate>
                                         <tr>
-                                            <td >
+                                            <td>
                                                 <asp:LinkButton runat="server" ID="headertableItem" CssClass="filedDisplay" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
-                                            <td ><%#Eval("majorsubocode") %></td>
-                                            <td ><%#Eval("Affliation") %></td>
-                                            <td ><%#Eval("useremailID") %></td>
+                                            <td><%#Eval("majorsubocode") %></td>
+                                            <td><%#Eval("Affliation") %></td>
+                                            <td><%#Eval("useremailID") %></td>
                                         </tr>
                                     </ItemTemplate>
                                     <AlternatingItemTemplate>
@@ -86,6 +87,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
 
                     </div>
 
+
                 </div>
 
                 <ul class="manlist">
@@ -101,7 +103,7 @@ or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
 
-                    <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" Style="width: 100%;">
+                    <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" >
 
                         <EmptyDataTemplate>
                             <div class=" col-xs-12 contentHeader">
@@ -142,7 +144,7 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                 <div id="groupPlaceholder" runat="server">
                                 </div>
-                                <div class="col-xs-12" style="text-align: center; margin-top:10px;">
+                                <div class="col-xs-12" style="text-align: center; margin-top: 10px;">
                                     <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                         <Fields>
                                             <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
