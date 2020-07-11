@@ -116,9 +116,9 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                     </div>
 
-                    <div class="agoralist2">
+                    <ul class="agoralist2">
 
-                        <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="PeopleAndJobID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
+                        <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="PeopleAndJobID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="2" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                             <EmptyDataTemplate>
                                 <div class=" col-xs-12 contentHeader">
@@ -179,12 +179,12 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                             </ItemTemplate>
 
                             <LayoutTemplate>
-                                <div class="col-xs-12" id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
+                                <div  id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
 
                                     <div id="groupPlaceholder" runat="server">
                                     </div>
-                                    <div class="col-xs-12" style="text-align: center;">
-                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                    <div class="col-lg-12" style="text-align: center; margin-top: 10px;">
+                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="4">
                                             <Fields>
                                                 <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
                                                 <asp:NumericPagerField />
@@ -207,7 +207,7 @@ FROM Main.LookUpTbl
 where maincode='City'
             ) c on c.LookUpID=p.city
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                    </div>
+                    </ul>
 
 
 
