@@ -35,7 +35,7 @@
                         <ul class="agora">
                             <li>
                                 <%=Resources.DisplayText.PeopleOrJob %>
-                                <asp:DropDownList ID="DropDownList1_type" runat="server" Style="display: inline-block;">
+                                <asp:DropDownList ID="DropDownList1_type" runat="server" >
                                     <asp:ListItem Value="0" Text="ALL"></asp:ListItem>
                                     <asp:ListItem Value="1" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
                                     <asp:ListItem Value="2" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
@@ -43,11 +43,11 @@
                             </li>
                             <li>
                                 <%=Resources.DisplayText.Title %>
-                                <asp:TextBox runat="server" ID="txt_title" CssClass="form-control filedDisplay" Style="display: inline-block;" /></li>
+                                <asp:TextBox runat="server" ID="txt_title" /></li>
                             <li>
                                 <%= Resources.DisplayText.City %>
 
-                                <asp:DropDownList ID="DropDownList3_city" runat="server" class="form-control filedDisplay" Style="display: inline-block;" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList3_city" runat="server" AutoPostBack="false" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
                                 SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
                                 union
@@ -183,7 +183,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                     <div id="groupPlaceholder" runat="server">
                                     </div>
-                                    <div class="col-lg-12" style="text-align: center; margin-top: 10px;">
+                                    <div class="col-lg-12" style="text-align: center; margin-top: 15px;">
                                         <asp:DataPager ID="DataPager1" runat="server" PageSize="4">
                                             <Fields>
                                                 <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
