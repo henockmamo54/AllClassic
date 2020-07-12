@@ -9,20 +9,20 @@
                 <h2>ORG</h2>
 
                 <div class="conlist">
-                    <ul>
 
+                    <ul>
                         <li>
                             <%= Resources.DisplayText.PerformanceGroup %>
-                            <asp:TextBox ID="txt_performancegroup" runat="server" Style="display: inline-block;"></asp:TextBox>
+                            <asp:TextBox ID="txt_performancegroup" runat="server"></asp:TextBox>
                         </li>
 
                         <li>
                             <%= Resources.DisplayText.Alias %>
-                            <asp:TextBox ID="txt_alias" runat="server" Style="display: inline-block;"></asp:TextBox>
+                            <asp:TextBox ID="txt_alias" runat="server"></asp:TextBox>
                         </li>
 
                         <li><%= Resources.DisplayText.GroupType %>
-                            <asp:DropDownList ID="DropDownList1_grouptype" runat="server" class="form-control filedDisplay" Style="width: 100px; display: inline-block;" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_grouptype" runat="server" DataSourceID="SqlDataSource1_grouptypelist" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_grouptypelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -32,7 +32,7 @@ where maincode='GroupType'
                         </li>
 
                         <li><%= Resources.DisplayText.City %>
-                            <asp:DropDownList ID="DropDownList1_city" runat="server" AutoPostBack="True" Style="width: 100px; display: inline-block;" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1_city" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1_city" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1_city" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -41,10 +41,14 @@ where maincode='City'
 "></asp:SqlDataSource>
 
                         </li>
+
                     </ul>
                     <div class="btn2">
                         <asp:LinkButton ID="inquiry" runat="server" OnClick="selectedFilterChanged"><%= Resources.DisplayText.Inquiry %> </asp:LinkButton>
                     </div>
+
+
+
 
                     <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 pg.*, c.SubCode as cityname, gt.SubCode as grouptpename, u.EmailID from Main.PerformanceGroupTbl pg
