@@ -100,7 +100,6 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                     <div class="agoralist2">
 
-
                         <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="MusicShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" OnItemDataBound="collegeListContainer_OnItemDataBound">
 
                             <EmptyDataTemplate>
@@ -172,17 +171,12 @@ select r.*, r.EmailID,c.SubCode cityname  from Auxiliary.MusicShopTbl r
                     left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=r.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
-
-
                     </div>
 
-                </div>
-
-
-
-                <div class="row">
                     <asp:Button runat="server" ID="btn_addNewMusicShop" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNewMusicShop" />
+
                 </div>
+
 
             </div>
 

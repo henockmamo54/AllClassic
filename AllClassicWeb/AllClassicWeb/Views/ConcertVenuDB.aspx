@@ -27,7 +27,7 @@
                     <div class="conlist">
                         <ul class="agora">
                             <li><%= Resources.DisplayText.City %>
-                                <asp:DropDownList Style="display: inline-block;" ID="DropDownList1_cityfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList1_cityfilter" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT   LookUpID=-1, MainCode='ALL', SubCode='ALL'
 Union
 SELECT LookUpID, MainCode, SubCode 
@@ -36,9 +36,9 @@ where maincode='City'
 "></asp:SqlDataSource>
                             </li>
                             <li><%= Resources.DisplayText.Alias %>
-                                <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" class="form-control filedDisplay" Style="display: inline-block;"></asp:TextBox></li>
+                                <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" ></asp:TextBox></li>
                             <li><%= Resources.DisplayText.VenuName %>
-                                <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" class="form-control filedDisplay" Style="display: inline-block;"></asp:TextBox></li>
+                                <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" ></asp:TextBox></li>
                         </ul>
                         <div class="btn5">
                             <asp:LinkButton ID="inquiry" runat="server" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
