@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
-            <div class="row" id="performancegroupinfocontainer shadowedbox">
+            <div class="conbox" id="performancegroupinfocontainer shadowedbox">
                 <br />
                 <h4 style="color: #00796B; font-weight: 800;" class="contentHeader">
                     <asp:Label runat="server" ID="txt_name" Text="name container" />
@@ -77,18 +77,18 @@
                 </div>
 
                 <div class="col-xs-6">
-                    <asp:Button CssClass="btn btn-danger  pull-right  contentButton" style="margin-left:5px;" runat="server" ID="btn_delete" OnClientClick="deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
+                    <asp:Button CssClass="btn btn-danger  pull-right  contentButton" Style="margin-left: 5px;" runat="server" ID="btn_delete" OnClientClick="deletebtnclicked('Are you sure you want to delete?');" Text="<%$Resources:DisplayText,delete %>" />
                     <asp:Button CssClass="btn btn-primary pull-right contentButton" runat="server" ID="btn_editpg" OnClick="onclick_btn_editpg" Text="<%$Resources:DisplayText,Edit %>" />
                 </div>
-                
-                </div>
-         
+
+            </div>
+
         </ContentTemplate>
     </asp:UpdatePanel>
 
     <script type="text/javascript">
-        document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
-        document.getElementById("performancegrouptab").style.borderRight = "none";
+        //document.getElementById("performancegrouptab").style.backgroundColor = "rgb(255, 255, 255) ";
+        //document.getElementById("performancegrouptab").style.borderRight = "none";
 
 
         function openInNewTab(url) {
@@ -115,8 +115,8 @@
 
                             alert('Entry deleted!!!');
                             //history.go(-1);
-                            
-                        window.location.href="PerformanceGroup.aspx";
+
+                            window.location.href = "PerformanceGroup.aspx";
                         }
 
                         else {

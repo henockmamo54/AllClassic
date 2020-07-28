@@ -26,3 +26,16 @@ J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic
 J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csproj.CopyComplete
 J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.exe
 J:\workplace\c#\AllClassic\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.pdb
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\bin\Release\BusinessLogic.exe.config
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\bin\Release\BusinessLogic.exe
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\bin\Release\BusinessLogic.pdb
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.exe
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.pdb
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\bin\Release\DataAccessP.exe.config
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\bin\Release\EntityFramework.xml
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csprojAssemblyReference.cache
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.Properties.Resources.resources
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csproj.GenerateResource.cache
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.csproj.CopyComplete
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.exe
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Release\BusinessLogic.pdb

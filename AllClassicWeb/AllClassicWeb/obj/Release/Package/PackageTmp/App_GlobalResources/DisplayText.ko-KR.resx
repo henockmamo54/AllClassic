@@ -763,4 +763,28 @@
   <data name="CompLocation" xml:space="preserve">
     <value>오시는 길</value>
   </data>
+  <data name="Agora" xml:space="preserve">
+    <value>Agora</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Musician" xml:space="preserve">
+    <value>Musician</value>
+  </data>
+  <data name="ORG" xml:space="preserve">
+    <value>ORG</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="ConcleInformation" xml:space="preserve">
+    <value>콩클 정보</value>
+  </data>
+  <data name="Jobsearch" xml:space="preserve">
+    <value>구인구직</value>
+  </data>
+  <data name="Schedule_of_the_Month" xml:space="preserve">
+    <value>이달의 행사일정</value>
+  </data>
 </root>

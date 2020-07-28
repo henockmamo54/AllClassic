@@ -4,208 +4,170 @@
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
 
-            <br />
-            <div class="row">
-                <div class="col-xs-12">
+            <div class="conbox">
 
-                    <div class="pull-right" style="padding: 0px;">
-                        <asp:Button ID="inquiry" runat="server" CssClass="btn btn-primary pull-right contentButton" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
-                    </div>
-                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
-                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Expertise %>  </span>
-                        <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
-                    </div>
-                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
-                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.City %>  </span>
-                        <asp:DropDownList Style="display: inline-block; width: 100px;" ID="DropDownList1_cityfilter" runat="server" class="form-control filedDisplay" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT   LookUpID=-1, MainCode='ALL', SubCode='ALL'
+                <div class="con_section1">
+                    <div class="subtit">Agora</div>
+                    <ul class="submenu">
+                        <li><a runat="server" href="~/Views/AuditionDB.aspx"><%= Resources.DisplayText.Auditions %></a></li>
+                        <li><a runat="server" href="~/Views/ConcoursDB.aspx"><%= Resources.DisplayText.Concours %></a></li>
+                        <li class="on"><a runat="server" href="~/Views/RepairShopDB.aspx"><%= Resources.DisplayText.RepairShop %></a></li>
+                        <li><a runat="server" href="~/Views/MusicShopDB.aspx"><%= Resources.DisplayText.MusicShop %></a></li>
+                        <li><a runat="server" href="~/Views/ConcertVenuDB.aspx"><%= Resources.DisplayText.ConcertVenue %></a></li>
+                        <li><a runat="server" href="~/Views/PeopleAndJobDB.aspx"><%= Resources.DisplayText.PeopleOrJob %></a></li>
+                        <li><a runat="server" href="~/Views/QADbNew.aspx">Q&amp;A</a></li>
+                    </ul>
+                </div>
+
+                <div class="con_section2">
+
+                    <h2><%= Resources.DisplayText.RepairShop %></h2>
+
+                    <div class="conlist">
+                        <ul class="agora">
+                            <li><%= Resources.DisplayText.Name %>
+                                <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" Style="display: inline-block;"></asp:TextBox>
+                            </li>
+                            <li><%= Resources.DisplayText.Alias %>
+                                <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" Style="display: inline-block;"></asp:TextBox></li>
+                            <li><%= Resources.DisplayText.City %>
+                                <asp:DropDownList Style="display: inline-block;" ID="DropDownList1_cityfilter" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT   LookUpID=-1, MainCode='ALL', SubCode='ALL'
 Union
 SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='City'
 "></asp:SqlDataSource>
-                    </div>
-                    
-                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
-                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Alias %>  </span>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_aliasfilter" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
-                    </div>
-                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
-                        <span style="display: inline-block; padding-right: 5px;" class="filedName"><%= Resources.DisplayText.Name %> </span>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox>
-                    </div>
+                            </li>
+                            <li><%= Resources.DisplayText.Expertise %>
+                                <asp:TextBox AutoPostBack="true" ID="txt_experties" runat="server" Style="display: inline-block;"></asp:TextBox></li>
+                        </ul>
+                        <div class="btn4">
+                            <asp:LinkButton ID="inquiry" runat="server" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
+                        </div>
 
-                </div>
-            </div>
 
-            <div class="row" style="padding-right: 15px;">
-
-                <br />
-                <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+                        <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select top 20 c.*,u.EmailID posteremailiD, ci.SubCode as cityname from Auxiliary.RepairShopTbl c
 join Main.usertbl u on c.Userid=u.userid
             join(SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
 where maincode='City' ) ci on ci.LookUpID=c.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><%= Resources.DisplayText.Name %></th>
+                                    <th><%= Resources.DisplayText.Alias %></th>
+                                    <th><%= Resources.DisplayText.Expertise %></th>
+                                    <th><%= Resources.DisplayText.City %></th>
+                                    <th><%= Resources.DisplayText.PosterEmailID %></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td><%#Eval("Name") %></td>
+                                            <td><%#Eval("Alias") %></td>
+                                            <td><%#Eval("Expertise") %></td>
+                                            <td><%#Eval("cityname") %></td>
+                                            <td><%#Eval("posteremailiD") %></td>
+                                        </tr>
+                                    </ItemTemplate>
+                                    <AlternatingItemTemplate>
+                                        <tr>
+                                            <td class="td2"><%#Eval("Name") %></td>
+                                            <td class="td2"><%#Eval("Alias") %></td>
+                                            <td class="td2"><%#Eval("Expertise") %></td>
+                                            <td class="td2"><%#Eval("cityname") %></td>
+                                            <td class="td2"><%#Eval("posteremailiD") %></td>
+                                        </tr>
+                                    </AlternatingItemTemplate>
+                                </asp:Repeater>
+                            </tbody>
+                        </table>
 
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th class="contentHeader"><%= Resources.DisplayText.Name %></th>
-                                <th class="contentHeader"><%= Resources.DisplayText.Alias %></th>
-                                <th class="contentHeader"><%= Resources.DisplayText.Expertise %></th>
-                                <th class="contentHeader"><%= Resources.DisplayText.City %></th>
-                                <th class="contentHeader"><%= Resources.DisplayText.PosterEmailID %></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
-                                <ItemTemplate>
-                                    <tr>
-                                        <td class="Contentdisplay"><%#Eval("Name") %></td>
-                                        <td class="Contentdisplay"><%#Eval("Alias") %></td>
-                                        <td class="Contentdisplay"><%#Eval("Expertise") %></td>
-                                        <td class="Contentdisplay"><%#Eval("cityname") %></td>
-                                        <td class="Contentdisplay"><%#Eval("posteremailiD") %></td>
-                                    </tr>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </tbody>
-                    </table>
 
-                </div>
-            </div>
+                    </div>
 
+                    <div class="agoralist2">
+                        <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="RepairShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="2" OnItemDataBound="collegeListContainer_OnItemDataBound">
 
-
-            <div class="row">
-
-                <hr />
-
-                <asp:ListView runat="server" ID="collegeListContainer" DataKeyNames="RepairShopID" DataSourceID="SqlDataSource1_Collegelist" GroupItemCount="3" Style="width: 100%;" OnItemDataBound="collegeListContainer_OnItemDataBound">
-
-                    <EmptyDataTemplate>
-                        <div class=" col-xs-12 contentHeader">
-                            <h3>No records available.</h3>
-                        </div>
-                    </EmptyDataTemplate>
-                    <GroupTemplate>
-                        <div id="itemPlaceholderContainer" runat="server">
-                            <div id="itemPlaceholder" runat="server">
-                            </div>
-                        </div>
-                    </GroupTemplate>
-                    <ItemTemplate>
-                        <div class="col-md-4 col-xs-4" style="margin-bottom: 1em; padding-left: 0px;">
-                            <%--<div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 2px 2px 2px #d0d0d0;">--%>
-                            <div>
-                                <div class="panel panel-default shadowedPanel shadowedbox_hover">
-                                    <div class="panel-heading  mypanelColor" >
-                                        <h4 class="contentHeader"><%# (Eval("Name")) .ToString().Length>15?
-                                        (Eval("Name")) .ToString().Substring(0,15)+ " ....":
-                                        (Eval("Name")) .ToString()%></h4>
-                                        <%--<span>(<%# Eval("Alias") %>)</span>--%>
+                            <EmptyDataTemplate>
+                                <div >
+                                    <h3>No records available.</h3>
+                                </div>
+                            </EmptyDataTemplate>
+                            <GroupTemplate>
+                                <div id="itemPlaceholderContainer" runat="server">
+                                    <div id="itemPlaceholder" runat="server">
                                     </div>
-                                    <div class="panel-body">
-                                        <table>
-                                            <tbody class="rowwithbottomborder ">
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.Expertise %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("Expertise") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.City %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("cityname") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.OwnerName %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("OwnerName") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.SinceYear %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("SinceYear") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.Email %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("EmailID") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.Address %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.ZipCode %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("ZipCode") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.TelNo %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("TelNO") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.FaxNo %>:</td>
-                                                    <td class="filedDisplay"><%#Eval("FaxNo") %></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="filedName"><%# Resources.DisplayText.HomePage %>:</td>
-                                                    <td class="filedDisplay">
-                                                        <asp:LinkButton runat="server" target="_blank" OnCommand="homePageClicked" CommandArgument='<%# Eval("HomePage") %>' Text='<%# Eval("HomePage") %>'></asp:LinkButton></td>
-                                                    <%--href='http://<%# Eval("HomePage") %>'--%>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <br />
-                                                    </td>
-                                                    <td>
-                                                        <asp:LinkButton runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'> <%= Resources.DisplayText.Edit %></asp:LinkButton>
-                                                        <asp:LinkButton runat="server" CssClass="Contentdisplay" Style="margin-left: 5px;" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("RepairShopID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                </div>
+                            </GroupTemplate>
+                            <ItemTemplate>
 
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <li>
+                                    <div class="name">
+                                        <%# (Eval("Name")) .ToString().Length>15?
+                                        (Eval("Name")) .ToString().Substring(0,15)+ " ....":
+                                        (Eval("Name")) .ToString()%>
+                                    </div>
+                                    <ul class="txt">
+                                        <li><span>- <%# Resources.DisplayText.Expertise %>:</span><%#Eval("Expertise") %></li>
+                                        <li><span>- <%# Resources.DisplayText.City %> :</span><%#Eval("cityname") %></li>
+                                        <li><span>- <%# Resources.DisplayText.OwnerName %> :</span><%#Eval("OwnerName") %></li>
+                                        <li><span>- <%# Resources.DisplayText.SinceYear %> :</span><%#Eval("SinceYear") %></li>
+                                        <li><span>- <%# Resources.DisplayText.Email %> :</span><%#Eval("EmailID") %></li>
+                                        <li><span>- <%# Resources.DisplayText.Address %></span><%#Eval("Address").ToString().Length>15?Eval("Address").ToString().Substring(0,15):Eval("Address").ToString() %></li>
+                                        <li><span>- <%# Resources.DisplayText.ZipCode %></span><%#Eval("ZipCode") %></li>
+                                        <li><span>- <%# Resources.DisplayText.TelNo %></span><%#Eval("TelNO") %></li>
+                                        <li><span>- <%# Resources.DisplayText.FaxNo %></span><%#Eval("FaxNo") %></li>
+                                        <li><span>- <%# Resources.DisplayText.HomePage %></span>
+                                            <asp:LinkButton runat="server" Style="display: inline-block" target="_blank" OnCommand="homePageClicked" CommandArgument='<%# Eval("HomePage") %>' Text='<%# Eval("HomePage") %>'></asp:LinkButton></li>
+                                        <li>
+                                            <asp:LinkButton Style="display: inline-block" runat="server" ID="edit" OnCommand="editRepairShopClicked" CommandArgument='<%# Eval("RepairShopID") %>'> <%= Resources.DisplayText.Edit %></asp:LinkButton>
+                                            <asp:LinkButton Style="display: inline-block" runat="server" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("RepairShopID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
+                                        </li>
+                                    </ul>
+                                </li>
 
+                            </ItemTemplate>
+                            <LayoutTemplate>
+                                <div class="col-xs-12" id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
+
+                                    <div id="groupPlaceholder" runat="server">
+                                    </div>
+                                    <div class="col-xs-12" style="text-align: center; margin-top: 10px;">
+                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                            <Fields>
+                                                <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                                <asp:NumericPagerField />
+                                                <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                            </Fields>
+                                        </asp:DataPager>
                                     </div>
                                 </div>
 
-                            </div>
-                        </div>
-
-                    </ItemTemplate>
-                    <LayoutTemplate>
-                        <div class="col-xs-12" id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
-
-                            <div id="groupPlaceholder" runat="server">
-                            </div>
-                            <div class="col-xs-12" style="text-align: center;">
-                                <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
-                                    <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
-                                        <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
-                                    </Fields>
-                                </asp:DataPager>
-                            </div>
-                        </div>
-
-                    </LayoutTemplate>
-                    <GroupSeparatorTemplate>
-                        <div class="clearfix"></div>
-                    </GroupSeparatorTemplate>
-                </asp:ListView>
-                <asp:SqlDataSource ID="SqlDataSource1_Collegelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+                            </LayoutTemplate>
+                            <GroupSeparatorTemplate>
+                                <div class="clearfix"></div>
+                            </GroupSeparatorTemplate>
+                        </asp:ListView>
+                        <asp:SqlDataSource ID="SqlDataSource1_Collegelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 select r.*, r.EmailID,c.SubCode cityname from Auxiliary.RepairShopTbl r
             join Main.usertbl u on r.Userid=u.userid
                     left join (select lookupid, Maincode, subcode from main.lookuptbl where maincode='City') c on c.LookUpID=r.City
 order by UpdateTimeStamp desc"></asp:SqlDataSource>
+                    </div>
+
+                    <asp:Button runat="server" ID="btn_addReparShop" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addReparShop" />
+
+                </div>
+
             </div>
 
 
-
-            <div class="row">
-                <asp:Button runat="server" ID="btn_addReparShop" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addReparShop" />
-            </div>
 
         </ContentTemplate>
     </asp:UpdatePanel>

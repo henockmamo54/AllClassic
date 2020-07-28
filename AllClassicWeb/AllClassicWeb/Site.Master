@@ -6,6 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="UWg2Xa-zv3xc7x_f6Gsv4-cuSuLswcLC7aJq-JsxDW4" />
     <title>AllClassic Korea</title>
 
     <asp:PlaceHolder runat="server">

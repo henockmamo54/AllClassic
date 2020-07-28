@@ -3,21 +3,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
-            <br />
-            <div class="row">
-                <div class=" col-xs-12" >
-                   <div class="pull-right" style="padding: 0px; ">
-                        <asp:Button runat="server" ID="inquiry" Text="<%$Resources:DisplayText,Inquiry %>" CssClass="btn btn-primary contentButton" OnClick="selectedFilterChanged" />
-                    </div>
-                    <div class="pull-right" style="padding: 0px; padding-right: 15px;">
-                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Repertory %> </span>
-                        <asp:TextBox AutoPostBack="true" ID="txt_repertoryfilter" runat="server" CssClass="form-control" Style="width: 150px; display: inline-block;"></asp:TextBox>
 
-                    </div>
-                   <div class="pull-right" style="padding: 0px; padding-right: 15px;">
-                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.Major %>  </span>
-                        <asp:DropDownList Style="display: inline-block; width: 100px;" ID="DropDownList1_Majorfilter" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
+            <div class="conbox">
+
+                <h2>Musician</h2>
+
+                <div class="conlist">
+
+                    <ul>
+
+                        <li><%= Resources.DisplayText.FullName %>
+                            <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server"></asp:TextBox>
+
+                        </li>
+                        <li>
+                            <%= Resources.DisplayText.Major %>
+                            <asp:DropDownList ID="DropDownList1_Majorfilter" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="SELECT LookUpID=-1, MainCode='ALL', SubCode='ALL' 
 Union
 SELECT LookUpID, MainCode, SubCode 
 FROM Main.LookUpTbl
@@ -25,18 +27,18 @@ where maincode='Instrument'
 or maincode='Composer'
 or maincode='Conductor'
 "></asp:SqlDataSource>
-                    </div>
-                   <div class="pull-right" style="padding: 0px; padding-right: 15px;">
-                        <span style="display: inline-block;" class="filedName"><%= Resources.DisplayText.FullName %>  </span>
-                        <asp:TextBox AutoPostBack="true" ID="txtbox_namefilter" runat="server" CssClass="form-control" Style="width: 150px; display: inline-block;"></asp:TextBox>
-                    </div>
-                </div>
+                        </li>
 
-            </div>
+                        <li><%= Resources.DisplayText.Repertory %>
+                            <asp:TextBox AutoPostBack="true" ID="txt_repertoryfilter" runat="server"></asp:TextBox>
 
-            <div class="row">
-            <br />
-                <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+                        </li>
+                    </ul>
+                    <div class="btn1">
+                        <asp:LinkButton ID="inquiry" runat="server" OnClick="selectedFilterChanged"><%= Resources.DisplayText.Inquiry %> </asp:LinkButton>
+                    </div>
+
+                    <asp:SqlDataSource ID="SqlDataSource1_getrecent20artists" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 SELECT top 20 m.*,u.EmailID useremailID, majorsubocode FROM Main.[MusicianTbl] m
 join Main.UserTbl u on m.UserID=u.UserID
 left join (
@@ -46,99 +48,51 @@ or maincode='Composer'
 or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
-                <div class="col-xs-12" style="border: 1px solid lightgray; border-radius: 5px; max-height: 250px; height: 250px; overflow-y: scroll;box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);">
 
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.FullName %></th>
-                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.Major %></th>
-                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.Affiliation %></th>
-                                <th scope="col" class="contentHeader"><%= Resources.DisplayText.PosterEmailID %></th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div style="max-height: 250px !important; overflow-y: scroll; width:100%;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><%= Resources.DisplayText.FullName %></th>
+                                    <th><%= Resources.DisplayText.Major %></th>
+                                    <th><%= Resources.DisplayText.Affiliation %></th>
+                                    <th><%= Resources.DisplayText.PosterEmailID %></th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                            <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
-                                <ItemTemplate>
-                                    <tr>
-                                        <td class="col-xs-3">
-                                            <asp:LinkButton runat="server" ID="headertableItem" CssClass="filedDisplay" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
-                                        <td class="col-xs-3 Contentdisplay"><%#Eval("majorsubocode") %></td>
-                                        <td class="col-xs-3 Contentdisplay"><%#Eval("Affliation") %></td>
-                                        <td class="col-xs-3 Contentdisplay"><%#Eval("useremailID") %></td>
-                                    </tr>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                                <asp:Repeater runat="server" ID="artistPageRepeater" DataSourceID="SqlDataSource1_getrecent20artists">
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td>
+                                                <asp:LinkButton runat="server" ID="headertableItem" CssClass="filedDisplay" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
+                                            <td><%#Eval("majorsubocode") %></td>
+                                            <td><%#Eval("Affliation") %></td>
+                                            <td><%#Eval("useremailID") %></td>
+                                        </tr>
+                                    </ItemTemplate>
+                                    <AlternatingItemTemplate>
+                                        <tr>
+                                            <td class="td2">
+                                                <asp:LinkButton runat="server" ID="headertableItem" CssClass="filedDisplay" Style="text-decoration: none; color: inherit;" OnCommand="onclick_headertableItem" CommandArgument='<%#Eval("MusicianID")%>'><%#Eval("Name") %></asp:LinkButton></td>
+                                            <td class="td2"><%#Eval("majorsubocode") %></td>
+                                            <td class="td2"><%#Eval("Affliation") %></td>
+                                            <td class="td2"><%#Eval("useremailID") %></td>
+                                        </tr>
+                                    </AlternatingItemTemplate>
+                                </asp:Repeater>
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+
+                    </div>
+
 
                 </div>
-            </div>
 
-            <div class="row">
-                <hr />
-                <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" Style="width: 100%;">
-                    
-                    <EmptyDataTemplate>
-                        <div class=" col-xs-12 contentHeader">
-                            <h3>No records available.</h3>
-                        </div>
-                    </EmptyDataTemplate>
-                    <GroupTemplate>
-                        <div id="itemPlaceholderContainer" runat="server">
-                            <div id="itemPlaceholder" runat="server">
-                            </div>
-                        </div>
-                    </GroupTemplate>
-                    <ItemTemplate>
-                        <div class="col-sm-4 col-xs-4" style="padding: 0;padding-right: 10px;">
-                            <div class=" col-xs-12 shadowedbox2" style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important; border-radius: 3px; margin-bottom: 10px; padding-left: 0; background-color: white; font-family: Roboto, Arial, sans-serif;">
-                                <div class="col-sm-6 col-xs-6" style="padding: 0;">
-                                    <img style="width: 100%; height: 18.25rem; padding: 3px; border-radius: 7px;" class="card-img-top img-rounded" src="../Doc/artist/<%#Eval("Photo1") %>" alt="Card image cap">
-                                </div>
-                                <div class="col-sm-6 col-xs-6" style="margin: 0px; padding: 0px; padding-left: 8px; font-size: 1.2rem;">
-                                    <div class="card-body ">
-                                        <br />
-                                        <h4 class="card-title contentHeader" style="margin: 0; margin-top: 5px; margin-bottom: 5px;"><strong><%#Eval("Name") %> </strong></h4>
-                                        <p class="card-text" style="color: dimgray; font-size:13px;">
-                                            <span class="filedName"><%# Resources.DisplayText.Affiliation %>: </span>
-                                            <span class="filedDisplay"><%#Eval("Affliation") %> </span>
-                                            <br />
-                                            <span class="filedName"><%# Resources.DisplayText.Major %>: </span>
-                                            <span class="filedDisplay"><%#Eval("majorsubocode") %> </span>
-                                        </p>
-                                        <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> " class="btn btn-default contentButton"><%= Resources.DisplayText.Seemore %></a>
-                                    </div>
-                                </div>
-                            </div>
+                <ul class="manlist">
 
-                        </div>
-
-                    </ItemTemplate>
-                    <LayoutTemplate>
-                        <div class="col-xs-12" id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
-
-                            <div id="groupPlaceholder" runat="server">
-                            </div>
-                            <div class="col-xs-12" style="text-align: center;">
-                                <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
-                                    <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
-                                        <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
-                                    </Fields>
-                                </asp:DataPager>
-                            </div>
-                        </div>
-
-                    </LayoutTemplate>
-                    <GroupSeparatorTemplate>
-                        <div class="clearfix"></div>
-                    </GroupSeparatorTemplate>
-                </asp:ListView>
-                <asp:SqlDataSource ID="SqlDataSource1_artistlist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+                    <asp:SqlDataSource ID="SqlDataSource1_artistlist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
 SELECT  m.*,u.EmailID, majorsubocode FROM Main.[MusicianTbl] m
 join Main.UserTbl u on m.UserID=u.UserID
 left join (
@@ -148,10 +102,74 @@ or maincode='Composer'
 or maincode='Conductor'
 ) ml on m.Major=ml.LookUpID
 order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
+
+                    <asp:ListView runat="server" ID="artistListContainer" DataKeyNames="MusicianID" DataSourceID="SqlDataSource1_artistlist" GroupItemCount="3" >
+
+                        <EmptyDataTemplate>
+                            <div class=" col-xs-12 contentHeader">
+                                <h3>No records available.</h3>
+                            </div>
+                        </EmptyDataTemplate>
+                        <GroupTemplate>
+                            <div id="itemPlaceholderContainer" runat="server">
+                                <div id="itemPlaceholder" runat="server">
+                                </div>
+                            </div>
+                        </GroupTemplate>
+                        <ItemTemplate>
+                            <div style="padding: 0; padding-right: 10px;">
+                                <a href="MusicianDetailPage.aspx?ID=<%#Eval("MusicianID") %> ">
+                                    <li>
+                                        <div class="man">
+                                            <img src="../Doc/artist/<%#Eval("Photo1") %>">
+                                        </div>
+                                        <div class="box">
+                                            <div class="name"><%#Eval("Name") %></div>
+                                            <div class="txt">
+                                                <%#Eval("majorsubocode") %><br />
+                                                <%#Eval("Affliation") %>
+                                            </div>
+                                            <div class="go">
+                                                <img src="../Doc/Icons/mango.png" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </a>
+
+                            </div>
+
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <div class="col-xs-12" id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
+
+                                <div id="groupPlaceholder" runat="server">
+                                </div>
+                                <div class="col-xs-12" style="text-align: center; margin-top: 10px;">
+                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                        <Fields>
+                                            <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                            <asp:NumericPagerField />
+                                            <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                        </Fields>
+                                    </asp:DataPager>
+                                </div>
+                            </div>
+
+                        </LayoutTemplate>
+                        <GroupSeparatorTemplate>
+                            <div class="clearfix"></div>
+                        </GroupSeparatorTemplate>
+                    </asp:ListView>
+
+                </ul>
+
+                <div>
+                    <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNewMusician" />
+                </div>
             </div>
-            <div class="row">
-                <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addNewMusician" />
-            </div>
+
+
+
 
         </ContentTemplate>
     </asp:UpdatePanel>
@@ -165,9 +183,9 @@ order by m.UpdateTimeStamp desc"></asp:SqlDataSource>
     </style>
     <script type="text/javascript">
 
-          function onclick_headertableItem(x) {
-              alert(x);
-          }
+        function onclick_headertableItem(x) {
+            alert(x);
+        }
     </script>
 </asp:Content>
 

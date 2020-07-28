@@ -99,3 +99,4 @@ D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\D
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.CopyComplete
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.exe
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.pdb
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\DataAccessP\obj\Debug\DataAccessP.csproj.CoreCompileInputs.cache

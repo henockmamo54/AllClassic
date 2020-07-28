@@ -130,7 +130,7 @@
     <comment>menu bar</comment>
   </data>
   <data name="Auditions" xml:space="preserve">
-    <value>오디션 정보</value>
+    <value>오디션</value>
     <comment>menu bar</comment>
   </data>
   <data name="ConcertVenue" xml:space="preserve">
@@ -138,7 +138,7 @@
     <comment>menu bar</comment>
   </data>
   <data name="Concours" xml:space="preserve">
-    <value>콩클 정보</value>
+    <value>콩클</value>
     <comment>menu bar</comment>
   </data>
   <data name="MusicCollegeDB" xml:space="preserve">
@@ -162,7 +162,7 @@
     <comment>menu bar</comment>
   </data>
   <data name="PerformanceGroup" xml:space="preserve">
-    <value>공연단체 정보</value>
+    <value>공연단체</value>
     <comment>menu bar</comment>
   </data>
   <data name="QA" xml:space="preserve">
@@ -405,7 +405,7 @@
     <value>수정</value>
   </data>
   <data name="Alias" xml:space="preserve">
-    <value>별칭</value>
+    <value>약칭</value>
   </data>
   <data name="City" xml:space="preserve">
     <value>도시</value>
@@ -764,7 +764,7 @@
     <value>오시는 길</value>
   </data>
   <data name="Agora" xml:space="preserve">
-    <value>Agora</value>
+    <value>아고라</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
@@ -773,7 +773,7 @@
     <value>Musician</value>
   </data>
   <data name="ORG" xml:space="preserve">
-    <value>ORG</value>
+    <value>기관</value>
   </data>
   <data name="search" xml:space="preserve">
     <value>검색</value>

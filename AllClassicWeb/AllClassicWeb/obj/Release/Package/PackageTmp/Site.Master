@@ -5,7 +5,7 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AllClassic Korea</title>
 
     <asp:PlaceHolder runat="server">
@@ -16,233 +16,11 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="Content/style.css" rel="stylesheet" />
 
     <script type="text/javascript">
-        function modifyCss(color, page) {
-            switch (color) {
-
-                case "1":
-                    //$(".whitesmokeBG").css('background-color', '#004d40');
-                    //$(".whitesmokeBG").css('color', '#ffffff');
-                    //$(".whitesmokeBG > div > a ").css('color', '#ffffff');
-                    //$(".whitesmokeBG > div > span >a ").css('color', '#ffffff');
-                    $("#mainSearchBox").css('background-color', '#2a2a2a');
 
 
-                    $(".whitesmokeBG").css('font-weight', 'bold');
-                    $(".whitesmokeBG > div > a ").css('font-weight', 'bold');
-                    $(".whitesmokeBG > div > span >a ").css('font-weight', 'bold');
-
-                    break;
-            }
-
-            switch (page) {
-                case "ASP.views_aboutus_aspx":
-                    {
-                        document.getElementById("introductiontab").style.backgroundColor = "none";
-                        document.getElementById("introductiontab").style.borderBottom = "none";
-                        document.getElementById("introductiontab").style.color = "#dfb33a";
-
-                        break;
-                    }
-
-                case "ASP.views_performancedb_aspx":
-                    {
-                        document.getElementById("performancetab").style.backgroundColor = "none";
-                        document.getElementById("performancetab").style.borderBottom = "none";
-                        document.getElementById("performancetab").style.color = "#dfb33a";
-
-                        break;
-                    }
-                case "ASP.views_performancedbaddnew_aspx": {
-                    document.getElementById("performancetab").style.backgroundColor = "none";
-                    document.getElementById("performancetab").style.borderBottom = "none";
-                    document.getElementById("performancetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancedetail_aspx": {
-                    document.getElementById("performancetab").style.backgroundColor = "none";
-                    document.getElementById("performancetab").style.borderBottom = "none";
-                    document.getElementById("performancetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiciandb_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "none";
-                    document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiciandbaddnew_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "none";
-                    document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiciandetailpage_aspx": {
-                    document.getElementById("artisttab").style.backgroundColor = "none";
-                    document.getElementById("artisttab").style.borderBottom = "none";
-                    document.getElementById("artisttab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiccollegedb_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
-                    document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiccollegedbaddnew_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
-                    document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musiccollegedbdetail_aspx": {
-                    document.getElementById("MusicCollegetab").style.backgroundColor = "none";
-                    document.getElementById("MusicCollegetab").style.borderBottom = "none";
-                    document.getElementById("MusicCollegetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_articledb_aspx": {
-                    document.getElementById("articletab").style.backgroundColor = "none";
-                    document.getElementById("articletab").style.borderRight = "none";
-                    document.getElementById("articletab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_articledbaddnew_aspx": {
-                    document.getElementById("articletab").style.backgroundColor = "none";
-                    document.getElementById("articletab").style.borderRight = "none";
-                    document.getElementById("articletab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_auditiondb_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "none";
-                    document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_auditiondb_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "none";
-                    document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_auditiondbaddnew_aspx": {
-                    document.getElementById("auditiontab").style.backgroundColor = "none";
-                    document.getElementById("auditiontab").style.borderRight = "none";
-                    document.getElementById("auditiontab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_concoursdb_aspx": {
-                    document.getElementById("concoursdbtab").style.backgroundColor = "none";
-                    document.getElementById("concoursdbtab").style.borderRight = "none";
-                    document.getElementById("concoursdbtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_concoursdbaddnew_aspx": {
-                    document.getElementById("concoursdbtab").style.backgroundColor = "none";
-                    document.getElementById("concoursdbtab").style.borderRight = "none";
-                    document.getElementById("concoursdbtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancegroupaddnew_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
-                    document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancegroup_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
-                    document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancegroupdetail_aspx": {
-                    document.getElementById("performancegrouptab").style.backgroundColor = "none";
-                    document.getElementById("performancegrouptab").style.borderRight = "none";
-                    document.getElementById("performancegrouptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_repairshopdb_aspx": {
-                    document.getElementById("RepairShoptab").style.backgroundColor = "none";
-                    document.getElementById("RepairShoptab").style.borderRight = "none";
-                    document.getElementById("RepairShoptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_repairshopdbaddnew_aspx": {
-                    document.getElementById("RepairShoptab").style.backgroundColor = "none";
-                    document.getElementById("RepairShoptab").style.borderRight = "none";
-                    document.getElementById("RepairShoptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musicshopdb_aspx": {
-                    document.getElementById("MusicShopDBtab").style.backgroundColor = "none";
-                    document.getElementById("MusicShopDBtab").style.borderRight = "none";
-                    document.getElementById("MusicShopDBtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_musicshopdbaddnew_aspx": {
-                    document.getElementById("MusicShopDBtab").style.backgroundColor = "none";
-                    document.getElementById("MusicShopDBtab").style.borderRight = "none";
-                    document.getElementById("MusicShopDBtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_concertvenudb_aspx": {
-                    document.getElementById("ConcertVenutab").style.backgroundColor = "none";
-                    document.getElementById("ConcertVenutab").style.borderRight = "none";
-                    document.getElementById("ConcertVenutab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_concertvenudbaddnew_aspx": {
-                    document.getElementById("ConcertVenutab").style.backgroundColor = "none";
-                    document.getElementById("ConcertVenutab").style.borderRight = "none";
-                    document.getElementById("ConcertVenutab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_peopleandjobdb_aspx": {
-                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_peopleandjobdbaddnew_aspx": {
-                    document.getElementById("PeopleAndJobDBtab").style.backgroundColor = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.borderRight = "none";
-                    document.getElementById("PeopleAndJobDBtab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_performancearchivedb_aspx": {
-                    document.getElementById("performanceArchivetab").style.backgroundColor = "none";
-                    document.getElementById("performanceArchivetab").style.borderRight = "none";
-                    document.getElementById("performanceArchivetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_signup_termsofusepage_aspx": {
-                    document.getElementById("signuptab").style.backgroundColor = "none";
-                    document.getElementById("signuptab").style.borderRight = "none";
-                    document.getElementById("signuptab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_qadbnew_aspx": {
-                    document.getElementById("qatab").style.backgroundColor = "none";
-                    document.getElementById("qatab").style.borderRight = "none";
-                    document.getElementById("qatab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_mypage_aspx": {
-                    document.getElementById("mypagetab").style.backgroundColor = "none";
-                    document.getElementById("mypagetab").style.borderRight = "none";
-                    document.getElementById("mypagetab").style.color = "#dfb33a";
-                    break;
-                }
-                case "ASP.views_classiccoindb_aspx": {
-                    
-                    document.getElementById("ClassicCointab").style.backgroundColor = "none";
-                    document.getElementById("ClassicCointab").style.borderRight = "none";
-                    document.getElementById("ClassicCointab").style.color = "#dfb33a";
-                    break;
-                }
-            }
-        }
 
         function SiteSearch() {
             $('#encodedSearchvalue').val(EncodeText(document.getElementById('searchbox').value));
@@ -295,137 +73,110 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
+
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="container body-content" style="padding-left: 20px; font-family: 'Open Sans', sans-serif;">
+        <div class="wrap">
 
 
             <div id="masterNavigationBar">
-                <div class="row">
-                    <span style="float: right; margin-left: 10px; margin-top:3px;">
-                        <a runat="server" class="Contentdisplay" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-left: 0px; display: inline-block; color:#cccccc;"><%= Resources.DisplayText.en %></a>/
-                        <a runat="server" class="Contentdisplay" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-right: 0px; display: inline-block; color: #cccccc;"><%= Resources.DisplayText.kr %></a>
-                    </span>
+                <div class="header">
 
-                    <a runat="server" id="signinLink" visible="false">
-                        <a runat="server" class="Contentdisplay" style="float: right; margin-left: 10px; color:#cccccc; margin-top:5px;" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a>
-                        <a runat="server" class="Contentdisplay" style="float: right; color:#cccccc; margin-top:5px;" id="signuptab" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a>
-                    </a>
-
-                    <a runat="server" class="Contentdisplay" id="signoutLink" style="float: right; color: #cccccc; margin-left: 10px;" visible="false" href="" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
-                    <a id="mypagetab" class="Contentdisplay" runat="server" style="float: right; color: #cccccc; margin-left: 10px;" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
-
-                    <a id="lookupmanagementtab" class="Contentdisplay" runat="server" style="float: right; color: #cccccc; " visible="false" href="~/Views/LookupMangePage">lookup management</a>
-
-                    <br />
-
-                </div>
-                <div class="row">
-
-                    <a class="navbar-brand allclasic_home" style="text-decoration: none; border-radius: 5px;  color: white !important;" runat="server" href="~/Views/PerformanceDB"><img src="/Content/img/logo.png" alt="All Classic Korea" ></a>
+                    <div class="logo">
+                        <a href="/">
+                            <img runat="server" src="~/Doc/Icons/logo.png" /></a>
+                    </div>
 
 
-                    <span class="otheroptions " style="padding-top: 8px;">
-                        <asp:TextBox runat="server" ID="searchbox" class="form-control" Style="display: inline; width: 400px;"></asp:TextBox>
-                        <asp:Button Style="margin-left: 5px; background:#2a2a2a; color:#dfb33a; border-radius:5px; margin-bottom: 3.7px;"
-                            runat="server" ID="mainSearchBox" Text="search" UseSubmitBehavior="false" class="btn btn-primary" OnClientClick="SiteSearch();" OnClick="searchClicked" />
+                    <%--<div class="logo">
+                        <a href="/">
+                            <img runat="server" src="~/Content/img/logo.png"></a>
+                    </div>--%>
+
+                    <ul class="user">
+                        <li class=""><a id="signinLink" runat="server" href="~/Views/Login.aspx"><%= Resources.DisplayText.SignIn %></a></li>
+                        <li class=""><a id="signupLink" runat="server" href="~/Views/SignUp/TermsOfUsePage"><%= Resources.DisplayText.SignUp %> </a></li>
+                        <li class="">
+                            <a runat="server" id="signoutLink" visible="false" href="Default.aspx" onserverclick="signoutClicked"><%= Resources.DisplayText.SignOut %></a>
+                        </li>
+                        <li class="">
+                            <a id="mypagetab" runat="server" visible="false" href="~/Views/Mypage"><%= Resources.DisplayText.Mypage %></a>
+                        </li>
+                        <li class="">
+                            <a id="lookupmanagementtab" runat="server" visible="false" href="~/Views/LookupMangePage">lookup management</a>
+                        </li>
+
+                        <li class="">
+                            <a runat="server" onserverclick="changeLanguageToEng" commandargument='en-US' style="padding-right: 0"><%= Resources.DisplayText.en %></a>/                       
+                            <a runat="server" onserverclick="changeLanguageToKr" commandargument='ko-KR' style="padding-left: 0"><%= Resources.DisplayText.kr %></a>
+                        </li>
+                    </ul>
+
+
+                    <div class="searchbox">
+                        <div class="form">
+                            <asp:TextBox name="" type="text" placeholder=' <%$ Resources:DisplayText,search %>' MaxLength="30" class="search" title="검색어 입력" runat="server" ID="searchbox" />
+                        </div>
+
+                        <div class="icon">
+                            <asp:ImageButton runat="server" OnClientClick="SiteSearch();" OnClick="searchClicked" ImageUrl="Content/img/btn_search.png"></asp:ImageButton>
+                        </div>
                         <asp:HiddenField runat="server" ID="encodedSearchvalue" />
-                    </span>
-                </div>
-                <!--<hr style="margin-top: 20px; margin-bottom: 10px;" />-->
-
-
-
-                <div class="row" style="text-align: center; height:46px;">
-                    <span class="menucontainer">
-                        <a id="performancetab" class="mainTitle" style="text-decoration: none;" runat="server" href="~/Views/PerformanceDB"><%= Resources.DisplayText.PerformanceDB %> </a>
-                    </span>
-                    <span><img src="/Content/img/menuline.png"</span>
-                    <span class="menucontainer">
-                        <a id="artisttab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/MusicianDB"><%= Resources.DisplayText.MusicianDB %>  </a>
-                    </span>
-                    <span><img src="/Content/img/menuline.png"</span>                
-
-                    <span class="menucontainer">
-                        <a id="performancegrouptab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.PerformanceGroup %></a>
-                    </span>
-                    <span><img src="/Content/img/menuline.png"</span>
-                    <span class="menucontainer">
-                        <a id="MusicCollegetab" class="mainTitle" runat="server" style="text-decoration: none; width: 100px;" href="~/Views/MusicCollegeDB"><%= Resources.DisplayText.MusicCollegeDB %></a>
-                    </span>
-                    <span><img src="/Content/img/menuline.png"</span>
-                    <span class="menucontainer">
-                        <a id="performanceArchivetab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> </a>
-                    </span>
-                    <span><img src="/Content/img/menuline.png"</span>
-                    <span class="menucontainer">
-                        <a id="ClassicCointab" runat="server" class="mainTitle" style="text-decoration: none; width: 100px;" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
-                    </span>
-                    <span><img src="/Content/img/menuline.png"</span>
-                    <span class="menucontainer">
-
-                        <a id="introductiontab" class="mainTitle" style="text-decoration: none; width: 100px;" runat="server" href="~/Views/AboutUs"><%= Resources.DisplayText.AboutUS %></a>
-                    </span>
-                </div>
-
-                <%--<span style="margin-top: 10px; margin-bottom: 0;" />--%>
-                <%--position: absolute; left: 0; right: 0; display: block;--%>
-                <div class="row" style="/*height: 40px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); margin: 0 -40%; padding: 0 -100%; */">
-                    <!--<div class="row" style="height: 40px; background-image: linear-gradient(to right, rgb(0, 77, 64,1), rgb(26, 181, 154,0.4)); margin: 0 -40%; padding: 0 -40%;">-->
-                    </div>
-                    <%-- <br />
-                <br />
-                <br />
-                <br />--%>
-                    <%--<hr />--%>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-2 col-xs-2  " id="mastersidemenu" style="padding-left: 0px; margin-top: 0px;">
-                        <ul class="list-group ">
-
-                            <a id="articletab" class="list-group-item list-group-item-action  whitesmokeBG" runat="server" href="~/Views/ArticleDB"><%= Resources.DisplayText.Article %></a>
-                            <a id="auditiontab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Auditions %></a>
-                            <a id="concoursdbtab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/ConcoursDB"><%= Resources.DisplayText.Concours %></a>
-                            <a id="RepairShoptab" class="list-group-item list-group-item-action whitesmokeBG" runat="server" href="~/Views/RepairShopDB"><%= Resources.DisplayText.RepairShop %></a>
-                            <a id="MusicShopDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/MusicShopDB"><%= Resources.DisplayText.MusicShop %></a>
-                            <a id="ConcertVenutab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/ConcertVenuDB"><%= Resources.DisplayText.ConcertVenue %></a>
-                            <a id="PeopleAndJobDBtab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/PeopleAndJobDB"><%= Resources.DisplayText.PeopleJob %></a>
-                            <a id="qatab" runat="server" class="list-group-item list-group-item-action whitesmokeBG" href="~/Views/QADbNew"><%= Resources.DisplayText.QA %></a>
-
-                        </ul>
-                        <asp:ImageButton ImageUrl="~/Doc/ads/1d63a0_c98934b833c94affa65a41837b01c878_mv2_d_1388_1654_s_2.jpg" Style="width: 100%;" runat="server" />
-                        <asp:ImageButton ImageUrl="~/Doc/ads/P20181203000.jpg" runat="server" Style="width: 100%;" />
                     </div>
 
-                    <div class="col-md-10 col-xs-10" id="mastermaincontent" style="padding-right: 0;">
-                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                </div>
-                <br />
+                    <ul class="gnb">
 
-                <footer id="masterFooter" style="background: #F4F5F9; padding: 20px; margin: 0 -40%; padding: 0 -40%;">
-                    <p style="text-align: center;" class="Contentdisplay">
-                        (주)올클래식코리아 | 대표 : 전동수 | 주소: 서울시 강남구 역삼로 220 홍성빌딩 3 층 (06227)<br />
-                        사업자등록번호 : 629-88-01114 | 전화 : 02)561-7080 | 팩스 : 02)561-6082<br />
-                        개인정보관리책임자 : 백대원 | 이메일: daewonbaek@gmail.com<br />
-                        COPYRIGHT @www.allclassickorea.co.kr<br />
-                    </p>
-                </footer>
-                <style type="text/css">
-                    .menucontainer {
-                        min-width: 110px;
-                        display: inline-block;
-                        text-align: center;
-                        margin: 5px;
-                    }
-                </style>
+                        <li class=""><a id="hometab" runat="server" href="Default.aspx"><%= Resources.DisplayText.Home %> </a></li>
+                        <li class="">
+                            <a id="artisttab" runat="server" href="~/Views/MusicianDB.aspx"><%= Resources.DisplayText.MusicianDB %>  </a>
+                        </li>
+                        <li class="">
+                            <a id="performancetab" runat="server" href="~/Views/PerformanceDB.aspx"><%= Resources.DisplayText.Events %>  </a>
+                        </li>
+                        <li class="">
+                            <a id="performancegrouptab" runat="server" href="~/Views/PerformanceGroup.aspx"><%= Resources.DisplayText.ORG %></a></li>
+                        <li class="">
+                            <a id="agoratab" runat="server" href="~/Views/AuditionDB"><%= Resources.DisplayText.Agora %></a></li>
+                        <li class="">
+                            <a id="ClassicCointab" runat="server" href="~/Views/ClassicCoinDB"><%= Resources.DisplayText.ClassicCoin %></a>
+                        </li>
+                        <li class="">
+                            <a id="performanceArchivetab" runat="server" href="~/Views/PerformanceArchiveDB"><%= Resources.DisplayText.ArchiveCenter %> * </a></li>
+                        <li class=""><a id="aboutustab" runat="server" href="~/Views/AboutUs.aspx"><%= Resources.DisplayText.AboutUS %>  </a></li>
+                    </ul>
+                </div>
 
             </div>
+
+            <div id="mastermaincontent" class="container">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+
+            <footer id="masterFooter">
+
+                <div class="footerwrap">
+                    <div class="footer">
+                        <ul class="f1">
+                            <li class=""><a href="#">개인정보처리방침</a></li>
+                            <li class=""><a href="#">이메일무단수집거부</a></li>
+                            <li class=""><a href="#">찾아오시는 길</a></li>
+                        </ul>
+                        <div class="f2"></div>
+                        <div class="f3">
+                            (주)올클래식코리아 (우06227) 서울시 강남구 역삼로 220 홍성빌딩 3층 / 대표전화 : 02-561-7080 / 팩스 : 02-561-6082 / 사업자등록번호 : 629-88-01114
+                            <br />
+                            개인정보관리책임자 : 백대원 / 이메일: daewonbaek@gmail.com<br />
+                            COPYRIGHT© All Classic Korea. ALL RIGHTS RESERVED.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+        </div>
     </form>
 </body>
 </html>

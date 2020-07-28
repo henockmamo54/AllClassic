@@ -745,4 +745,28 @@
   <data name="CompLocation" xml:space="preserve">
     <value>Location</value>
   </data>
+  <data name="Agora" xml:space="preserve">
+    <value>Agora</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Musician" xml:space="preserve">
+    <value>Musician</value>
+  </data>
+  <data name="ORG" xml:space="preserve">
+    <value>ORG</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ConcleInformation" xml:space="preserve">
+    <value>Concle Information</value>
+  </data>
+  <data name="Jobsearch" xml:space="preserve">
+    <value>Job search</value>
+  </data>
+  <data name="Schedule_of_the_Month" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
 </root>

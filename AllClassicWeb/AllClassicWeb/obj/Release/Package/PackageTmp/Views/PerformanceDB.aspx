@@ -4,139 +4,117 @@
 
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
-            <br />
-            <div class="row " style="padding-right: 0px; margin-right: 0px;">
-                <div class="col-md-3 col-xs-3" runat="server" onclick="test">
-                    <asp:Calendar runat="server" ID="dateselectorcalendar" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="200px" NextPrevFormat="FullMonth" Width="220px" OnSelectionChanged="dateselectorcalendar_SelectionChanged">
-                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
-                        <OtherMonthDayStyle ForeColor="#999999" />
-                        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="0px" Font-Bold="True" CssClass="contentTitle" Font-Size="12pt" ForeColor="#333399" />
-                        <TodayDayStyle BackColor="#ffffff" />
-                    </asp:Calendar>
 
-                    <div style="text-align: center">
-                        <asp:Button runat="server" ID="btnResetSelection" Text="clear" Style="background-color: #28878A; color: white; border: 1px solid lightgray; border-radius: 1px; padding: 3px; margin: 1px; border-radius: 3px;"
-                            OnClick="btnClearSelection" />
+
+            <!-- conbox --------------------------------------->
+            <div class="conbox">
+
+                <h2>Events</h2>
+
+                <div class="row">
+
+                <div class="section3 ">
+                    <div class="section3-1">
+                        <div class="day_m">
+                            <h3><%=Resources.DisplayText.Schedule_of_the_Month %></h3>
+                            <div class="year"><asp:Label runat="server" ID="yearlabel"/></div>
+                            <div class="month"><asp:Label runat="server" ID="datelabel"/></div>
+                            <div class="arr1">
+                                <a href="#">
+                                    <img src="../Content/img/day_arr1.png"></a>
+                            </div>
+                            <div class="arr2">
+                                <a href="#">
+                                    <img src="../Content/img/day_arr2.png"></a>
+                            </div>
+                        </div>
                     </div>
+                    <div class="section3-2">
+                        <div class="day_d" style="display:inline-block">
+                            <ul class="dday">
+                                <li ID="date01" runat="server" ><asp:LinkButton CommandArgument="01"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">01</asp:LinkButton></li>
+                                <li ID="date02" runat="server" ><asp:LinkButton CommandArgument="02"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">02</asp:LinkButton></li>
+                                <li ID="date03" runat="server" ><asp:LinkButton CommandArgument="03"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">03</asp:LinkButton></li>
+                                <li ID="date04" runat="server" ><asp:LinkButton CommandArgument="04"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">04</asp:LinkButton></li>
+                                <li ID="date05" runat="server" ><asp:LinkButton CommandArgument="05"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">05</asp:LinkButton></li>
+                                <li ID="date06" runat="server" ><asp:LinkButton CommandArgument="06"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">06</asp:LinkButton></li>
+                                <li ID="date07" runat="server" ><asp:LinkButton CommandArgument="07"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">07</asp:LinkButton></li>
+                                <li ID="date08" runat="server" ><asp:LinkButton CommandArgument="08"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">08</asp:LinkButton></li>
+                                <li ID="date09" runat="server" ><asp:LinkButton CommandArgument="09"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">09</asp:LinkButton></li>
+                                <li ID="date10" runat="server" ><asp:LinkButton CommandArgument="10"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">10</asp:LinkButton></li>
+                                <li ID="date11" runat="server" ><asp:LinkButton CommandArgument="11"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">11</asp:LinkButton></li>
+                                <li ID="date12" runat="server" ><asp:LinkButton CommandArgument="12"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">12</asp:LinkButton></li>
+                                <li ID="date13" runat="server" ><asp:LinkButton CommandArgument="13"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">13</asp:LinkButton></li>
+                                <li ID="date14" runat="server" ><asp:LinkButton CommandArgument="14"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">14</asp:LinkButton></li>
+                                <li ID="date15" runat="server" ><asp:LinkButton CommandArgument="15"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">15</asp:LinkButton></li>
+                                <li ID="date16" runat="server" ><asp:LinkButton CommandArgument="16"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">16</asp:LinkButton></li>
+                                <li ID="date17" runat="server" ><asp:LinkButton CommandArgument="17"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">17</asp:LinkButton></li>
+                                <li ID="date18" runat="server" ><asp:LinkButton CommandArgument="18"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">18</asp:LinkButton></li>
+                                <li ID="date19" runat="server" ><asp:LinkButton CommandArgument="19"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">19</asp:LinkButton></li>
+                                <li ID="date20" runat="server" ><asp:LinkButton CommandArgument="20"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">20</asp:LinkButton></li>
+                                <li ID="date21" runat="server" ><asp:LinkButton CommandArgument="21"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">21</asp:LinkButton></li>
+                                <li ID="date22" runat="server" ><asp:LinkButton CommandArgument="22"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">22</asp:LinkButton></li>
+                                <li ID="date23" runat="server" ><asp:LinkButton CommandArgument="23"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">23</asp:LinkButton></li>
+                                <li ID="date24" runat="server" ><asp:LinkButton CommandArgument="24"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">24</asp:LinkButton></li>
+                                <li ID="date25" runat="server" ><asp:LinkButton CommandArgument="25"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">25</asp:LinkButton></li>
+                                <li ID="date26" runat="server" ><asp:LinkButton CommandArgument="26"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">26</asp:LinkButton></li>
+                                <li ID="date27" runat="server" ><asp:LinkButton CommandArgument="27"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">27</asp:LinkButton></li>
+                                <li ID="date28" runat="server" ><asp:LinkButton CommandArgument="28"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">28</asp:LinkButton></li>
+                                <li ID="date29" runat="server" ><asp:LinkButton CommandArgument="29"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">29</asp:LinkButton></li>
+                                <li ID="date30" runat="server" ><asp:LinkButton CommandArgument="30"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">30</asp:LinkButton></li>
+                                <li ID="date31" runat="server" ><asp:LinkButton CommandArgument="31"  runat="server" oncommand="dateselectorcalendar_SelectionChanged">31</asp:LinkButton></li>
+                            </ul>
+                            <ul class="dimg" >
 
-                </div>
-                <div class="col-md-6 col-xs-6 " style="padding: 0;">
-                    <h5 style="color: #28878a; font-weight: 700;" class="contentTitle"><%= Resources.DisplayText.Performanceschedule %>: <%= Resources.DisplayText.ThisWeek %></h5>
-                    <div class="shadowedPanel" style="overflow-y: scroll; max-height: 200px; height: 200px; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);">
-                        <table class="table table-striped ">
-                            <thead>
-                                <tr class="filedName">
-                                    <th scope="col"><%= Resources.DisplayText.StartDate %></th>
-                                    <th scope="col"><%= Resources.DisplayText.Title %></th>
-                                    <th scope="col"><%=Resources.DisplayText.Region %>/<%=Resources.DisplayText.City %></th>
-                                    <th scope="col"><%=Resources.DisplayText.Venue %></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <asp:Repeater runat="server" ID="repeater_thisweekPerformanceInfo">
+
+                                <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
+
+                                    <EmptyDataTemplate>
+                                        <div>
+                                            <h3>No records available.</h3>
+                                        </div>
+                                    </EmptyDataTemplate>
+
+                                    <GroupTemplate>
+                                        <div id="itemPlaceholderContainer" runat="server">
+                                            <div id="itemPlaceholder" runat="server">
+                                            </div>
+                                        </div>
+                                    </GroupTemplate>
                                     <ItemTemplate>
-                                        <tr class="filedDisplayandContentdisplay">
-                                            <td scope="row"><%# DataBinder.Eval(Container.DataItem,"StartDate","{0:d/M/yyyy}")  %></td>
-                                            <td><%# (Eval("MainTitle")) .ToString().Length>15?
-                                                           (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
-                                                           (Eval("MainTitle")) .ToString()%></td>
-                                            <td><%# Eval("LookupTbl1.Subcode") %>/<%# Eval("LookUpTbl2.Subcode") %></td>
-                                            <td><%# Eval("VenueTbl.Name") %> </td>
-                                        </tr>
+                                        <li>
+                                            <div>
+                                                <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="performancepageclicked" CommandArgument='<%# Eval("PerformanceID") %>'>
+                                 <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 200px;">
+                                                                                                  
+                                                </asp:LinkButton>
+                                            </div>
+                                        </li>
+
                                     </ItemTemplate>
-                                </asp:Repeater>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-3 " style="padding-right: 0px;">
-                    <h5 style="color: #28878a; font-weight: 700;" class="contentTitle"><%=Resources.DisplayText.Region %></h5>
-                    <asp:Repeater runat="server" ID="repeater_location" OnItemDataBound="repeater_locationOnItemDataBound" DataSourceID="SqlDataSource1_region">
-                        <ItemTemplate>
-                            <asp:Button runat="server" OnClick="regionclicked" CommandArgument='<%# Eval("subcode") %>' ID='location' class="locationcontainer filedDisplayandContentdisplay" Text='<%# Eval("subcode") %>'></asp:Button>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                                    <LayoutTemplate>
+                                        <div class="col-xs-12" id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
 
-                    <asp:SqlDataSource ID="SqlDataSource1_region" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
-select* from(
-select lookupid, subcode, Row=0 from main.lookuptbl where subcode like N'%전체%'
-Union
-select lookupid, subcode,
- ROW_NUMBER() over(order by subcode asc) As Row 
-from main.lookuptbl
-where maincode='Region'
-and subcode not like N'%전체%'
-)x  order by row"></asp:SqlDataSource>
+                                            <div id="groupPlaceholder" runat="server">
+                                            </div>
+                                            <div class="row col-xs-12" style="text-align: center; margin-top:10px;">
+                                                <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
+                                                    <Fields>
+                                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
+                                                        <asp:NumericPagerField />
+                                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
+                                                    </Fields>
+                                                </asp:DataPager>
+                                            </div>
+                                        </div>
 
-                </div>
-            </div>
-            <div class="row col-xs-12" style="margin-top: 15px;">
-
-                <h4 style="color: #28878a;" class="contentTitle "><%= Resources.DisplayText.Total %>:
-                            <asp:Label runat="server" ID="label_countofitems"></asp:Label>
-                    <%= Resources.DisplayText.Events %> </h4>
-
-                <hr style="margin-top: 0px;" />
-            </div>
-            <div class="row">
-                <asp:ListView runat="server" ID="artistListContainer" OnDataBound="artistListContainer_ondatabound" DataKeyNames="PerformanceID" DataSourceID="SqlDataSource1_Performancelist" GroupItemCount="4" Style="width: 100%;">
-
-                    <EmptyDataTemplate>
-                        <div class=" col-xs-12 contentHeader">
-                            <h3>No records available.</h3>
-                        </div>
-                    </EmptyDataTemplate>
-
-                    <GroupTemplate>
-                        <div id="itemPlaceholderContainer" runat="server">
-                            <div id="itemPlaceholder" runat="server">
-                            </div>
-                        </div>
-                    </GroupTemplate>
-                    <ItemTemplate>
-                        <div class="col-md-3 col-xs-3" style="margin-bottom: 1em; padding-right: 0px;">
-                            <div class="thumbnail shadowedbox shadowedbox_hover" style="box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);">
-                                <asp:LinkButton runat="server" ID="tumbinallink" Style="text-decoration: none;" OnCommand="performancepageclicked" CommandArgument='<%# Eval("PerformanceID") %>'>
-                                                                            <img src="../Doc/Performance/<%#Eval("PosterFileName") %>" class="shadowedbox" alt="Lights" style="width: 100%; height: 200px;">
-
-                                            <div class="caption" style="padding-bottom:3px;">
-                                                <h4 class="contentHeader"><%# (Eval("MainTitle")) .ToString().Length>15?
-                                                           (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
-                                                           (Eval("MainTitle")) .ToString()%></h4>
-                                                <h6 class="Contentdisplay"><%= Resources.DisplayText.StartDate %>: <%# DataBinder.Eval(Container.DataItem,"startdate","{0:dd/MM/yyyy}") %></h6>
-                                                <%--<h6>venu: <%# Eval("venuname") %></h6>--%>
-                                                <h6 class="Contentdisplay"><%= Resources.DisplayText.Location %>: <%# Eval("Regionname") %>/<%# Eval("cityname") %> - <%# Eval("venuname") %></h6>
-                                            </div>                                
-
-                                </asp:LinkButton>
-                            </div>
-                        </div>
-
-                    </ItemTemplate>
-                    <LayoutTemplate>
-                        <div class="col-xs-12" id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
-
-                            <div id="groupPlaceholder" runat="server">
-                            </div>
-                            <div class="col-xs-12" style="text-align: center;">
-                                <asp:DataPager ID="DataPager1" runat="server" PageSize="8">
-                                    <Fields>
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" FirstPageText="<%$Resources:DisplayText,First %>" />
-                                        <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn contentButton" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" LastPageText="<%$Resources:DisplayText,Last %>" />
-                                    </Fields>
-                                </asp:DataPager>
-                            </div>
-                        </div>
-
-                    </LayoutTemplate>
-                    <GroupSeparatorTemplate>
-                        <div class="clearfix"></div>
-                    </GroupSeparatorTemplate>
-                </asp:ListView>
-                <asp:SqlDataSource ID="SqlDataSource1_Performancelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+                                    </LayoutTemplate>
+                                    <GroupSeparatorTemplate>
+                                        <div class="clearfix"></div>
+                                    </GroupSeparatorTemplate>
+                                </asp:ListView>
+                                <asp:SqlDataSource ID="SqlDataSource1_Performancelist" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>"
+                                    SelectCommand="
 DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarchar(100))
 
                                                             INSERT INTO @fooTable 
@@ -155,11 +133,96 @@ DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarcha
                                                             left join @fooTable r on r.LookUpID=p.Region
                                                             left join @fooTable c on c.LookUpID=p.City where p.enddate > getdate()
 order by p.UpdateTimeStamp desc"></asp:SqlDataSource>
-            </div>
-            <div class="row">
-                <hr />
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <%--<div class="more"><a href="#">+</a></div>--%>
+                </div>
+
+
+                <div class="conlist">
+                    <div class="row">
+
+                        <ul class="area_btn" style="display: inline-block">
+                            <h3 style="display: inline-block"><%=Resources.DisplayText.Region %></h3>
+                            <asp:Repeater runat="server" ID="repeater_location" OnItemDataBound="repeater_locationOnItemDataBound" DataSourceID="SqlDataSource1_region">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:LinkButton runat="server" OnClick="regionclicked" CommandArgument='<%# Eval("subcode") %>' ID='location'
+                                            class="locationcontainer " Text='<%# Eval("subcode") %>'></asp:LinkButton>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+                            <asp:SqlDataSource ID="SqlDataSource1_region" runat="server" ConnectionString="<%$ ConnectionStrings:AllClassicDBConnectionString %>" SelectCommand="
+select* from(
+select lookupid, subcode, Row=0 from main.lookuptbl where subcode like N'%전체%'
+Union
+select lookupid, subcode,
+ ROW_NUMBER() over(order by subcode asc) As Row 
+from main.lookuptbl
+where maincode='Region'
+and subcode not like N'%전체%'
+)x  order by row"></asp:SqlDataSource>
+
+                        </ul>
+
+                    </div>
+                    <div class="row" style="overflow-y: scroll; max-height: 200px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><%= Resources.DisplayText.StartDate %></th>
+                                    <th><%= Resources.DisplayText.Title %></th>
+                                    <th><%=Resources.DisplayText.Region %>/<%=Resources.DisplayText.City %></th>
+                                    <th><%=Resources.DisplayText.Venue %></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <asp:Repeater runat="server" ID="repeater_thisweekPerformanceInfo">
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td scope="row"><%# DataBinder.Eval(Container.DataItem,"StartDate","{0:d/M/yyyy}")  %></td>
+                                            <td><%# (Eval("MainTitle")) .ToString().Length>15?
+                                                           (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
+                                                           (Eval("MainTitle")) .ToString()%></td>
+                                            <td><%# Eval("LookupTbl1.Subcode") %>/<%# Eval("LookUpTbl2.Subcode") %></td>
+                                            <td><%# Eval("VenueTbl.Name") %> </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                    <AlternatingItemTemplate>
+
+                                        <tr>
+                                            <td class="td2" scope="row"><%# DataBinder.Eval(Container.DataItem,"StartDate","{0:d/M/yyyy}")  %></td>
+                                            <td class="td2"><%# (Eval("MainTitle")) .ToString().Length>15?
+                                                           (Eval("MainTitle")) .ToString().Substring(0,15)+ " ....":
+                                                           (Eval("MainTitle")) .ToString()%></td>
+                                            <td class="td2"><%# Eval("LookupTbl1.Subcode") %>/<%# Eval("LookUpTbl2.Subcode") %></td>
+                                            <td class="td2"><%# Eval("VenueTbl.Name") %> </td>
+                                        </tr>
+                                    </AlternatingItemTemplate>
+                                </asp:Repeater>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                </div>
+
+            <div class="row">  
+                <br />
                 <asp:Button runat="server" ID="btn_addNewMusician" CssClass="btn btn-success pull-right contentButton" Text="<%$Resources:DisplayText,AddNewData %>" OnClick="onclick_btn_addPG" />
             </div>
+
+            </div>
+
+            <!-- conbox --------------------------------------->
+
+
+
         </ContentTemplate>
     </asp:UpdatePanel>
 

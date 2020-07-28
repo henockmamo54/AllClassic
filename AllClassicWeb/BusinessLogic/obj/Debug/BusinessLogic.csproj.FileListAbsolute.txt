@@ -36,3 +36,4 @@ D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.exe
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
