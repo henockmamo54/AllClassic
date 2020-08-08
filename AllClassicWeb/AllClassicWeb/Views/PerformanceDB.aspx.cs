@@ -20,7 +20,7 @@ namespace AllClassicWeb.Views
         {
             user = (UserTbl)Session["User"];
             yearlabel.Text = DateTime.Now.Year.ToString();
-            datelabel.Text = DateTime.Now.Date.Day.ToString();
+            datelabel.Text = DateTime.Now.Date.Day.ToString("00");
 
             //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "handletab();", true);
 
@@ -99,7 +99,7 @@ namespace AllClassicWeb.Views
         public void handle_selectionChangeForArrowSelector(int dayvalue)
         {
 
-            datelabel.Text = dayvalue.ToString();
+            datelabel.Text = dayvalue.ToString("00");
 
 
             handelTheClassForTheDateSelectors(dayvalue);
