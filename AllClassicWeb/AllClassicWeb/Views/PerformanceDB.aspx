@@ -20,12 +20,12 @@
                             <div class="year"><asp:Label runat="server" ID="yearlabel"/></div>
                             <div class="month"><asp:Label runat="server" ID="datelabel"/></div>
                             <div class="arr1">
-                                <a href="#">
-                                    <img src="../Content/img/day_arr1.png"></a>
+                                <asp:LinkButton CommandArgument="-"  runat="server" oncommand="dateselectorArrow_SelectionChanged">
+                                    <img src="../Content/img/day_arr1.png"></asp:LinkButton>
                             </div>
                             <div class="arr2">
-                                <a href="#">
-                                    <img src="../Content/img/day_arr2.png"></a>
+                                <asp:LinkButton CommandArgument="+"  runat="server" oncommand="dateselectorArrow_SelectionChanged">
+                                    <img src="../Content/img/day_arr2.png"></asp:LinkButton>
                             </div>
                         </div>
                     </div>

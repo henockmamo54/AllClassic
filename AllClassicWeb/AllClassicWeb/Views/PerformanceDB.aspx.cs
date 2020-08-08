@@ -8,6 +8,7 @@ using DataAccessP;
 using BusinessLogic;
 using System.Data.Entity.SqlServer;
 using System.Web.UI.HtmlControls;
+using System.ComponentModel.DataAnnotations;
 
 namespace AllClassicWeb.Views
 {
@@ -63,11 +64,62 @@ namespace AllClassicWeb.Views
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + msg + "')", true);
         }
 
+
+        protected void dateselectorArrow_SelectionChanged(object sender, CommandEventArgs e)
+        {
+            var selectedarrow = (e.CommandArgument.ToString());
+
+            DateTime selectedDate = DateTime.Now;
+
+            if (Session["PreviousSelectedDate"] != null)
+                selectedDate = ((DateTime)Session["PreviousSelectedDate"]);
+
+            int dayvalue = selectedDate.Day;
+            if ((dayvalue == 1) & (selectedarrow == "-"))
+            {
+                dayvalue = 31;
+
+            }
+            else if ((dayvalue == 31) & (selectedarrow == "+"))
+            {
+                dayvalue = 1;
+            }
+            else
+            {
+
+                if (selectedarrow == "+") dayvalue = dayvalue + 1;
+                else if (selectedarrow == "-") dayvalue = dayvalue - 1;
+            }
+
+
+            handle_selectionChangeForArrowSelector(dayvalue);
+
+        }
+
+        public void handle_selectionChangeForArrowSelector(int dayvalue)
+        {
+
+            datelabel.Text = dayvalue.ToString();
+
+
+            handelTheClassForTheDateSelectors(dayvalue);
+
+            filterPerformance();
+        }
+
         protected void dateselectorcalendar_SelectionChanged(object sender, CommandEventArgs e)
         {
-            var currentDate = DateTime.Now;
             var selectedDate = int.Parse(e.CommandArgument.ToString());
 
+            handelTheClassForTheDateSelectors(selectedDate);
+            handle_selectionChangeForArrowSelector(selectedDate);
+
+            filterPerformance();
+        }
+
+        public void handelTheClassForTheDateSelectors(int selectedDate)
+        {
+            var currentDate = DateTime.Now;
             var newdate = new DateTime(currentDate.Year, currentDate.Month, selectedDate);
             Session["PreviousSelectedDate"] = newdate;
 
@@ -80,30 +132,6 @@ namespace AllClassicWeb.Views
 
             }
             datecontainers[selectedDate - 1].Attributes.Add("class", "on");
-
-
-
-
-
-            //var parent = this.FindControl("date01");
-
-
-            //LinkButton lb = (LinkButton)sender;
-            //lb.Parent
-            //lb.Style.Add("class", "on");
-
-
-            //if (Session["PreviousSelectedDate"] != null)
-            //{
-            //    //DateTime previousdate = (DateTime)Session["PreviousSelectedDate"];
-            //    ////Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
-            //    //if (previousdate == dateselectorcalendar.SelectedDate) dateselectorcalendar.SelectedDates.Clear();
-
-            //}
-            //else Session["PreviousSelectedDate"] = dateselectorcalendar.SelectedDate;
-
-            filterPerformance();
-
         }
         public void dateclicked(object sender, EventArgs e)
         {
