@@ -19,7 +19,7 @@ namespace AllClassicWeb.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             user = (UserTbl)Session["User"];
-            yearlabel.Text = DateTime.Now.Year.ToString();
+            yearlabel.Text = DateTime.Now.Year.ToString() +", "+ DateTime.Now.ToString("MMM");
             datelabel.Text = DateTime.Now.Date.Day.ToString("00");
 
             //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "handletab();", true);
@@ -137,6 +137,7 @@ namespace AllClassicWeb.Views
         {
 
         }
+
         public void btnClearSelection(object sender, EventArgs e)
         {
             //dateselectorcalendar.SelectedDates.Clear();

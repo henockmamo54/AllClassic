@@ -12,8 +12,12 @@ namespace AllClassicWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            yearlabel.Text = DateTime.Now.Year.ToString();
-            datelabel.Text = DateTime.Now.Date.Day.ToString();
+            if (!IsPostBack)
+            {
+                Session["PreviousSelectedDate"] =  DateTime.Now;
+                yearlabel.Text = DateTime.Now.Year.ToString() + ", " + DateTime.Now.ToString("MMM");
+                datelabel.Text = DateTime.Now.Date.Day.ToString("00");
+            }
         }
 
         public void performancepageclicked(object sender, CommandEventArgs e)
@@ -28,11 +32,62 @@ namespace AllClassicWeb
             //label_countofitems.Text = artistListContainer.Items.Count + "";
         }
 
+
+        protected void dateselectorArrow_SelectionChanged(object sender, CommandEventArgs e)
+        {
+            var selectedarrow = (e.CommandArgument.ToString());
+
+            DateTime selectedDate = DateTime.Now;
+
+            if (Session["PreviousSelectedDate"] != null)
+                selectedDate = ((DateTime)Session["PreviousSelectedDate"]);
+
+            int dayvalue = selectedDate.Day;
+            if ((dayvalue == 1) & (selectedarrow == "-"))
+            {
+                dayvalue = 31;
+
+            }
+            else if ((dayvalue == 31) & (selectedarrow == "+"))
+            {
+                dayvalue = 1;
+            }
+            else
+            {
+
+                if (selectedarrow == "+") dayvalue = dayvalue + 1;
+                else if (selectedarrow == "-") dayvalue = dayvalue - 1;
+            }
+
+
+            handle_selectionChangeForArrowSelector(dayvalue);
+
+        }
+
+        public void handle_selectionChangeForArrowSelector(int dayvalue)
+        {
+
+            datelabel.Text = dayvalue.ToString("00");
+
+
+            handelTheClassForTheDateSelectors(dayvalue);
+
+            filterPerformance();
+        }
+
         protected void dateselectorcalendar_SelectionChanged(object sender, CommandEventArgs e)
         {
-            var currentDate = DateTime.Now;
             var selectedDate = int.Parse(e.CommandArgument.ToString());
 
+            handelTheClassForTheDateSelectors(selectedDate);
+            handle_selectionChangeForArrowSelector(selectedDate);
+
+            filterPerformance();
+        }
+
+        public void handelTheClassForTheDateSelectors(int selectedDate)
+        {
+            var currentDate = DateTime.Now;
             var newdate = new DateTime(currentDate.Year, currentDate.Month, selectedDate);
             Session["PreviousSelectedDate"] = newdate;
 
@@ -45,8 +100,9 @@ namespace AllClassicWeb
 
             }
             datecontainers[selectedDate - 1].Attributes.Add("class", "on");
-             
-            filterPerformance();
+        }
+        public void dateclicked(object sender, EventArgs e)
+        {
 
         }
 
@@ -89,8 +145,8 @@ namespace AllClassicWeb
                                                             left join @fooTable cm on cm.LookUpID=p.MainTitleComposer
                                                             left join @fooTable r on r.LookUpID=p.Region
                                                             left join @fooTable c on c.LookUpID=p.City
-                                                             " + filter + " order by p.UpdateTimeStamp desc"; 
-            artistListContainer.DataBind(); 
+                                                             " + filter + " order by p.UpdateTimeStamp desc";
+            artistListContainer.DataBind();
         }
 
 
