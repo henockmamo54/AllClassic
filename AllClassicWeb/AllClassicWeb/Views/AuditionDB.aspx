@@ -7,7 +7,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>--%>
-    
+
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
         rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -15,8 +15,10 @@
 
     <script>
         $(function () {
+            bindDateTime();
+        });
 
-
+        function bindDateTime() {
             $("#MainContent_datetimepicker2").datepicker({
                 showOn: "button",
                 buttonImage: "../Content/img/day.png",
@@ -30,7 +32,7 @@
                 dateFormat: "dd/mm/yy",
                 buttonImageOnly: true
             });
-        });
+        }
     </script>
     <br />
 
@@ -56,7 +58,7 @@
 
                 <div class="con_section2">
 
-                    <h2>오디션 정보</h2>
+                    <h2><%= Resources.DisplayText.Auditions %></h2>
 
                     <div class="conlist">
                         <ul class="agora">
