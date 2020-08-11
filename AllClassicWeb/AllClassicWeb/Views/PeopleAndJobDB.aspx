@@ -5,11 +5,37 @@
         <ContentTemplate>
 
 
-            <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+            <%--<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet" />
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>--%>
+
+
+
+
+            <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+                rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+            <script>
+                $(function () {
+                    bindDateTime();
+                });
+
+                function bindDateTime() {
+
+                    $("#MainContent_datetimepicker3").datepicker({
+                        showOn: "button",
+                        buttonImage: "../Content/img/day.png",
+                        dateFormat: "dd/mm/yy",
+                        buttonImageOnly: true
+                    });
+                }
+            </script>
+
+
 
 
             <div class="conbox">
@@ -35,7 +61,7 @@
                         <ul class="agora">
                             <li>
                                 <%=Resources.DisplayText.PeopleOrJob %>
-                                <asp:DropDownList ID="DropDownList1_type" runat="server" >
+                                <asp:DropDownList ID="DropDownList1_type" runat="server">
                                     <asp:ListItem Value="0" Text="ALL"></asp:ListItem>
                                     <asp:ListItem Value="1" Text="<%$Resources:DisplayText,Job %>"></asp:ListItem>
                                     <asp:ListItem Value="2" Text="<%$Resources:DisplayText,People %>"></asp:ListItem>
@@ -56,15 +82,12 @@ FROM Main.LookUpTbl
 where maincode='City'
 "></asp:SqlDataSource>
                             </li>
-                            <li>
-                                <%= Resources.DisplayText.ValidDate %>
-                                <div class='input-group date' id='datetimepicker3' style="display: inline-flex;">
-                                    <input type='text' class="form-control filedDisplay" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker3" style="display: inline-block; border-right-width: 0px; width: 100px;" />
-                                    <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
+
+                            <li><%= Resources.DisplayText.ToDate %>
+
+                                <input runat="server" type="text" id="datetimepicker3">
                             </li>
+
                         </ul>
                         <div class="btn5">
                             <asp:LinkButton ID="inquiry" runat="server" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
@@ -146,7 +169,11 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                         <li><span>- <%# Resources.DisplayText.ContactName %> :</span><%#Eval("ContactName") %></li>
                                         <li><span>- <%# Resources.DisplayText.TelNo %> :</span><%#Eval("TelNO") %></li>
                                         <li><span>- <%# Resources.DisplayText.Email %></span><%#Eval("EmailID") %></li>
-                                        <li><span>- <a data-toggle="modal" data-target="#myModal<%#Eval("PeopleAndJobID")%>"><%# Resources.DisplayText.Seemore %></span></li>
+                                        <li>
+                                            <span>- 
+                                                <a data-toggle="modal" data-target="#myModal<%#Eval("PeopleAndJobID")%>"><%# Resources.DisplayText.Seemore %></a>
+
+                                            </span></li>
                                         <li>
                                             <asp:LinkButton runat="server" Style="display: inline-block" ID="edit" OnCommand="editClicked" CommandArgument='<%# Eval("PeopleAndJobID") %>'><%= Resources.DisplayText.Edit %></asp:LinkButton>
                                             <asp:LinkButton runat="server" Style="display: inline-block" ID="delete" OnClientClick='<%# "deletebtnclicked(" +Eval("PeopleAndJobID") + " );" %>' Text="<%$Resources:DisplayText,delete %>"></asp:LinkButton>
@@ -154,12 +181,10 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                     </ul>
                                 </li>
 
-
-                                <!-- Modal -->
                                 <div id="myModal<%#Eval("PeopleAndJobID")%>" class="modal fade" role="dialog">
                                     <div class="modal-dialog">
 
-                                        <!-- Modal content-->
+
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -176,10 +201,11 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
 
                                     </div>
                                 </div>
+
                             </ItemTemplate>
 
                             <LayoutTemplate>
-                                <div  id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
+                                <div id="groupPlaceholderContainer" runat="server" style="padding: 0px;">
 
                                     <div id="groupPlaceholder" runat="server">
                                     </div>
@@ -229,17 +255,6 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
     </asp:UpdatePanel>
 
     <script type="text/javascript">
-        function bindDateTime() {
-            $('#datetimepicker3').datetimepicker({
-                format: 'DD/MM/YYYY'
-            });
-        }
-        $(function () {
-            $('#datetimepicker3').datetimepicker({
-                format: 'DD/MM/YYYY'
-            });
-        });
-
 
         function deletebtnclicked(id) {
             var txt;
