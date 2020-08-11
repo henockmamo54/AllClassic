@@ -5,12 +5,40 @@
         <ContentTemplate>
 
 
-            <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+            <%--<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet" />
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>--%>
 
+            
+            <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+                rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+            <script>
+                $(function () {
+                    bindDateTime();
+                });
+
+                function bindDateTime() {
+                    $("#MainContent_startdate").datepicker({
+                        showOn: "button",
+                        buttonImage: "../Content/img/day.png",
+                        dateFormat: "mm/dd/yy",
+                        buttonImageOnly: true
+                    });
+
+                    $("#MainContent_enddate").datepicker({
+                        showOn: "button",
+                        buttonImage: "../Content/img/day.png",
+                        dateFormat: "mm/dd/yy",
+                        buttonImageOnly: true
+                    });
+                }
+
+            </script>
 
             <div class="row">
 
@@ -65,30 +93,17 @@ where maincode='PerformanceType'
                                 <asp:TextBox ID="txt_organizer" runat="server" Style="display: inline-block"></asp:TextBox>
 
                             </li>
-                            <li><span><%= Resources.DisplayText.Sponser %></span>
+                            <li>
+                                <span><%= Resources.DisplayText.Sponser %></span>
                                 <asp:TextBox ID="txt_sponser" runat="server" Style="display: inline-block"></asp:TextBox></li>
 
                             <li><span><%= Resources.DisplayText.Start %></span>
-                                <div style="display:inline-block">
-                                <div class='input-group date' id='datetimepicker2_start' style="display: flex;">
-                                    <input type='text' class="form-control filedDisplay" runat="server" validationgroup="a" id="startdate" style="display: inline-block; border-right-width: 0px;" />
-                                    <span class="input-group-addon" style="flex-wrap: wrap; width: auto !important; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-
-                                </div>
+                                <input runat="server" type="text" id="startdate">                                 
 
                             </li>
                             <li><span><%= Resources.DisplayText.End %></span>
-                                <div style="display:inline-block">
-                                <div class='input-group date' id='datetimepicker3_end' style="display: flex;">
-                                    <input type='text' class="form-control filedDisplay" validationgroup="a" runat="server" id="enddate" style="display: inline-block; border-right-width: 0px;" />
-                                    <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                                    </div>
+                                <input runat="server" type="text" id="enddate">   
+                                 
                             </li>
                             <li><span><%= Resources.DisplayText.Region %></span>
                                 <asp:DropDownList ID="DropDownList4_region" runat="server" Style="display: inline-block" AutoPostBack="false" DataSourceID="SqlDataSource1_region" DataTextField="SubCode" DataValueField="LookUpID"></asp:DropDownList>
@@ -218,24 +233,26 @@ DECLARE @fooTable table ( lookupid int, Maincode nvarchar(100), subcode  nvarcha
 
 
     <script type="text/javascript">
-        function bindDateTime() {
-            $('#datetimepicker2_start').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
-            $('#datetimepicker3_end').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
 
-        }
-        $(function () {
-            $('#datetimepicker2_start').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
 
-            $('#datetimepicker3_end').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
-        });
+        //function bindDateTime() {
+        //    $('#datetimepicker2_start').datetimepicker({
+        //        format: 'MM/DD/YYYY'
+        //    });
+        //    $('#datetimepicker3_end').datetimepicker({
+        //        format: 'MM/DD/YYYY'
+        //    });
+
+        //}
+        //$(function () {
+        //    $('#datetimepicker2_start').datetimepicker({
+        //        format: 'MM/DD/YYYY'
+        //    });
+
+        //    $('#datetimepicker3_end').datetimepicker({
+        //        format: 'MM/DD/YYYY'
+        //    });
+        //});
     </script>
 
     <style>
