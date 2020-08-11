@@ -85,7 +85,7 @@ namespace AllClassicWeb.Views.SignUp
             user.PosterEmailID = uemail.Text;
             user.UpdateTimeStamp = DateTime.Now;
             user.EmailID = uemail.Text;
-            user.Password = upassword.Text;
+            user.Password = Helper.Encryptor.MD5Hash(upassword.Text).ToUpper();
             user.FullName = uname.Text;
             user.NickName = unickname.Text;
             user.MobileNo = umobile.Text;

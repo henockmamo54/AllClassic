@@ -15,10 +15,10 @@ namespace AllClassicWeb.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             string username = inputEmail.Text;
-            string password = inputPassword.Text;
+            string password = Helper.Encryptor.MD5Hash(inputPassword.Text);
             if (username.Length > 0 && password.Length > 0)
             {
-                var users = UserLogic.checkUserLoginInfo(username, password);
+                var users = UserLogic.checkUserLoginInfo(username, password.ToUpper());
                 if (users.Count > 0)
                 {
                     Session["User"] = users[0];
@@ -41,7 +41,7 @@ namespace AllClassicWeb.Views
             else Label1_warnningmessage.Visible = true;
         }
 
-        
+
 
         [System.Web.Services.WebMethod]
         [System.Web.Script.Services.ScriptMethod()]
