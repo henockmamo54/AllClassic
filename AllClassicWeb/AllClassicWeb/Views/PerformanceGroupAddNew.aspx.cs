@@ -75,6 +75,8 @@ namespace AllClassicWeb.Views
             txt_homepage.Text = "";
 
             handleButtons(true);
+
+            Response.Redirect("~/Views/PerformanceGroupDetail.aspx");
         }
         public void btn_pg_save_Click(object sender, EventArgs e)
         {
@@ -152,7 +154,7 @@ namespace AllClassicWeb.Views
             txt_telno.Text = "";
             txt_faxno.Text = "";
             txt_homepage.Text = "";
-            handleButtons(true);
+            handleButtons(true); 
         }
 
         public void showMsg(string msg)

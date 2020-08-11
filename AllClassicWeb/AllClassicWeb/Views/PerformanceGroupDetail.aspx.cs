@@ -37,6 +37,7 @@ namespace AllClassicWeb.Views
                 txt_telno.Text = pg.TelNo;
                 txt_fax.Text = pg.FaxNo;
                 //txt_homepageurl.Text = pg.HomePage;
+                //homepagenavigation.PostBackUrl = pg.HomePage;
                 homepageurl = pg.HomePage;
 
                 if (user != null)
@@ -50,6 +51,11 @@ namespace AllClassicWeb.Views
         }
 
 
+        protected void LinkButton_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("http://"+ homepageurl);
+          
+        }
         protected void LinkButton_Click(Object sender, CommandEventArgs e)
         {
 
@@ -81,7 +87,7 @@ namespace AllClassicWeb.Views
                 Response.Redirect("PerformanceGroupAddNew.aspx");
             }
         }
-        
+
         [System.Web.Services.WebMethod]
         [System.Web.Script.Services.ScriptMethod()]
         public static bool DeletePerfromanceGroup(int n)
