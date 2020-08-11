@@ -59,6 +59,7 @@ namespace AllClassicWeb.Views
             Session["updateConcertVenu"] = null;
 
             handleButtons(true);
+            Response.Redirect("~/Views/ConcertVenuDB.aspx");
         }
 
         protected void btn_concertvenu_save_Click(object sender, EventArgs e)

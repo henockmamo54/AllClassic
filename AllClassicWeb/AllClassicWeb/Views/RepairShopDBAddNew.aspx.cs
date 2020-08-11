@@ -57,6 +57,9 @@ namespace AllClassicWeb.Views
             Session["updateRepairShop"] = null;
 
             handleButtons(true);
+
+
+            Response.Redirect("~/Views/RepairShopDB.aspx");
         }
         protected void btn_repairshop_save_Click(object sender, EventArgs e)
         {

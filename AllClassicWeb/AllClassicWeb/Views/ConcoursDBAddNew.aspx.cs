@@ -50,6 +50,9 @@ namespace AllClassicWeb.Views
             datetimepicker2.Value = null;
             datetimepicker3.Value = null;
             handleButtons(true);
+
+            Response.Redirect("~/Views/ConcoursDB.aspx");
+
         }
 
         public void btn_concours_save_Click(object sender, EventArgs e)

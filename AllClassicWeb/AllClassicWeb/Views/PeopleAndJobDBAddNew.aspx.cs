@@ -50,6 +50,8 @@ namespace AllClassicWeb.Views
 
             Session["updatePeopleAndJob"] = null;
             handleButtons(true);
+
+            Response.Redirect("~/Views/PeopleAndJobDB.aspx");
         }
         protected void btn_PeopleAndJob_save_Click(object sender, EventArgs e)
         {

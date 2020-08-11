@@ -187,7 +187,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                                 <h4 class="modal-title"><%# Eval("Title")%> - <%# Resources.DisplayText.AuditionOutlineandApplicationInfo %></h4>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <p><%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %></p>
+                                                                <span><%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %></span>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

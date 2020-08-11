@@ -57,6 +57,7 @@ namespace AllClassicWeb.Views
             Session["updateMusicShop"] = null;
 
             handleButtons(true);
+            Response.Redirect("~/Views/MusicShopDB.aspx");
         }
 
         protected void btn_musicshop_save_Click(object sender, EventArgs e)
