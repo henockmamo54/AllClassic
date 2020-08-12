@@ -120,7 +120,7 @@ namespace AllClassicWeb.Views.SignUp
             {
                 showMsg("Data inserted succssfuly");
                 Session["User"] = user;
-                Response.Redirect("~/Views/PerformanceDB.aspx");
+                Response.Redirect("~/Views/Default.aspx");
             }
             else
             {
