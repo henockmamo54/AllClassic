@@ -155,21 +155,13 @@ namespace AllClassicWeb
 
         protected void changeLanguageToKr(object sender, EventArgs e)
         {
-            HttpCookie cookie = Request.Cookies["CultureInfo_lang"	];
 
-            if (cookie != null && cookie.Value != null)
-            {
-                cookie.Value = "ko-KR";
-
-            }
-            else
-            {
-                cookie = new HttpCookie("CultureInfo_lang"	);
-                cookie.Value = "ko-KR";
-
-            }
-
+            HttpCookie cookie = Request.Cookies["CultureInfo_lang"];
+            cookie.Value = "ko-KR";
+            Response.Cookies["CultureInfo_lang"].Value = "ko-KR";
             Response.Cookies.Add(cookie);
+
+
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(cookie.Value);
             Thread.CurrentThread.CurrentCulture = new CultureInfo(cookie.Value);
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture(cookie.Value);
@@ -179,20 +171,12 @@ namespace AllClassicWeb
         protected void changeLanguageToEng(object sender, EventArgs e)
         {
 
-            HttpCookie cookie = Request.Cookies["CultureInfo_lang"	];
+            HttpCookie cookie = Request.Cookies["CultureInfo_lang"];
+            cookie.Value = "en-US";
 
-            if (cookie != null && cookie.Value != null)
-            {
-                cookie.Value = "en-US";
-            }
-            else
-            {
-                cookie = new HttpCookie("CultureInfo_lang"	);
-                cookie.Value = "ko-KR";
-
-            }
-
+            Response.Cookies["CultureInfo_lang"].Value = "en-US";
             Response.Cookies.Add(cookie);
+
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(cookie.Value);
             Thread.CurrentThread.CurrentCulture = new CultureInfo(cookie.Value);
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture(cookie.Value);
@@ -202,7 +186,7 @@ namespace AllClassicWeb
         protected void changeLanguage(object sender, EventArgs e)
         {
 
-            HttpCookie cookie = Request.Cookies["CultureInfo_lang"	];
+            HttpCookie cookie = Request.Cookies["CultureInfo_lang"];
 
             if (cookie != null && cookie.Value != null)
             {
@@ -212,7 +196,7 @@ namespace AllClassicWeb
             }
             else
             {
-                cookie = new HttpCookie("CultureInfo_lang"	);
+                cookie = new HttpCookie("CultureInfo_lang");
                 cookie.Value = "ko-KR";
 
             }

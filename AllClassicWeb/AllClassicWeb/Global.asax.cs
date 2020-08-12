@@ -24,7 +24,8 @@ namespace AllClassicWeb
         void Application_BeginRequest(Object source, EventArgs e)
         {
 
-            HttpCookie cookie = Request.Cookies["CultureInfo"];
+            HttpCookie cookie = Request.Cookies["CultureInfo_lang"];
+
 
             if (cookie != null && cookie.Value != null)
             {
@@ -33,7 +34,7 @@ namespace AllClassicWeb
             }
             else
             {
-                cookie = new HttpCookie("CultureInfo");
+                cookie = new HttpCookie("CultureInfo_lang");
                 cookie.Value = "ko-KR";
                 Response.Cookies.Add(cookie);
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(cookie.Value);
