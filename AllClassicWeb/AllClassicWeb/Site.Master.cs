@@ -155,7 +155,7 @@ namespace AllClassicWeb
 
         protected void changeLanguageToKr(object sender, EventArgs e)
         {
-            HttpCookie cookie = Request.Cookies["CultureInfo"];
+            HttpCookie cookie = Request.Cookies["CultureInfo_lang"	];
 
             if (cookie != null && cookie.Value != null)
             {
@@ -164,7 +164,7 @@ namespace AllClassicWeb
             }
             else
             {
-                cookie = new HttpCookie("CultureInfo");
+                cookie = new HttpCookie("CultureInfo_lang"	);
                 cookie.Value = "ko-KR";
 
             }
@@ -179,7 +179,7 @@ namespace AllClassicWeb
         protected void changeLanguageToEng(object sender, EventArgs e)
         {
 
-            HttpCookie cookie = Request.Cookies["CultureInfo"];
+            HttpCookie cookie = Request.Cookies["CultureInfo_lang"	];
 
             if (cookie != null && cookie.Value != null)
             {
@@ -187,7 +187,7 @@ namespace AllClassicWeb
             }
             else
             {
-                cookie = new HttpCookie("CultureInfo");
+                cookie = new HttpCookie("CultureInfo_lang"	);
                 cookie.Value = "ko-KR";
 
             }
@@ -202,7 +202,7 @@ namespace AllClassicWeb
         protected void changeLanguage(object sender, EventArgs e)
         {
 
-            HttpCookie cookie = Request.Cookies["CultureInfo"];
+            HttpCookie cookie = Request.Cookies["CultureInfo_lang"	];
 
             if (cookie != null && cookie.Value != null)
             {
@@ -212,7 +212,7 @@ namespace AllClassicWeb
             }
             else
             {
-                cookie = new HttpCookie("CultureInfo");
+                cookie = new HttpCookie("CultureInfo_lang"	);
                 cookie.Value = "ko-KR";
 
             }

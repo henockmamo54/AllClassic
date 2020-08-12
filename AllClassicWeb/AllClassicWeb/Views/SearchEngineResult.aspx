@@ -18,8 +18,14 @@
 
     <%-- ======================================================================================================================== --%>
 
-    <div runat="server" id="serachResultContainer"></div>
+    <div runat="server" id="serachResultContainer" style="min-height:900px; "></div>
     <div hidden runat="server" id="fullserachresult"></div>
+
+    <style>
+        .sr_text {
+            color: whitesmoke;
+        }
+    </style>
 
 
 </asp:Content>
