@@ -7,7 +7,18 @@
                 <br />
                 <h4 style="color: #00796B; font-weight: 800;" class="contentHeader">
                     <asp:Label runat="server" ID="txt_name" Text="name container" />
-                    [<asp:Label runat="server" ID="txt_alias" Text="alias container" />]</h4>
+
+                    [
+                    <asp:Label runat="server" ID="txt_alias" Text="alias container" />
+                    <asp:LinkButton OnClick="LinkButton_Click" runat="server" href='<%#Eval("homepageurl") %>'>Read more</asp:LinkButton>
+
+                    <%--<asp:Label runat="server" ID="txt_alias" Text="alias container" />
+                    <span class="filedName">
+                        <asp:LinkButton ID="homepagenavigation" runat="server" OnClick="LinkButton_Click" OnCommand="LinkButton_Click" CommandArgument='<%#Eval("homepageurl") %>' target="_blank"> Read more
+                            <%= Resources.DisplayText.Home %>
+                        </asp:LinkButton>
+                    </span>--%>
+                    ]</h4>
                 <hr />
                 <div style="margin-left: 10px;">
                     <div class="col-xs-4">
@@ -66,11 +77,11 @@
                         </div>
                         <br />
                         <div>
-                            <span class="filedName">
+                            <%--<span class="filedName">
                                 <asp:LinkButton runat="server" OnCommand="LinkButton_Click" CommandArgument='<%#Eval("homepageurl") %>' target="_blank">
                                     <asp:Label runat="server" ID="txt_homepageurl" Text="Read More" />
                                 </asp:LinkButton>
-                            </span>
+                            </span>--%>
                         </div>
                     </div>
 

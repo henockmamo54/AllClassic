@@ -6,6 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="UWg2Xa-zv3xc7x_f6Gsv4-cuSuLswcLC7aJq-JsxDW4" />
     <title>AllClassic Korea</title>
 
     <asp:PlaceHolder runat="server">
@@ -14,7 +15,7 @@
 
     <script src="https://cdn.ckeditor.com/4.11.1/standard-all/ckeditor.js"></script>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Doc/Icons/logo.png" rel="shortcut icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="Content/style.css" rel="stylesheet" />
 
@@ -160,9 +161,9 @@
                 <div class="footerwrap">
                     <div class="footer">
                         <ul class="f1">
-                            <li class=""><a href="#">개인정보처리방침</a></li>
+                            <li class=""><a runat="server" href="~/Views/SignUp/TermsOfUsePage.aspx">개인정보처리방침</a></li>
                             <li class=""><a href="#">이메일무단수집거부</a></li>
-                            <li class=""><a href="#">찾아오시는 길</a></li>
+                            <li class=""><a runat="server" href="~/Views/AboutUs.aspx">찾아오시는 길</a></li>
                         </ul>
                         <div class="f2"></div>
                         <div class="f3">

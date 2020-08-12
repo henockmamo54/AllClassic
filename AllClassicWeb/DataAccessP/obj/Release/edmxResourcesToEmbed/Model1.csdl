@@ -898,7 +898,7 @@
     </Key>
     <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="EmailID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
     <Property Name="FullName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
     <Property Name="NickName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
     <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />

@@ -12,16 +12,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2020 14:53:30</publishTime>
     </File>
     <File Include="App_GlobalResources/DisplayText.ko-KR.resx">
-      <publishTime>06/30/2020 14:32:07</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="App_GlobalResources/DisplayText.resx">
-      <publishTime>06/30/2020 16:02:02</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="bin/AllClassicWeb.dll">
-      <publishTime>07/13/2020 11:35:50</publishTime>
+      <publishTime>08/12/2020 20:06:42</publishTime>
     </File>
     <File Include="bin/AllClassicWeb.pdb">
-      <publishTime>07/13/2020 11:35:50</publishTime>
+      <publishTime>08/12/2020 20:06:42</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>06/18/2020 17:09:37</publishTime>
@@ -36,25 +36,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2020 17:09:37</publishTime>
     </File>
     <File Include="bin/BusinessLogic.exe">
-      <publishTime>07/12/2020 21:18:45</publishTime>
+      <publishTime>08/12/2020 20:06:40</publishTime>
     </File>
     <File Include="bin/BusinessLogic.exe.config">
       <publishTime>06/18/2020 14:53:30</publishTime>
     </File>
     <File Include="bin/BusinessLogic.pdb">
-      <publishTime>07/12/2020 21:18:45</publishTime>
+      <publishTime>08/12/2020 20:06:40</publishTime>
     </File>
     <File Include="bin/CKEditor.NET.dll">
       <publishTime>06/18/2020 17:09:37</publishTime>
     </File>
     <File Include="bin/DataAccessP.exe">
-      <publishTime>07/12/2020 21:12:23</publishTime>
+      <publishTime>08/12/2020 20:06:40</publishTime>
     </File>
     <File Include="bin/DataAccessP.exe.config">
-      <publishTime>07/12/2020 21:18:44</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="bin/DataAccessP.pdb">
-      <publishTime>07/12/2020 21:12:23</publishTime>
+      <publishTime>08/12/2020 20:06:40</publishTime>
     </File>
     <File Include="bin/de/Microsoft.Data.Entity.Design.Extensibility.resources.dll">
       <publishTime>02/02/2019 18:34:11</publishTime>
@@ -66,10 +66,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2020 17:09:37</publishTime>
     </File>
     <File Include="bin/EnvDTE.dll">
-      <publishTime>01/23/2020 00:11:50</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="bin/EnvDTE80.dll">
-      <publishTime>01/23/2020 00:11:50</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="bin/es/Microsoft.Data.Entity.Design.Extensibility.resources.dll">
       <publishTime>02/02/2019 18:34:11</publishTime>
@@ -372,7 +372,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2019 18:34:11</publishTime>
     </File>
     <File Include="bin/stdole.dll">
-      <publishTime>01/23/2020 00:11:50</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="bin/StreamJsonRpc.dll">
       <publishTime>03/18/2019 20:10:52</publishTime>
@@ -384,7 +384,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2020 17:09:37</publishTime>
     </File>
     <File Include="bin/VSLangProj.dll">
-      <publishTime>01/23/2020 00:11:50</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>06/18/2020 17:09:38</publishTime>
@@ -426,37 +426,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2020 17:08:54</publishTime>
     </File>
     <File Include="Content/img/banner.jpg">
-      <publishTime>06/19/2020 13:24:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/banner/banner1.jpg">
-      <publishTime>06/19/2020 14:51:43</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/banner/banner2.png">
-      <publishTime>06/19/2020 14:58:23</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/banner/banner3.jpg">
-      <publishTime>06/19/2020 14:58:42</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/bg.jpg">
-      <publishTime>06/19/2020 13:24:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/btn_search.png">
-      <publishTime>06/19/2020 13:24:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/day.png">
-      <publishTime>06/19/2020 13:24:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/day_arr1.png">
-      <publishTime>06/19/2020 13:24:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/day_arr2.png">
-      <publishTime>06/19/2020 13:24:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/day_bg.png">
-      <publishTime>06/19/2020 13:24:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/facebook.png">
-      <publishTime>06/19/2020 13:24:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/headerbg.jpg">
       <publishTime>06/18/2020 17:09:35</publishTime>
@@ -465,7 +465,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2020 13:24:32</publishTime>
     </File>
     <File Include="Content/img/icon_noti.png">
-      <publishTime>06/19/2020 13:24:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/location.jpg">
       <publishTime>03/18/2019 22:27:35</publishTime>
@@ -477,28 +477,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2020 17:09:35</publishTime>
     </File>
     <File Include="Content/img/news.jpg">
-      <publishTime>06/19/2020 13:24:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/popup.jpg">
-      <publishTime>06/19/2020 13:24:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/start.jpg">
-      <publishTime>06/20/2020 17:02:03</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/twitter.png">
-      <publishTime>06/19/2020 13:24:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/img/user_dropdown.png">
-      <publishTime>06/19/2020 13:24:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>07/10/2020 15:39:17</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Content/style.css">
-      <publishTime>07/11/2020 15:15:19</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>07/10/2020 14:45:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Doc/ads/1d63a0_c98934b833c94affa65a41837b01c878_mv2_d_1388_1654_s_2.jpg">
       <publishTime>06/18/2020 17:09:35</publishTime>
@@ -579,16 +579,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/03/2019 20:10:34</publishTime>
     </File>
     <File Include="Doc/Icons/logo.png">
-      <publishTime>06/18/2020 17:09:35</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Doc/Icons/mango.png">
-      <publishTime>06/19/2020 13:24:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Doc/Icons/map.jpg">
-      <publishTime>06/19/2020 13:24:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Doc/Icons/wallet.png">
-      <publishTime>07/10/2020 15:54:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Doc/Performance/1.jpg">
       <publishTime>06/18/2020 14:53:30</publishTime>
@@ -1839,13 +1839,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2020 16:55:54</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>07/11/2020 15:58:00</publishTime>
+      <publishTime>08/12/2020 20:05:50</publishTime>
     </File>
     <File Include="Site.Mobile.Master">
       <publishTime>03/18/2019 22:26:52</publishTime>
     </File>
     <File Include="Views/AboutUs.aspx">
-      <publishTime>07/10/2020 15:58:08</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/AccountVerification.aspx">
       <publishTime>06/18/2020 17:09:35</publishTime>
@@ -1857,31 +1857,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/22/2020 22:20:48</publishTime>
     </File>
     <File Include="Views/AuditionDB.aspx">
-      <publishTime>07/09/2020 01:36:53</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/AuditionDBAddNew.aspx">
-      <publishTime>06/21/2020 12:47:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/ClassicCoinDB.aspx">
-      <publishTime>07/10/2020 15:55:00</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/ConcertVenuDB.aspx">
-      <publishTime>07/12/2020 20:20:13</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/ConcertVenuDBAddNew.aspx">
-      <publishTime>06/24/2020 19:55:37</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/ConcoursDB.aspx">
-      <publishTime>06/22/2020 21:34:25</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/ConcoursDBAddNew.aspx">
-      <publishTime>06/22/2020 21:06:15</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/EndorsementPage.aspx">
       <publishTime>06/18/2020 17:09:35</publishTime>
     </File>
     <File Include="Views/Login.aspx">
-      <publishTime>07/06/2020 23:56:32</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/LookupMangePage.aspx">
       <publishTime>06/18/2020 17:09:35</publishTime>
@@ -1896,79 +1896,79 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2020 17:09:35</publishTime>
     </File>
     <File Include="Views/MusicianDB.aspx">
-      <publishTime>07/11/2020 16:28:14</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/MusicianDBAddNew.aspx">
-      <publishTime>07/05/2020 15:47:52</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/MusicianDetailPage.aspx">
-      <publishTime>06/20/2020 18:08:51</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/MusicShopDB.aspx">
-      <publishTime>07/12/2020 20:35:44</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/MusicShopDBAddNew.aspx">
-      <publishTime>06/22/2020 23:50:56</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/Mypage.aspx">
-      <publishTime>07/13/2020 11:35:34</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PasswordReset.aspx">
       <publishTime>06/18/2020 17:09:35</publishTime>
     </File>
     <File Include="Views/PeopleAndJobDB.aspx">
-      <publishTime>07/12/2020 20:17:42</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PeopleAndJobDBAddNew.aspx">
-      <publishTime>06/24/2020 20:25:49</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PerformanceArchiveDB.aspx">
-      <publishTime>07/10/2020 17:00:19</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PerformanceDB.aspx">
-      <publishTime>07/11/2020 17:41:36</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PerformanceDBAddNew.aspx">
-      <publishTime>06/28/2020 15:55:13</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PerformanceDetail.aspx">
-      <publishTime>06/28/2020 15:52:21</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PerformanceGroup.aspx">
-      <publishTime>07/12/2020 19:33:58</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PerformanceGroupAddNew.aspx">
-      <publishTime>06/21/2020 00:01:30</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/PerformanceGroupDetail.aspx">
-      <publishTime>07/05/2020 15:55:17</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/QADbAddNew.aspx">
-      <publishTime>06/24/2020 23:22:01</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/QADbNew.aspx">
-      <publishTime>06/24/2020 23:21:13</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/RepairShopDB.aspx">
-      <publishTime>06/22/2020 22:05:35</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/RepairShopDBAddNew.aspx">
-      <publishTime>06/22/2020 22:25:42</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/SearchEngineResult.aspx">
-      <publishTime>06/18/2020 17:09:35</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/SignUp/TermsOfUsePage.aspx">
-      <publishTime>07/10/2020 15:37:57</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="Views/SignUp/UserInformationRegistration.aspx">
-      <publishTime>07/10/2020 15:37:15</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
     <File Include="ViewSwitcher.ascx">
       <publishTime>03/18/2019 22:26:52</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/12/2020 21:18:47</publishTime>
+      <publishTime>08/12/2020 16:22:54</publishTime>
     </File>
   </ItemGroup>
 </Project>

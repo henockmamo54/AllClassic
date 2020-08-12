@@ -367,3 +367,4 @@ D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\AllClassicWeb\obj
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.csproj.CopyComplete
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.dll
 D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.pdb
+D:\WorkPlace\github projects\allclassic 2020 asp\AllClassicWeb\AllClassicWeb\obj\Release\AllClassicWeb.csproj.CoreCompileInputs.cache

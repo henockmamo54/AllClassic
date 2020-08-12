@@ -4,11 +4,32 @@
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
 
-            <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+            <%-- <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet" />
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>--%>
+
+            <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+                rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+            <script>
+                $(function () {
+                    bindDateTime();
+                });
+
+                function bindDateTime() {
+
+                    $("#MainContent_datetimefilter").datepicker({
+                        showOn: "button",
+                        buttonImage: "../Content/img/day.png",
+                        dateFormat: "dd/mm/yy",
+                        buttonImageOnly: true
+                    });
+                }
+            </script>
 
 
             <!-- conbox --------------------------------------->
@@ -35,15 +56,9 @@
                         <ul class="agora">
                             <li><%= Resources.DisplayText.PosterEmailID %>
                                 <asp:TextBox AutoPostBack="true" ID="txtbox_emailfilter" runat="server" Style="display: inline-block;" OnTextChanged="selectedFilterChanged"></asp:TextBox></li>
-                            <li><%= Resources.DisplayText.Date %>
-                                <div style="display: inline-block;">
-                                    <div class='input-group date' id='datetimepicker2' style="display: flex;">
-                                        <input type='text' class="form-control filedDisplay" runat="server" onchange="selectedFilterChanged" ontextchanged="selectedFilterChanged" id="datetimefilter" style="display: inline-block; border-right-width: 0px; width: 100px;" />
-                                        <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>
+                            <li><%= Resources.DisplayText.ToDate %>
+
+                                <input runat="server" type="text" id="datetimefilter">
                             </li>
                             <li><%= Resources.DisplayText.Question %>
                                 <asp:TextBox AutoPostBack="true" ID="txt_question" runat="server" CssClass="form-control filedDisplay" Style="width: 150px; display: inline-block;"></asp:TextBox></li>
@@ -249,20 +264,7 @@ order by timestamp desc"></asp:SqlDataSource>
     </asp:UpdatePanel>
 
     <script type="text/javascript">
-
-
-        function bindDateTime() {
-            $('#datetimepicker2').datetimepicker({
-                format: 'DD/MM/YYYY'
-            });
-        }
-
-        $(function () {
-            $('#datetimepicker2').datetimepicker({
-                format: 'DD/MM/YYYY'
-            });
-        });
-
+       
 
         function closeReply(n, t) {
             $("#divReply" + t + n).hide();

@@ -6,11 +6,39 @@
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
 
-            <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+            <%--<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet" />
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>--%>
+
+
+            <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+                rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+            <script>
+                $(function () {
+                    bindDateTime();
+                });
+
+                function bindDateTime() {
+                    $("#MainContent_datetimepicker2").datepicker({
+                        showOn: "button",
+                        buttonImage: "../Content/img/day.png",
+                        dateFormat: "mm/dd/yy",
+                        buttonImageOnly: true
+                    });
+
+                    $("#MainContent_datetimepicker3").datepicker({
+                        showOn: "button",
+                        buttonImage: "../Content/img/day.png",
+                        dateFormat: "mm/dd/yy",
+                        buttonImageOnly: true
+                    });
+                }
+            </script>
 
 
             <div class="conbox">
@@ -40,24 +68,12 @@
                             <li><%= Resources.DisplayText.Organizer %>
                                 <asp:TextBox AutoPostBack="true" ID="txt_organizer" runat="server" Style="display: inline-block;"></asp:TextBox>
                             <li><%= Resources.DisplayText.FromDate %>
-                                <div style="display: inline-block;">
-                                    <div class='input-group date' id='datetimepicker2' style="display: flex; padding: 0;">
-                                        <input type='text' class="form-control" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker2" style="display: inline-block; border-right-width: 0px; width: 100px;" />
-                                        <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <li><%= Resources.DisplayText.ToDate %>
-                                    <div style="display: inline-block;">
-                                        <div class='input-group date' id='datetimepicker3' style="display: flex;">
-                                            <input type='text' class="form-control" runat="server" ontextchanged="selectedFilterChanged" id="datetimepicker3" style="display: inline-block; border-right-width: 0px; width: 100px;" />
-                                            <span class="input-group-addon" style="flex-wrap: wrap; width: auto; display: inline-block; padding-left: 12px; margin-left: -5px; padding-top: 9px; padding-bottom: 6px;">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
+                                <input runat="server" type="text" id="datetimepicker2">
+                            </li>
+                            <li><%= Resources.DisplayText.ToDate %>
+
+                                <input runat="server" type="text" id="datetimepicker3">
+                            </li>
                         </ul>
                         <div class="btn3">
                             <asp:LinkButton ID="inquiry" runat="server" OnClick="selectedFilterChanged" Text="<%$Resources:DisplayText, Inquiry %>" />
@@ -171,7 +187,7 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
                                                                 <h4 class="modal-title"><%# Eval("Title")%> - <%# Resources.DisplayText.AuditionOutlineandApplicationInfo %></h4>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <p><%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %></p>
+                                                                <span><%#Server.HtmlDecode(Eval("ConcourOutline").ToString()) %></span>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -270,22 +286,6 @@ order by UpdateTimeStamp desc"></asp:SqlDataSource>
             }
         }
 
-        function bindDateTime() {
-            $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
-            $('#datetimepicker3').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
-        }
-        $(function () {
-            $('#datetimepicker3').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
-            $('#datetimepicker2').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
-        });
     </script>
 
 </asp:Content>
